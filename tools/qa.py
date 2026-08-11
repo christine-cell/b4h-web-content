@@ -157,6 +157,24 @@ def check_style_lint():
             fail("style", f"{rel}: emoji in content — use Lucide icons (data-icon=...) instead")
     note("style: authored content scanned for raw hex / inline colours / emoji")
 
+# ---------------------------------------------------------------- 8b. asset version
+def check_asset_version():
+    # Static (non-generated) served pages hardcode their ?v= cache-bust token and
+    # can silently fall behind when V bumps. Confirm they match the build version.
+    src = read(os.path.join(ROOT, "tools/build_pages.py"))
+    m = re.search(r'^V\s*=\s*"(\d+)"', src, re.M)
+    if not m: return
+    V = m.group(1)
+    for rel in ("licensee/certificate.html", "licensee/styleguide.html"):
+        p = os.path.join(ROOT, rel)
+        if not os.path.exists(p): continue
+        vers = set(re.findall(r'(?:href|src)="[^"]+\?v=(\d+)"', read(p)))
+        stale = sorted(vers - {V})
+        if stale:
+            fail("asset-version", f"{rel}: asset ?v={','.join(stale)} but build V={V} "
+                                  f"(bump this page's ?v to {V} so it cache-busts)")
+    note(f"asset-version: static pages pinned to build V={V}")
+
 # ---------------------------------------------------------------- 9. a11y
 def check_a11y():
     pages = glob.glob(os.path.join(SITE, "modules/*.html")) + \

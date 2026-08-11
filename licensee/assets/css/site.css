@@ -466,6 +466,9 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .certificate::before { content:""; position:absolute; inset:12px; border:1px solid var(--blue-200); border-radius: var(--r-md); pointer-events:none; }
 .certificate h2 { font-size: clamp(1.6rem,1rem+3vw,2.6rem); color: var(--blue-800); }
 .certificate .cert-name { font-family:var(--font-sans); font-weight:800; font-size: clamp(1.6rem,1rem+3vw,2.4rem); color: var(--blue-700); border-bottom:2px solid var(--blue-200); display:inline-block; padding:.2rem 1.5rem .4rem; margin:.6rem 0; }
+.certificate .cert-sign { margin-top:2.2rem; display:inline-flex; flex-direction:column; align-items:center; }
+.certificate .cert-sign-name { font-family:var(--font-sans); font-style:italic; font-weight:700; font-size:clamp(1.3rem,1rem+1.4vw,1.8rem); color:var(--blue-800); line-height:1; padding:0 1rem .35rem; }
+.certificate .cert-sign-title { min-width:240px; padding-top:.5rem; border-top:2px solid var(--blue-300); font-family:var(--font-sans); font-weight:600; font-size:var(--fs-sm); color:var(--blue-700); letter-spacing:.02em; }
 
 /* ---------- Search modal ---------- */
 .modal { position: fixed; inset: 0; z-index: 400; display: none; }
