@@ -7,7 +7,7 @@ M = json.load(open(os.path.join(SITE, "data/modules.json")))
 def _data(name):
     p=os.path.join(SITE,"data",name)
     return json.load(open(p,encoding="utf-8")) if os.path.exists(p) else {}
-V = "20"
+V = "21"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, prefix):
@@ -135,7 +135,7 @@ def build_hub():
           <span class="badge badge-primary"><span data-progress-count>0 / {nlessons}</span></span>
         </div>
         <div class="progressbar" style="margin-top:1rem"><span data-progress-fill></span></div>
-        <p class="muted" style="margin:.6rem 0 0"><span data-progress-label>0%</span> <span data-i18n="hub.complete">complete</span> · <button class="btn-ghost" style="padding:.2rem .4rem;font-size:.9rem;border:0;background:none;cursor:pointer;color:var(--link)" data-progress-reset><span data-i18n="progress.reset">Reset my progress</span></button></p>
+        <p class="muted" style="margin:.6rem 0 0"><span data-progress-label>0%</span> <span data-i18n="hub.complete">complete</span><span data-reset-wrap hidden> · <button class="btn-ghost" style="padding:.2rem .4rem;font-size:.9rem;border:0;background:none;cursor:pointer;color:var(--link)" data-progress-reset><span data-i18n="progress.reset">Reset my progress</span></button></span></p>
       </div>
     </div></section>"""
 
@@ -171,7 +171,27 @@ def build_hub():
       </div>
     </div></section>"""
 
-    body = hero + progress + howto + band + modsec + ressec + cert
+    about = f"""<section class="section-tight"><div class="wrap">
+      <span class="eyebrow"><span data-icon="heart-pulse"></span>{bilingual('About this program','À propos du programme')}</span>
+      <h2>{bilingual('Who’s behind your training','Qui est derrière votre formation','span')}</h2>
+      <p class="lead" style="max-width:64ch">{bilingual('Boxing4Health is an independent health facility delivering research-backed, high-intensity exercise for seniors and people living with Parkinson’s. This licensee training distills the methods used in B4H classes — across its Ottawa, Kanata, Chelsea (QC), and Regina locations — into a coaching curriculum you can run yourself.','Boxing4Health est un établissement de santé indépendant offrant de l’exercice à haute intensité, fondé sur la recherche, pour les aînés et les personnes atteintes de la maladie de Parkinson. Cette formation des licenciés transpose les méthodes des cours B4H — offerts à Ottawa, Kanata, Chelsea (QC) et Regina — en un programme d’enseignement que vous pouvez animer vous-même.','span')}</p>
+      <div class="grid grid-2" style="margin-top:1.5rem">
+        <article class="card">
+          <span class="chip" data-icon="user"></span>
+          <h3 style="margin:.8rem 0 .3rem">Christine Seaby, RMT</h3>
+          <p class="muted" style="margin:0">{bilingual('Founder &amp; owner. A Regulated Health Professional (Registered Massage Therapist) with 14+ years of experience and a background in mixed martial arts, Christine created Boxing4Health to help people living with Parkinson’s improve their quality of life through purposeful exercise.','Fondatrice et propriétaire. Professionnelle de la santé réglementée (massothérapeute agréée) comptant plus de 14 ans d’expérience et une formation en arts martiaux mixtes, Christine a fondé Boxing4Health pour aider les personnes atteintes de la maladie de Parkinson à améliorer leur qualité de vie grâce à un exercice ciblé.','span')}</p>
+        </article>
+        <article class="card">
+          <span class="chip" data-icon="quote"></span>
+          <h3 style="margin:.8rem 0 .3rem">{bilingual('Our approach','Notre approche','span')}</h3>
+          <p class="muted" style="margin:0 0 .7rem">{bilingual('Exercise, education, and community — used together to help people living with Parkinson’s take action against their symptoms.','L’exercice, l’éducation et la communauté — réunis pour aider les personnes atteintes de la maladie de Parkinson à agir contre leurs symptômes.','span')}</p>
+          <p style="margin:0;font-family:var(--font-sans);font-weight:var(--fw-black);color:var(--primary)">“{bilingual('Our challenges don’t define us — our ACTIONS do.','Nos défis ne nous définissent pas — nos ACTIONS, oui.','span')}”</p>
+        </article>
+      </div>
+      <p class="muted" style="margin-top:1.4rem;display:inline-flex;align-items:center;gap:.5rem;font-size:var(--fs-sm)"><span data-icon="clipboard-check"></span>{bilingual('Current curriculum · reviewed August 2026 · v1.0','Programme à jour · révisé en août 2026 · v1.0','span')}</p>
+    </div></section>"""
+
+    body = hero + progress + howto + band + modsec + ressec + about + cert
     open(os.path.join(SITE,"index.html"),"w",encoding="utf-8").write(h + body + foot(prefix))
     print("built licensee/index.html")
 

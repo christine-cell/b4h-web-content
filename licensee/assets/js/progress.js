@@ -120,13 +120,25 @@
       }
     });
 
-    // continue button
+    // continue / start button — label + target adapt to whether there's progress
     var cont = document.querySelector("[data-continue]");
     if (cont) {
+      var started = !!P.data.last || done > 0;
       var target = P.data.last;
       if (!target) { var f = lessons[0]; target = f ? { url: f.url } : null; }
       if (target && target.url) cont.setAttribute("href", BASE + target.url);
+      var lbl = cont.querySelector("[data-i18n]");
+      if (lbl) {
+        var key = started ? "hub.continue" : "hub.start";
+        lbl.setAttribute("data-i18n", key);
+        if (window.B4H_t) lbl.textContent = window.B4H_t(key, lang);
+      }
     }
+
+    // hide "reset my progress" until there's something to reset
+    document.querySelectorAll("[data-reset-wrap]").forEach(function (el) {
+      if (done > 0) el.removeAttribute("hidden"); else el.setAttribute("hidden", "");
+    });
 
     // certificate gate
     document.querySelectorAll("[data-cert-gate]").forEach(function (el) {

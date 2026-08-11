@@ -3,3 +3,7 @@
 
 # OS / editor cruft
 .DS_Store
+
+# CI workflow — kept on disk but untracked until the git token has the `workflow` scope.
+# To enable CI once the scope is granted:  git add -f .github/workflows/qa.yml && git push
+.github/workflows/qa.yml
