@@ -300,10 +300,11 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .steps .step-body > *:last-child { margin-bottom:0; }
 
 /* ---------- Callouts ---------- */
-.callout { border: 1px solid var(--border); border-left-width: 5px; border-radius: var(--r-md); padding: 1.1rem 1.25rem; margin: 1.5rem 0; background: var(--surface); display: grid; grid-template-columns: auto 1fr; gap: .4rem 1rem; }
-.callout .callout-icon { grid-row: span 2; display:flex; align-items:flex-start; }
-.callout .callout-icon svg { width: 26px; height: 26px; }
-.callout .callout-title { font-family: var(--font-sans); font-weight: 800; margin: 0; font-size: 1.05rem; align-self:center; }
+.callout { border: 1px solid var(--border); border-left-width: 5px; border-radius: var(--r-md); padding: 1.15rem 1.3rem; margin: 1.5rem 0; background: var(--surface); display: grid; grid-template-columns: auto 1fr; gap: .5rem 1.05rem; box-shadow: var(--shadow-1); }
+/* Icon sits in a circular chip badge so callouts read as crafted objects */
+.callout .callout-icon { grid-row: span 2; align-self:start; width: 42px; height: 42px; border-radius: 50%; display:flex; align-items:center; justify-content:center; background: color-mix(in srgb, var(--surface) 85%, #fff); box-shadow: var(--shadow-1), var(--edge-hi); }
+.callout .callout-icon svg { width: 23px; height: 23px; }
+.callout .callout-title { font-family: var(--font-sans); font-weight: 800; margin: 0; font-size: 1.08rem; align-self:center; }
 .callout .callout-body { grid-column: 2; }
 .callout .callout-body > *:last-child { margin-bottom: 0; }
 .callout-info   { border-left-color: var(--info);    background: var(--info-bg); }
