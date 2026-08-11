@@ -238,7 +238,9 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .lesson-row:hover { border-color: var(--blue-300); background: var(--surface-2); transform: translateX(2px); }
 .lesson-row .lr-title { font-family: var(--font-sans); font-weight: 700; color: var(--heading); }
 .lesson-row .lr-meta { color: var(--text-muted); font-size: var(--fs-sm); }
-.lesson-row .lr-mark { margin-left: auto; }
+.lesson-row .lr-mark { margin-left: auto; flex: none; }
+.lesson-row > span:nth-child(2) { min-width: 0; }
+.lesson-row .chip { flex: none; }
 
 /* Badges / chips / pills */
 .badge { display:inline-flex; align-items:center; gap:.35rem; font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-xs); padding: .3rem .7rem; border-radius: var(--r-pill); background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); }
@@ -250,7 +252,8 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .meta-pill svg{ width:17px;height:17px; }
 
 /* Status chip (progress) */
-.status-chip { font-family: var(--font-sans); font-weight:700; font-size: var(--fs-xs); padding:.28rem .65rem; border-radius: var(--r-pill); display:inline-flex; align-items:center; gap:.35rem; }
+.status-chip { font-family: var(--font-sans); font-weight:700; font-size: var(--fs-xs); padding:.28rem .65rem; border-radius: var(--r-pill); display:inline-flex; align-items:center; gap:.35rem; white-space: nowrap; }
+.status-chip svg { flex:none; }
 .status-chip[data-status="complete"]{ background: var(--success-bg); color: var(--success); }
 .status-chip[data-status="in-progress"]{ background: var(--info-bg); color: var(--info); }
 .status-chip[data-status="not-started"]{ background: var(--surface-2); color: var(--text-muted); }
