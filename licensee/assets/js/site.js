@@ -255,6 +255,7 @@
   /* ---------- Glossary popovers (tap on touch) ---------- */
   function wireGlossary(root) {
     $all(".gloss", root).forEach(function (g) {
+      if (g.__wired) return; g.__wired = true;   // glossary-terms.js wires its own
       g.setAttribute("tabindex", "0");
       g.onclick = function () { g.setAttribute("data-open", (g.getAttribute("data-open") !== "true").toString()); };
       g.onblur = function () { g.setAttribute("data-open", "false"); };

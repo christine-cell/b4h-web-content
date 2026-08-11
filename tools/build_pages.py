@@ -16,7 +16,7 @@ ENH_DIRS = [os.path.join(ROOT, "_sources/enhanced/boxing-4-health-PD-symptoms"),
             os.path.join(ROOT, "_sources/enhanced/boxing4health-training")]
 WIX = {r["stepId"]: r for r in json.load(open(os.path.join(ROOT, "_sources/wix/wix-extract.json")))}
 MODULES = json.load(open(os.path.join(SITE, "data/modules.json")))
-V = "19"  # asset cache-bust version
+V = "20"  # asset cache-bust version
 
 # ---------------------------------------------------------------- helpers
 def enh_path(fn):
@@ -182,7 +182,7 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}}catch(e){{}}}})(
 """
 
 def scripts_tag(feature_scripts):
-    base = ['icons', 'i18n', 'site', 'progress', 'search', 'read-aloud'] + feature_scripts
+    base = ['icons', 'i18n', 'site', 'progress', 'search', 'read-aloud', 'glossary-terms'] + feature_scripts
     seen=set(); order=[]
     for s in base:
         if s not in seen: seen.add(s); order.append(s)

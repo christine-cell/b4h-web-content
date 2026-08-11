@@ -7,7 +7,7 @@
 window.B4H_STRINGS = {
   en: {
     "nav.home": "Home",
-    "nav.training": "Training",
+    "nav.training": "Licensee Training",
     "nav.modules": "Modules",
     "nav.resources": "Resources",
     "nav.search": "Search",
@@ -74,7 +74,7 @@ window.B4H_STRINGS = {
   },
   fr: {
     "nav.home": "Accueil",
-    "nav.training": "Formation",
+    "nav.training": "Formation des licenciés",
     "nav.modules": "Modules",
     "nav.resources": "Ressources",
     "nav.search": "Rechercher",
