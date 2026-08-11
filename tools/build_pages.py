@@ -16,7 +16,7 @@ ENH_DIRS = [os.path.join(ROOT, "_sources/enhanced/boxing-4-health-PD-symptoms"),
             os.path.join(ROOT, "_sources/enhanced/boxing4health-training")]
 WIX = {r["stepId"]: r for r in json.load(open(os.path.join(ROOT, "_sources/wix/wix-extract.json")))}
 MODULES = json.load(open(os.path.join(SITE, "data/modules.json")))
-V = "26"  # asset cache-bust version
+V = "27"  # asset cache-bust version
 
 # ---------------------------------------------------------------- helpers
 def enh_path(fn):
@@ -227,10 +227,9 @@ def pager(prev, nxt):
     return f'<div class="wrap wrap-narrow"><nav class="pager" aria-label="Lesson navigation">{cell(prev,"prev","prev")}{cell(nxt,"next","next")}</nav></div>'
 
 def complete_block(lesson):
-    return f"""<div class="wrap wrap-narrow"><div class="panel panel-tinted" style="text-align:center;margin-top:2rem">
-  <button class="btn btn-primary" data-mark-complete data-done="false"><span data-icon="circle-check-big"></span><span data-mc-label>Mark this lesson complete</span></button>
-</div>
-<span data-complete-sentinel aria-hidden="true"></span>
+    return f"""<div class="wrap wrap-narrow" style="text-align:center;margin-top:1rem">
+  <button class="btn btn-primary btn-complete" data-mark-complete data-done="false"><span data-icon="circle-check-big"></span><span data-mc-label>Mark this lesson complete</span></button>
+  <span data-complete-sentinel aria-hidden="true"></span>
 </div>"""
 
 print("build_pages.py loaded — use build_all() from a driver.")

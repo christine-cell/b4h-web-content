@@ -27,6 +27,15 @@
       }
       render();
     },
+    uncomplete: function (id) {
+      if (this.data.completed && this.data.completed[id]) {
+        delete this.data.completed[id];
+        if (this.data.quizzes) delete this.data.quizzes[id];
+        write(this.data);
+        document.dispatchEvent(new CustomEvent("b4h:progress", { detail: { id: id } }));
+      }
+      render();
+    },
     setQuiz: function (id, score, passed) {
       this.data.quizzes = this.data.quizzes || {};
       this.data.quizzes[id] = { score: score, passed: passed, at: Date.now() };
@@ -171,7 +180,7 @@
       });
     }
     document.querySelectorAll("[data-mark-complete]").forEach(function (btn) {
-      btn.onclick = function () { P.markComplete(id); refreshBtn(); };
+      btn.onclick = function () { if (P.isComplete(id)) P.uncomplete(id); else P.markComplete(id); refreshBtn(); };
     });
     refreshBtn();
 
