@@ -3,7 +3,7 @@
 import json, os, html as htmllib
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 M = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "12"
+V = "13"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, prefix):
@@ -68,22 +68,26 @@ def lesson_row(l, prefix):
 
 def module_card(m, prefix):
     lessons = "\n".join(lesson_row(l, prefix) for l in m["lessons"])
-    return f"""<article class="card" data-reveal id="{esc(m['slug'])}" style="padding:clamp(1.2rem,3vw,2rem)">
-      <div class="cluster" style="justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-        <div class="cluster" style="gap:1rem">
-          <span class="chip" data-icon="{m['icon']}" style="width:60px;height:60px"></span>
-          <div>
-            <span class="eyebrow" style="margin:0">Module {m['num']}</span>
-            <h3 style="margin:.1rem 0 0">{bilingual(esc(m['title']['en'].split('·')[-1].strip()), esc((m['title'].get('fr') or m['title']['en']).split('·')[-1].strip()))}</h3>
-            <p class="muted" style="margin:.3rem 0 0;max-width:60ch">{bilingual(esc(m['desc']['en']), esc(m['desc'].get('fr') or m['desc']['en']))}</p>
-          </div>
+    ten = esc(m['title']['en'].split('·')[-1].strip())
+    tfr = esc((m['title'].get('fr') or m['title']['en']).split('·')[-1].strip())
+    return f"""<article class="card module-card" data-reveal id="{esc(m['slug'])}" data-mod="{m['num']}">
+      <div class="module-cover">
+        <span class="module-cover-wm" data-icon="{m['icon']}" aria-hidden="true"></span>
+        <span class="module-cover-chip" data-icon="{m['icon']}"></span>
+        <div class="module-cover-txt">
+          <span class="eyebrow">Module {m['num']}</span>
+          <h3>{bilingual(ten, tfr)}</h3>
         </div>
-        <div style="min-width:180px;flex:0 0 auto" data-progress-module="{esc(m['slug'])}">
-          <div class="cluster" style="justify-content:space-between"><span class="lr-meta">{len(m['lessons'])} {bilingual('lessons','leçons')}</span><span class="badge badge-primary" data-progress-count>0/{len(m['lessons'])}</span></div>
-          <div class="progressbar" style="margin-top:.5rem"><span data-progress-fill></span></div>
-        </div>
+        <span class="module-cover-count"><span data-progress-module="{esc(m['slug'])}"><span data-progress-count>0/{len(m['lessons'])}</span></span></span>
       </div>
-      <div class="grid grid-2" style="margin-top:1.4rem;gap:.6rem">{lessons}</div>
+      <div class="module-body">
+        <p class="muted" style="margin:0 0 1rem;max-width:62ch">{bilingual(esc(m['desc']['en']), esc(m['desc'].get('fr') or m['desc']['en']))}</p>
+        <div class="cluster" style="justify-content:space-between;margin-bottom:1rem" data-progress-module="{esc(m['slug'])}">
+          <span class="lr-meta">{len(m['lessons'])} {bilingual('lessons','leçons')}</span>
+          <div class="progressbar" style="flex:1;margin-left:1rem"><span data-progress-fill></span></div>
+        </div>
+        <div class="grid grid-2" style="gap:.6rem">{lessons}</div>
+      </div>
     </article>"""
 
 def build_hub():

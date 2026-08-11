@@ -10,10 +10,10 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/favicon.svg">
-<link rel="stylesheet" href="assets/css/fonts.css?v=12">
-<link rel="stylesheet" href="assets/css/tokens.css?v=12">
-<link rel="stylesheet" href="assets/css/site.css?v=12">
-<link rel="stylesheet" href="assets/css/print.css?v=12" media="print">
+<link rel="stylesheet" href="assets/css/fonts.css?v=13">
+<link rel="stylesheet" href="assets/css/tokens.css?v=13">
+<link rel="stylesheet" href="assets/css/site.css?v=13">
+<link rel="stylesheet" href="assets/css/print.css?v=13" media="print">
 <script>(function(){try{var d=document.documentElement,s=localStorage;
 d.setAttribute('data-theme',s.getItem('b4h-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
 d.setAttribute('lang',s.getItem('b4h-lang')||'en');
@@ -68,22 +68,23 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
       <div class="motif-line"></div>
       <h2><span data-lang-block="en">Program modules</span><span data-lang-block="fr">Modules du programme</span></h2>
       <p class="lead" style="max-width:60ch"><span data-lang-block="en">Five modules take you from understanding Parkinson’s to confidently running your own class.</span><span data-lang-block="fr">Cinq modules vous mènent de la compréhension de la maladie de Parkinson à l’animation confiante de votre propre cours.</span></p>
-      <div class="stack-lg" style="margin-top:2rem"><article class="card" data-reveal id="module-1-parkinsons-101" style="padding:clamp(1.2rem,3vw,2rem)">
-      <div class="cluster" style="justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-        <div class="cluster" style="gap:1rem">
-          <span class="chip" data-icon="brain" style="width:60px;height:60px"></span>
-          <div>
-            <span class="eyebrow" style="margin:0">Module 1</span>
-            <h3 style="margin:.1rem 0 0"><span data-lang-block="en">Parkinson&#x27;s 101</span><span data-lang-block="fr">La maladie de Parkinson 101</span></h3>
-            <p class="muted" style="margin:.3rem 0 0;max-width:60ch"><span data-lang-block="en">Understand Parkinson&#x27;s disease — its symptoms, stages, assessment, and the people you&#x27;ll coach.</span><span data-lang-block="fr">Comprendre la maladie de Parkinson — ses symptômes, ses stades, l&#x27;évaluation et les personnes que vous accompagnerez.</span></p>
-          </div>
+      <div class="stack-lg" style="margin-top:2rem"><article class="card module-card" data-reveal id="module-1-parkinsons-101" data-mod="1">
+      <div class="module-cover">
+        <span class="module-cover-wm" data-icon="brain" aria-hidden="true"></span>
+        <span class="module-cover-chip" data-icon="brain"></span>
+        <div class="module-cover-txt">
+          <span class="eyebrow">Module 1</span>
+          <h3><span data-lang-block="en">Parkinson&#x27;s 101</span><span data-lang-block="fr">La maladie de Parkinson 101</span></h3>
         </div>
-        <div style="min-width:180px;flex:0 0 auto" data-progress-module="module-1-parkinsons-101">
-          <div class="cluster" style="justify-content:space-between"><span class="lr-meta">10 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span><span class="badge badge-primary" data-progress-count>0/10</span></div>
-          <div class="progressbar" style="margin-top:.5rem"><span data-progress-fill></span></div>
-        </div>
+        <span class="module-cover-count"><span data-progress-module="module-1-parkinsons-101"><span data-progress-count>0/10</span></span></span>
       </div>
-      <div class="grid grid-2" style="margin-top:1.4rem;gap:.6rem"><a class="lesson-row" href="modules/welcome-parkinsons-101.html" data-lesson-ref="welcome-parkinsons-101">
+      <div class="module-body">
+        <p class="muted" style="margin:0 0 1rem;max-width:62ch"><span data-lang-block="en">Understand Parkinson&#x27;s disease — its symptoms, stages, assessment, and the people you&#x27;ll coach.</span><span data-lang-block="fr">Comprendre la maladie de Parkinson — ses symptômes, ses stades, l&#x27;évaluation et les personnes que vous accompagnerez.</span></p>
+        <div class="cluster" style="justify-content:space-between;margin-bottom:1rem" data-progress-module="module-1-parkinsons-101">
+          <span class="lr-meta">10 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span>
+          <div class="progressbar" style="flex:1;margin-left:1rem"><span data-progress-fill></span></div>
+        </div>
+        <div class="grid grid-2" style="gap:.6rem"><a class="lesson-row" href="modules/welcome-parkinsons-101.html" data-lesson-ref="welcome-parkinsons-101">
       <span class="chip chip-sm" data-icon="book-open"></span>
       <span>
         <span class="lr-title"><span data-lang-block="en">Welcome &amp; Parkinson&#x27;s 101</span><span data-lang-block="fr">Bienvenue et Parkinson 101</span></span><br>
@@ -163,23 +164,25 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
       </span>
       <span class="lr-mark"><span class="status-chip" data-lesson-status data-status="not-started"></span></span>
     </a></div>
-    </article>
-<article class="card" data-reveal id="module-2-class-breakdown" style="padding:clamp(1.2rem,3vw,2rem)">
-      <div class="cluster" style="justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-        <div class="cluster" style="gap:1rem">
-          <span class="chip" data-icon="dumbbell" style="width:60px;height:60px"></span>
-          <div>
-            <span class="eyebrow" style="margin:0">Module 2</span>
-            <h3 style="margin:.1rem 0 0"><span data-lang-block="en">Class Breakdown</span><span data-lang-block="fr">Déroulement du cours</span></h3>
-            <p class="muted" style="margin:.3rem 0 0;max-width:60ch"><span data-lang-block="en">How a Boxing4Health class runs — the science, the structure, the exercises, and running it safely.</span><span data-lang-block="fr">Comment se déroule un cours Boxing4Health — la science, la structure, les exercices et son animation en toute sécurité.</span></p>
-          </div>
-        </div>
-        <div style="min-width:180px;flex:0 0 auto" data-progress-module="module-2-class-breakdown">
-          <div class="cluster" style="justify-content:space-between"><span class="lr-meta">18 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span><span class="badge badge-primary" data-progress-count>0/18</span></div>
-          <div class="progressbar" style="margin-top:.5rem"><span data-progress-fill></span></div>
-        </div>
       </div>
-      <div class="grid grid-2" style="margin-top:1.4rem;gap:.6rem"><a class="lesson-row" href="modules/class-breakdown-overview.html" data-lesson-ref="class-breakdown-overview">
+    </article>
+<article class="card module-card" data-reveal id="module-2-class-breakdown" data-mod="2">
+      <div class="module-cover">
+        <span class="module-cover-wm" data-icon="dumbbell" aria-hidden="true"></span>
+        <span class="module-cover-chip" data-icon="dumbbell"></span>
+        <div class="module-cover-txt">
+          <span class="eyebrow">Module 2</span>
+          <h3><span data-lang-block="en">Class Breakdown</span><span data-lang-block="fr">Déroulement du cours</span></h3>
+        </div>
+        <span class="module-cover-count"><span data-progress-module="module-2-class-breakdown"><span data-progress-count>0/18</span></span></span>
+      </div>
+      <div class="module-body">
+        <p class="muted" style="margin:0 0 1rem;max-width:62ch"><span data-lang-block="en">How a Boxing4Health class runs — the science, the structure, the exercises, and running it safely.</span><span data-lang-block="fr">Comment se déroule un cours Boxing4Health — la science, la structure, les exercices et son animation en toute sécurité.</span></p>
+        <div class="cluster" style="justify-content:space-between;margin-bottom:1rem" data-progress-module="module-2-class-breakdown">
+          <span class="lr-meta">18 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span>
+          <div class="progressbar" style="flex:1;margin-left:1rem"><span data-progress-fill></span></div>
+        </div>
+        <div class="grid grid-2" style="gap:.6rem"><a class="lesson-row" href="modules/class-breakdown-overview.html" data-lesson-ref="class-breakdown-overview">
       <span class="chip chip-sm" data-icon="shapes"></span>
       <span>
         <span class="lr-title"><span data-lang-block="en">Class Breakdown Overview</span><span data-lang-block="fr">Aperçu du déroulement du cours</span></span><br>
@@ -323,23 +326,25 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
       </span>
       <span class="lr-mark"><span class="status-chip" data-lesson-status data-status="not-started"></span></span>
     </a></div>
-    </article>
-<article class="card" data-reveal id="module-3-practical-steps" style="padding:clamp(1.2rem,3vw,2rem)">
-      <div class="cluster" style="justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-        <div class="cluster" style="gap:1rem">
-          <span class="chip" data-icon="graduation-cap" style="width:60px;height:60px"></span>
-          <div>
-            <span class="eyebrow" style="margin:0">Module 3</span>
-            <h3 style="margin:.1rem 0 0"><span data-lang-block="en">Practical Steps</span><span data-lang-block="fr">Étapes pratiques</span></h3>
-            <p class="muted" style="margin:.3rem 0 0;max-width:60ch"><span data-lang-block="en">You&#x27;re almost there — the practical steps to launch your Boxing4Health class.</span><span data-lang-block="fr">Vous y êtes presque — les étapes pratiques pour lancer votre cours Boxing4Health.</span></p>
-          </div>
-        </div>
-        <div style="min-width:180px;flex:0 0 auto" data-progress-module="module-3-practical-steps">
-          <div class="cluster" style="justify-content:space-between"><span class="lr-meta">1 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span><span class="badge badge-primary" data-progress-count>0/1</span></div>
-          <div class="progressbar" style="margin-top:.5rem"><span data-progress-fill></span></div>
-        </div>
       </div>
-      <div class="grid grid-2" style="margin-top:1.4rem;gap:.6rem"><a class="lesson-row" href="modules/youre-almost-there.html" data-lesson-ref="youre-almost-there">
+    </article>
+<article class="card module-card" data-reveal id="module-3-practical-steps" data-mod="3">
+      <div class="module-cover">
+        <span class="module-cover-wm" data-icon="graduation-cap" aria-hidden="true"></span>
+        <span class="module-cover-chip" data-icon="graduation-cap"></span>
+        <div class="module-cover-txt">
+          <span class="eyebrow">Module 3</span>
+          <h3><span data-lang-block="en">Practical Steps</span><span data-lang-block="fr">Étapes pratiques</span></h3>
+        </div>
+        <span class="module-cover-count"><span data-progress-module="module-3-practical-steps"><span data-progress-count>0/1</span></span></span>
+      </div>
+      <div class="module-body">
+        <p class="muted" style="margin:0 0 1rem;max-width:62ch"><span data-lang-block="en">You&#x27;re almost there — the practical steps to launch your Boxing4Health class.</span><span data-lang-block="fr">Vous y êtes presque — les étapes pratiques pour lancer votre cours Boxing4Health.</span></p>
+        <div class="cluster" style="justify-content:space-between;margin-bottom:1rem" data-progress-module="module-3-practical-steps">
+          <span class="lr-meta">1 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span>
+          <div class="progressbar" style="flex:1;margin-left:1rem"><span data-progress-fill></span></div>
+        </div>
+        <div class="grid grid-2" style="gap:.6rem"><a class="lesson-row" href="modules/youre-almost-there.html" data-lesson-ref="youre-almost-there">
       <span class="chip chip-sm" data-icon="book-open"></span>
       <span>
         <span class="lr-title"><span data-lang-block="en">You&#x27;re Almost There</span><span data-lang-block="fr">Vous y êtes presque</span></span><br>
@@ -347,23 +352,25 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
       </span>
       <span class="lr-mark"><span class="status-chip" data-lesson-status data-status="not-started"></span></span>
     </a></div>
-    </article>
-<article class="card" data-reveal id="module-4-learning-resources" style="padding:clamp(1.2rem,3vw,2rem)">
-      <div class="cluster" style="justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-        <div class="cluster" style="gap:1rem">
-          <span class="chip" data-icon="book-open" style="width:60px;height:60px"></span>
-          <div>
-            <span class="eyebrow" style="margin:0">Module 4</span>
-            <h3 style="margin:.1rem 0 0"><span data-lang-block="en">Learning Resources</span><span data-lang-block="fr">Ressources d&#x27;apprentissage</span></h3>
-            <p class="muted" style="margin:.3rem 0 0;max-width:60ch"><span data-lang-block="en">Extra tools and orientation to support you and your volunteers.</span><span data-lang-block="fr">Des outils et une orientation supplémentaires pour vous soutenir, vous et vos bénévoles.</span></p>
-          </div>
-        </div>
-        <div style="min-width:180px;flex:0 0 auto" data-progress-module="module-4-learning-resources">
-          <div class="cluster" style="justify-content:space-between"><span class="lr-meta">5 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span><span class="badge badge-primary" data-progress-count>0/5</span></div>
-          <div class="progressbar" style="margin-top:.5rem"><span data-progress-fill></span></div>
-        </div>
       </div>
-      <div class="grid grid-2" style="margin-top:1.4rem;gap:.6rem"><a class="lesson-row" href="modules/learning-resources.html" data-lesson-ref="learning-resources">
+    </article>
+<article class="card module-card" data-reveal id="module-4-learning-resources" data-mod="4">
+      <div class="module-cover">
+        <span class="module-cover-wm" data-icon="book-open" aria-hidden="true"></span>
+        <span class="module-cover-chip" data-icon="book-open"></span>
+        <div class="module-cover-txt">
+          <span class="eyebrow">Module 4</span>
+          <h3><span data-lang-block="en">Learning Resources</span><span data-lang-block="fr">Ressources d&#x27;apprentissage</span></h3>
+        </div>
+        <span class="module-cover-count"><span data-progress-module="module-4-learning-resources"><span data-progress-count>0/5</span></span></span>
+      </div>
+      <div class="module-body">
+        <p class="muted" style="margin:0 0 1rem;max-width:62ch"><span data-lang-block="en">Extra tools and orientation to support you and your volunteers.</span><span data-lang-block="fr">Des outils et une orientation supplémentaires pour vous soutenir, vous et vos bénévoles.</span></p>
+        <div class="cluster" style="justify-content:space-between;margin-bottom:1rem" data-progress-module="module-4-learning-resources">
+          <span class="lr-meta">5 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span>
+          <div class="progressbar" style="flex:1;margin-left:1rem"><span data-progress-fill></span></div>
+        </div>
+        <div class="grid grid-2" style="gap:.6rem"><a class="lesson-row" href="modules/learning-resources.html" data-lesson-ref="learning-resources">
       <span class="chip chip-sm" data-icon="book-open"></span>
       <span>
         <span class="lr-title"><span data-lang-block="en">Learning Resources</span><span data-lang-block="fr">Ressources d&#x27;apprentissage</span></span><br>
@@ -403,23 +410,25 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
       </span>
       <span class="lr-mark"><span class="status-chip" data-lesson-status data-status="not-started"></span></span>
     </a></div>
-    </article>
-<article class="card" data-reveal id="module-5-admin-forms" style="padding:clamp(1.2rem,3vw,2rem)">
-      <div class="cluster" style="justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-        <div class="cluster" style="gap:1rem">
-          <span class="chip" data-icon="clipboard-list" style="width:60px;height:60px"></span>
-          <div>
-            <span class="eyebrow" style="margin:0">Module 5</span>
-            <h3 style="margin:.1rem 0 0"><span data-lang-block="en">Admin Forms</span><span data-lang-block="fr">Formulaires administratifs</span></h3>
-            <p class="muted" style="margin:.3rem 0 0;max-width:60ch"><span data-lang-block="en">Administrative forms and paperwork for running your licensed program.</span><span data-lang-block="fr">Les formulaires administratifs et les documents pour gérer votre programme sous licence.</span></p>
-          </div>
-        </div>
-        <div style="min-width:180px;flex:0 0 auto" data-progress-module="module-5-admin-forms">
-          <div class="cluster" style="justify-content:space-between"><span class="lr-meta">1 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span><span class="badge badge-primary" data-progress-count>0/1</span></div>
-          <div class="progressbar" style="margin-top:.5rem"><span data-progress-fill></span></div>
-        </div>
       </div>
-      <div class="grid grid-2" style="margin-top:1.4rem;gap:.6rem"><a class="lesson-row" href="modules/admin-forms.html" data-lesson-ref="admin-forms">
+    </article>
+<article class="card module-card" data-reveal id="module-5-admin-forms" data-mod="5">
+      <div class="module-cover">
+        <span class="module-cover-wm" data-icon="clipboard-list" aria-hidden="true"></span>
+        <span class="module-cover-chip" data-icon="clipboard-list"></span>
+        <div class="module-cover-txt">
+          <span class="eyebrow">Module 5</span>
+          <h3><span data-lang-block="en">Admin Forms</span><span data-lang-block="fr">Formulaires administratifs</span></h3>
+        </div>
+        <span class="module-cover-count"><span data-progress-module="module-5-admin-forms"><span data-progress-count>0/1</span></span></span>
+      </div>
+      <div class="module-body">
+        <p class="muted" style="margin:0 0 1rem;max-width:62ch"><span data-lang-block="en">Administrative forms and paperwork for running your licensed program.</span><span data-lang-block="fr">Les formulaires administratifs et les documents pour gérer votre programme sous licence.</span></p>
+        <div class="cluster" style="justify-content:space-between;margin-bottom:1rem" data-progress-module="module-5-admin-forms">
+          <span class="lr-meta">1 <span data-lang-block="en">lessons</span><span data-lang-block="fr">leçons</span></span>
+          <div class="progressbar" style="flex:1;margin-left:1rem"><span data-progress-fill></span></div>
+        </div>
+        <div class="grid grid-2" style="gap:.6rem"><a class="lesson-row" href="modules/admin-forms.html" data-lesson-ref="admin-forms">
       <span class="chip chip-sm" data-icon="clipboard-list"></span>
       <span>
         <span class="lr-title"><span data-lang-block="en">Admin Forms</span><span data-lang-block="fr">Formulaires administratifs</span></span><br>
@@ -427,6 +436,7 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
       </span>
       <span class="lr-mark"><span class="status-chip" data-lesson-status data-status="not-started"></span></span>
     </a></div>
+      </div>
     </article></div>
     </div></section><section class="section-tight"><div class="wrap">
       <h2><span data-lang-block="en">Learning resources</span><span data-lang-block="fr">Ressources d’apprentissage</span></h2>
@@ -440,10 +450,10 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
       </div>
     </div></section></main>
 <div data-include="footer"></div>
-<script src="assets/js/icons.js?v=12"></script>
-<script src="assets/js/i18n.js?v=12"></script>
-<script src="assets/js/site.js?v=12"></script>
-<script src="assets/js/progress.js?v=12"></script>
-<script src="assets/js/search.js?v=12"></script>
-<script src="assets/js/read-aloud.js?v=12"></script>
+<script src="assets/js/icons.js?v=13"></script>
+<script src="assets/js/i18n.js?v=13"></script>
+<script src="assets/js/site.js?v=13"></script>
+<script src="assets/js/progress.js?v=13"></script>
+<script src="assets/js/search.js?v=13"></script>
+<script src="assets/js/read-aloud.js?v=13"></script>
 </body></html>
