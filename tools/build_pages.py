@@ -15,7 +15,7 @@ ENH_DIRS = [os.path.join(ROOT, "_sources/enhanced/boxing-4-health-PD-symptoms"),
             os.path.join(ROOT, "_sources/enhanced/boxing4health-training")]
 WIX = {r["stepId"]: r for r in json.load(open(os.path.join(ROOT, "_sources/wix/wix-extract.json")))}
 MODULES = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "3"  # asset cache-bust version
+V = "4"  # asset cache-bust version
 
 # ---------------------------------------------------------------- helpers
 def enh_path(fn):
@@ -417,12 +417,30 @@ def build_wix_page(mod, lesson, prev, nxt):
     parts.append(foot(feature))
     return "\n".join(parts)
 
+def build_authored_page(mod, lesson, prev, nxt):
+    """Wrap a hand/AI re-authored lesson body (unified components) in the shell."""
+    inner = open(os.path.join(ROOT, "_authored", lesson["slug"]+".html"), encoding="utf-8").read()
+    hasquiz = "data-quiz" in inner
+    feature = ["quiz"] if hasquiz else []
+    h = head(lesson["title"]["en"], lesson["summary"]["en"] or mod["desc"]["en"])
+    h = h.replace("{BODYATTRS}", body_attrs(lesson, hasquiz))
+    parts = [h, lesson_header(mod, lesson)]
+    parts.append('<section class="section-tight"><div class="wrap wrap-narrow"><div class="prose lesson-body" data-lesson-content>')
+    parts.append(inner)
+    parts.append('</div></div></section>')
+    parts.append('<section class="section-tight">'+complete_block(lesson)+'</section>')
+    parts.append('<section class="section-tight">'+pager(prev,nxt)+'</section>')
+    parts.append(foot(feature))
+    return "\n".join(parts)
+
 def build_all():
     seq = flat_lessons(); made=[]
     for i,(m,l) in enumerate(seq):
         prev = seq[i-1][1] if i>0 else None
         nxt = seq[i+1][1] if i<len(seq)-1 else None
-        if l.get("enhancedFile"):
+        if os.path.exists(os.path.join(ROOT, "_authored", l["slug"]+".html")):
+            out = build_authored_page(m,l,prev,nxt)
+        elif l.get("enhancedFile"):
             out = build_enhanced_page(m,l,prev,nxt)
         else:
             out = build_wix_page(m,l,prev,nxt)

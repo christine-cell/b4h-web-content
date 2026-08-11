@@ -21,7 +21,7 @@
   /* ---- Semantic status (harmonized with blue) ---- */
   --info:    #2a7fc4;  --info-bg:    #eaf3fb;  --info-border:    #bcdcf4;
   --success: #1e9e77;  --success-bg: #e7f6f0;  --success-border: #b9e6d6;
-  --safety:  #c9791a;  --safety-bg:  #fdf1e0;  --safety-border:  #f6d9ad;  /* amber = safety/warning */
+  --safety:  #a8620d;  --safety-bg:  #fdf1e0;  --safety-border:  #f6d9ad;  /* amber = safety/warning */
   --danger:  #cf4b4b;  --danger-bg:  #fceceb;  --danger-border:  #f4c4c2;
   --gold:    #e2a32e;  /* accent, used sparingly */
 
