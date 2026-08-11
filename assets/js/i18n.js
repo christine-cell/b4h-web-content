@@ -1,0 +1,156 @@
+/* ============================================================
+   i18n.js — UI-chrome strings (EN / fr-CA) + language application.
+   Body content is translated via paired [data-lang-block] elements
+   (shown/hidden by CSS). This file handles nav, buttons, controls,
+   and other interface strings referenced with data-i18n keys.
+   ============================================================ */
+window.B4H_STRINGS = {
+  en: {
+    "nav.home": "Home",
+    "nav.modules": "Modules",
+    "nav.resources": "Resources",
+    "nav.search": "Search",
+    "nav.menu": "Menu",
+    "reader.title": "Reading & accessibility",
+    "reader.theme": "Theme",
+    "reader.light": "Light",
+    "reader.dark": "Dark",
+    "reader.textsize": "Text size",
+    "reader.spacing": "Line spacing",
+    "reader.spacing.normal": "Normal",
+    "reader.spacing.relaxed": "Relaxed",
+    "reader.contrast": "High contrast",
+    "reader.language": "Language",
+    "reader.readaloud": "Read this page aloud",
+    "reader.stopreading": "Stop reading",
+    "a11y.on": "On",
+    "a11y.off": "Off",
+    "hub.continue": "Continue where you left off",
+    "hub.start": "Start the program",
+    "hub.progress": "Your progress",
+    "hub.complete": "complete",
+    "hub.howto": "How to use this site",
+    "status.complete": "Complete",
+    "status.inprogress": "In progress",
+    "status.notstarted": "Not started",
+    "status.next": "Start here",
+    "lesson.objectives": "What you'll learn",
+    "lesson.takeaways": "Key takeaways",
+    "lesson.markdone": "Mark this lesson complete",
+    "lesson.done": "Completed",
+    "lesson.time": "min read",
+    "lesson.updated": "Updated",
+    "lesson.prev": "Previous",
+    "lesson.next": "Next",
+    "lesson.toc": "On this page",
+    "video.watch": "Watch video",
+    "video.loadnote": "Loads from YouTube when you click",
+    "quiz.check": "Check answer",
+    "quiz.next": "Next question",
+    "quiz.finish": "See results",
+    "quiz.retry": "Try again",
+    "quiz.correct": "Correct!",
+    "quiz.incorrect": "Not quite —",
+    "quiz.yourscore": "Your score",
+    "quiz.passed": "You passed! Lesson complete.",
+    "quiz.review": "Review the material and try again.",
+    "search.placeholder": "Search the program…",
+    "search.noresults": "No results",
+    "cert.title": "Certificate of Completion",
+    "cert.sub": "This certifies that",
+    "cert.body": "has completed the Boxing4Health Licensee Training Program",
+    "cert.print": "Print / Save as PDF",
+    "cert.locked": "Complete all modules and quizzes to unlock your certificate.",
+    "cert.name": "Enter your name",
+    "progress.reset": "Reset my progress",
+    "progress.resetconfirm": "Reset all your progress on this device?",
+    "foot.tagline": "Senior fitness & boxing — empowering people living with Parkinson's.",
+    "foot.contact": "Contact",
+    "foot.program": "Program",
+    "foot.rights": "For licensed Boxing4Health coaches.",
+    "fr.reviewflag": ""
+  },
+  fr: {
+    "nav.home": "Accueil",
+    "nav.modules": "Modules",
+    "nav.resources": "Ressources",
+    "nav.search": "Rechercher",
+    "nav.menu": "Menu",
+    "reader.title": "Lecture et accessibilité",
+    "reader.theme": "Thème",
+    "reader.light": "Clair",
+    "reader.dark": "Sombre",
+    "reader.textsize": "Taille du texte",
+    "reader.spacing": "Interligne",
+    "reader.spacing.normal": "Normal",
+    "reader.spacing.relaxed": "Aéré",
+    "reader.contrast": "Contraste élevé",
+    "reader.language": "Langue",
+    "reader.readaloud": "Lire cette page à voix haute",
+    "reader.stopreading": "Arrêter la lecture",
+    "a11y.on": "Activé",
+    "a11y.off": "Désactivé",
+    "hub.continue": "Reprendre où vous étiez",
+    "hub.start": "Commencer le programme",
+    "hub.progress": "Votre progression",
+    "hub.complete": "complété",
+    "hub.howto": "Comment utiliser ce site",
+    "status.complete": "Terminé",
+    "status.inprogress": "En cours",
+    "status.notstarted": "Non commencé",
+    "status.next": "Commencez ici",
+    "lesson.objectives": "Ce que vous allez apprendre",
+    "lesson.takeaways": "Points clés à retenir",
+    "lesson.markdone": "Marquer cette leçon comme terminée",
+    "lesson.done": "Terminé",
+    "lesson.time": "min de lecture",
+    "lesson.updated": "Mis à jour",
+    "lesson.prev": "Précédent",
+    "lesson.next": "Suivant",
+    "lesson.toc": "Sur cette page",
+    "video.watch": "Regarder la vidéo",
+    "video.loadnote": "Se charge depuis YouTube au clic",
+    "quiz.check": "Vérifier la réponse",
+    "quiz.next": "Question suivante",
+    "quiz.finish": "Voir les résultats",
+    "quiz.retry": "Réessayer",
+    "quiz.correct": "Bonne réponse !",
+    "quiz.incorrect": "Pas tout à fait —",
+    "quiz.yourscore": "Votre résultat",
+    "quiz.passed": "Réussi ! Leçon terminée.",
+    "quiz.review": "Revoyez la matière et réessayez.",
+    "search.placeholder": "Rechercher dans le programme…",
+    "search.noresults": "Aucun résultat",
+    "cert.title": "Certificat de réussite",
+    "cert.sub": "Ceci atteste que",
+    "cert.body": "a complété le programme de formation des licenciés Boxing4Health",
+    "cert.print": "Imprimer / Enregistrer en PDF",
+    "cert.locked": "Complétez tous les modules et questionnaires pour débloquer votre certificat.",
+    "cert.name": "Entrez votre nom",
+    "progress.reset": "Réinitialiser ma progression",
+    "progress.resetconfirm": "Réinitialiser toute votre progression sur cet appareil ?",
+    "foot.tagline": "Conditionnement physique et boxe pour aînés — autonomiser les personnes atteintes de la maladie de Parkinson.",
+    "foot.contact": "Contact",
+    "foot.program": "Programme",
+    "foot.rights": "Pour les entraîneurs licenciés Boxing4Health.",
+    "fr.reviewflag": "Traduction en cours de révision"
+  }
+};
+
+window.B4H_t = function(key, lang){
+  lang = lang || document.documentElement.getAttribute('lang') || 'en';
+  var s = window.B4H_STRINGS[lang] || window.B4H_STRINGS.en;
+  return (key in s) ? s[key] : (window.B4H_STRINGS.en[key] != null ? window.B4H_STRINGS.en[key] : key);
+};
+
+window.B4H_applyI18n = function(root, lang){
+  root = root || document;
+  lang = lang || document.documentElement.getAttribute('lang') || 'en';
+  root.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key = el.getAttribute('data-i18n');
+    var val = window.B4H_t(key, lang);
+    var attr = el.getAttribute('data-i18n-attr');
+    if (attr) el.setAttribute(attr, val);
+    else el.textContent = val;
+  });
+};

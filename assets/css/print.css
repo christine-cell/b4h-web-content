@@ -1,0 +1,20 @@
+/* Print styles — clean module/certificate printing for licensees */
+@media print {
+  :root { --font-scale: 1; }
+  .site-header, .site-footer, .to-top, .read-progress, .toc, .reader-menu,
+  .nav, .nav-toggle, .video .video-play, .search-input, .modal, .pager,
+  .hero-actions, .no-print { display: none !important; }
+  body { background: #fff; color: #000; font-size: 12pt; }
+  a { color: #000; text-decoration: underline; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; color: #444; }
+  .hero { background: #fff !important; color: #000 !important; }
+  .hero h1, .hero p { color: #000 !important; }
+  .lesson-layout.has-toc { grid-template-columns: 1fr !important; }
+  .card, .callout, .panel, .quiz, .accordion { box-shadow: none !important; border: 1px solid #bbb !important; break-inside: avoid; }
+  .accordion .acc-panel { max-height: none !important; }
+  .accordion .acc-panel-inner { padding-top: .4rem; }
+  h1,h2,h3,h4 { break-after: avoid; color: #000 !important; }
+  img, .video { break-inside: avoid; }
+  .certificate { border-color: #0d334f !important; }
+  main { padding: 0 !important; }
+}

@@ -1,0 +1,963 @@
+{
+  "program": {
+    "en": "B4H Licensee Training Program",
+    "fr": "Programme de formation des licenciés B4H"
+  },
+  "modules": [
+    {
+      "slug": "module-1-parkinsons-101",
+      "num": 1,
+      "title": {
+        "en": "Module 1 · Parkinson's 101",
+        "fr": ""
+      },
+      "desc": {
+        "en": "Understand Parkinson's disease — its symptoms, stages, assessment, and the people you'll coach.",
+        "fr": ""
+      },
+      "icon": "brain",
+      "lessons": [
+        {
+          "id": "welcome-parkinsons-101",
+          "slug": "welcome-parkinsons-101",
+          "url": "modules/welcome-parkinsons-101.html",
+          "title": {
+            "en": "Welcome & Parkinson's 101",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "welcome  parkinsons 101",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "book-open",
+          "minutes": 6,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module1_intro (1).html",
+          "wixStepId": "f7416bcb-662a-4926-8072-8a31417ed2fc",
+          "videos": []
+        },
+        {
+          "id": "lesson-1-parkinsons-symptoms",
+          "slug": "lesson-1-parkinsons-symptoms",
+          "url": "modules/lesson-1-parkinsons-symptoms.html",
+          "title": {
+            "en": "Lesson 1 · Parkinson's Symptoms",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "lesson 1  parkinsons symptoms",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "activity",
+          "minutes": 11,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_lesson1_symptoms.html",
+          "wixStepId": "78d0f3e2-e837-408b-998b-1db38b96b224",
+          "videos": []
+        },
+        {
+          "id": "freezing-of-gait-video",
+          "slug": "freezing-of-gait-video",
+          "url": "modules/freezing-of-gait-video.html",
+          "title": {
+            "en": "Freezing of Gait (Video)",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "freezing of gait video",
+            "fr": ""
+          },
+          "type": "video",
+          "icon": "snowflake",
+          "minutes": 5,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "8765efd9-0857-4bac-a9d5-db6b5aaad1f8",
+          "videos": [
+            "MIAFilOOloU",
+            "wrxHJaPulgc"
+          ]
+        },
+        {
+          "id": "lesson-2-the-5-stages",
+          "slug": "lesson-2-the-5-stages",
+          "url": "modules/lesson-2-the-5-stages.html",
+          "title": {
+            "en": "Lesson 2 · The 5 Stages",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "lesson 2  the 5 stages",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "layers",
+          "minutes": 11,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_lesson2_stages (1).html",
+          "wixStepId": "9cf17afa-7fd1-449d-a09a-fec3cb42d0e6",
+          "videos": []
+        },
+        {
+          "id": "lesson-3-determining-the-stage",
+          "slug": "lesson-3-determining-the-stage",
+          "url": "modules/lesson-3-determining-the-stage.html",
+          "title": {
+            "en": "Lesson 3 · Determining the Stage",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "lesson 3  determining the stage",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "layers",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "2ba89f62-03ac-40ba-8781-698818841f35",
+          "videos": []
+        },
+        {
+          "id": "client-intake",
+          "slug": "client-intake",
+          "url": "modules/client-intake.html",
+          "title": {
+            "en": "Client Intake",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "client intake",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "clipboard-list",
+          "minutes": 3,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_lesson3b_intake.html",
+          "wixStepId": null,
+          "videos": []
+        },
+        {
+          "id": "lesson-4-assessments",
+          "slug": "lesson-4-assessments",
+          "url": "modules/lesson-4-assessments.html",
+          "title": {
+            "en": "Lesson 4 · Assessments",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "lesson 4  assessments",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "clipboard-check",
+          "minutes": 10,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_lesson4_assessments.html",
+          "wixStepId": "719e5398-2e9e-4e5e-9edc-88ffd0d439d0",
+          "videos": []
+        },
+        {
+          "id": "assessment-video",
+          "slug": "assessment-video",
+          "url": "modules/assessment-video.html",
+          "title": {
+            "en": "Assessment (Video)",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "assessment video",
+            "fr": ""
+          },
+          "type": "video",
+          "icon": "clipboard-check",
+          "minutes": 5,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "3c1f5d89-b89a-4b39-bf69-fb0a38cd8a88",
+          "videos": []
+        },
+        {
+          "id": "lesson-5-seniors-spouses",
+          "slug": "lesson-5-seniors-spouses",
+          "url": "modules/lesson-5-seniors-spouses.html",
+          "title": {
+            "en": "Lesson 5 · Seniors & Spouses",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "lesson 5  seniors  spouses",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "users",
+          "minutes": 10,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_lesson5_seniors_spouses.html",
+          "wixStepId": "befdf5b9-fc02-4652-be0b-bc0634128429",
+          "videos": []
+        },
+        {
+          "id": "start-up-equipment",
+          "slug": "start-up-equipment",
+          "url": "modules/start-up-equipment.html",
+          "title": {
+            "en": "Start-Up Equipment",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "startup equipment",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "dumbbell",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "e9d7846f-599a-4a7e-9622-b4976a3c440a",
+          "videos": []
+        }
+      ]
+    },
+    {
+      "slug": "module-2-class-breakdown",
+      "num": 2,
+      "title": {
+        "en": "Module 2 · Class Breakdown",
+        "fr": ""
+      },
+      "desc": {
+        "en": "How a Boxing4Health class runs — the science, the structure, the exercises, and running it safely.",
+        "fr": ""
+      },
+      "icon": "dumbbell",
+      "lessons": [
+        {
+          "id": "class-breakdown-overview",
+          "slug": "class-breakdown-overview",
+          "url": "modules/class-breakdown-overview.html",
+          "title": {
+            "en": "Class Breakdown Overview",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "class breakdown overview",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "shapes",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "0b00c596-00d5-413b-857e-3e5b8f225c59",
+          "videos": []
+        },
+        {
+          "id": "why-boxing",
+          "slug": "why-boxing",
+          "url": "modules/why-boxing.html",
+          "title": {
+            "en": "Why Boxing?",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "why boxing",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "heart-pulse",
+          "minutes": 14,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_why_boxing.html",
+          "wixStepId": "5c27e2eb-8a59-4ba2-bcd5-4e878ce23915",
+          "videos": []
+        },
+        {
+          "id": "boxing-101-video",
+          "slug": "boxing-101-video",
+          "url": "modules/boxing-101-video.html",
+          "title": {
+            "en": "Boxing 101 (Video)",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "boxing 101 video",
+            "fr": ""
+          },
+          "type": "video",
+          "icon": "circle-play",
+          "minutes": 5,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "cb6ae8f4-fe1e-4104-8bb7-138c2f5e9de5",
+          "videos": []
+        },
+        {
+          "id": "functional-exercises",
+          "slug": "functional-exercises",
+          "url": "modules/functional-exercises.html",
+          "title": {
+            "en": "Functional Exercises",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "functional exercises",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "dumbbell",
+          "minutes": 6,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_functional_exercises.html",
+          "wixStepId": "d8dd9fc5-888b-4275-86cc-51ae1d56aa8e",
+          "videos": []
+        },
+        {
+          "id": "warm-up",
+          "slug": "warm-up",
+          "url": "modules/warm-up.html",
+          "title": {
+            "en": "Warm Up",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "warm up",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "flame",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "678bbe71-a149-48e6-a46e-7588a8ecdeaa",
+          "videos": []
+        },
+        {
+          "id": "cool-down",
+          "slug": "cool-down",
+          "url": "modules/cool-down.html",
+          "title": {
+            "en": "Cool Down",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "cool down",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "wind",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "af6c3a00-0730-4fdc-a76a-30c3ab78c832",
+          "videos": []
+        },
+        {
+          "id": "pd-warrior",
+          "slug": "pd-warrior",
+          "url": "modules/pd-warrior.html",
+          "title": {
+            "en": "PD Warrior",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "pd warrior",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "shield-check",
+          "minutes": 6,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_pd_warrior.html",
+          "wixStepId": "b13cb282-577b-425a-9602-b65389c8ac56",
+          "videos": []
+        },
+        {
+          "id": "pd-warrior-exercises-videos",
+          "slug": "pd-warrior-exercises-videos",
+          "url": "modules/pd-warrior-exercises-videos.html",
+          "title": {
+            "en": "PD Warrior Exercises (Videos)",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "pd warrior exercises videos",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "shield-check",
+          "minutes": 9,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_pd_warrior_exercises.html",
+          "wixStepId": "69c9cdb1-5ba9-4331-b5f7-16ae21b34258",
+          "videos": [
+            "40Py_LXA-kQ",
+            "10Ybc-q-AaE",
+            "VhULAtOM24U",
+            "kw3XHS2swTE",
+            "DjWv0vljlzw",
+            "BeJMw-lkC9o",
+            "EM-VzOs3Xz8",
+            "Q9EWH7yaNmI",
+            "JBC65ii_IAM",
+            "3fo1INxGGiI"
+          ]
+        },
+        {
+          "id": "teaching-101-vigor",
+          "slug": "teaching-101-vigor",
+          "url": "modules/teaching-101-vigor.html",
+          "title": {
+            "en": "Teaching 101 · VIGOR",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "teaching 101  vigor",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "zap",
+          "minutes": 12,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_vigor.html",
+          "wixStepId": "c928fded-bfa1-4e05-93bd-7017acf04a0a",
+          "videos": []
+        },
+        {
+          "id": "setting-up-a-class",
+          "slug": "setting-up-a-class",
+          "url": "modules/setting-up-a-class.html",
+          "title": {
+            "en": "Setting Up a Class",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "setting up a class",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "book-open",
+          "minutes": 8,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_class_setup.html",
+          "wixStepId": "64929190-69ba-408c-9bb0-b53bde7d639c",
+          "videos": []
+        },
+        {
+          "id": "fighter-class-template",
+          "slug": "fighter-class-template",
+          "url": "modules/fighter-class-template.html",
+          "title": {
+            "en": "Fighter Class Template",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "fighter class template",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "clipboard-list",
+          "minutes": 6,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_fighter_template.html",
+          "wixStepId": "eb0850f8-c113-4307-8f94-65e5703439a3",
+          "videos": []
+        },
+        {
+          "id": "champion-class-template",
+          "slug": "champion-class-template",
+          "url": "modules/champion-class-template.html",
+          "title": {
+            "en": "Champion Class Template",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "champion class template",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "award",
+          "minutes": 7,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_champion_template.html",
+          "wixStepId": "a06e2f22-ca0d-4df5-9198-422ef7c2152c",
+          "videos": []
+        },
+        {
+          "id": "champion-plus-program",
+          "slug": "champion-plus-program",
+          "url": "modules/champion-plus-program.html",
+          "title": {
+            "en": "Champion Plus Program",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "champion plus program",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "award",
+          "minutes": 3,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_champion_plus.html",
+          "wixStepId": null,
+          "videos": []
+        },
+        {
+          "id": "cueing-students",
+          "slug": "cueing-students",
+          "url": "modules/cueing-students.html",
+          "title": {
+            "en": "Cueing Students",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "cueing students",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "hand",
+          "minutes": 7,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_cueing_students.html",
+          "wixStepId": "f06f7c40-a397-4e55-a265-4331241f7bd8",
+          "videos": []
+        },
+        {
+          "id": "pro-tips-qa",
+          "slug": "pro-tips-qa",
+          "url": "modules/pro-tips-qa.html",
+          "title": {
+            "en": "Pro Tips & Q&A",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "pro tips  qa",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "sparkles",
+          "minutes": 11,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_pro_tips.html",
+          "wixStepId": "6492e5f1-1253-4486-b794-c017470bc9fd",
+          "videos": []
+        },
+        {
+          "id": "sample-circuits",
+          "slug": "sample-circuits",
+          "url": "modules/sample-circuits.html",
+          "title": {
+            "en": "Sample Circuits",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "sample circuits",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "target",
+          "minutes": 10,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_sample_circuits.html",
+          "wixStepId": "0290ba13-0bcd-435a-ae2b-deabd074a0cc",
+          "videos": []
+        },
+        {
+          "id": "health-safety",
+          "slug": "health-safety",
+          "url": "modules/health-safety.html",
+          "title": {
+            "en": "Health & Safety",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "health  safety",
+            "fr": ""
+          },
+          "type": "lesson",
+          "icon": "triangle-alert",
+          "minutes": 10,
+          "hasQuiz": false,
+          "enhancedFile": "b4h_module2_health_safety.html",
+          "wixStepId": "bb496eb3-b8ad-4a2a-ac56-93585e785b03",
+          "videos": []
+        },
+        {
+          "id": "module-2-quiz",
+          "slug": "module-2-quiz",
+          "url": "modules/module-2-quiz.html",
+          "title": {
+            "en": "Module 2 Quiz",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "module 2 quiz",
+            "fr": ""
+          },
+          "type": "quiz",
+          "icon": "list-checks",
+          "minutes": 5,
+          "hasQuiz": true,
+          "enhancedFile": "b4h_module2_quiz.html",
+          "wixStepId": "d131cb20-fde2-47da-a82c-388b08e6ef54",
+          "videos": []
+        }
+      ]
+    },
+    {
+      "slug": "module-3-practical-steps",
+      "num": 3,
+      "title": {
+        "en": "Practical Steps",
+        "fr": ""
+      },
+      "desc": {
+        "en": "You're almost there — the practical steps to launch your Boxing4Health class.",
+        "fr": ""
+      },
+      "icon": "graduation-cap",
+      "lessons": [
+        {
+          "id": "youre-almost-there",
+          "slug": "youre-almost-there",
+          "url": "modules/youre-almost-there.html",
+          "title": {
+            "en": "You're Almost There",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "youre almost there",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "book-open",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "b4181f1d-93f2-4fb2-b047-e277c6403059",
+          "videos": []
+        }
+      ]
+    },
+    {
+      "slug": "module-4-learning-resources",
+      "num": 4,
+      "title": {
+        "en": "Learning Resources",
+        "fr": ""
+      },
+      "desc": {
+        "en": "Extra tools and orientation to support you and your volunteers.",
+        "fr": ""
+      },
+      "icon": "book-open",
+      "lessons": [
+        {
+          "id": "learning-resources",
+          "slug": "learning-resources",
+          "url": "modules/learning-resources.html",
+          "title": {
+            "en": "Learning Resources",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "learning resources",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "book-open",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "cdcd877f-d00a-4273-bd6d-48115c9c9400",
+          "videos": []
+        },
+        {
+          "id": "volunteer-orientation",
+          "slug": "volunteer-orientation",
+          "url": "modules/volunteer-orientation.html",
+          "title": {
+            "en": "Volunteer Orientation",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "volunteer orientation",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "users",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "ccb827bb-5191-429a-acce-3c2b60a4d791",
+          "videos": []
+        },
+        {
+          "id": "volunteer-forms",
+          "slug": "volunteer-forms",
+          "url": "modules/volunteer-forms.html",
+          "title": {
+            "en": "Volunteer Forms",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "volunteer forms",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "users",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "23a811a3-9d21-4fa6-8ed2-95dfaa607a5f",
+          "videos": []
+        },
+        {
+          "id": "dementia-101",
+          "slug": "dementia-101",
+          "url": "modules/dementia-101.html",
+          "title": {
+            "en": "Dementia 101",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "dementia 101",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "brain",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "b5e81435-6c14-4d8d-961a-c5c0d29b0ea9",
+          "videos": []
+        },
+        {
+          "id": "class-tools",
+          "slug": "class-tools",
+          "url": "modules/class-tools.html",
+          "title": {
+            "en": "Class Tools",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "class tools",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "dumbbell",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "14e318b2-20dd-4343-97c5-237682821a42",
+          "videos": []
+        }
+      ]
+    },
+    {
+      "slug": "module-5-admin-forms",
+      "num": 5,
+      "title": {
+        "en": "Admin Forms",
+        "fr": ""
+      },
+      "desc": {
+        "en": "Administrative forms and paperwork for running your licensed program.",
+        "fr": ""
+      },
+      "icon": "clipboard-list",
+      "lessons": [
+        {
+          "id": "admin-forms",
+          "slug": "admin-forms",
+          "url": "modules/admin-forms.html",
+          "title": {
+            "en": "Admin Forms",
+            "fr": ""
+          },
+          "summary": {
+            "en": "",
+            "fr": ""
+          },
+          "keywords": {
+            "en": "admin forms",
+            "fr": ""
+          },
+          "type": "content",
+          "icon": "clipboard-list",
+          "minutes": 2,
+          "hasQuiz": false,
+          "enhancedFile": null,
+          "wixStepId": "d6580207-fef4-46ae-946b-c4b247f8c9ae",
+          "videos": []
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "gut-health-parkinsons",
+      "slug": "gut-health-parkinsons",
+      "url": "resources/gut-health-parkinsons.html",
+      "title": {
+        "en": "Gut Health & Parkinson's",
+        "fr": ""
+      },
+      "summary": {
+        "en": "How a Mediterranean diet can ease constipation in Parkinson's.",
+        "fr": ""
+      },
+      "keywords": {
+        "en": "constipation mediterranean diet gut brain nutrition",
+        "fr": ""
+      },
+      "type": "resource",
+      "icon": "heart-pulse",
+      "minutes": 6,
+      "hasQuiz": true,
+      "enhancedFile": "pd-constipation-education.html",
+      "wixStepId": null,
+      "videos": []
+    }
+  ]
+}

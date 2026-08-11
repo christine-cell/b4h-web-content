@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Module 2 Quiz · Boxing4Health Training</title>
+<meta name="description" content="How a Boxing4Health class runs — the science, the structure, the exercises, and running it safely.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#19679e">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/css/fonts.css?v=1">
+<link rel="stylesheet" href="../assets/css/tokens.css?v=1">
+<link rel="stylesheet" href="../assets/css/site.css?v=1">
+<link rel="stylesheet" href="../assets/css/print.css?v=1" media="print">
+
+<script>(function(){try{var d=document.documentElement,s=localStorage;
+d.setAttribute('data-theme',s.getItem('b4h-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+d.setAttribute('lang',s.getItem('b4h-lang')||'en');
+if(s.getItem('b4h-contrast')==='high')d.setAttribute('data-contrast','high');
+d.style.setProperty('--font-scale',s.getItem('b4h-font')||'1');
+d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</script>
+<style>.enhanced-content{
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+  }
+.enhanced-content *, .enhanced-content *::before, .enhanced-content *::after{ box-sizing: border-box; margin: 0; padding: 0; }
+.enhanced-content{
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+.enhanced-content .hero{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 8vw;
+    text-align: center;
+    overflow: hidden;
+  }
+.enhanced-content .hero::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 30%, rgba(232,39,26,0.09) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 50% at 20% 80%, rgba(200,168,75,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(58,123,213,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+.enhanced-content .rings{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+.enhanced-content .ring{
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(232,39,26,0.06);
+    animation: expandRing 6s linear infinite;
+  }
+.enhanced-content .ring:nth-child(1){ width: 300px; height: 300px; animation-delay: 0s; }
+.enhanced-content .ring:nth-child(2){ width: 500px; height: 500px; animation-delay: 2s; }
+.enhanced-content .ring:nth-child(3){ width: 700px; height: 700px; animation-delay: 4s; }
+@keyframes expandRing{
+    0%   { opacity: 0.4; transform: scale(0.9); }
+    100% { opacity: 0;   transform: scale(1.1); }
+  }
+.enhanced-content .hero-content{
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+.enhanced-content .module-tag{
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.2s ease forwards;
+  }
+.enhanced-content .module-tag span{ color: var(--red); }
+.enhanced-content .trophy{
+    font-size: 72px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.4s ease forwards, float 4s 1s ease-in-out infinite;
+  }
+@keyframes float{
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
+.enhanced-content .hero-title{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 10vw, 120px);
+    line-height: 0.88;
+    letter-spacing: 0.03em;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.6s ease forwards;
+  }
+.enhanced-content .hero-title em{ color: var(--red); font-style: normal; }
+.enhanced-content .hero-sub{
+    font-size: clamp(17px, 2vw, 20px);
+    line-height: 1.85;
+    color: #b0aba0;
+    max-width: 580px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.8s ease forwards;
+  }
+.enhanced-content .hero-sub strong{ color: var(--light); }
+.enhanced-content .paths{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    width: 100%;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.6s 1s ease forwards;
+  }
+.enhanced-content .path-card{
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 30px 28px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+.enhanced-content .path-card:hover{
+    transform: translateY(-3px);
+  }
+.enhanced-content .path-card.ottawa{
+    border-top: 4px solid var(--red);
+  }
+.enhanced-content .path-card.virtual{
+    border-top: 4px solid var(--blue);
+  }
+.enhanced-content .path-card:hover.ottawa{ border-color: var(--red); }
+.enhanced-content .path-card:hover.virtual{ border-color: var(--blue); }
+.enhanced-content .path-icon{ font-size: 32px; margin-bottom: 14px; }
+.enhanced-content .path-type{
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+.enhanced-content .path-card.ottawa .path-type{ color: var(--red); }
+.enhanced-content .path-card.virtual .path-type{ color: var(--blue); }
+.enhanced-content .path-title{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+.enhanced-content .path-desc{
+    font-size: 15px;
+    color: #a8a398;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+.enhanced-content .path-desc strong{ color: var(--light); }
+.enhanced-content .path-email{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    padding: 10px 16px;
+    border: 1px solid;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+.enhanced-content .path-card.ottawa .path-email{
+    color: var(--red);
+    border-color: rgba(232,39,26,0.35);
+    background: rgba(232,39,26,0.07);
+  }
+.enhanced-content .path-card.ottawa .path-email:hover{
+    background: rgba(232,39,26,0.15);
+  }
+.enhanced-content .path-card.virtual .path-email{
+    color: var(--blue);
+    border-color: rgba(58,123,213,0.35);
+    background: rgba(58,123,213,0.07);
+  }
+.enhanced-content .path-card.virtual .path-email:hover{
+    background: rgba(58,123,213,0.15);
+  }
+.enhanced-content .goodluck{
+    opacity: 0;
+    animation: fadeUp 0.6s 1.2s ease forwards;
+    width: 100%;
+  }
+.enhanced-content .goodluck-inner{
+    background: linear-gradient(135deg, rgba(200,168,75,0.06), rgba(200,168,75,0.02));
+    border: 1px solid rgba(200,168,75,0.2);
+    padding: 32px 36px;
+    text-align: center;
+  }
+.enhanced-content .goodluck-words{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+.enhanced-content .gl-word{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+.enhanced-content .gl-word:nth-child(1){ animation-delay: 1.4s; }
+.enhanced-content .gl-word:nth-child(2){ animation-delay: 1.6s; }
+.enhanced-content .gl-word:nth-child(3){ animation-delay: 1.8s; }
+.enhanced-content .gl-word:nth-child(4){ animation-delay: 2.0s; }
+.enhanced-content .gl-word:nth-child(5){ animation-delay: 2.2s; }
+.enhanced-content .gl-dot{
+    color: var(--red);
+    font-size: 32px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+  }
+.enhanced-content .goodluck-sign{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    opacity: 0;
+    animation: fadeUp 0.5s 2.4s ease forwards;
+  }
+.enhanced-content .goodluck-sign span{ color: var(--red); }
+.enhanced-content .completion-strip{
+    display: flex;
+    gap: 0;
+    margin-bottom: 40px;
+    width: 100%;
+    opacity: 0;
+    animation: fadeUp 0.6s 1.4s ease forwards;
+  }
+.enhanced-content .stat-box{
+    flex: 1;
+    padding: 16px;
+    text-align: center;
+    background: var(--charcoal);
+    border: 1px solid #1e1e1e;
+  }
+.enhanced-content .stat-box + .stat-box{ border-left: none; }
+.enhanced-content .stat-num{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+.enhanced-content .stat-label{
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+.enhanced-content .stat-box:nth-child(1) .stat-num{ color: var(--red); }
+.enhanced-content .stat-box:nth-child(2) .stat-num{ color: var(--gold); }
+.enhanced-content .stat-box:nth-child(3) .stat-num{ color: var(--green); }
+.enhanced-content .stat-box:nth-child(4) .stat-num{ color: var(--blue); }
+@keyframes fadeUp{
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+@media (max-width: 640px){.enhanced-content .paths{ grid-template-columns: 1fr; }.enhanced-content .completion-strip{ flex-wrap: wrap; }.enhanced-content .stat-box{ flex: 1 1 45%; }.enhanced-content .stat-box + .stat-box{ border-left: 1px solid #1e1e1e; }.enhanced-content .stat-box:nth-child(3){ border-top: none; }.enhanced-content .goodluck-words{ gap: 12px; }}
+/* --- Unified blue remap for ported content (theme-aware) --- */
+.enhanced-content{
+  --red:#19679e; --dark:transparent; --charcoal:var(--surface-2); --mid:var(--border);
+  --light:var(--text); --muted:var(--text-muted); --gold:#c98a1f; --green:#1e9e77;
+  --blue:#2a7fc4; --amber:#c9791a; --teal:#178f7a; --purple:#5a6bd8; --orange:#c96a1a;
+  --cream:var(--surface); --warm-cream:var(--surface); --deep:var(--text);
+  --olive:#5f7a3a; --terracotta:#c26b3f; --sand:var(--surface-2); --sage:#7f9a5a; --accent:var(--azure);
+  background:transparent!important; color:var(--text);
+  font-size:clamp(1.02rem,1rem + .2vw,1.12rem); line-height:var(--lh-body);
+}
+:root[data-theme="dark"] .enhanced-content{
+  --charcoal:var(--surface-2); --mid:var(--border); --light:var(--text); --muted:var(--text-muted);
+  --red:#4aa3db; --gold:#e0b25a; --blue:#6bb6e6;
+}
+.enhanced-content, .enhanced-content p, .enhanced-content li, .enhanced-content td,
+.enhanced-content .hero-sub, .enhanced-content .card-body, .enhanced-content .st-detail{ font-family:var(--font-body)!important; }
+.enhanced-content h1,.enhanced-content h2,.enhanced-content h3,.enhanced-content h4,
+.enhanced-content .hero-title,.enhanced-content .section-label,.enhanced-content .card-title,
+.enhanced-content .quiz-q,.enhanced-content .st-name{ font-family:var(--font-sans)!important; letter-spacing:normal; }
+/* neutralize their full-page chrome — the site shell provides header, hero, footer */
+.enhanced-content .breadcrumb, .enhanced-content nav.breadcrumb,
+.enhanced-content .module-footer, .enhanced-content .hero,
+.enhanced-content header, .enhanced-content .top-nav, .enhanced-content .site-nav{ display:none!important; }
+.enhanced-content > .section:first-of-type,
+.enhanced-content > section:first-of-type{ padding-top:0!important; }
+.enhanced-content a{ color:var(--link); }
+.enhanced-content img{ border-radius:var(--r-md); }
+/* readable minimum for their small text */
+.enhanced-content [style*="font-size"]{ }
+.enhanced-content .meta-pill, .enhanced-content .section-label{ font-size:.8rem; }
+</style>
+</head>
+<body data-lesson-id="module-2-quiz" data-lesson-title="Module 2 Quiz" data-lesson-url="modules/module-2-quiz.html" data-lesson-hasquiz="false">
+<div data-include="header"></div>
+<main id="main">
+
+<section class="section-tight"><div class="wrap wrap-narrow">
+  <div class="lesson-head">
+    <p class="crumbs"><a href="../index.html" data-i18n="nav.home">Home</a> · <a href="../index.html#modules">Module 2 · Class Breakdown</a></p>
+    <span class="eyebrow"><span class="chip-sm chip" data-icon="list-checks"></span>Module 2 · Class Breakdown</span>
+    <h1>Module 2 Quiz</h1>
+    <div class="lesson-meta">
+      <span class="meta-pill"><span data-icon="hourglass"></span>5 <span data-i18n="lesson.time">min read</span></span>
+      <span class="meta-pill"><span data-icon="type"></span><span data-i18n="lesson.updated">Updated</span> 2026</span>
+    </div>
+  </div>
+</div></section>
+
+<div class="section-tight"><div class="wrap"><div class="enhanced-content lesson-body" data-lesson-content>
+
+
+<section class="hero">
+
+  <!-- Animated rings -->
+  <div class="rings">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+  </div>
+
+  <div class="hero-content">
+
+    <div class="module-tag">Module 2 — Class Breakdown &nbsp;›&nbsp; <span>Knowledge Quiz</span></div>
+
+    <div class="trophy">🏆</div>
+
+    <h1 class="hero-title">
+      You Made<br>It <em>This Far.</em>
+    </h1>
+
+    <p class="hero-sub">
+      You've completed the B4H Instructor Training. <strong>Now it's time to put your knowledge to the test.</strong> The quiz covers Parkinson's 101, class structure, safety, cueing, and everything in between. If there's an area you're unsure about, this is your chance to find out — and go back and revisit before certification.
+    </p>
+
+    <!-- Completion stats -->
+    <div class="completion-strip">
+      <div class="stat-box">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Modules Complete</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">17</div>
+        <div class="stat-label">Lessons Covered</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Quiz Remaining</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">🥊</div>
+        <div class="stat-label">Ready to Go</div>
+      </div>
+    </div>
+
+    <!-- Two paths -->
+    <div class="paths">
+
+      <div class="path-card ottawa">
+        <div class="path-icon">📍</div>
+        <div class="path-type">Ottawa Based</div>
+        <div class="path-title">In-Person Quiz at the Gym</div>
+        <div class="path-desc">
+          Ottawa-based instructors take their quiz <strong>in person at the gym.</strong> Reach out to Tina to schedule a time that works for you.
+        </div>
+        <a class="path-email" href="mailto:tina@boxing4health.com">
+          ✉ tina@boxing4health.com
+        </a>
+      </div>
+
+      <div class="path-card virtual">
+        <div class="path-icon">💻</div>
+        <div class="path-type">Virtual Instructor</div>
+        <div class="path-title">Quiz Arranged Remotely</div>
+        <div class="path-desc">
+          Virtual instructors outside Ottawa can arrange their quiz online. Reach out to Christine and she'll set up a time with you.
+        </div>
+        <a class="path-email" href="mailto:christine@boxing4health.com">
+          ✉ christine@boxing4health.com
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Good luck -->
+    <div class="goodluck">
+      <div class="goodluck-inner">
+        <div class="goodluck-words">
+          <span class="gl-word">Good</span>
+          <span class="gl-word">Luck</span>
+          <span class="gl-dot">·</span>
+          <span class="gl-word">Break</span>
+          <span class="gl-word">a Leg</span>
+          <span class="gl-dot">·</span>
+          <span class="gl-word">You</span>
+          <span class="gl-word">Got</span>
+          <span class="gl-word">This</span>
+        </div>
+        <div class="goodluck-sign">— <span>The Boxing 4 Health Team</span> 🥊</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+</div></div></div>
+<section class="section-tight"><div class="wrap wrap-narrow"><div class="panel panel-tinted" style="text-align:center;margin-top:2rem">
+  <button class="btn btn-primary" data-mark-complete data-done="false"><span data-icon="circle-check-big"></span><span data-mc-label>Mark this lesson complete</span></button>
+</div>
+<span data-complete-sentinel aria-hidden="true"></span>
+</div></section>
+<section class="section-tight"><div class="wrap wrap-narrow"><nav class="pager" aria-label="Lesson navigation"><a class="prev" href="health-safety.html"><span class="pager-dir" data-i18n="lesson.prev">prev</span><span class="pager-title">Health &amp; Safety</span></a><a class="next" href="youre-almost-there.html"><span class="pager-dir" data-i18n="lesson.next">next</span><span class="pager-title">You&#x27;re Almost There</span></a></nav></div></section>
+
+</main>
+<div data-include="footer"></div>
+<script src="../assets/js/icons.js?v=1"></script>
+<script src="../assets/js/i18n.js?v=1"></script>
+<script src="../assets/js/site.js?v=1"></script>
+<script src="../assets/js/progress.js?v=1"></script>
+<script src="../assets/js/search.js?v=1"></script>
+<script src="../assets/js/read-aloud.js?v=1"></script>
+</body>
+</html>
