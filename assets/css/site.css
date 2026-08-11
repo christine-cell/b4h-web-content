@@ -171,8 +171,11 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .btn { display: inline-flex; align-items: center; justify-content:center; gap: .5rem; font-family: var(--font-sans); font-weight: 700; font-size: 1rem; line-height: 1; padding: .85rem 1.4rem; border-radius: var(--r-pill); border: 1.5px solid transparent; cursor: pointer; text-decoration: none; transition: transform var(--transition), background var(--transition), box-shadow var(--transition); min-height: 46px; }
 .btn:active { transform: translateY(1px); }
 .btn svg { width: 20px; height: 20px; }
-.btn-primary { background: var(--primary); color: var(--primary-contrast); box-shadow: var(--shadow-1); }
-.btn-primary:hover { background: var(--primary-hover); color: var(--primary-contrast); box-shadow: var(--shadow-2); }
+/* Theme-safe sheen: a light-top / dark-bottom overlay on whatever --primary is,
+   so the button reads dimensional in both light and dark without breaking contrast. */
+.btn-primary { background-color: var(--primary); background-image: linear-gradient(180deg, rgba(255,255,255,.16), rgba(0,0,0,.06)); color: var(--primary-contrast); box-shadow: var(--shadow-1); }
+.btn-primary:hover { background-color: var(--primary-hover); color: var(--primary-contrast); box-shadow: var(--shadow-2); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(1px); }
 .btn-secondary { background: var(--surface); color: var(--primary); border-color: var(--border-strong); }
 .btn-secondary:hover { border-color: var(--primary); background: var(--surface-2); }
 .btn-ghost { background: transparent; color: var(--primary); }
@@ -225,9 +228,9 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.4rem; box-shadow: var(--shadow-1); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.4rem; box-shadow: var(--shadow-1), var(--edge-hi); }
 .card-hover { transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
-.card-hover:hover { transform: translateY(-4px); box-shadow: var(--shadow-3); border-color: var(--blue-200); }
+.card-hover:hover { transform: translateY(-5px); box-shadow: var(--shadow-3), var(--edge-hi); border-color: var(--blue-200); }
 
 /* Icon chip */
 .chip { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: var(--blue-50); color: var(--primary); flex: none; }
@@ -502,3 +505,31 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .mt-0{margin-top:0}.mb-0{margin-bottom:0}
 .hide { display:none !important; }
 @media (max-width:600px){ .pager{ grid-template-columns:1fr; } .hero p{ font-size: var(--fs-lg);} }
+
+/* ============================================================
+   Refined details — the polish layer
+   ============================================================ */
+/* Branded text selection */
+::selection { background: color-mix(in srgb, var(--primary) 26%, transparent); color: var(--heading); }
+:root[data-theme="dark"] ::selection { background: color-mix(in srgb, var(--primary) 34%, transparent); color: #fff; }
+
+/* Section eyebrow gets a short editorial rule before it — binds label to its heading */
+.prose .label, .lesson-body .label { display: flex; align-items: center; gap: .65rem; }
+.prose .label::before, .lesson-body .label::before {
+  content:""; width: 1.7rem; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--warm), color-mix(in srgb, var(--warm) 30%, transparent)); flex:none;
+}
+
+/* Gradient hairline divider between major sections */
+.rule-brand { border: 0; height: 2px; margin: clamp(2rem,5vw,3.5rem) 0; background:
+  linear-gradient(90deg, transparent, color-mix(in srgb, var(--primary) 45%, transparent) 18%, color-mix(in srgb, var(--primary) 45%, transparent) 82%, transparent); }
+
+/* Icon chips gain a soft dimensional wash (theme-safe overlay) */
+.chip { background-image: linear-gradient(155deg, rgba(255,255,255,.35), rgba(0,0,0,.04)); box-shadow: var(--edge-hi); }
+:root[data-theme="dark"] .chip { background-image: linear-gradient(155deg, rgba(255,255,255,.08), rgba(0,0,0,.12)); }
+
+/* Lead paragraph — the opening line of a lesson reads a touch larger & calmer */
+.lesson-body > .lead:first-of-type, .prose > .lead:first-of-type { font-size: var(--fs-lg); color: var(--ink-2); line-height: 1.6; }
+
+/* Cards lift a hair more crisply on press for tactile feedback */
+.card-hover:active { transform: translateY(-2px); transition-duration: 60ms; }

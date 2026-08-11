@@ -107,11 +107,13 @@
   /* ---- Radius ---- */
   --r-sm: 8px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px; --r-pill: 999px;
 
-  /* ---- Elevation ---- */
-  --shadow-1: 0 1px 2px rgba(13,51,79,.06), 0 1px 3px rgba(13,51,79,.08);
-  --shadow-2: 0 4px 10px rgba(13,51,79,.08), 0 2px 4px rgba(13,51,79,.06);
-  --shadow-3: 0 12px 28px rgba(13,51,79,.12), 0 6px 12px rgba(13,51,79,.08);
+  /* ---- Elevation — soft, diffuse, layered (ambient + key light) ---- */
+  --shadow-1: 0 1px 2px rgba(13,51,79,.05), 0 2px 5px rgba(13,51,79,.05);
+  --shadow-2: 0 2px 4px rgba(13,51,79,.04), 0 8px 20px rgba(13,51,79,.08);
+  --shadow-3: 0 4px 10px rgba(13,51,79,.05), 0 22px 48px rgba(13,51,79,.15);
   --shadow-focus: 0 0 0 3px rgba(38,154,237,.45);
+  /* Inner top highlight for raised surfaces (subtle "lit edge") */
+  --edge-hi: inset 0 1px 0 rgba(255,255,255,.6);
 
   /* ---- Layout ---- */
   --wrap: 1200px;
@@ -154,10 +156,11 @@
   --duo-dark:  #05121d;
   --duo-light: #2a7fc4;
 
-  --shadow-1: 0 1px 2px rgba(0,0,0,.4);
-  --shadow-2: 0 4px 12px rgba(0,0,0,.45);
-  --shadow-3: 0 14px 34px rgba(0,0,0,.55);
+  --shadow-1: 0 1px 2px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.3);
+  --shadow-2: 0 2px 6px rgba(0,0,0,.35), 0 10px 24px rgba(0,0,0,.4);
+  --shadow-3: 0 6px 14px rgba(0,0,0,.4), 0 24px 50px rgba(0,0,0,.55);
   --shadow-focus: 0 0 0 3px rgba(107,182,230,.5);
+  --edge-hi: inset 0 1px 0 rgba(255,255,255,.06);
 }
 
 /* ============================================================
