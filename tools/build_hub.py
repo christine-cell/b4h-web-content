@@ -176,10 +176,12 @@ def build_hub():
       <h2>{bilingual('Who’s behind your training','Qui est derrière votre formation','span')}</h2>
       <p class="lead" style="max-width:64ch">{bilingual('Boxing4Health is an independent health facility delivering research-backed, high-intensity exercise for seniors and people living with Parkinson’s. This licensee training distills the methods used in B4H classes — across its Ottawa, Kanata, Chelsea (QC), and Regina locations — into a coaching curriculum you can run yourself.','Boxing4Health est un établissement de santé indépendant offrant de l’exercice à haute intensité, fondé sur la recherche, pour les aînés et les personnes atteintes de la maladie de Parkinson. Cette formation des licenciés transpose les méthodes des cours B4H — offerts à Ottawa, Kanata, Chelsea (QC) et Regina — en un programme d’enseignement que vous pouvez animer vous-même.','span')}</p>
       <div class="grid grid-2" style="margin-top:1.5rem">
-        <article class="card">
-          <span class="chip" data-icon="user"></span>
-          <h3 style="margin:.8rem 0 .3rem">Christine Seaby, RMT</h3>
-          <p class="muted" style="margin:0">{bilingual('Founder &amp; owner. A Regulated Health Professional (Registered Massage Therapist) with 14+ years of experience and a background in mixed martial arts, Christine created Boxing4Health to help people living with Parkinson’s improve their quality of life through purposeful exercise.','Fondatrice et propriétaire. Professionnelle de la santé réglementée (massothérapeute agréée) comptant plus de 14 ans d’expérience et une formation en arts martiaux mixtes, Christine a fondé Boxing4Health pour aider les personnes atteintes de la maladie de Parkinson à améliorer leur qualité de vie grâce à un exercice ciblé.','span')}</p>
+        <article class="card" style="display:flex;gap:1.1rem;align-items:flex-start">
+          <img src="{prefix}assets/img/christine-seaby.jpg" alt="Christine Seaby, founder of Boxing4Health, with her dog" width="112" height="140" loading="lazy" style="flex:none;width:112px;height:140px;object-fit:cover;object-position:center 20%;border-radius:var(--r-md);box-shadow:var(--shadow-1)">
+          <div style="min-width:0">
+            <h3 style="margin:.1rem 0 .3rem">Christine Seaby, RMT</h3>
+            <p class="muted" style="margin:0">{bilingual('Founder &amp; owner. A Regulated Health Professional (Registered Massage Therapist) with 14+ years of experience and a background in mixed martial arts, Christine created Boxing4Health to help people living with Parkinson’s improve their quality of life through purposeful exercise.','Fondatrice et propriétaire. Professionnelle de la santé réglementée (massothérapeute agréée) comptant plus de 14 ans d’expérience et une formation en arts martiaux mixtes, Christine a fondé Boxing4Health pour aider les personnes atteintes de la maladie de Parkinson à améliorer leur qualité de vie grâce à un exercice ciblé.','span')}</p>
+          </div>
         </article>
         <article class="card">
           <span class="chip" data-icon="quote"></span>
