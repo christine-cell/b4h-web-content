@@ -331,8 +331,11 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .panel h3 { display:flex; align-items:center; gap:.6rem; margin-top:0; }
 .panel h3 svg { width: 24px; height: 24px; color: var(--primary); }
 .check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem; }
-.check-list li { display: grid; grid-template-columns: auto 1fr; gap: .7rem; align-items: start; }
-.check-list li::before { content: ""; width: 24px; height: 24px; border-radius: 50%; margin-top: 1px; background-color: var(--success); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 14px; }
+/* Absolute-positioned checkmark (NOT a grid column) so inline content — bold
+   lead-ins, <em>, glossary terms — stays in normal inline flow instead of each
+   becoming a stray grid cell that stacks on its own line. */
+.check-list li { position: relative; padding-left: 2.2rem; }
+.check-list li::before { content: ""; position: absolute; left: 0; top: .18rem; width: 24px; height: 24px; border-radius: 50%; background-color: var(--success); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 14px; }
 
 /* ---------- Expandable card / accordion ---------- */
 .accordion { border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; background: var(--surface); margin: .7rem 0; }
