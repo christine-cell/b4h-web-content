@@ -95,6 +95,24 @@
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") panel.setAttribute("data-open", "false"); });
   }
 
+  /* ---------- Nav dropdown ---------- */
+  function wireDropdowns(root) {
+    $all("[data-dropdown]", root).forEach(function (dd) {
+      var toggle = $("[data-dropdown-toggle]", dd);
+      if (!toggle || toggle.__wired) return; toggle.__wired = true;
+      toggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var open = dd.getAttribute("data-open") === "true";
+        dd.setAttribute("data-open", (!open).toString());
+        toggle.setAttribute("aria-expanded", (!open).toString());
+      });
+      document.addEventListener("click", function (e) {
+        if (!dd.contains(e.target)) { dd.setAttribute("data-open", "false"); toggle.setAttribute("aria-expanded", "false"); }
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") { dd.setAttribute("data-open", "false"); toggle.setAttribute("aria-expanded", "false"); } });
+    });
+  }
+
   /* ---------- Mobile nav ---------- */
   function wireNav(root) {
     var toggle = $("[data-nav-toggle]", root);
@@ -120,7 +138,7 @@
     var slots = $all("[data-include]");
     return Promise.all(slots.map(function (slot) {
       var name = slot.getAttribute("data-include");
-      return fetch(BASE + "partials/" + name + ".html")
+      return fetch(BASE + "partials/" + name + ".html", { cache: "no-store" })
         .then(function (r) { return r.ok ? r.text() : ""; })
         .then(function (html) {
           if (!html) return;
@@ -272,6 +290,7 @@
       wireControls(document);
       wireReaderMenu(document);
       wireNav(document);
+      wireDropdowns(document);
       syncControls();
       wireReveal();
       wireScrollUI();

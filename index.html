@@ -10,10 +10,10 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/favicon.svg">
-<link rel="stylesheet" href="assets/css/fonts.css?v=1">
-<link rel="stylesheet" href="assets/css/tokens.css?v=1">
-<link rel="stylesheet" href="assets/css/site.css?v=1">
-<link rel="stylesheet" href="assets/css/print.css?v=1" media="print">
+<link rel="stylesheet" href="assets/css/fonts.css?v=3">
+<link rel="stylesheet" href="assets/css/tokens.css?v=3">
+<link rel="stylesheet" href="assets/css/site.css?v=3">
+<link rel="stylesheet" href="assets/css/print.css?v=3" media="print">
 <script>(function(){try{var d=document.documentElement,s=localStorage;
 d.setAttribute('data-theme',s.getItem('b4h-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
 d.setAttribute('lang',s.getItem('b4h-lang')||'en');
@@ -24,19 +24,24 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
 <body>
 <div data-include="header"></div>
 <main id="main">
-<section class="hero"><div class="wrap">
-      <p class="eyebrow" style="color:#bfe0fb"><span data-icon="graduation-cap"></span><span data-lang-block="en">Licensee Training</span><span data-lang-block="fr">Formation des licenciés</span></p>
+<section class="hero">
+      <div class="hero-media"><img src="assets/img/photos/hero-class.jpg" alt="A Boxing4Health class training together" loading="eager" fetchpriority="high"></div>
+      <div class="wrap">
+      <p class="eyebrow"><span data-icon="graduation-cap"></span><span data-lang-block="en">Licensee Training</span><span data-lang-block="fr">Formation des licenciés</span></p>
+      <p class="hero-motto"><span data-lang-block="en">Our challenges don't define us — our</span><span data-lang-block="fr">Nos défis ne nous définissent pas —</span> <span class="accent"><span data-lang-block="en">ACTIONS</span><span data-lang-block="fr">nos ACTIONS</span></span> <span data-lang-block="en">do.</span><span data-lang-block="fr">oui.</span></p>
       <h1><span data-lang-block="en">Boxing4Health Licensee Training Program</span><span data-lang-block="fr">Programme de formation des licenciés Boxing4Health</span></h1>
       <p><span data-lang-block="en">Everything you need to coach people living with Parkinson's — the science, the symptoms, and how to run a safe, empowering class.</span><span data-lang-block="fr">Tout ce qu'il vous faut pour accompagner les personnes atteintes de la maladie de Parkinson — la science, les symptômes et comment animer un cours sécuritaire et stimulant.</span></p>
       <div class="hero-actions">
-        <a class="btn btn-lg btn-secondary" data-continue href="modules/welcome-parkinsons-101.html"><span data-icon="arrow-right"></span><span data-i18n="hub.continue">Continue where you left off</span></a>
+        <a class="btn btn-lg btn-warm" data-continue href="modules/welcome-parkinsons-101.html"><span data-icon="arrow-right"></span><span data-i18n="hub.continue">Continue where you left off</span></a>
+        <a class="btn btn-lg btn-secondary" href="#modules"><span data-icon="layers"></span><span data-lang-block="en">Browse modules</span><span data-lang-block="fr">Parcourir les modules</span></a>
       </div>
-      <div class="stat-row" style="margin-top:2rem;max-width:640px">
+      <div class="stat-row" style="margin-top:2.2rem;max-width:640px">
         <div class="stat"><div class="stat-num">5</div><div class="stat-label">Modules</div></div>
         <div class="stat"><div class="stat-num">35</div><div class="stat-label"><span data-lang-block="en">Lessons</span><span data-lang-block="fr">Leçons</span></div></div>
         <div class="stat"><div class="stat-num">~3h</div><div class="stat-label"><span data-lang-block="en">of content</span><span data-lang-block="fr">de contenu</span></div></div>
       </div>
-    </div></section><section class="section-tight"><div class="wrap">
+      </div>
+    </section><section class="section-tight"><div class="wrap">
       <div class="panel panel-tinted" data-progress-overall>
         <div class="cluster" style="justify-content:space-between">
           <h3 style="margin:0"><span data-i18n="hub.progress">Your progress</span></h3>
@@ -45,13 +50,21 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
         <div class="progressbar" style="margin-top:1rem"><span data-progress-fill></span></div>
         <p class="muted" style="margin:.6rem 0 0"><span data-progress-label>0%</span> <span data-i18n="hub.complete">complete</span> · <button class="btn-ghost" style="padding:.2rem .4rem;font-size:.9rem;border:0;background:none;cursor:pointer;color:var(--link)" data-progress-reset><span data-i18n="progress.reset">Reset my progress</span></button></p>
       </div>
-    </div></section><section class="section-tight"><div class="wrap">
-      <div class="grid grid-3">
+    </div></section><section class="section section-tint"><div class="wrap">
+      <p class="eyebrow center" style="justify-content:center"><span data-lang-block="en">How this works</span><span data-lang-block="fr">Comment ça marche</span></p>
+      <div class="grid grid-3" style="margin-top:1rem">
         <div class="card" data-reveal><span class="chip" data-icon="book-open"></span><h4 style="margin:.8rem 0 .3rem"><span data-lang-block="en">Work through the modules</span><span data-lang-block="fr">Parcourez les modules</span></h4><p class="muted"><span data-lang-block="en">Go in order, or jump to any lesson. Your place is saved on this device.</span><span data-lang-block="fr">Suivez l’ordre ou allez à n’importe quelle leçon. Votre progression est enregistrée sur cet appareil.</span></p></div>
         <div class="card" data-reveal><span class="chip" data-icon="a-large-small"></span><h4 style="margin:.8rem 0 .3rem"><span data-lang-block="en">Make it comfortable</span><span data-lang-block="fr">Adaptez le confort</span></h4><p class="muted"><span data-lang-block="en">Use the reading menu (top right) for larger text, dark mode, spacing, and French.</span><span data-lang-block="fr">Utilisez le menu de lecture (en haut à droite) pour agrandir le texte, le mode sombre, l’interligne et le français.</span></p></div>
         <div class="card" data-reveal><span class="chip" data-icon="award"></span><h4 style="margin:.8rem 0 .3rem"><span data-lang-block="en">Earn your certificate</span><span data-lang-block="fr">Obtenez votre certificat</span></h4><p class="muted"><span data-lang-block="en">Finish every lesson and quiz to unlock a printable certificate.</span><span data-lang-block="fr">Terminez chaque leçon et questionnaire pour débloquer un certificat imprimable.</span></p></div>
       </div>
-    </div></section><section class="section" id="modules"><div class="wrap">
+    </div></section><section class="band">
+      <div class="band-media"><img src="assets/img/photos/community-seniors.jpg" alt="Boxing4Health participants together" loading="lazy"></div>
+      <div class="wrap">
+        <p class="eyebrow" style="color:#ffd27a"><span data-icon="heart-pulse"></span><span data-lang-block="en">Who you serve</span><span data-lang-block="fr">Ceux que vous accompagnez</span></p>
+        <p class="pull-quote"><span data-lang-block="en">You're not just teaching a workout —</span><span data-lang-block="fr">Vous n'enseignez pas qu'un entraînement —</span> <span class="accent"><span data-lang-block="en">you're giving people their fight back.</span><span data-lang-block="fr">vous redonnez aux gens leur combat.</span></span></p>
+        <p class="quote-by"><span data-lang-block="en">The Boxing4Health approach</span><span data-lang-block="fr">L'approche Boxing4Health</span></p>
+      </div>
+    </section><section class="section" id="modules"><div class="wrap">
       <div class="motif-line"></div>
       <h2><span data-lang-block="en">Program modules</span><span data-lang-block="fr">Modules du programme</span></h2>
       <p class="lead" style="max-width:60ch"><span data-lang-block="en">Five modules take you from understanding Parkinson’s to confidently running your own class.</span><span data-lang-block="fr">Cinq modules vous mènent de la compréhension de la maladie de Parkinson à l’animation confiante de votre propre cours.</span></p>
@@ -427,10 +440,10 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
       </div>
     </div></section></main>
 <div data-include="footer"></div>
-<script src="assets/js/icons.js?v=1"></script>
-<script src="assets/js/i18n.js?v=1"></script>
-<script src="assets/js/site.js?v=1"></script>
-<script src="assets/js/progress.js?v=1"></script>
-<script src="assets/js/search.js?v=1"></script>
-<script src="assets/js/read-aloud.js?v=1"></script>
+<script src="assets/js/icons.js?v=3"></script>
+<script src="assets/js/i18n.js?v=3"></script>
+<script src="assets/js/site.js?v=3"></script>
+<script src="assets/js/progress.js?v=3"></script>
+<script src="assets/js/search.js?v=3"></script>
+<script src="assets/js/read-aloud.js?v=3"></script>
 </body></html>

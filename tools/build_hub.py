@@ -3,7 +3,7 @@
 import json, os, html as htmllib
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 M = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "1"
+V = "3"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, prefix):
@@ -92,19 +92,33 @@ def build_hub():
     total_min = sum(l["minutes"] for m in M["modules"] for l in m["lessons"])
     hours = round(total_min/60)
     h = head("Boxing4Health Licensee Training Program", "The complete training program for Boxing4Health licensees — Parkinson's education and class delivery.", prefix)
-    hero = f"""<section class="hero"><div class="wrap">
-      <p class="eyebrow" style="color:#bfe0fb"><span data-icon="graduation-cap"></span>{bilingual('Licensee Training','Formation des licenciés')}</p>
+    hero = f"""<section class="hero">
+      <div class="hero-media"><img src="{prefix}assets/img/photos/hero-class.jpg" alt="A Boxing4Health class training together" loading="eager" fetchpriority="high"></div>
+      <div class="wrap">
+      <p class="eyebrow"><span data-icon="graduation-cap"></span>{bilingual('Licensee Training','Formation des licenciés')}</p>
+      <p class="hero-motto">{bilingual("Our challenges don't define us — our", "Nos défis ne nous définissent pas —")} <span class="accent">{bilingual("ACTIONS", "nos ACTIONS")}</span> {bilingual("do.", "oui.")}</p>
       <h1>{bilingual("Boxing4Health Licensee Training Program","Programme de formation des licenciés Boxing4Health","span")}</h1>
       <p>{bilingual("Everything you need to coach people living with Parkinson's — the science, the symptoms, and how to run a safe, empowering class.","Tout ce qu'il vous faut pour accompagner les personnes atteintes de la maladie de Parkinson — la science, les symptômes et comment animer un cours sécuritaire et stimulant.","span")}</p>
       <div class="hero-actions">
-        <a class="btn btn-lg btn-secondary" data-continue href="{prefix}{M['modules'][0]['lessons'][0]['url']}"><span data-icon="arrow-right"></span><span data-i18n="hub.continue">Continue where you left off</span></a>
+        <a class="btn btn-lg btn-warm" data-continue href="{prefix}{M['modules'][0]['lessons'][0]['url']}"><span data-icon="arrow-right"></span><span data-i18n="hub.continue">Continue where you left off</span></a>
+        <a class="btn btn-lg btn-secondary" href="#modules"><span data-icon="layers"></span>{bilingual('Browse modules','Parcourir les modules')}</a>
       </div>
-      <div class="stat-row" style="margin-top:2rem;max-width:640px">
+      <div class="stat-row" style="margin-top:2.2rem;max-width:640px">
         <div class="stat"><div class="stat-num">{len(M['modules'])}</div><div class="stat-label">Modules</div></div>
         <div class="stat"><div class="stat-num">{nlessons}</div><div class="stat-label">{bilingual('Lessons','Leçons')}</div></div>
         <div class="stat"><div class="stat-num">~{hours}h</div><div class="stat-label">{bilingual('of content','de contenu','span')}</div></div>
       </div>
-    </div></section>"""
+      </div>
+    </section>"""
+
+    band = f"""<section class="band">
+      <div class="band-media"><img src="{prefix}assets/img/photos/community-seniors.jpg" alt="Boxing4Health participants together" loading="lazy"></div>
+      <div class="wrap">
+        <p class="eyebrow" style="color:#ffd27a"><span data-icon="heart-pulse"></span>{bilingual('Who you serve','Ceux que vous accompagnez')}</p>
+        <p class="pull-quote">{bilingual("You're not just teaching a workout —", "Vous n'enseignez pas qu'un entraînement —")} <span class="accent">{bilingual("you're giving people their fight back.", "vous redonnez aux gens leur combat.")}</span></p>
+        <p class="quote-by">{bilingual("The Boxing4Health approach", "L'approche Boxing4Health")}</p>
+      </div>
+    </section>"""
 
     progress = f"""<section class="section-tight"><div class="wrap">
       <div class="panel panel-tinted" data-progress-overall>
@@ -117,8 +131,9 @@ def build_hub():
       </div>
     </div></section>"""
 
-    howto = f"""<section class="section-tight"><div class="wrap">
-      <div class="grid grid-3">
+    howto = f"""<section class="section section-tint"><div class="wrap">
+      <p class="eyebrow center" style="justify-content:center">{bilingual('How this works','Comment ça marche')}</p>
+      <div class="grid grid-3" style="margin-top:1rem">
         <div class="card" data-reveal><span class="chip" data-icon="book-open"></span><h4 style="margin:.8rem 0 .3rem">{bilingual('Work through the modules','Parcourez les modules','span')}</h4><p class="muted">{bilingual('Go in order, or jump to any lesson. Your place is saved on this device.','Suivez l’ordre ou allez à n’importe quelle leçon. Votre progression est enregistrée sur cet appareil.','span')}</p></div>
         <div class="card" data-reveal><span class="chip" data-icon="a-large-small"></span><h4 style="margin:.8rem 0 .3rem">{bilingual('Make it comfortable','Adaptez le confort','span')}</h4><p class="muted">{bilingual('Use the reading menu (top right) for larger text, dark mode, spacing, and French.','Utilisez le menu de lecture (en haut à droite) pour agrandir le texte, le mode sombre, l’interligne et le français.','span')}</p></div>
         <div class="card" data-reveal><span class="chip" data-icon="award"></span><h4 style="margin:.8rem 0 .3rem">{bilingual('Earn your certificate','Obtenez votre certificat','span')}</h4><p class="muted">{bilingual('Finish every lesson and quiz to unlock a printable certificate.','Terminez chaque leçon et questionnaire pour débloquer un certificat imprimable.','span')}</p></div>
@@ -148,7 +163,7 @@ def build_hub():
       </div>
     </div></section>"""
 
-    body = hero + progress + howto + modsec + ressec + cert
+    body = hero + progress + howto + band + modsec + ressec + cert
     open(os.path.join(ROOT,"index.html"),"w",encoding="utf-8").write(h + body + foot(prefix))
     print("built index.html")
 

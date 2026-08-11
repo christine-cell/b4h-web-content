@@ -15,7 +15,7 @@ ENH_DIRS = [os.path.join(ROOT, "_sources/enhanced/boxing-4-health-PD-symptoms"),
             os.path.join(ROOT, "_sources/enhanced/boxing4health-training")]
 WIX = {r["stepId"]: r for r in json.load(open(os.path.join(ROOT, "_sources/wix/wix-extract.json")))}
 MODULES = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "1"  # asset cache-bust version
+V = "3"  # asset cache-bust version
 
 # ---------------------------------------------------------------- helpers
 def enh_path(fn):
@@ -215,10 +215,14 @@ def lesson_header(mod, lesson):
 def pager(prev, nxt):
     def cell(l, dirn, cls):
         if not l:
-            return f'<a class="{cls} disabled"><span class="pager-dir">&nbsp;</span><span class="pager-title">&nbsp;</span></a>'
+            return f'<a class="{cls} disabled" aria-hidden="true"></a>'
         label = "lesson.prev" if dirn=="prev" else "lesson.next"
+        icon = "arrow-left" if dirn=="prev" else "arrow-right"
         en, fr = tfr(l, "title")
-        return f'<a class="{cls}" href="{esc(l["slug"])}.html"><span class="pager-dir" data-i18n="{label}">{dirn}</span><span class="pager-title">{bl(esc(en),esc(fr))}</span></a>'
+        return (f'<a class="{cls}" href="{esc(l["slug"])}.html">'
+                f'<span class="pager-ico" data-icon="{icon}"></span>'
+                f'<span class="pager-txt"><span class="pager-dir" data-i18n="{label}">{dirn}</span>'
+                f'<span class="pager-title">{bl(esc(en),esc(fr))}</span></span></a>')
     return f'<div class="wrap wrap-narrow"><nav class="pager" aria-label="Lesson navigation">{cell(prev,"prev","prev")}{cell(nxt,"next","next")}</nav></div>'
 
 def complete_block(lesson):
@@ -397,18 +401,15 @@ def build_wix_page(mod, lesson, prev, nxt):
         parts.append('<div class="video-grid" style="margin-top:1.5rem">')
         for v in vids: parts.append(video_block(v, lesson["title"]["en"]))
         parts.append('</div>')
-    if ext:
-        parts.append('<div class="cluster" style="margin-top:1.5rem">')
-        for t,hh in dict((h,t) for t,h in ext).items():  # dedupe by href
-            parts.append(f'<a class="btn btn-secondary" href="{esc(t)}" rel="noopener"><span data-icon="arrow-right"></span>{esc(hh)}</a>')
-        parts.append('</div>')
+    # NOTE: external links are already rendered inline within `content` — do not
+    # duplicate them as a button row (that caused the double-URL treatment).
     if lesson.get("type") == "video" and not vids:
         # Native Wix video didn't expose a shareable URL during capture.
         parts.append('<div class="callout callout-info"><span class="callout-icon" data-icon="circle-play"></span>'
                      '<p class="callout-title">'+bl("Video","Vidéo")+'</p><div class="callout-body">'
                      '<p>'+bl("The video for this lesson will be added here.",
                              "La vidéo de cette leçon sera ajoutée ici.")+'</p></div></div>')
-    if not content and not vids and not ext:
+    if not content and not vids:
         parts.append('<p class="muted">'+bl("Content coming soon.","Contenu à venir.")+'</p>')
     parts.append('</div></div></section>')
     parts.append('<section class="section-tight">'+complete_block(lesson)+'</section>')
