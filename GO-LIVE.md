@@ -13,8 +13,9 @@ Everything is built, reviewed, and pushed to `main`. Here's what's done and the 
 ## ✅ Your morning checklist (~2 min)
 
 ### 1. ~~Enable GitHub Pages~~ — DONE ✅
-I already enabled it: **Settings → Pages** shows *"building from the main branch"*, and it auto-detected the custom domain **training.boxing4health.com** from the `CNAME` file (status: *DNS Check in Progress*). The site is already live at the fallback URL: **https://christine-cell.github.io/b4h-web-content/**.
-Once the DNS record below resolves, come back to Settings → Pages and turn on **Enforce HTTPS** (it's greyed out until DNS is verified).
+I already enabled it: **Settings → Pages** shows *"building from the main branch"* and auto-detected the custom domain **training.boxing4health.com** from the `CNAME` file (status: *DNS Check in Progress*). The site **built successfully**.
+Note: because the custom domain is configured, the `christine-cell.github.io/b4h-web-content/` URL now **redirects** to `training.boxing4health.com` — so the site goes fully live the moment you add the DNS record in step 2. (If you want to preview it *before* setting DNS, temporarily delete the domain from Settings → Pages, preview at the github.io URL, then put `training.boxing4health.com` back.)
+Once DNS resolves, return to Settings → Pages and turn on **Enforce HTTPS** (greyed out until DNS is verified).
 
 ### 2. Add the DNS record — the only thing standing between you and training.boxing4health.com
 I did **not** touch your Wix domain settings (didn't want to fumble your live domain unattended). Add this one record in **Wix → your account → Domains → boxing4health.com → Manage/Edit DNS records**:
