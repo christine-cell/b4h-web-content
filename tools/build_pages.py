@@ -402,8 +402,14 @@ def build_wix_page(mod, lesson, prev, nxt):
         for t,hh in dict((h,t) for t,h in ext).items():  # dedupe by href
             parts.append(f'<a class="btn btn-secondary" href="{esc(t)}" rel="noopener"><span data-icon="arrow-right"></span>{esc(hh)}</a>')
         parts.append('</div>')
+    if lesson.get("type") == "video" and not vids:
+        # Native Wix video didn't expose a shareable URL during capture.
+        parts.append('<div class="callout callout-info"><span class="callout-icon" data-icon="circle-play"></span>'
+                     '<p class="callout-title">'+bl("Video","Vidéo")+'</p><div class="callout-body">'
+                     '<p>'+bl("The video for this lesson will be added here.",
+                             "La vidéo de cette leçon sera ajoutée ici.")+'</p></div></div>')
     if not content and not vids and not ext:
-        parts.append('<p class="muted">Content coming soon.</p>')
+        parts.append('<p class="muted">'+bl("Content coming soon.","Contenu à venir.")+'</p>')
     parts.append('</div></div></section>')
     parts.append('<section class="section-tight">'+complete_block(lesson)+'</section>')
     parts.append('<section class="section-tight">'+pager(prev,nxt)+'</section>')

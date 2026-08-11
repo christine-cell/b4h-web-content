@@ -79,7 +79,7 @@ def module_card(m, prefix):
           </div>
         </div>
         <div style="min-width:180px;flex:0 0 auto" data-progress-module="{esc(m['slug'])}">
-          <div class="cluster" style="justify-content:space-between"><span class="lr-meta">{len(m['lessons'])} lessons</span><span class="badge badge-primary" data-progress-count>0/{len(m['lessons'])}</span></div>
+          <div class="cluster" style="justify-content:space-between"><span class="lr-meta">{len(m['lessons'])} {bilingual('lessons','leçons')}</span><span class="badge badge-primary" data-progress-count>0/{len(m['lessons'])}</span></div>
           <div class="progressbar" style="margin-top:.5rem"><span data-progress-fill></span></div>
         </div>
       </div>
@@ -93,7 +93,7 @@ def build_hub():
     hours = round(total_min/60)
     h = head("Boxing4Health Licensee Training Program", "The complete training program for Boxing4Health licensees — Parkinson's education and class delivery.", prefix)
     hero = f"""<section class="hero"><div class="wrap">
-      <p class="eyebrow" style="color:#bfe0fb"><span data-icon="graduation-cap"></span>Licensee Training</p>
+      <p class="eyebrow" style="color:#bfe0fb"><span data-icon="graduation-cap"></span>{bilingual('Licensee Training','Formation des licenciés')}</p>
       <h1>{bilingual("Boxing4Health Licensee Training Program","Programme de formation des licenciés Boxing4Health","span")}</h1>
       <p>{bilingual("Everything you need to coach people living with Parkinson's — the science, the symptoms, and how to run a safe, empowering class.","Tout ce qu'il vous faut pour accompagner les personnes atteintes de la maladie de Parkinson — la science, les symptômes et comment animer un cours sécuritaire et stimulant.","span")}</p>
       <div class="hero-actions">
@@ -101,7 +101,7 @@ def build_hub():
       </div>
       <div class="stat-row" style="margin-top:2rem;max-width:640px">
         <div class="stat"><div class="stat-num">{len(M['modules'])}</div><div class="stat-label">Modules</div></div>
-        <div class="stat"><div class="stat-num">{nlessons}</div><div class="stat-label">Lessons</div></div>
+        <div class="stat"><div class="stat-num">{nlessons}</div><div class="stat-label">{bilingual('Lessons','Leçons')}</div></div>
         <div class="stat"><div class="stat-num">~{hours}h</div><div class="stat-label">{bilingual('of content','de contenu','span')}</div></div>
       </div>
     </div></section>"""
