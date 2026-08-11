@@ -444,6 +444,11 @@ a.nav-link { position: relative; transition: color var(--transition), background
 
 /* ---------- Lesson header ---------- */
 .lesson-head { border-bottom: 1px solid var(--border); padding-bottom: 1.4rem; margin-bottom: 1.8rem; }
+/* The lesson header and the body are adjacent section-tight blocks; don't let
+   their vertical paddings stack into a giant gap under the title. */
+.section-tight:has(.lesson-head) { padding-bottom: 0; }
+.section-tight:has(.lesson-head) + .section-tight,
+.section-tight:has(.lesson-head) + .section-tight > .wrap:first-child { padding-top: 0; }
 .lesson-head .crumbs { font-size: var(--fs-sm); color: var(--text-muted); margin-bottom:.6rem; }
 .lesson-head .crumbs a { color: var(--text-muted); }
 .lesson-meta { display:flex; flex-wrap:wrap; gap:1rem; margin-top:1rem; align-items:center; }
