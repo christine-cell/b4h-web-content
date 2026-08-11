@@ -43,6 +43,12 @@ strong, b { font-weight: var(--fw-bold); color: var(--heading); }
 .prose li::marker { color: var(--primary); }
 /* Section eyebrow / small-caps label */
 .label { font-family: var(--font-sans); font-size: var(--fs-xs); font-weight: var(--fw-black); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--primary); }
+/* Eyebrow binds to the heading it introduces: space goes ABOVE the label
+   (separating sections), and the label sits tight to its own H2 below it. */
+.prose .label, .lesson-body .label { margin: 2.6em 0 .35rem; }
+.prose .label:first-child, .lesson-body .label:first-child { margin-top: 0; }
+.prose .label + h2, .lesson-body .label + h2,
+.prose .label + h3, .lesson-body .label + h3 { margin-top: 0; }
 
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
 :focus:not(:focus-visible){ outline: none; }
