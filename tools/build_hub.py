@@ -180,13 +180,7 @@ if __name__ == "__main__":
 
 def _chip(ic): return f'<span class="chip" data-icon="{ic}"></span>'
 
-DOCUMENTS=[
- {"file":"health-history-form.pdf","en":"Health History Form","fr":"Formulaire d’antécédents médicaux","ext":"PDF","size":"2.5 MB","cat":"intake"},
- {"file":"prospective-client-questionnaire.pdf","en":"Prospective Client Questionnaire","fr":"Questionnaire du client potentiel","ext":"PDF","size":"84 KB","cat":"intake"},
- {"file":"liability-waiver.pdf","en":"Liability Waiver","fr":"Décharge de responsabilité","ext":"PDF","size":"109 KB","cat":"intake"},
- {"file":"new-instructor-checklists.docx","en":"New Instructor Checklists","fr":"Listes de vérification du nouvel instructeur","ext":"DOCX","size":"12 KB","cat":"program"},
- {"file":"champion-plus-program.pdf","en":"Champion Plus Program","fr":"Programme Champion Plus","ext":"PDF","size":"237 KB","cat":"program"},
-]
+DOCUMENTS=_data("documents.json").get("documents",[])
 VIDEO_GROUPS=[
  {"en":"Getting started","fr":"Pour commencer","items":[("JPnb9okYxw8","Boxing 101")]},
  {"en":"Symptoms in action","fr":"Les symptômes en action","items":[("MIAFilOOloU","Freezing of Gait"),("wrxHJaPulgc","Freezing of Gait — example 2")]},

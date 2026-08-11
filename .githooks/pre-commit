@@ -1,0 +1,15 @@
+#!/bin/sh
+# B4H quality gate — blocks any commit that fails tools/qa.py.
+# Enable once per clone:  git config core.hooksPath .githooks
+#                    (or: sh tools/setup.sh)
+# Emergency bypass (discouraged):  git commit --no-verify
+echo "→ Running B4H QA gate (tools/qa.py)…"
+python3 tools/qa.py
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "✗ Commit blocked: QA failed. Fix the issues above."
+  echo "  (bypass with 'git commit --no-verify' only if you know what you're doing)"
+  exit 1
+fi
+echo "✓ QA passed."
+exit 0
