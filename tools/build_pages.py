@@ -15,7 +15,7 @@ ENH_DIRS = [os.path.join(ROOT, "_sources/enhanced/boxing-4-health-PD-symptoms"),
             os.path.join(ROOT, "_sources/enhanced/boxing4health-training")]
 WIX = {r["stepId"]: r for r in json.load(open(os.path.join(ROOT, "_sources/wix/wix-extract.json")))}
 MODULES = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "8"  # asset cache-bust version
+V = "9"  # asset cache-bust version
 
 # ---------------------------------------------------------------- helpers
 def enh_path(fn):
@@ -417,9 +417,15 @@ def build_wix_page(mod, lesson, prev, nxt):
     parts.append(foot(feature))
     return "\n".join(parts)
 
+def wrap_tables(html):
+    """Wrap bare <table> in a horizontally-scrollable container so wide tables
+    scroll inside their box instead of overflowing the page on mobile."""
+    return re.sub(r"(<table\b.*?</table>)", r'<div class="table-wrap">\1</div>', html, flags=re.S)
+
 def build_authored_page(mod, lesson, prev, nxt):
     """Wrap a hand/AI re-authored lesson body (unified components) in the shell."""
     inner = open(os.path.join(ROOT, "_authored", lesson["slug"]+".html"), encoding="utf-8").read()
+    inner = wrap_tables(inner)
     hasquiz = "data-quiz" in inner
     feature = ["quiz"] if hasquiz else []
     h = head(lesson["title"]["en"], lesson["summary"]["en"] or mod["desc"]["en"])
@@ -453,7 +459,7 @@ def build_resources():
     for r in MODULES["resources"]:
         authored = os.path.join(ROOT, "_authored", r["slug"]+".html")
         if os.path.exists(authored):
-            inner = open(authored, encoding="utf-8").read()
+            inner = wrap_tables(open(authored, encoding="utf-8").read())
             hasquiz = "data-quiz" in inner
             pseudo = {"title":{"en":"Resources","fr":"Ressources"}, "desc":{"en":r["summary"]["en"],"fr":r["summary"].get("fr","")}}
             h = head(r["title"]["en"], r["summary"]["en"]).replace("{BODYATTRS}", body_attrs(r, hasquiz))
