@@ -1,6 +1,13 @@
 {
  "terms": [
   {
+   "en": "\"On/Off\" fluctuations",
+   "fr": "fluctuations « on-off »",
+   "cat": "parkinsons",
+   "def_en": "Changes in how well Parkinson's medication is working. During \"on\" times movement is easier; during \"off\" times symptoms return and moving is harder.",
+   "def_fr": "Variations de l'efficacité de la médication contre la maladie de Parkinson. En période « on », bouger est plus facile; en période « off », les symptômes reviennent et bouger devient plus difficile."
+  },
+  {
    "en": "Amplitude / \"big movements\"",
    "fr": "Amplitude / « grands mouvements »",
    "cat": "coaching",
@@ -141,13 +148,6 @@
    "def_fr": "La capacité du cerveau à changer et à former de nouvelles connexions grâce à la pratique. Un exercice régulier et exigeant peut aider le cerveau à s'adapter et à préserver les habiletés motrices."
   },
   {
-   "en": "\"On/Off\" fluctuations",
-   "fr": "fluctuations « on-off »",
-   "cat": "parkinsons",
-   "def_en": "Changes in how well Parkinson's medication is working. During \"on\" times movement is easier; during \"off\" times symptoms return and moving is harder.",
-   "def_fr": "Variations de l'efficacité de la médication contre la maladie de Parkinson. En période « on », bouger est plus facile; en période « off », les symptômes reviennent et bouger devient plus difficile."
-  },
-  {
    "en": "Parkinson's-Plus",
    "fr": "syndrome Parkinson plus",
    "cat": "parkinsons",
@@ -195,6 +195,13 @@
    "cat": "parkinsons",
    "def_en": "A rhythmic shaking, often in a hand, that is strongest when the limb is at rest and eases with movement. It is one of the most familiar signs of Parkinson's.",
    "def_fr": "Un tremblement rythmique, souvent dans une main, plus marqué lorsque le membre est au repos et qui s'atténue avec le mouvement. C'est l'un des signes les plus connus de la maladie de Parkinson."
+  },
+  {
+   "en": "Warrior",
+   "fr": "Warrior",
+   "cat": "program",
+   "def_en": "A class level between Fighter and Champion — moderate intensity for clients whose movement symptoms are more noticeable and who need more support (smaller staff-to-student ratio). The tell: they finish a Fighter class fatigued rather than energized.",
+   "def_fr": "Un niveau de cours entre Fighter et Champion — intensité modérée pour les clients dont les symptômes moteurs sont plus marqués et qui ont besoin de plus de soutien (ratio encadrant-élèves plus petit). L'indice révélateur : ils terminent un cours Fighter fatigués plutôt qu'énergisés."
   }
  ]
 }
