@@ -10,10 +10,10 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/img/favicon.svg">
-<link rel="stylesheet" href="../assets/css/fonts.css?v=7">
-<link rel="stylesheet" href="../assets/css/tokens.css?v=7">
-<link rel="stylesheet" href="../assets/css/site.css?v=7">
-<link rel="stylesheet" href="../assets/css/print.css?v=7" media="print">
+<link rel="stylesheet" href="../assets/css/fonts.css?v=8">
+<link rel="stylesheet" href="../assets/css/tokens.css?v=8">
+<link rel="stylesheet" href="../assets/css/site.css?v=8">
+<link rel="stylesheet" href="../assets/css/print.css?v=8" media="print">
 
 <script>(function(){try{var d=document.documentElement,s=localStorage;
 d.setAttribute('data-theme',s.getItem('b4h-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
@@ -21,535 +21,9 @@ d.setAttribute('lang',s.getItem('b4h-lang')||'en');
 if(s.getItem('b4h-contrast')==='high')d.setAttribute('data-contrast','high');
 d.style.setProperty('--font-scale',s.getItem('b4h-font')||'1');
 d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</script>
-<style>.enhanced-content{
-    --red: #E8271A;
-    --dark: #0D0D0D;
-    --charcoal: #1A1A1A;
-    --mid: #2E2E2E;
-    --light: #F5F0E8;
-    --muted: #9A9A8A;
-    --gold: #C8A84B;
-    --green: #2E9E6B;
-    --blue: #3A7BD5;
-    --purple: #8250C8;
-  }
-.enhanced-content *, .enhanced-content *::before, .enhanced-content *::after{ box-sizing: border-box; margin: 0; padding: 0; }
-.enhanced-content{
-    background: var(--dark);
-    color: var(--light);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-.enhanced-content .hero{
-    position: relative;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 8vw 60px;
-    overflow: hidden;
-  }
-.enhanced-content .hero::before{
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 65% 70% at 100% 50%, rgba(232,39,26,0.12) 0%, transparent 65%),
-      radial-gradient(ellipse 35% 50% at 0% 80%, rgba(200,168,75,0.06) 0%, transparent 60%);
-    pointer-events: none;
-  }
-.enhanced-content .breadcrumb{
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    color: var(--muted);
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 0.5s 0.1s ease forwards;
-  }
-.enhanced-content .breadcrumb span{ color: var(--red); }
-.enhanced-content .hero-title{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(54px, 9vw, 110px);
-    line-height: 0.9;
-    letter-spacing: 0.02em;
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.3s ease forwards;
-  }
-.enhanced-content .hero-title em{ color: var(--red); font-style: normal; }
-.enhanced-content .hero-sub{
-    font-size: clamp(16px, 1.8vw, 19px);
-    line-height: 1.8;
-    color: #b0aba0;
-    max-width: 620px;
-    margin-bottom: 36px;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.5s ease forwards;
-  }
-.enhanced-content .hero-sub strong{ color: var(--light); }
-.enhanced-content .hero-meta{
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.7s ease forwards;
-  }
-.enhanced-content .meta-pill{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--mid);
-    border: 1px solid #333;
-    padding: 9px 18px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-  }
-.enhanced-content .meta-pill .dot{
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--red);
-    animation: pulse 2s infinite;
-  }
-.enhanced-content .section{ padding: 68px 8vw; border-top: 1px solid #1e1e1e; }
-.enhanced-content .section-label{
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-.enhanced-content .section-label::after{
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, #2a2a2a, transparent);
-  }
-.enhanced-content .research-banner{
-    background: linear-gradient(135deg, #0d0d14, #0a1018);
-    border: 1px solid rgba(58,123,213,0.25);
-    border-left: 5px solid var(--blue);
-    padding: 32px 36px;
-    margin-bottom: 52px;
-  }
-.enhanced-content .research-banner h3{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px;
-    letter-spacing: 0.05em;
-    color: var(--blue);
-    margin-bottom: 14px;
-  }
-.enhanced-content .research-banner p{
-    font-size: 17px;
-    line-height: 1.8;
-    color: #a0b8d8;
-  }
-.enhanced-content .research-banner p strong{ color: var(--light); }
-.enhanced-content .research-banner .cite{
-    margin-top: 14px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: rgba(58,123,213,0.6);
-    letter-spacing: 0.05em;
-  }
-.enhanced-content .benefits-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 14px;
-    margin-bottom: 52px;
-  }
-.enhanced-content .benefit-card{
-    background: var(--charcoal);
-    border: 1px solid #222;
-    padding: 28px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-.enhanced-content .benefit-card:hover{ background: #1e1e1e; }
-.enhanced-content .benefit-card::before{
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 3px;
-    transition: opacity 0.2s;
-    opacity: 0.6;
-  }
-.enhanced-content .benefit-card:hover::before{ opacity: 1; }
-.enhanced-content .bc-red::before{ background: var(--red); }
-.enhanced-content .bc-gold::before{ background: var(--gold); }
-.enhanced-content .bc-blue::before{ background: var(--blue); }
-.enhanced-content .bc-green::before{ background: var(--green); }
-.enhanced-content .bc-purple::before{ background: var(--purple); }
-.enhanced-content .benefit-icon{ font-size: 30px; margin-bottom: 14px; }
-.enhanced-content .benefit-title{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
-    letter-spacing: 0.04em;
-    margin-bottom: 10px;
-  }
-.enhanced-content .bc-red .benefit-title{ color: var(--red); }
-.enhanced-content .bc-gold .benefit-title{ color: var(--gold); }
-.enhanced-content .bc-blue .benefit-title{ color: var(--blue); }
-.enhanced-content .bc-green .benefit-title{ color: var(--green); }
-.enhanced-content .bc-purple .benefit-title{ color: var(--purple); }
-.enhanced-content .benefit-body{
-    font-size: 15px;
-    line-height: 1.75;
-    color: #a8a398;
-  }
-.enhanced-content .benefit-body strong{ color: var(--light); }
-.enhanced-content .benefit-research{
-    display: none;
-    margin-top: 14px;
-    padding: 12px 16px;
-    font-size: 13px;
-    line-height: 1.65;
-    border-left: 2px solid;
-  }
-.enhanced-content .bc-red .benefit-research{ border-color: var(--red); background: rgba(232,39,26,0.07); color: #e8b0aa; }
-.enhanced-content .bc-gold .benefit-research{ border-color: var(--gold); background: rgba(200,168,75,0.07); color: #c8b870; }
-.enhanced-content .bc-blue .benefit-research{ border-color: var(--blue); background: rgba(58,123,213,0.07); color: #7a9fd4; }
-.enhanced-content .bc-green .benefit-research{ border-color: var(--green); background: rgba(46,158,107,0.07); color: #7ec4a0; }
-.enhanced-content .bc-purple .benefit-research{ border-color: var(--purple); background: rgba(130,80,200,0.07); color: #b09ad4; }
-.enhanced-content .benefit-research.show{ display: block; }
-.enhanced-content .show-more{
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-top: 12px;
-    text-transform: uppercase;
-  }
-.enhanced-content .neuro-block{
-    background: linear-gradient(135deg, #120a0a, #0d0a14);
-    border: 1px solid rgba(232,39,26,0.15);
-    padding: 40px 44px;
-    margin-bottom: 52px;
-    position: relative;
-    overflow: hidden;
-  }
-.enhanced-content .neuro-block::after{
-    content: '🧠';
-    position: absolute;
-    right: 28px; top: 24px;
-    font-size: 90px;
-    opacity: 0.06;
-  }
-.enhanced-content .neuro-block h3{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    letter-spacing: 0.05em;
-    color: var(--red);
-    margin-bottom: 16px;
-  }
-.enhanced-content .neuro-block p{
-    font-size: 17px;
-    line-height: 1.85;
-    color: #c0b8b0;
-    max-width: 680px;
-    margin-bottom: 16px;
-  }
-.enhanced-content .neuro-block p:last-child{ margin-bottom: 0; }
-.enhanced-content .neuro-block p strong{ color: var(--light); }
-.enhanced-content .neuro-block .cite{
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: rgba(232,39,26,0.5);
-    letter-spacing: 0.05em;
-    margin-top: 16px;
-  }
-.enhanced-content .mental-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 52px;
-  }
-.enhanced-content .mental-card{
-    background: var(--charcoal);
-    border: 1px solid #222;
-    padding: 30px;
-  }
-.enhanced-content .mental-card h4{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
-    letter-spacing: 0.04em;
-    margin-bottom: 12px;
-  }
-.enhanced-content .mental-card p{
-    font-size: 16px;
-    line-height: 1.8;
-    color: #a8a398;
-  }
-.enhanced-content .mental-card p strong{ color: var(--light); }
-.enhanced-content .mental-card .cite{
-    margin-top: 12px;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 0.05em;
-    line-height: 1.5;
-  }
-.enhanced-content .technique-compare{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-bottom: 36px;
-  }
-.enhanced-content .tech-col{
-    padding: 32px;
-  }
-.enhanced-content .tech-col.traditional{
-    background: #111;
-    border: 1px solid #1e1e1e;
-  }
-.enhanced-content .tech-col.b4h{
-    background: var(--charcoal);
-    border: 1px solid #2a2a2a;
-    border-left: none;
-  }
-.enhanced-content .tech-col h4{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 0.05em;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #2a2a2a;
-  }
-.enhanced-content .tech-col.traditional h4{ color: var(--muted); }
-.enhanced-content .tech-col.b4h h4{ color: var(--red); }
-.enhanced-content .tech-list{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-.enhanced-content .tech-list li{
-    font-size: 16px;
-    line-height: 1.6;
-    color: #a8a398;
-    padding-left: 18px;
-    position: relative;
-  }
-.enhanced-content .tech-col.traditional .tech-list li::before{ content: '✗'; position: absolute; left: 0; color: #555; }
-.enhanced-content .tech-col.b4h .tech-list li::before{ content: '✓'; position: absolute; left: 0; color: var(--green); }
-.enhanced-content .tech-list li strong{ color: var(--light); }
-.enhanced-content .posture-note{
-    background: rgba(200,168,75,0.07);
-    border: 1px solid rgba(200,168,75,0.2);
-    border-left: 4px solid var(--gold);
-    padding: 24px 28px;
-    margin-bottom: 16px;
-  }
-.enhanced-content .posture-note p{
-    font-size: 17px;
-    line-height: 1.8;
-    color: #c8b870;
-  }
-.enhanced-content .posture-note p strong{ color: var(--gold); }
-.enhanced-content .styles-row{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-bottom: 16px;
-  }
-.enhanced-content .style-card{
-    background: var(--charcoal);
-    border: 1px solid #222;
-    border-top: 3px solid var(--red);
-    padding: 24px;
-    text-align: center;
-  }
-.enhanced-content .style-card:nth-child(2){ border-top-color: var(--blue); }
-.enhanced-content .style-card:nth-child(3){ border-top-color: var(--gold); }
-.enhanced-content .style-icon{ font-size: 32px; margin-bottom: 10px; }
-.enhanced-content .style-name{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 0.04em;
-    margin-bottom: 8px;
-  }
-.enhanced-content .style-card:nth-child(1) .style-name{ color: var(--red); }
-.enhanced-content .style-card:nth-child(2) .style-name{ color: var(--blue); }
-.enhanced-content .style-card:nth-child(3) .style-name{ color: var(--gold); }
-.enhanced-content .style-desc{
-    font-size: 15px;
-    line-height: 1.7;
-    color: #a8a398;
-  }
-.enhanced-content .instructor-note{
-    background: rgba(232,39,26,0.06);
-    border: 1px solid rgba(232,39,26,0.2);
-    border-left: 4px solid var(--red);
-    padding: 20px 26px;
-    margin-top: 16px;
-  }
-.enhanced-content .instructor-note p{
-    font-size: 16px;
-    line-height: 1.75;
-    color: #e8b0aa;
-  }
-.enhanced-content .instructor-note p strong{ color: var(--light); }
-.enhanced-content .quiz-wrapper{
-    background: var(--charcoal);
-    border: 1px solid #2a2a2a;
-    padding: 48px;
-  }
-.enhanced-content .quiz-progress{ display: flex; gap: 6px; margin-bottom: 32px; }
-.enhanced-content .progress-dot{
-    height: 3px; flex: 1;
-    background: #2a2a2a;
-    transition: background 0.3s;
-  }
-.enhanced-content .progress-dot.active{ background: var(--red); }
-.enhanced-content .progress-dot.done{ background: #4CAF50; }
-.enhanced-content .quiz-q{
-    font-size: 19px;
-    font-weight: 600;
-    color: var(--light);
-    margin-bottom: 26px;
-    line-height: 1.5;
-  }
-.enhanced-content .quiz-q .q-num{
-    display: block;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--red);
-    letter-spacing: 0.12em;
-    margin-bottom: 10px;
-    font-weight: 400;
-  }
-.enhanced-content .quiz-options{ display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
-.enhanced-content .quiz-opt{
-    background: var(--mid);
-    border: 1px solid #333;
-    padding: 16px 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    transition: border-color 0.2s, background 0.2s;
-    font-size: 15px;
-    color: #c0bbb0;
-    text-align: left;
-    line-height: 1.5;
-  }
-.enhanced-content .quiz-opt:hover:not(.disabled){ border-color: #555; background: #333; color: var(--light); }
-.enhanced-content .quiz-opt.correct{ border-color: #4CAF50; background: rgba(76,175,80,0.1); color: #81C784; }
-.enhanced-content .quiz-opt.incorrect{ border-color: var(--red); background: rgba(232,39,26,0.1); color: #EF9A9A; }
-.enhanced-content .quiz-opt.disabled{ cursor: default; }
-.enhanced-content .opt-letter{
-    width: 30px; height: 30px;
-    border: 1px solid #444;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    flex-shrink: 0;
-  }
-.enhanced-content .quiz-opt.correct .opt-letter{ background: rgba(76,175,80,0.2); border-color: #4CAF50; }
-.enhanced-content .quiz-opt.incorrect .opt-letter{ background: rgba(232,39,26,0.2); border-color: var(--red); }
-.enhanced-content .quiz-feedback{
-    display: none;
-    padding: 16px 20px;
-    border-left: 3px solid #4CAF50;
-    background: rgba(76,175,80,0.08);
-    font-size: 15px;
-    line-height: 1.7;
-    color: #a0cfa3;
-    margin-bottom: 18px;
-  }
-.enhanced-content .quiz-feedback.wrong{ border-color: var(--red); background: rgba(232,39,26,0.08); color: #ef9a9a; }
-.enhanced-content .quiz-feedback.show{ display: block; }
-.enhanced-content .quiz-nav{ display: flex; gap: 12px; }
-.enhanced-content .btn{
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 28px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px; font-weight: 600;
-    cursor: pointer; border: none;
-    transition: background 0.2s;
-  }
-.enhanced-content .btn-primary{ background: var(--red); color: white; }
-.enhanced-content .btn-primary:hover{ background: #c41f13; }
-.enhanced-content .btn-ghost{ background: transparent; color: var(--muted); border: 1px solid #333; }
-.enhanced-content .btn-ghost:hover{ border-color: #555; color: var(--light); }
-.enhanced-content .module-footer{
-    padding: 68px 8vw;
-    border-top: 1px solid #222;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 32px;
-    background: linear-gradient(135deg, var(--charcoal), var(--dark));
-  }
-.enhanced-content .module-footer h2{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(30px, 4vw, 48px);
-    letter-spacing: 0.04em;
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-.enhanced-content .module-footer h2 span{ color: var(--red); }
-.enhanced-content .module-footer p{ font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
-@keyframes fadeUp{
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-@keyframes pulse{
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-.enhanced-content .reveal{
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-.enhanced-content .reveal.visible{ opacity: 1; transform: none; }
-@media (max-width: 680px){.enhanced-content .benefits-grid{ grid-template-columns: 1fr; }.enhanced-content .mental-grid{ grid-template-columns: 1fr; }.enhanced-content .technique-compare{ grid-template-columns: 1fr; }.enhanced-content .tech-col.b4h{ border-left: 1px solid #2a2a2a; border-top: none; }.enhanced-content .styles-row{ grid-template-columns: 1fr; }.enhanced-content .quiz-wrapper{ padding: 28px; }.enhanced-content .module-footer{ flex-direction: column; }.enhanced-content .neuro-block{ padding: 28px; }}
-/* --- Unified blue remap for ported content (theme-aware) --- */
-.enhanced-content{
-  --red:#19679e; --dark:transparent; --charcoal:var(--surface-2); --mid:var(--border);
-  --light:var(--text); --muted:var(--text-muted); --gold:#c98a1f; --green:#1e9e77;
-  --blue:#2a7fc4; --amber:#c9791a; --teal:#178f7a; --purple:#5a6bd8; --orange:#c96a1a;
-  --cream:var(--surface); --warm-cream:var(--surface); --deep:var(--text);
-  --olive:#5f7a3a; --terracotta:#c26b3f; --sand:var(--surface-2); --sage:#7f9a5a; --accent:var(--azure);
-  background:transparent!important; color:var(--text);
-  font-size:clamp(1.02rem,1rem + .2vw,1.12rem); line-height:var(--lh-body);
-}
-:root[data-theme="dark"] .enhanced-content{
-  --charcoal:var(--surface-2); --mid:var(--border); --light:var(--text); --muted:var(--text-muted);
-  --red:#4aa3db; --gold:#e0b25a; --blue:#6bb6e6;
-}
-.enhanced-content, .enhanced-content p, .enhanced-content li, .enhanced-content td,
-.enhanced-content .hero-sub, .enhanced-content .card-body, .enhanced-content .st-detail{ font-family:var(--font-body)!important; }
-.enhanced-content h1,.enhanced-content h2,.enhanced-content h3,.enhanced-content h4,
-.enhanced-content .hero-title,.enhanced-content .section-label,.enhanced-content .card-title,
-.enhanced-content .quiz-q,.enhanced-content .st-name{ font-family:var(--font-sans)!important; letter-spacing:normal; }
-/* neutralize their full-page chrome — the site shell provides header, hero, footer */
-.enhanced-content .breadcrumb, .enhanced-content nav.breadcrumb,
-.enhanced-content .module-footer, .enhanced-content .hero,
-.enhanced-content header, .enhanced-content .top-nav, .enhanced-content .site-nav{ display:none!important; }
-.enhanced-content > .section:first-of-type,
-.enhanced-content > section:first-of-type{ padding-top:0!important; }
-.enhanced-content a{ color:var(--link); }
-.enhanced-content img{ border-radius:var(--r-md); }
-/* readable minimum for their small text */
-.enhanced-content [style*="font-size"]{ }
-.enhanced-content .meta-pill, .enhanced-content .section-label{ font-size:.8rem; }
-</style>
+
 </head>
-<body data-lesson-id="why-boxing" data-lesson-title="Why Boxing?" data-lesson-url="modules/why-boxing.html" data-lesson-hasquiz="false">
+<body data-lesson-id="why-boxing" data-lesson-title="Why Boxing?" data-lesson-url="modules/why-boxing.html" data-lesson-hasquiz="true">
 <div data-include="header"></div>
 <main id="main">
 
@@ -565,500 +39,264 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
   </div>
 </div></section>
 
-<div class="section-tight"><div data-lang-block="fr"><div class="wrap wrap-narrow"><div class="callout callout-info"><span class="callout-icon" data-icon="languages"></span><p class="callout-title">La science derrière les bienfaits de la boxe sans contact pour les personnes atteintes de la maladie de Parkinson.</p><div class="callout-body"><p>Le contenu détaillé de cette leçon est présenté en anglais ci-dessous. La traduction française complète est en cours de révision.</p></div></div></div></div>
-<div class="wrap"><div class="enhanced-content lesson-body" data-lesson-content>
+<section class="section-tight"><div class="wrap wrap-narrow"><div class="prose lesson-body" data-lesson-content>
+<p class="lead">Boxing isn't just an exercise trend — for people living with Parkinson's and for aging adults, it's one of the most evidence-backed physical interventions available. This lesson walks through what the research says, how boxing works on the brain and body, why our technique is deliberately different from traditional boxing, and how to explain all of it with confidence to your clients.</p>
 
-
-<!-- ── HERO ── -->
-<section class="hero">
-  <p class="breadcrumb">Module 2 — Class Breakdown &nbsp;›&nbsp; <span>Why Boxing?</span></p>
-  <h1 class="hero-title">
-    Why<br><em>Boxing?</em>
-  </h1>
-  <p class="hero-sub">
-    Boxing isn't just an exercise trend — for people with Parkinson's and aging adults, it's one of the <strong>most evidence-backed physical interventions available</strong>. Here's what the research says, and why we built an entire program around it.
-  </p>
-  <div class="hero-meta">
-    <div class="meta-pill"><span class="dot"></span> Module 2</div>
-    <div class="meta-pill"><span class="dot"></span> Evidence-Based</div>
-    <div class="meta-pill"><span class="dot"></span> Est. 15 min</div>
-  </div>
-</section>
-
-<!-- ══════════ THE RESEARCH ══════════ -->
-<section class="section reveal">
-  <p class="section-label">01 — The Research Foundation</p>
-
-  <div class="research-banner">
-    <h3>What the Science Says</h3>
-    <p>
-      A 2025 systematic review published in <em>Frontiers in Aging Neuroscience</em> analyzed 13 studies on boxing exercise for Parkinson's disease and found consistent evidence that <strong>boxing improves gait, mobility, and balance</strong> in people with PD. The majority of these studies were published between 2020 and 2023 — this is a rapidly growing and strengthening body of evidence.
-      <br><br>
-      Most importantly, <strong>high-intensity exercise like boxing may actually slow Parkinson's progression</strong> by promoting neuroplasticity — the brain's ability to form new connections and adapt. This places boxing in a unique category: not just symptom management, but potentially disease-modifying.
-    </p>
-    <div class="cite">SOURCE: Frontiers in Aging Neuroscience, March 2025 — Systematic Review of 13 Studies (2020–2023)</div>
-  </div>
-
-  <!-- ACSM 2026 GUIDELINES -->
-  <div style="background:linear-gradient(135deg,#0a1208,#0d1408);border:1px solid rgba(46,158,107,0.3);border-left:5px solid var(--green);padding:32px 36px;margin-bottom:36px;">
-    <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;color:var(--green);margin-bottom:14px;text-transform:uppercase;">★ 2026 Official Endorsement</div>
-    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.05em;color:var(--green);margin-bottom:14px;">ACSM & Parkinson's Foundation: Boxing is Officially Recommended</h3>
-    <p style="font-size:17px;line-height:1.8;color:#90c8a8;margin-bottom:16px;">
-      The <strong style="color:var(--light);">American College of Sports Medicine (ACSM)</strong> — the world's largest sports medicine and exercise science organization — and the <strong style="color:var(--light);">Parkinson's Foundation</strong> published updated exercise recommendations in 2026 following extensive review by subject matter experts and PD community members.
-    </p>
-    <p style="font-size:17px;line-height:1.8;color:#90c8a8;margin-bottom:20px;">
-      Under <strong style="color:var(--light);">Balance, Agility & Multitasking (BAM)</strong> — recommended 2–3 days per week — the guidelines specifically list <strong style="color:var(--green);">boxing</strong> as a recommended activity type, alongside yoga, tai chi, and dance. The guidelines note that BAM training should include multidirectional stepping, weight shifting, turning, large movements, and multitasking. <strong style="color:var(--light);">This describes a B4H class exactly.</strong>
-    </p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:16px;">
-      <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(46,158,107,0.2);padding:18px;">
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green);margin-bottom:6px;">Aerobic Activity</div>
-        <div style="font-size:14px;color:#90c8a8;line-height:1.6;">3 days/week, 30+ min at moderate-to-vigorous intensity. Continuous, rhythmic activities.</div>
-      </div>
-      <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(46,158,107,0.2);padding:18px;">
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green);margin-bottom:6px;">Strength Training</div>
-        <div style="font-size:14px;color:#90c8a8;line-height:1.6;">2–3 non-consecutive days/week, 30+ min. Major muscle groups, 2–3 sets of 8–10 reps.</div>
-      </div>
-      <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(46,158,107,0.2);padding:18px;">
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green);margin-bottom:6px;">Stretching</div>
-        <div style="font-size:14px;color:#90c8a8;line-height:1.6;">2–3 days/week with daily stretching most effective. Active range of motion with deep breathing.</div>
-      </div>
-      <div style="background:rgba(46,158,107,0.12);border:1px solid rgba(46,158,107,0.4);padding:18px;">
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green);margin-bottom:6px;">BAM ← That's Us</div>
-        <div style="font-size:14px;color:#90c8a8;line-height:1.6;">2–3 days/week. Multidirectional stepping, large movements, multitasking. <strong style="color:var(--light);">Specifically includes boxing.</strong></div>
-      </div>
-    </div>
-    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(46,158,107,0.5);letter-spacing:0.05em;">SOURCE: ACSM & Parkinson's Foundation Updated Exercise Recommendations, 2026 — Parkinson.org/about-us/news/updated-exercise-recommendations</div>
-  </div>
-
-  <!-- Neuroplasticity block -->
-  <div class="neuro-block">
-    <h3>Boxing & The Brain: Neuroplasticity</h3>
-    <p>
-      Parkinson's disease is caused by the progressive loss of dopamine-producing neurons. While medication manages symptoms, <strong>exercise is the only intervention shown to potentially promote neuroplasticity</strong> — meaning it may help the brain compensate and adapt at a structural level.
-    </p>
-    <p>
-      Boxing is classified as high-intensity exercise. Research strongly suggests that <strong>high-intensity exercise promotes neuroplasticity</strong> in people with PD in ways that low-intensity exercise does not. This is why the intensity of our classes is not just about fitness — it's neurologically purposeful.
-    </p>
-    <p>
-      A 2023 pilot study from Rush University Medical Center (Patel et al.) found that people with PD who completed a 12-week community-based boxing program showed <strong>improvements in both motor and non-motor symptoms</strong> — including mood, sleep, and cognitive function.
-    </p>
-    <div class="cite">SOURCES: Frontiers in Aging Neuroscience (2025) · Patel, Blasucci & Mahajan, Journal of Clinical Neuroscience (2023) · Blacker et al., PM&R (2024)</div>
-  </div>
-</section>
-
-<!-- ══════════ 12 BENEFITS ══════════ -->
-<section class="section reveal">
-  <p class="section-label">02 — What Boxing Develops</p>
-  <p style="font-size:17px;color:#b0aba0;max-width:600px;margin-bottom:36px;line-height:1.75;">
-    Every one of these benefits directly addresses a symptom of Parkinson's or aging. Tap any card to see the research behind it.
-  </p>
-
-  <div class="benefits-grid">
-
-    <div class="benefit-card bc-red" onclick="toggleResearch(this)">
-      <div class="benefit-icon">⚖️</div>
-      <div class="benefit-title">Balance</div>
-      <div class="benefit-body">
-        Weight shifting, footwork, and reactive movements in boxing directly train the postural control systems most affected by PD. <strong>Balance is one of the most consistently improved outcomes</strong> in boxing research.
-      </div>
-      <div class="benefit-research">
-        Multiple studies confirm balance improvements in PD following boxing programs, including Moore et al. (2021), Domingos et al. (2022), and Sonne et al. (2021). The Fullerton Advanced Balance Scale — the same tool we use in our assessments — was used to measure these improvements.
-      </div>
-      <div class="show-more">Tap for research ↓</div>
-    </div>
-
-    <div class="benefit-card bc-gold" onclick="toggleResearch(this)">
-      <div class="benefit-icon">🚶</div>
-      <div class="benefit-title">Amplitude</div>
-      <div class="benefit-body">
-        Amplitude training — doing movements BIG — is one of the most important principles in PD exercise. Boxing naturally encourages large, powerful, full-range movements. <strong>Think big punches, big steps, big voice.</strong>
-      </div>
-      <div class="benefit-research">
-        Amplitude-based exercise (also called LSVT BIG) is a clinically established approach in PD rehabilitation. Research shows that people with PD have reduced amplitude of movement and that training "big" helps rewire the brain's sense of normal movement size. Boxing is an ideal vehicle for this because every technique — jab, cross, hook — benefits from amplitude.
-      </div>
-      <div class="show-more">Tap for research ↓</div>
-    </div>
-
-    <div class="benefit-card bc-blue" onclick="toggleResearch(this)">
-      <div class="benefit-icon">🧠</div>
-      <div class="benefit-title">Hand-Eye Coordination</div>
-      <div class="benefit-body">
-        Hitting a moving pad or target requires the brain to integrate visual information with motor output in real time — a demanding dual-task that <strong>exercises the neural pathways most compromised by PD.</strong>
-      </div>
-      <div class="benefit-research">
-        The dual-task demands of boxing (moving, watching a target, planning a punch, executing it) closely mirror the challenges PD clients face in daily life. Research on dual-task training in PD consistently shows improvements in both motor performance and cognitive function. This is why hitting mitts is therapeutically superior to simply punching the air.
-      </div>
-      <div class="show-more">Tap for research ↓</div>
-    </div>
-
-    <div class="benefit-card bc-green" onclick="toggleResearch(this)">
-      <div class="benefit-icon">🎙️</div>
-      <div class="benefit-title">Voice & Speech</div>
-      <div class="benefit-body">
-        Boxing requires exertion — and exertion naturally increases vocal output. Calling out combinations, counting, and the effort of intense exercise all <strong>strengthen respiratory muscles and vocal projection.</strong>
-      </div>
-      <div class="benefit-research">
-        A 2023 pilot study by Watts et al. (Journal of Clinical Medicine) specifically examined boxing's effect on voice and phonation in PD, finding improvements in respiratory pressure and voice aerodynamics. Hypophonia (soft voice) is a common and frustrating PD symptom — boxing addresses it both directly and indirectly through breathing and effort demands.
-      </div>
-      <div class="show-more">Tap for research ↓</div>
-    </div>
-
-    <div class="benefit-card bc-red" onclick="toggleResearch(this)">
-      <div class="benefit-icon">⚡</div>
-      <div class="benefit-title">Agility & Speed</div>
-      <div class="benefit-body">
-        Footwork drills, rapid direction changes, and quick combination sequences train the fast-twitch neuromuscular system — which is <strong>significantly slowed by bradykinesia</strong> in Parkinson's.
-      </div>
-      <div class="benefit-research">
-        Bradykinesia (slowness of movement) is one of the cardinal symptoms of PD. High-intensity, speed-based exercise creates a neurological demand for faster motor output, which research suggests can partially offset bradykinesia-related declines. The circuit format of Fighter classes is designed specifically to maintain this intensity demand.
-      </div>
-      <div class="show-more">Tap for research ↓</div>
-    </div>
-
-    <div class="benefit-card bc-purple" onclick="toggleResearch(this)">
-      <div class="benefit-icon">💪</div>
-      <div class="benefit-title">Strength & Power</div>
-      <div class="benefit-body">
-        Generating force against a bag or pads builds upper and lower body strength. Resistance and power training also supports <strong>bone density, fall recovery, and functional independence.</strong>
-      </div>
-      <div class="benefit-research">
-        Muscle weakness is a common secondary symptom of PD, compounded by inactivity. The FIGHT-PD feasibility study (Blacker et al., PM&R, 2024) documented improvements in lower extremity strength using 30-second sit-to-stand tests — the same test in our B4H assessment battery. Strength gains directly translate to reduced fall risk and improved daily function.
-      </div>
-      <div class="show-more">Tap for research ↓</div>
-    </div>
-
-    <div class="benefit-card bc-gold" onclick="toggleResearch(this)">
-      <div class="benefit-icon">🏃</div>
-      <div class="benefit-title">Endurance</div>
-      <div class="benefit-body">
-        Sustained cardiovascular output during a full B4H class improves aerobic fitness — which is directly linked to <strong>better motor function, mood, and cognitive performance</strong> in people with PD.
-      </div>
-      <div class="benefit-research">
-        Cardiovascular fitness is strongly associated with neuroplasticity. Aerobic exercise increases BDNF (brain-derived neurotrophic factor) — a protein that supports neuron survival and growth. In PD populations, improved cardiorespiratory fitness is associated with better motor exam scores and slower disease progression. The 6-minute walk test, used in multiple boxing studies, consistently shows improvement.
-      </div>
-      <div class="show-more">Tap for research ↓</div>
-    </div>
-
-    <div class="benefit-card bc-blue" onclick="toggleResearch(this)">
-      <div class="benefit-icon">🎯</div>
-      <div class="benefit-title">Accuracy & Footwork</div>
-      <div class="benefit-body">
-        Precise targeting drills train fine motor control and spatial awareness. Footwork patterns improve <strong>gait, stride length, and the shuffling walk</strong> that characterizes Parkinson's.
-      </div>
-      <div class="benefit-research">
-        Gait improvements — including stride length, walking speed, and the dual-task TUG (Timed Up and Go) — are among the most consistently reported outcomes in boxing research for PD. Studies by Combs et al. (2013) and Sangarapillai et al. (2021) both found significant gait improvements following boxing programs compared to control interventions.
-      </div>
-      <div class="show-more">Tap for research ↓</div>
-    </div>
-
-    <div class="benefit-card bc-green" onclick="toggleResearch(this)">
-      <div class="benefit-icon">🤸</div>
-      <div class="benefit-title">Flexibility</div>
-      <div class="benefit-body">
-        The rotational demands of boxing — reaching, twisting, extending — work against the <strong>rigidity and stooped posture</strong> that PD creates. Cool-down stretching compounds these gains.
-      </div>
-      <div class="benefit-research">
-        Rigidity is a cardinal symptom of PD — muscles become stiff, reducing range of motion and contributing to the characteristic stooped posture. Boxing's rotational, multi-directional movements directly counteract this. Combined with our cool-down ball work and stretching, flexibility is addressed at both ends of every class.
-      </div>
-      <div class="show-more">Tap for research ↓</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════ MENTAL HEALTH ══════════ -->
-<section class="section reveal">
-  <p class="section-label">03 — Mental Health & Wellbeing</p>
-
-  <div class="mental-grid">
-
-    <div class="mental-card" style="border-top: 3px solid var(--purple);">
-      <h4 style="color:var(--purple);">🧘 Stress Relief & Mood</h4>
-      <p>
-        Hitting a heavy bag is one of the most instinctively satisfying physical releases available. Beyond the feeling, <strong>intense exercise triggers a sustained release of endorphins, dopamine, and serotonin</strong> — the exact neurotransmitters that PD depletes. A boxing class isn't just exercise; it's a neurochemical reset.
-      </p>
-      <div class="cite">Patel et al. (2023) found non-motor symptom improvements including mood following a 12-week boxing program. Wu et al. found exercise significantly reduces depressive symptoms in PD populations.</div>
-    </div>
-
-    <div class="mental-card" style="border-top: 3px solid var(--blue);">
-      <h4 style="color:var(--blue);">😴 Sleep</h4>
-      <p>
-        Poor sleep is a common and debilitating non-motor symptom of PD. <strong>Regular high-intensity exercise is one of the most evidence-supported non-pharmacological interventions for sleep quality.</strong> A 2020 pilot study by Urrutia et al. specifically examined boxing's effect on sleep in PD and found positive improvements in both sleep quality and daytime sleepiness.
-      </p>
-      <div class="cite">Urrutia et al. (2020) — Topics in Geriatric Rehabilitation: Boxing to improve sleep quality and daytime sleepiness in PD.</div>
-    </div>
-
-    <div class="mental-card" style="border-top: 3px solid var(--gold);">
-      <h4 style="color:var(--gold);">🤝 Community & Belonging</h4>
-      <p>
-        A 2024 qualitative study from Denmark found that participants in Parkinson's boxing programs reported a <strong>strong sense of community, joy, gratitude, and improved mental wellbeing</strong> — not just physical improvement. The shared diagnosis, shared effort, and shared victories created bonds that participants described as profoundly meaningful.
-      </p>
-      <div class="cite">Danish Parkinson Boxing qualitative study, Disability & Rehabilitation (published online May 2024).</div>
-    </div>
-
-    <div class="mental-card" style="border-top: 3px solid var(--green);">
-      <h4 style="color:var(--green);">💡 Cognitive Function</h4>
-      <p>
-        The dual-task nature of boxing — simultaneously moving, thinking, reacting, and counting — places significant demands on executive function and working memory. <strong>Regular dual-task training has been shown to improve cognitive performance in older adults and people with PD</strong>, slowing the decline that often accompanies the disease.
-      </p>
-      <div class="cite">Multiple included studies tracked cognitive outcomes via the MDS-UPDRS III and PDQ-39, showing improvements in cognitive subscores following boxing programs.</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════ TECHNIQUES ══════════ -->
-<section class="section reveal">
-  <p class="section-label">04 — B4H Techniques: What Makes Us Different</p>
-
-  <p style="font-size:17px;color:#b0aba0;max-width:640px;margin-bottom:32px;line-height:1.75;">
-    We teach boxing — but our approach is intentionally different from traditional boxing technique. Understanding <em>why</em> makes you a better instructor.
-  </p>
-
-  <div class="technique-compare">
-    <div class="tech-col traditional">
-      <h4>Traditional Boxing</h4>
-      <ul class="tech-list">
-        <li><strong>Hands always up</strong> — chin down, elbows in</li>
-        <li><strong>Rounded, protective shoulders</strong> — guards the face</li>
-        <li><strong>Constant tension</strong> — ready to absorb or deflect blows</li>
-        <li><strong>Compact, closed posture</strong> — minimizes target area</li>
-        <li>Great for the ring — works against PD clients</li>
-      </ul>
-    </div>
-    <div class="tech-col b4h">
-      <h4>Boxing 4 Health Approach</h4>
-      <ul class="tech-list">
-        <li><strong>Strong, upright posture</strong> — chest open, spine tall</li>
-        <li><strong>Opening movements throughout</strong> — counteract PD's forward flexion</li>
-        <li><strong>Full extension on punches</strong> — amplitude is the goal</li>
-        <li><strong>Relaxed between combinations</strong> — reduce rigidity, not add to it</li>
-        <li>High intensity — without reinforcing poor posture</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="posture-note">
-    <p>
-      <strong>🥊 The Key Principle:</strong> People with Parkinson's already fight against forward flexion, rounded shoulders, and stooped posture every day. The last thing we want is to design a class that reinforces those patterns. Every opening stretch, every tall stance cue, every full extension punch is intentionally working <em>against</em> the postural pull of PD — not with it.
-    </p>
-  </div>
-
-  <!-- Styles taught -->
-  <div class="section-label" style="margin-top:48px;">Styles We Incorporate</div>
-
-  <div class="styles-row">
-    <div class="style-card">
-      <div class="style-icon">🥊</div>
-      <div class="style-name">Boxing</div>
-      <div class="style-desc">Core of every class. Jabs, crosses, hooks, uppercuts. Focus on amplitude, extension, and posture.</div>
-    </div>
-    <div class="style-card">
-      <div class="style-icon">🦵</div>
-      <div class="style-name">Kickboxing</div>
-      <div class="style-desc">Lower body engagement, hip mobility, balance challenges. Added where instructor experience allows.</div>
-    </div>
-    <div class="style-card">
-      <div class="style-icon">🙏</div>
-      <div class="style-name">Muay Thai</div>
-      <div class="style-desc">Clinch work, elbows, knees where appropriate. Broader range of motion and full-body engagement.</div>
-    </div>
-  </div>
-
-  <div class="instructor-note">
-    <p><strong>🥊 Instructor Note:</strong> Not all instructors have a boxing background — and that's okay. Teach what you know confidently and safely. What matters most is that you understand the <em>purpose</em> behind each movement — amplitude, posture, dual-tasking — not just the technique itself. A client doing a big, tall, open jab incorrectly is getting more therapeutic benefit than one doing a perfect traditional jab with rounded shoulders.</p>
-  </div>
-</section>
-
-<!-- ══════════ QUIZ ══════════ -->
-<section class="section reveal">
-  <p class="section-label">05 — Knowledge Check</p>
-
-  <div class="quiz-wrapper">
-    <div class="quiz-progress">
-      <div class="progress-dot active" id="qd0"></div>
-      <div class="progress-dot" id="qd1"></div>
-      <div class="progress-dot" id="qd2"></div>
-      <div class="progress-dot" id="qd3"></div>
-    </div>
-
-    <!-- Q1 -->
-    <div id="sq1">
-      <div class="quiz-q">
-        <span class="q-num">QUESTION 01 / 04</span>
-        Why is high-intensity exercise like boxing considered potentially more beneficial for Parkinson's than low-intensity exercise?
-      </div>
-      <div class="quiz-options">
-        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">A</span>It burns more calories, helping with weight management</div>
-        <div class="quiz-opt" onclick="ans(this,true,'sq1')"><span class="opt-letter">B</span>It promotes neuroplasticity — the brain's ability to form new connections — in ways low-intensity exercise doesn't</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">C</span>High-intensity clients tend to stay more motivated and show up more often</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">D</span>It improves medication absorption</div>
-      </div>
-      <div class="quiz-feedback show" id="sfb_sq1_r">✓ Correct! High-intensity exercise promotes neuroplasticity — structural and functional changes in the brain that help compensate for PD-related neuron loss. This is why the intensity of our classes is clinically purposeful, not just a fitness preference.</div>
-      <div class="quiz-feedback wrong" id="sfb_sq1_w">The answer is neuroplasticity. High-intensity exercise is believed to promote the brain's ability to form new neural connections — potentially slowing PD progression, not just managing symptoms. This is what places boxing in a unique therapeutic category.</div>
-      <div class="quiz-nav" id="snav_sq1" style="display:none;"><button class="btn btn-primary" onclick="nxt(2)">Next →</button></div>
-    </div>
-
-    <!-- Q2 -->
-    <div id="sq2" style="display:none;">
-      <div class="quiz-q">
-        <span class="q-num">QUESTION 02 / 04</span>
-        Why does B4H deliberately avoid traditional boxing's "hands up, rounded shoulders" technique?
-      </div>
-      <div class="quiz-options">
-        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">A</span>It's too dangerous for older adults</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">B</span>It requires too much upper body strength</div>
-        <div class="quiz-opt" onclick="ans(this,true,'sq2')"><span class="opt-letter">C</span>It reinforces the forward-flexed, stooped posture that PD already creates — working against therapeutic goals</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">D</span>Clients find it confusing to learn</div>
-      </div>
-      <div class="quiz-feedback show" id="sfb_sq2_r">✓ Exactly right. Traditional boxing technique would actually reinforce the rounded shoulders and stooped posture that PD clients are fighting against every day. Our approach is intentionally opposite — open, tall, extended — to counteract the postural pull of PD.</div>
-      <div class="quiz-feedback wrong" id="sfb_sq2_w">The reason is postural. Traditional boxing's protective, rounded stance reinforces <strong>exactly the posture PD creates</strong> — forward flexion, closed chest, rounded shoulders. B4H deliberately works against this by emphasizing opening movements, tall stance, and full extension.</div>
-      <div class="quiz-nav" id="snav_sq2" style="display:none;"><button class="btn btn-primary" onclick="nxt(3)">Next →</button></div>
-    </div>
-
-    <!-- Q3 -->
-    <div id="sq3" style="display:none;">
-      <div class="quiz-q">
-        <span class="q-num">QUESTION 03 / 04</span>
-        A client asks why you call out combinations out loud during class. What's the best answer?
-      </div>
-      <div class="quiz-options">
-        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">A</span>It's just tradition from boxing culture</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">B</span>It helps you keep track of what everyone is doing</div>
-        <div class="quiz-opt" onclick="ans(this,true,'sq3')"><span class="opt-letter">C</span>Counting and calling combinations is dual-tasking — it trains the brain and motor system simultaneously, and the vocal effort also helps with hypophonia</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">D</span>Louder classes are more energizing for the group</div>
-      </div>
-      <div class="quiz-feedback show" id="sfb_sq3_r">✓ Perfect answer! Calling out combinations is dual-tasking — simultaneously engaging the motor and cognitive systems. It also directly addresses hypophonia (soft voice) which is a common PD symptom. Research supports both of these mechanisms.</div>
-      <div class="quiz-feedback wrong" id="sfb_sq3_w">Calling out combinations serves two therapeutic purposes: it's <strong>dual-tasking</strong> (cognitive + motor simultaneously) which trains the neural pathways most affected by PD, and the vocal effort directly addresses <strong>hypophonia</strong> — the soft, breathy voice that affects many people with PD.</div>
-      <div class="quiz-nav" id="snav_sq3" style="display:none;"><button class="btn btn-primary" onclick="nxt(4)">Next →</button></div>
-    </div>
-
-    <!-- Q4 -->
-    <div id="sq4" style="display:none;">
-      <div class="quiz-q">
-        <span class="q-num">QUESTION 04 / 04</span>
-        You don't have a boxing background. A client asks if that matters. What do you say?
-      </div>
-      <div class="quiz-options">
-        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">A</span>Apologize and tell them to find an instructor with boxing experience</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">B</span>Say nothing — pretend you do have experience</div>
-        <div class="quiz-opt" onclick="ans(this,true,'sq4')"><span class="opt-letter">C</span>What matters most is understanding the therapeutic purpose behind the movements — amplitude, posture, dual-tasking — not perfecting traditional technique</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">D</span>Only teach the techniques you learned in traditional boxing</div>
-      </div>
-      <div class="quiz-feedback show" id="sfb_sq4_r">✓ Well said. The therapeutic principles — amplitude, posture, dual-tasking, intensity — matter far more than perfect boxing form. A client doing a big, tall, open punch with "wrong" technique is getting more therapeutic benefit than one doing a textbook jab with rounded shoulders.</div>
-      <div class="quiz-feedback wrong" id="sfb_sq4_w">Not all B4H instructors have boxing backgrounds — and that's intentional. What matters is understanding <strong>why</strong> each movement is prescribed: amplitude, posture, dual-tasking, intensity. A therapeutically purposeful "imperfect" punch beats a technically perfect one that reinforces poor posture every time.</div>
-      <div class="quiz-nav" id="snav_sq4" style="display:none;"><button class="btn btn-primary" onclick="showDone()">See Results 🥊</button></div>
-    </div>
-
-    <!-- Complete -->
-    <div id="sqComplete" style="display:none;text-align:center;padding:20px 0;">
-      <p style="font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--red);" id="sqScore"></p>
-      <p style="font-size:20px;font-weight:600;color:var(--light);margin-bottom:12px;" id="sqResult"></p>
-      <p style="font-size:16px;color:var(--muted);max-width:500px;margin:0 auto 32px;" id="sqMessage"></p>
-      <button class="btn btn-ghost" onclick="resetQ()">↩ Retake Quiz</button>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<div class="module-footer reveal">
-  <div>
-    <h2>Next Up:<br><span>Functional Exercises</span></h2>
-    <p>Now that you know why boxing works, let's break down the functional exercises that form the backbone of every B4H class.</p>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-    <button class="btn btn-primary">Continue: Functional Exercises →</button>
-    <button class="btn btn-ghost">↩ Back to Class Breakdown</button>
-  </div>
+<div class="panel panel-tinted">
+  <h3><span data-icon="target"></span> What you'll learn</h3>
+  <ul class="check-list">
+    <li>Summarise the current research evidence for boxing in Parkinson's — including the 2025 systematic review and the 2026 ACSM and Parkinson's Foundation endorsement.</li>
+    <li>Explain neuroplasticity and why high-intensity exercise may do more than manage symptoms.</li>
+    <li>Connect each physical and mental benefit of boxing to a specific symptom of Parkinson's or aging.</li>
+    <li>Describe how the Boxing 4 Health technique intentionally differs from traditional boxing — and why that difference is therapeutic.</li>
+  </ul>
 </div>
 
+<p class="label">Section 01</p>
+<h2 id="research-foundation">The Research Foundation</h2>
+<p>A 2025 systematic review published in <em>Frontiers in Aging Neuroscience</em> analyzed 13 studies on boxing exercise for Parkinson's disease and found consistent evidence that boxing improves gait, mobility, and balance in people with PD. The majority of these studies were published between 2020 and 2023 — this is a rapidly growing and strengthening body of evidence.</p>
+<p>Most importantly, high-intensity exercise like boxing may actually <strong>slow Parkinson's progression</strong> by promoting neuroplasticity — the brain's ability to form new connections and adapt. This places boxing in a unique category: not just symptom management, but potentially disease-modifying.</p>
 
+<div class="stat-row">
+  <div class="stat"><div class="stat-num">13</div><div class="stat-label">Studies analysed in the 2025 systematic review of boxing for PD</div></div>
+  <div class="stat"><div class="stat-num">2020&ndash;2023</div><div class="stat-label">When most of that evidence was published — a fast-growing field</div></div>
+  <div class="stat"><div class="stat-num">12 wks</div><div class="stat-label">Community boxing program that improved both motor and non-motor symptoms (Rush, 2023)</div></div>
+</div>
 
-</div></div></div>
+<div class="callout callout-info"><span class="callout-icon" data-icon="info"></span><p class="callout-title">Good to know</p><div class="callout-body"><p>Source: <em>Frontiers in Aging Neuroscience</em>, March 2025 — a systematic review of 13 studies (2020&ndash;2023).</p></div></div>
+
+<p class="label">Section 02</p>
+<h2 id="acsm-endorsement">Officially Recommended: ACSM &amp; the Parkinson's Foundation</h2>
+<p>The <strong>American College of Sports Medicine (ACSM)</strong> — the world's largest sports medicine and exercise science organization — and the <strong>Parkinson's Foundation</strong> published updated exercise recommendations in 2026 following extensive review by subject matter experts and PD community members.</p>
+<p>Under <strong>Balance, Agility &amp; Multitasking (BAM)</strong> — recommended 2&ndash;3 days per week — the guidelines specifically list boxing as a recommended activity type, alongside yoga, tai chi, and dance. The guidelines note that BAM training should include multidirectional stepping, weight shifting, turning, large movements, and multitasking. That describes a B4H class exactly.</p>
+
+<div class="grid grid-cards">
+  <article class="card">
+    <span class="chip" data-icon="heart-pulse"></span>
+    <h3>Aerobic Activity</h3>
+    <p>3 days/week, 30+ minutes at moderate-to-vigorous intensity. Continuous, rhythmic activities.</p>
+  </article>
+  <article class="card">
+    <span class="chip" data-icon="dumbbell"></span>
+    <h3>Strength Training</h3>
+    <p>2&ndash;3 non-consecutive days/week, 30+ minutes. Major muscle groups, 2&ndash;3 sets of 8&ndash;10 reps.</p>
+  </article>
+  <article class="card">
+    <span class="chip" data-icon="activity"></span>
+    <h3>Stretching</h3>
+    <p>2&ndash;3 days/week, with daily stretching most effective. Active range of motion with deep breathing.</p>
+  </article>
+  <article class="card">
+    <span class="chip" data-icon="target"></span>
+    <h3>Balance, Agility &amp; Multitasking &mdash; That's Us</h3>
+    <p>2&ndash;3 days/week. Multidirectional stepping, large movements, multitasking. <strong>Specifically includes boxing.</strong></p>
+  </article>
+</div>
+
+<div class="callout callout-info"><span class="callout-icon" data-icon="info"></span><p class="callout-title">Good to know</p><div class="callout-body"><p>Source: ACSM &amp; Parkinson's Foundation Updated Exercise Recommendations, 2026 — Parkinson.org/about-us/news/updated-exercise-recommendations.</p></div></div>
+
+<p class="label">Section 03</p>
+<h2 id="neuroplasticity">Boxing &amp; the Brain: Neuroplasticity</h2>
+<p>Parkinson's disease is caused by the progressive loss of dopamine-producing neurons. While medication manages symptoms, <strong>exercise is the only intervention shown to potentially promote neuroplasticity</strong> — meaning it may help the brain compensate and adapt at a structural level.</p>
+<p>Boxing is classified as high-intensity exercise. Research strongly suggests that high-intensity exercise promotes neuroplasticity in people with PD in ways that low-intensity exercise does not. This is why the intensity of our classes is not just about fitness — it's neurologically purposeful.</p>
+<p>A 2023 pilot study from Rush University Medical Center (Patel et al.) found that people with PD who completed a 12-week community-based boxing program showed improvements in both motor and non-motor symptoms — including mood, sleep, and cognitive function.</p>
+
+<div class="callout callout-info"><span class="callout-icon" data-icon="info"></span><p class="callout-title">Good to know</p><div class="callout-body"><p>Sources: <em>Frontiers in Aging Neuroscience</em> (2025) · Patel, Blasucci &amp; Mahajan, <em>Journal of Clinical Neuroscience</em> (2023) · Blacker et al., <em>PM&amp;R</em> (2024).</p></div></div>
+
+<p class="label">Section 04</p>
+<h2 id="what-boxing-develops">What Boxing Develops</h2>
+<p>Every one of these benefits directly addresses a symptom of Parkinson's or aging. Each card pairs the benefit with the research behind it.</p>
+
+<div class="grid grid-cards">
+
+  <article class="card">
+    <span class="chip" data-icon="accessibility"></span>
+    <h3>Balance</h3>
+    <p>Weight shifting, footwork, and reactive movements in boxing directly train the postural control systems most affected by PD. <strong>Balance is one of the most consistently improved outcomes</strong> in boxing research.</p>
+    <p class="muted">Multiple studies confirm balance improvements in PD following boxing programs, including Moore et al. (2021), Domingos et al. (2022), and Sonne et al. (2021). The Fullerton Advanced Balance Scale — the same tool we use in our assessments — was used to measure these improvements.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="move-right"></span>
+    <h3>Amplitude</h3>
+    <p>Amplitude training — doing movements BIG — is one of the most important principles in PD exercise. Boxing naturally encourages large, powerful, full-range movements. <strong>Think big punches, big steps, big voice.</strong></p>
+    <p class="muted">Amplitude-based exercise (also called LSVT BIG) is a clinically established approach in PD rehabilitation. Research shows that people with PD have reduced amplitude of movement and that training "big" helps rewire the brain's sense of normal movement size. Boxing is an ideal vehicle for this because every technique — jab, cross, hook — benefits from amplitude.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="target"></span>
+    <h3>Hand-Eye Coordination</h3>
+    <p>Hitting a moving pad or target requires the brain to integrate visual information with motor output in real time — a demanding dual-task that <strong>exercises the neural pathways most compromised by PD.</strong></p>
+    <p class="muted">The dual-task demands of boxing (moving, watching a target, planning a punch, executing it) closely mirror the challenges PD clients face in daily life. Research on dual-task training in PD consistently shows improvements in both motor performance and cognitive function. This is why hitting mitts is therapeutically superior to simply punching the air.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="wind"></span>
+    <h3>Voice &amp; Speech</h3>
+    <p>Boxing requires exertion — and exertion naturally increases vocal output. Calling out combinations, counting, and the effort of intense exercise all <strong>strengthen respiratory muscles and vocal projection.</strong></p>
+    <p class="muted">A 2023 pilot study by Watts et al. (<em>Journal of Clinical Medicine</em>) specifically examined boxing's effect on voice and phonation in PD, finding improvements in respiratory pressure and voice aerodynamics. Hypophonia (soft voice) is a common and frustrating PD symptom — boxing addresses it both directly and indirectly through breathing and effort demands.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="zap"></span>
+    <h3>Agility &amp; Speed</h3>
+    <p>Footwork drills, rapid direction changes, and quick combination sequences train the fast-twitch neuromuscular system — which is <strong>significantly slowed by bradykinesia</strong> in Parkinson's.</p>
+    <p class="muted">Bradykinesia (slowness of movement) is one of the cardinal symptoms of PD. High-intensity, speed-based exercise creates a neurological demand for faster motor output, which research suggests can partially offset bradykinesia-related declines. The circuit format of Fighter classes is designed specifically to maintain this intensity demand.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="dumbbell"></span>
+    <h3>Strength &amp; Power</h3>
+    <p>Generating force against a bag or pads builds upper and lower body strength. Resistance and power training also supports <strong>bone density, fall recovery, and functional independence.</strong></p>
+    <p class="muted">Muscle weakness is a common secondary symptom of PD, compounded by inactivity. The FIGHT-PD feasibility study (Blacker et al., <em>PM&amp;R</em>, 2024) documented improvements in lower extremity strength using 30-second sit-to-stand tests — the same test in our B4H assessment battery. Strength gains directly translate to reduced fall risk and improved daily function.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="heart-pulse"></span>
+    <h3>Endurance</h3>
+    <p>Sustained cardiovascular output during a full B4H class improves aerobic fitness — which is directly linked to <strong>better motor function, mood, and cognitive performance</strong> in people with PD.</p>
+    <p class="muted">Cardiovascular fitness is strongly associated with neuroplasticity. Aerobic exercise increases BDNF (brain-derived neurotrophic factor) — a protein that supports neuron survival and growth. In PD populations, improved cardiorespiratory fitness is associated with better motor exam scores and slower disease progression. The 6-minute walk test, used in multiple boxing studies, consistently shows improvement.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="footprints"></span>
+    <h3>Accuracy &amp; Footwork</h3>
+    <p>Precise targeting drills train fine motor control and spatial awareness. Footwork patterns improve <strong>gait, stride length, and the shuffling walk</strong> that characterizes Parkinson's.</p>
+    <p class="muted">Gait improvements — including stride length, walking speed, and the dual-task TUG (Timed Up and Go) — are among the most consistently reported outcomes in boxing research for PD. Studies by Combs et al. (2013) and Sangarapillai et al. (2021) both found significant gait improvements following boxing programs compared to control interventions.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="activity"></span>
+    <h3>Flexibility</h3>
+    <p>The rotational demands of boxing — reaching, twisting, extending — work against the <strong>rigidity and stooped posture</strong> that PD creates. Cool-down stretching compounds these gains.</p>
+    <p class="muted">Rigidity is a cardinal symptom of PD — muscles become stiff, reducing range of motion and contributing to the characteristic stooped posture. Boxing's rotational, multi-directional movements directly counteract this. Combined with our cool-down ball work and stretching, flexibility is addressed at both ends of every class.</p>
+  </article>
+
+</div>
+
+<p class="label">Section 05</p>
+<h2 id="mental-health">Mental Health &amp; Wellbeing</h2>
+
+<div class="grid grid-cards">
+
+  <article class="card">
+    <span class="chip" data-icon="sparkles"></span>
+    <h3>Stress Relief &amp; Mood</h3>
+    <p>Hitting a heavy bag is one of the most instinctively satisfying physical releases available. Beyond the feeling, <strong>intense exercise triggers a sustained release of endorphins, dopamine, and serotonin</strong> — the exact neurotransmitters that PD depletes. A boxing class isn't just exercise; it's a neurochemical reset.</p>
+    <p class="muted">Patel et al. (2023) found non-motor symptom improvements including mood following a 12-week boxing program. Wu et al. found exercise significantly reduces depressive symptoms in PD populations.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="clock"></span>
+    <h3>Sleep</h3>
+    <p>Poor sleep is a common and debilitating non-motor symptom of PD. <strong>Regular high-intensity exercise is one of the most evidence-supported non-pharmacological interventions for sleep quality.</strong> A 2020 pilot study by Urrutia et al. specifically examined boxing's effect on sleep in PD and found positive improvements in both sleep quality and daytime sleepiness.</p>
+    <p class="muted">Urrutia et al. (2020) — <em>Topics in Geriatric Rehabilitation</em>: Boxing to improve sleep quality and daytime sleepiness in PD.</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="users"></span>
+    <h3>Community &amp; Belonging</h3>
+    <p>A 2024 qualitative study from Denmark found that participants in Parkinson's boxing programs reported a <strong>strong sense of community, joy, gratitude, and improved mental wellbeing</strong> — not just physical improvement. The shared diagnosis, shared effort, and shared victories created bonds that participants described as profoundly meaningful.</p>
+    <p class="muted">Danish Parkinson Boxing qualitative study, <em>Disability &amp; Rehabilitation</em> (published online May 2024).</p>
+  </article>
+
+  <article class="card">
+    <span class="chip" data-icon="brain"></span>
+    <h3>Cognitive Function</h3>
+    <p>The dual-task nature of boxing — simultaneously moving, thinking, reacting, and counting — places significant demands on executive function and working memory. <strong>Regular dual-task training has been shown to improve cognitive performance in older adults and people with PD</strong>, slowing the decline that often accompanies the disease.</p>
+    <p class="muted">Multiple included studies tracked cognitive outcomes via the MDS-UPDRS III and PDQ-39, showing improvements in cognitive subscores following boxing programs.</p>
+  </article>
+
+</div>
+
+<p class="label">Section 06</p>
+<h2 id="b4h-techniques">B4H Technique: What Makes Us Different</h2>
+<p>We teach boxing — but our approach is intentionally different from traditional boxing technique. Understanding <em>why</em> makes you a better instructor.</p>
+
+<div class="grid grid-cards">
+  <article class="card">
+    <span class="chip" data-icon="book-open"></span>
+    <h3>Traditional Boxing</h3>
+    <ul class="check-list">
+      <li><strong>Hands always up</strong> — chin down, elbows in.</li>
+      <li><strong>Rounded, protective shoulders</strong> — guards the face.</li>
+      <li><strong>Constant tension</strong> — ready to absorb or deflect blows.</li>
+      <li><strong>Compact, closed posture</strong> — minimizes target area.</li>
+      <li>Great for the ring — works against PD clients.</li>
+    </ul>
+  </article>
+  <article class="card">
+    <span class="chip" data-icon="sparkles"></span>
+    <h3>Boxing 4 Health Approach</h3>
+    <ul class="check-list">
+      <li><strong>Strong, upright posture</strong> — chest open, spine tall.</li>
+      <li><strong>Opening movements throughout</strong> — counteract PD's forward flexion.</li>
+      <li><strong>Full extension on punches</strong> — amplitude is the goal.</li>
+      <li><strong>Relaxed between combinations</strong> — reduce rigidity, not add to it.</li>
+      <li>High intensity — without reinforcing poor posture.</li>
+    </ul>
+  </article>
+</div>
+
+<div class="callout callout-info"><span class="callout-icon" data-icon="info"></span><p class="callout-title">Good to know</p><div class="callout-body"><p><strong>The key principle:</strong> People with Parkinson's already fight against forward flexion, rounded shoulders, and stooped posture every day. The last thing we want is to design a class that reinforces those patterns. Every opening stretch, every tall stance cue, every full-extension punch is intentionally working <em>against</em> the postural pull of PD — not with it.</p></div></div>
+
+<p class="label">Section 07</p>
+<h2 id="styles-we-incorporate">Styles We Incorporate</h2>
+
+<div class="grid grid-cards">
+  <article class="card">
+    <span class="chip" data-icon="zap"></span>
+    <h3>Boxing</h3>
+    <p>Core of every class. Jabs, crosses, hooks, uppercuts. Focus on amplitude, extension, and posture.</p>
+  </article>
+  <article class="card">
+    <span class="chip" data-icon="footprints"></span>
+    <h3>Kickboxing</h3>
+    <p>Lower body engagement, hip mobility, balance challenges. Added where instructor experience allows.</p>
+  </article>
+  <article class="card">
+    <span class="chip" data-icon="flame"></span>
+    <h3>Muay Thai</h3>
+    <p>Clinch work, elbows, knees where appropriate. Broader range of motion and full-body engagement.</p>
+  </article>
+</div>
+
+<div class="callout callout-coach"><span class="callout-icon" data-icon="hand"></span><p class="callout-title">Coach's Corner</p><div class="callout-body"><p>Not all instructors have a boxing background — and that's okay. Teach what you know confidently and safely. What matters most is that you understand the <em>purpose</em> behind each movement — amplitude, posture, dual-tasking — not just the technique itself. A client doing a big, tall, open jab incorrectly is getting more therapeutic benefit than one doing a perfect traditional jab with rounded shoulders.</p></div></div>
+
+<div class="panel panel-tinted">
+  <h3><span data-icon="circle-check-big"></span> Key takeaways</h3>
+  <ul class="check-list">
+    <li>The evidence base is real and growing — a 2025 systematic review of 13 studies found boxing consistently improves gait, mobility, and balance in PD, and it is now officially recommended by ACSM and the Parkinson's Foundation (2026).</li>
+    <li>High-intensity exercise like boxing may do more than manage symptoms — it promotes neuroplasticity and may help slow disease progression, which is why class intensity is neurologically purposeful.</li>
+    <li>Every boxing benefit maps to a PD or aging symptom: balance, amplitude, coordination, voice, agility, strength, endurance, footwork, and flexibility.</li>
+    <li>Boxing also supports mental health — mood, sleep, community, and cognition — not just physical function.</li>
+    <li>B4H technique deliberately opposes traditional boxing's rounded, closed posture; we cue tall, open, fully extended movements to counteract the postural pull of PD.</li>
+    <li>You don't need a boxing background — understanding the therapeutic purpose behind each movement matters more than perfect technique.</li>
+  </ul>
+</div>
+
+<p class="label">Section 08</p>
+<h2 id="knowledge-check">Knowledge Check</h2>
+
+<div class="quiz" data-quiz data-quiz-for="why-boxing" data-pass="0.7">
+<script type="application/json" data-quiz-questions>[{"q":{"en":"Why is high-intensity exercise like boxing considered potentially more beneficial for Parkinson's than low-intensity exercise?"},"options":[{"en":"It burns more calories, helping with weight management"},{"en":"It promotes neuroplasticity — the brain's ability to form new connections — in ways low-intensity exercise doesn't"},{"en":"High-intensity clients tend to stay more motivated and show up more often"},{"en":"It improves medication absorption"}],"answer":1,"explain":{"en":"High-intensity exercise promotes neuroplasticity — structural and functional changes in the brain that help compensate for PD-related neuron loss. This is why the intensity of our classes is clinically purposeful, not just a fitness preference, and potentially disease-modifying rather than only symptom-managing."}},{"q":{"en":"Why does B4H deliberately avoid traditional boxing's \"hands up, rounded shoulders\" technique?"},"options":[{"en":"It's too dangerous for older adults"},{"en":"It requires too much upper body strength"},{"en":"It reinforces the forward-flexed, stooped posture that PD already creates — working against therapeutic goals"},{"en":"Clients find it confusing to learn"}],"answer":2,"explain":{"en":"Traditional boxing technique would actually reinforce the rounded shoulders and stooped posture that PD clients are fighting against every day. Our approach is intentionally opposite — open, tall, extended — to counteract the postural pull of PD."}},{"q":{"en":"A client asks why you call out combinations out loud during class. What's the best answer?"},"options":[{"en":"It's just tradition from boxing culture"},{"en":"It helps you keep track of what everyone is doing"},{"en":"Counting and calling combinations is dual-tasking — it trains the brain and motor system simultaneously, and the vocal effort also helps with hypophonia"},{"en":"Louder classes are more energizing for the group"}],"answer":2,"explain":{"en":"Calling out combinations is dual-tasking — simultaneously engaging the motor and cognitive systems. It also directly addresses hypophonia (soft voice), a common PD symptom. Research supports both of these mechanisms."}},{"q":{"en":"You don't have a boxing background. A client asks if that matters. What do you say?"},"options":[{"en":"Apologize and tell them to find an instructor with boxing experience"},{"en":"Say nothing — pretend you do have experience"},{"en":"What matters most is understanding the therapeutic purpose behind the movements — amplitude, posture, dual-tasking — not perfecting traditional technique"},{"en":"Only teach the techniques you learned in traditional boxing"}],"answer":2,"explain":{"en":"The therapeutic principles — amplitude, posture, dual-tasking, intensity — matter far more than perfect boxing form. A client doing a big, tall, open punch with imperfect technique is getting more therapeutic benefit than one doing a textbook jab with rounded shoulders."}}]</script>
+</div>
+
+</div></div></section>
 <section class="section-tight"><div class="wrap wrap-narrow"><div class="panel panel-tinted" style="text-align:center;margin-top:2rem">
   <button class="btn btn-primary" data-mark-complete data-done="false"><span data-icon="circle-check-big"></span><span data-mc-label>Mark this lesson complete</span></button>
 </div>
 <span data-complete-sentinel aria-hidden="true"></span>
 </div></section>
 <section class="section-tight"><div class="wrap wrap-narrow"><nav class="pager" aria-label="Lesson navigation"><a class="prev" href="class-breakdown-overview.html"><span class="pager-ico" data-icon="arrow-left"></span><span class="pager-txt"><span class="pager-dir" data-i18n="lesson.prev">prev</span><span class="pager-title"><span data-lang-block="en">Class Breakdown Overview</span><span data-lang-block="fr">Aperçu du déroulement du cours</span></span></span></a><a class="next" href="boxing-101-video.html"><span class="pager-ico" data-icon="arrow-right"></span><span class="pager-txt"><span class="pager-dir" data-i18n="lesson.next">next</span><span class="pager-title"><span data-lang-block="en">Boxing 101 (Video)</span><span data-lang-block="fr">Boxe 101 (vidéo)</span></span></span></a></nav></div></section>
-<script>
-document.querySelectorAll('.reveal').forEach(r => {
-  new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 }).observe(r);
-});
-
-function toggleResearch(card) {
-  const research = card.querySelector('.benefit-research');
-  const label = card.querySelector('.show-more');
-  research.classList.toggle('show');
-  label.textContent = research.classList.contains('show') ? 'Tap to close ↑' : 'Tap for research ↓';
-}
-
-let score = 0, current = 1;
-
-function ans(btn, correct, qId) {
-  const opts = btn.closest('.quiz-options').querySelectorAll('.quiz-opt');
-  opts.forEach(o => o.classList.add('disabled'));
-  if (correct) {
-    btn.classList.add('correct');
-    document.getElementById(`sfb_${qId}_r`).classList.add('show');
-    score++;
-  } else {
-    btn.classList.add('incorrect');
-    document.getElementById(`sfb_${qId}_w`).classList.add('show');
-    opts.forEach(o => { if (o.onclick && o.onclick.toString().includes('true')) o.classList.add('correct'); });
-  }
-  document.getElementById(`snav_${qId}`).style.display = 'flex';
-  document.getElementById(`qd${current - 1}`).classList.add(correct ? 'done' : 'active');
-}
-
-function nxt(num) {
-  document.getElementById(`sq${current}`).style.display = 'none';
-  current = num;
-  document.getElementById(`sq${num}`).style.display = 'block';
-  document.getElementById(`qd${num - 1}`).classList.add('active');
-}
-
-function showDone() {
-  document.getElementById('sq4').style.display = 'none';
-  document.getElementById('sqComplete').style.display = 'block';
-  const pct = Math.round((score / 4) * 100);
-  document.getElementById('sqScore').textContent = `${score}/4`;
-  document.getElementById('sqResult').textContent = pct === 100 ? '🥊 Perfect Score!' : pct >= 75 ? 'Great Work!' : 'Review & Retry';
-  document.getElementById('sqMessage').textContent = pct === 100
-    ? 'You can now explain the science behind every punch, every combination, and every postural cue. That knowledge makes you a more confident and effective instructor.'
-    : pct >= 75
-    ? 'Strong effort! Review the neuroplasticity section and the B4H technique principles before moving on.'
-    : 'Take another look at the research section and the technique comparison, then give it another go.';
-}
-
-function resetQ() {
-  score = 0; current = 1;
-  for (let i = 1; i <= 4; i++) {
-    const q = document.getElementById(`sq${i}`);
-    q.style.display = i === 1 ? 'block' : 'none';
-    q.querySelectorAll('.quiz-opt').forEach(o => { o.className = 'quiz-opt'; });
-    ['r','w'].forEach(t => {
-      const el = document.getElementById(`sfb_sq${i}_${t}`);
-      if (el) el.classList.remove('show');
-    });
-    const nav = document.getElementById(`snav_sq${i}`);
-    if (nav) nav.style.display = 'none';
-  }
-  ['qd0','qd1','qd2','qd3'].forEach((id, i) => {
-    document.getElementById(id).className = 'progress-dot' + (i === 0 ? ' active' : '');
-  });
-  document.getElementById('sqComplete').style.display = 'none';
-}
-</script>
 </main>
 <div data-include="footer"></div>
-<script src="../assets/js/icons.js?v=7"></script>
-<script src="../assets/js/i18n.js?v=7"></script>
-<script src="../assets/js/site.js?v=7"></script>
-<script src="../assets/js/progress.js?v=7"></script>
-<script src="../assets/js/search.js?v=7"></script>
-<script src="../assets/js/read-aloud.js?v=7"></script>
+<script src="../assets/js/icons.js?v=8"></script>
+<script src="../assets/js/i18n.js?v=8"></script>
+<script src="../assets/js/site.js?v=8"></script>
+<script src="../assets/js/progress.js?v=8"></script>
+<script src="../assets/js/search.js?v=8"></script>
+<script src="../assets/js/read-aloud.js?v=8"></script>
+<script src="../assets/js/quiz.js?v=8"></script>
 </body>
 </html>

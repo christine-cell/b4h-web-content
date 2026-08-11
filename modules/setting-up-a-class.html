@@ -10,10 +10,10 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/img/favicon.svg">
-<link rel="stylesheet" href="../assets/css/fonts.css?v=7">
-<link rel="stylesheet" href="../assets/css/tokens.css?v=7">
-<link rel="stylesheet" href="../assets/css/site.css?v=7">
-<link rel="stylesheet" href="../assets/css/print.css?v=7" media="print">
+<link rel="stylesheet" href="../assets/css/fonts.css?v=8">
+<link rel="stylesheet" href="../assets/css/tokens.css?v=8">
+<link rel="stylesheet" href="../assets/css/site.css?v=8">
+<link rel="stylesheet" href="../assets/css/print.css?v=8" media="print">
 
 <script>(function(){try{var d=document.documentElement,s=localStorage;
 d.setAttribute('data-theme',s.getItem('b4h-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
@@ -21,622 +21,9 @@ d.setAttribute('lang',s.getItem('b4h-lang')||'en');
 if(s.getItem('b4h-contrast')==='high')d.setAttribute('data-contrast','high');
 d.style.setProperty('--font-scale',s.getItem('b4h-font')||'1');
 d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</script>
-<style>.enhanced-content{
-    --red: #E8271A;
-    --dark: #0D0D0D;
-    --charcoal: #1A1A1A;
-    --mid: #2E2E2E;
-    --light: #F5F0E8;
-    --muted: #9A9A8A;
-    --gold: #C8A84B;
-    --green: #2E9E6B;
-    --blue: #3A7BD5;
-  }
-.enhanced-content *, .enhanced-content *::before, .enhanced-content *::after{ box-sizing: border-box; margin: 0; padding: 0; }
-.enhanced-content{
-    background: var(--dark);
-    color: var(--light);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 17px; 
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-.enhanced-content .hero{
-    position: relative;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 8vw 60px;
-    overflow: hidden;
-  }
-.enhanced-content .hero::before{
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 70% at 95% 50%, rgba(232,39,26,0.10) 0%, transparent 65%),
-      radial-gradient(ellipse 30% 40% at 5% 80%, rgba(200,168,75,0.05) 0%, transparent 60%);
-    pointer-events: none;
-  }
-.enhanced-content .breadcrumb{
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    color: var(--muted);
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 0.5s 0.1s ease forwards;
-  }
-.enhanced-content .breadcrumb span{ color: var(--red); }
-.enhanced-content .hero-title{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(54px, 9vw, 110px);
-    line-height: 0.9;
-    letter-spacing: 0.02em;
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.3s ease forwards;
-  }
-.enhanced-content .hero-title em{ color: var(--red); font-style: normal; }
-.enhanced-content .hero-sub{
-    font-size: clamp(16px, 1.8vw, 19px);
-    line-height: 1.75;
-    color: #b0aba0;
-    max-width: 580px;
-    margin-bottom: 36px;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.5s ease forwards;
-  }
-.enhanced-content .hero-sub strong{ color: var(--light); }
-.enhanced-content .hero-meta{
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.7s ease forwards;
-  }
-.enhanced-content .meta-pill{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--mid);
-    border: 1px solid #333;
-    padding: 9px 18px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-  }
-.enhanced-content .meta-pill .dot{
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--red);
-    animation: pulse 2s infinite;
-  }
-.enhanced-content .section{ padding: 68px 8vw; border-top: 1px solid #1e1e1e; }
-.enhanced-content .section-label{
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 36px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-.enhanced-content .section-label::after{
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, #2a2a2a, transparent);
-  }
-.enhanced-content .timeline{
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 52px;
-    position: relative;
-  }
-.enhanced-content .timeline::before{
-    content: '';
-    position: absolute;
-    left: 36px;
-    top: 0; bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--red), var(--gold), var(--green));
-  }
-.enhanced-content .tl-item{
-    display: flex;
-    gap: 28px;
-    padding: 28px 0;
-    position: relative;
-  }
-.enhanced-content .tl-dot{
-    width: 74px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 6px;
-  }
-.enhanced-content .tl-dot-inner{
-    width: 16px; height: 16px;
-    border-radius: 50%;
-    border: 2px solid;
-    background: var(--dark);
-    position: relative;
-    z-index: 1;
-    flex-shrink: 0;
-  }
-.enhanced-content .tl-content{
-    background: var(--charcoal);
-    border: 1px solid #222;
-    padding: 28px 32px;
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-  }
-.enhanced-content .tl-content::before{
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 4px; height: 100%;
-  }
-.enhanced-content .tl-time{
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-  }
-.enhanced-content .tl-title{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 30px;
-    letter-spacing: 0.04em;
-    margin-bottom: 12px;
-  }
-.enhanced-content .tl-desc{
-    font-size: 16px;
-    line-height: 1.75;
-    color: #b0aba0;
-  }
-.enhanced-content .tl-desc strong{ color: var(--light); }
-.enhanced-content .tl-item:nth-child(1) .tl-dot-inner{ border-color: var(--red); }
-.enhanced-content .tl-item:nth-child(1) .tl-content::before{ background: var(--red); }
-.enhanced-content .tl-item:nth-child(1) .tl-time{ color: var(--red); }
-.enhanced-content .tl-item:nth-child(1) .tl-title{ color: var(--red); }
-.enhanced-content .tl-item:nth-child(2) .tl-dot-inner{ border-color: var(--gold); }
-.enhanced-content .tl-item:nth-child(2) .tl-content::before{ background: var(--gold); }
-.enhanced-content .tl-item:nth-child(2) .tl-time{ color: var(--gold); }
-.enhanced-content .tl-item:nth-child(2) .tl-title{ color: var(--gold); }
-.enhanced-content .tl-item:nth-child(3) .tl-dot-inner{ border-color: var(--green); }
-.enhanced-content .tl-item:nth-child(3) .tl-content::before{ background: var(--green); }
-.enhanced-content .tl-item:nth-child(3) .tl-time{ color: var(--green); }
-.enhanced-content .tl-item:nth-child(3) .tl-title{ color: var(--green); }
-.enhanced-content .class-types{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-.enhanced-content .class-card{
-    background: var(--charcoal);
-    border: 1px solid #222;
-    padding: 36px 32px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-.enhanced-content .class-card:hover{ background: #1e1e1e; }
-.enhanced-content .class-card::before{
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 4px;
-  }
-.enhanced-content .class-card::after{
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 2px;
-    transition: width 0.35s;
-  }
-.enhanced-content .class-card:hover::after{ width: 100%; }
-.enhanced-content .fighter-card::before{ background: var(--red); }
-.enhanced-content .fighter-card::after{ background: var(--red); }
-.enhanced-content .champion-card::before{ background: var(--blue); }
-.enhanced-content .champion-card::after{ background: var(--blue); }
-.enhanced-content .champion-plus-card::before{ background: var(--gold); }
-.enhanced-content .champion-plus-card::after{ background: var(--gold); }
-.enhanced-content .class-badge{
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border: 1px solid;
-    display: inline-block;
-    margin-bottom: 18px;
-  }
-.enhanced-content .fighter-card .class-badge{ color: var(--red); border-color: rgba(232,39,26,0.4); background: rgba(232,39,26,0.08); }
-.enhanced-content .champion-card .class-badge{ color: var(--blue); border-color: rgba(58,123,213,0.4); background: rgba(58,123,213,0.08); }
-.enhanced-content .champion-plus-card .class-badge{ color: var(--gold); border-color: rgba(200,168,75,0.4); background: rgba(200,168,75,0.08); }
-.enhanced-content .class-name{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 36px;
-    letter-spacing: 0.04em;
-    margin-bottom: 14px;
-    line-height: 1;
-  }
-.enhanced-content .fighter-card .class-name{ color: var(--red); }
-.enhanced-content .champion-card .class-name{ color: var(--blue); }
-.enhanced-content .champion-plus-card .class-name{ color: var(--gold); }
-.enhanced-content .class-desc{
-    font-size: 15px;
-    line-height: 1.75;
-    color: #b0aba0;
-  }
-.enhanced-content .class-desc strong{ color: var(--light); }
-.enhanced-content .class-tags{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
-  }
-.enhanced-content .class-tag{
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    padding: 4px 10px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid #333;
-    color: var(--muted);
-  }
-.enhanced-content .placement-rule{
-    background: rgba(232,39,26,0.07);
-    border: 1px solid rgba(232,39,26,0.2);
-    border-left: 5px solid var(--red);
-    padding: 28px 32px;
-    margin-bottom: 48px;
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-  }
-.enhanced-content .placement-rule .icon{ font-size: 26px; flex-shrink: 0; }
-.enhanced-content .placement-rule p{
-    font-size: 17px;
-    line-height: 1.7;
-    color: #e8c0bc;
-  }
-.enhanced-content .placement-rule p strong{ color: var(--light); font-size: 18px; }
-.enhanced-content .compare-wrapper{
-    overflow-x: auto;
-    margin-bottom: 48px;
-  }
-.enhanced-content .compare-table{
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 15px;
-  }
-.enhanced-content .compare-table th{
-    padding: 16px 20px;
-    text-align: left;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border-bottom: 1px solid #333;
-  }
-.enhanced-content .compare-table th:nth-child(1){ background: var(--mid); color: var(--muted); }
-.enhanced-content .compare-table th:nth-child(2){ background: rgba(232,39,26,0.12); color: var(--red); }
-.enhanced-content .compare-table th:nth-child(3){ background: rgba(58,123,213,0.12); color: var(--blue); }
-.enhanced-content .compare-table th:nth-child(4){ background: rgba(200,168,75,0.12); color: var(--gold); }
-.enhanced-content .compare-table td{
-    padding: 16px 20px;
-    border-bottom: 1px solid #1e1e1e;
-    vertical-align: top;
-    line-height: 1.6;
-    color: #b0aba0;
-    font-size: 15px;
-  }
-.enhanced-content .compare-table tr:last-child td{ border-bottom: none; }
-.enhanced-content .compare-table tr:hover td{ background: #161616; }
-.enhanced-content .compare-table td:first-child{
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    text-transform: uppercase;
-    white-space: nowrap;
-    background: #141414;
-    font-weight: 500;
-  }
-.enhanced-content .compare-table td strong{ color: var(--light); }
-.enhanced-content .check{ color: #4CAF50; font-size: 16px; }
-.enhanced-content .cross{ color: var(--red); font-size: 16px; }
-.enhanced-content .quiz-wrapper{
-    background: var(--charcoal);
-    border: 1px solid #2a2a2a;
-    padding: 48px;
-  }
-.enhanced-content .quiz-progress{ display: flex; gap: 6px; margin-bottom: 32px; }
-.enhanced-content .progress-dot{
-    height: 3px; flex: 1;
-    background: #2a2a2a;
-    transition: background 0.3s;
-  }
-.enhanced-content .progress-dot.active{ background: var(--red); }
-.enhanced-content .progress-dot.done{ background: #4CAF50; }
-.enhanced-content .quiz-q{
-    font-size: 19px;
-    font-weight: 600;
-    color: var(--light);
-    margin-bottom: 26px;
-    line-height: 1.5;
-  }
-.enhanced-content .quiz-q .q-num{
-    display: block;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--red);
-    letter-spacing: 0.12em;
-    margin-bottom: 10px;
-    font-weight: 400;
-  }
-.enhanced-content .quiz-options{ display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
-.enhanced-content .quiz-opt{
-    background: var(--mid);
-    border: 1px solid #333;
-    padding: 16px 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    transition: border-color 0.2s, background 0.2s;
-    font-size: 15px;
-    color: #c0bbb0;
-    text-align: left;
-    line-height: 1.5;
-  }
-.enhanced-content .quiz-opt:hover:not(.disabled){ border-color: #555; background: #333; color: var(--light); }
-.enhanced-content .quiz-opt.correct{ border-color: #4CAF50; background: rgba(76,175,80,0.1); color: #81C784; }
-.enhanced-content .quiz-opt.incorrect{ border-color: var(--red); background: rgba(232,39,26,0.1); color: #EF9A9A; }
-.enhanced-content .quiz-opt.disabled{ cursor: default; }
-.enhanced-content .opt-letter{
-    width: 30px; height: 30px;
-    border: 1px solid #444;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    flex-shrink: 0;
-  }
-.enhanced-content .quiz-opt.correct .opt-letter{ background: rgba(76,175,80,0.2); border-color: #4CAF50; }
-.enhanced-content .quiz-opt.incorrect .opt-letter{ background: rgba(232,39,26,0.2); border-color: var(--red); }
-.enhanced-content .quiz-feedback{
-    display: none;
-    padding: 16px 20px;
-    border-left: 3px solid #4CAF50;
-    background: rgba(76,175,80,0.08);
-    font-size: 15px;
-    line-height: 1.7;
-    color: #a0cfa3;
-    margin-bottom: 18px;
-  }
-.enhanced-content .quiz-feedback.wrong{ border-color: var(--red); background: rgba(232,39,26,0.08); color: #ef9a9a; }
-.enhanced-content .quiz-feedback.show{ display: block; }
-.enhanced-content .quiz-nav{ display: flex; gap: 12px; }
-.enhanced-content .btn{
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 28px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px; font-weight: 600;
-    letter-spacing: 0.04em;
-    cursor: pointer; border: none;
-    transition: background 0.2s, color 0.2s;
-  }
-.enhanced-content .btn-primary{ background: var(--red); color: white; }
-.enhanced-content .btn-primary:hover{ background: #c41f13; }
-.enhanced-content .btn-ghost{ background: transparent; color: var(--muted); border: 1px solid #333; }
-.enhanced-content .btn-ghost:hover{ border-color: #555; color: var(--light); }
-.enhanced-content .module-footer{
-    padding: 68px 8vw;
-    border-top: 1px solid #222;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 32px;
-    background: linear-gradient(135deg, var(--charcoal), var(--dark));
-  }
-.enhanced-content .module-footer h2{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(30px, 4vw, 48px);
-    letter-spacing: 0.04em;
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-.enhanced-content .module-footer h2 span{ color: var(--red); }
-.enhanced-content .module-footer p{ font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
-@keyframes fadeUp{
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-@keyframes pulse{
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-.enhanced-content .reveal{
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-.enhanced-content .reveal.visible{ opacity: 1; transform: none; }
-@media (max-width: 680px){.enhanced-content .class-types{ grid-template-columns: 1fr; }.enhanced-content .timeline::before{ left: 28px; }.enhanced-content .tl-dot{ width: 58px; }.enhanced-content .quiz-wrapper{ padding: 28px; }.enhanced-content .module-footer{ flex-direction: column; }}
-.enhanced-content .cl2-grid{ display: flex; flex-direction: column; gap: 14px; }
-.enhanced-content .cl2-card{
-      background: var(--charcoal);
-      border: 1px solid #222;
-      display: flex;
-      overflow: hidden;
-    }
-.enhanced-content .cl2-bar{ width: 5px; flex-shrink: 0; }
-.enhanced-content .cl2-inner{
-      flex: 1;
-      padding: 24px 28px;
-    }
-.enhanced-content .cl2-top{
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-.enhanced-content .cl2-name-block{ flex: 1; min-width: 160px; }
-.enhanced-content .cl2-intensity{
-      font-family: 'DM Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-.enhanced-content .cl2-name{
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 36px;
-      letter-spacing: 0.04em;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-.enhanced-content .cl2-stage{
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-.enhanced-content .cl2-ratio-block{
-      text-align: center;
-      flex-shrink: 0;
-      padding: 0 8px;
-    }
-.enhanced-content .cl2-ratio-num{
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      line-height: 1;
-      margin-bottom: 2px;
-    }
-.enhanced-content .cl2-ratio-label{
-      font-family: 'DM Mono', monospace;
-      font-size: 8px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-.enhanced-content .cl2-desc{
-      font-size: 15px;
-      line-height: 1.8;
-      color: #a8a398;
-      margin-bottom: 16px;
-    }
-.enhanced-content .cl2-desc strong{ color: var(--light); }
-.enhanced-content .cl2-cols{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-.enhanced-content .cl2-col-head{
-      font-family: 'DM Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #2a2a2a;
-      margin-bottom: 10px;
-    }
-.enhanced-content .cl2-ul{
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-.enhanced-content .cl2-ul li{
-      font-size: 14px;
-      line-height: 1.6;
-      color: #a8a398;
-      padding-left: 16px;
-      position: relative;
-    }
-.enhanced-content .cl2-ul li::before{ content: '–'; position: absolute; left: 0; color: #555; }
-.enhanced-content .cl2-ul li strong{ color: var(--light); }
-.enhanced-content .cl2-avail{
-      display: inline-block;
-      margin-top: 14px;
-      padding: 4px 12px;
-      font-family: 'DM Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: rgba(200,168,75,0.07);
-      border: 1px solid rgba(200,168,75,0.2);
-      color: var(--gold);
-    }
-.enhanced-content .cl2-fighter .cl2-bar{ background: #4CAF50; }
-.enhanced-content .cl2-fighter .cl2-name{ color: #4CAF50; }
-.enhanced-content .cl2-fighter .cl2-stage{ color: rgba(76,175,80,0.55); }
-.enhanced-content .cl2-fighter .cl2-ratio-num{ color: #4CAF50; }
-.enhanced-content .cl2-fighter .cl2-col-head{ color: #4CAF50; }
-.enhanced-content .cl2-warrior .cl2-bar{ background: #FFC107; }
-.enhanced-content .cl2-warrior .cl2-name{ color: #FFC107; }
-.enhanced-content .cl2-warrior .cl2-stage{ color: rgba(255,193,7,0.55); }
-.enhanced-content .cl2-warrior .cl2-ratio-num{ color: #FFC107; }
-.enhanced-content .cl2-warrior .cl2-col-head{ color: #FFC107; }
-.enhanced-content .cl2-champion .cl2-bar{ background: #FF7043; }
-.enhanced-content .cl2-champion .cl2-name{ color: #FF7043; }
-.enhanced-content .cl2-champion .cl2-stage{ color: rgba(255,112,67,0.55); }
-.enhanced-content .cl2-champion .cl2-ratio-num{ color: #FF7043; }
-.enhanced-content .cl2-champion .cl2-col-head{ color: #FF7043; }
-.enhanced-content .cl2-plus .cl2-bar{ background: var(--red); }
-.enhanced-content .cl2-plus .cl2-name{ color: var(--red); }
-.enhanced-content .cl2-plus .cl2-stage{ color: rgba(232,39,26,0.55); }
-.enhanced-content .cl2-plus .cl2-ratio-num{ color: var(--red); }
-.enhanced-content .cl2-plus .cl2-col-head{ color: var(--red); }
-@media(max-width:640px){.enhanced-content .cl2-cols{ grid-template-columns: 1fr; }.enhanced-content .cl2-top{ gap: 14px; }}
-/* --- Unified blue remap for ported content (theme-aware) --- */
-.enhanced-content{
-  --red:#19679e; --dark:transparent; --charcoal:var(--surface-2); --mid:var(--border);
-  --light:var(--text); --muted:var(--text-muted); --gold:#c98a1f; --green:#1e9e77;
-  --blue:#2a7fc4; --amber:#c9791a; --teal:#178f7a; --purple:#5a6bd8; --orange:#c96a1a;
-  --cream:var(--surface); --warm-cream:var(--surface); --deep:var(--text);
-  --olive:#5f7a3a; --terracotta:#c26b3f; --sand:var(--surface-2); --sage:#7f9a5a; --accent:var(--azure);
-  background:transparent!important; color:var(--text);
-  font-size:clamp(1.02rem,1rem + .2vw,1.12rem); line-height:var(--lh-body);
-}
-:root[data-theme="dark"] .enhanced-content{
-  --charcoal:var(--surface-2); --mid:var(--border); --light:var(--text); --muted:var(--text-muted);
-  --red:#4aa3db; --gold:#e0b25a; --blue:#6bb6e6;
-}
-.enhanced-content, .enhanced-content p, .enhanced-content li, .enhanced-content td,
-.enhanced-content .hero-sub, .enhanced-content .card-body, .enhanced-content .st-detail{ font-family:var(--font-body)!important; }
-.enhanced-content h1,.enhanced-content h2,.enhanced-content h3,.enhanced-content h4,
-.enhanced-content .hero-title,.enhanced-content .section-label,.enhanced-content .card-title,
-.enhanced-content .quiz-q,.enhanced-content .st-name{ font-family:var(--font-sans)!important; letter-spacing:normal; }
-/* neutralize their full-page chrome — the site shell provides header, hero, footer */
-.enhanced-content .breadcrumb, .enhanced-content nav.breadcrumb,
-.enhanced-content .module-footer, .enhanced-content .hero,
-.enhanced-content header, .enhanced-content .top-nav, .enhanced-content .site-nav{ display:none!important; }
-.enhanced-content > .section:first-of-type,
-.enhanced-content > section:first-of-type{ padding-top:0!important; }
-.enhanced-content a{ color:var(--link); }
-.enhanced-content img{ border-radius:var(--r-md); }
-/* readable minimum for their small text */
-.enhanced-content [style*="font-size"]{ }
-.enhanced-content .meta-pill, .enhanced-content .section-label{ font-size:.8rem; }
-</style>
+
 </head>
-<body data-lesson-id="setting-up-a-class" data-lesson-title="Setting Up a Class" data-lesson-url="modules/setting-up-a-class.html" data-lesson-hasquiz="false">
+<body data-lesson-id="setting-up-a-class" data-lesson-title="Setting Up a Class" data-lesson-url="modules/setting-up-a-class.html" data-lesson-hasquiz="true">
 <div data-include="header"></div>
 <main id="main">
 
@@ -652,494 +39,173 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
   </div>
 </div></section>
 
-<div class="section-tight"><div data-lang-block="fr"><div class="wrap wrap-narrow"><div class="callout callout-info"><span class="callout-icon" data-icon="languages"></span><p class="callout-title">Comment aménager votre espace, vos stations et votre équipement avant un cours.</p><div class="callout-body"><p>Le contenu détaillé de cette leçon est présenté en anglais ci-dessous. La traduction française complète est en cours de révision.</p></div></div></div></div>
-<div class="wrap"><div class="enhanced-content lesson-body" data-lesson-content>
+<section class="section-tight"><div class="wrap wrap-narrow"><div class="prose lesson-body" data-lesson-content>
+<p class="lead">Every Boxing 4 Health class follows the same proven structure, and understanding how classes are designed — and who belongs in each one — is the foundation of great instruction. This lesson walks through the three-part class structure, the timing of each phase, and the three class types you'll place clients into after their assessment.</p>
 
-
-<!-- ── HERO ── -->
-<section class="hero">
-  <p class="breadcrumb">B4H Licensee Training &nbsp;›&nbsp; <span>Module 2</span></p>
-  <h1 class="hero-title">
-    Class<br><em>Breakdown</em>
-  </h1>
-  <p class="hero-sub">
-    Every Boxing 4 Health class follows the same proven structure. Understanding <strong>how classes are designed</strong> — and who belongs in each one — is the foundation of great instruction.
-  </p>
-  <div class="hero-meta">
-    <div class="meta-pill"><span class="dot"></span> Module 2</div>
-    <div class="meta-pill"><span class="dot"></span> Est. 10 min</div>
-    <div class="meta-pill"><span class="dot"></span> Includes Class Types + Quiz</div>
-  </div>
-</section>
-
-<!-- ══════════ CLASS STRUCTURE ══════════ -->
-<section class="section reveal">
-  <p class="section-label">01 — Class Structure</p>
-  <p style="font-size:17px;color:#b0aba0;max-width:600px;margin-bottom:40px;line-height:1.75;">
-    Every B4H class — regardless of level — follows this same three-part structure. The timing may flex slightly but the formula never changes.
-  </p>
-
-  <div class="timeline">
-
-    <div class="tl-item">
-      <div class="tl-dot">
-        <div class="tl-dot-inner"></div>
-      </div>
-      <div class="tl-content">
-        <div class="tl-time">7 – 10 Minutes</div>
-        <div class="tl-title">Warm Up</div>
-        <div class="tl-desc">
-          Gets the body moving and the mind engaged. Especially critical for PD and senior clients whose stiffness is often worst at the start of class. <strong>Never skip the warm up</strong> — it's as therapeutic as the workout itself.
-        </div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-dot">
-        <div class="tl-dot-inner"></div>
-      </div>
-      <div class="tl-content">
-        <div class="tl-time">32 – 35 Minutes</div>
-        <div class="tl-title">High Intensity Work</div>
-        <div class="tl-desc">
-          The core of the class. A mix between <strong>functional exercises</strong> and <strong>boxing technique and drills</strong>. This is where the real neurological and physical benefit happens — amplitude training, dual tasking, coordination, and cardiovascular work all come together.
-        </div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-dot">
-        <div class="tl-dot-inner"></div>
-      </div>
-      <div class="tl-content">
-        <div class="tl-time">10 – 15 Minutes</div>
-        <div class="tl-title">Cool Down</div>
-        <div class="tl-desc">
-          Gentle stretching and/or <strong>self-massage ball work</strong>. Helps reduce rigidity, improve flexibility, and bring heart rate down safely. For clients with low blood pressure, this transition period is especially important — <strong>never rush the cool down</strong>.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════ CLASS TYPES ══════════ -->
-<section class="section reveal">
-  <p class="section-label">02 — The 3 Class Classifications</p>
-
-  <div class="placement-rule">
-    <div class="icon">⭐</div>
-    <p><strong>Important:</strong> Once your assessment with a client is complete, you will place them in the appropriate class. Class placement is always the licensee's decision — based on objective assessment data, not client preference.</p>
-  </div>
-
-  <div class="class-types">
-
-    <div class="class-card fighter-card">
-      <div class="class-badge">Higher Intensity</div>
-      <div class="class-name">Fighter</div>
-      <div class="class-desc">
-        Circuit-based classes designed for clients with <strong>low to moderate balance concerns</strong>. Higher intensity with Parkinson's-specific exercises including amplitude-based movements, dual tasking, and cognitive challenges built in.
-      </div>
-      <div class="class-tags">
-        <div class="class-tag">Circuit Format</div>
-        <div class="class-tag">Amplitude Training</div>
-        <div class="class-tag">Dual Tasking</div>
-        <div class="class-tag">Cognitive Exercises</div>
-        <div class="class-tag">Low–Moderate Balance</div>
-      </div>
-    </div>
-
-    <div class="class-card" style="border-top:3px solid #FFC107;">
-      <div class="class-badge" style="color:#FFC107;border-color:rgba(255,193,7,0.3);background:rgba(255,193,7,0.08);">Moderate Intensity</div>
-      <div class="class-name" style="color:#FFC107;">Warrior</div>
-      <div class="class-desc">
-        For clients whose movement symptoms are <strong>more noticeable</strong>. More modifications and instructor attention required. A key indicator is the client feeling fatigued — rather than energized — after a Fighter class.
-      </div>
-      <div class="class-tags">
-        <div class="class-tag">More Modifications</div>
-        <div class="class-tag">Smaller Groups</div>
-        <div class="class-tag">Individual Attention</div>
-        <div class="class-tag">Stage 2–3 PD</div>
-      </div>
-    </div>
-
-    <div class="class-card champion-card">
-      <div class="class-badge">Lower Intensity</div>
-      <div class="class-name">Champion</div>
-      <div class="class-desc">
-        Group class format — <strong>not circuit based</strong>. Lower intensity with more modifications, more individual attention, and a slower pace. Designed for clients with significant balance challenges, freezing of gait, or greater physical and cognitive limitations.
-      </div>
-      <div class="class-tags">
-        <div class="class-tag">Group Format</div>
-        <div class="class-tag">Lower Intensity</div>
-        <div class="class-tag">More Modifications</div>
-        <div class="class-tag">Stage 3–4 PD</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════ COMPARISON TABLE ══════════ -->
-<section class="section reveal">
-  <p class="section-label">03 — Class Comparison at a Glance</p>
-  <p style="font-size:17px;color:#b0aba0;margin-bottom:28px;max-width:580px;line-height:1.75;">
-    Use this as a quick reference when placing a new client after their assessment.
-  </p>
-
-  <div class="compare-wrapper">
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th>🥊 Fighter</th>
-          <th>⚡ Warrior</th>
-          <th>🏅 Champion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Format</td>
-          <td><strong>Circuit</strong></td>
-          <td><strong>Circuit</strong></td>
-          <td><strong>Group</strong></td>
-        </tr>
-        <tr>
-          <td>Intensity</td>
-          <td><strong>Higher</strong></td>
-          <td><strong>Moderate</strong></td>
-          <td><strong>Lower</strong></td>
-        </tr>
-        <tr>
-          <td>Balance Needs</td>
-          <td>Low – Moderate</td>
-          <td>Moderate</td>
-          <td>Moderate – High</td>
-        </tr>
-        <tr>
-          <td>Amplitude Training</td>
-          <td><span class="check">✓</span> Yes</td>
-          <td><span class="check">✓</span> Yes</td>
-          <td><span class="check">✓</span> Modified</td>
-        </tr>
-        <tr>
-          <td>Dual Tasking</td>
-          <td><span class="check">✓</span> Yes</td>
-          <td><span class="check">✓</span> Yes</td>
-          <td><span class="check">✓</span> Simplified</td>
-        </tr>
-        <tr>
-          <td>Cognitive Exercises</td>
-          <td><span class="check">✓</span> Yes</td>
-          <td><span class="check">✓</span> Yes</td>
-          <td><span class="check">✓</span> Yes</td>
-        </tr>
-        <tr>
-          <td>Staff Ratio</td>
-          <td>1 : 14</td>
-          <td>1 : 5–6</td>
-          <td>1 : 4</td>
-        </tr>
-        <tr>
-          <td>Typical Client</td>
-          <td>Stage 1–2 PD</td>
-          <td>Stage 2–3 PD</td>
-          <td>Stage 3–4 PD</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div style="background:var(--charcoal);border:1px solid #2a2a2a;border-left:4px solid var(--gold);padding:24px 28px;">
-    <p style="font-size:16px;line-height:1.75;color:#b0aba0;">
-      <strong style="color:var(--gold);">📋 Coming Up:</strong> The next lesson breaks down exactly what a Champion vs Champion Plus client looks like — including the specific differences in function, mobility, and what that means for how you run their session. Read that document carefully before placing any client in a Champion class.
-    </p>
-  </div>
-</section>
-
-<!-- ══════════ QUIZ ══════════ -->
-<section class="section reveal">
-  <p class="section-label">04 — Knowledge Check</p>
-  <!-- Class Levels added as Section 05 below -->
-
-  <div class="quiz-wrapper">
-    <div class="quiz-progress">
-      <div class="progress-dot active" id="qd0"></div>
-      <div class="progress-dot" id="qd1"></div>
-      <div class="progress-dot" id="qd2"></div>
-      <div class="progress-dot" id="qd3"></div>
-    </div>
-
-    <!-- Q1 -->
-    <div id="sq1">
-      <div class="quiz-q">
-        <span class="q-num">QUESTION 01 / 04</span>
-        What is the correct order of a Boxing 4 Health class?
-      </div>
-      <div class="quiz-options">
-        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">A</span>High Intensity → Warm Up → Cool Down</div>
-        <div class="quiz-opt" onclick="ans(this,true,'sq1')"><span class="opt-letter">B</span>Warm Up → High Intensity → Cool Down</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">C</span>Cool Down → Warm Up → High Intensity</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">D</span>High Intensity → Cool Down → Warm Up</div>
-      </div>
-      <div class="quiz-feedback show" id="sfb_sq1_r">✓ Correct! Warm Up (7–10 min) → High Intensity (32–35 min) → Cool Down (10–15 min). This structure never changes — every class, every level.</div>
-      <div class="quiz-feedback wrong" id="sfb_sq1_w">The correct order is <strong>Warm Up → High Intensity → Cool Down</strong>. This structure is consistent across all class types and levels. Never skip or reorder these phases.</div>
-      <div class="quiz-nav" id="snav_sq1" style="display:none;"><button class="btn btn-primary" onclick="nxt(2)">Next →</button></div>
-    </div>
-
-    <!-- Q2 -->
-    <div id="sq2" style="display:none;">
-      <div class="quiz-q">
-        <span class="q-num">QUESTION 02 / 04</span>
-        A newly assessed client has low-to-moderate balance concerns, no significant cognitive impairment, and is highly motivated. Which class is the best fit?
-      </div>
-      <div class="quiz-options">
-        <div class="quiz-opt" onclick="ans(this,true,'sq2')"><span class="opt-letter">A</span>Fighter — higher intensity circuit class</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">B</span>Champion — lower intensity group class</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">C</span>Champion Plus — most supported level</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">D</span>They should wait until their balance improves</div>
-      </div>
-      <div class="quiz-feedback show" id="sfb_sq2_r">✓ Fighter class is the right call. Low-to-moderate balance concerns, strong cognition, and high motivation are exactly what Fighter class is designed for. The circuit format and higher intensity will challenge them appropriately.</div>
-      <div class="quiz-feedback wrong" id="sfb_sq2_w"><strong>Fighter class</strong> is the right fit. It's designed specifically for clients with low-to-moderate balance concerns who can handle higher intensity circuit training. Never hold a motivated, capable client back from the appropriate level.</div>
-      <div class="quiz-nav" id="snav_sq2" style="display:none;"><button class="btn btn-primary" onclick="nxt(3)">Next →</button></div>
-    </div>
-
-    <!-- Q3 -->
-    <div id="sq3" style="display:none;">
-      <div class="quiz-q">
-        <span class="q-num">QUESTION 03 / 04</span>
-        What is the key structural difference between Fighter classes and Champion classes?
-      </div>
-      <div class="quiz-options">
-        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">A</span>Fighter classes use gloves, Champion classes don't</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">B</span>Champion classes are longer in duration</div>
-        <div class="quiz-opt" onclick="ans(this,true,'sq3')"><span class="opt-letter">C</span>Fighter classes are circuit-based; Champion classes are group format</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">D</span>Fighter classes don't include a cool down</div>
-      </div>
-      <div class="quiz-feedback show" id="sfb_sq3_r">✓ Exactly right. Fighter = circuit format. Champion = group format. This structural difference affects how you set up the space, manage transitions, and support individual clients throughout the session.</div>
-      <div class="quiz-feedback wrong" id="sfb_sq3_w">The key difference is the <strong>format</strong> — Fighter classes are <strong>circuit-based</strong> while Champion classes are <strong>group format</strong>. This affects everything from room setup to how you time and cue the class.</div>
-      <div class="quiz-nav" id="snav_sq3" style="display:none;"><button class="btn btn-primary" onclick="nxt(4)">Next →</button></div>
-    </div>
-
-    <!-- Q4 -->
-    <div id="sq4" style="display:none;">
-      <div class="quiz-q">
-        <span class="q-num">QUESTION 04 / 04</span>
-        How long should the High Intensity portion of a B4H class run?
-      </div>
-      <div class="quiz-options">
-        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">A</span>15 – 20 minutes</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">B</span>20 – 25 minutes</div>
-        <div class="quiz-opt" onclick="ans(this,true,'sq4')"><span class="opt-letter">C</span>32 – 35 minutes</div>
-        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">D</span>45 – 50 minutes</div>
-      </div>
-      <div class="quiz-feedback show" id="sfb_sq4_r">✓ Correct! 32–35 minutes of high intensity work is the core of the class. Combined with a 7–10 min warm up and 10–15 min cool down, you're looking at a full 50–60 minute session total.</div>
-      <div class="quiz-feedback wrong" id="sfb_sq4_w">The High Intensity portion runs <strong>32–35 minutes</strong>. This is the heart of the class — long enough for real neurological and cardiovascular benefit, structured within a 50–60 minute total session.</div>
-      <div class="quiz-nav" id="snav_sq4" style="display:none;"><button class="btn btn-primary" onclick="showDone()">See Results 🥊</button></div>
-    </div>
-
-    <!-- Complete -->
-    <div id="sqComplete" style="display:none;text-align:center;padding:20px 0;">
-      <p style="font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--red);" id="sqScore"></p>
-      <p style="font-size:20px;font-weight:600;color:var(--light);margin-bottom:12px;" id="sqResult"></p>
-      <p style="font-size:16px;color:var(--muted);max-width:460px;margin:0 auto 32px;" id="sqMessage"></p>
-      <button class="btn btn-ghost" onclick="resetQ()">↩ Retake Quiz</button>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ CLASS LEVELS ══════════ -->
-<section class="section reveal">
-  <p class="section-label">05 — Our 3 Program Levels</p>
-
-  <p style="font-size:17px;color:#b0aba0;max-width:680px;margin-bottom:16px;line-height:1.8;">
-    We offer <strong style="color:var(--light);">three levels of programming</strong> at Boxing 4 Health, designed to meet every client exactly where they are. As our locations grow, we conduct class assessments to ensure everyone is always in the most suitable class for their mobility, cognition, and individual needs.
-  </p>
-
-  <div style="background:var(--charcoal);border:1px solid #222;border-left:4px solid var(--gold);padding:22px 26px;max-width:780px;margin-bottom:36px;">
-    <p style="font-size:15px;color:#c8b870;line-height:1.8;"><strong style="color:var(--light);">Class placement is handled with care.</strong> We understand that requesting a class change can feel sensitive, and we appreciate your flexibility. Decisions are made carefully, based on assessments of mobility, cognition, and individual needs — always with the client's best experience as the top priority. If a change is recommended, clients are encouraged to trust the process. And if they feel they need to switch, they can always contact the office to discuss options with a manager. <strong style="color:var(--light);">Not all locations offer every level</strong> — we aim to expand availability as we grow.</p>
-  </div>
-
-  
-
-  <div class="cl2-grid">
-
-    <!-- FIGHTER -->
-    <div class="cl2-card cl2-fighter">
-      <div class="cl2-bar"></div>
-      <div class="cl2-inner">
-        <div class="cl2-top">
-          <div class="cl2-name-block">
-            <div class="cl2-intensity">Highest Intensity</div>
-            <div class="cl2-name">Fighter</div>
-            <div class="cl2-stage">🥊 Stage 1–2 · High Functioning</div>
-          </div>
-          <div class="cl2-ratio-block">
-            <div class="cl2-ratio-num" style="color:#4CAF50;">1:14</div>
-            <div class="cl2-ratio-label">Staff : Students</div>
-          </div>
-        </div>
-        <div class="cl2-desc">Classes for people with Parkinson's who are <strong>high functioning with low to moderate balance concerns.</strong> Symptoms such as tremor, bradykinesia, and rigidity are mild and generally don't interfere with daily activities.</div>
-        <div class="cl2-cols">
-          <div>
-            <div class="cl2-col-head cl2-fighter" style="color:#4CAF50;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid #2a2a2a;margin-bottom:10px;">Client Profile</div>
-            <ul class="cl2-ul">
-              <li>Tremor, bradykinesia, or rigidity that is mild and <strong>doesn't interfere with daily life</strong></li>
-              <li>Low to moderate balance concerns only</li>
-              <li>Able to get down to the ground and back up <strong>independently</strong></li>
-              <li>Feels <strong>energized after class</strong> — not depleted or fatigued</li>
-            </ul>
-          </div>
-          <div>
-            <div style="color:#4CAF50;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid #2a2a2a;margin-bottom:10px;">Class Details</div>
-            <ul class="cl2-ul">
-              <li>Able to maintain <strong>80% target heart rate</strong> during high-intensity portion</li>
-              <li>Staff-to-student ratio: <strong>1:14</strong></li>
-              <li>Full circuit + boxing format, minimal modifications required</li>
-              <li>High energy, competitive atmosphere encouraged</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- WARRIOR -->
-    <div class="cl2-card cl2-warrior">
-      <div class="cl2-bar"></div>
-      <div class="cl2-inner">
-        <div class="cl2-top">
-          <div class="cl2-name-block">
-            <div class="cl2-intensity">Moderate Intensity</div>
-            <div class="cl2-name">Warrior</div>
-            <div class="cl2-stage">⚡ Stage 2–3 · More Support Needed</div>
-          </div>
-          <div class="cl2-ratio-block">
-            <div class="cl2-ratio-num" style="color:#FFC107;">1:5–6</div>
-            <div class="cl2-ratio-label">Staff : Students</div>
-          </div>
-        </div>
-        <div class="cl2-desc">Movement symptoms are <strong>more noticeable.</strong> Clients need more modifications and instructor attention, and may fatigue more quickly than Fighter-level clients.</div>
-        <div class="cl2-cols">
-          <div>
-            <div style="color:#FFC107;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid #2a2a2a;margin-bottom:10px;">Client Profile</div>
-            <ul class="cl2-ul">
-              <li>Movement symptoms are <strong>more noticeable</strong> in daily activities</li>
-              <li>More modifications required or needed throughout class</li>
-              <li>Moderate to high intensity depending on the individual</li>
-              <li><strong>Key signal:</strong> Client gets fatigued after Fighter class instead of energized</li>
-            </ul>
-          </div>
-          <div>
-            <div style="color:#FFC107;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid #2a2a2a;margin-bottom:10px;">Class Details</div>
-            <ul class="cl2-ul">
-              <li>Closer ratio — <strong>1:5 or 1:6</strong> staff to students</li>
-              <li>More time on individual cueing, correction, and support</li>
-              <li>Modifications for balance, range of motion, and fatigue throughout</li>
-              <li>Intensity adjusted individually within the same class</li>
-            </ul>
-          </div>
-        </div>
-        <div class="cl2-avail">⚠ Not available at all locations — check with your gym</div>
-      </div>
-    </div>
-
-    <!-- CHAMPION -->
-
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<div class="module-footer reveal">
-  <div>
-    <h2>Next Up:<br><span>Why Boxing?</span></h2>
-    <p>The science behind why boxing specifically is one of the most powerful interventions available for Parkinson's and aging.</p>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-    <button class="btn btn-primary">Continue: Why Boxing? →</button>
-    <button class="btn btn-ghost">↩ Back to Module 1</button>
-  </div>
+<div class="panel panel-tinted">
+  <h3><span data-icon="target"></span> What you'll learn</h3>
+  <ul class="check-list">
+    <li>The three-part structure every B4H class follows — regardless of level — and the timing of each phase.</li>
+    <li>Why the warm-up and cool-down are non-negotiable, especially for clients with Parkinson's and low blood pressure.</li>
+    <li>The three class types — Fighter, Warrior, and Champion — and the client profile each one is designed for.</li>
+    <li>How class placement decisions are made: based on objective assessment data, not client preference.</li>
+  </ul>
 </div>
 
+<p class="label">Section 01</p>
+<h2 id="class-structure">Class Structure</h2>
+<p>Every B4H class — regardless of level — follows this same three-part structure. The timing may flex slightly, but the formula never changes. A full session runs roughly 50–60 minutes.</p>
 
+<ol class="steps">
+  <li class="step"><div class="step-body">
+    <h4>Warm Up — 7 to 10 minutes</h4>
+    <p>Gets the body moving and the mind engaged. This is especially critical for clients with Parkinson's and senior clients, whose stiffness is often worst at the start of class. <strong>Never skip the warm up</strong> — it's as therapeutic as the workout itself.</p>
+  </div></li>
+  <li class="step"><div class="step-body">
+    <h4>High Intensity Work — 32 to 35 minutes</h4>
+    <p>The core of the class: a mix between <strong>functional exercises</strong> and <strong>boxing technique and drills</strong>. This is where the real neurological and physical benefit happens — amplitude training, dual tasking, coordination, and cardiovascular work all come together.</p>
+  </div></li>
+  <li class="step"><div class="step-body">
+    <h4>Cool Down — 10 to 15 minutes</h4>
+    <p>Gentle stretching and/or <strong>self-massage ball work</strong>. This helps reduce rigidity, improve flexibility, and bring heart rate down safely.</p>
+  </div></li>
+</ol>
 
-</div></div></div>
+<div class="callout callout-safety"><span class="callout-icon" data-icon="triangle-alert"></span><p class="callout-title">Safety</p><div class="callout-body"><p>For clients with low blood pressure, the cool-down transition period is especially important — <strong>never rush the cool down</strong>. Bringing heart rate and body position down gradually helps prevent dizziness and falls.</p></div></div>
+
+<div class="callout callout-coach"><span class="callout-icon" data-icon="hand"></span><p class="callout-title">Coach's Corner</p><div class="callout-body"><p>Stiffness is often worst at the very start of class, so treat the warm-up as therapy, not a formality. Give clients time to loosen up before asking for high-intensity effort.</p></div></div>
+
+<p class="label">Section 02</p>
+<h2 id="class-placement">Class Placement</h2>
+
+<div class="callout callout-info"><span class="callout-icon" data-icon="info"></span><p class="callout-title">Good to know</p><div class="callout-body"><p>Once your assessment with a client is complete, you place them in the appropriate class. Class placement is always the licensee's decision — based on <strong>objective assessment data, not client preference</strong>.</p></div></div>
+
+<p>We offer three levels of programming at Boxing 4 Health, designed to meet every client exactly where they are. As our locations grow, we conduct class assessments to ensure everyone is always in the most suitable class for their mobility, cognition, and individual needs.</p>
+
+<div class="callout callout-info"><span class="callout-icon" data-icon="info"></span><p class="callout-title">Good to know</p><div class="callout-body"><p>Class placement is handled with care. Requesting a class change can feel sensitive, and we appreciate your flexibility. Decisions are made carefully — based on assessments of mobility, cognition, and individual needs — always with the client's best experience as the top priority. If a change is recommended, clients are encouraged to trust the process, and if they feel they need to switch, they can always contact the office to discuss options with a manager. <strong>Not all locations offer every level</strong> — we aim to expand availability as we grow.</p></div></div>
+
+<p class="label">Section 03</p>
+<h2 id="class-types">The Three Class Types</h2>
+<p>Open each card to see the client profile and class details for that level.</p>
+
+<div class="accordion" data-open="false">
+  <button class="acc-trigger"><span class="chip chip-sm" data-icon="flame"></span> <span>Fighter <span class="badge">Higher intensity</span></span> <span class="acc-chevron" data-icon="chevron-right"></span></button>
+  <div class="acc-panel"><div class="acc-panel-inner">
+    <p>Circuit-based classes for people with Parkinson's who are <strong>high functioning with low to moderate balance concerns</strong>. Symptoms such as tremor, bradykinesia, and rigidity are mild and generally don't interfere with daily activities. Higher intensity with Parkinson's-specific exercises, including amplitude-based movements, dual tasking, and cognitive challenges built in.</p>
+    <p><strong>Client profile</strong></p>
+    <ul class="check-list">
+      <li>Tremor, bradykinesia, or rigidity that is mild and doesn't interfere with daily life.</li>
+      <li>Low to moderate balance concerns only.</li>
+      <li>Able to get down to the ground and back up independently.</li>
+      <li>Feels energized after class — not depleted or fatigued.</li>
+    </ul>
+    <p><strong>Class details</strong></p>
+    <ul class="check-list">
+      <li>Able to maintain 80% target heart rate during the high-intensity portion.</li>
+      <li>Staff-to-student ratio of 1:14.</li>
+      <li>Full circuit + boxing format, with minimal modifications required.</li>
+      <li>High energy, competitive atmosphere encouraged.</li>
+    </ul>
+  </div></div>
+</div>
+
+<div class="accordion" data-open="false">
+  <button class="acc-trigger"><span class="chip chip-sm" data-icon="zap"></span> <span>Warrior <span class="badge">Moderate intensity</span></span> <span class="acc-chevron" data-icon="chevron-right"></span></button>
+  <div class="acc-panel"><div class="acc-panel-inner">
+    <p>For clients whose movement symptoms are <strong>more noticeable</strong>. More modifications and instructor attention are required, and clients may fatigue more quickly than Fighter-level clients. A key indicator is the client feeling fatigued — rather than energized — after a Fighter class.</p>
+    <p><strong>Client profile</strong></p>
+    <ul class="check-list">
+      <li>Movement symptoms are more noticeable in daily activities.</li>
+      <li>More modifications required or needed throughout class.</li>
+      <li>Moderate to high intensity depending on the individual.</li>
+      <li>Key signal: the client gets fatigued after a Fighter class instead of energized.</li>
+    </ul>
+    <p><strong>Class details</strong></p>
+    <ul class="check-list">
+      <li>Closer ratio — 1:5 or 1:6 staff to students.</li>
+      <li>More time on individual cueing, correction, and support.</li>
+      <li>Modifications for balance, range of motion, and fatigue throughout.</li>
+      <li>Intensity adjusted individually within the same class.</li>
+    </ul>
+    <div class="callout callout-info"><span class="callout-icon" data-icon="info"></span><p class="callout-title">Good to know</p><div class="callout-body"><p>Warrior classes are not available at all locations — check with your gym.</p></div></div>
+  </div></div>
+</div>
+
+<div class="accordion" data-open="false">
+  <button class="acc-trigger"><span class="chip chip-sm" data-icon="award"></span> <span>Champion <span class="badge">Lower intensity</span></span> <span class="acc-chevron" data-icon="chevron-right"></span></button>
+  <div class="acc-panel"><div class="acc-panel-inner">
+    <p>A group class format — <strong>not circuit based</strong>. Lower intensity with more modifications, more individual attention, and a slower pace. Designed for clients with significant balance challenges, freezing of gait, or greater physical and cognitive limitations.</p>
+    <p><strong>Class details</strong></p>
+    <ul class="check-list">
+      <li>Group format at lower intensity, with a moderate-to-high level of balance need.</li>
+      <li>Staff-to-student ratio of 1:4.</li>
+      <li>Amplitude training modified and dual tasking simplified; cognitive exercises still included.</li>
+      <li>Typical client is at Stage 3–4 PD.</li>
+    </ul>
+  </div></div>
+</div>
+
+<p class="label">Section 04</p>
+<h2 id="class-comparison">Class Comparison at a Glance</h2>
+<p>Use this as a quick reference when placing a new client after their assessment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Fighter</th>
+      <th>Warrior</th>
+      <th>Champion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Format</td><td>Circuit</td><td>Circuit</td><td>Group</td></tr>
+    <tr><td>Intensity</td><td>Higher</td><td>Moderate</td><td>Lower</td></tr>
+    <tr><td>Balance needs</td><td>Low–Moderate</td><td>Moderate</td><td>Moderate–High</td></tr>
+    <tr><td>Amplitude training</td><td>Yes</td><td>Yes</td><td>Modified</td></tr>
+    <tr><td>Dual tasking</td><td>Yes</td><td>Yes</td><td>Simplified</td></tr>
+    <tr><td>Cognitive exercises</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Staff ratio</td><td>1:14</td><td>1:5–6</td><td>1:4</td></tr>
+    <tr><td>Typical client</td><td>Stage 1–2 PD</td><td>Stage 2–3 PD</td><td>Stage 3–4 PD</td></tr>
+  </tbody>
+</table>
+
+<div class="callout callout-info"><span class="callout-icon" data-icon="clipboard-list"></span><p class="callout-title">Good to know</p><div class="callout-body"><p><strong>Coming up:</strong> The next lesson breaks down exactly what a Champion vs Champion Plus client looks like — including the specific differences in function, mobility, and what that means for how you run their session. Read that document carefully before placing any client in a Champion class.</p></div></div>
+
+<div class="panel panel-tinted">
+  <h3><span data-icon="circle-check-big"></span> Key takeaways</h3>
+  <ul class="check-list">
+    <li>Every B4H class follows the same structure: Warm Up (7–10 min) → High Intensity Work (32–35 min) → Cool Down (10–15 min).</li>
+    <li>Never skip the warm up or rush the cool down — both are as therapeutic as the workout itself, especially for clients with Parkinson's and low blood pressure.</li>
+    <li>Fighter is a higher-intensity circuit class; Warrior is moderate intensity with more support; Champion is a lower-intensity group class.</li>
+    <li>A key signal that a client may belong in Warrior rather than Fighter: they feel fatigued instead of energized after a Fighter class.</li>
+    <li>Class placement is always the licensee's decision, based on objective assessment data — not client preference.</li>
+    <li>Not all locations offer every level; changes are made carefully with the client's best experience as the top priority.</li>
+  </ul>
+</div>
+
+<p class="label">Section 05</p>
+<h2 id="knowledge-check">Knowledge Check</h2>
+
+<div class="quiz" data-quiz data-quiz-for="setting-up-a-class" data-pass="0.7">
+<script type="application/json" data-quiz-questions>[{"q":{"en":"What is the correct order of a Boxing 4 Health class?"},"options":[{"en":"High Intensity → Warm Up → Cool Down"},{"en":"Warm Up → High Intensity → Cool Down"},{"en":"Cool Down → Warm Up → High Intensity"},{"en":"High Intensity → Cool Down → Warm Up"}],"answer":1,"explain":{"en":"Warm Up (7–10 min) → High Intensity (32–35 min) → Cool Down (10–15 min). This structure never changes — every class, every level. Never skip or reorder these phases."}},{"q":{"en":"A newly assessed client has low-to-moderate balance concerns, no significant cognitive impairment, and is highly motivated. Which class is the best fit?"},"options":[{"en":"Fighter — higher intensity circuit class"},{"en":"Champion — lower intensity group class"},{"en":"Champion Plus — most supported level"},{"en":"They should wait until their balance improves"}],"answer":0,"explain":{"en":"Fighter class is the right call. Low-to-moderate balance concerns, strong cognition, and high motivation are exactly what Fighter class is designed for. The circuit format and higher intensity will challenge them appropriately — never hold a motivated, capable client back from the appropriate level."}},{"q":{"en":"What is the key structural difference between Fighter classes and Champion classes?"},"options":[{"en":"Fighter classes use gloves, Champion classes don't"},{"en":"Champion classes are longer in duration"},{"en":"Fighter classes are circuit-based; Champion classes are group format"},{"en":"Fighter classes don't include a cool down"}],"answer":2,"explain":{"en":"The key difference is the format — Fighter classes are circuit-based while Champion classes are group format. This affects everything from room setup to how you time and cue the class, manage transitions, and support individual clients."}},{"q":{"en":"How long should the High Intensity portion of a B4H class run?"},"options":[{"en":"15–20 minutes"},{"en":"20–25 minutes"},{"en":"32–35 minutes"},{"en":"45–50 minutes"}],"answer":2,"explain":{"en":"The High Intensity portion runs 32–35 minutes — the core of the class. Combined with a 7–10 min warm up and a 10–15 min cool down, you're looking at a full 50–60 minute session total."}}]</script>
+</div>
+
+</div></div></section>
 <section class="section-tight"><div class="wrap wrap-narrow"><div class="panel panel-tinted" style="text-align:center;margin-top:2rem">
   <button class="btn btn-primary" data-mark-complete data-done="false"><span data-icon="circle-check-big"></span><span data-mc-label>Mark this lesson complete</span></button>
 </div>
 <span data-complete-sentinel aria-hidden="true"></span>
 </div></section>
 <section class="section-tight"><div class="wrap wrap-narrow"><nav class="pager" aria-label="Lesson navigation"><a class="prev" href="teaching-101-vigor.html"><span class="pager-ico" data-icon="arrow-left"></span><span class="pager-txt"><span class="pager-dir" data-i18n="lesson.prev">prev</span><span class="pager-title"><span data-lang-block="en">Teaching 101 · VIGOR</span><span data-lang-block="fr">Enseignement 101 · VIGOR</span></span></span></a><a class="next" href="fighter-class-template.html"><span class="pager-ico" data-icon="arrow-right"></span><span class="pager-txt"><span class="pager-dir" data-i18n="lesson.next">next</span><span class="pager-title"><span data-lang-block="en">Fighter Class Template</span><span data-lang-block="fr">Modèle de cours Fighter</span></span></span></a></nav></div></section>
-<script>
-document.querySelectorAll('.reveal').forEach(r => {
-  new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 }).observe(r);
-});
-
-let score = 0, current = 1;
-
-function ans(btn, correct, qId) {
-  const opts = btn.closest('.quiz-options').querySelectorAll('.quiz-opt');
-  opts.forEach(o => o.classList.add('disabled'));
-  if (correct) {
-    btn.classList.add('correct');
-    document.getElementById(`sfb_${qId}_r`).classList.add('show');
-    score++;
-  } else {
-    btn.classList.add('incorrect');
-    document.getElementById(`sfb_${qId}_w`).classList.add('show');
-    opts.forEach(o => { if (o.onclick && o.onclick.toString().includes('true')) o.classList.add('correct'); });
-  }
-  document.getElementById(`snav_${qId}`).style.display = 'flex';
-  document.getElementById(`qd${current - 1}`).classList.add(correct ? 'done' : 'active');
-}
-
-function nxt(num) {
-  document.getElementById(`sq${current}`).style.display = 'none';
-  current = num;
-  document.getElementById(`sq${num}`).style.display = 'block';
-  document.getElementById(`qd${num - 1}`).classList.add('active');
-}
-
-function showDone() {
-  document.getElementById('sq4').style.display = 'none';
-  document.getElementById('sqComplete').style.display = 'block';
-  const pct = Math.round((score / 4) * 100);
-  document.getElementById('sqScore').textContent = `${score}/4`;
-  document.getElementById('sqResult').textContent = pct === 100 ? '🥊 Perfect Score!' : pct >= 75 ? 'Great Work!' : 'Review & Retry';
-  document.getElementById('sqMessage').textContent = pct === 100
-    ? 'You know your class structure and client classifications inside out. You\'re ready to build your program.'
-    : pct >= 75
-    ? 'Good work! Review the class type differences and the timing breakdown before moving on.'
-    : 'Take another look at the class comparison table and timeline, then give it another try.';
-}
-
-function resetQ() {
-  score = 0; current = 1;
-  for (let i = 1; i <= 4; i++) {
-    const q = document.getElementById(`sq${i}`);
-    q.style.display = i === 1 ? 'block' : 'none';
-    q.querySelectorAll('.quiz-opt').forEach(o => { o.className = 'quiz-opt'; });
-    ['r','w'].forEach(t => {
-      const el = document.getElementById(`sfb_sq${i}_${t}`);
-      if (el) el.classList.remove('show');
-    });
-    const nav = document.getElementById(`snav_sq${i}`);
-    if (nav) nav.style.display = 'none';
-  }
-  ['qd0','qd1','qd2','qd3'].forEach((id, i) => {
-    document.getElementById(id).className = 'progress-dot' + (i === 0 ? ' active' : '');
-  });
-  document.getElementById('sqComplete').style.display = 'none';
-}
-</script>
 </main>
 <div data-include="footer"></div>
-<script src="../assets/js/icons.js?v=7"></script>
-<script src="../assets/js/i18n.js?v=7"></script>
-<script src="../assets/js/site.js?v=7"></script>
-<script src="../assets/js/progress.js?v=7"></script>
-<script src="../assets/js/search.js?v=7"></script>
-<script src="../assets/js/read-aloud.js?v=7"></script>
+<script src="../assets/js/icons.js?v=8"></script>
+<script src="../assets/js/i18n.js?v=8"></script>
+<script src="../assets/js/site.js?v=8"></script>
+<script src="../assets/js/progress.js?v=8"></script>
+<script src="../assets/js/search.js?v=8"></script>
+<script src="../assets/js/read-aloud.js?v=8"></script>
+<script src="../assets/js/quiz.js?v=8"></script>
 </body>
 </html>

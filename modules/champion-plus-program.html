@@ -10,10 +10,10 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/img/favicon.svg">
-<link rel="stylesheet" href="../assets/css/fonts.css?v=7">
-<link rel="stylesheet" href="../assets/css/tokens.css?v=7">
-<link rel="stylesheet" href="../assets/css/site.css?v=7">
-<link rel="stylesheet" href="../assets/css/print.css?v=7" media="print">
+<link rel="stylesheet" href="../assets/css/fonts.css?v=8">
+<link rel="stylesheet" href="../assets/css/tokens.css?v=8">
+<link rel="stylesheet" href="../assets/css/site.css?v=8">
+<link rel="stylesheet" href="../assets/css/print.css?v=8" media="print">
 
 <script>(function(){try{var d=document.documentElement,s=localStorage;
 d.setAttribute('data-theme',s.getItem('b4h-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
@@ -21,377 +21,9 @@ d.setAttribute('lang',s.getItem('b4h-lang')||'en');
 if(s.getItem('b4h-contrast')==='high')d.setAttribute('data-contrast','high');
 d.style.setProperty('--font-scale',s.getItem('b4h-font')||'1');
 d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</script>
-<style>.enhanced-content{
-    --red: #E8271A;
-    --dark: #0D0D0D;
-    --charcoal: #1A1A1A;
-    --mid: #2E2E2E;
-    --light: #F5F0E8;
-    --muted: #9A9A8A;
-    --gold: #C8A84B;
-    --green: #2E9E6B;
-    --blue: #3A7BD5;
-  }
-.enhanced-content *, .enhanced-content *::before, .enhanced-content *::after{ box-sizing: border-box; margin: 0; padding: 0; }
-.enhanced-content{
-    background: var(--dark);
-    color: var(--light);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-.enhanced-content .hero{
-    position: relative;
-    min-height: 55vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 8vw 60px;
-    overflow: hidden;
-  }
-.enhanced-content .hero::before{
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 70% at 95% 40%, rgba(200,168,75,0.12) 0%, transparent 65%),
-      radial-gradient(ellipse 40% 50% at 5% 80%, rgba(232,39,26,0.06) 0%, transparent 60%);
-    pointer-events: none;
-  }
-.enhanced-content .breadcrumb{
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    color: var(--muted);
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 0.5s 0.1s ease forwards;
-  }
-.enhanced-content .breadcrumb span{ color: var(--gold); }
-.enhanced-content .hero-title{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 9vw, 108px);
-    line-height: 0.9;
-    letter-spacing: 0.02em;
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.3s ease forwards;
-  }
-.enhanced-content .hero-title em{ color: var(--gold); font-style: normal; }
-.enhanced-content .hero-sub{
-    font-size: clamp(16px, 1.8vw, 19px);
-    line-height: 1.8;
-    color: #b0aba0;
-    max-width: 620px;
-    margin-bottom: 36px;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.5s ease forwards;
-  }
-.enhanced-content .hero-sub strong{ color: var(--light); }
-.enhanced-content .hero-meta{
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.7s ease forwards;
-  }
-.enhanced-content .meta-pill{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--mid);
-    border: 1px solid #333;
-    padding: 9px 18px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-  }
-.enhanced-content .meta-pill .dot{
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--gold);
-    animation: pulse 2s infinite;
-  }
-.enhanced-content .section{ padding: 68px 8vw; border-top: 1px solid #1e1e1e; }
-.enhanced-content .section-label{
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-.enhanced-content .section-label::after{
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, #2a2a2a, transparent);
-  }
-.enhanced-content .philosophy{
-    background: var(--charcoal);
-    border: 1px solid #2a2a2a;
-    border-left: 5px solid var(--gold);
-    padding: 32px 36px;
-    margin-bottom: 52px;
-  }
-.enhanced-content .philosophy p{
-    font-size: 18px;
-    line-height: 1.8;
-    color: #c8c0b0;
-  }
-.enhanced-content .philosophy p strong{ color: var(--light); }
-.enhanced-content .benefits-list{
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 52px;
-  }
-.enhanced-content .benefit-item{
-    background: var(--charcoal);
-    border: 1px solid #222;
-    padding: 26px 30px;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.2s;
-  }
-.enhanced-content .benefit-item::after{
-    content: '';
-    position: absolute;
-    left: 0; top: 0;
-    width: 3px; height: 100%;
-    background: var(--gold);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-.enhanced-content .benefit-item:hover{ background: #1e1e1e; }
-.enhanced-content .benefit-item:hover::after{ opacity: 1; }
-.enhanced-content .benefit-check{
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: rgba(200,168,75,0.15);
-    border: 1px solid rgba(200,168,75,0.35);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--gold);
-    font-size: 16px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-.enhanced-content .benefit-text{
-    font-size: 17px;
-    line-height: 1.75;
-    color: #c0bbb0;
-  }
-.enhanced-content .benefit-text strong{ color: var(--light); }
-.enhanced-content .pricing-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
-    margin-bottom: 52px;
-  }
-.enhanced-content .price-card{
-    background: var(--charcoal);
-    border: 1px solid #2a2a2a;
-    padding: 36px 30px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.2s;
-  }
-.enhanced-content .price-card:hover{ background: #1e1e1e; }
-.enhanced-content .price-card::before{
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 4px;
-    background: var(--gold);
-  }
-.enhanced-content .price-freq{
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
-.enhanced-content .price-amount{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 58px;
-    color: var(--gold);
-    line-height: 1;
-    letter-spacing: 0.02em;
-  }
-.enhanced-content .price-period{
-    font-size: 14px;
-    color: var(--muted);
-    margin-top: 6px;
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.08em;
-  }
-.enhanced-content .price-sessions{
-    margin-top: 18px;
-    padding-top: 18px;
-    border-top: 1px solid #2a2a2a;
-    font-size: 14px;
-    color: #888;
-  }
-.enhanced-content .options-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-.enhanced-content .option-card{
-    background: var(--charcoal);
-    border: 1px solid #222;
-    border-top: 3px solid var(--blue);
-    padding: 28px;
-  }
-.enhanced-content .option-card:nth-child(2){ border-top-color: var(--green); }
-.enhanced-content .option-icon{ font-size: 28px; margin-bottom: 14px; }
-.enhanced-content .option-title{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 0.04em;
-    color: var(--blue);
-    margin-bottom: 10px;
-  }
-.enhanced-content .option-card:nth-child(2) .option-title{ color: var(--green); }
-.enhanced-content .option-desc{
-    font-size: 16px;
-    line-height: 1.75;
-    color: #a8a398;
-  }
-.enhanced-content .option-desc strong{ color: var(--light); }
-.enhanced-content .signoff{
-    background: linear-gradient(135deg, #1a1a12, #150f0a);
-    border: 1px solid rgba(200,168,75,0.2);
-    padding: 40px 44px;
-    position: relative;
-    overflow: hidden;
-  }
-.enhanced-content .signoff::before{
-    content: '🥊';
-    position: absolute;
-    right: 30px; bottom: 20px;
-    font-size: 80px;
-    opacity: 0.07;
-  }
-.enhanced-content .signoff p{
-    font-size: 17px;
-    line-height: 1.8;
-    color: #c8c0a8;
-    max-width: 600px;
-    margin-bottom: 20px;
-  }
-.enhanced-content .signoff p strong{ color: var(--light); }
-.enhanced-content .signoff-name{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 0.06em;
-    color: var(--gold);
-  }
-.enhanced-content .instructor-note{
-    background: rgba(200,168,75,0.07);
-    border: 1px solid rgba(200,168,75,0.2);
-    border-left: 4px solid var(--gold);
-    padding: 24px 28px;
-    margin-bottom: 52px;
-  }
-.enhanced-content .instructor-note p{
-    font-size: 17px;
-    line-height: 1.75;
-    color: #c8b870;
-  }
-.enhanced-content .instructor-note p strong{ color: var(--gold); }
-.enhanced-content .module-footer{
-    padding: 68px 8vw;
-    border-top: 1px solid #222;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 32px;
-    background: linear-gradient(135deg, var(--charcoal), var(--dark));
-  }
-.enhanced-content .module-footer h2{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(30px, 4vw, 48px);
-    letter-spacing: 0.04em;
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-.enhanced-content .module-footer h2 span{ color: var(--red); }
-.enhanced-content .module-footer p{ font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
-.enhanced-content .btn{
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 28px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px; font-weight: 600;
-    letter-spacing: 0.04em;
-    cursor: pointer; border: none;
-    transition: background 0.2s;
-  }
-.enhanced-content .btn-primary{ background: var(--red); color: white; }
-.enhanced-content .btn-primary:hover{ background: #c41f13; }
-.enhanced-content .btn-ghost{ background: transparent; color: var(--muted); border: 1px solid #333; }
-.enhanced-content .btn-ghost:hover{ border-color: #555; color: var(--light); }
-@keyframes fadeUp{
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-@keyframes pulse{
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-.enhanced-content .reveal{
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-.enhanced-content .reveal.visible{ opacity: 1; transform: none; }
-@media (max-width: 640px){.enhanced-content .pricing-grid{ grid-template-columns: 1fr; }.enhanced-content .options-grid{ grid-template-columns: 1fr; }.enhanced-content .signoff{ padding: 28px; }.enhanced-content .module-footer{ flex-direction: column; }}
-/* --- Unified blue remap for ported content (theme-aware) --- */
-.enhanced-content{
-  --red:#19679e; --dark:transparent; --charcoal:var(--surface-2); --mid:var(--border);
-  --light:var(--text); --muted:var(--text-muted); --gold:#c98a1f; --green:#1e9e77;
-  --blue:#2a7fc4; --amber:#c9791a; --teal:#178f7a; --purple:#5a6bd8; --orange:#c96a1a;
-  --cream:var(--surface); --warm-cream:var(--surface); --deep:var(--text);
-  --olive:#5f7a3a; --terracotta:#c26b3f; --sand:var(--surface-2); --sage:#7f9a5a; --accent:var(--azure);
-  background:transparent!important; color:var(--text);
-  font-size:clamp(1.02rem,1rem + .2vw,1.12rem); line-height:var(--lh-body);
-}
-:root[data-theme="dark"] .enhanced-content{
-  --charcoal:var(--surface-2); --mid:var(--border); --light:var(--text); --muted:var(--text-muted);
-  --red:#4aa3db; --gold:#e0b25a; --blue:#6bb6e6;
-}
-.enhanced-content, .enhanced-content p, .enhanced-content li, .enhanced-content td,
-.enhanced-content .hero-sub, .enhanced-content .card-body, .enhanced-content .st-detail{ font-family:var(--font-body)!important; }
-.enhanced-content h1,.enhanced-content h2,.enhanced-content h3,.enhanced-content h4,
-.enhanced-content .hero-title,.enhanced-content .section-label,.enhanced-content .card-title,
-.enhanced-content .quiz-q,.enhanced-content .st-name{ font-family:var(--font-sans)!important; letter-spacing:normal; }
-/* neutralize their full-page chrome — the site shell provides header, hero, footer */
-.enhanced-content .breadcrumb, .enhanced-content nav.breadcrumb,
-.enhanced-content .module-footer, .enhanced-content .hero,
-.enhanced-content header, .enhanced-content .top-nav, .enhanced-content .site-nav{ display:none!important; }
-.enhanced-content > .section:first-of-type,
-.enhanced-content > section:first-of-type{ padding-top:0!important; }
-.enhanced-content a{ color:var(--link); }
-.enhanced-content img{ border-radius:var(--r-md); }
-/* readable minimum for their small text */
-.enhanced-content [style*="font-size"]{ }
-.enhanced-content .meta-pill, .enhanced-content .section-label{ font-size:.8rem; }
-</style>
+
 </head>
-<body data-lesson-id="champion-plus-program" data-lesson-title="Champion Plus Program" data-lesson-url="modules/champion-plus-program.html" data-lesson-hasquiz="false">
+<body data-lesson-id="champion-plus-program" data-lesson-title="Champion Plus Program" data-lesson-url="modules/champion-plus-program.html" data-lesson-hasquiz="true">
 <div data-include="header"></div>
 <main id="main">
 
@@ -407,192 +39,91 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</
   </div>
 </div></section>
 
-<div class="section-tight"><div data-lang-block="fr"><div class="wrap wrap-narrow"><div class="callout callout-info"><span class="callout-icon" data-icon="languages"></span><p class="callout-title">Une option de programme avancé pour vos clients Champion les plus aptes.</p><div class="callout-body"><p>Le contenu détaillé de cette leçon est présenté en anglais ci-dessous. La traduction française complète est en cours de révision.</p></div></div></div></div>
-<div class="wrap"><div class="enhanced-content lesson-body" data-lesson-content>
+<section class="section-tight"><div class="wrap wrap-narrow"><div class="prose lesson-body" data-lesson-content>
+<p class="lead">When a client needs more than a standard class can offer, Champion Plus is our answer. It provides one-on-one instruction, full session support, and a community that has their back — every single class. This lesson explains what Champion Plus includes, how it's priced, and what options exist when it isn't the right fit for a family.</p>
 
-
-<!-- ── HERO ── -->
-<section class="hero">
-  <p class="breadcrumb">Module 2 — Class Breakdown &nbsp;›&nbsp; <span>Champion Plus Program</span></p>
-  <h1 class="hero-title">
-    <em>Champion</em><br>Plus Program
-  </h1>
-  <p class="hero-sub">
-    When a client needs more than a standard class can offer, <strong>Champion Plus</strong> is our answer. One-on-one instruction, full session support, and a community that has their back — every single class.
-  </p>
-  <div class="hero-meta">
-    <div class="meta-pill"><span class="dot"></span> Module 2</div>
-    <div class="meta-pill"><span class="dot"></span> Reference Document</div>
-    <div class="meta-pill"><span class="dot"></span> Licensing Info</div>
-  </div>
-</section>
-
-<!-- ══════════ PHILOSOPHY ══════════ -->
-<section class="section reveal">
-  <p class="section-label">01 — Our Commitment</p>
-
-  <div class="philosophy">
-    <p>
-      At Boxing 4 Health, we do our absolute best to <strong>keep our clients in the program for as long as it is safe</strong>. When balance or cognitive impairment becomes a safety issue — for the client and for others in the class — we transition them into Champion Plus: a program that is safe, supported, and social for everyone.
-    </p>
-  </div>
-
-  <div class="instructor-note">
-    <p>
-      <strong>🥊 Instructor Note:</strong> This transition conversation is one of the hardest you'll have — but framing it as an <em>upgrade in support</em>, not a step down, makes all the difference. Champion Plus clients get more individual attention, more tailored exercise, and the same community they love. Lead with that.
-    </p>
-  </div>
-</section>
-
-<!-- ══════════ BENEFITS ══════════ -->
-<section class="section reveal">
-  <p class="section-label">02 — What Champion Plus Includes</p>
-
-  <div class="benefits-list">
-
-    <div class="benefit-item">
-      <div class="benefit-check">✓</div>
-      <div class="benefit-text">
-        <strong>One-on-one instruction throughout the entire class.</strong> From the moment the client arrives, a dedicated instructor is assigned to them — ensuring safe entry and exit from the facility and full engagement throughout every exercise.
-      </div>
-    </div>
-
-    <div class="benefit-item">
-      <div class="benefit-check">✓</div>
-      <div class="benefit-text">
-        <strong>An hour of freedom for caregivers and spouses.</strong> Champion Plus gives caregivers the rare gift of time to themselves — errands, self-care, a coffee — while knowing their loved one is in expert, attentive hands.
-      </div>
-    </div>
-
-    <div class="benefit-item">
-      <div class="benefit-check">✓</div>
-      <div class="benefit-text">
-        <strong>Exercises tailored to their specific weaknesses.</strong> Champion Plus clients receive different exercises at different times throughout the class — targeted work on balance, freezing, coordination, and whatever their current priority area is.
-      </div>
-    </div>
-
-    <div class="benefit-item">
-      <div class="benefit-check">✓</div>
-      <div class="benefit-text">
-        <strong>Real-time modifications for injuries and limitations.</strong> Their personal instructor adapts every exercise on the fly — maximizing the value of every minute in class while keeping the client in the pain-free zone.
-      </div>
-    </div>
-
-    <div class="benefit-item">
-      <div class="benefit-check">✓</div>
-      <div class="benefit-text">
-        <strong>Full participation in the community.</strong> Champion Plus clients are not isolated or sidelined — they participate in class as much as possible. The social connection is just as important as the physical exercise, and we never let that slip.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════ PRICING ══════════ -->
-<section class="section reveal">
-  <p class="section-label">03 — Champion Plus Pricing</p>
-  <p style="font-size:17px;color:#b0aba0;max-width:540px;margin-bottom:36px;line-height:1.75;">
-    Champion Plus is priced to reflect the dedicated one-on-one instruction provided throughout every session.
-  </p>
-
-  <div class="pricing-grid">
-
-    <div class="price-card">
-      <div class="price-freq">3× per week</div>
-      <div class="price-amount">$815</div>
-      <div class="price-period">/ month</div>
-      <div class="price-sessions">~12 sessions per month</div>
-    </div>
-
-    <div class="price-card">
-      <div class="price-freq">2× per week</div>
-      <div class="price-amount">$595</div>
-      <div class="price-period">/ month</div>
-      <div class="price-sessions">~8 sessions per month</div>
-    </div>
-
-    <div class="price-card">
-      <div class="price-freq">1× per week</div>
-      <div class="price-amount">$340</div>
-      <div class="price-period">/ month</div>
-      <div class="price-sessions">~4 sessions per month</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════ IF CHAMPION PLUS ISN'T POSSIBLE ══════════ -->
-<section class="section reveal">
-  <p class="section-label">04 — If Champion Plus Isn't an Option</p>
-
-  <p style="font-size:17px;color:#b0aba0;max-width:620px;margin-bottom:32px;line-height:1.75;">
-    We understand that Champion Plus may not work for every family. If that's the case, there are still options — and we will always try to help find the right path forward.
-  </p>
-
-  <div class="options-grid">
-
-    <div class="option-card">
-      <div class="option-icon">🏋️</div>
-      <div class="option-title">Personal Training</div>
-      <div class="option-desc">
-        One-on-one personal training with a B4H instructor. <strong>Inquire directly</strong> for information and current rates. A great option for clients who need individualized attention outside of a class setting.
-      </div>
-    </div>
-
-    <div class="option-card">
-      <div class="option-icon">💻</div>
-      <div class="option-title">Online Classes (Zoom)</div>
-      <div class="option-desc">
-        B4H offers <strong>online classes twice a week — Tuesdays and Thursdays</strong> via Zoom. A flexible option for clients who can't attend in person due to mobility, location, or other circumstances.
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Sign off -->
-  <div class="signoff">
-    <p>
-      We are here to help you make your health a top priority. We hope you can continue to join our classes. If this isn't possible, please let us know how we can help you move forward — inside or outside of Boxing 4 Health. <strong>You have options, and we are happy to help you find the right one for you and your family.</strong>
-    </p>
-    <div class="signoff-name">— Christine & The Boxing 4 Health Team</div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<div class="module-footer reveal">
-  <div>
-    <h2>Next Up:<br><span>Why Boxing?</span></h2>
-    <p>The science and research behind why boxing is one of the most powerful interventions available for Parkinson's disease and healthy aging.</p>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-    <button class="btn btn-primary">Continue: Why Boxing? →</button>
-    <button class="btn btn-ghost">↩ Back to Class Breakdown</button>
-  </div>
+<div class="panel panel-tinted">
+  <h3><span data-icon="target"></span> What you'll learn</h3>
+  <ul class="check-list">
+    <li>Understand our commitment to keeping clients in the program for as long as it is safe, and when a transition to Champion Plus is the right call.</li>
+    <li>Explain what Champion Plus includes — dedicated one-on-one instruction, tailored exercises, real-time modifications, and full community participation.</li>
+    <li>Know the Champion Plus pricing tiers for one, two, and three sessions per week.</li>
+    <li>Present the alternatives — personal training and online Zoom classes — when Champion Plus isn't an option for a family.</li>
+  </ul>
 </div>
 
+<p class="label">Section 01</p>
+<h2 id="our-commitment">Our Commitment</h2>
+<p>At Boxing 4 Health, we do our absolute best to <strong>keep our clients in the program for as long as it is safe</strong>. When balance or cognitive impairment becomes a safety issue — for the client and for others in the class — we transition them into Champion Plus: a program that is safe, supported, and social for everyone.</p>
 
+<div class="callout callout-coach"><span class="callout-icon" data-icon="hand"></span><p class="callout-title">Coach's Corner</p><div class="callout-body"><p>This transition conversation is one of the hardest you'll have — but framing it as an <em>upgrade in support</em>, not a step down, makes all the difference. Champion Plus clients get more individual attention, more tailored exercise, and the same community they love. Lead with that.</p></div></div>
 
-</div></div></div>
+<p class="label">Section 02</p>
+<h2 id="what-champion-plus-includes">What Champion Plus Includes</h2>
+<p>Champion Plus is built around dedicated support for a single client throughout the entire class. Here's what that looks like in practice.</p>
+
+<div class="grid grid-cards">
+  <article class="card"><span class="chip" data-icon="user"></span><h3>One-on-one instruction throughout the entire class</h3><p>From the moment the client arrives, a dedicated instructor is assigned to them — ensuring safe entry and exit from the facility and full engagement throughout every exercise.</p></article>
+  <article class="card"><span class="chip" data-icon="clock"></span><h3>An hour of freedom for caregivers and spouses</h3><p>Champion Plus gives caregivers the rare gift of time to themselves — errands, self-care, a coffee — while knowing their loved one is in expert, attentive hands.</p></article>
+  <article class="card"><span class="chip" data-icon="target"></span><h3>Exercises tailored to their specific weaknesses</h3><p>Champion Plus clients receive different exercises at different times throughout the class — targeted work on balance, freezing, coordination, and whatever their current priority area is.</p></article>
+  <article class="card"><span class="chip" data-icon="settings-2"></span><h3>Real-time modifications for injuries and limitations</h3><p>Their personal instructor adapts every exercise on the fly — maximizing the value of every minute in class while keeping the client in the pain-free zone.</p></article>
+  <article class="card"><span class="chip" data-icon="users"></span><h3>Full participation in the community</h3><p>Champion Plus clients are not isolated or sidelined — they participate in class as much as possible. The social connection is just as important as the physical exercise, and we never let that slip.</p></article>
+</div>
+
+<p class="label">Section 03</p>
+<h2 id="champion-plus-pricing">Champion Plus Pricing</h2>
+<p>Champion Plus is priced to reflect the dedicated one-on-one instruction provided throughout every session.</p>
+
+<div class="stat-row">
+  <div class="stat"><div class="stat-num">$815</div><div class="stat-label">3&times; per week / month &middot; ~12 sessions per month</div></div>
+  <div class="stat"><div class="stat-num">$595</div><div class="stat-label">2&times; per week / month &middot; ~8 sessions per month</div></div>
+  <div class="stat"><div class="stat-num">$340</div><div class="stat-label">1&times; per week / month &middot; ~4 sessions per month</div></div>
+</div>
+
+<p class="label">Section 04</p>
+<h2 id="if-champion-plus-isnt-an-option">If Champion Plus Isn't an Option</h2>
+<p>We understand that Champion Plus may not work for every family. If that's the case, there are still options — and we will always try to help find the right path forward.</p>
+
+<div class="grid grid-cards">
+  <article class="card"><span class="chip" data-icon="dumbbell"></span><h3>Personal Training</h3><p>One-on-one personal training with a B4H instructor. <strong>Inquire directly</strong> for information and current rates. A great option for clients who need individualized attention outside of a class setting.</p></article>
+  <article class="card"><span class="chip" data-icon="users"></span><h3>Online Classes (Zoom)</h3><p>B4H offers <strong>online classes twice a week — Tuesdays and Thursdays</strong> via Zoom. A flexible option for clients who can't attend in person due to mobility, location, or other circumstances.</p></article>
+</div>
+
+<div class="callout callout-info"><span class="callout-icon" data-icon="info"></span><p class="callout-title">Good to know</p><div class="callout-body"><p>We are here to help you make your health a top priority. We hope you can continue to join our classes. If this isn't possible, please let us know how we can help you move forward — inside or outside of Boxing 4 Health. <strong>You have options, and we are happy to help you find the right one for you and your family.</strong></p><p>— Christine &amp; The Boxing 4 Health Team</p></div></div>
+
+<div class="panel panel-tinted">
+  <h3><span data-icon="circle-check-big"></span> Key takeaways</h3>
+  <ul class="check-list">
+    <li>Boxing 4 Health keeps clients in the program for as long as it is safe; when balance or cognitive impairment becomes a safety issue, Champion Plus offers a safe, supported, and social path forward.</li>
+    <li>Frame the transition to Champion Plus as an upgrade in support, not a step down — more individual attention, more tailored exercise, and the same community.</li>
+    <li>Champion Plus includes dedicated one-on-one instruction for the whole class, an hour of freedom for caregivers, exercises tailored to specific weaknesses, real-time modifications, and full community participation.</li>
+    <li>Pricing reflects the one-on-one support: $815/month for 3&times; per week, $595/month for 2&times; per week, and $340/month for 1&times; per week.</li>
+    <li>When Champion Plus isn't an option, alternatives include one-on-one personal training and online Zoom classes on Tuesdays and Thursdays.</li>
+  </ul>
+</div>
+
+<p class="label">Section 05</p>
+<h2 id="knowledge-check">Knowledge Check</h2>
+
+<div class="quiz" data-quiz data-quiz-for="champion-plus-program" data-pass="0.7">
+<script type="application/json" data-quiz-questions>[{"q":{"en":"When does Boxing 4 Health typically transition a client into the Champion Plus program?"},"options":[{"en":"As soon as a client is diagnosed with Parkinson's"},{"en":"When balance or cognitive impairment becomes a safety issue for the client or others in the class"},{"en":"Whenever a client asks for a discount"},{"en":"After a client has attended for one full year"}],"answer":1,"explain":{"en":"We keep clients in the standard program for as long as it is safe. Champion Plus is introduced when balance or cognitive impairment becomes a safety issue — for the client and for others in the class — so they can keep training in a way that's safe, supported, and social."}},{"q":{"en":"How should an instructor frame the move to Champion Plus when talking with a client and their family?"},"options":[{"en":"As a step down because the client can no longer keep up"},{"en":"As a temporary pause from the program"},{"en":"As an upgrade in support — more individual attention and tailored exercise, with the same community"},{"en":"As a purely financial decision"}],"answer":2,"explain":{"en":"The transition conversation is hard, but framing Champion Plus as an upgrade in support — not a step down — makes all the difference. Clients get more individual attention, more tailored exercise, and the same community they love."}},{"q":{"en":"If Champion Plus isn't an option for a family, which alternatives does B4H offer?"},"options":[{"en":"A full refund and referral to another gym"},{"en":"One-on-one personal training or online Zoom classes on Tuesdays and Thursdays"},{"en":"Only a self-guided home workout plan"},{"en":"There are no other options"}],"answer":1,"explain":{"en":"When Champion Plus won't work for a family, B4H offers one-on-one personal training with an instructor (inquire directly for rates) and online classes twice a week via Zoom on Tuesdays and Thursdays."}}]</script>
+</div>
+
+</div></div></section>
 <section class="section-tight"><div class="wrap wrap-narrow"><div class="panel panel-tinted" style="text-align:center;margin-top:2rem">
   <button class="btn btn-primary" data-mark-complete data-done="false"><span data-icon="circle-check-big"></span><span data-mc-label>Mark this lesson complete</span></button>
 </div>
 <span data-complete-sentinel aria-hidden="true"></span>
 </div></section>
 <section class="section-tight"><div class="wrap wrap-narrow"><nav class="pager" aria-label="Lesson navigation"><a class="prev" href="champion-class-template.html"><span class="pager-ico" data-icon="arrow-left"></span><span class="pager-txt"><span class="pager-dir" data-i18n="lesson.prev">prev</span><span class="pager-title"><span data-lang-block="en">Champion Class Template</span><span data-lang-block="fr">Modèle de cours Champion</span></span></span></a><a class="next" href="cueing-students.html"><span class="pager-ico" data-icon="arrow-right"></span><span class="pager-txt"><span class="pager-dir" data-i18n="lesson.next">next</span><span class="pager-title"><span data-lang-block="en">Cueing Students</span><span data-lang-block="fr">Guider les élèves</span></span></span></a></nav></div></section>
-<script>
-document.querySelectorAll('.reveal').forEach(r => {
-  new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 }).observe(r);
-});
-</script>
 </main>
 <div data-include="footer"></div>
-<script src="../assets/js/icons.js?v=7"></script>
-<script src="../assets/js/i18n.js?v=7"></script>
-<script src="../assets/js/site.js?v=7"></script>
-<script src="../assets/js/progress.js?v=7"></script>
-<script src="../assets/js/search.js?v=7"></script>
-<script src="../assets/js/read-aloud.js?v=7"></script>
+<script src="../assets/js/icons.js?v=8"></script>
+<script src="../assets/js/i18n.js?v=8"></script>
+<script src="../assets/js/site.js?v=8"></script>
+<script src="../assets/js/progress.js?v=8"></script>
+<script src="../assets/js/search.js?v=8"></script>
+<script src="../assets/js/read-aloud.js?v=8"></script>
+<script src="../assets/js/quiz.js?v=8"></script>
 </body>
 </html>

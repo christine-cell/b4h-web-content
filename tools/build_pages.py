@@ -15,7 +15,7 @@ ENH_DIRS = [os.path.join(ROOT, "_sources/enhanced/boxing-4-health-PD-symptoms"),
             os.path.join(ROOT, "_sources/enhanced/boxing4health-training")]
 WIX = {r["stepId"]: r for r in json.load(open(os.path.join(ROOT, "_sources/wix/wix-extract.json")))}
 MODULES = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "7"  # asset cache-bust version
+V = "8"  # asset cache-bust version
 
 # ---------------------------------------------------------------- helpers
 def enh_path(fn):
@@ -451,6 +451,18 @@ def build_all():
 def build_resources():
     made=[]
     for r in MODULES["resources"]:
+        authored = os.path.join(ROOT, "_authored", r["slug"]+".html")
+        if os.path.exists(authored):
+            inner = open(authored, encoding="utf-8").read()
+            hasquiz = "data-quiz" in inner
+            pseudo = {"title":{"en":"Resources","fr":"Ressources"}, "desc":{"en":r["summary"]["en"],"fr":r["summary"].get("fr","")}}
+            h = head(r["title"]["en"], r["summary"]["en"]).replace("{BODYATTRS}", body_attrs(r, hasquiz))
+            parts=[h, lesson_header(pseudo, r),
+                   '<section class="section-tight"><div class="wrap wrap-narrow"><div class="prose lesson-body" data-lesson-content>',
+                   inner, '</div></div></section>',
+                   '<section class="section-tight">'+complete_block(r)+'</section>',
+                   foot(["quiz"] if hasquiz else [])]
+            open(os.path.join(ROOT, r["url"]),"w",encoding="utf-8").write("\n".join(parts)); made.append(r["url"]); continue
         if r.get("enhancedFile"):
             # reuse enhanced porter with a pseudo-module
             pseudo = {"title":{"en":"Resources"}, "desc":{"en":r["summary"]["en"]}}

@@ -86,8 +86,8 @@ main { display: block; min-height: 60vh; }
 :root[data-theme="dark"] .brand-plate { background:#fff; padding: 5px 8px; box-shadow: var(--shadow-1); }
 :root[data-theme="dark"] .brand-sub { color: var(--text); }
 .nav { margin-left: auto; display: flex; align-items: center; gap: .25rem; }
-.nav a.nav-link { color: var(--text); text-decoration: none; font-weight: 600; font-family: var(--font-sans); padding: .5rem .8rem; border-radius: var(--r-sm); font-size: .98rem; white-space: nowrap; }
-.nav a.nav-link:hover, .nav a.nav-link[aria-current="page"] { background: var(--surface-2); color: var(--primary); }
+.nav .nav-link { color: var(--text); text-decoration: none; font-weight: 600; font-family: var(--font-sans); padding: .5rem .8rem; border-radius: var(--r-sm); font-size: .98rem; white-space: nowrap; }
+.nav .nav-link:hover, .nav .nav-link[aria-current="page"] { background: var(--surface-2); color: var(--primary); }
 .nav-sep { width:1px; height:26px; background: var(--border); margin: 0 .35rem; }
 
 /* icon button */
@@ -258,6 +258,13 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .status-chip[data-status="in-progress"]{ background: var(--info-bg); color: var(--info); }
 .status-chip[data-status="not-started"]{ background: var(--surface-2); color: var(--text-muted); }
 .status-chip[data-status="next"]{ background: var(--blue-600); color:#fff; }
+
+/* ---------- Tables (in lesson prose) ---------- */
+.lesson-body table, .prose table { width:100%; border-collapse:collapse; margin:1.6rem 0; font-size:var(--fs-sm); background:var(--surface); border:1px solid var(--border); border-radius:var(--r-md); overflow:hidden; }
+.lesson-body thead th, .prose thead th { background:var(--blue-700); color:#fff; text-align:left; padding:.7rem .9rem; font-family:var(--font-sans); font-weight:var(--fw-bold); }
+.lesson-body td, .lesson-body th, .prose td, .prose th { padding:.65rem .9rem; border-bottom:1px solid var(--border); vertical-align:top; text-align:left; }
+.lesson-body tbody tr:nth-child(even), .prose tbody tr:nth-child(even) { background:var(--surface-2); }
+.lesson-body tbody tr:last-child td, .prose tbody tr:last-child td { border-bottom:0; }
 
 /* ---------- Numbered steps ---------- */
 .steps { list-style:none; counter-reset: step; padding:0; margin:1.6rem 0; display:grid; gap:1rem; }
