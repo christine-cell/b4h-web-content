@@ -2,6 +2,8 @@
 
 The single reference for voice, design, and components. **All content — new or edited — should follow this**, and run through the `b4h-content` skill (`.claude/skills/b4h-content/`).
 
+> **Live component library:** open **`/styleguide.html`** in the site to see every component rendered (and toggle theme / text size / language to test them). The authoring contract used to build lesson bodies is **`_authored/_SPEC.md`**; re-authored lesson bodies live in **`_authored/<slug>.html`** and are wrapped into the page shell by `tools/build_pages.py`.
+
 ---
 
 ## 1. Voice & tone

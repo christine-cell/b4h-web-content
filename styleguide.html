@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design System · Boxing4Health Training</title>
+<meta name="description" content="Component reference and patterns for the Boxing4Health training site.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#19679e">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/fonts.css?v=9">
+<link rel="stylesheet" href="assets/css/tokens.css?v=9">
+<link rel="stylesheet" href="assets/css/site.css?v=9">
+<link rel="stylesheet" href="assets/css/print.css?v=9" media="print">
+<style>
+  .sg-swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:.6rem}
+  .sg-swatch{border-radius:var(--r-md);border:1px solid var(--border);overflow:hidden;font-size:var(--fs-xs)}
+  .sg-swatch .chip-color{height:56px}
+  .sg-swatch span{display:block;padding:.4rem .6rem;font-family:var(--font-sans);font-weight:700}
+  .sg-section{border-top:1px solid var(--border);padding-top:2rem;margin-top:2.5rem}
+  .sg-type > *{margin:.2rem 0}
+</style>
+<script>(function(){try{var d=document.documentElement,s=localStorage;
+d.setAttribute('data-theme',s.getItem('b4h-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+d.setAttribute('lang',s.getItem('b4h-lang')||'en');
+if(s.getItem('b4h-contrast')==='high')d.setAttribute('data-contrast','high');
+d.style.setProperty('--font-scale',s.getItem('b4h-font')||'1');
+d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}catch(e){}})();</script>
+</head>
+<body>
+<div data-include="header"></div>
+<main id="main">
+<section class="section"><div class="wrap wrap-narrow">
+  <span class="eyebrow"><span data-icon="shapes"></span>Design System</span>
+  <h1>Boxing4Health component library</h1>
+  <p class="lead">Every reusable pattern on the training site, in one place. Copy these components (see <code>STYLE_GUIDE.md</code>) so new content stays consistent. Toggle theme, text size, and language from the reading menu (top right) to test any component.</p>
+
+  <div class="sg-section">
+  <h2 id="color">Colour</h2>
+  <p class="muted">Blue ramp generated from the brand primary <code>#19679E</code>, plus a warm gold accent and semantic states. Never hardcode a hex — use the token.</p>
+  <div class="sg-swatches" style="margin-top:1rem">
+    <div class="sg-swatch"><div class="chip-color" style="background:var(--blue-600)"></div><span>--primary</span></div>
+    <div class="sg-swatch"><div class="chip-color" style="background:var(--blue-900)"></div><span>--blue-900</span></div>
+    <div class="sg-swatch"><div class="chip-color" style="background:var(--azure)"></div><span>--azure</span></div>
+    <div class="sg-swatch"><div class="chip-color" style="background:var(--warm)"></div><span>--warm</span></div>
+    <div class="sg-swatch"><div class="chip-color" style="background:var(--success)"></div><span>--success</span></div>
+    <div class="sg-swatch"><div class="chip-color" style="background:var(--safety)"></div><span>--safety</span></div>
+    <div class="sg-swatch"><div class="chip-color" style="background:var(--danger)"></div><span>--danger</span></div>
+    <div class="sg-swatch"><div class="chip-color" style="background:var(--blue-50)"></div><span>--blue-50</span></div>
+  </div>
+  </div>
+
+  <div class="sg-section sg-type">
+  <h2 id="type">Typography</h2>
+  <p class="label">Label / eyebrow</p>
+  <h1 style="margin:0">Heading 1</h1>
+  <h2 style="margin:0">Heading 2</h2>
+  <h3 style="margin:0">Heading 3</h3>
+  <h4 style="margin:0">Heading 4</h4>
+  <p class="lead">Lead paragraph — a larger, calmer intro line.</p>
+  <p>Body text at an 18px base for a senior audience, with a comfortable measure and line height. <a href="#">This is a link</a> with a visible underline and hover.</p>
+  </div>
+
+  <div class="sg-section">
+  <h2 id="buttons">Buttons</h2>
+  <div class="cluster">
+    <a class="btn btn-primary"><span data-icon="arrow-right"></span>Primary</a>
+    <a class="btn btn-warm"><span data-icon="award"></span>Warm CTA</a>
+    <a class="btn btn-secondary"><span data-icon="book-open"></span>Secondary</a>
+    <a class="btn btn-ghost">Ghost</a>
+    <a class="btn btn-primary" style="pointer-events:none;opacity:.5">Disabled</a>
+  </div>
+  <div class="cluster" style="margin-top:1rem">
+    <span class="badge">Badge</span>
+    <span class="badge badge-primary">Primary</span>
+    <span class="badge badge-success"><span data-icon="circle-check-big"></span>Success</span>
+    <span class="badge badge-safety"><span data-icon="triangle-alert"></span>Safety</span>
+    <span class="chip" data-icon="brain"></span>
+    <span class="chip chip-sm" data-icon="dumbbell"></span>
+  </div>
+  </div>
+
+  <div class="sg-section">
+  <h2 id="callouts">Callouts</h2>
+  <div class="callout callout-info"><span class="callout-icon" data-icon="info"></span><p class="callout-title">Good to know</p><div class="callout-body"><p>Context, evidence, or a helpful aside.</p></div></div>
+  <div class="callout callout-coach"><span class="callout-icon" data-icon="hand"></span><p class="callout-title">Coach's Corner</p><div class="callout-body"><p>Instructor guidance — how to apply this in class.</p></div></div>
+  <div class="callout callout-safety"><span class="callout-icon" data-icon="triangle-alert"></span><p class="callout-title">Safety</p><div class="callout-body"><p>A precaution or warning the coach must heed.</p></div></div>
+  </div>
+
+  <div class="sg-section">
+  <h2 id="panels">Objectives / takeaways panel</h2>
+  <div class="panel panel-tinted"><h3><span data-icon="target"></span> What you'll learn</h3>
+    <ul class="check-list"><li>A clear learning objective.</li><li>Another outcome for the lesson.</li></ul>
+  </div>
+  </div>
+
+  <div class="sg-section">
+  <h2 id="cards">Card grid</h2>
+  <div class="grid grid-cards">
+    <article class="card card-hover"><span class="chip" data-icon="activity"></span><h3>Card title</h3><p class="muted">Short supporting copy for a concept or benefit.</p></article>
+    <article class="card card-hover"><span class="chip" data-icon="heart-pulse"></span><h3>Another</h3><p class="muted">Cards flow responsively and lift on hover.</p></article>
+    <article class="card card-hover"><span class="chip" data-icon="shield-check"></span><h3>Third</h3><p class="muted">Use for benefits, categories, or grouped items.</p></article>
+  </div>
+  </div>
+
+  <div class="sg-section">
+  <h2 id="steps">Numbered steps</h2>
+  <ol class="steps">
+    <li class="step"><div class="step-body"><h4>First step</h4><p>Do this first.</p></div></li>
+    <li class="step"><div class="step-body"><h4>Second step</h4><p>Then this.</p></div></li>
+  </ol>
+  </div>
+
+  <div class="sg-section">
+  <h2 id="accordion">Expandable card</h2>
+  <div class="accordion" data-open="false"><button class="acc-trigger"><span class="chip chip-sm" data-icon="snowflake"></span> <span>Freezing of gait <span class="badge">Symptom</span></span> <span class="acc-chevron" data-icon="chevron-right"></span></button><div class="acc-panel"><div class="acc-panel-inner"><p>Tap to reveal detail. Great for symptom cards, FAQs, and exercises.</p></div></div></div>
+  </div>
+
+  <div class="sg-section">
+  <h2 id="flashcards">Flashcards &amp; stats</h2>
+  <div class="grid grid-cards">
+    <div class="flip"><div class="flip-inner"><div class="flip-face flip-front"><h4>Bradykinesia</h4><span class="muted"><span data-icon="move-right"></span>Tap to flip</span></div><div class="flip-face flip-back"><p>Slowness of movement — a core motor symptom.</p></div></div></div>
+    <div class="flip"><div class="flip-inner"><div class="flip-face flip-front"><h4>Rigidity</h4><span class="muted"><span data-icon="move-right"></span>Tap to flip</span></div><div class="flip-face flip-back"><p>Muscle stiffness, often in the trunk.</p></div></div></div>
+  </div>
+  <div class="stat-row" style="margin-top:1.4rem">
+    <div class="stat"><div class="stat-num">13</div><div class="stat-label">studies reviewed</div></div>
+    <div class="stat"><div class="stat-num">70%</div><div class="stat-label">target heart rate</div></div>
+    <div class="stat"><div class="stat-num">~3h</div><div class="stat-label">of content</div></div>
+  </div>
+  </div>
+
+  <div class="sg-section">
+  <h2 id="files">Files &amp; video</h2>
+  <div class="file-grid">
+    <a class="file-card" href="#"><span class="file-ico"><span class="file-ext">PDF</span></span><span class="file-meta"><span class="file-name">Intake Form</span><span class="file-sub">Download · PDF</span></span><span class="file-dl" data-icon="download"></span></a>
+    <a class="file-card" href="#" data-pending="true"><span class="file-ico"><span class="file-ext">DOC</span></span><span class="file-meta"><span class="file-name">Waiver (to be added)</span><span class="file-sub">Pending upload</span></span><span class="file-dl" data-icon="download"></span></a>
+  </div>
+  <div class="video" data-yt="MIAFilOOloU" data-title="Sample video"><img class="video-poster" src="https://i.ytimg.com/vi/MIAFilOOloU/hqdefault.jpg" alt=""><div class="video-play"><span data-icon="circle-play"></span></div><div class="video-label">Click-to-load video (privacy-friendly)</div></div>
+  </div>
+
+  <div class="sg-section">
+  <h2 id="quiz">Quiz</h2>
+  <div class="quiz" data-quiz data-quiz-for="styleguide-demo" data-pass="0.5"><script type="application/json" data-quiz-questions>[{"q":{"en":"Which token is the brand primary?"},"options":[{"en":"--danger"},{"en":"--primary"},{"en":"--warm"}],"answer":1,"explain":{"en":"--primary maps to the Boxing4Health blue #19679E."}}]</script></div>
+  </div>
+
+</div></section>
+</main>
+<div data-include="footer"></div>
+<script src="assets/js/icons.js?v=9"></script>
+<script src="assets/js/i18n.js?v=9"></script>
+<script src="assets/js/site.js?v=9"></script>
+<script src="assets/js/quiz.js?v=9"></script>
+</body></html>
