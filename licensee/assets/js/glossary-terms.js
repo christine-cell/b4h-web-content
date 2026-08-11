@@ -121,7 +121,13 @@
     var walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, {
       acceptNode: function (n) {
         if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-        if (n.parentElement && n.parentElement.closest(SKIP_SEL)) return NodeFilter.FILTER_REJECT;
+        var pe = n.parentElement;
+        if (!pe || pe.closest(SKIP_SEL)) return NodeFilter.FILTER_REJECT;
+        // Never gloss text whose direct parent lays out its children with flex or
+        // grid — inserting a <span> there creates a stray flex/grid item and breaks
+        // the layout (e.g. the checkmark grid in .check-list objectives/takeaways).
+        var disp = getComputedStyle(pe).display;
+        if (disp === "flex" || disp === "grid" || disp === "inline-flex" || disp === "inline-grid") return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     });

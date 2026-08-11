@@ -7,7 +7,7 @@ M = json.load(open(os.path.join(SITE, "data/modules.json")))
 def _data(name):
     p=os.path.join(SITE,"data",name)
     return json.load(open(p,encoding="utf-8")) if os.path.exists(p) else {}
-V = "22"
+V = "23"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, prefix):
