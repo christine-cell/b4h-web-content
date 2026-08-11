@@ -282,6 +282,31 @@
     renderIcons(root); wireAccordions(root); wireTabs(root); wireFlips(root); wireGlossary(root); wireVideos(root);
   };
 
+  /* ---------- Sticky header breadcrumb (lesson pages) ---------- */
+  function wireHeaderCrumb() {
+    var bar = document.querySelector("[data-header-crumb]");
+    if (!bar) return;
+    var title = document.body.getAttribute("data-lesson-title");
+    var links = $all(".crumbs a");
+    var modLink = links.length ? links[links.length - 1] : null;
+    var h1 = document.querySelector("main h1");
+    if (!title || !modLink || !h1) return; // lesson pages only
+    var modEl = bar.querySelector("[data-header-crumb-mod]");
+    var titleEl = bar.querySelector("[data-header-crumb-title]");
+    modEl.setAttribute("href", modLink.getAttribute("href"));
+    modEl.innerHTML = modLink.innerHTML;            // keeps EN/FR lang blocks
+    titleEl.textContent = title;
+    if (!("IntersectionObserver" in window)) return;
+    var hh = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-h")) || 68;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) bar.setAttribute("hidden", "");
+        else bar.removeAttribute("hidden");
+      });
+    }, { rootMargin: "-" + (hh + 6) + "px 0px 0px 0px", threshold: 0 });
+    io.observe(h1);
+  }
+
   /* ---------- Boot ---------- */
   function boot() {
     loadPartials().then(function () {
@@ -301,6 +326,7 @@
       wireFlips(document);
       wireGlossary(document);
       wireVideos(document);
+      wireHeaderCrumb();
       document.dispatchEvent(new CustomEvent("b4h:ready"));
     });
   }

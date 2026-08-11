@@ -77,6 +77,16 @@ main { display: block; min-height: 60vh; }
 .motif-line.center { margin-inline: auto; }
 
 /* ---------- Header / nav ---------- */
+/* Sticky header breadcrumb — appears once you scroll past a lesson's title */
+.header-crumb { border-top: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 94%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.header-crumb[hidden] { display: none; }
+.header-crumb .wrap { display: flex; align-items: center; gap: .45rem; padding-block: .4rem; font-family: var(--font-sans); font-size: var(--fs-sm); min-width: 0; }
+.header-crumb-mod { color: var(--text-muted); text-decoration: none; font-weight: 600; white-space: nowrap; flex: none; max-width: 42%; overflow: hidden; text-overflow: ellipsis; }
+.header-crumb-mod:hover { color: var(--primary); }
+.header-crumb-sep { color: var(--text-muted); display: inline-flex; flex: none; }
+.header-crumb-sep svg { width: 14px; height: 14px; }
+.header-crumb-title { color: var(--heading); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+
 .site-header {
   position: sticky; top: 0; z-index: 100;
   background: color-mix(in srgb, var(--surface) 88%, transparent);
