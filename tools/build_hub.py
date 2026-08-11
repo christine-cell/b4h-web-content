@@ -7,7 +7,7 @@ M = json.load(open(os.path.join(SITE, "data/modules.json")))
 def _data(name):
     p=os.path.join(SITE,"data",name)
     return json.load(open(p,encoding="utf-8")) if os.path.exists(p) else {}
-V = "18"
+V = "19"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, prefix):
@@ -233,7 +233,7 @@ def _glossary_section():
     n=len(g)
     tools=(f'<div class="glossary-tools"><label class="glossary-search">'
            f'<span data-icon="search"></span><input id="gloss-q" type="search" autocomplete="off" '
-           f'placeholder="{bilingual("Search terms…","Rechercher un terme…","span")}" '
+           f'placeholder="Search terms…" data-i18n="glossary.search" data-i18n-attr="placeholder" '
            f'aria-label="Search glossary"></label>'
            f'<span class="glossary-count"><span id="gloss-count">{n}</span> {bilingual("terms","termes")}</span></div>')
     empty=f'<p class="glossary-empty" id="gloss-empty" hidden>{bilingual("No terms match your search.","Aucun terme ne correspond.","span")}</p>'
