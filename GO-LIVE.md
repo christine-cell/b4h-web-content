@@ -10,13 +10,14 @@ Everything is built, reviewed, and pushed to `main`. Here's what's done and the 
 - **Search, read-aloud, print styles, 404 page, noindex** (public but not search-indexed).
 - **Self-contained**: no external calls except opt-in YouTube video embeds (click-to-load, privacy-friendly).
 
-## ✅ Your morning checklist (~5 min)
+## ✅ Your morning checklist (~2 min)
 
-### 1. Enable GitHub Pages
-Repo → **Settings → Pages** → Source: **Deploy from a branch** → Branch: **main** / **/(root)** → Save. Turn on **Enforce HTTPS**.
-The repo already contains a `CNAME` file (`training.boxing4health.com`), so Pages will pick up the custom domain automatically.
+### 1. ~~Enable GitHub Pages~~ — DONE ✅
+I already enabled it: **Settings → Pages** shows *"building from the main branch"*, and it auto-detected the custom domain **training.boxing4health.com** from the `CNAME` file (status: *DNS Check in Progress*). The site is already live at the fallback URL: **https://christine-cell.github.io/b4h-web-content/**.
+Once the DNS record below resolves, come back to Settings → Pages and turn on **Enforce HTTPS** (it's greyed out until DNS is verified).
 
-### 2. Add the DNS record (at your domain host — Wix, since boxing4health.com is a Wix site)
+### 2. Add the DNS record — the only thing standing between you and training.boxing4health.com
+I did **not** touch your Wix domain settings (didn't want to fumble your live domain unattended). Add this one record in **Wix → your account → Domains → boxing4health.com → Manage/Edit DNS records**:
 Add a **CNAME** record:
 - **Host/Name:** `training`
 - **Points to / Value:** `christine-cell.github.io`
