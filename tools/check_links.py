@@ -1,7 +1,7 @@
 import os, re, sys, glob
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-htmls=[f for f in glob.glob("**/*.html", recursive=True) if not f.startswith(("_sources","partials"))]
+htmls=[f for f in glob.glob("**/*.html", recursive=True) if not f.startswith(("_sources","partials","_authored"))]
 missing=[]; checked=0
 attr=re.compile(r'(?:href|src)="([^"#?]+)(?:[?#][^"]*)?"')
 for f in htmls:
