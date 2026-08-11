@@ -24,3 +24,12 @@ The site is now **fully bilingual** — every lesson has an English and a French
 Kept as-is (brand/standard): Boxing4Health, B4H, PD Warrior, PWR, VIGOR, Fighter, Champion, Champion Plus, TUG, Berg, LSVT BIG, ACSM, BDNF, MDS-UPDRS, PDQ-39; all emails, URLs, prices, and numbers.
 
 Note: the two tongue-twister vocal warm-ups were **adapted** to real French *vire-langues* (a literal translation wouldn't work as a speech exercise) — confirm you're happy with the substitutes.
+
+## Resources hub — new bilingual + clinical content (added later)
+The **Coach's Resource Hub** (`/licensee/resources/`) adds AI-authored content that needs the same review pass:
+- **Glossary** (`licensee/data/glossary.json`) — 28 term definitions, EN + fr-CA. Two clinical scales and the program tiers (Fighter / Champion / Champion Plus) were verified against the program content; the rest are standard descriptions — skim for tone.
+- **Assessment tools** (`licensee/data/assessment-tools.json`) — TUG, 30-sec chair stand, Berg, Fullerton, MDS-UPDRS. **A clinician should confirm the cut-off / scoring numbers** before you rely on them (they use commonly-cited, conservative values and are labelled "not a diagnosis").
+- **Quick-reference cards** (`licensee/data/quick-reference.json`) — safety checklist, freezing-of-gait cueing, exertion (talk-test/RPE only, no bpm), and a red-flags card. Confirm the red-flags card matches your own emergency guidance.
+- **Further reading** links are to well-known Parkinson's organisations — confirm you're comfortable pointing licensees to them.
+
+Each of these is a small JSON file, so edits are quick — change the text and re-run `python3 tools/build_hub.py`.
