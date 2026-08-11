@@ -15,7 +15,7 @@ ENH_DIRS = [os.path.join(ROOT, "_sources/enhanced/boxing-4-health-PD-symptoms"),
             os.path.join(ROOT, "_sources/enhanced/boxing4health-training")]
 WIX = {r["stepId"]: r for r in json.load(open(os.path.join(ROOT, "_sources/wix/wix-extract.json")))}
 MODULES = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "9"  # asset cache-bust version
+V = "10"  # asset cache-bust version
 
 # ---------------------------------------------------------------- helpers
 def enh_path(fn):
@@ -423,16 +423,22 @@ def wrap_tables(html):
     return re.sub(r"(<table\b.*?</table>)", r'<div class="table-wrap">\1</div>', html, flags=re.S)
 
 def build_authored_page(mod, lesson, prev, nxt):
-    """Wrap a hand/AI re-authored lesson body (unified components) in the shell."""
-    inner = open(os.path.join(ROOT, "_authored", lesson["slug"]+".html"), encoding="utf-8").read()
-    inner = wrap_tables(inner)
+    """Wrap a hand/AI re-authored lesson body (unified components) in the shell.
+    If an _authored/<slug>.fr.html exists, emit EN + FR language blocks."""
+    inner = wrap_tables(open(os.path.join(ROOT, "_authored", lesson["slug"]+".html"), encoding="utf-8").read())
+    fr_path = os.path.join(ROOT, "_authored", lesson["slug"]+".fr.html")
+    fr_inner = wrap_tables(open(fr_path, encoding="utf-8").read()) if os.path.exists(fr_path) else None
     hasquiz = "data-quiz" in inner
     feature = ["quiz"] if hasquiz else []
     h = head(lesson["title"]["en"], lesson["summary"]["en"] or mod["desc"]["en"])
     h = h.replace("{BODYATTRS}", body_attrs(lesson, hasquiz))
     parts = [h, lesson_header(mod, lesson)]
     parts.append('<section class="section-tight"><div class="wrap wrap-narrow"><div class="prose lesson-body" data-lesson-content>')
-    parts.append(inner)
+    if fr_inner:
+        parts.append('<div data-lang-block="en">'+inner+'</div>')
+        parts.append('<div data-lang-block="fr">'+fr_inner+'</div>')
+    else:
+        parts.append(inner)
     parts.append('</div></div></section>')
     parts.append('<section class="section-tight">'+complete_block(lesson)+'</section>')
     parts.append('<section class="section-tight">'+pager(prev,nxt)+'</section>')

@@ -3,7 +3,7 @@
 import json, os, html as htmllib
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 M = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "9"
+V = "10"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, prefix):

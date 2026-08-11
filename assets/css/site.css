@@ -312,8 +312,13 @@ a.nav-link { position: relative; transition: color var(--transition), background
 
 /* ---------- Expandable card / accordion ---------- */
 .accordion { border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; background: var(--surface); margin: .7rem 0; }
-.accordion > button.acc-trigger { width: 100%; text-align: left; background: transparent; border: 0; padding: 1.05rem 1.2rem; font-family: var(--font-sans); font-weight: 700; font-size: 1.05rem; color: var(--heading); cursor: pointer; display: flex; align-items: center; gap: .8rem; }
-.accordion .acc-trigger .acc-chevron { margin-left: auto; transition: transform var(--transition); color: var(--primary); }
+.accordion { transition: border-color var(--transition), box-shadow var(--transition); }
+.accordion:hover { border-color: var(--blue-300); box-shadow: var(--shadow-1); }
+.accordion > button.acc-trigger { width: 100%; text-align: left; background: transparent; border: 0; padding: 1.05rem 1.2rem; font-family: var(--font-sans); font-weight: 700; font-size: 1.05rem; color: var(--heading); cursor: pointer; display: flex; align-items: center; gap: .8rem; transition: background var(--transition); }
+.accordion > button.acc-trigger:hover { background: var(--surface-2); }
+.accordion > button.acc-trigger:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+.accordion .acc-trigger .acc-chevron { margin-left: auto; transition: transform var(--transition); color: var(--primary); flex:none; display:inline-flex; width:30px; height:30px; align-items:center; justify-content:center; border-radius:50%; background:var(--blue-50); }
+:root[data-theme="dark"] .accordion .acc-trigger .acc-chevron { background: rgba(74,163,219,.16); }
 .accordion[data-open="true"] .acc-chevron { transform: rotate(90deg); }
 .accordion .acc-panel { max-height: 0; overflow: hidden; transition: max-height var(--transition); }
 .accordion .acc-panel-inner { padding: 0 1.2rem 1.2rem; }
