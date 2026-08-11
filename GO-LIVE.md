@@ -2,6 +2,8 @@
 
 Everything is built, reviewed, and pushed to `main`. Here's what's done and the few things only you can finish.
 
+> **Where it lives:** the program is at **`training.boxing4health.com/licensee/`**; the domain **root** (`training.boxing4health.com/`) is a small program-directory landing so future training programs can be added at their own paths without breaking links. The DNS/Pages steps below are unchanged — the custom domain still points at the repo root.
+
 ## ☑️ What's live in the repo
 - **Full site**: dashboard hub + 35 lessons across 5 modules + 1 resource, rebuilt from your Wix program and the "enhanced" GitHub content (enhanced content used where it existed).
 - **Design system**: Boxing4Health blue branding, self-hosted fonts, Lucide icons, light/dark themes, and reader controls (text size, line spacing, high contrast, language) — all saved per device.

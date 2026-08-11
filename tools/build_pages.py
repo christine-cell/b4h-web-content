@@ -11,11 +11,12 @@ Outputs modules/*.html and resources/*.html. Run from repo root.
 import json, re, os, html as htmllib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE = os.path.join(ROOT, "licensee")   # program is namespaced under /licensee/
 ENH_DIRS = [os.path.join(ROOT, "_sources/enhanced/boxing-4-health-PD-symptoms"),
             os.path.join(ROOT, "_sources/enhanced/boxing4health-training")]
 WIX = {r["stepId"]: r for r in json.load(open(os.path.join(ROOT, "_sources/wix/wix-extract.json")))}
-MODULES = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "16"  # asset cache-bust version
+MODULES = json.load(open(os.path.join(SITE, "data/modules.json")))
+V = "17"  # asset cache-bust version
 
 # ---------------------------------------------------------------- helpers
 def enh_path(fn):
@@ -283,7 +284,7 @@ def build_all_enhanced_only():
         prev = seq[i-1][1] if i>0 else None
         nxt = seq[i+1][1] if i<len(seq)-1 else None
         htmlout = build_enhanced_page(m,l,prev,nxt)
-        outp = os.path.join(ROOT, l["url"])
+        outp = os.path.join(SITE, l["url"])
         os.makedirs(os.path.dirname(outp), exist_ok=True)
         open(outp,"w",encoding="utf-8").write(htmlout)
         made.append(l["url"])
@@ -298,7 +299,7 @@ if __name__ == "__main__":
                 if l["enhancedFile"]=="b4h_lesson1_symptoms.html":
                     seq=flat_lessons(); idx=[i for i,(mm,ll) in enumerate(seq) if ll["id"]==l["id"]][0]
                     prev=seq[idx-1][1]; nxt=seq[idx+1][1]
-                    open(os.path.join(ROOT,l["url"]),"w").write(build_enhanced_page(m,l,prev,nxt))
+                    open(os.path.join(SITE,l["url"]),"w").write(build_enhanced_page(m,l,prev,nxt))
                     print("built",l["url"])
     elif len(sys.argv)>1 and sys.argv[1]=="enhanced":
         made=build_all_enhanced_only(); print(f"built {len(made)} enhanced pages")
@@ -456,7 +457,7 @@ def build_all():
             out = build_enhanced_page(m,l,prev,nxt)
         else:
             out = build_wix_page(m,l,prev,nxt)
-        p = os.path.join(ROOT, l["url"]); os.makedirs(os.path.dirname(p),exist_ok=True)
+        p = os.path.join(SITE, l["url"]); os.makedirs(os.path.dirname(p),exist_ok=True)
         open(p,"w",encoding="utf-8").write(out); made.append(l["url"])
     return made
 
@@ -474,7 +475,7 @@ def build_resources():
                    inner, '</div></div></section>',
                    '<section class="section-tight">'+complete_block(r)+'</section>',
                    foot(["quiz"] if hasquiz else [])]
-            open(os.path.join(ROOT, r["url"]),"w",encoding="utf-8").write("\n".join(parts)); made.append(r["url"]); continue
+            open(os.path.join(SITE, r["url"]),"w",encoding="utf-8").write("\n".join(parts)); made.append(r["url"]); continue
         if r.get("enhancedFile"):
             # reuse enhanced porter with a pseudo-module
             pseudo = {"title":{"en":"Resources"}, "desc":{"en":r["summary"]["en"]}}
@@ -487,7 +488,7 @@ def build_resources():
                    body, '</div></div></div>',
                    '<section class="section-tight">'+complete_block(r)+'</section>']
             parts += ["\n".join(f'<script>{s}</script>' for s in scripts), foot([])]
-            open(os.path.join(ROOT, r["url"]),"w",encoding="utf-8").write("\n".join(parts)); made.append(r["url"])
+            open(os.path.join(SITE, r["url"]),"w",encoding="utf-8").write("\n".join(parts)); made.append(r["url"])
     return made
 
 if __name__ == "__main__" and len(__import__('sys').argv)>1 and __import__('sys').argv[1]=="all":

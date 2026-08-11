@@ -2,8 +2,9 @@
 """Build index.html (hub), resources/index.html, and 404.html."""
 import json, os, html as htmllib
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-M = json.load(open(os.path.join(ROOT, "data/modules.json")))
-V = "16"
+SITE = os.path.join(ROOT, "licensee")   # program is namespaced under /licensee/
+M = json.load(open(os.path.join(SITE, "data/modules.json")))
+V = "17"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, prefix):
@@ -168,8 +169,8 @@ def build_hub():
     </div></section>"""
 
     body = hero + progress + howto + band + modsec + ressec + cert
-    open(os.path.join(ROOT,"index.html"),"w",encoding="utf-8").write(h + body + foot(prefix))
-    print("built index.html")
+    open(os.path.join(SITE,"index.html"),"w",encoding="utf-8").write(h + body + foot(prefix))
+    print("built licensee/index.html")
 
 if __name__ == "__main__":
     build_hub()
@@ -185,20 +186,68 @@ def build_resources_index():
       <p class="lead">{bilingual('Extra reading and tools to support your coaching.','Lectures et outils supplémentaires pour soutenir votre enseignement.','span')}</p>
       <div class="stack" style="margin-top:2rem">{rows}</div>
     </div></section>"""
-    open(os.path.join(ROOT,"resources/index.html"),"w",encoding="utf-8").write(h+body+foot(prefix))
-    print("built resources/index.html")
+    open(os.path.join(SITE,"resources/index.html"),"w",encoding="utf-8").write(h+body+foot(prefix))
+    print("built licensee/resources/index.html")
 
 def build_404():
-    prefix="/"
-    h=head("Page not found · Boxing4Health Training","",prefix).replace('href="/assets','href="/assets')
+    # Served from the domain root for the whole site; assets live under /licensee/.
+    prefix="/licensee/"
+    h=head("Page not found · Boxing4Health Training","",prefix)
     body=f"""<section class="section"><div class="wrap wrap-narrow center" style="padding-block:5rem">
       <span class="chip" data-icon="triangle-alert" style="margin-inline:auto;width:72px;height:72px"></span>
       <h1 style="margin-top:1.5rem">{bilingual('Page not found','Page introuvable','span')}</h1>
       <p class="lead">{bilingual('That page moved or never existed.','Cette page a été déplacée ou n’existe pas.','span')}</p>
-      <a class="btn btn-primary" href="/index.html"><span data-icon="house"></span>{bilingual('Back to the program','Retour au programme','span')}</a>
+      <div class="cluster" style="justify-content:center;margin-top:1.5rem">
+        <a class="btn btn-primary" href="/licensee/"><span data-icon="house"></span>{bilingual('Licensee training','Formation des licenciés','span')}</a>
+        <a class="btn btn-secondary" href="/"><span data-icon="layers"></span>{bilingual('All programs','Tous les programmes','span')}</a>
+      </div>
     </div></section>"""
     open(os.path.join(ROOT,"404.html"),"w",encoding="utf-8").write(h+body+foot(prefix))
-    print("built 404.html")
+    print("built 404.html (root)")
+
+def build_landing():
+    # Program directory at the domain root — lists B4H training programs.
+    # Assets/partials/data resolve under /licensee/ via prefix.
+    prefix="licensee/"
+    h=head("Boxing4Health Training","Boxing4Health training programs — start with the Licensee Training Program.",prefix)
+    m0=M["modules"][0]["lessons"][0]["url"]
+    nles=sum(len(m["lessons"]) for m in M["modules"])
+    nmod=len(M["modules"])
+    prog_card=f"""<a class="card card-hover program-card" href="{prefix}index.html">
+        <div class="program-card-cover">
+          <span class="program-card-wm" data-icon="graduation-cap" aria-hidden="true"></span>
+          <span class="chip" data-icon="graduation-cap"></span>
+          <span class="status-chip" data-status="next">{bilingual('Available now','Disponible','span')}</span>
+        </div>
+        <div class="program-card-body">
+          <h2>{bilingual('Licensee Training Program','Programme de formation des licenciés','span')}</h2>
+          <p class="muted">{bilingual("Everything a Boxing4Health licensee needs — Parkinson’s education, assessment, and class delivery.","Tout ce qu’un licencié Boxing4Health doit savoir — la maladie de Parkinson, l’évaluation et l’animation des cours.","span")}</p>
+          <span class="lr-meta">{nmod} {bilingual('modules','modules')} · {nles} {bilingual('lessons','leçons')}</span>
+          <span class="btn btn-primary" style="margin-top:1.1rem;pointer-events:none"><span data-icon="arrow-right"></span>{bilingual('Enter program','Ouvrir le programme','span')}</span>
+        </div>
+      </a>"""
+    soon_card=f"""<div class="card program-card program-card-soon" aria-disabled="true">
+        <div class="program-card-cover program-card-cover-muted">
+          <span class="program-card-wm" data-icon="dumbbell" aria-hidden="true"></span>
+          <span class="chip" data-icon="dumbbell"></span>
+          <span class="status-chip" data-status="not-started">{bilingual('Coming soon','À venir','span')}</span>
+        </div>
+        <div class="program-card-body">
+          <h2>{bilingual('More programs','Autres programmes','span')}</h2>
+          <p class="muted">{bilingual("Additional Boxing4Health training tracks will appear here as they are released.","D’autres parcours de formation Boxing4Health apparaîtront ici au fur et à mesure.","span")}</p>
+        </div>
+      </div>"""
+    body=f"""<section class="hero"><div class="hero-media"><img src="{prefix}assets/img/photos/hero-class.jpg" alt="A Boxing4Health class training together" loading="eager" fetchpriority="high"></div>
+      <div class="wrap">
+        <span class="eyebrow"><span data-icon="graduation-cap"></span><span>{bilingual('Boxing4Health','Boxing4Health')}</span></span>
+        <h1>{bilingual('Training Programs','Programmes de formation','span')}</h1>
+        <p>{bilingual('Choose a program to begin. Your progress is saved on this device as you go.','Choisissez un programme pour commencer. Votre progression est enregistrée sur cet appareil.','span')}</p>
+      </div></section>
+      <section class="section"><div class="wrap">
+        <div class="grid grid-2">{prog_card}{soon_card}</div>
+      </div></section>"""
+    open(os.path.join(ROOT,"index.html"),"w",encoding="utf-8").write(h+body+foot(prefix))
+    print("built index.html (root landing)")
 
 if True:
-    build_resources_index(); build_404()
+    build_resources_index(); build_404(); build_landing()
