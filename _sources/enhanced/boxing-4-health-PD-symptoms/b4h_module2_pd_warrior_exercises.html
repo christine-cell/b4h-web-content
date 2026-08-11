@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — PD Warrior Exercise Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --teal: #1E8A8A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 95% 40%, rgba(30,138,138,0.12) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 50% at 5% 80%, rgba(232,39,26,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--teal); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--teal); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.8;
+    color: #b0aba0;
+    max-width: 620px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  .hero-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 9px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    animation: pulse 2s infinite;
+  }
+
+  /* ── GOAL BANNER ── */
+  .goal-banner {
+    background: linear-gradient(135deg, #080e10, #0a1212);
+    border: 1px solid rgba(30,138,138,0.25);
+    border-left: 5px solid var(--teal);
+    padding: 28px 34px;
+    margin: 0 8vw 0;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .goal-banner-icon { font-size: 32px; flex-shrink: 0; }
+
+  .goal-banner p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #90c0c0;
+  }
+
+  .goal-banner p strong { color: var(--light); }
+
+  /* ── SECTION ── */
+  .section { padding: 60px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── EXERCISE CARD ── */
+  .exercise-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .exercise-header {
+    padding: 24px 28px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .exercise-header:hover { background: #1e1e1e; }
+
+  .exercise-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    color: rgba(30,138,138,0.25);
+    flex-shrink: 0;
+    width: 44px;
+  }
+
+  .exercise-header-main { flex: 1; }
+
+  .exercise-goal-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border: 1px solid;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .exercise-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.04em;
+    color: var(--teal);
+    margin-bottom: 6px;
+    line-height: 1;
+  }
+
+  .exercise-tagline {
+    font-size: 15px;
+    color: #a8a398;
+    line-height: 1.5;
+  }
+
+  .exercise-tagline strong { color: var(--light); }
+
+  .exercise-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .watch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(232,39,26,0.12);
+    border: 1px solid rgba(232,39,26,0.35);
+    color: var(--red);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .watch-btn:hover { background: rgba(232,39,26,0.2); }
+  .watch-btn .play { font-size: 14px; }
+
+  .expand-arrow {
+    width: 28px; height: 28px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    color: var(--muted);
+    transition: transform 0.3s;
+  }
+
+  .exercise-card.open .expand-arrow { transform: rotate(180deg); }
+
+  .exercise-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+  }
+
+  .exercise-body-inner {
+    padding: 0 28px 28px 88px;
+    border-top: 1px solid #1e1e1e;
+  }
+
+  .exercise-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #b0aba0;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .exercise-desc strong { color: var(--light); }
+
+  /* Key tip */
+  .key-tip {
+    background: rgba(30,138,138,0.07);
+    border-left: 3px solid var(--teal);
+    padding: 12px 16px;
+    font-size: 15px;
+    color: #7ec4c4;
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .key-tip strong { color: var(--teal); }
+
+  /* Precautions */
+  .precautions-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .precautions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .precaution-item {
+    background: rgba(200,168,75,0.06);
+    border: 1px solid rgba(200,168,75,0.15);
+    padding: 10px 14px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #c0b070;
+  }
+
+  .precaution-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    flex-shrink: 0;
+    min-width: 90px;
+  }
+
+  /* ── PROGRESS TRACKER ── */
+  .tracker {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+  }
+
+  .tracker h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    margin-bottom: 20px;
+  }
+
+  .tracker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .tracker-item {
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    user-select: none;
+  }
+
+  .tracker-item.checked {
+    background: rgba(30,138,138,0.12);
+    border-color: rgba(30,138,138,0.4);
+  }
+
+  .tracker-box {
+    width: 20px; height: 20px;
+    border: 2px solid #444;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .tracker-item.checked .tracker-box {
+    border-color: var(--teal);
+    background: rgba(30,138,138,0.2);
+    color: var(--teal);
+  }
+
+  .tracker-name {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+
+  .tracker-item.checked .tracker-name { color: var(--light); }
+
+  .tracker-progress-bar {
+    height: 4px;
+    background: #2a2a2a;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .tracker-progress-fill {
+    height: 100%;
+    background: var(--teal);
+    transition: width 0.4s ease;
+    border-radius: 2px;
+  }
+
+  .tracker-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* ── ACTION CALLOUT ── */
+  .action-callout {
+    background: rgba(232,39,26,0.07);
+    border: 1px solid rgba(232,39,26,0.2);
+    border-left: 5px solid var(--red);
+    padding: 28px 32px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .action-callout .icon { font-size: 26px; flex-shrink: 0; }
+
+  .action-callout h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .action-callout p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #e8b0aa;
+  }
+
+  .action-callout p strong { color: var(--light); }
+  .action-callout a { color: var(--red); text-decoration: none; border-bottom: 1px solid rgba(232,39,26,0.4); }
+  .action-callout a:hover { border-bottom-color: var(--red); }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .exercise-body-inner { padding: 0 18px 24px; }
+    .exercise-right { display: none; }
+    .watch-link { display: block; margin-top: 8px; }
+    .module-footer { flex-direction: column; }
+    .tracker-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="breadcrumb">Module 2 — PD Warrior &nbsp;›&nbsp; <span>Exercise Library</span></p>
+  <h1 class="hero-title">
+    PD Warrior<br><em>Exercise</em><br>Library
+  </h1>
+  <p class="hero-sub">
+    Review every exercise below, watch the video, then practice it yourself. <strong>You must be able to demonstrate each exercise confidently</strong> before your head instructor review session.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot"></span> 11 Exercises</div>
+    <div class="meta-pill"><span class="dot"></span> Action Required</div>
+    <div class="meta-pill"><span class="dot"></span> Demo Required</div>
+  </div>
+</section>
+
+<!-- Goal banner -->
+<div class="goal-banner">
+  <div class="goal-banner-icon">🎯</div>
+  <p><strong>Primary Goal — Force & Power:</strong> These exercises are designed to stimulate force, power, amplitude, and coordination in clients with Parkinson's. They directly address the slow, small movements (bradykinesia), reduced arm swing, poor balance, and trunk stiffness that characterize PD.</p>
+</div>
+
+<!-- ══════════ PROGRESS TRACKER ══════════ -->
+<section class="section reveal">
+  <p class="section-label">Track Your Progress</p>
+
+  <div class="tracker">
+    <h3>✓ Mark Each Exercise When You've Watched & Practiced It</h3>
+    <div class="tracker-progress-bar">
+      <div class="tracker-progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
+    <div class="tracker-count" id="trackerCount">0 / 11 completed</div>
+    <div class="tracker-grid" style="margin-top:16px;">
+      <div class="tracker-item" onclick="toggleTracker(this,'Ball Throw')"><div class="tracker-box">✓</div><div class="tracker-name">Ball Throw</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'Stop & Squat')"><div class="tracker-box">✓</div><div class="tracker-name">Stop & Squat</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'TAHDAHS')"><div class="tracker-box">✓</div><div class="tracker-name">TAHDAHS</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'Scarf Snatch')"><div class="tracker-box">✓</div><div class="tracker-name">Scarf Snatch</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'Sky Reach')"><div class="tracker-box">✓</div><div class="tracker-name">Sky Reach</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'Double 007')"><div class="tracker-box">✓</div><div class="tracker-name">Double 007</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'Over the River')"><div class="tracker-box">✓</div><div class="tracker-name">Over the River</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'Penguin Waddle')"><div class="tracker-box">✓</div><div class="tracker-name">Penguin Waddle</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'Banded Side Step')"><div class="tracker-box">✓</div><div class="tracker-name">Banded Side Step</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'Box Step')"><div class="tracker-box">✓</div><div class="tracker-name">Box Step</div></div>
+      <div class="tracker-item" onclick="toggleTracker(this,'All reviewed')"><div class="tracker-box">✓</div><div class="tracker-name">All reviewed ✨</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EXERCISES ══════════ -->
+<section class="section reveal">
+  <p class="section-label">The Exercises</p>
+
+  <!-- 1 Ball Throw -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">1</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Force & Power — Upper Limb</div>
+        <div class="exercise-name">Ball Throw</div>
+        <div class="exercise-tagline">Upper limb power + balance + coordination. Great for tremors & slow movements.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://youtu.be/40Py_LXA-kQ" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          This activity stimulates <strong>force and power in the upper limbs</strong>, making it particularly beneficial for clients who struggle with slow, limited movements or tremors. The exercise incorporates a balance component during the throw and requires control and coordination to catch the ball.
+        </div>
+        <div class="key-tip"><strong>🥊 Key Cue:</strong> Encourage big, powerful throws — not gentle tosses. The force generation is the therapeutic goal. Don't wait for the ball to come to you; reach and react!</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">Back</div><div>Don't arch the back when throwing — use the legs for force instead.</div></div>
+          <div class="precaution-item"><div class="precaution-label">Shoulder</div><div>Try throwing underarm from standing, or throwing directly down to the floor.</div></div>
+          <div class="precaution-item"><div class="precaution-label">Balance</div><div>Place a chair in front of the client and have a volunteer retrieve the ball when it falls.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://youtu.be/40Py_LXA-kQ" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch Ball Throw Video</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 Stop & Squat -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">2</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Leg Strength & Amplitude</div>
+        <div class="exercise-name">Stop & Squat</div>
+        <div class="exercise-tagline">Power squat — leg & lower back strength with full arm extension and amplitude.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://youtu.be/10Ybc-q-AaE" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          The emphasis is on the <strong>power squat</strong> — enhancing leg and lower back strength while promoting full extension and amplitude in the arms and hands. This is a foundational PD Warrior exercise.
+        </div>
+        <div class="key-tip"><strong>🥊 Key Cue:</strong> BIG, open hands — wrists extended, arms reaching out, chest UP. Think tall and proud. The arms drive the amplitude, the legs drive the power.</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">Knee Pain</div><div>Start with slower or half squats. Use a wedge or pillow on the chair so the client doesn't need to come down as low.</div></div>
+          <div class="precaution-item"><div class="precaution-label">Balance</div><div>Place a chair in front and behind the client for stability and confidence.</div></div>
+          <div class="precaution-item"><div class="precaution-label">Shoulder</div><div>Change the arm position — have them go out to the sides instead of forward.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://youtu.be/10Ybc-q-AaE" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch Stop & Squat Video</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 TAHDAHS -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">3</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Shoulder Extension & Stepping</div>
+        <div class="exercise-name">TAHDAHS</div>
+        <div class="exercise-tagline">Shoulder extension + stepping + big arm movement + balance and coordination.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://youtu.be/VhULAtOM24U" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          Geared towards <strong>shoulder extension, stepping, and BIG arm movement</strong> with a balance and coordination component built in.
+        </div>
+        <div class="key-tip"><strong>🥊 Key Cue:</strong> Make sure BOTH movements — going out AND coming back in — are powerful. Don't let the return be passive. Both directions are therapeutic.</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">General</div><div>Modify as appropriate for any pre-existing injury.</div></div>
+          <div class="precaution-item"><div class="precaution-label">Balance</div><div>Place a chair nearby and start with one hand only if needed.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://youtu.be/VhULAtOM24U" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch TAHDAHS Video</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 Scarf Snatch -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">4</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Arm Swing & Reaction Speed</div>
+        <div class="exercise-name">Scarf Snatch</div>
+        <div class="exercise-tagline">Dynamic forceful movements — especially effective for bradykinesia and reduced arm swing.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://youtu.be/kw3XHS2swTE" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          Centers around <strong>arm swing and dynamic, forceful movements.</strong> Particularly effective for clients experiencing bradykinesia as their primary symptom, coupled with challenges in dexterity or diminished arm swing. As clients advance, the complexity can be heightened to further challenge their capabilities.
+        </div>
+        <div class="key-tip"><strong>🥊 Key Cue:</strong> Do NOT wait for the scarf to fall — and do not try to catch it underarm. The point is to be <strong>fast enough to catch it overhead.</strong> Speed and reaction are the goal.</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">Shoulder</div><div>Throw underarm and bend at the elbow so the client can still generate some force.</div></div>
+          <div class="precaution-item"><div class="precaution-label">Balance</div><div>Place a chair in front of the client.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://youtu.be/kw3XHS2swTE" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch Scarf Snatch Video</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 Sky Reach -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">5</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Trunk Rotation & Flexibility</div>
+        <div class="exercise-name">Sky Reach</div>
+        <div class="exercise-tagline">Trunk rotation + big shoulder movements + back, trunk, and shoulder flexibility.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://youtu.be/DjWv0vljlzw" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          Focuses on <strong>trunk rotation and BIG, powerful arm and shoulder movements.</strong> Contributes to overall flexibility of the back, trunk, and shoulder joints. Can be done seated — reach diagonally down and across the body, and if able, touch the floor on the outside of the foot. Return to upright and direct the gaze upward toward the outstretched hand. This creates a powerful stretch across the chest, upper back, and arm.
+        </div>
+        <div class="key-tip"><strong>🥊 Key Cue:</strong> "Embody strength and empowerment" as you rise. This is not a gentle stretch — it's a powerful, intentional movement. Look up and reach tall on the return.</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">Back</div><div>Be cautious if the client has back issues. Stop at the knee rather than reaching to the floor.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://youtu.be/DjWv0vljlzw" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch Sky Reach Video</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 Double 007 -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">6</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Trunk Rotation & Turning</div>
+        <div class="exercise-name">Double 007</div>
+        <div class="exercise-tagline">Trunk rotation — addresses stiffness, walking, turning, and direction changes.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://youtu.be/BeJMw-lkC9o" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          The primary goal is to <strong>enhance trunk rotation.</strong> Many people with Parkinson's experience stiffness and reduced trunk rotation — which affects walking, turning, and overall balance. This exercise specifically addresses changing directions, which is one of the most challenging movements for PD clients.
+        </div>
+        <div class="key-tip"><strong>🥊 Key Cue:</strong> Keep eyes focused on your hands throughout the entire movement. The visual tracking adds a coordination and dual-task component to the rotation.</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">Back</div><div>Pivot on the opposite leg and keep hands straight to protect the back.</div></div>
+          <div class="precaution-item"><div class="precaution-label">Balance</div><div>Have a chair, table, or wall nearby for stabilization as needed.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://youtu.be/BeJMw-lkC9o" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch Double 007 Video</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 Over the River -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">7</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Gait & Arm Swing</div>
+        <div class="exercise-name">Over the River</div>
+        <div class="exercise-tagline">Big strides + powerful arm swing + 180° turns. Needs a marked line on the floor.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://youtu.be/EM-VzOs3Xz8" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          Highly beneficial for synchronizing <strong>BIG strides with robust arm swings.</strong> Also contributes to 180-degree turns. Requires a clearly marked line on the floor. Knees should elevate significantly during the movement; arms should exhibit forceful, straight swinging motions at the final position.
+        </div>
+        <div class="key-tip"><strong>🥊 Setup Tip:</strong> Use tape on the floor to mark the line clearly. The visual cue of stepping over a line is a powerful tool for overcoming freezing and improving stride length in PD clients.</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">Knees</div><div>Make a smaller step over the hurdle — don't require full high-knee if it causes pain.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://youtu.be/EM-VzOs3Xz8" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch Over the River Video</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9 Penguin Waddle -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">8</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Weight Shifting & Stepping</div>
+        <div class="exercise-name">Penguin Waddle</div>
+        <div class="exercise-tagline">Weight shifting + stepping practice. Excellent for minor freezing episodes + glutes.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://youtu.be/Q9EWH7yaNmI" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          Emphasizes <strong>weight shifting</strong> and is an effective method for practicing stepping. Particularly valuable when dealing with minor episodes of freezing while walking. Also provides an excellent workout for the gluteal muscles!
+        </div>
+        <div class="key-tip"><strong>🥊 Key Cue:</strong> Exaggerate the weight shift side to side — make it dramatic and deliberate. This overlearning of the weight-shift pattern is what makes it effective for real-life walking improvement.</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">Dizziness</div><div>Go in one single direction only, or pause after each rotation if the client feels dizzy.</div></div>
+          <div class="precaution-item"><div class="precaution-label">Balance</div><div>Place a chair on either side of the client.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://youtu.be/Q9EWH7yaNmI" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch Penguin Waddle Video</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 Banded Side Step -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">9</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Posture & Upper Limb Resistance</div>
+        <div class="exercise-name">Banded Side Step</div>
+        <div class="exercise-tagline">Posture + coordination + upper limb resistance. Back and arm strengthening.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://www.youtube.com/shorts/JBC65ii_IAM" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          Focuses on <strong>posture, coordination, and upper limb resistance.</strong> Really helpful for getting the back and arm muscles working hard. The resistance band challenges coordination while reinforcing upright posture — a powerful combination for PD clients fighting forward flexion.
+        </div>
+        <div class="key-tip"><strong>🥊 Key Cue:</strong> Think tall, chest open. The band resistance should be working against the tendency to round forward — use it intentionally to reinforce good posture throughout.</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">Shoulder</div><div>Keep arms low with hands below shoulder height.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://www.youtube.com/shorts/JBC65ii_IAM" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch Banded Side Step Video</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11 Box Step -->
+  <div class="exercise-card" onclick="toggleExercise(this)">
+    <div class="exercise-header">
+      <div class="exercise-num">10</div>
+      <div class="exercise-header-main">
+        <div class="exercise-goal-tag" style="color:var(--teal);border-color:rgba(30,138,138,0.35);background:rgba(30,138,138,0.08);">Posture & Body Elongation</div>
+        <div class="exercise-name">Box Step</div>
+        <div class="exercise-tagline">Counteract stooped posture — strengthens flexors and extensors, elongates the body.</div>
+      </div>
+      <div class="exercise-right">
+        <a href="https://youtu.be/3fo1INxGGiI" target="_blank" onclick="event.stopPropagation()" class="watch-btn"><span class="play">▶</span> Watch Video</a>
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="exercise-body">
+      <div class="exercise-body-inner">
+        <div class="exercise-desc">
+          Why focus on posture? We work with clients to <strong>counteract the stooped posture that develops with aging and Parkinson's.</strong> Posture exercises strengthen the front (flexors) and back muscles (extensors). The body follows the arms — reaching in different directions helps create a good stretch and elongates the body for improved posture.
+        </div>
+        <div class="key-tip"><strong>🥊 Key Cue:</strong> "The body follows the arms" — where the arms go, the spine follows. Use tall, directional reaches to actively pull the client out of their stooped pattern and into an upright, open position.</div>
+        <div class="precautions-title">⚠️ Precautions</div>
+        <div class="precautions-list">
+          <div class="precaution-item"><div class="precaution-label">General</div><div>Ensure client has stable footing before adding arm reaches. Use a chair if needed for support during stepping.</div></div>
+        </div>
+        <div style="margin-top:16px;"><a href="https://youtu.be/3fo1INxGGiI" target="_blank" class="watch-btn" onclick="event.stopPropagation()"><span class="play">▶</span> Watch Box Step Video</a></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════ ACTION CALLOUT ══════════ -->
+<section class="section reveal">
+  <p class="section-label">Book Your Demo Session</p>
+
+  <div class="action-callout">
+    <div class="icon">📧</div>
+    <div>
+      <h4>Ready? Contact Tina to Book Your Review</h4>
+      <p>
+        Once you feel confident with all of these exercises — watched the videos, practiced them yourself, and can demonstrate them clearly — reach out to our head instructor to book your review session. Email <a href="mailto:Tina@boxing4health.com">Tina@boxing4health.com</a> to schedule your time. <strong>This is a required step before you begin teaching.</strong>
+      </p>
+    </div>
+  </div>
+
+  <div style="background:var(--charcoal);border:1px solid #2a2a2a;border-left:4px solid var(--gold);padding:22px 28px;">
+    <p style="font-size:17px;line-height:1.8;color:#c8b870;">
+      <strong style="color:var(--gold);">🥊 Remember:</strong> You must include a minimum of <strong style="color:var(--light);">2 PD Warrior exercises in every class you design</strong> — for both Fighter and Champion formats. Vary your selections across sessions to keep the neuroplastic challenge fresh for your clients.
+    </p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>Teaching 101 — VIGOR</span></h2>
+    <p>Learn the B4H cueing framework that brings every exercise — functional, boxing, and PD Warrior — to life.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: VIGOR →</button>
+    <button class="btn btn-ghost">↩ Back to PD Warrior Overview</button>
+  </div>
+</div>
+
+<script>
+// Scroll reveal
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 }).observe(r);
+});
+
+// Exercise accordion
+function toggleExercise(card) {
+  const body = card.querySelector('.exercise-body');
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.exercise-card').forEach(c => {
+    c.classList.remove('open');
+    c.querySelector('.exercise-body').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+// Progress tracker
+let checked = 0;
+const total = 11;
+
+function toggleTracker(item, name) {
+  item.classList.toggle('checked');
+  checked = document.querySelectorAll('.tracker-item.checked').length;
+  document.getElementById('progressFill').style.width = (checked / total * 100) + '%';
+  document.getElementById('trackerCount').textContent = checked + ' / ' + total + ' completed' + (checked === total ? ' 🎉' : '');
+}
+</script>
+</body>
+</html>

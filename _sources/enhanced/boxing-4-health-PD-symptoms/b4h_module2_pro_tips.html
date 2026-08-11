@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Pro Tips & Q&A</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+    --orange: #D4700A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 65% 70% at 100% 50%, rgba(200,168,75,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 50% at 0% 80%, rgba(232,39,26,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    right: -10px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 15vw, 190px);
+    color: rgba(200,168,75,0.04);
+    letter-spacing: 0.08em;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--gold); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--gold); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.85;
+    color: #b0aba0;
+    max-width: 620px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  .hero-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 9px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s infinite;
+  }
+
+  /* ── SECTION ── */
+  .section { padding: 60px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── PRO TIP CARDS ── */
+  .pro-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .pro-tip {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 24px 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pro-tip::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 4px; height: 100%;
+  }
+
+  .pro-tip.tip-gold::before  { background: var(--gold); }
+  .pro-tip.tip-red::before   { background: var(--red); }
+  .pro-tip.tip-blue::before  { background: var(--blue); }
+  .pro-tip.tip-green::before { background: var(--green); }
+  .pro-tip.tip-teal::before  { background: var(--teal); }
+
+  .tip-icon { font-size: 26px; flex-shrink: 0; }
+
+  .tip-content { flex: 1; }
+
+  .tip-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+
+  .tip-gold .tip-title  { color: var(--gold); }
+  .tip-red .tip-title   { color: var(--red); }
+  .tip-blue .tip-title  { color: var(--blue); }
+  .tip-green .tip-title { color: var(--green); }
+  .tip-teal .tip-title  { color: var(--teal); }
+
+  .tip-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #b0aba0;
+  }
+
+  .tip-body strong { color: var(--light); }
+
+  /* ── IMAGE CUES EXAMPLE ── */
+  .image-cues {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    margin: 20px 0;
+  }
+
+  .image-cue-col {
+    padding: 20px 24px;
+  }
+
+  .image-cue-col.bad {
+    background: rgba(232,39,26,0.06);
+    border: 1px solid rgba(232,39,26,0.15);
+    opacity: 0.7;
+  }
+
+  .image-cue-col.good {
+    background: rgba(46,158,107,0.06);
+    border: 1px solid rgba(46,158,107,0.2);
+  }
+
+  .image-cue-col h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .image-cue-col.bad h4  { color: rgba(232,39,26,0.6); }
+  .image-cue-col.good h4 { color: var(--green); }
+
+  .cue-example {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cue-row {
+    background: rgba(0,0,0,0.2);
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #a8a398;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .cue-row .cue-mark { flex-shrink: 0; }
+  .cue-row strong { color: var(--light); }
+  .cue-row em { color: var(--green); font-style: italic; }
+
+  /* ── Q&A ── */
+  .qa-list { display: flex; flex-direction: column; gap: 0; }
+
+  .qa-item {
+    border: 1px solid #1e1e1e;
+    border-bottom: none;
+    overflow: hidden;
+  }
+
+  .qa-item:last-child { border-bottom: 1px solid #1e1e1e; }
+
+  .qa-question {
+    padding: 22px 28px;
+    cursor: pointer;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--charcoal);
+    transition: background 0.2s;
+  }
+
+  .qa-question:hover { background: #1e1e1e; }
+
+  .qa-q-mark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--gold);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .qa-q-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--light);
+    flex: 1;
+    line-height: 1.45;
+  }
+
+  .qa-chevron {
+    font-size: 11px;
+    color: var(--muted);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .qa-item.open .qa-chevron { transform: rotate(180deg); }
+
+  .qa-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .qa-answer-inner {
+    padding: 20px 28px 24px 70px;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #b0aba0;
+    border-top: 1px solid #1e1e1e;
+    background: rgba(200,168,75,0.03);
+  }
+
+  .qa-answer-inner strong { color: var(--light); }
+
+  /* ── PHYSIO SECTION ── */
+  .physio-hero {
+    background: linear-gradient(135deg, #080d12, #0a0f18);
+    border: 1px solid rgba(58,123,213,0.2);
+    padding: 40px 8vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .physio-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 100% 50%, rgba(58,123,213,0.08), transparent);
+    pointer-events: none;
+  }
+
+  .physio-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(58,123,213,0.12);
+    border: 1px solid rgba(58,123,213,0.3);
+    padding: 8px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 20px;
+  }
+
+  .physio-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 5vw, 60px);
+    letter-spacing: 0.04em;
+    color: var(--blue);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .physio-intro {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #7a9fd4;
+    max-width: 680px;
+    margin-bottom: 0;
+  }
+
+  .physio-intro strong { color: var(--light); }
+
+  /* ── PHYSIO CARDS ── */
+  .physio-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .physio-card {
+    background: rgba(10,18,28,0.8);
+    border: 1px solid rgba(58,123,213,0.15);
+    border-left: 4px solid var(--blue);
+    padding: 26px 30px;
+  }
+
+  .physio-card-header {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .physio-card-icon { font-size: 24px; flex-shrink: 0; }
+
+  .physio-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: var(--blue);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .physio-card-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(58,123,213,0.5);
+  }
+
+  .physio-card-body {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #7a9fd4;
+  }
+
+  .physio-card-body strong { color: var(--light); }
+
+  .physio-card-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .physio-card-body ul li {
+    padding-left: 18px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .physio-card-body ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: rgba(58,123,213,0.5);
+    font-size: 12px;
+  }
+
+  .physio-card-body ul li strong { color: var(--light); }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border: 1px solid;
+    padding: 18px 22px;
+    margin: 16px 0;
+    display: flex;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .callout strong { color: var(--light); }
+  .callout .c-icon { font-size: 20px; flex-shrink: 0; }
+  .callout-gold   { border-color: rgba(200,168,75,0.3); background: rgba(200,168,75,0.06); color: #c8b870; }
+  .callout-blue   { border-color: rgba(58,123,213,0.3); background: rgba(58,123,213,0.06); color: #7a9fd4; }
+  .callout-green  { border-color: rgba(46,158,107,0.3); background: rgba(46,158,107,0.06); color: #90c8a8; }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .image-cues { grid-template-columns: 1fr; }
+    .qa-answer-inner { padding: 16px 20px; }
+    .module-footer { flex-direction: column; }
+    .physio-hero { padding: 32px 6vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg-text">PRO TIPS</div>
+  <p class="breadcrumb">Module 2 — Teaching 101 &nbsp;›&nbsp; <span>Pro Tips & Q&A</span></p>
+  <h1 class="hero-title">
+    <em>Pro Tips</em><br>& Q&A
+  </h1>
+  <p class="hero-sub">
+    The things that separate a good class from a great one. <strong>Hard-won instructor wisdom</strong>, the most common questions new instructors ask, and a dedicated section for physiotherapists ready to take their sessions further.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot"></span> All Instructors</div>
+    <div class="meta-pill"><span class="dot"></span> Physio Section Included</div>
+    <div class="meta-pill"><span class="dot"></span> Q&A</div>
+  </div>
+</section>
+
+<!-- ══════════ PRO TIPS ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--gold);">Pro Tips — For Every Instructor</p>
+
+  <div class="pro-tips">
+
+    <div class="pro-tip tip-blue">
+      <div class="tip-icon">💧</div>
+      <div class="tip-content">
+        <div class="tip-title">Water Breaks — Insert Freely, Remind Often</div>
+        <div class="tip-body">
+          Insert water breaks any time during the session when you feel the class needs one — don't wait for a designated moment. <strong>This population is particularly prone to dehydration</strong>, and many PD clients experience reduced thirst sensation, meaning they genuinely won't feel thirsty even when they need water. Friendly reminders about the importance of staying hydrated — even when not thirsty — are an essential part of every class. Make it habit: "Let's grab some water before we keep going."
+        </div>
+      </div>
+    </div>
+
+    <div class="pro-tip tip-gold">
+      <div class="tip-icon">🎵</div>
+      <div class="tip-content">
+        <div class="tip-title">Music Is a Therapeutic Tool — Use It Intentionally</div>
+        <div class="tip-body">
+          Music is a <strong>great motivator</strong> — and for Parkinson's clients specifically, it does far more than set the mood. Rhythm externally cues movement, which directly addresses the internal timing deficits that PD creates. <strong>Have fun building your playlists</strong>, but also use them strategically: higher BPM for high-intensity circuits, slower rhythm for cool-down and release, strong beat for boxing combinations. The right song at the right moment can transform a struggling client. The Boxing 4 Health Spotify playlist is a great starting point — build on it and make it yours.
+        </div>
+      </div>
+    </div>
+
+    <div class="pro-tip tip-red">
+      <div class="tip-icon">🎯</div>
+      <div class="tip-content">
+        <div class="tip-title">Technique Revisions — Maximum 2–3 Per Class</div>
+        <div class="tip-body">
+          Resist the urge to correct everything you see. <strong>Limit technique revisions to 2–3 per class</strong> — any more overwhelms clients and actually reduces how much they retain. Choose the corrections that matter most for safety or therapeutic benefit and focus there. The best time to deliver a technique revision is <strong>during a water break</strong> — the class momentum stays intact, clients are standing still and listening, and the lesson lands without interruption. Pick your moments wisely.
+        </div>
+      </div>
+    </div>
+
+    <div class="pro-tip tip-green">
+      <div class="tip-icon">🖼️</div>
+      <div class="tip-content">
+        <div class="tip-title">Use Images, Not Instructions — Fewer Words, Bigger Impact</div>
+        <div class="tip-body">
+          The fewer words used, the better. <strong>Try to convey an image in the student's mind</strong> rather than a technical explanation. A vivid mental image triggers the movement more naturally and completely than a list of instructions ever will.
+        </div>
+
+        <div class="image-cues" style="margin-top:16px;">
+          <div class="image-cue-col bad">
+            <h4>❌ Too Many Words</h4>
+            <div class="cue-example">
+              <div class="cue-row"><span class="cue-mark">—</span><span>"We want high knee raises with the arms alternating reaching upwards in opposition to the leg."</span></div>
+              <div class="cue-row"><span class="cue-mark">—</span><span>"Make sure your elbow is at 90 degrees and your fist is at shoulder height as you extend the opposite leg."</span></div>
+              <div class="cue-row"><span class="cue-mark">—</span><span>"Keep your core engaged and your shoulders back while alternating the knee drive."</span></div>
+            </div>
+          </div>
+          <div class="image-cue-col good">
+            <h4>✓ Image-Based Cues</h4>
+            <div class="cue-example">
+              <div class="cue-row"><span class="cue-mark">→</span><span><em>"Climb a ladder!"</em></span></div>
+              <div class="cue-row"><span class="cue-mark">→</span><span><em>"Walk through deep snow!"</em></span></div>
+              <div class="cue-row"><span class="cue-mark">→</span><span><em>"Reach for the ceiling!"</em></span></div>
+              <div class="cue-row"><span class="cue-mark">→</span><span><em>"March like you own the room!"</em></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-body" style="margin-top:12px;">
+          Build your own library of image cues over time. The ones that make your clients laugh, light up, or suddenly move differently are the ones worth keeping.
+        </div>
+      </div>
+    </div>
+
+    <div class="pro-tip tip-teal">
+      <div class="tip-icon">🔄</div>
+      <div class="tip-content">
+        <div class="tip-title">Teach from Multiple Angles</div>
+        <div class="tip-body">
+          Don't just stand at the front. <strong>Move around the room and teach from different angles</strong> — in front, beside, behind, and from within the group. Seeing a movement from the side reveals the trunk rotation that's invisible from the front. Seeing it from behind shows foot position and hip alignment. Each angle reveals a different component of the movement, and different clients respond to different views. Varying your position also keeps clients visually engaged and aware — they can't zone out if you might appear next to them at any moment.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ Q&A ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--gold);">Common Questions</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:640px;margin-bottom:28px;line-height:1.75;">
+    Questions every new B4H instructor eventually asks — answered clearly.
+  </p>
+
+  <div class="qa-list">
+
+    <div class="qa-item" onclick="toggleQA(this)">
+      <div class="qa-question">
+        <div class="qa-q-mark">Q</div>
+        <div class="qa-q-text">How do I know if students are working hard enough?</div>
+        <div class="qa-chevron">▼</div>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          Two reliable indicators: <strong>heart rate and the talk test.</strong>
+          <br><br>
+          Check their target heart rate periodically using the 10-second count and THR chart — if they're below 70%, they need to push harder. The second test is simpler: <strong>if they can carry on a full, comfortable conversation during class, they aren't working hard enough.</strong> They should be able to say short sentences, but sustained conversation should feel difficult.
+          <br><br>
+          Sweat is a useful indicator for some clients — but not all. PD clients may have altered sweating responses, and some medications affect perspiration, so don't rely on sweat alone as your gauge. <strong>Heart rate is your most objective measure — use it.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item" onclick="toggleQA(this)">
+      <div class="qa-question">
+        <div class="qa-q-mark">Q</div>
+        <div class="qa-q-text">How do I know if a student is working too hard?</div>
+        <div class="qa-chevron">▼</div>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          This is primarily the student's responsibility — but they need <strong>constant reminders to listen to their body.</strong> Many clients are motivated to push through discomfort, which is admirable but can cross a line.
+          <br><br>
+          Watch for these patterns over time: <strong>if a client is consistently tired after class, frequently needs naps, or finds themselves more fatigued than usual in the days following a session</strong> — they are working too hard. It's cumulative, not just about any one class.
+          <br><br>
+          If you notice a client who can't keep up over multiple sessions — and it's getting worse rather than better — <strong>don't try to manage this alone. Speak to your head instructor and flag it.</strong> There may be a medication change, a progression in symptoms, or another factor at play that needs professional attention.
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item" onclick="toggleQA(this)">
+      <div class="qa-question">
+        <div class="qa-q-mark">Q</div>
+        <div class="qa-q-text">Do functional exercises always have to come before boxing?</div>
+        <div class="qa-chevron">▼</div>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          No — <strong>you can absolutely start with boxing.</strong> The Fighter and Champion templates are frameworks and starting points, not rigid rules. You can mix up the order, combine elements, run them simultaneously as circuit stations, or experiment with whatever sequence works best for your group on a given day.
+          <br><br>
+          The only non-negotiables are the <strong>warm-up before intensity</strong> and the <strong>cool-down after intensity.</strong> Everything in between is yours to shape. <strong>Bring your flair to it</strong> — that's what makes your class yours.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ PHYSIO SECTION ══════════ -->
+<div class="physio-hero reveal">
+  <div class="physio-badge">🩺 Clinical Edition</div>
+  <div class="physio-title">For Physiotherapists<br>Running B4H Classes</div>
+  <p class="physio-intro">
+    Your clinical training gives you tools that most fitness instructors simply don't have. <strong>This section is for you</strong> — ways to go deeper, assess more precisely, challenge more intentionally, and bring your full professional expertise into the B4H framework.
+  </p>
+
+  <div class="physio-cards">
+
+    <div class="physio-card">
+      <div class="physio-card-header">
+        <div class="physio-card-icon">📊</div>
+        <div>
+          <div class="physio-card-title">Formal Movement Assessments Within Class</div>
+          <div class="physio-card-tag">Clinical Assessment · Baseline & Progress</div>
+        </div>
+      </div>
+      <div class="physio-card-body">
+        You can embed validated outcome measures directly into your sessions without disrupting the flow. Use the beginning or end of class to gather data that gives you a clinical picture of each client over time.
+        <ul>
+          <li><strong>Timed Up and Go (TUG)</strong> — a quick functional mobility marker. Run it at intake and every 4–6 weeks to track progress objectively.</li>
+          <li><strong>10-Metre Walk Test</strong> — gait speed, stride length, and arm swing observation during warm-up walking can be done informally but consistently.</li>
+          <li><strong>Berg Balance Scale (selected items)</strong> — embed relevant balance tasks into your circuit stations and observe clinically while instructing.</li>
+          <li><strong>Functional Reach Test</strong> — a simple overhead reach or lateral reach during warm-up gives you a repeatable balance proxy.</li>
+          <li>Use your own clinical eye during every class. You notice things fitness instructors miss — <strong>document what you see and use it to adapt your programming.</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="physio-card">
+      <div class="physio-card-header">
+        <div class="physio-card-icon">🧠</div>
+        <div>
+          <div class="physio-card-title">Advanced Dual-Task Programming</div>
+          <div class="physio-card-tag">Cognitive Load · Motor-Cognitive Challenge</div>
+        </div>
+      </div>
+      <div class="physio-card-body">
+        You understand dual-task interference in PD at a neurological level. Use that knowledge to design more sophisticated cognitive-motor challenges that standard instructors wouldn't think to include.
+        <ul>
+          <li><strong>Grade the cognitive load deliberately.</strong> Start with simple automatic tasks (humming) during movement, then progress to demanding tasks (serial 7s, verbal fluency) as clients improve.</li>
+          <li><strong>Introduce task-switching.</strong> Have clients alternate between two different cognitive tasks mid-circuit — this taxes executive function in a way that directly mirrors real-world PD challenges.</li>
+          <li><strong>Use response inhibition tasks.</strong> "Punch when I say go, stop when I clap" — stop-signal paradigms challenge the basal ganglia specifically.</li>
+          <li><strong>Design obstacle courses</strong> using cones, floor markers, and stepping patterns that require visual scanning, decision-making, and motor execution simultaneously.</li>
+          <li>Progress clients individually based on their cognitive profile — some will fatigue cognitively before physically. <strong>Track both.</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="physio-card">
+      <div class="physio-card-header">
+        <div class="physio-card-icon">🦵</div>
+        <div>
+          <div class="physio-card-title">Targeted Postural & Gait Interventions</div>
+          <div class="physio-card-tag">Biomechanics · Freezing · Festination</div>
+        </div>
+      </div>
+      <div class="physio-card-body">
+        Your biomechanical eye lets you identify and address specific gait and postural deviations that a fitness instructor would miss entirely. Use this.
+        <ul>
+          <li><strong>Festination management:</strong> Incorporate visual cues (floor tape, stepping targets) and auditory cues (metronome, beat of music) specifically calibrated to interrupt festination patterns.</li>
+          <li><strong>Freezing of Gait (FOG) strategies:</strong> Embed rhythm-based cueing, visual floor targets, attentional strategies, and large stepping practice into every session for clients with FOG history.</li>
+          <li><strong>Camptocormia and trunk flexion:</strong> You can prescribe targeted thoracic extension and hip flexor release work in the cool-down that goes well beyond standard stretching.</li>
+          <li><strong>Asymmetric presentation:</strong> PD is asymmetric. Assess which side is more affected and design unilateral exercises that load the weaker side intentionally.</li>
+          <li>Introduce <strong>perturbation training</strong> — controlled balance challenges with a safety spotter that push reactive postural responses. This is clinical-grade fall prevention embedded in a boxing class.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="physio-card">
+      <div class="physio-card-header">
+        <div class="physio-card-icon">💊</div>
+        <div>
+          <div class="physio-card-title">Working Around Medication Timing (ON/OFF Cycles)</div>
+          <div class="physio-card-tag">Levodopa · ON Period · Clinical Timing</div>
+        </div>
+      </div>
+      <div class="physio-card-body">
+        You understand levodopa pharmacokinetics in a way that gives you a significant clinical advantage. Use it to optimise each client's session.
+        <ul>
+          <li><strong>Schedule class timing around ON periods</strong> wherever possible. Speak to clients about when their medication peaks and structure the high-intensity portion of class accordingly.</li>
+          <li>For clients in an OFF period at class start: <strong>use the warm-up as a longer, gentler activation phase</strong> and hold the high-intensity work until you observe the medication beginning to take effect.</li>
+          <li><strong>Educate clients on dose timing</strong> relative to exercise — many don't know that exercise itself affects dopamine availability and can complement their medication.</li>
+          <li>Be aware of <strong>dyskinesia</strong> — if a client is visibly overmedicated (involuntary movements), reduce intensity demands and adapt accordingly rather than pushing through.</li>
+          <li>Document ON/OFF patterns across sessions. Over time you'll build a clinical picture that helps you predict each client's best and most challenging windows.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="physio-card">
+      <div class="physio-card-header">
+        <div class="physio-card-icon">🔬</div>
+        <div>
+          <div class="physio-card-title">Progressive Overload — The Clinical Way</div>
+          <div class="physio-card-tag">Programming · Periodisation · Individual Progression</div>
+        </div>
+      </div>
+      <div class="physio-card-body">
+        You have the clinical training to apply proper progressive overload principles to a group exercise setting — something that separates a physio-led class from a fitness-led one.
+        <ul>
+          <li><strong>Keep individual progress notes.</strong> Track what each client is doing, what you modified, and where they struggled. Use this to design intentional progressions from session to session.</li>
+          <li>Apply the <strong>FITT principle</strong> (Frequency, Intensity, Time, Type) to individual clients within the group — increase one variable at a time, not all at once.</li>
+          <li><strong>Introduce load progressions</strong> with bands, light weights, and balance instability (foam pads, balance boards) for clients who are ready. The online format uses bodyweight — your in-person setting gives you access to tools that make this richer.</li>
+          <li>Identify and name each client's <strong>primary impairment</strong> (rigidity, tremor, bradykinesia, postural instability) and design their circuit experience to target it most heavily.</li>
+          <li><strong>Communicate with their neurologist or GP</strong> where appropriate. You are qualified to do this. A physio-led B4H class that integrates with a client's broader clinical care is genuinely exceptional.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="physio-card">
+      <div class="physio-card-header">
+        <div class="physio-card-icon">🤝</div>
+        <div>
+          <div class="physio-card-title">Bring Your Creativity — This Is Your Canvas</div>
+          <div class="physio-card-tag">Clinical Creativity · Beyond the Template</div>
+        </div>
+      </div>
+      <div class="physio-card-body">
+        The B4H framework is a brilliant foundation. As a physiotherapist, <strong>you have the clinical knowledge to make it extraordinary.</strong> Don't limit yourself to the template — it's permission to start, not a ceiling to stay under.
+        <ul>
+          <li>Bring in techniques from <strong>LSVT BIG, PD Warrior, Nordic Walking, Tai Chi, or dance therapy</strong> if you're trained in them — they integrate beautifully with the B4H structure.</li>
+          <li>Design class themes around specific PD challenges — a "turn and balance" day, a "voice and face" day, a "reaching and amplitude" day — and go deep rather than broad.</li>
+          <li><strong>Use your hands clinically.</strong> Physios are uniquely skilled at hands-on facilitation. Use this during cool-down to provide proper myofascial release, joint mobilisation, or postural facilitation — not just massage ball rolling.</li>
+          <li>Share what works with the B4H instructor community. <strong>Your clinical innovations can raise the bar for every B4H class globally.</strong> Post in the Instructor Forum. Teach what you learn.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout callout-blue" style="margin-top:24px;">
+    <div class="c-icon">🩺</div>
+    <div><strong>You are not just a fitness instructor running a boxing class.</strong> You are a physiotherapist delivering evidence-based neurological rehabilitation inside a framework that clients love and show up for. That combination is rare, powerful, and genuinely life-changing for people with Parkinson's. Own it.</div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>Health & Safety</span></h2>
+    <p>Know what to watch for, how to respond, and how to keep every client safe every session.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: Health & Safety →</button>
+    <button class="btn btn-ghost">↩ Back to Cueing Students</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 }).observe(r);
+});
+
+function toggleQA(item) {
+  const answer = item.querySelector('.qa-answer');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.qa-item').forEach(q => {
+    q.classList.remove('open');
+    q.querySelector('.qa-answer').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+</script>
+</body>
+</html>

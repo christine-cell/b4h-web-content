@@ -1,0 +1,482 @@
+{
+  "program": "B4H Licensee Training Program",
+  "modules": [
+    {
+      "slug": "module-1-parkinsons-101",
+      "title": "Module 1 \u00b7 Parkinson's 101",
+      "wixTitle": "Module 1- Parkinson's 101",
+      "lessons": [
+        {
+          "slug": "parkinsons-101",
+          "title": "Parkinson's 101",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module1_intro.html",
+          "wixTextLen": 137,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "f7416bcb-662a-4926-8072-8a31417ed2fc"
+        },
+        {
+          "slug": "lesson-1--parkinsons-symptoms",
+          "title": "Lesson 1- Parkinsons Symptoms",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_lesson1_symptoms.html",
+          "wixTextLen": 4667,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "78d0f3e2-e837-408b-998b-1db38b96b224"
+        },
+        {
+          "slug": "action--freezing-video",
+          "title": "ACTION- Freezing Video",
+          "type": "action-video",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 509,
+          "videos": [
+            "MIAFilOOloU",
+            "wrxHJaPulgc"
+          ],
+          "externalLinks": [],
+          "stepId": "8765efd9-0857-4bac-a9d5-db6b5aaad1f8"
+        },
+        {
+          "slug": "lesson-2--the-5-different-stages",
+          "title": "Lesson 2- The 5 Different Stages",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_lesson2_stages (1).html",
+          "wixTextLen": 2482,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "9cf17afa-7fd1-449d-a09a-fec3cb42d0e6"
+        },
+        {
+          "slug": "lesson-3--how-do-you-determine-the-stages",
+          "title": "Lesson 3- How do you determine the stages?",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_lesson2_stages (1).html",
+          "wixTextLen": 1143,
+          "videos": [],
+          "externalLinks": [
+            {
+              "text": "Tina@boxing4health.com",
+              "href": "mailto:Tina@boxing4health.com"
+            }
+          ],
+          "stepId": "2ba89f62-03ac-40ba-8781-698818841f35"
+        },
+        {
+          "slug": "lesson-4--assessments",
+          "title": "Lesson 4- Assessments(ONLY for licensees)",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_lesson4_assessments.html",
+          "wixTextLen": 2882,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "719e5398-2e9e-4e5e-9edc-88ffd0d439d0"
+        },
+        {
+          "slug": "action--assessment-video",
+          "title": "ACTION- Assessment video(ONLY for licensees)",
+          "type": "action-video",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 278,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "3c1f5d89-b89a-4b39-bf69-fb0a38cd8a88"
+        },
+        {
+          "slug": "lesson-5--seniors-spouses",
+          "title": "Lesson 5- Seniors & Spouses",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_lesson5_seniors_spouses.html",
+          "wixTextLen": 50,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "befdf5b9-fc02-4652-be0b-bc0634128429"
+        },
+        {
+          "slug": "start-up-equipment",
+          "title": "Start Up Equipment",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 919,
+          "videos": [],
+          "externalLinks": [
+            {
+              "text": "christine@boxing4health.com",
+              "href": "mailto:christine@boxing4health.com"
+            },
+            {
+              "text": "tina@boxing4health.com",
+              "href": "mailto:tina@boxing4health.com"
+            }
+          ],
+          "stepId": "e9d7846f-599a-4a7e-9622-b4976a3c440a"
+        }
+      ]
+    },
+    {
+      "slug": "module-2-class-breakdown",
+      "title": "Module 2 \u00b7 Class Breakdown",
+      "wixTitle": "Module 2- Class Breakdown",
+      "lessons": [
+        {
+          "slug": "module-2--class-breakdown",
+          "title": "Module 2- Class Breakdown",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 1111,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "0b00c596-00d5-413b-857e-3e5b8f225c59"
+        },
+        {
+          "slug": "why-boxing",
+          "title": "Why Boxing?",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_why_boxing.html",
+          "wixTextLen": 970,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "5c27e2eb-8a59-4ba2-bcd5-4e878ce23915"
+        },
+        {
+          "slug": "action--boxing-101",
+          "title": "ACTION- Boxing 101",
+          "type": "action-video",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 907,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "cb6ae8f4-fe1e-4104-8bb7-138c2f5e9de5"
+        },
+        {
+          "slug": "functional-exercises",
+          "title": "Functional Exercises",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_functional_exercises.html",
+          "wixTextLen": 2498,
+          "videos": [],
+          "externalLinks": [
+            {
+              "text": "Christine@boxing4health.com",
+              "href": "mailto:Christine@boxing4health.com"
+            }
+          ],
+          "stepId": "d8dd9fc5-888b-4275-86cc-51ae1d56aa8e"
+        },
+        {
+          "slug": "warm-up",
+          "title": "Warm Up",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 589,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "678bbe71-a149-48e6-a46e-7588a8ecdeaa"
+        },
+        {
+          "slug": "cool-down",
+          "title": "Cool Down",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 916,
+          "videos": [],
+          "externalLinks": [
+            {
+              "text": "www.boxing4health.comYTU Therapy Balls | Boxing 4 HealthTherapy balls to treat tight, sore muscles and fascia",
+              "href": "https://www.boxing4health.com/product-page/therapy-balls"
+            },
+            {
+              "text": "www.boxing4health.comAlpha Ball | Boxing 4 HealthA Therapy ball to relieve tight, sore muscles and fascia especially in larger areas like glutes, thighs and hips.",
+              "href": "https://www.boxing4health.com/product-page/alpha-ball"
+            }
+          ],
+          "stepId": "af6c3a00-0730-4fdc-a76a-30c3ab78c832"
+        },
+        {
+          "slug": "pd-warrior",
+          "title": "PD Warrior",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_pd_warrior.html",
+          "wixTextLen": 2175,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "b13cb282-577b-425a-9602-b65389c8ac56"
+        },
+        {
+          "slug": "pd-warrior-exercises--action",
+          "title": "PD warrior Exercises- ACTION",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_pd_warrior_exercises.html",
+          "wixTextLen": 6292,
+          "videos": [
+            "40Py_LXA-kQ",
+            "10Ybc-q-AaE",
+            "VhULAtOM24U",
+            "kw3XHS2swTE",
+            "DjWv0vljlzw",
+            "BeJMw-lkC9o",
+            "EM-VzOs3Xz8",
+            "Q9EWH7yaNmI",
+            "JBC65ii_IAM",
+            "3fo1INxGGiI"
+          ],
+          "externalLinks": [
+            {
+              "text": "TINA@boxing4health.com",
+              "href": "mailto:TINA@boxing4health.com"
+            }
+          ],
+          "stepId": "69c9cdb1-5ba9-4331-b5f7-16ae21b34258"
+        },
+        {
+          "slug": "teaching-101--vigor",
+          "title": "Teaching 101- VIGOR",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_vigor.html",
+          "wixTextLen": 4485,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "c928fded-bfa1-4e05-93bd-7017acf04a0a"
+        },
+        {
+          "slug": "how-do-i-set-up-for-a-class",
+          "title": "How do I set up for a class?",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_class_setup (2).html",
+          "wixTextLen": 2040,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "64929190-69ba-408c-9bb0-b53bde7d639c"
+        },
+        {
+          "slug": "fighter-class-template",
+          "title": "FIGHTER Class Template",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_fighter_template.html",
+          "wixTextLen": 3457,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "eb0850f8-c113-4307-8f94-65e5703439a3"
+        },
+        {
+          "slug": "champion-class-template",
+          "title": "CHAMPION Class Template",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_champion_template.html",
+          "wixTextLen": 2937,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "a06e2f22-ca0d-4df5-9198-422ef7c2152c"
+        },
+        {
+          "slug": "cueing-students",
+          "title": "Cueing Students",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_cueing_students.html",
+          "wixTextLen": 1855,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "f06f7c40-a397-4e55-a265-4331241f7bd8"
+        },
+        {
+          "slug": "pro-tips-qa",
+          "title": "PRO tips & Q&A",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_sample_circuits.html",
+          "wixTextLen": 2793,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "6492e5f1-1253-4486-b794-c017470bc9fd"
+        },
+        {
+          "slug": "sample-circuits",
+          "title": "Sample Circuits",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_sample_circuits.html",
+          "wixTextLen": 2793,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "0290ba13-0bcd-435a-ae2b-deabd074a0cc"
+        },
+        {
+          "slug": "health-safety",
+          "title": "Health & Safety",
+          "type": "lesson",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_health_safety.html",
+          "wixTextLen": 1336,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "bb496eb3-b8ad-4a2a-ac56-93585e785b03"
+        },
+        {
+          "slug": "quiz--its-time-to-test-your-knowledge",
+          "title": "QUIZ- It's time to test your knowledge!",
+          "type": "quiz",
+          "source": "enhanced",
+          "enhancedFile": "b4h_module2_quiz.html",
+          "wixTextLen": 18,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "d131cb20-fde2-47da-a82c-388b08e6ef54"
+        }
+      ]
+    },
+    {
+      "slug": "practical-steps",
+      "title": "Practical Steps",
+      "wixTitle": "Practical Steps- Your almost there",
+      "lessons": [
+        {
+          "slug": "practical-steps--your-almost-there",
+          "title": "Practical Steps- Your almost there",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 962,
+          "videos": [],
+          "externalLinks": [
+            {
+              "text": "TINA@BOXING4HEALTH.com",
+              "href": "mailto:TINA@BOXING4HEALTH.com"
+            },
+            {
+              "text": "tina@boxing4health.com",
+              "href": "mailto:tina@boxing4health.com"
+            }
+          ],
+          "stepId": "b4181f1d-93f2-4fb2-b047-e277c6403059"
+        }
+      ]
+    },
+    {
+      "slug": "learning-resources",
+      "title": "Learning Resources",
+      "wixTitle": "Learning Resources",
+      "lessons": [
+        {
+          "slug": "learning-resources",
+          "title": "Learning Resources",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 71,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "cdcd877f-d00a-4273-bd6d-48115c9c9400"
+        },
+        {
+          "slug": "volunteer-orientation",
+          "title": "Volunteer Orientation",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 2200,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "ccb827bb-5191-429a-acce-3c2b60a4d791"
+        },
+        {
+          "slug": "volunteer-forms",
+          "title": "Volunteer Forms",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 135,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "23a811a3-9d21-4fa6-8ed2-95dfaa607a5f"
+        },
+        {
+          "slug": "dementia-101",
+          "title": "Dementia 101",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 321,
+          "videos": [],
+          "externalLinks": [
+            {
+              "text": "https://dementiasolutions.ca/landing-page-free-course/",
+              "href": "https://dementiasolutions.ca/landing-page-free-course/"
+            }
+          ],
+          "stepId": "b5e81435-6c14-4d8d-961a-c5c0d29b0ea9"
+        },
+        {
+          "slug": "class-tools",
+          "title": "Class Tools",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 784,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "14e318b2-20dd-4343-97c5-237682821a42"
+        }
+      ]
+    },
+    {
+      "slug": "admin-forms",
+      "title": "Admin Forms",
+      "wixTitle": "Admin Forms",
+      "lessons": [
+        {
+          "slug": "admin-forms",
+          "title": "Admin Forms",
+          "type": "content",
+          "source": "wix",
+          "enhancedFile": null,
+          "wixTextLen": 773,
+          "videos": [],
+          "externalLinks": [],
+          "stepId": "d6580207-fef4-46ae-946b-c4b247f8c9ae"
+        }
+      ]
+    }
+  ],
+  "extraEnhancedPages": [
+    {
+      "file": "b4h_lesson3b_intake.html",
+      "suggest": "Module 1 \u2014 client intake"
+    },
+    {
+      "file": "b4h_module2_champion_plus.html",
+      "suggest": "Module 2 \u2014 Champion Plus program"
+    },
+    {
+      "file": "b4h_module2_pro_tips.html",
+      "suggest": "Module 2 \u2014 Pro tips"
+    },
+    {
+      "file": "pd-constipation-education.html",
+      "suggest": "Resources \u2014 Gut health / Mediterranean diet"
+    }
+  ]
+}

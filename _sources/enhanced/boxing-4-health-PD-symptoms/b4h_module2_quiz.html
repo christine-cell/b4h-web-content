@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Knowledge Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 8vw;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 30%, rgba(232,39,26,0.09) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 50% at 20% 80%, rgba(200,168,75,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(58,123,213,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* animated rings */
+  .rings {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(232,39,26,0.06);
+    animation: expandRing 6s linear infinite;
+  }
+
+  .ring:nth-child(1) { width: 300px; height: 300px; animation-delay: 0s; }
+  .ring:nth-child(2) { width: 500px; height: 500px; animation-delay: 2s; }
+  .ring:nth-child(3) { width: 700px; height: 700px; animation-delay: 4s; }
+
+  @keyframes expandRing {
+    0%   { opacity: 0.4; transform: scale(0.9); }
+    100% { opacity: 0;   transform: scale(1.1); }
+  }
+
+  /* ── CONTENT ── */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .module-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.2s ease forwards;
+  }
+
+  .module-tag span { color: var(--red); }
+
+  .trophy {
+    font-size: 72px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.4s ease forwards, float 4s 1s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 10vw, 120px);
+    line-height: 0.88;
+    letter-spacing: 0.03em;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.6s ease forwards;
+  }
+
+  .hero-title em { color: var(--red); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(17px, 2vw, 20px);
+    line-height: 1.85;
+    color: #b0aba0;
+    max-width: 580px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.8s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  /* ── TWO PATHS ── */
+  .paths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    width: 100%;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.6s 1s ease forwards;
+  }
+
+  .path-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 30px 28px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .path-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .path-card.ottawa {
+    border-top: 4px solid var(--red);
+  }
+
+  .path-card.virtual {
+    border-top: 4px solid var(--blue);
+  }
+
+  .path-card:hover.ottawa { border-color: var(--red); }
+  .path-card:hover.virtual { border-color: var(--blue); }
+
+  .path-icon { font-size: 32px; margin-bottom: 14px; }
+
+  .path-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .path-card.ottawa .path-type { color: var(--red); }
+  .path-card.virtual .path-type { color: var(--blue); }
+
+  .path-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+
+  .path-desc {
+    font-size: 15px;
+    color: #a8a398;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .path-desc strong { color: var(--light); }
+
+  .path-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    padding: 10px 16px;
+    border: 1px solid;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .path-card.ottawa .path-email {
+    color: var(--red);
+    border-color: rgba(232,39,26,0.35);
+    background: rgba(232,39,26,0.07);
+  }
+
+  .path-card.ottawa .path-email:hover {
+    background: rgba(232,39,26,0.15);
+  }
+
+  .path-card.virtual .path-email {
+    color: var(--blue);
+    border-color: rgba(58,123,213,0.35);
+    background: rgba(58,123,213,0.07);
+  }
+
+  .path-card.virtual .path-email:hover {
+    background: rgba(58,123,213,0.15);
+  }
+
+  /* ── GOOD LUCK ── */
+  .goodluck {
+    opacity: 0;
+    animation: fadeUp 0.6s 1.2s ease forwards;
+    width: 100%;
+  }
+
+  .goodluck-inner {
+    background: linear-gradient(135deg, rgba(200,168,75,0.06), rgba(200,168,75,0.02));
+    border: 1px solid rgba(200,168,75,0.2);
+    padding: 32px 36px;
+    text-align: center;
+  }
+
+  .goodluck-words {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .gl-word {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .gl-word:nth-child(1) { animation-delay: 1.4s; }
+  .gl-word:nth-child(2) { animation-delay: 1.6s; }
+  .gl-word:nth-child(3) { animation-delay: 1.8s; }
+  .gl-word:nth-child(4) { animation-delay: 2.0s; }
+  .gl-word:nth-child(5) { animation-delay: 2.2s; }
+
+  .gl-dot {
+    color: var(--red);
+    font-size: 32px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .goodluck-sign {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    opacity: 0;
+    animation: fadeUp 0.5s 2.4s ease forwards;
+  }
+
+  .goodluck-sign span { color: var(--red); }
+
+  /* ── COMPLETION STATS ── */
+  .completion-strip {
+    display: flex;
+    gap: 0;
+    margin-bottom: 40px;
+    width: 100%;
+    opacity: 0;
+    animation: fadeUp 0.6s 1.4s ease forwards;
+  }
+
+  .stat-box {
+    flex: 1;
+    padding: 16px;
+    text-align: center;
+    background: var(--charcoal);
+    border: 1px solid #1e1e1e;
+  }
+
+  .stat-box + .stat-box { border-left: none; }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .stat-box:nth-child(1) .stat-num { color: var(--red); }
+  .stat-box:nth-child(2) .stat-num { color: var(--gold); }
+  .stat-box:nth-child(3) .stat-num { color: var(--green); }
+  .stat-box:nth-child(4) .stat-num { color: var(--blue); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .paths { grid-template-columns: 1fr; }
+    .completion-strip { flex-wrap: wrap; }
+    .stat-box { flex: 1 1 45%; }
+    .stat-box + .stat-box { border-left: 1px solid #1e1e1e; }
+    .stat-box:nth-child(3) { border-top: none; }
+    .goodluck-words { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+  <!-- Animated rings -->
+  <div class="rings">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+  </div>
+
+  <div class="hero-content">
+
+    <div class="module-tag">Module 2 — Class Breakdown &nbsp;›&nbsp; <span>Knowledge Quiz</span></div>
+
+    <div class="trophy">🏆</div>
+
+    <h1 class="hero-title">
+      You Made<br>It <em>This Far.</em>
+    </h1>
+
+    <p class="hero-sub">
+      You've completed the B4H Instructor Training. <strong>Now it's time to put your knowledge to the test.</strong> The quiz covers Parkinson's 101, class structure, safety, cueing, and everything in between. If there's an area you're unsure about, this is your chance to find out — and go back and revisit before certification.
+    </p>
+
+    <!-- Completion stats -->
+    <div class="completion-strip">
+      <div class="stat-box">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Modules Complete</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">17</div>
+        <div class="stat-label">Lessons Covered</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Quiz Remaining</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">🥊</div>
+        <div class="stat-label">Ready to Go</div>
+      </div>
+    </div>
+
+    <!-- Two paths -->
+    <div class="paths">
+
+      <div class="path-card ottawa">
+        <div class="path-icon">📍</div>
+        <div class="path-type">Ottawa Based</div>
+        <div class="path-title">In-Person Quiz at the Gym</div>
+        <div class="path-desc">
+          Ottawa-based instructors take their quiz <strong>in person at the gym.</strong> Reach out to Tina to schedule a time that works for you.
+        </div>
+        <a class="path-email" href="mailto:tina@boxing4health.com">
+          ✉ tina@boxing4health.com
+        </a>
+      </div>
+
+      <div class="path-card virtual">
+        <div class="path-icon">💻</div>
+        <div class="path-type">Virtual Instructor</div>
+        <div class="path-title">Quiz Arranged Remotely</div>
+        <div class="path-desc">
+          Virtual instructors outside Ottawa can arrange their quiz online. Reach out to Christine and she'll set up a time with you.
+        </div>
+        <a class="path-email" href="mailto:christine@boxing4health.com">
+          ✉ christine@boxing4health.com
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Good luck -->
+    <div class="goodluck">
+      <div class="goodluck-inner">
+        <div class="goodluck-words">
+          <span class="gl-word">Good</span>
+          <span class="gl-word">Luck</span>
+          <span class="gl-dot">·</span>
+          <span class="gl-word">Break</span>
+          <span class="gl-word">a Leg</span>
+          <span class="gl-dot">·</span>
+          <span class="gl-word">You</span>
+          <span class="gl-word">Got</span>
+          <span class="gl-word">This</span>
+        </div>
+        <div class="goodluck-sign">— <span>The Boxing 4 Health Team</span> 🥊</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Lesson 1: Parkinson's Symptoms</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --blue: #3A7BD5;
+    --green: #2E9E6B;
+    --amber: #D4850A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 95% 50%, rgba(232,39,26,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 30% 50% at 5% 20%, rgba(200,168,75,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--red); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--red); font-style: normal; }
+
+  .hero-sub {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #a8a398;
+    max-width: 540px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 8px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+
+  /* ── SYMPTOM CATEGORY TABS ── */
+  .tabs-wrapper {
+    padding: 0 8vw;
+    border-bottom: 1px solid #222;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tabs-wrapper::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 18px 28px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .tab-btn:hover { color: var(--light); }
+  .tab-btn.active { color: var(--red); border-bottom-color: var(--red); }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 8vw;
+    border-top: 1px solid #1e1e1e;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── SYMPTOM CARDS ── */
+  .symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+
+  .symptom-card {
+    background: var(--charcoal);
+    padding: 32px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+    border: 1px solid #222;
+  }
+
+  .symptom-card:hover { background: #202020; }
+
+  .symptom-card .card-accent {
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    transition: height 0.3s ease;
+  }
+
+  .symptom-card:hover .card-accent,
+  .symptom-card.expanded .card-accent { height: 100%; }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .card-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .card-expand {
+    width: 24px; height: 24px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: transform 0.3s, border-color 0.2s, color 0.2s;
+  }
+
+  .symptom-card.expanded .card-expand {
+    transform: rotate(45deg);
+    border-color: var(--red);
+    color: var(--red);
+  }
+
+  .card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+
+  .card-subtitle {
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .card-body-inner {
+    padding-top: 16px;
+    border-top: 1px solid #2a2a2a;
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.75;
+    color: #a8a398;
+  }
+
+  .card-body-inner strong { color: var(--light); font-weight: 600; }
+
+  .instructor-tip {
+    margin-top: 14px;
+    padding: 12px 16px;
+    border-left: 2px solid var(--gold);
+    background: rgba(200,168,75,0.07);
+    font-size: 12px;
+    line-height: 1.65;
+    color: #c8a84b99;
+  }
+
+  .instructor-tip strong { color: var(--gold); }
+
+  /* ── COLOR VARIANTS ── */
+  .accent-red { background: rgba(232,39,26,0.15); }
+  .accent-blue { background: rgba(58,123,213,0.15); }
+  .accent-green { background: rgba(46,158,107,0.15); }
+  .accent-amber { background: rgba(212,133,10,0.15); }
+  .accent-gold { background: rgba(200,168,75,0.15); }
+  .accent-purple { background: rgba(130,80,200,0.15); }
+
+  .line-red { background: var(--red); }
+  .line-blue { background: var(--blue); }
+  .line-green { background: var(--green); }
+  .line-amber { background: var(--amber); }
+  .line-gold { background: var(--gold); }
+  .line-purple { background: #8250c8; }
+
+  /* ── WARNING BANNER ── */
+  .warning-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(232,39,26,0.08);
+    border: 1px solid rgba(232,39,26,0.25);
+    border-left: 4px solid var(--red);
+    padding: 20px 24px;
+    margin: 32px 0;
+  }
+
+  .warning-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+
+  .warning-text { font-size: 13px; line-height: 1.7; color: #c0bbb0; }
+  .warning-text strong { color: var(--light); }
+
+  /* ── NON-MOTOR GRID ── */
+  .nonmotor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .nm-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .nm-card:hover { background: #1e1e1e; }
+
+  .nm-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    transition: width 0.3s;
+  }
+
+  .nm-card:hover::after { width: 100%; }
+  .nm-card.after-red::after { background: var(--red); }
+  .nm-card.after-blue::after { background: var(--blue); }
+  .nm-card.after-green::after { background: var(--green); }
+  .nm-card.after-amber::after { background: var(--amber); }
+  .nm-card.after-gold::after { background: var(--gold); }
+  .nm-card.after-purple::after { background: #8250c8; }
+
+  .nm-icon { font-size: 24px; margin-bottom: 14px; }
+
+  .nm-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .nm-desc {
+    font-size: 12px;
+    line-height: 1.65;
+    color: #888;
+  }
+
+  .nm-tip {
+    display: none;
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--gold);
+    background: rgba(200,168,75,0.07);
+    font-size: 11px;
+    line-height: 1.6;
+    color: #c8a84b99;
+  }
+
+  .nm-tip.show { display: block; }
+  .nm-tip strong { color: var(--gold); }
+
+  /* ── QUIZ ── */
+  .quiz-wrapper {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    padding: 48px;
+  }
+
+  .quiz-progress {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+
+  .progress-dot {
+    height: 3px; flex: 1;
+    background: #2a2a2a;
+    transition: background 0.3s;
+  }
+
+  .progress-dot.active { background: var(--red); }
+  .progress-dot.done { background: #4CAF50; }
+
+  .quiz-q {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--light);
+    margin-bottom: 26px;
+    line-height: 1.45;
+  }
+
+  .quiz-q .q-num {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--red);
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  .quiz-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+
+  .quiz-opt {
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 14px 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: border-color 0.2s, background 0.2s;
+    font-size: 13px;
+    color: #c0bbb0;
+    text-align: left;
+  }
+
+  .quiz-opt:hover:not(.disabled) { border-color: #555; background: #333; color: var(--light); }
+  .quiz-opt.correct { border-color: #4CAF50; background: rgba(76,175,80,0.1); color: #81C784; }
+  .quiz-opt.incorrect { border-color: var(--red); background: rgba(232,39,26,0.1); color: #EF9A9A; }
+  .quiz-opt.disabled { cursor: default; }
+
+  .opt-letter {
+    width: 26px; height: 26px;
+    border: 1px solid #444;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .quiz-opt.correct .opt-letter { background: rgba(76,175,80,0.2); border-color: #4CAF50; }
+  .quiz-opt.incorrect .opt-letter { background: rgba(232,39,26,0.2); border-color: var(--red); }
+
+  .quiz-feedback {
+    display: none;
+    padding: 14px 18px;
+    border-left: 3px solid #4CAF50;
+    background: rgba(76,175,80,0.08);
+    font-size: 13px;
+    line-height: 1.65;
+    color: #a0cfa3;
+    margin-bottom: 18px;
+  }
+
+  .quiz-feedback.wrong { border-color: var(--red); background: rgba(232,39,26,0.08); color: #ef9a9a; }
+  .quiz-feedback.show { display: block; }
+
+  .quiz-nav { display: flex; gap: 12px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 26px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer; border: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  /* ── FLASHCARD GAME ── */
+  .flashcard-wrapper { perspective: 1200px; }
+
+  .flashcard-deck {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .flashcard {
+    width: 100%;
+    max-width: 560px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .flashcard.flipped { transform: rotateY(180deg); }
+
+  .card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    text-align: center;
+    border: 1px solid #2a2a2a;
+  }
+
+  .card-front { background: var(--charcoal); }
+
+  .card-back {
+    background: #1e1e1e;
+    transform: rotateY(180deg);
+    border-color: rgba(232,39,26,0.3);
+  }
+
+  .card-front .card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .card-front .card-term {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    line-height: 1;
+  }
+
+  .card-front .card-hint {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .card-back .card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+
+  .card-back .card-def {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #c0bbb0;
+    max-width: 440px;
+  }
+
+  .card-back .card-def strong { color: var(--light); }
+
+  .flashcard-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .fc-counter {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .fc-counter span { color: var(--light); }
+
+  .fc-progress {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .fc-dot {
+    width: 20px; height: 3px;
+    background: #2a2a2a;
+    transition: background 0.3s;
+  }
+
+  .fc-dot.current { background: var(--red); }
+  .fc-dot.seen { background: #4CAF50; }
+
+  /* ── MODULE FOOTER ── */
+  .module-footer {
+    padding: 64px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .footer-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .footer-text h2 span { color: var(--red); }
+  .footer-text p { font-size: 13px; color: var(--muted); max-width: 360px; line-height: 1.6; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 640px) {
+    .symptoms-grid { grid-template-columns: 1fr; }
+    .nonmotor-grid { grid-template-columns: 1fr; }
+    .quiz-wrapper { padding: 24px; }
+    .module-footer { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="breadcrumb">Module 1 — Parkinson's 101 &nbsp;›&nbsp; <span>Lesson 1</span></p>
+  <h1 class="hero-title">
+    Parkinson's<br>
+    <em>Symptoms</em>
+  </h1>
+  <p class="hero-sub">
+    Understanding how Parkinson's shows up in the body — and what it means for how you run your classes — is the foundation of safe, effective, transformative instruction.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot"></span> Lesson 1 of 7</div>
+    <div class="meta-pill"><span class="dot"></span> Est. 15 min</div>
+    <div class="meta-pill"><span class="dot"></span> Includes Flashcards + Quiz</div>
+  </div>
+</section>
+
+<!-- ── TABS (visual only) ── -->
+<div class="tabs-wrapper">
+  <button class="tab-btn active" onclick="scrollToSection('primary')">Primary Motor</button>
+  <button class="tab-btn" onclick="scrollToSection('secondary')">Secondary Motor</button>
+  <button class="tab-btn" onclick="scrollToSection('nonmotor')">Non-Motor</button>
+  <button class="tab-btn" onclick="scrollToSection('flashcards')">Flashcards</button>
+  <button class="tab-btn" onclick="scrollToSection('quiz')">Knowledge Check</button>
+</div>
+
+<!-- ══════════ PRIMARY MOTOR SYMPTOMS ══════════ -->
+<section class="section reveal" id="primary">
+  <p class="section-label">01 — Primary Motor Symptoms</p>
+  <p style="font-size:14px;color:#888;max-width:580px;margin-bottom:32px;line-height:1.7;">
+    These are the hallmark symptoms most people associate with Parkinson's. Tap any card to see what it means for your classes.
+  </p>
+
+  <div class="symptoms-grid">
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-red"></div>
+      <div class="card-top">
+        <div class="card-icon accent-red">🤲</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Primary Motor</div>
+      <div class="card-title">Tremor</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Shaking of one body part or multiple, typically <strong>more pronounced on one side</strong> of the body. Often most visible at rest and may reduce during purposeful movement.
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> Don't be alarmed by tremors during class — they often decrease once a client begins moving. Never comment on or draw attention to a client's tremor in front of others.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-blue"></div>
+      <div class="card-top">
+        <div class="card-icon accent-blue">🔒</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Primary Motor</div>
+      <div class="card-title">Muscle Rigidity</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Stiffness in some or multiple areas of the body. <strong>Most prominent in the thoracic/core region</strong> — the chest, upper back, and trunk.
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> This is why warm-up and cool-down are non-negotiable. Stiffness is often worse in the morning — plan your session intensity accordingly. Rotational movements help combat thoracic rigidity.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-amber"></div>
+      <div class="card-top">
+        <div class="card-icon accent-amber">🐢</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Primary Motor</div>
+      <div class="card-title">Slowness (Bradykinesia)</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Slow movements, especially during the <strong>'off' phase</strong> (when medication is wearing off). The brain has difficulty initiating and executing movement at normal speed.
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> Emphasize <strong>BIG movements</strong> throughout every class — big punches, big steps, big arm swings. This trains clients to move with intention at home. Don't rush them; give verbal cues like "BIG and STRONG."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-green"></div>
+      <div class="card-top">
+        <div class="card-icon accent-green">⚖️</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Primary Motor</div>
+      <div class="card-title">Postural Instability</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Poor posture (hunched over, rounded shoulders) and poor balance. The body's automatic balance-correcting reflexes become impaired.
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> Balance work should be built into every session. Always have a chair or bar available. Watch for forward lean — cue clients to "stand tall" and "shoulders back" constantly.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-purple"></div>
+      <div class="card-top">
+        <div class="card-icon accent-purple">⚡</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Drug Side Effect</div>
+      <div class="card-title">Dyskinesia</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Involuntary, erratic movements of the face, arms, trunk, and legs. <strong>Typically occurs at peak medication effect</strong> of levodopa — not a worsening of PD itself. Some clients actually prefer dyskinesia over feeling rigid and 'off.'
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> Stress and cognitive multitasking can worsen dyskinesia. Keep your cueing calm and clear. If a client is having a high-dyskinesia day, simplify the exercises and reduce cognitive demands.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ SECONDARY MOTOR SYMPTOMS ══════════ -->
+<section class="section reveal" id="secondary">
+  <p class="section-label">02 — Secondary Motor Symptoms</p>
+
+  <div class="warning-banner">
+    <div class="warning-icon">⚠️</div>
+    <div class="warning-text">
+      <strong>Fall Risk Alert:</strong> Several secondary motor symptoms — particularly shuffling gait, stooped posture, and freezing — significantly increase fall risk. Always ensure stations have chairs nearby and be prepared to offer a hand or arm for support.
+    </div>
+  </div>
+
+  <div class="symptoms-grid">
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-amber"></div>
+      <div class="card-top">
+        <div class="card-icon accent-amber">🧍</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Secondary Motor</div>
+      <div class="card-title">Stooped Posture</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Forward-leaning position causes the <strong>centre of gravity to shift forward</strong>, resulting in a greater risk of falling. Back pain and overall body stiffness are common companions.
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> Boxing naturally fights stooped posture — guard position requires upright spine and raised arms. Use this as a teaching moment: "This is your boxing posture — this is also your best posture."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-red"></div>
+      <div class="card-top">
+        <div class="card-icon accent-red">🚶</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Secondary Motor ⚠️ Fall Risk</div>
+      <div class="card-title">Shuffling Gait & Freezing</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Small, hesitant steps can lead to shuffling gait. Clients tend to walk with their <strong>feet very close together</strong>, severely compromising balance and increasing fall risk. Freezing episodes (sudden inability to move) can occur especially at doorways or when changing direction.
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> Marching in place, high knees, and exaggerated stepping drills directly target this. For freezing, teach clients the trick of stepping over an imaginary line or a visual target on the floor.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-blue"></div>
+      <div class="card-top">
+        <div class="card-icon accent-blue">💪</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Secondary Motor</div>
+      <div class="card-title">Decreased Arm Swing</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Often one side of the body is more affected and you can notice a <strong>decreased arm swing</strong> when the client is walking. This is an early and often subtle sign.
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> This is literally what boxing addresses head-on. Cross-body punching movements directly train reciprocal arm swing. Point out improvements to clients — "Look how much more your arms are swinging today!"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-muted"></div>
+      <div class="card-top">
+        <div class="card-icon" style="background:rgba(154,154,138,0.15);">😐</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Secondary Motor</div>
+      <div class="card-title">Masked Expression</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Clients often have a <strong>flat, expressionless face</strong> — not because they're unengaged, but because facial muscle stiffness makes it hard to form expressions. Also called "hypomimia."
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> Don't mistake a blank expression for disinterest or unhappiness. Check in verbally — "How are you feeling today?" Many clients are having a great time even when their face doesn't show it. Facial exercises during warm-up help!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-gold"></div>
+      <div class="card-top">
+        <div class="card-icon accent-gold">✍️</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Secondary Motor</div>
+      <div class="card-title">Micrographia</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Very small handwriting — often one of the <strong>first signs of Parkinson's</strong> before motor symptoms become obvious. The same bradykinesia that slows movement also shrinks handwriting over time.
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> If clients fill out paperwork or waivers, allow plenty of time and don't comment on handwriting size. This can be a sensitive topic for some clients who notice this as an early symptom.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="symptom-card" onclick="toggleCard(this)">
+      <div class="card-accent line-green"></div>
+      <div class="card-top">
+        <div class="card-icon accent-green">🛏️</div>
+        <div class="card-expand">+</div>
+      </div>
+      <div class="card-subtitle">Secondary Motor</div>
+      <div class="card-title">Difficulty Getting Out of Bed</div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          Stiffness is <strong>often worst in the morning</strong> — before medication kicks in and before the body has had a chance to move. Rolling over and sitting up can be significant challenges.
+          <div class="instructor-tip"><strong>🥊 Instructor Note:</strong> Warm-up and cool-down stretches are especially important — never skip them! If turning over is a main complaint, teach clients a specific turning-over exercise they can practice at home daily.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ NON-MOTOR SYMPTOMS ══════════ -->
+<section class="section reveal" id="nonmotor">
+  <p class="section-label">03 — Non-Motor Symptoms</p>
+  <p style="font-size:14px;color:#888;max-width:600px;margin-bottom:32px;line-height:1.7;">
+    These symptoms are often invisible but can significantly impact a client's ability to participate. Tap any card to reveal instructor tips.
+  </p>
+
+  <div class="nonmotor-grid">
+
+    <div class="nm-card after-red" onclick="toggleNMCard(this)">
+      <div class="nm-icon">🗣️</div>
+      <div class="nm-title">Quiet Voice & Speech Difficulty</div>
+      <div class="nm-desc">Vocal cord muscle thinning causes a soft, hoarse voice. A gap forms between cords, reducing volume and clarity as the disease progresses.</div>
+      <div class="nm-tip"><strong>🥊 Tip:</strong> Always face the client when giving instructions. Never talk over music when coaching someone with voice difficulties. Encourage them to speak loudly during class — it's great vocal exercise!</div>
+    </div>
+
+    <div class="nm-card after-amber" onclick="toggleNMCard(this)">
+      <div class="nm-icon">😣</div>
+      <div class="nm-title">Painful Muscle Cramps</div>
+      <div class="nm-desc">Often in the feet but can present in different areas of the body. These cramps (dystonias) can be sudden and quite severe.</div>
+      <div class="nm-tip"><strong>🥊 Tip:</strong> If a client stops suddenly or appears uncomfortable, ask gently if they're having a cramp. Know your modification for that station. Never push through visible pain.</div>
+    </div>
+
+    <div class="nm-card after-blue" onclick="toggleNMCard(this)">
+      <div class="nm-icon">😴</div>
+      <div class="nm-title">Poor Sleep & Vivid Dreams</div>
+      <div class="nm-desc">Disrupted sleep worsens all other symptoms. Excessive daytime sleepiness, hallucinations, and vivid dreams can occur as the disease progresses.</div>
+      <div class="nm-tip"><strong>🥊 Tip:</strong> If a client seems unusually fatigued, reduce intensity without making it obvious. Regular exercise actually improves sleep quality in PD — another benefit to share with clients!</div>
+    </div>
+
+    <div class="nm-card after-red" onclick="toggleNMCard(this)">
+      <div class="nm-icon">😰</div>
+      <div class="nm-title">Depression & Anxiety</div>
+      <div class="nm-desc">Social isolation, increased anxiety, fear, and feeling overwhelmed are very common. Anxiety can directly exacerbate motor symptoms.</div>
+      <div class="nm-tip"><strong>🥊 Tip:</strong> Community is medicine. The social environment of your class may be as therapeutic as the exercise itself. Notice if a regular client stops coming — reach out. Consistency in attendance is a key health indicator.</div>
+    </div>
+
+    <div class="nm-card after-purple" onclick="toggleNMCard(this)">
+      <div class="nm-icon">🧠</div>
+      <div class="nm-title">Cognitive Issues & Dementia</div>
+      <div class="nm-desc">Slowness in memory and thinking affects many with PD. Clients may take longer processing directions or not clearly understand an exercise cue.</div>
+      <div class="nm-tip"><strong>🥊 Tip:</strong> Break down exercises into simple, one-step cues. Demonstrate before explaining. Be patient — repeat instructions calmly and without frustration. Dual-tasking (moving + counting + thinking) is actually excellent cognitive exercise!</div>
+    </div>
+
+    <div class="nm-card after-gold" onclick="toggleNMCard(this)">
+      <div class="nm-icon">🩺</div>
+      <div class="nm-title">Low Blood Pressure</div>
+      <div class="nm-desc">Very common in PD — either from the disease itself or medication. Getting up from the floor too quickly can cause dangerous dizziness or fainting.</div>
+      <div class="nm-tip"><strong>🥊 Tip:</strong> Always place a chair at every station that involves going to the ground. Teach clients to get up slowly — pause seated, then stand. Know your ground-to-stand modifications for every exercise.</div>
+    </div>
+
+    <div class="nm-card after-green" onclick="toggleNMCard(this)">
+      <div class="nm-icon">🧴</div>
+      <div class="nm-title">Skin Problems</div>
+      <div class="nm-desc">Oily or scaly skin can become dry and sensitive. Some clients may not be able to go barefoot in the gym.</div>
+      <div class="nm-tip"><strong>🥊 Tip:</strong> Recommend non-slip socks or indoor shoes if needed. Never require bare feet for balance exercises — safety first, always.</div>
+    </div>
+
+    <div class="nm-card after-amber" onclick="toggleNMCard(this)">
+      <div class="nm-icon">🌿</div>
+      <div class="nm-title">Constipation</div>
+      <div class="nm-desc">Very common and often an early non-motor sign of PD. Digestive health is now understood to be a meaningful part of the PD picture.</div>
+      <div class="nm-tip"><strong>🥊 Tip:</strong> Exercise promotes gut motility — another benefit of your program! Encourage clients to work with their healthcare team on digestive health. You can mention it as something worth discussing with their doctor.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ FLASHCARDS ══════════ -->
+<section class="section reveal" id="flashcards">
+  <p class="section-label">04 — Symptom Flashcards</p>
+  <p style="font-size:14px;color:#888;margin-bottom:28px;max-width:500px;line-height:1.7;">
+    Flip through all the key symptoms. Tap the card to reveal the definition + instructor tip.
+  </p>
+
+  <div class="flashcard-wrapper">
+    <div class="fc-progress" id="fcProgress"></div>
+    <div class="flashcard-deck">
+      <div class="flashcard" id="flashcard" onclick="flipCard()">
+        <div class="card-face card-front">
+          <div class="card-label">TAP TO FLIP</div>
+          <div class="card-term" id="fcTerm"></div>
+          <div class="card-hint" id="fcHint"></div>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-label">DEFINITION + INSTRUCTOR NOTE</div>
+          <div class="card-def" id="fcDef"></div>
+        </div>
+      </div>
+    </div>
+    <div class="flashcard-controls">
+      <button class="btn btn-ghost" onclick="prevCard()">← Prev</button>
+      <div class="fc-counter">Card <span id="fcCurrent">1</span> / <span id="fcTotal">10</span></div>
+      <button class="btn btn-primary" onclick="nextCard()">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ QUIZ ══════════ -->
+<section class="section reveal" id="quiz">
+  <p class="section-label">05 — Knowledge Check</p>
+
+  <div class="quiz-wrapper">
+    <div class="quiz-progress">
+      <div class="progress-dot active" id="qd0"></div>
+      <div class="progress-dot" id="qd1"></div>
+      <div class="progress-dot" id="qd2"></div>
+      <div class="progress-dot" id="qd3"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div id="sq1">
+      <div class="quiz-q"><span class="q-num">QUESTION 01 / 04</span>A client arrives to class appearing stiff and moving very slowly. It's a morning session. What is the most likely explanation?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq1')"><span class="opt-letter">A</span>They didn't sleep well and are tired</div>
+        <div class="quiz-opt" onclick="sAnswer(this,true,'sq1')"><span class="opt-letter">B</span>Rigidity and bradykinesia are often worst in the morning before medication takes effect</div>
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq1')"><span class="opt-letter">C</span>They should probably go home and rest</div>
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq1')"><span class="opt-letter">D</span>They are having a dyskinesia episode</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq1_r">✓ Correct! Morning stiffness and slowness are classic — this is exactly why a thorough warm-up is essential. Give them time, don't rush the first circuits, and watch them loosen up as the session progresses.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq1_w">The key insight is that rigidity and bradykinesia are typically <strong>worst in the morning</strong> before medication has had time to work. A proper warm-up is the most important thing you can do for them.</div>
+      <div class="quiz-nav" id="snav_sq1" style="display:none;"><button class="btn btn-primary" onclick="sNext(2)">Next →</button></div>
+    </div>
+
+    <!-- Q2 -->
+    <div id="sq2" style="display:none;">
+      <div class="quiz-q"><span class="q-num">QUESTION 02 / 04</span>A client with PD has a flat, expressionless face throughout class. What should you do?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq2')"><span class="opt-letter">A</span>Ask if something is wrong — they seem unhappy</div>
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq2')"><span class="opt-letter">B</span>Give them easier exercises since they seem disengaged</div>
+        <div class="quiz-opt" onclick="sAnswer(this,true,'sq2')"><span class="opt-letter">C</span>Understand it's hypomimia (masked expression) — check in verbally and treat them normally</div>
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq2')"><span class="opt-letter">D</span>Assume they are in pain and stop the session</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq2_r">✓ Exactly right. Hypomimia is a symptom of facial muscle stiffness — not a reflection of their mood or engagement. Many clients are having the best time even when their face doesn't show it. A simple "How are you feeling?" goes a long way.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq2_w">A flat expression in PD is called <strong>hypomimia</strong> — it's caused by facial muscle stiffness, not emotions. Never assume a blank face means disengagement or unhappiness. Check in with a simple verbal question.</div>
+      <div class="quiz-nav" id="snav_sq2" style="display:none;"><button class="btn btn-primary" onclick="sNext(3)">Next →</button></div>
+    </div>
+
+    <!-- Q3 -->
+    <div id="sq3" style="display:none;">
+      <div class="quiz-q"><span class="q-num">QUESTION 03 / 04</span>Which of the following is the BEST reason to always have a chair at every station involving floor work?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq3')"><span class="opt-letter">A</span>So clients can rest between sets</div>
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq3')"><span class="opt-letter">B</span>It's required by gym insurance</div>
+        <div class="quiz-opt" onclick="sAnswer(this,true,'sq3')"><span class="opt-letter">C</span>Low blood pressure is common in PD — getting up too quickly can cause dizziness or fainting</div>
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq3')"><span class="opt-letter">D</span>Clients prefer to sit rather than stand</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq3_r">✓ Perfect. Orthostatic hypotension (blood pressure drop when standing) is very common in PD, caused by both the disease and many medications. A chair at every ground station allows clients to pause and stabilize before standing fully.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq3_w">The answer is <strong>low blood pressure (orthostatic hypotension)</strong>. When clients go from floor to standing too quickly, blood pressure can drop suddenly causing dizziness or falls. Always have a chair nearby and teach slow, staged getting-up.</div>
+      <div class="quiz-nav" id="snav_sq3" style="display:none;"><button class="btn btn-primary" onclick="sNext(4)">Next →</button></div>
+    </div>
+
+    <!-- Q4 -->
+    <div id="sq4" style="display:none;">
+      <div class="quiz-q"><span class="q-num">QUESTION 04 / 04</span>Why is emphasizing BIG movements throughout every class so important for clients with bradykinesia?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq4')"><span class="opt-letter">A</span>Big movements burn more calories and improve fitness faster</div>
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq4')"><span class="opt-letter">B</span>It makes the class look more impressive to observers</div>
+        <div class="quiz-opt" onclick="sAnswer(this,true,'sq4')"><span class="opt-letter">C</span>It trains the brain and body to continue using full, intentional movements outside of class — fighting the natural tendency to move smaller</div>
+        <div class="quiz-opt" onclick="sAnswer(this,false,'sq4')"><span class="opt-letter">D</span>Big movements are safer for people with balance issues</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq4_r">✓ Excellent. This is the neurological basis of your program — amplitude training. By practicing BIG movements in class, clients are literally retraining their nervous system to counteract bradykinesia. What they practice with you, they carry into daily life.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq4_w">The key is <strong>neurological carryover</strong>. Bradykinesia causes movement to get progressively smaller. By training BIG amplitudes in class, you're retraining the brain's movement commands so clients continue to move larger outside of class too.</div>
+      <div class="quiz-nav" id="snav_sq4" style="display:none;"><button class="btn btn-primary" onclick="sShowComplete()">See Results 🥊</button></div>
+    </div>
+
+    <!-- Complete -->
+    <div id="sqComplete" style="display:none;text-align:center;padding:20px 0;">
+      <p style="font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--red);" id="sqScore"></p>
+      <p style="font-size:18px;font-weight:600;color:var(--light);margin-bottom:10px;" id="sqResult"></p>
+      <p style="font-size:13px;color:var(--muted);max-width:440px;margin:0 auto 28px;" id="sqMessage"></p>
+      <button class="btn btn-ghost" onclick="sResetQuiz()">↩ Retake Quiz</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div class="footer-text">
+    <h2>Next Up:<br><span>Freezing Video</span></h2>
+    <p>See what a freezing episode actually looks like in real life — and learn how to respond safely and confidently as an instructor.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary" style="font-size:14px;padding:14px 32px;">Continue: Freezing Video →</button>
+    <button class="btn btn-ghost">↩ Back to Module 1 Intro</button>
+  </div>
+</div>
+
+<script>
+// ── SCROLL REVEAL ──
+const reveals = document.querySelectorAll('.reveal');
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+reveals.forEach(r => revObs.observe(r));
+
+// ── TAB SCROLL ──
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// ── SYMPTOM CARD TOGGLE ──
+function toggleCard(card) {
+  const body = card.querySelector('.card-body');
+  const isOpen = card.classList.contains('expanded');
+  document.querySelectorAll('.symptom-card').forEach(c => {
+    c.classList.remove('expanded');
+    c.querySelector('.card-body').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    card.classList.add('expanded');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+// ── NON-MOTOR CARD TOGGLE ──
+function toggleNMCard(card) {
+  const tip = card.querySelector('.nm-tip');
+  tip.classList.toggle('show');
+}
+
+// ── FLASHCARDS ──
+const flashcards = [
+  { term: 'Tremor', hint: 'Primary Motor Symptom', def: 'Shaking of one or more body parts, typically more pronounced on one side. <strong>Instructor note:</strong> Tremors often decrease during purposeful movement. Never comment on them in front of others.' },
+  { term: 'Bradykinesia', hint: 'Primary Motor Symptom', def: 'Slowness of movement, especially during medication "off" phases. <strong>Instructor note:</strong> Always cue BIG, exaggerated movements. This trains neurological amplitude and carries over to daily life.' },
+  { term: 'Rigidity', hint: 'Primary Motor Symptom', def: 'Muscle stiffness, most prominent in the thoracic/core. <strong>Instructor note:</strong> Warm-up is non-negotiable. Stiffness is worst in the morning. Rotational movements help.' },
+  { term: 'Postural Instability', hint: 'Primary Motor Symptom', def: 'Poor posture and balance from impaired righting reflexes. <strong>Instructor note:</strong> Boxing guard position naturally combats this. Cue "stand tall" constantly.' },
+  { term: 'Dyskinesia', hint: 'Drug Side Effect', def: 'Involuntary erratic movements from peak levodopa effect. <strong>Instructor note:</strong> Stress worsens it. Keep cueing calm and exercises simple on high-dyskinesia days.' },
+  { term: 'Shuffling Gait', hint: 'Secondary Motor Symptom', def: 'Small, hesitant steps with feet close together. High fall risk. <strong>Instructor note:</strong> High knees and marching drills target this directly.' },
+  { term: 'Hypomimia', hint: 'Secondary Motor Symptom', def: 'Reduced facial expression from facial muscle stiffness. <strong>Instructor note:</strong> Never mistake a blank face for disengagement. Check in verbally.' },
+  { term: 'Micrographia', hint: 'Secondary Motor Symptom', def: 'Very small handwriting — often an early PD sign. <strong>Instructor note:</strong> Give plenty of time for paperwork and never comment on handwriting size.' },
+  { term: 'Orthostatic Hypotension', hint: 'Non-Motor Symptom', def: 'Blood pressure drops when moving from floor to standing. <strong>Instructor note:</strong> Always have a chair at every floor station. Teach slow, staged getting-up.' },
+  { term: 'Cognitive Changes', hint: 'Non-Motor Symptom', def: 'Slowness in memory, thinking, and processing. <strong>Instructor note:</strong> Use simple one-step cues, demonstrate before explaining. Dual-tasking is great cognitive exercise!' },
+];
+
+let fcIndex = 0;
+let fcFlipped = false;
+const fcCard = document.getElementById('flashcard');
+
+function renderFC() {
+  const c = flashcards[fcIndex];
+  fcCard.classList.remove('flipped');
+  fcFlipped = false;
+  setTimeout(() => {
+    document.getElementById('fcTerm').textContent = c.term;
+    document.getElementById('fcHint').textContent = c.hint;
+    document.getElementById('fcDef').innerHTML = c.def;
+    document.getElementById('fcCurrent').textContent = fcIndex + 1;
+    document.getElementById('fcTotal').textContent = flashcards.length;
+  }, 100);
+  renderFCProgress();
+}
+
+function renderFCProgress() {
+  const prog = document.getElementById('fcProgress');
+  prog.innerHTML = flashcards.map((_, i) =>
+    `<div class="fc-dot ${i === fcIndex ? 'current' : i < fcIndex ? 'seen' : ''}"></div>`
+  ).join('');
+}
+
+function flipCard() {
+  fcFlipped = !fcFlipped;
+  fcCard.classList.toggle('flipped', fcFlipped);
+}
+
+function nextCard() {
+  if (fcIndex < flashcards.length - 1) { fcIndex++; renderFC(); }
+}
+
+function prevCard() {
+  if (fcIndex > 0) { fcIndex--; renderFC(); }
+}
+
+renderFC();
+
+// ── SYMPTOMS QUIZ ──
+let sScore = 0;
+let sCurrent = 1;
+
+function sAnswer(btn, correct, qId) {
+  const opts = btn.closest('.quiz-options').querySelectorAll('.quiz-opt');
+  opts.forEach(o => o.classList.add('disabled'));
+  if (correct) {
+    btn.classList.add('correct');
+    document.getElementById(`sfb_${qId}_r`).classList.add('show');
+    sScore++;
+  } else {
+    btn.classList.add('incorrect');
+    document.getElementById(`sfb_${qId}_w`).classList.add('show');
+    opts.forEach(o => { if (o.onclick && o.onclick.toString().includes('true')) o.classList.add('correct'); });
+  }
+  document.getElementById(`snav_${qId}`).style.display = 'flex';
+  document.getElementById(`qd${sCurrent - 1}`).classList.add(correct ? 'done' : 'active');
+}
+
+function sNext(num) {
+  document.getElementById(`sq${sCurrent}`).style.display = 'none';
+  sCurrent = num;
+  document.getElementById(`sq${num}`).style.display = 'block';
+  document.getElementById(`qd${num - 1}`).classList.add('active');
+}
+
+function sShowComplete() {
+  document.getElementById('sq4').style.display = 'none';
+  document.getElementById('sqComplete').style.display = 'block';
+  const pct = Math.round((sScore / 4) * 100);
+  document.getElementById('sqScore').textContent = `${sScore}/4`;
+  document.getElementById('sqResult').textContent = pct === 100 ? '🥊 Perfect Score!' : pct >= 75 ? 'Great Work!' : 'Keep Studying';
+  document.getElementById('sqMessage').textContent = pct === 100
+    ? 'You have an excellent understanding of PD symptoms and what they mean for your clients. This knowledge will make you a safer and more empathetic instructor.'
+    : pct >= 75
+    ? 'Strong effort! Review any questions you missed and make sure the instructor notes feel natural before moving on.'
+    : 'Take another run through the symptom cards above, then give the quiz another try. This knowledge is foundational to everything else in the program.';
+}
+
+function sResetQuiz() {
+  sScore = 0; sCurrent = 1;
+  for (let i = 1; i <= 4; i++) {
+    const q = document.getElementById(`sq${i}`);
+    q.style.display = i === 1 ? 'block' : 'none';
+    q.querySelectorAll('.quiz-opt').forEach(o => { o.className = 'quiz-opt'; });
+    const r = document.getElementById(`sfb_sq${i}_r`);
+    const w = document.getElementById(`sfb_sq${i}_w`);
+    if (r) r.classList.remove('show');
+    if (w) w.classList.remove('show');
+    const nav = document.getElementById(`snav_sq${i}`);
+    if (nav) nav.style.display = 'none';
+  }
+  ['qd0','qd1','qd2','qd3'].forEach((id, i) => {
+    document.getElementById(id).className = 'progress-dot' + (i === 0 ? ' active' : '');
+  });
+  document.getElementById('sqComplete').style.display = 'none';
+}
+</script>
+</body>
+</html>

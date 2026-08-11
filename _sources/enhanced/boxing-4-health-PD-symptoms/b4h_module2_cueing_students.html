@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Cueing Students</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 95% 40%, rgba(130,80,200,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 50% at 5% 80%, rgba(232,39,26,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    right: -10px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 14vw, 180px);
+    color: rgba(130,80,200,0.04);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--purple); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--purple); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.85;
+    color: #b0aba0;
+    max-width: 640px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  /* ── THREE PILLARS STRIP ── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .pillar {
+    padding: 20px 22px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-bottom: 3px solid transparent;
+    text-align: center;
+  }
+
+  .pillar:hover { opacity: 0.85; }
+
+  .pillar.vocal    { background: rgba(232,39,26,0.10); border-color: var(--red); }
+  .pillar.mirror   { background: rgba(58,123,213,0.10); border-color: var(--blue); }
+  .pillar.physical { background: rgba(130,80,200,0.10); border-color: var(--purple); }
+
+  .pillar-icon { font-size: 28px; margin-bottom: 8px; }
+
+  .pillar-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .pillar.vocal .pillar-name    { color: var(--red); }
+  .pillar.mirror .pillar-name   { color: var(--blue); }
+  .pillar.physical .pillar-name { color: var(--purple); }
+
+  .pillar-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ── SECTIONS ── */
+  .section { padding: 68px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── CUEING SECTION LAYOUT ── */
+  .cue-section { padding: 68px 8vw; border-top: 1px solid #1e1e1e; scroll-margin-top: 40px; }
+
+  .cue-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .cue-big-letter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 90px;
+    line-height: 0.85;
+    flex-shrink: 0;
+  }
+
+  .cue-header-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 4.5vw, 56px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .cue-header-text .cue-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .cue-body {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #b0aba0;
+    max-width: 720px;
+    margin-bottom: 28px;
+  }
+
+  .cue-body strong { color: var(--light); }
+
+  /* Color theming */
+  .vocal-section .cue-big-letter    { color: rgba(232,39,26,0.18); }
+  .vocal-section .cue-header-text h2 { color: var(--red); }
+  .vocal-section .section-label      { color: var(--red); }
+
+  .mirror-section .cue-big-letter    { color: rgba(58,123,213,0.18); }
+  .mirror-section .cue-header-text h2 { color: var(--blue); }
+  .mirror-section .section-label      { color: var(--blue); }
+
+  .physical-section .cue-big-letter    { color: rgba(130,80,200,0.18); }
+  .physical-section .cue-header-text h2 { color: var(--purple); }
+  .physical-section .section-label      { color: var(--purple); }
+
+  /* ── TECHNIQUE CARDS ── */
+  .technique-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .technique-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 22px;
+  }
+
+  .technique-icon { font-size: 24px; margin-bottom: 10px; }
+
+  .technique-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+
+  .technique-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #a8a398;
+  }
+
+  .technique-desc strong { color: var(--light); }
+
+  /* ── CALLOUT BOXES ── */
+  .callout {
+    border: 1px solid;
+    padding: 20px 24px;
+    margin: 20px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .callout strong { color: var(--light); }
+  .callout .c-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+
+  .callout-red     { border-color: rgba(232,39,26,0.3); background: rgba(232,39,26,0.06); color: #e8b0aa; }
+  .callout-blue    { border-color: rgba(58,123,213,0.3); background: rgba(58,123,213,0.06); color: #7a9fd4; }
+  .callout-purple  { border-color: rgba(130,80,200,0.3); background: rgba(130,80,200,0.06); color: #b09ad4; }
+  .callout-gold    { border-color: rgba(200,168,75,0.3); background: rgba(200,168,75,0.06); color: #c8b870; }
+  .callout-green   { border-color: rgba(46,158,107,0.3); background: rgba(46,158,107,0.06); color: #90c8a8; }
+
+  /* ── VIDEO PLACEHOLDER ── */
+  .video-placeholder {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    aspect-ratio: 16/7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+    max-width: 680px;
+  }
+
+  .video-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,255,255,0.02), transparent);
+  }
+
+  .video-play {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    border: 2px solid #444;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    color: var(--muted);
+  }
+
+  .video-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ── CONSENT BLOCK ── */
+  .consent-block {
+    background: linear-gradient(135deg, #100810, #0d0810);
+    border: 1px solid rgba(130,80,200,0.25);
+    border-left: 5px solid var(--purple);
+    padding: 28px 32px;
+    margin: 24px 0;
+  }
+
+  .consent-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    color: var(--purple);
+    margin-bottom: 14px;
+  }
+
+  .consent-block p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #b09ad4;
+    margin-bottom: 12px;
+  }
+
+  .consent-block p:last-child { margin-bottom: 0; }
+  .consent-block p strong { color: var(--light); }
+
+  .consent-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 16px 0;
+  }
+
+  .consent-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #b09ad4;
+  }
+
+  .consent-step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: rgba(130,80,200,0.35);
+    flex-shrink: 0;
+    width: 22px;
+    line-height: 1;
+  }
+
+  .consent-step strong { color: var(--light); }
+
+  /* ── MIRRORING VISUAL ── */
+  .mirror-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    padding: 36px;
+    margin: 24px 0;
+    max-width: 560px;
+  }
+
+  .mirror-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .figure-body {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  .figure-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .mirror-arrow {
+    font-size: 24px;
+    color: var(--blue);
+    opacity: 0.5;
+  }
+
+  /* ── KEY PRINCIPLES ── */
+  .principles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .principle {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 18px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .principle-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 26px;
+  }
+
+  .principle-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+
+  .principle-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #a8a398;
+  }
+
+  .principle-body strong { color: var(--light); }
+
+  /* vocal principles */
+  .vocal-p .principle-num   { color: rgba(232,39,26,0.3); }
+  .vocal-p .principle-title { color: var(--red); }
+
+  /* mirror principles */
+  .mirror-p .principle-num   { color: rgba(58,123,213,0.3); }
+  .mirror-p .principle-title { color: var(--blue); }
+
+  /* physical principles */
+  .phys-p .principle-num   { color: rgba(130,80,200,0.3); }
+  .phys-p .principle-title { color: var(--purple); }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .pillars { grid-template-columns: 1fr; gap: 3px; }
+    .technique-grid { grid-template-columns: 1fr; }
+    .mirror-visual { flex-direction: column; gap: 16px; }
+    .module-footer { flex-direction: column; }
+    .cue-big-letter { font-size: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg-text">CUEING</div>
+  <p class="breadcrumb">Module 2 — Teaching 101 &nbsp;›&nbsp; <span>Cueing Students</span></p>
+  <h1 class="hero-title">
+    <em>Cueing</em><br>Students
+  </h1>
+  <p class="hero-sub">
+    As Parkinson's symptoms progress, the need for effective cueing becomes more and more critical. <strong>The three essential cueing techniques</strong> — Vocal, Mirroring, and Physical Feedback — are your most powerful tools for connecting with clients and getting the best out of every session.
+  </p>
+
+  <div class="pillars">
+    <div class="pillar vocal" onclick="document.getElementById('vocal').scrollIntoView({behavior:'smooth'})">
+      <div class="pillar-icon">🎙️</div>
+      <div class="pillar-name">Vocal</div>
+      <div class="pillar-tag">Voice · Energy · Repetition</div>
+    </div>
+    <div class="pillar mirror" onclick="document.getElementById('mirror').scrollIntoView({behavior:'smooth'})">
+      <div class="pillar-icon">🪞</div>
+      <div class="pillar-name">Mirroring</div>
+      <div class="pillar-tag">Demo · Position · BIG</div>
+    </div>
+    <div class="pillar physical" onclick="document.getElementById('physical').scrollIntoView({behavior:'smooth'})">
+      <div class="pillar-icon">🤲</div>
+      <div class="pillar-name">Physical Feedback</div>
+      <div class="pillar-tag">Touch · Consent · Awareness</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ VOCAL ══════════ -->
+<div class="cue-section vocal-section reveal" id="vocal">
+  <div class="section-label" style="color:var(--red);">Cueing Technique 01</div>
+
+  <div class="cue-header">
+    <div class="cue-big-letter">V</div>
+    <div class="cue-header-text">
+      <h2>Vocal</h2>
+      <div class="cue-sub">Voice · Clarity · Energy · Repetition</div>
+    </div>
+  </div>
+
+  <div class="cue-body">
+    Using your voice in a <strong>clear and direct manner</strong> cuts through the noise and communicates your points effectively. For clients with Parkinson's — who may be processing information more slowly, managing cognitive fog, or dealing with hearing changes — clarity and repetition are everything.
+  </div>
+
+  <div class="cue-body">
+    Your clients will feed off the energy you bring to class. <strong>Take a moment to centre yourself before you begin</strong>, and then project as much excitement, positivity, and confidence as possible. Your mood is contagious — if you're flat, the room is flat. If you're fired up, they're fired up.
+  </div>
+
+  <div class="principles">
+    <div class="principle vocal-p">
+      <div class="principle-num">1</div>
+      <div>
+        <div class="principle-title">Be Clear & Direct</div>
+        <div class="principle-body">No long explanations during movement. <strong>Short, punchy cues</strong> that land immediately: "Punch BIG!" "Step wider!" "Chin up!" The more words you use, the less they hear.</div>
+      </div>
+    </div>
+    <div class="principle vocal-p">
+      <div class="principle-num">2</div>
+      <div>
+        <div class="principle-title">Embrace Repetition</div>
+        <div class="principle-body">Repeat the important points as many times as needed until the message gets across. <strong>What feels repetitive to you is often the first time it fully registers</strong> for a client managing cognitive symptoms. Never say something important just once.</div>
+      </div>
+    </div>
+    <div class="principle vocal-p">
+      <div class="principle-num">3</div>
+      <div>
+        <div class="principle-title">Project Confidence & Positivity</div>
+        <div class="principle-body">Clients with PD often experience anxiety, self-doubt, and fear of falling. <strong>Your confident, positive tone creates psychological safety</strong> — it tells them they're in good hands and that they can do this.</div>
+      </div>
+    </div>
+    <div class="principle vocal-p">
+      <div class="principle-num">4</div>
+      <div>
+        <div class="principle-title">Centre Yourself First</div>
+        <div class="principle-body">If you're stressed, rushed, or distracted, your clients will feel it. Before class, <strong>take a breath, reset, and bring your best energy to the room</strong>. They deserve it — and so do you.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-placeholder">
+    <div class="video-play">▶</div>
+    <div class="video-label">Vocal Cueing — Video Coming Soon</div>
+  </div>
+</div>
+
+<!-- ══════════ MIRRORING ══════════ -->
+<div class="cue-section mirror-section reveal" id="mirror">
+  <div class="section-label" style="color:var(--blue);">Cueing Technique 02</div>
+
+  <div class="cue-header">
+    <div class="cue-big-letter">M</div>
+    <div class="cue-header-text">
+      <h2>Mirroring</h2>
+      <div class="cue-sub">Position · Demonstration · BIG Movement</div>
+    </div>
+  </div>
+
+  <div class="cue-body">
+    Over and above a simple demonstration, <strong>mirroring the movement directly in front of a client</strong> is a vital tool — especially for the most affected clients. When someone with Parkinson's can see exactly what they need to do, performed at full amplitude by their trusted instructor, it brings a sense of calm and comfort that words alone can't provide.
+  </div>
+
+  <div class="mirror-visual">
+    <div class="mirror-figure">
+      <div class="figure-body">🧑</div>
+      <div class="figure-label">Instructor</div>
+    </div>
+    <div class="mirror-arrow">⟷</div>
+    <div class="mirror-figure">
+      <div class="figure-body">🧓</div>
+      <div class="figure-label">Client</div>
+    </div>
+  </div>
+
+  <div class="callout callout-blue">
+    <div class="c-icon">💡</div>
+    <div><strong>Mirroring means you move opposite to them.</strong> If you want them to raise their right hand, you raise your left — so from their perspective, it looks correct. Position yourself directly in front of your client, make eye contact, and move together.</div>
+  </div>
+
+  <div class="principles">
+    <div class="principle mirror-p">
+      <div class="principle-num">1</div>
+      <div>
+        <div class="principle-title">Position Directly in Front</div>
+        <div class="principle-body">Get face-to-face with the client you're cueing. Not beside them, not behind them — <strong>directly in front</strong> so they can see your whole body and follow the movement without having to turn.</div>
+      </div>
+    </div>
+    <div class="principle mirror-p">
+      <div class="principle-num">2</div>
+      <div>
+        <div class="principle-title">Make It as BIG as Possible</div>
+        <div class="principle-body"><strong>Exaggerate every movement.</strong> Full extension. Exaggerated steps. Maximum arm swing. Your amplitude sets the target — they aim for you. If you mirror small, they move small.</div>
+      </div>
+    </div>
+    <div class="principle mirror-p">
+      <div class="principle-num">3</div>
+      <div>
+        <div class="principle-title">Use It for Your Most Affected Clients</div>
+        <div class="principle-body">Mirroring is particularly powerful for clients who are struggling with a movement or having an OFF period. <strong>Drop everything else and get in front of them</strong> — your body becomes their guide.</div>
+      </div>
+    </div>
+    <div class="principle mirror-p">
+      <div class="principle-num">4</div>
+      <div>
+        <div class="principle-title">Create Calm & Confidence</div>
+        <div class="principle-body">Seeing their trusted instructor right in front of them, moving together, is deeply reassuring. <strong>It removes the guesswork and the anxiety</strong> of figuring out what to do — they just follow you.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-placeholder">
+    <div class="video-play">▶</div>
+    <div class="video-label">Mirroring — Video Coming Soon</div>
+  </div>
+</div>
+
+<!-- ══════════ PHYSICAL FEEDBACK ══════════ -->
+<div class="cue-section physical-section reveal" id="physical">
+  <div class="section-label" style="color:var(--purple);">Cueing Technique 03</div>
+
+  <div class="cue-header">
+    <div class="cue-big-letter">P</div>
+    <div class="cue-header-text">
+      <h2>Physical Feedback</h2>
+      <div class="cue-sub">Touch · Consent · Awareness · Range</div>
+    </div>
+  </div>
+
+  <div class="cue-body">
+    The sense of touch, used alongside vocal and visual cues, can unlock movement that nothing else can reach. <strong>Something as simple as tapping on a body part</strong> can bring enough awareness to help a client find greater range, ability, and balance. For PD clients who have lost proprioceptive awareness, physical feedback can be the missing link.
+  </div>
+
+  <!-- CONSENT — most important part -->
+  <div class="consent-block">
+    <h3>⚠️ Consent is Non-Negotiable</h3>
+    <p>
+      <strong>Always establish consent before putting your hands on a client's body — every single time.</strong> This is not optional. Physical contact is a powerful teaching tool, but it must be used within a framework of respect and informed consent.
+    </p>
+    <div class="consent-steps">
+      <div class="consent-step">
+        <div class="consent-step-num">1</div>
+        <div><strong>Ask explicitly the first time.</strong> "Is it okay if I place my hand on your hip to show you the rotation?" Never assume.</div>
+      </div>
+      <div class="consent-step">
+        <div class="consent-step-num">2</div>
+        <div><strong>Consent may become implied</strong> as you develop comfort and trust with regular clients — but even then, it still needs to be confirmed.</div>
+      </div>
+      <div class="consent-step">
+        <div class="consent-step-num">3</div>
+        <div><strong>Confirm every time</strong> you want to use physical contact as a teaching aid. A simple "Can I just show you?" before touching is always enough.</div>
+      </div>
+      <div class="consent-step">
+        <div class="consent-step-num">4</div>
+        <div><strong>Respect a no immediately and without question.</strong> If a client declines, move to vocal or mirroring cues without comment.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="principles">
+    <div class="principle phys-p">
+      <div class="principle-num">1</div>
+      <div>
+        <div class="principle-title">A Tap Creates Awareness</div>
+        <div class="principle-body">You don't always need to guide or correct — sometimes <strong>a simple tap on the muscle group you want activated</strong> is enough to bring a client's attention there and unlock the movement. Try tapping the hip, the shoulder, or the foot before asking for the movement.</div>
+      </div>
+    </div>
+    <div class="principle phys-p">
+      <div class="principle-num">2</div>
+      <div>
+        <div class="principle-title">Guide Through the Full Range</div>
+        <div class="principle-body">For rotation especially — where clients genuinely cannot feel how little they're moving — <strong>gently placing hands on the hips and physically guiding the correct rotation</strong> lets them feel the target. This is often more effective than any amount of verbal or visual cueing.</div>
+      </div>
+    </div>
+    <div class="principle phys-p">
+      <div class="principle-num">3</div>
+      <div>
+        <div class="principle-title">Use Alongside Other Cues</div>
+        <div class="principle-body">Physical feedback works best <strong>in combination with vocal and visual cues</strong> — not as a replacement for them. Touch alongside a clear verbal cue creates a multi-sensory input that's far more powerful than any single channel alone.</div>
+      </div>
+    </div>
+    <div class="principle phys-p">
+      <div class="principle-num">4</div>
+      <div>
+        <div class="principle-title">Build Trust First</div>
+        <div class="principle-body">Physical feedback is most effective once a client trusts you. <strong>Invest in the relationship</strong> — learn their name, remember their challenges, celebrate their progress. When trust is there, a light touch from you carries enormous weight.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-placeholder">
+    <div class="video-play">▶</div>
+    <div class="video-label">Physical Feedback — Video Coming Soon</div>
+  </div>
+</div>
+
+<!-- ══════════ ALL THREE TOGETHER ══════════ -->
+<section class="section reveal">
+  <div class="section-label" style="color:var(--gold);">Putting It All Together</div>
+
+  <p style="font-size:18px;color:#b0aba0;max-width:680px;margin-bottom:28px;line-height:1.85;">
+    The most effective cueing moments combine all three techniques simultaneously. Here's what that looks like in practice:
+  </p>
+
+  <div class="technique-grid">
+    <div class="technique-card" style="border-top:3px solid var(--red);">
+      <div class="technique-icon">🎙️</div>
+      <div class="technique-name" style="color:var(--red);">Vocal Alone</div>
+      <div class="technique-desc">Good for corrections across the room, group energy management, and counting rhythm. Works well when clients are moving well and just need a reminder.</div>
+    </div>
+    <div class="technique-card" style="border-top:3px solid var(--blue);">
+      <div class="technique-icon">🪞</div>
+      <div class="technique-name" style="color:var(--blue);">Mirroring Alone</div>
+      <div class="technique-desc">Ideal for new movements, confused clients, OFF periods, or when a client needs to reset. Get in front of them and lead them back.</div>
+    </div>
+    <div class="technique-card" style="border-top:3px solid var(--purple);">
+      <div class="technique-icon">🤲</div>
+      <div class="technique-name" style="color:var(--purple);">Physical Alone</div>
+      <div class="technique-desc">A light tap for body awareness, or a guided hip rotation for a client who genuinely can't feel their range. Always with consent.</div>
+    </div>
+    <div class="technique-card" style="border-top:3px solid var(--gold);">
+      <div class="technique-icon">✨</div>
+      <div class="technique-name" style="color:var(--gold);">All Three Combined</div>
+      <div class="technique-desc"><strong>Most powerful.</strong> You're in front of them (mirror), guiding their hip (physical), while saying "rotate — BIG — yes, like that!" (vocal). Multi-sensory input creates multi-sensory change.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold" style="margin-top:8px;">
+    <div class="c-icon">🥊</div>
+    <div><strong>Your cueing will get better every class.</strong> Pay attention to what works for each individual — some clients respond most to your voice, some need to see you, some need to feel it. Over time you'll develop an instinct for which tool to reach for and when.</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>Pro Tips & Q&A</span></h2>
+    <p>Everything else you need to know — hard-won instructor wisdom, common questions, and the things nobody tells you until you're standing in front of a class.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: Pro Tips →</button>
+    <button class="btn btn-ghost">↩ Back to Champion Template</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 }).observe(r);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Fighter Class Template</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 65% 70% at 100% 50%, rgba(232,39,26,0.13) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 50% at 0% 80%, rgba(200,168,75,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    right: -10px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(100px, 20vw, 240px);
+    color: rgba(232,39,26,0.04);
+    letter-spacing: 0.1em;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--red); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--red); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.8;
+    color: #b0aba0;
+    max-width: 600px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  .hero-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 9px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--red);
+    animation: pulse 2s infinite;
+  }
+
+  /* ── CLASS TIMELINE ── */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0 8vw 0;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.9s ease forwards;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 0;
+  }
+
+  .timeline-left {
+    width: 120px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .timeline-line {
+    width: 2px;
+    flex: 1;
+    min-height: 20px;
+  }
+
+  .timeline-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  .timeline-content {
+    flex: 1;
+    padding: 0 0 28px 20px;
+  }
+
+  .timeline-phase {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .timeline-desc {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .tl-warmup .timeline-dot { background: var(--gold); }
+  .tl-warmup .timeline-line { background: linear-gradient(to bottom, var(--gold), var(--red)); }
+  .tl-warmup .timeline-phase { color: var(--gold); }
+
+  .tl-intensity .timeline-dot { background: var(--red); }
+  .tl-intensity .timeline-line { background: linear-gradient(to bottom, var(--red), var(--green)); }
+  .tl-intensity .timeline-phase { color: var(--red); }
+
+  .tl-cooldown .timeline-dot { background: var(--green); }
+  .tl-cooldown .timeline-phase { color: var(--green); }
+
+  /* ── SECTION ── */
+  .section { padding: 60px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── WARM UP ── */
+  .warmup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .warmup-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    border-top: 3px solid var(--gold);
+    padding: 22px;
+  }
+
+  .warmup-card h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .warmup-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .warmup-card ul li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #b0aba0;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .warmup-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 12px;
+  }
+
+  .warmup-card ul li strong { color: var(--light); }
+
+  /* ── INSTRUCTOR NOTES ── */
+  .instructor-note {
+    border: 1px solid;
+    padding: 18px 22px;
+    margin: 14px 0;
+    display: flex;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .note-red { border-color: rgba(232,39,26,0.3); background: rgba(232,39,26,0.06); color: #e8b0aa; }
+  .note-gold { border-color: rgba(200,168,75,0.3); background: rgba(200,168,75,0.06); color: #c8b870; }
+  .note-blue { border-color: rgba(58,123,213,0.3); background: rgba(58,123,213,0.06); color: #7a9fd4; }
+  .note-teal { border-color: rgba(30,138,138,0.3); background: rgba(30,138,138,0.06); color: #7ec4c4; }
+
+  .instructor-note strong { color: var(--light); }
+  .instructor-note .note-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+
+  /* ── VOICE EXERCISES ── */
+  .voice-strip {
+    background: rgba(200,168,75,0.07);
+    border: 1px solid rgba(200,168,75,0.2);
+    border-left: 4px solid var(--gold);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .voice-strip h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .voice-strip ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .voice-strip ul li {
+    font-size: 15px;
+    color: #c8b870;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .voice-strip ul li::before { content: '🎙️'; position: absolute; left: 0; font-size: 11px; top: 3px; }
+  .voice-strip ul li strong { color: var(--light); }
+
+  /* ── HR ZONE ── */
+  .hr-block {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    padding: 24px 28px;
+    margin: 20px 0;
+  }
+
+  .hr-block h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+
+  .hr-bar-wrap {
+    height: 40px;
+    background: #111;
+    border: 1px solid #2a2a2a;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .hr-segment {
+    position: absolute;
+    top: 0; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .hr-seg-low { left: 0; width: 70%; background: rgba(46,158,107,0.12); border-right: 2px solid rgba(46,158,107,0.3); color: var(--green); }
+  .hr-seg-target { left: 70%; width: 10%; background: rgba(232,39,26,0.25); border-right: 2px solid var(--red); color: var(--red); }
+  .hr-seg-high { left: 80%; width: 20%; background: rgba(200,168,75,0.1); color: var(--gold); }
+
+  .hr-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .hr-block p {
+    font-size: 15px;
+    color: #a8a398;
+    line-height: 1.7;
+    margin-top: 12px;
+  }
+
+  .hr-block p strong { color: var(--light); }
+
+  /* ── CIRCUIT TABS ── */
+  .circuit-tabs {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 0;
+  }
+
+  .circuit-tab {
+    flex: 1;
+    padding: 14px 16px;
+    text-align: center;
+    cursor: pointer;
+    background: var(--mid);
+    border: 1px solid #2a2a2a;
+    border-bottom: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+
+  .circuit-tab.active {
+    background: var(--charcoal);
+    border-color: var(--red);
+    border-bottom: 1px solid var(--charcoal);
+    color: var(--red);
+  }
+
+  .circuit-tab span {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .circuit-panel {
+    display: none;
+    background: var(--charcoal);
+    border: 1px solid var(--red);
+    padding: 32px;
+  }
+
+  .circuit-panel.active { display: block; }
+
+  /* ── STATION CARDS ── */
+  .stations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .station {
+    background: var(--mid);
+    border: 1px solid #2a2a2a;
+    padding: 16px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .station-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: rgba(232,39,26,0.25);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 32px;
+  }
+
+  .station-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    margin-bottom: 4px;
+  }
+
+  .station-detail {
+    font-size: 14px;
+    color: #a8a398;
+    line-height: 1.6;
+  }
+
+  .station-detail strong { color: var(--light); }
+  .station-detail em { color: var(--teal); font-style: normal; font-family: 'DM Mono', monospace; font-size: 12px; }
+
+  .station-timing {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--red);
+    border: 1px solid rgba(232,39,26,0.3);
+    padding: 3px 8px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+
+  /* ── BOXING ROUNDS ── */
+  .boxing-rounds {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .round {
+    background: var(--mid);
+    border: 1px solid #1e1e1e;
+    border-left: 3px solid var(--red);
+    padding: 16px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .round-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: rgba(232,39,26,0.3);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 24px;
+  }
+
+  .round-combo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    margin-bottom: 4px;
+  }
+
+  .round-detail {
+    font-size: 14px;
+    color: #a8a398;
+    line-height: 1.6;
+  }
+
+  .round-detail strong { color: var(--light); }
+
+  .burnout-strip {
+    background: rgba(232,39,26,0.08);
+    border: 1px solid rgba(232,39,26,0.2);
+    border-left: 4px solid var(--red);
+    padding: 14px 18px;
+    margin-top: 12px;
+    font-size: 15px;
+    color: #e8b0aa;
+    line-height: 1.65;
+  }
+
+  .burnout-strip strong { color: var(--light); }
+
+  /* ── COOL DOWN ── */
+  .cooldown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .cooldown-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    border-top: 3px solid var(--green);
+    padding: 18px;
+    text-align: center;
+  }
+
+  .cooldown-icon { font-size: 26px; margin-bottom: 8px; }
+
+  .cooldown-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.04em;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+
+  .cooldown-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── CIRCUIT TIPS ── */
+  .tip-box {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    border-left: 4px solid var(--blue);
+    padding: 18px 22px;
+    margin: 16px 0;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #7a9fd4;
+  }
+
+  .tip-box strong { color: var(--light); }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .warmup-grid { grid-template-columns: 1fr; }
+    .circuit-panel { padding: 20px; }
+    .cooldown-grid { grid-template-columns: repeat(2, 1fr); }
+    .module-footer { flex-direction: column; }
+    .timeline { margin: 0 4vw; }
+    .circuit-tab span { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg-text">FIGHTER</div>
+  <p class="breadcrumb">Module 2 — Class Templates &nbsp;›&nbsp; <span>Fighter Class</span></p>
+  <h1 class="hero-title">
+    <em>Fighter</em><br>Class<br>Template
+  </h1>
+  <p class="hero-sub">
+    Higher intensity. Circuit-based. Built for clients at Stage 1–2 and active seniors. <strong>This is your blueprint</strong> — adapt it, own it, make it yours.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot"></span> Fighter Format</div>
+    <div class="meta-pill"><span class="dot"></span> 60 min class</div>
+    <div class="meta-pill"><span class="dot"></span> HR Target 70–80%</div>
+  </div>
+</section>
+
+<!-- ── CLASS TIMELINE ── -->
+<div style="padding:48px 8vw 0;opacity:0;animation:fadeUp 0.6s 0.9s ease forwards;">
+  <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.25em;color:var(--red);text-transform:uppercase;margin-bottom:24px;">Class Structure at a Glance</p>
+  <div class="timeline">
+    <div class="timeline-item tl-warmup">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-time">7–10 min</div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-phase">Warm Up</div>
+        <div class="timeline-desc">Big movements, voice exercises, arm swing, gait drills</div>
+      </div>
+    </div>
+    <div class="timeline-item tl-intensity">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-time">32–35 min</div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-phase">High Intensity</div>
+        <div class="timeline-desc">Functional exercise circuits + boxing rounds at 70–80% THR</div>
+      </div>
+    </div>
+    <div class="timeline-item tl-cooldown">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">5–10 min</div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-phase">Cool Down</div>
+        <div class="timeline-desc">Stretching, breathing, ball release / myofascial work</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ WARM UP ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--gold);">01 — Warm Up · 7–10 Minutes</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:660px;margin-bottom:28px;line-height:1.75;">
+    The warm-up isn't just physical prep — it's neurological activation. Big movements from the start signal the brain that it's time to fire. Use the space and use the group.
+  </p>
+
+  <div class="warmup-grid">
+    <div class="warmup-card">
+      <h4>🚶 Moving Around the Gym</h4>
+      <ul>
+        <li><strong>Big Walk</strong> — done in rows or a group circle depending on space</li>
+        <li><strong>High Knees</strong> — exaggerated, deliberate, arms swinging</li>
+        <li><strong>Butt Kicks</strong> — focus on hamstring engagement and upright posture</li>
+        <li><strong>Monster Walk</strong> — BIG lateral steps with full arm movement</li>
+      </ul>
+    </div>
+    <div class="warmup-card">
+      <h4>🧍 Standing in Spot</h4>
+      <ul>
+        <li>Same exercises as moving version — for clients who need more stability</li>
+        <li><strong>Wall support option:</strong> hands on wall for clients with significant balance challenges or those who need more practice before adding full movement</li>
+        <li>Build confidence before adding distance</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="instructor-note note-blue">
+    <div class="note-icon">💡</div>
+    <div><strong>Arm Swing Note:</strong> If a client is having difficulty coordinating arm swing with their walk — causing freezing or loss of confidence — have them focus strictly on the leg motion first. Slowly reintroduce the arm swing as they experience success. Don't force coordination before the foundation is there.</div>
+  </div>
+
+  <div class="voice-strip">
+    <h4>🎙️ Add Voice Exercises to Every Warm Up</h4>
+    <ul>
+      <li><strong>Vowel Sounds:</strong> A, E, I, O, U — whole face involved, hold as long as possible</li>
+      <li><strong>Word Associations:</strong> Call out vegetables/fruits, words starting with the first letter of your name, rhyming words — go around the room</li>
+      <li><strong>Group Hum:</strong> Hum a short song together — who can hold it longest?</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ HIGH INTENSITY ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--red);">02 — High Intensity · 32–35 Minutes</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:660px;margin-bottom:20px;line-height:1.75;">
+    The heart of the class. <strong>Functional exercises + boxing</strong> — delivered at a pace that keeps clients in their therapeutic heart rate zone.
+  </p>
+
+  <div class="hr-block">
+    <h4>Target Heart Rate: 70–80%</h4>
+    <div class="hr-bar-wrap">
+      <div class="hr-segment hr-seg-low">Below Target</div>
+      <div class="hr-segment hr-seg-target">🎯</div>
+      <div class="hr-segment hr-seg-high">70–80%</div>
+    </div>
+    <div class="hr-labels">
+      <span>50%</span>
+      <span>← Fighter Target Zone →</span>
+      <span>100%</span>
+    </div>
+    <p><strong>Tip:</strong> Periodically have all students take their heart rate (10-second count) and check against the THR chart. This is an excellent gauge for both the instructor and the client to see if intensity needs to be adjusted. Clients without heart issues should aim for 70–80%.</p>
+  </div>
+
+  <!-- Circuit setup tip -->
+  <div class="tip-box">
+    <strong>Circuit Setup:</strong> Use 4–6 stations per circuit. With 4 stations, run through the circuit twice — repetition is key for your clients. With 6 stations, one pass is sufficient. <strong>B4H instructors plan and choreograph their own classes</strong> — the samples below are starting points, not scripts.
+  </div>
+
+  <!-- CIRCUIT TABS -->
+  <div style="margin-top:28px;">
+    <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;color:var(--red);text-transform:uppercase;margin-bottom:14px;">Sample Functional Exercise Circuits</p>
+
+    <div class="circuit-tabs">
+      <div class="circuit-tab active" onclick="switchTab('4station')">
+        4 Stations
+        <span>Run twice · 1.5 min each</span>
+      </div>
+      <div class="circuit-tab" onclick="switchTab('6station')">
+        6 Stations
+        <span>One pass · 1.5 min each</span>
+      </div>
+    </div>
+
+    <!-- 4 Station Panel -->
+    <div class="circuit-panel active" id="panel-4station">
+      <p style="font-size:14px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:0.08em;margin-bottom:20px;">4 STATIONS · 1.5 MIN EACH · RUN CIRCUIT TWICE</p>
+      <div class="stations">
+        <div class="station">
+          <div class="station-num">1</div>
+          <div style="flex:1;">
+            <div class="station-name">PWR! Ups + Chair Sit-Ups</div>
+            <div class="station-detail">PWR! ups standing <strong>5×</strong>, Chair sit-ups <strong>5×</strong></div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+        <div class="station">
+          <div class="station-num">2</div>
+          <div style="flex:1;">
+            <div class="station-name">Scarf Toss</div>
+            <div class="station-detail">Scarf toss <strong>5× each side</strong> — add a <em>Tongue Twister</em> as dual-task challenge</div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+        <div class="station">
+          <div class="station-num">3</div>
+          <div style="flex:1;">
+            <div class="station-name">Over the River + Turn</div>
+            <div class="station-detail">BIG front step over the line → <strong>turn with 4 steps</strong> → repeat. Focus on stride length and arm swing.</div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+        <div class="station">
+          <div class="station-num">4</div>
+          <div style="flex:1;">
+            <div class="station-name">High Knees + Incline Push-Up</div>
+            <div class="station-detail"><strong>10 high knees</strong> → incline push-up <strong>5×</strong> → repeat</div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+      </div>
+      <div class="instructor-note note-teal" style="margin-top:0;">
+        <div class="note-icon">🔁</div>
+        <div>With 4 stations, <strong>run the circuit twice.</strong> Repetition is key — the second pass lets clients focus on quality rather than figuring out the movement.</div>
+      </div>
+    </div>
+
+    <!-- 6 Station Panel -->
+    <div class="circuit-panel" id="panel-6station">
+      <p style="font-size:14px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:0.08em;margin-bottom:20px;">6 STATIONS · 1.5 MIN EACH · ONE PASS</p>
+      <div class="stations">
+        <div class="station">
+          <div class="station-num">1</div>
+          <div style="flex:1;">
+            <div class="station-name">PWR! Ups from Standing</div>
+            <div class="station-detail">Full amplitude, chest open, tall posture on the rise</div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+        <div class="station">
+          <div class="station-num">2</div>
+          <div style="flex:1;">
+            <div class="station-name">Double 007 — Trunk Rotation</div>
+            <div class="station-detail">Add cognitive dual-task: <strong>count backwards from 100 in 3s</strong>, or call out vegetables starting with A through Z</div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+        <div class="station">
+          <div class="station-num">3</div>
+          <div style="flex:1;">
+            <div class="station-name">Lateral Leg Raises</div>
+            <div class="station-detail">Focus on hip stability and upright posture throughout — don't let the trunk lean</div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+        <div class="station">
+          <div class="station-num">4</div>
+          <div style="flex:1;">
+            <div class="station-name">Burpees / Modified Burpees</div>
+            <div class="station-detail">Full burpee OR modified with a chair → finish with a <strong>PWR! up</strong>. Always offer the modification — the finish is the same.</div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+        <div class="station">
+          <div class="station-num">5</div>
+          <div style="flex:1;">
+            <div class="station-name">Core Exercise</div>
+            <div class="station-detail">Instructor's choice — seated or standing core work. Examples: standing bicycle, seated trunk twists, modified plank.</div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+        <div class="station">
+          <div class="station-num">6</div>
+          <div style="flex:1;">
+            <div class="station-name">Scarf Toss in Lunge</div>
+            <div class="station-detail">Scarf toss in lunge position → <strong>switch legs</strong>. Adds balance challenge + lower body strength to the scarf exercise.</div>
+          </div>
+          <div class="station-timing">1.5 MIN</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOXING ROUNDS -->
+  <div style="margin-top:40px;">
+    <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;color:var(--red);text-transform:uppercase;margin-bottom:14px;">Boxing Rounds</p>
+    <p style="font-size:16px;color:#b0aba0;margin-bottom:20px;line-height:1.7;max-width:620px;">4 rounds · 2 min each (timing and number of rounds is at the instructor's discretion). Build complexity across rounds — each one adds a layer.</p>
+
+    <div class="boxing-rounds">
+      <div class="round">
+        <div class="round-num">1</div>
+        <div>
+          <div class="round-combo">Jab · Cross + Footwork</div>
+          <div class="round-detail">Practice the fundamentals. Add a <strong>BIG step to the side</strong> — amplitude in the footwork, not just the punches.</div>
+        </div>
+      </div>
+      <div class="round">
+        <div class="round-num">2</div>
+        <div>
+          <div class="round-combo">Jab · Cross · Hook</div>
+          <div class="round-detail">Add the hook — focus on <strong>trunk rotation</strong> driving the hook, not just the arm.</div>
+        </div>
+      </div>
+      <div class="round">
+        <div class="round-num">3</div>
+        <div>
+          <div class="round-combo">Knee · Jab · Cross · Hook</div>
+          <div class="round-detail">Add the knee strike — hip flexor activation, balance challenge, full-body engagement from the lower body up.</div>
+        </div>
+      </div>
+      <div class="round">
+        <div class="round-num">4</div>
+        <div>
+          <div class="round-combo">Knee · Jab · Cross — Switch Stance — Knee · Jab · Cross · Hook</div>
+          <div class="round-detail">Full combination with <strong>stance switch</strong>. This is your most complex round — both sides of the body, coordination challenge, maximum engagement.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="burnout-strip">
+      <strong>🔥 30-Second Burnout:</strong> Add a 30-second Jab-Cross speed challenge at the end of each round — punch out for speed and power. Or add an optional full burnout at the end of your boxing rounds if clients still have energy left. Read the room and push accordingly. 😄
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COOL DOWN ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--green);">03 — Cool Down · 5–10 Minutes</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:660px;margin-bottom:24px;line-height:1.75;">
+    Focus on <strong>3–5 stretches</strong> based on the parts of the body you worked hardest in today's class. The cool-down is therapeutic — not optional and not rushed.
+  </p>
+
+  <div class="cooldown-grid">
+    <div class="cooldown-card">
+      <div class="cooldown-icon">🧘</div>
+      <div class="cooldown-name">Yoga Techniques</div>
+      <div class="cooldown-desc">If you're familiar with yoga, this is a great place to bring it in — especially poses that open the chest and hips</div>
+    </div>
+    <div class="cooldown-card">
+      <div class="cooldown-icon">🫁</div>
+      <div class="cooldown-name">Breathing Exercises</div>
+      <div class="cooldown-desc">Diaphragmatic breathing, box breathing, or extended exhale work — especially beneficial for voice and respiratory function</div>
+    </div>
+    <div class="cooldown-card">
+      <div class="cooldown-icon">⚽</div>
+      <div class="cooldown-name">Ball Releases</div>
+      <div class="cooldown-desc">Therapy ball / massage ball work on the back, chest, feet, or shoulders. Pick one area per session and work it thoroughly</div>
+    </div>
+    <div class="cooldown-card">
+      <div class="cooldown-icon">🤸</div>
+      <div class="cooldown-name">Targeted Stretches</div>
+      <div class="cooldown-desc">Choose based on what you used — hip flexors after knee work, chest after punching, hamstrings after high knees</div>
+    </div>
+  </div>
+
+  <div class="instructor-note note-gold" style="margin-top:8px;">
+    <div class="note-icon">📹</div>
+    <div><strong>Video Resource:</strong> A full example Fighter class video is available for you to watch — note that it doesn't follow this exact template. Use it to observe pacing, cueing style, energy management, and how the instructor adapts to the group in real time.</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>Champion Class Template</span></h2>
+    <p>Same structure, adjusted for clients with greater support needs. Learn how the Champion format differs and when to apply it.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: Champion Template →</button>
+    <button class="btn btn-ghost">↩ Back to Class Setup</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 }).observe(r);
+});
+
+function switchTab(id) {
+  document.querySelectorAll('.circuit-tab').forEach((t, i) => {
+    t.classList.toggle('active', (i === 0 && id === '4station') || (i === 1 && id === '6station'));
+  });
+  document.getElementById('panel-4station').classList.toggle('active', id === '4station');
+  document.getElementById('panel-6station').classList.toggle('active', id === '6station');
+}
+</script>
+</body>
+</html>

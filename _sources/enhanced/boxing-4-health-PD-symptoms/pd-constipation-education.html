@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gut Feelings: Mediterranean Diet & Parkinson's</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive: #6B7A3A;
+    --warm-cream: #FAF6EE;
+    --terracotta: #C8603A;
+    --sand: #E8DCC8;
+    --deep: #2C2416;
+    --sage: #A8B87A;
+    --accent: #E8A04A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-cream);
+    color: var(--deep);
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--olive);
+    background-image: radial-gradient(ellipse at 80% 20%, rgba(168,184,122,0.4) 0%, transparent 60%),
+                      radial-gradient(ellipse at 20% 80%, rgba(200,96,58,0.2) 0%, transparent 50%);
+    color: white;
+    padding: 60px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '🫒';
+    font-size: 200px;
+    position: absolute;
+    right: -20px;
+    top: -30px;
+    opacity: 0.12;
+    transform: rotate(-15deg);
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--terracotta);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 600px;
+  }
+
+  .hero h1 em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .hero .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    max-width: 550px;
+    font-weight: 300;
+  }
+
+  .study-tag {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  /* MAIN */
+  .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  /* STAT CARDS */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: -40px auto 0;
+    max-width: 820px;
+    padding: 0 24px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(44,36,22,0.12);
+    border-top: 4px solid var(--terracotta);
+    animation: slideUp 0.6s ease both;
+  }
+
+  .stat-card:nth-child(2) { border-top-color: var(--olive); animation-delay: 0.1s; }
+  .stat-card:nth-child(3) { border-top-color: var(--accent); animation-delay: 0.2s; }
+  .stat-card:nth-child(4) { border-top-color: var(--sage); animation-delay: 0.3s; }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stat-number {
+    font-family: 'Fraunces', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+
+  .stat-card:nth-child(2) .stat-number { color: var(--olive); }
+  .stat-card:nth-child(3) .stat-number { color: var(--accent); }
+  .stat-card:nth-child(4) .stat-number { color: var(--sage); }
+
+  .stat-label {
+    font-size: 0.82rem;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* SECTIONS */
+  section { padding: 48px 0 24px; }
+
+  .section-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 20px;
+    color: var(--deep);
+    line-height: 1.2;
+  }
+
+  p { margin-bottom: 16px; font-size: 1rem; color: #3d3222; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--sand) 0%, #f0e8d4 100%);
+    border-left: 4px solid var(--olive);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+
+  .highlight-box p { margin: 0; font-weight: 500; font-size: 1.05rem; }
+
+  /* WHAT IS SECTION */
+  .meddiet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 24px 0;
+  }
+
+  .food-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid #e8dcc8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .food-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(44,36,22,0.1); }
+
+  .food-emoji { font-size: 2rem; }
+  .food-text { font-size: 0.9rem; font-weight: 500; }
+  .food-sub { font-size: 0.78rem; color: #999; }
+
+  /* FINDINGS */
+  .finding-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 16px;
+    border: 1px solid #ede4d4;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 2px 12px rgba(44,36,22,0.05);
+    transition: box-shadow 0.2s;
+  }
+
+  .finding-card:hover { box-shadow: 0 6px 24px rgba(44,36,22,0.1); }
+
+  .finding-icon {
+    font-size: 2rem;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  .finding-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 6px; }
+  .finding-text { font-size: 0.92rem; color: #5a4e3a; line-height: 1.6; margin: 0; }
+
+  /* GUT-BRAIN SECTION */
+  .gut-brain {
+    background: var(--deep);
+    color: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 32px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gut-brain::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(168,184,122,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .gut-brain h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+
+  .gut-brain p { color: rgba(255,255,255,0.82); margin: 0; }
+
+  .pathway {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .pathway-step {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .pathway-arrow { color: var(--accent); font-size: 1.2rem; }
+
+  /* TAKEAWAY */
+  .takeaway {
+    background: linear-gradient(135deg, var(--olive) 0%, #4a5528 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 36px 40px;
+    margin: 32px 0;
+  }
+
+  .takeaway h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+  }
+
+  .takeaway ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .takeaway li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  .takeaway li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+  /* ===== QUIZ ===== */
+  .quiz-section {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 48px 0;
+    border: 2px solid var(--sand);
+    box-shadow: 0 8px 40px rgba(44,36,22,0.08);
+  }
+
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .quiz-header .badge { background: var(--olive); }
+
+  .quiz-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--deep);
+    margin-bottom: 10px;
+  }
+
+  .quiz-header p { font-size: 0.95rem; color: #888; margin: 0; }
+
+  .quiz-progress {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .progress-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--sand);
+    transition: background 0.3s;
+  }
+
+  .progress-dot.active { background: var(--terracotta); }
+  .progress-dot.done { background: var(--olive); }
+
+  .question-block { display: none; animation: fadeIn 0.4s ease; }
+  .question-block.visible { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .question-num {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .question-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    color: var(--deep);
+    margin-bottom: 22px;
+    line-height: 1.4;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+
+  .option-btn {
+    background: var(--warm-cream);
+    border: 2px solid var(--sand);
+    border-radius: 12px;
+    padding: 14px 20px;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--deep);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .option-btn:hover { border-color: var(--olive); background: #f0ece2; transform: translateX(4px); }
+  .option-btn.selected { border-color: var(--olive); background: #edf2df; }
+  .option-btn.correct { border-color: #5a9a3a; background: #edf7e4; color: #2a5a18; }
+  .option-btn.incorrect { border-color: #c84a3a; background: #fce8e4; color: #7a2018; }
+
+  .option-letter {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--sand);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .option-btn.correct .option-letter { background: #5a9a3a; color: white; }
+  .option-btn.incorrect .option-letter { background: #c84a3a; color: white; }
+
+  .feedback-box {
+    display: none;
+    margin-top: 16px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .feedback-box.show { display: block; }
+  .feedback-box.correct-fb { background: #edf7e4; border-left: 4px solid #5a9a3a; color: #2a4a18; }
+  .feedback-box.incorrect-fb { background: #fce8e4; border-left: 4px solid #c84a3a; color: #6a2018; }
+
+  .quiz-nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+  }
+
+  .next-btn {
+    background: var(--terracotta);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: none;
+  }
+
+  .next-btn:hover { background: #b3502e; transform: scale(1.02); }
+
+  /* RESULTS */
+  .quiz-results {
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .result-emoji { font-size: 5rem; margin-bottom: 16px; display: block; }
+
+  .result-score {
+    font-family: 'Fraunces', serif;
+    font-size: 3.5rem;
+    color: var(--terracotta);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .result-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--deep);
+  }
+
+  .result-message {
+    font-size: 0.95rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+
+  .result-bar {
+    height: 14px;
+    background: var(--sand);
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto 32px;
+    overflow: hidden;
+  }
+
+  .result-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--olive), var(--sage));
+    border-radius: 8px;
+    transition: width 1s ease 0.3s;
+    width: 0;
+  }
+
+  .retake-btn {
+    background: var(--olive);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .retake-btn:hover { background: #556030; }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: var(--sand);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 32px 0;
+    font-size: 0.85rem;
+    color: #6a5a3a;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .disclaimer strong { color: var(--deep); }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 0.82rem;
+    color: #aaa;
+    border-top: 1px solid var(--sand);
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 24px 70px; }
+    .gut-brain, .quiz-section, .takeaway { padding: 28px 24px; }
+    .stats-row { margin-top: -30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">PPE Educational Program</div>
+    <h1>Your Gut Has a <em>Lot</em> to Say About Parkinson's</h1>
+    <p class="subtitle">How a Mediterranean diet changed the gut and eased constipation in people with Parkinson's disease — what the research tells us.</p>
+    <div class="study-tag">
+      📄 Based on: Rusch et al. (2021) — University of Florida · Frontiers in Neurology
+    </div>
+  </div>
+</div>
+
+<!-- STAT CARDS -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-number">80%</div>
+    <div class="stat-label">of people with PD experience constipation</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">5 wks</div>
+    <div class="stat-label">Mediterranean diet intervention in the pilot study</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">↑ Fiber</div>
+    <div class="stat-label">Significant increase in daily fiber intake</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">🦠</div>
+    <div class="stat-label">Gut microbiome changed in measurable ways</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- WHY IT MATTERS -->
+  <section>
+    <div class="section-tag">Why This Matters</div>
+    <h2>Constipation in Parkinson's: More Than Just a Nuisance</h2>
+    <p>When we think about Parkinson's disease (PD), we often focus on tremors and movement. But the gut tells a story too — and it often starts <em>years before</em> motor symptoms appear. Up to 80% of people with PD experience constipation, which can worsen quality of life, affect how medications are absorbed, and may even be connected to disease progression.</p>
+    <div class="highlight-box">
+      <p>🔬 Researchers at the University of Florida asked a simple but powerful question: <em>Could eating a Mediterranean diet improve gut symptoms and change the microbiome in people with Parkinson's disease?</em></p>
+    </div>
+    <p>The answer — even from this small pilot study — was encouraging. In just 5 weeks, participants who followed a Mediterranean diet showed reduced constipation symptoms and notable shifts in their gut bacteria.</p>
+  </section>
+
+  <!-- WHAT IS MED DIET -->
+  <section>
+    <div class="section-tag">The Diet</div>
+    <h2>What Is the Mediterranean Diet?</h2>
+    <p>Think of it as eating like you live near the Greek coast. It's rich in plants, healthy fats, and whole foods — and naturally high in the fiber and anti-inflammatory nutrients that the gut loves.</p>
+    <div class="meddiet-grid">
+      <div class="food-card"><div class="food-emoji">🫒</div><div><div class="food-text">Olive Oil</div><div class="food-sub">Primary fat source</div></div></div>
+      <div class="food-card"><div class="food-emoji">🥦</div><div><div class="food-text">Vegetables</div><div class="food-sub">Lots, every day</div></div></div>
+      <div class="food-card"><div class="food-emoji">🫘</div><div><div class="food-text">Legumes & Beans</div><div class="food-sub">Fiber powerhouses</div></div></div>
+      <div class="food-card"><div class="food-emoji">🐟</div><div><div class="food-text">Fish</div><div class="food-sub">Especially fatty fish</div></div></div>
+      <div class="food-card"><div class="food-emoji">🫐</div><div><div class="food-text">Fruits & Berries</div><div class="food-sub">Antioxidant-rich</div></div></div>
+      <div class="food-card"><div class="food-emoji">🌾</div><div><div class="food-text">Whole Grains</div><div class="food-sub">Low-processed options</div></div></div>
+      <div class="food-card"><div class="food-emoji">🥜</div><div><div class="food-text">Nuts & Seeds</div><div class="food-sub">Healthy fats + fiber</div></div></div>
+      <div class="food-card"><div class="food-emoji">🍷</div><div><div class="food-text">Moderate Red Wine</div><div class="food-sub">Optional; with meals</div></div></div>
+    </div>
+  </section>
+
+  <!-- THE STUDY -->
+  <section>
+    <div class="section-tag">The Research</div>
+    <h2>What the Study Found</h2>
+    <p>Eight people with Parkinson's disease followed a Mediterranean diet for 5 weeks, guided by study dietitians. Their live-in partners served as healthy comparison controls. Here's what happened:</p>
+
+    <div class="finding-card">
+      <div class="finding-icon">💩</div>
+      <div>
+        <div class="finding-title">Constipation Symptoms Improved</div>
+        <p class="finding-text">Participants reported fewer constipation symptoms — including less straining, harder stools, and a reduced sense of incomplete bowel movements — after just 5 weeks on the diet.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">🦠</div>
+      <div>
+        <div class="finding-title">The Gut Microbiome Shifted</div>
+        <p class="finding-text">Stool analysis showed real changes in the types and balance of bacteria living in the gut. Notably, there were increases in bacteria associated with fiber fermentation and short-chain fatty acid (SCFA) production — chemicals that are helpful for gut health and may even support brain health.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">🌾</div>
+      <div>
+        <div class="finding-title">Fiber Intake Jumped Significantly</div>
+        <p class="finding-text">Participants significantly increased their daily fiber consumption by following the Mediterranean diet. This is particularly important because most people with PD don't consume enough fiber, which directly impacts bowel regularity.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">🔬</div>
+      <div>
+        <div class="finding-title">Intestinal Permeability Was Measured</div>
+        <p class="finding-text">The researchers also checked "leaky gut" markers. While the pilot was too small to draw firm conclusions, the fact that these markers were being tracked reflects how seriously gut integrity is being studied in Parkinson's research.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUT-BRAIN AXIS -->
+  <div class="gut-brain">
+    <h3>🧠 The Gut–Brain Connection</h3>
+    <p>Scientists increasingly believe that Parkinson's disease may actually begin in the gut — specifically with the misfolding of a protein called alpha-synuclein, which may travel from the gut up to the brain via the vagus nerve. A disrupted gut microbiome (dysbiosis) can trigger inflammation and may contribute to disease progression.</p>
+    <div class="pathway">
+      <div class="pathway-step">Poor Diet</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">Gut Dysbiosis</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">Inflammation</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">↑ Alpha-Synuclein</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">Brain Impact</div>
+    </div>
+  </div>
+
+  <!-- TAKEAWAYS -->
+  <div class="takeaway">
+    <h3>💡 Key Takeaways for Your Practice</h3>
+    <ul>
+      <li>Constipation is one of the most common non-motor symptoms of Parkinson's and deserves proactive management.</li>
+      <li>A Mediterranean diet — high in fiber, vegetables, and healthy fats — may meaningfully reduce constipation in people with PD.</li>
+      <li>The gut microbiome is modifiable through diet, and changes can happen within weeks.</li>
+      <li>Short-chain fatty acids (SCFAs) produced by gut bacteria may have neuroprotective effects — another reason diet matters in PD.</li>
+      <li>While this pilot study was small (n=8), a later randomized controlled trial by the same team confirmed key benefits including reduced gut inflammation.</li>
+      <li>Encouraging patients to increase fruit, vegetable, legume, and whole grain intake is a low-risk, high-reward strategy.</li>
+    </ul>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    ⚠️ <div><strong>Please note:</strong> This is a pilot study with a small sample size (n=8). Results are promising but should be considered exploratory. Always work with the patient's healthcare team before making significant dietary changes, especially given medication interactions in PD (e.g., high-protein meals can affect levodopa absorption).</div>
+  </div>
+
+  <!-- ===== QUIZ ===== -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <div class="badge">Interactive Quiz</div>
+      <h2>Are You Paying Attention to Your Gut? 🌿</h2>
+      <p>Test your knowledge — and find out if you might have constipation symptoms worth discussing!</p>
+    </div>
+
+    <div class="quiz-progress" id="progressDots"></div>
+
+    <!-- Questions will be rendered by JS -->
+    <div id="quizContent"></div>
+
+    <div class="quiz-results" id="quizResults">
+      <span class="result-emoji" id="resultEmoji">🎉</span>
+      <div class="result-score" id="resultScore"></div>
+      <div class="result-label" id="resultLabel"></div>
+      <div class="result-bar"><div class="result-bar-fill" id="resultBarFill"></div></div>
+      <p class="result-message" id="resultMessage"></p>
+      <button class="retake-btn" onclick="restartQuiz()">🔁 Retake Quiz</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    Source: Rusch et al. (2021). <em>Mediterranean Diet Adherence in People With Parkinson's Disease Reduces Constipation Symptoms and Changes Fecal Microbiota After a 5-Week Single-Arm Pilot Study.</em> Frontiers in Neurology, 12, 794640.<br><br>
+    Created for PPE Educational Program — For educational purposes only. Not a substitute for medical advice.
+  </div>
+</footer>
+
+<script>
+const questions = [
+  {
+    text: "How often do you have a bowel movement?",
+    options: [
+      "Every 1–2 days — regular as clockwork",
+      "Every 3 days — pretty normal for me",
+      "Every 4–5 days or less frequent",
+      "Rarely — sometimes I go a week or more"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "✅ That's a healthy frequency! Most guidelines consider 3 times per day to 3 times per week as normal range. Staying well-hydrated and eating fiber helps keep things moving.",
+      "⚠️ Going every 3 days is on the lower end of normal, but may be fine for some people. If it's accompanied by straining or hard stools, it's worth mentioning to your doctor.",
+      "⚠️ Bowel movements less frequent than every 3 days may indicate constipation, especially if associated with difficulty. Consider increasing fiber and fluid intake.",
+      "🚨 Going a week or more between bowel movements is a concern and is considered constipation. This can affect medication absorption and quality of life in Parkinson's. Please speak with your healthcare team."
+    ]
+  },
+  {
+    text: "When you do go, how would you describe the experience?",
+    options: [
+      "Easy and complete — no straining",
+      "Occasionally hard but usually fine",
+      "I often have to strain a lot",
+      "I frequently feel like I haven't fully emptied"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "✅ Excellent! Comfortable, easy bowel movements are a sign of good gut health. Keep up the fiber and hydration!",
+      "🟡 Occasional straining can be normal, but if it's becoming more frequent, try adding more fiber-rich foods like vegetables, legumes, and whole grains.",
+      "⚠️ Frequent straining is a key sign of constipation. It can also worsen other conditions. A Mediterranean-style diet rich in fiber may help — and it's worth discussing with your care team.",
+      "⚠️ A sense of incomplete evacuation is one of the hallmark symptoms of constipation and is very common in Parkinson's. This symptom alone warrants a conversation with your healthcare provider."
+    ]
+  },
+  {
+    text: "True or False: Constipation in Parkinson's disease can appear BEFORE motor symptoms like tremors.",
+    options: [
+      "True — gut symptoms often precede motor symptoms by years",
+      "False — motor symptoms always come first",
+      "They always appear at the same time",
+      "Constipation has nothing to do with Parkinson's disease"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct! Research suggests GI symptoms, including constipation, can appear years — sometimes a decade or more — before the classic tremors and movement changes of PD. This is why the gut is so important in PD research.",
+      "❌ Actually, constipation and other gut issues can precede motor symptoms in PD by many years. The gut-brain connection is a key area of current PD research.",
+      "❌ Not quite — gut symptoms like constipation are often one of the earliest non-motor signs of PD, appearing well before movement problems.",
+      "❌ Constipation is actually one of the most common non-motor symptoms of Parkinson's, affecting up to 80% of people with the condition."
+    ]
+  },
+  {
+    text: "Which of these is a key reason why fiber is so important for people with Parkinson's?",
+    options: [
+      "It feeds good gut bacteria that produce beneficial short-chain fatty acids",
+      "It directly reduces tremors",
+      "It replaces the need for Parkinson's medications",
+      "It has no real effect — diet doesn't matter in PD"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Spot on! Dietary fiber feeds beneficial gut bacteria, which ferment it into short-chain fatty acids (SCFAs). SCFAs support gut lining health, reduce inflammation, and may even have neuroprotective effects that benefit the brain.",
+      "❌ Fiber doesn't directly reduce tremors, but it supports gut health and microbiome balance, which may have broader effects on PD through the gut-brain axis.",
+      "❌ Dietary changes should never replace prescribed medications. However, a healthy diet like the Mediterranean diet can work alongside medical treatment to improve symptoms and quality of life.",
+      "❌ Diet has a very real effect on gut health, microbiome composition, inflammation, and potentially even brain health through the gut-brain axis. The Mediterranean diet has shown measurable benefits in PD research."
+    ]
+  },
+  {
+    text: "How many servings of vegetables and fruits do you typically eat per day?",
+    options: [
+      "5 or more — I love my produce!",
+      "3–4 servings most days",
+      "1–2 servings — I could definitely do better",
+      "Rarely or almost never"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "🌟 Fantastic! High fruit and vegetable intake is a cornerstone of the Mediterranean diet and provides the fiber, antioxidants, and prebiotic compounds that support a healthy gut microbiome.",
+      "🟡 Good effort! Aim to bump that up to 5+ servings by adding an extra handful of vegetables at meals or including fruit as a snack. Small changes add up.",
+      "⚠️ Most people benefit from at least 5 servings of fruits and vegetables daily. Try adding a salad at lunch, roasted veggies at dinner, or a banana to breakfast. Your gut bacteria will thank you!",
+      "🚨 Very low fruit and vegetable intake is a key risk factor for constipation and poor gut microbiome diversity. Start small — even adding one serving per day can make a difference over time."
+    ]
+  },
+  {
+    text: "What did the 5-week Mediterranean diet study specifically find about the gut microbiome in people with Parkinson's?",
+    options: [
+      "It changed measurably — with increases in fiber-fermenting bacteria",
+      "The microbiome was completely cured",
+      "There were no changes whatsoever",
+      "The diet made the microbiome worse"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct! The study found measurable shifts in the gut microbiome after just 5 weeks, including increases in bacteria that ferment fiber and produce short-chain fatty acids. This is exciting because it shows diet can change the gut relatively quickly.",
+      "❌ The study didn't claim a 'cure,' but it did find meaningful and measurable changes in microbiome composition — which is encouraging as a starting point for larger studies.",
+      "❌ There were actually notable changes in the gut microbiome, including shifts toward more beneficial fiber-fermenting bacteria.",
+      "❌ The diet was associated with beneficial changes in the microbiome, not harmful ones. This is consistent with broader Mediterranean diet research."
+    ]
+  },
+  {
+    text: "How much water do you drink per day?",
+    options: [
+      "6–8 glasses (1.5–2 liters) — I stay well hydrated",
+      "About 4–5 glasses",
+      "2–3 glasses — I often forget",
+      "Barely 1–2 glasses — I'm not really a water person"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "💧 Excellent hydration! Water works alongside fiber to keep stool soft and moving. This is especially important in Parkinson's, where constipation is already a major challenge.",
+      "🟡 Not bad, but try to reach 6–8 glasses per day. Carry a water bottle, set reminders, or try herbal teas to increase fluid intake.",
+      "⚠️ Low fluid intake is a major contributor to constipation. Even with good fiber intake, without enough water, stool can become hard and difficult to pass. Try to increase gradually.",
+      "🚨 Very low hydration is a serious risk factor for constipation. Try starting the day with a glass of water and keeping one nearby at all times."
+    ]
+  },
+  {
+    text: "Which of these is NOT typically part of the Mediterranean diet?",
+    options: [
+      "Ultra-processed fast food and sugary drinks",
+      "Olive oil as the main fat",
+      "Plenty of vegetables and legumes",
+      "Fish and whole grains"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct! Ultra-processed foods and sugary drinks are NOT part of the Mediterranean diet. These foods can harm the gut microbiome, increase inflammation, and worsen constipation. The Mediterranean diet focuses on whole, minimally processed foods.",
+      "❌ Olive oil IS a cornerstone of the Mediterranean diet — it's the primary fat used in cooking and dressing and provides anti-inflammatory benefits.",
+      "❌ Vegetables and legumes ARE key components of the Mediterranean diet, providing the fiber that feeds beneficial gut bacteria.",
+      "❌ Fish and whole grains ARE part of the Mediterranean diet. Fatty fish provides omega-3s, and whole grains contribute fiber and nutrients."
+    ]
+  }
+];
+
+let currentQ = 0;
+let score = 0;
+let answered = false;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContent');
+  const dots = document.getElementById('progressDots');
+  dots.innerHTML = questions.map((_, i) => `<div class="progress-dot" id="dot-${i}"></div>`).join('');
+  container.innerHTML = questions.map((q, i) => `
+    <div class="question-block ${i === 0 ? 'visible' : ''}" id="qblock-${i}">
+      <div class="question-num">${q.knowledge ? '🧠 Knowledge Check' : '🪞 Self-Reflection'} · Question ${i + 1} of ${questions.length}</div>
+      <div class="question-text">${q.text}</div>
+      <div class="options">
+        ${q.options.map((opt, j) => `
+          <button class="option-btn" onclick="selectAnswer(${i}, ${j})" id="opt-${i}-${j}">
+            <span class="option-letter">${String.fromCharCode(65+j)}</span>
+            ${opt}
+          </button>
+        `).join('')}
+      </div>
+      <div class="feedback-box" id="fb-${i}"></div>
+      <div class="quiz-nav"><button class="next-btn" id="next-${i}" onclick="nextQuestion(${i})">${i < questions.length - 1 ? 'Next →' : 'See My Results →'}</button></div>
+    </div>
+  `).join('');
+  updateDots();
+}
+
+function selectAnswer(qIdx, optIdx) {
+  if (answered && currentQ === qIdx) return;
+  answered = true;
+
+  const q = questions[qIdx];
+  const isCorrect = q.knowledge ? optIdx === q.correct : true;
+
+  // Style buttons
+  q.options.forEach((_, j) => {
+    const btn = document.getElementById(`opt-${qIdx}-${j}`);
+    if (j === optIdx) {
+      btn.classList.add(q.knowledge ? (j === q.correct ? 'correct' : 'incorrect') : 'selected');
+    }
+    if (q.knowledge && j === q.correct && j !== optIdx) {
+      btn.classList.add('correct');
+    }
+  });
+
+  // Feedback
+  const fb = document.getElementById(`fb-${qIdx}`);
+  fb.textContent = q.feedback[optIdx];
+  fb.className = `feedback-box show ${q.knowledge && optIdx !== q.correct ? 'incorrect-fb' : 'correct-fb'}`;
+
+  if (q.knowledge && isCorrect) score++;
+
+  // Show next
+  document.getElementById(`next-${qIdx}`).style.display = 'block';
+}
+
+function nextQuestion(qIdx) {
+  document.getElementById(`qblock-${qIdx}`).classList.remove('visible');
+  answered = false;
+
+  if (qIdx + 1 < questions.length) {
+    currentQ = qIdx + 1;
+    document.getElementById(`qblock-${currentQ}`).classList.add('visible');
+    document.getElementById(`dot-${qIdx}`).classList.remove('active');
+    document.getElementById(`dot-${qIdx}`).classList.add('done');
+    updateDots();
+  } else {
+    showResults();
+  }
+}
+
+function updateDots() {
+  questions.forEach((_, i) => {
+    const dot = document.getElementById(`dot-${i}`);
+    if (i === currentQ) dot.classList.add('active');
+  });
+}
+
+function showResults() {
+  document.getElementById('quizContent').style.display = 'none';
+  document.getElementById('progressDots').style.display = 'none';
+  const results = document.getElementById('quizResults');
+  results.style.display = 'block';
+
+  const knowledgeQs = questions.filter(q => q.knowledge).length;
+  const pct = Math.round((score / knowledgeQs) * 100);
+
+  document.getElementById('resultScore').textContent = `${score}/${knowledgeQs}`;
+
+  let emoji, label, message;
+  if (pct === 100) {
+    emoji = '🌟'; label = 'Gut Health Expert!';
+    message = 'Outstanding! You have a strong understanding of the gut–Parkinson's connection and the power of diet. Share this knowledge with your patients and colleagues!';
+  } else if (pct >= 75) {
+    emoji = '🫒'; label = 'Mediterranean Scholar!';
+    message = 'Great work! You understand most of the key concepts. Review any questions you missed to deepen your understanding of how diet supports gut health in PD.';
+  } else if (pct >= 50) {
+    emoji = '🌱'; label = 'Growing Learner!';
+    message = 'Good effort! There's more to explore about the gut–brain connection in Parkinson's. Consider reviewing the material above and exploring the original research.';
+  } else {
+    emoji = '🔍'; label = 'Keep Exploring!';
+    message = 'This is a complex topic — keep learning! The gut–Parkinson's connection is one of the most exciting areas of current research. Review the summary above and try again.';
+  }
+
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultLabel').textContent = label;
+  document.getElementById('resultMessage').textContent = message;
+
+  setTimeout(() => {
+    document.getElementById('resultBarFill').style.width = pct + '%';
+  }, 100);
+}
+
+function restartQuiz() {
+  currentQ = 0;
+  score = 0;
+  answered = false;
+  document.getElementById('quizResults').style.display = 'none';
+  document.getElementById('quizContent').style.display = 'block';
+  document.getElementById('progressDots').style.display = 'flex';
+  buildQuiz();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

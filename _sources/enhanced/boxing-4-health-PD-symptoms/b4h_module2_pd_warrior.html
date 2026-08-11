@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — PD Warrior</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 58vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 95% 40%, rgba(30,138,138,0.12) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 50% at 5% 80%, rgba(232,39,26,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--teal); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--teal); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.8;
+    color: #b0aba0;
+    max-width: 620px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  .hero-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 9px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    animation: pulse 2s infinite;
+  }
+
+  .section { padding: 68px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── ORIGIN CARD ── */
+  .origin-block {
+    background: linear-gradient(135deg, #080e10, #0a1212);
+    border: 1px solid rgba(30,138,138,0.25);
+    border-left: 5px solid var(--teal);
+    padding: 36px 40px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .origin-block::after {
+    content: '🇦🇺';
+    position: absolute;
+    right: 28px; top: 20px;
+    font-size: 80px;
+    opacity: 0.08;
+  }
+
+  .origin-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  .origin-block p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #90c0c0;
+    margin-bottom: 14px;
+    max-width: 700px;
+  }
+
+  .origin-block p:last-child { margin-bottom: 0; }
+  .origin-block p strong { color: var(--light); }
+
+  .origin-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(30,138,138,0.2);
+  }
+
+  .origin-stat {
+    text-align: center;
+  }
+
+  .origin-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--teal);
+    line-height: 1;
+  }
+
+  .origin-stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(30,138,138,0.6);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── NEURO SECTION ── */
+  .neuro-block {
+    background: linear-gradient(135deg, #080d10, #0a0d14);
+    border: 1px solid rgba(58,123,213,0.2);
+    border-left: 5px solid var(--blue);
+    padding: 40px 44px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neuro-block::after {
+    content: '🧠';
+    position: absolute;
+    right: 30px; top: 20px;
+    font-size: 100px;
+    opacity: 0.06;
+  }
+
+  .neuro-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.05em;
+    color: var(--blue);
+    margin-bottom: 16px;
+  }
+
+  .neuro-block p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #a0b8d8;
+    max-width: 700px;
+    margin-bottom: 16px;
+  }
+
+  .neuro-block p:last-child { margin-bottom: 0; }
+  .neuro-block p strong { color: var(--light); }
+  .neuro-block .cite {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(58,123,213,0.5);
+    letter-spacing: 0.05em;
+    margin-top: 16px;
+  }
+
+  /* ── RESEARCH CARDS ── */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+
+  .research-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 26px;
+  }
+
+  .research-card-icon { font-size: 28px; margin-bottom: 12px; }
+
+  .research-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+  }
+
+  .research-card p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #a8a398;
+  }
+
+  .research-card p strong { color: var(--light); }
+
+  /* ── B4H REQUIREMENT ── */
+  .requirement-box {
+    background: rgba(232,39,26,0.07);
+    border: 1px solid rgba(232,39,26,0.2);
+    border-left: 5px solid var(--red);
+    padding: 30px 34px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .req-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+
+  .requirement-box h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .requirement-box p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #e8b0aa;
+  }
+
+  .requirement-box p strong { color: var(--light); }
+
+  /* ── DEMO STEPS ── */
+  .demo-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .demo-step {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 22px 28px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .demo-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 38px;
+  }
+
+  .demo-step:nth-child(1) .demo-num { color: rgba(30,138,138,0.35); }
+  .demo-step:nth-child(2) .demo-num { color: rgba(200,168,75,0.35); }
+  .demo-step:nth-child(3) .demo-num { color: rgba(46,158,107,0.35); }
+  .demo-step:nth-child(4) .demo-num { color: rgba(232,39,26,0.35); }
+
+  .demo-step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+
+  .demo-step:nth-child(1) .demo-step-title { color: var(--teal); }
+  .demo-step:nth-child(2) .demo-step-title { color: var(--gold); }
+  .demo-step:nth-child(3) .demo-step-title { color: var(--green); }
+  .demo-step:nth-child(4) .demo-step-title { color: var(--red); }
+
+  .demo-step-body {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #b0aba0;
+  }
+
+  .demo-step-body strong { color: var(--light); }
+
+  /* ── SYNERGY BLOCK ── */
+  .synergy-block {
+    background: linear-gradient(135deg, #0d1208, #0a100d);
+    border: 1px solid rgba(46,158,107,0.25);
+    padding: 36px 40px;
+    margin-bottom: 48px;
+  }
+
+  .synergy-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    color: var(--green);
+    margin-bottom: 16px;
+  }
+
+  .synergy-block p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #90c8a8;
+    max-width: 700px;
+    margin-bottom: 16px;
+  }
+
+  .synergy-block p:last-child { margin-bottom: 0; }
+  .synergy-block p strong { color: var(--light); }
+
+  .synergy-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .synergy-pill {
+    background: rgba(46,158,107,0.1);
+    border: 1px solid rgba(46,158,107,0.25);
+    color: var(--green);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 6px 14px;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .research-grid { grid-template-columns: 1fr; }
+    .origin-stats { gap: 20px; }
+    .neuro-block { padding: 28px; }
+    .origin-block { padding: 28px; }
+    .module-footer { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="breadcrumb">Module 2 — Class Breakdown &nbsp;›&nbsp; <span>PD Warrior</span></p>
+  <h1 class="hero-title">
+    <em>PD</em><br>Warrior
+  </h1>
+  <p class="hero-sub">
+    One of the most respected Parkinson's-specific exercise programs in the world — and an essential component of every Boxing 4 Health class design. Here's what it is, why it works, and what you need to do.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot"></span> Module 2</div>
+    <div class="meta-pill"><span class="dot"></span> Est. 10 min</div>
+    <div class="meta-pill"><span class="dot"></span> Includes Demonstration Requirement</div>
+  </div>
+</section>
+
+<!-- ══════════ WHAT IS PD WARRIOR ══════════ -->
+<section class="section reveal">
+  <p class="section-label">01 — What Is PD Warrior?</p>
+
+  <div class="origin-block">
+    <h3>Born in Australia. Built on Science.</h3>
+    <p>
+      PD Warrior is an exercise-based Parkinson's treatment program founded in <strong>2011</strong> by two specialist neurological physiotherapists in Australia. It was built from the ground up on the principles of neuroplasticity — specifically designed to retrain the brain and improve Parkinson's symptoms through <strong>high-intensity, neuroactive exercise.</strong>
+    </p>
+    <p>
+      The program's founder, <strong>Melissa McConaghy</strong>, is a specialist neurological physiotherapist with a Master's in Health Science in Neurological Physiotherapy. She was awarded <strong>Australian Physiotherapist of the Year in 2019</strong> and has spent over 20 years working with people with Parkinson's. PD Warrior has since grown into the world's largest online Parkinson's exercise community.
+    </p>
+    <p>
+      A published pilot study by Tucak et al. (2024, <em>Internal Medicine Journal</em>) provided the first peer-reviewed evidence that the PD Warrior 10-Week Challenge program <strong>significantly improves motor outcomes, mobility, daily living, and quality of life</strong> in people with early Parkinson's.
+    </p>
+    <div class="origin-stats">
+      <div class="origin-stat">
+        <div class="origin-stat-num">2011</div>
+        <div class="origin-stat-label">Founded</div>
+      </div>
+      <div class="origin-stat">
+        <div class="origin-stat-num">🇦🇺</div>
+        <div class="origin-stat-label">Australia</div>
+      </div>
+      <div class="origin-stat">
+        <div class="origin-stat-num">2</div>
+        <div class="origin-stat-label">Neuro Physios</div>
+      </div>
+      <div class="origin-stat">
+        <div class="origin-stat-num">2024</div>
+        <div class="origin-stat-label">Peer-reviewed study published</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ THE SCIENCE: NEUROPLASTICITY ══════════ -->
+<section class="section reveal">
+  <p class="section-label">02 — The Science Behind It</p>
+
+  <div class="neuro-block">
+    <h3>Neuroplasticity: Why PD Warrior Works</h3>
+    <p>
+      Did you know that your brain has the ability to <strong>change and adapt throughout a person's entire life?</strong> This is called neuroplasticity — and once you start teaching our program to seniors and people with Parkinson's, you will see these changes happening in real time.
+    </p>
+    <p>
+      Think of it as the brain's way of rewiring itself in response to experiences, learning, and challenges. <strong>Just like a muscle gets stronger when you exercise it, the brain becomes more flexible and efficient when it's challenged through new activities and movement.</strong>
+    </p>
+    <p>
+      When you engage in physical activity, the brain isn't sitting idle. Exercise <strong>stimulates the brain and encourages it to create new connections between nerve cells (neurons).</strong> These connections allow different parts of the brain to communicate better — improving memory, attention, coordination, and problem-solving.
+    </p>
+    <p>
+      Regular exercise also <strong>increases blood flow to the brain</strong>, delivering more oxygen and nutrients. It triggers the release of neurotransmitters — dopamine, serotonin, endorphins — that help with mood, stress, and mental wellbeing. Staying physically active doesn't just benefit the body. <strong>It actively maintains and enhances neuroplasticity, keeping the brain sharp and adaptable throughout life.</strong>
+    </p>
+    <p>
+      Groundbreaking 2024 research by de Laat et al. found that high-intensity exercise may actually <strong>increase dopamine transporter availability and neuromelanin levels in the substantia nigra</strong> — the exact brain region Parkinson's destroys. This suggests exercise isn't just managing symptoms — it may be <strong>slowing the disease itself.</strong>
+    </p>
+    <div class="cite">SOURCES: de Laat et al. (2024) · Tucak et al., Internal Medicine Journal (2024) · McConaghy, PD Warrior · Hirsch et al., Parkinsonism & Related Disorders (2016)</div>
+  </div>
+
+  <div class="research-grid">
+    <div class="research-card" style="border-top:3px solid var(--blue);">
+      <div class="research-card-icon">🔗</div>
+      <div class="research-card-title" style="color:var(--blue);">New Neural Pathways</div>
+      <p>Exercise stimulates neurons to form new connections — improving how different brain regions communicate. PD Warrior exercises are specifically designed to <strong>maximize this neuroplastic response.</strong></p>
+    </div>
+    <div class="research-card" style="border-top:3px solid var(--red);">
+      <div class="research-card-icon">⚡</div>
+      <div class="research-card-title" style="color:var(--red);">High-Intensity = More Benefit</div>
+      <p>PD Warrior research confirms that <strong>high-intensity exercise produces greater neuroplastic changes</strong> than low-intensity exercise. This is why both PD Warrior and B4H emphasize pushing hard — it's clinically purposeful.</p>
+    </div>
+    <div class="research-card" style="border-top:3px solid var(--gold);">
+      <div class="research-card-icon">🧪</div>
+      <div class="research-card-title" style="color:var(--gold);">Dopamine Support</div>
+      <p>2024 research shows high-intensity exercise may <strong>increase dopamine transporter availability</strong> in the substantia nigra — potentially protecting the very neurons Parkinson's is destroying.</p>
+    </div>
+    <div class="research-card" style="border-top:3px solid var(--green);">
+      <div class="research-card-icon">📈</div>
+      <div class="research-card-title" style="color:var(--green);">Proven Outcomes</div>
+      <p>Tucak et al. (2024) found PD Warrior participants showed significant improvements in <strong>motor function, balance, mobility, daily living activities, and quality of life</strong> following the 10-Week Challenge program.</p>
+    </div>
+    <div class="research-card" style="border-top:3px solid var(--purple);">
+      <div class="research-card-icon">🌱</div>
+      <div class="research-card-title" style="color:var(--purple);">BDNF Production</div>
+      <p>Exercise increases Brain-Derived Neurotrophic Factor — a protein that supports <strong>neuron survival, growth, and new neural connection formation.</strong> PD Warrior's intensity is designed to maximize BDNF output.</p>
+    </div>
+    <div class="research-card" style="border-top:3px solid var(--teal);">
+      <div class="research-card-icon">👥</div>
+      <div class="research-card-title" style="color:var(--teal);">Community Effect</div>
+      <p>PD Warrior's research highlights that <strong>group exercise classes increase adherence and satisfaction</strong> — the social motivation compounds the physical benefit. Sound familiar? That's B4H too.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ B4H REQUIREMENT ══════════ -->
+<section class="section reveal">
+  <p class="section-label">03 — The B4H Requirement</p>
+
+  <div class="requirement-box">
+    <div class="req-icon">📋</div>
+    <div>
+      <h4>2 PD Warrior Exercises Per Class — Required</h4>
+      <p>
+        At Boxing 4 Health, <strong>every class design must include a minimum of 2 PD Warrior exercises.</strong> This is not optional — it's a core part of our program design and ensures every class delivers the neuroactive, Parkinson's-specific stimulus that our clients need. You will review the PD Warrior exercise library and then demonstrate your understanding to one of our head instructors before you teach.
+      </p>
+    </div>
+  </div>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:660px;margin-bottom:32px;line-height:1.75;">
+    Here's exactly how to meet this requirement:
+  </p>
+
+  <div class="demo-steps">
+
+    <div class="demo-step">
+      <div class="demo-num">1</div>
+      <div>
+        <div class="demo-step-title">Review the PD Warrior Exercise Library</div>
+        <div class="demo-step-body">
+          Study the PD Warrior exercises provided in your B4H training resources. Understand <strong>what each exercise targets</strong> — which symptom it addresses, which movement principle it applies (amplitude, rhythm, balance, dual-task), and how to modify it for different ability levels.
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-step">
+      <div class="demo-num">2</div>
+      <div>
+        <div class="demo-step-title">Practice the Exercises Yourself</div>
+        <div class="demo-step-body">
+          You can't teach what you can't demonstrate. <strong>Learn each PD Warrior exercise from the inside out</strong> — feel what it demands, notice where clients might struggle, and think about how you'd cue it using the VIGOR framework. Practice until you can do it confidently without looking at notes.
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-step">
+      <div class="demo-num">3</div>
+      <div>
+        <div class="demo-step-title">Demonstrate to a Head Instructor</div>
+        <div class="demo-step-body">
+          Book a session with one of our <strong>B4H head instructors to demonstrate your exercises.</strong> They'll confirm you understand the movement correctly AND that you can demo it in a way clients can follow. This is also a valuable opportunity to get direct feedback on your cueing, your form, and your teaching style.
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-step">
+      <div class="demo-num">4</div>
+      <div>
+        <div class="demo-step-title">Build Them Into Your Class Design</div>
+        <div class="demo-step-body">
+          Once you're signed off, include <strong>at least 2 PD Warrior exercises in every class you design</strong> — for both Fighter and Champion formats. Vary which exercises you use across sessions so clients are always getting neuroplastic challenge through variety and novelty.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ WHY IT FITS WITH B4H ══════════ -->
+<section class="section reveal">
+  <p class="section-label">04 — Why PD Warrior + Boxing 4 Health</p>
+
+  <div class="synergy-block">
+    <h3>Two Programs. One Shared Mission.</h3>
+    <p>
+      PD Warrior and Boxing 4 Health share the same foundational principle: <strong>high-intensity, neuroplasticity-driven exercise is one of the most powerful tools available to people with Parkinson's.</strong> Combining PD Warrior's clinically designed neuroactive movements with the cardiovascular intensity, dual-tasking, amplitude training, and community of a B4H boxing class creates something greater than either program alone.
+    </p>
+    <p>
+      Where PD Warrior provides specific, targeted neuroactive exercises built and tested by specialist physiotherapists, <strong>B4H provides the energy, the music, the community, and the boxing framework that makes clients want to keep coming back.</strong> Together, they address the full picture — neurological, physical, social, and emotional.
+    </p>
+    <p>
+      When you add a PD Warrior exercise to your class, you're not just following a B4H policy — you're <strong>delivering one of the most evidence-backed Parkinson's interventions in the world</strong> inside a class that clients love. That's a powerful combination.
+    </p>
+    <div class="synergy-pills">
+      <div class="synergy-pill">Neuroplasticity</div>
+      <div class="synergy-pill">High Intensity</div>
+      <div class="synergy-pill">Amplitude Training</div>
+      <div class="synergy-pill">Dual Tasking</div>
+      <div class="synergy-pill">Community</div>
+      <div class="synergy-pill">Clinically Designed</div>
+      <div class="synergy-pill">Evidence-Based</div>
+      <div class="synergy-pill">Neuroactive Movement</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>Teaching 101 — VIGOR</span></h2>
+    <p>Learn the B4H framework for cueing every exercise — functional, boxing, and PD Warrior — with purpose and maximum impact.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: VIGOR →</button>
+    <button class="btn btn-ghost">↩ Back to Functional Exercises</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 }).observe(r);
+});
+</script>
+</body>
+</html>

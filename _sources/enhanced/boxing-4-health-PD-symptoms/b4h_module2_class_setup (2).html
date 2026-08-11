@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — How to Set Up a Class</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 95% 40%, rgba(46,158,107,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 50% at 5% 80%, rgba(232,39,26,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--green); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--green); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.8;
+    color: #b0aba0;
+    max-width: 620px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  .hero-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 9px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  /* ── SECTIONS ── */
+  .section { padding: 60px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── CHECKLIST ── */
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .check-item {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .check-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 3px; height: 100%;
+    background: var(--green);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .check-item.done::before { opacity: 1; }
+  .check-item.done { background: rgba(46,158,107,0.06); border-color: rgba(46,158,107,0.2); }
+
+  .check-box {
+    width: 26px; height: 26px;
+    border: 2px solid #444;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s;
+    margin-top: 1px;
+  }
+
+  .check-item.done .check-box {
+    border-color: var(--green);
+    background: rgba(46,158,107,0.2);
+    color: var(--green);
+  }
+
+  .check-content { flex: 1; }
+
+  .check-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    margin-bottom: 4px;
+    transition: color 0.2s;
+  }
+
+  .check-item.done .check-title { color: var(--green); }
+
+  .check-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #a8a398;
+  }
+
+  .check-body strong { color: var(--light); }
+  .check-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(46,158,107,0.4); }
+
+  .check-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid;
+    flex-shrink: 0;
+    margin-top: 3px;
+    align-self: flex-start;
+  }
+
+  .tag-required { color: var(--red); border-color: rgba(232,39,26,0.35); background: rgba(232,39,26,0.08); }
+  .tag-important { color: var(--gold); border-color: rgba(200,168,75,0.35); background: rgba(200,168,75,0.08); }
+  .tag-safety { color: var(--purple); border-color: rgba(130,80,200,0.35); background: rgba(130,80,200,0.08); }
+  .tag-tip { color: var(--teal); border-color: rgba(30,138,138,0.35); background: rgba(30,138,138,0.08); }
+
+  /* ── SIGNATURE EXERCISE ── */
+  .signature-block {
+    background: linear-gradient(135deg, #0a1208, #0d1408);
+    border: 1px solid rgba(46,158,107,0.3);
+    border-left: 5px solid var(--green);
+    padding: 30px 34px;
+    margin-top: 20px;
+  }
+
+  .signature-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  .signature-block p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #90c8a8;
+    margin-bottom: 12px;
+  }
+
+  .signature-block p:last-child { margin-bottom: 0; }
+  .signature-block p strong { color: var(--light); }
+
+  /* ── ALERT BOXES ── */
+  .alert {
+    padding: 22px 26px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin: 20px 0;
+    border: 1px solid;
+  }
+
+  .alert-icon { font-size: 22px; flex-shrink: 0; }
+
+  .alert p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .alert p strong { color: var(--light); }
+
+  .alert-red { border-color: rgba(232,39,26,0.3); background: rgba(232,39,26,0.07); }
+  .alert-red p { color: #e8b0aa; }
+
+  .alert-gold { border-color: rgba(200,168,75,0.3); background: rgba(200,168,75,0.07); }
+  .alert-gold p { color: #c8b870; }
+
+  .alert-purple { border-color: rgba(130,80,200,0.3); background: rgba(130,80,200,0.07); }
+  .alert-purple p { color: #b09ad4; }
+
+  .alert-blue { border-color: rgba(58,123,213,0.3); background: rgba(58,123,213,0.07); }
+  .alert-blue p { color: #7a9fd4; }
+
+  /* ── TOOLS GRID ── */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .tool-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    border-top: 3px solid var(--blue);
+    padding: 20px;
+  }
+
+  .tool-icon { font-size: 26px; margin-bottom: 10px; }
+
+  .tool-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+
+  .tool-desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #a8a398;
+  }
+
+  .tool-desc strong { color: var(--light); }
+
+  /* ── INCIDENT REPORT ── */
+  .incident-block {
+    background: linear-gradient(135deg, #100810, #0d0810);
+    border: 1px solid rgba(130,80,200,0.25);
+    border-left: 5px solid var(--purple);
+    padding: 28px 32px;
+  }
+
+  .incident-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    color: var(--purple);
+    margin-bottom: 14px;
+  }
+
+  .incident-block p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #b09ad4;
+    margin-bottom: 12px;
+  }
+
+  .incident-block p:last-child { margin-bottom: 0; }
+  .incident-block p strong { color: var(--light); }
+
+  .incident-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .incident-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #b09ad4;
+  }
+
+  .incident-step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: rgba(130,80,200,0.4);
+    flex-shrink: 0;
+    width: 22px;
+    line-height: 1;
+  }
+
+  .incident-step strong { color: var(--light); }
+
+  /* ── FORUM BANNER ── */
+  .forum-banner {
+    background: linear-gradient(135deg, #0d1010, #0a0f14);
+    border: 1px solid rgba(30,138,138,0.25);
+    border-left: 5px solid var(--teal);
+    padding: 24px 30px;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  .forum-banner-text h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+
+  .forum-banner-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #7ec4c4;
+  }
+
+  .forum-banner-text p strong { color: var(--light); }
+
+  /* ── PROGRESS BAR ── */
+  .checklist-progress {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #2a2a2a;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--green);
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+
+  .progress-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .module-footer { flex-direction: column; }
+    .checklist-progress { flex-direction: column; align-items: flex-start; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="breadcrumb">Module 2 — Teaching 101 &nbsp;›&nbsp; <span>How to Set Up a Class</span></p>
+  <h1 class="hero-title">
+    How to<br><em>Set Up</em><br>a Class
+  </h1>
+  <p class="hero-sub">
+    Before the first client walks through the door, you've already set the tone. <strong>A well-prepared class is a safe class</strong> — and one that runs smoothly from the moment the music starts.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot"></span> Module 2</div>
+    <div class="meta-pill"><span class="dot"></span> Est. 10 min</div>
+    <div class="meta-pill"><span class="dot"></span> Interactive Checklist</div>
+  </div>
+</section>
+
+<!-- ══════════ PRE-CLASS CHECKLIST ══════════ -->
+<section class="section reveal">
+  <p class="section-label">Before Class Starts</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:640px;margin-bottom:28px;line-height:1.75;">
+    Use this checklist every time you teach. Tick each item off as you go — until these steps become second nature.
+  </p>
+
+  <!-- Progress bar -->
+  <div class="checklist-progress">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-label" id="progressLabel">0 / 9 complete</div>
+  </div>
+
+  <div class="checklist" id="mainChecklist">
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Set Up Your Circuits</div>
+        <div class="check-body">Set up all stations <strong>before class begins</strong> — don't be scrambling when clients arrive. You can use one large whiteboard for the whole class, or individual dry-erase boards at each station. Make sure every station is clearly readable from where clients will be standing.</div>
+      </div>
+      <div class="check-tag tag-required">Before Class</div>
+    </div>
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Queue Your Music</div>
+        <div class="check-body">Choose music appropriate for your class and create a routine to follow. The <strong>Boxing 4 Health playlist is available on Spotify</strong> — search for it and have it ready. Music sets energy and pace, so don't leave it to the last second.</div>
+      </div>
+      <div class="check-tag tag-tip">Setup</div>
+    </div>
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Set Up the Interval Timer</div>
+        <div class="check-body">Use the <strong>Boxing iTimer app on the iPad</strong> to time your circuits. If you prefer another interval timer app, that's fine too — just make sure it's set and tested before clients arrive. There's nothing worse than fumbling with a timer while a class waits.</div>
+      </div>
+      <div class="check-tag tag-required">Setup</div>
+    </div>
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Greet Students at the Door</div>
+        <div class="check-body"><strong>High energy. Warm welcome. Every single time.</strong> How you greet clients when they walk in sets the tone for the entire class. Learn names. Remember details. Ask how they're doing. Your enthusiasm is contagious — and for many of your clients, this class is the highlight of their week.</div>
+      </div>
+      <div class="check-tag tag-tip">Every Class</div>
+    </div>
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">New Student? Waiver First — No Exceptions</div>
+        <div class="check-body"><strong>Every new student must sign a liability waiver before participating in class.</strong> Know where the forms are kept in your gym before class starts — never be caught searching for them with a new student waiting. If a new client shows up unannounced, this is your first priority before anything else.</div>
+      </div>
+      <div class="check-tag tag-required">Required</div>
+    </div>
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Take Attendance & Sign-In Sheet</div>
+        <div class="check-body">Have students <strong>sign in before every class</strong> — signing their name is a fine motor skill, and fine motor skills matter for Parkinson's clients. It also gives you attendance data and helps track progress over time.</div>
+      </div>
+      <div class="check-tag tag-tip">Every Class</div>
+    </div>
+
+  </div>
+
+  <!-- Signature improvement highlight -->
+  <div class="signature-block" style="margin-top:20px;">
+    <h3>💡 The Signature Before & After Trick</h3>
+    <p>
+      One of the most powerful ways to show clients that exercise is working in real time: have them <strong>sign their name — or write a motivational quote — before class</strong>, then have them write it again immediately after. In most cases, the post-class handwriting will be noticeably more fluid and controlled.
+    </p>
+    <p>
+      <strong>Why it works:</strong> The warm-up and intensity of a B4H class temporarily improves dopamine availability and motor control — effects that are visible in handwriting. Clients are often moved by seeing this with their own eyes. It's one of the most tangible "this is working" moments you can give them.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ DURING CLASS ══════════ -->
+<section class="section reveal">
+  <p class="section-label">During Class — Your Role</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:640px;margin-bottom:28px;line-height:1.75;">
+    You're not just running through exercises — you're coaching, watching, adjusting, and leading. Here's what that looks like in practice.
+  </p>
+
+  <div class="checklist" id="duringChecklist">
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Demonstrate Everything</div>
+        <div class="check-body">Always demo every exercise and routine <strong>before clients attempt it.</strong> For PD and senior clients, visual demonstration is far more effective than verbal description alone. Show it big, show it clearly, show modifications at the same time.</div>
+      </div>
+      <div class="check-tag tag-required">Every Class</div>
+    </div>
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Watch & Correct Technique</div>
+        <div class="check-body"><strong>Keep your eyes moving around the room constantly.</strong> Watch clients during exercises and provide real-time feedback on technique — both verbally and through demonstration. Correct technique minimizes injury and maximizes therapeutic benefit. A client doing a movement incorrectly isn't getting the benefit you designed the class to deliver.</div>
+      </div>
+      <div class="check-tag tag-important">Safety</div>
+    </div>
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Show Modifications for All Levels</div>
+        <div class="check-body">When explaining a circuit, <strong>always demonstrate at least two levels</strong> — the standard version and at least one modification for clients with lower fitness, balance concerns, or limited range of motion. No one should ever feel left behind or unsafe because they couldn't keep up with the base version.</div>
+      </div>
+      <div class="check-tag tag-required">Every Class</div>
+    </div>
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Monitor Progress & Adapt</div>
+        <div class="check-body">Watch how clients perform over multiple sessions. <strong>Adapt programs as clients improve or as their condition changes.</strong> A client who needed a chair last month might not need it today. One who was managing well might have a harder day today. Stay observant and stay flexible.</div>
+      </div>
+      <div class="check-tag tag-tip">Ongoing</div>
+    </div>
+
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-content">
+        <div class="check-title">Enforce Safety Rules & Equipment Use</div>
+        <div class="check-body"><strong>Explain safety rules clearly at the start of every class</strong> — especially with new clients. Proper technique, equipment handling, spacing between students, and what to do if someone feels unwell. Safety is not a one-time orientation — reinforce it consistently.</div>
+      </div>
+      <div class="check-tag tag-safety">Safety</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ TOOLS & RESOURCES ══════════ -->
+<section class="section reveal">
+  <p class="section-label">Your Tools & Resources</p>
+
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-icon">📱</div>
+      <div class="tool-name">Boxing iTimer App</div>
+      <div class="tool-desc">Located on the gym iPad. Use for timing circuits. Alternatives are fine — just have it set before class starts.</div>
+    </div>
+    <div class="tool-card" style="border-top-color:var(--green);">
+      <div class="tool-icon">🎵</div>
+      <div class="tool-name">Spotify Playlist</div>
+      <div class="tool-desc">Search <strong>Boxing 4 Health</strong> on Spotify. Your class music is already curated — use it or build on it.</div>
+    </div>
+    <div class="tool-card" style="border-top-color:var(--gold);">
+      <div class="tool-icon">🖊️</div>
+      <div class="tool-name">Dry Erase Boards</div>
+      <div class="tool-desc">One large board or individual boards per station. Write up the circuit clearly before anyone arrives.</div>
+    </div>
+    <div class="tool-card" style="border-top-color:var(--teal);">
+      <div class="tool-icon">📋</div>
+      <div class="tool-name">Liability Waivers</div>
+      <div class="tool-desc">Know exactly where these are in your gym. Required for every new student — no exceptions, no delays.</div>
+    </div>
+    <div class="tool-card" style="border-top-color:var(--red);">
+      <div class="tool-icon">📒</div>
+      <div class="tool-name">Sign-In Sheet</div>
+      <div class="tool-desc">Attendance tracking + fine motor skill practice. Use the before/after signature exercise when appropriate.</div>
+    </div>
+
+  </div>
+
+  <!-- Forum Banner -->
+  <div class="forum-banner">
+    <div style="font-size:32px;flex-shrink:0;">💬</div>
+    <div class="forum-banner-text">
+      <h4>Boxing 4 Health Instructor Forum — Check It Constantly</h4>
+      <p>New exercises, cognitive ideas, modifications, and instructor tips are posted regularly. <strong>This is your ongoing professional development resource</strong> — not something to check once during training. Make it a habit to check in before you plan each class.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>Cueing Students</span></h2>
+    <p>Now that your class is set up, let's talk about how to coach effectively — the language, timing, and techniques that get the best out of every client.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: Cueing Students →</button>
+    <button class="btn btn-ghost">↩ Back to VIGOR</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 }).observe(r);
+});
+
+const totalItems = document.querySelectorAll('.check-item').length;
+
+function toggleCheck(item) {
+  item.classList.toggle('done');
+  const done = document.querySelectorAll('.check-item.done').length;
+  const pct = Math.round((done / totalItems) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = done + ' / ' + totalItems + ' complete' + (done === totalItems ? ' 🎉' : '');
+}
+</script>
+</body>
+</html>

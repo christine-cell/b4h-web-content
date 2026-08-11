@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Lesson 4: Assessments</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --amber: #D4850A;
+    --blue: #3A7BD5;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 95% 50%, rgba(232,39,26,0.09) 0%, transparent 65%),
+      radial-gradient(ellipse 30% 40% at 5% 80%, rgba(200,168,75,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--red); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--red); font-style: normal; }
+
+  .hero-sub {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #a8a398;
+    max-width: 560px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  .hero-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 8px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    animation: pulse 2s infinite;
+  }
+
+  /* ── SECTION ── */
+  .section { padding: 64px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── RULE CARD ── */
+  .rule-card {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    border-left: 4px solid var(--red);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .rule-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+  .rule-text h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+    color: var(--light);
+  }
+
+  .rule-text p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #a8a398;
+  }
+
+  .rule-text p strong { color: var(--light); }
+
+  /* ── NO EXCEPTIONS BANNER ── */
+  .no-exceptions {
+    background: rgba(232,39,26,0.1);
+    border: 1px solid rgba(232,39,26,0.35);
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .no-exceptions .ne-icon { font-size: 22px; flex-shrink: 0; }
+
+  .no-exceptions p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e8a09a;
+  }
+
+  .no-exceptions p strong { color: var(--light); font-size: 15px; }
+
+  /* ── CHECKLIST ── */
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .check-item {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .check-item:hover { background: #1e1e1e; }
+
+  .check-item.checked {
+    border-color: var(--green);
+    background: rgba(46,158,107,0.08);
+  }
+
+  .check-item.checked::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 3px; height: 100%;
+    background: var(--green);
+  }
+
+  .check-box {
+    width: 22px; height: 22px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    transition: background 0.2s, border-color 0.2s;
+    color: transparent;
+  }
+
+  .check-item.checked .check-box {
+    background: var(--green);
+    border-color: var(--green);
+    color: white;
+  }
+
+  .check-label {
+    font-size: 14px;
+    color: #c0bbb0;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .check-item.checked .check-label {
+    color: #7ec4a0;
+    text-decoration: line-through;
+    text-decoration-color: rgba(46,158,107,0.4);
+  }
+
+  .check-sublabel {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-top: 3px;
+  }
+
+  .check-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .check-progress-bar {
+    flex: 1;
+    height: 3px;
+    background: #2a2a2a;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .check-progress-fill {
+    height: 100%;
+    background: var(--green);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ── ASSESSMENT TESTS ── */
+  .tests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .test-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .test-card:hover { background: #1e1e1e; border-color: #333; }
+
+  .test-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--blue);
+    transition: width 0.3s;
+  }
+
+  .test-card:hover::after { width: 100%; }
+
+  .test-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: rgba(58,123,213,0.2);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .test-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    margin-bottom: 8px;
+  }
+
+  .test-desc {
+    font-size: 12px;
+    line-height: 1.65;
+    color: #888;
+  }
+
+  .test-desc strong { color: var(--gold); }
+
+  .test-tip {
+    display: none;
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--blue);
+    background: rgba(58,123,213,0.07);
+    font-size: 11px;
+    line-height: 1.6;
+    color: #7a9fd4;
+  }
+
+  .test-tip.show { display: block; }
+
+  .safety-note {
+    background: rgba(212,133,10,0.08);
+    border: 1px solid rgba(212,133,10,0.25);
+    border-left: 4px solid var(--amber);
+    padding: 20px 24px;
+    margin-top: 24px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .safety-note p { font-size: 13px; line-height: 1.7; color: #c8a870; }
+  .safety-note p strong { color: var(--amber); }
+
+  /* ── RED FLAGS ── */
+  .redflag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  .redflag-card {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .redflag-header {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: background 0.2s;
+  }
+
+  .redflag-header:hover { background: #1e1e1e; }
+
+  .redflag-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(232,39,26,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .redflag-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    flex: 1;
+  }
+
+  .redflag-arrow {
+    font-size: 11px;
+    color: var(--muted);
+    transition: transform 0.3s;
+  }
+
+  .redflag-card.open .redflag-arrow { transform: rotate(180deg); }
+
+  .redflag-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .redflag-body-inner {
+    padding: 0 24px 20px;
+    border-top: 1px solid #222;
+    font-size: 13px;
+    line-height: 1.75;
+    color: #a8a398;
+  }
+
+  .redflag-body-inner strong { color: var(--light); }
+
+  .redflag-body-inner .action {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--red);
+    background: rgba(232,39,26,0.07);
+    font-size: 12px;
+    color: #e8a09a;
+  }
+
+  .redflag-body-inner .action strong { color: #f0b0aa; }
+
+  /* ── POLICY CARDS ── */
+  .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .policy-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    border-top: 3px solid var(--gold);
+    padding: 24px;
+  }
+
+  .policy-card h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .policy-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #a8a398;
+  }
+
+  .policy-card p strong { color: var(--light); }
+
+  /* ── QUIZ ── */
+  .quiz-wrapper {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    padding: 44px;
+  }
+
+  .quiz-progress { display: flex; gap: 6px; margin-bottom: 28px; }
+
+  .progress-dot {
+    height: 3px; flex: 1;
+    background: #2a2a2a;
+    transition: background 0.3s;
+  }
+
+  .progress-dot.active { background: var(--red); }
+  .progress-dot.done { background: #4CAF50; }
+
+  .quiz-q {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--light);
+    margin-bottom: 24px;
+    line-height: 1.45;
+  }
+
+  .quiz-q .q-num {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--red);
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  .quiz-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+  .quiz-opt {
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 13px 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: border-color 0.2s, background 0.2s;
+    font-size: 13px;
+    color: #c0bbb0;
+    text-align: left;
+  }
+
+  .quiz-opt:hover:not(.disabled) { border-color: #555; background: #333; color: var(--light); }
+  .quiz-opt.correct { border-color: #4CAF50; background: rgba(76,175,80,0.1); color: #81C784; }
+  .quiz-opt.incorrect { border-color: var(--red); background: rgba(232,39,26,0.1); color: #EF9A9A; }
+  .quiz-opt.disabled { cursor: default; }
+
+  .opt-letter {
+    width: 26px; height: 26px;
+    border: 1px solid #444;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .quiz-opt.correct .opt-letter { background: rgba(76,175,80,0.2); border-color: #4CAF50; }
+  .quiz-opt.incorrect .opt-letter { background: rgba(232,39,26,0.2); border-color: var(--red); }
+
+  .quiz-feedback {
+    display: none;
+    padding: 13px 17px;
+    border-left: 3px solid #4CAF50;
+    background: rgba(76,175,80,0.08);
+    font-size: 13px;
+    line-height: 1.65;
+    color: #a0cfa3;
+    margin-bottom: 16px;
+  }
+
+  .quiz-feedback.wrong { border-color: var(--red); background: rgba(232,39,26,0.08); color: #ef9a9a; }
+  .quiz-feedback.show { display: block; }
+
+  .quiz-nav { display: flex; gap: 12px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer; border: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 64px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .footer-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .footer-text h2 span { color: var(--red); }
+  .footer-text p { font-size: 13px; color: var(--muted); max-width: 360px; line-height: 1.6; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 640px) {
+    .tests-grid, .redflag-grid, .policy-grid { grid-template-columns: 1fr; }
+    .quiz-wrapper { padding: 24px; }
+    .module-footer { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="breadcrumb">Module 1 — Parkinson's 101 &nbsp;›&nbsp; <span>Lesson 4 — Licensees Only</span></p>
+  <h1 class="hero-title">
+    Client<br><em>Assessments</em>
+  </h1>
+  <p class="hero-sub">
+    A proper assessment protects your client, protects you, and sets the foundation for a <strong>safe, effective, personalized program</strong>. This is one of the most important skills you'll develop as a licensee.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot"></span> Licensees Only</div>
+    <div class="meta-pill"><span class="dot"></span> Est. 15 min</div>
+    <div class="meta-pill"><span class="dot"></span> Includes Checklist + Red Flags + Quiz</div>
+  </div>
+</section>
+
+<!-- ══════════ WHY ASSESS ══════════ -->
+<section class="section reveal">
+  <p class="section-label">01 — Why Do an Assessment?</p>
+
+  <div class="no-exceptions">
+    <div class="ne-icon">🚨</div>
+    <p><strong>No Exceptions Rule:</strong> Even if a client has already been assessed by another healthcare practitioner, you must still complete your own B4H assessment with them. Every single time. This is non-negotiable.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:40px;">
+    <div class="rule-card" style="margin-bottom:0;">
+      <div class="rule-icon">⚖️</div>
+      <div class="rule-text">
+        <h4>Observe Balance & Fall Risk</h4>
+        <p>Assessments let you see how a client moves in real life — not just what they report. Balance issues and fall risk can be invisible on paper.</p>
+      </div>
+    </div>
+    <div class="rule-card" style="margin-bottom:0;border-left-color:var(--blue);">
+      <div class="rule-icon">💪</div>
+      <div class="rule-text">
+        <h4>Identify Strengths & Weaknesses</h4>
+        <p>Understanding what a client can and can't do lets you build a program that challenges them safely and builds confidence from day one.</p>
+      </div>
+    </div>
+    <div class="rule-card" style="margin-bottom:0;border-left-color:var(--gold);">
+      <div class="rule-icon">📋</div>
+      <div class="rule-text">
+        <h4>Class Placement is YOUR Call</h4>
+        <p>B4H staff assign clients to the appropriate class — <strong>not the other way around</strong>. Some clients may overestimate their ability. Your assessment is the authority.</p>
+      </div>
+    </div>
+    <div class="rule-card" style="margin-bottom:0;border-left-color:var(--green);">
+      <div class="rule-icon">📈</div>
+      <div class="rule-text">
+        <h4>Track Progress Over Time</h4>
+        <p>Your assessment data becomes a powerful before/after tool. Clients who see their own measurable improvement are motivated to keep coming back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WHAT IT CONSISTS OF ══════════ -->
+<section class="section reveal">
+  <p class="section-label">02 — Assessment Checklist</p>
+  <p style="font-size:14px;color:#888;margin-bottom:24px;max-width:540px;line-height:1.7;">
+    All four forms must be completed by the client <strong style="color:var(--light);">before</strong> the assessment and reviewed for red flags during it. Check each item off as you complete it.
+  </p>
+
+  <div class="checklist" id="checklist">
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-label">
+        Health History Form
+        <span class="check-sublabel">Completed by client prior to session — review for red flags</span>
+      </div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-label">
+        Parkinson's Questionnaire
+        <span class="check-sublabel">Client self-report of symptoms, medications, and daily function</span>
+      </div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-label">
+        Fullerton Advanced Balance Scale
+        <span class="check-sublabel">Standardized balance assessment tool</span>
+      </div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="check-label">
+        B4H Assessment Form
+        <span class="check-sublabel">Boxing 4 Health proprietary assessment — must be completed</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="check-progress">
+    <span id="checkCount">0 / 4 completed</span>
+    <div class="check-progress-bar">
+      <div class="check-progress-fill" id="checkFill"></div>
+    </div>
+  </div>
+
+  <!-- Policy notes -->
+  <div class="policy-grid" style="margin-top:36px;">
+    <div class="policy-card">
+      <h4>Class Placement Policy</h4>
+      <p>B4H staff assign clients to the appropriate class — <strong>not the client themselves</strong>. Even if a client uses a cane but believes they belong in a stronger class, the final decision is always yours. Discuss placement at the end of the assessment.</p>
+    </div>
+    <div class="policy-card">
+      <h4>Progression & Hard Conversations</h4>
+      <p>Clients who stay with you will progress — and at some point may need to move to a different class. <strong>That conversation is your responsibility</strong> to have compassionately but clearly when the time comes.</p>
+    </div>
+    <div class="policy-card">
+      <h4>Custom Documentation</h4>
+      <p>You have the right to use B4H documentation or create your own — but <strong>any custom forms must be authorized by B4H head office first</strong> before use with clients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ASSESSMENT TESTS ══════════ -->
+<section class="section reveal">
+  <p class="section-label">03 — Assessment Tests</p>
+  <p style="font-size:14px;color:#888;margin-bottom:28px;max-width:540px;line-height:1.7;">
+    Tap each test to see tips and what to look for. These tests give you objective, measurable data you can use to track progress over time.
+  </p>
+
+  <div class="tests-grid">
+
+    <div class="test-card" onclick="toggleTip(this)">
+      <div class="test-num">01</div>
+      <div class="test-title">Walking Video</div>
+      <div class="test-desc">Video the client walking the length of the gym and back. <strong>★ Before & After Gold Standard</strong> — this footage becomes one of your most powerful motivation tools.</div>
+      <div class="test-tip">Record from the side AND behind if possible. Look for arm swing, stride length, foot clearance, posture, and gait pattern. Share improvement videos with clients — seeing themselves walk better is incredibly motivating.</div>
+    </div>
+
+    <div class="test-card" onclick="toggleTip(this)">
+      <div class="test-num">02</div>
+      <div class="test-title">Timed Up & Go (TUG)</div>
+      <div class="test-desc">Client stands from a chair, walks 10 feet, turns, and returns to sitting. One of the most widely used functional mobility tests in PD research.</div>
+      <div class="test-tip">Normal for healthy older adults is under 12 seconds. Over 20 seconds indicates high fall risk. Record exact time to the decimal — this is a key benchmark to repeat every 8–12 weeks to show progress.</div>
+    </div>
+
+    <div class="test-card" onclick="toggleTip(this)">
+      <div class="test-num">03</div>
+      <div class="test-title">Sit to Stand Test</div>
+      <div class="test-desc">Time how long it takes the client to complete <strong>5 sit-to-stands</strong> from a chair. Measures lower body strength and functional power.</div>
+      <div class="test-tip">Watch for use of armrests, asymmetry between sides, and how much effort it takes. Improvement in this test directly correlates with fall prevention and daily independence.</div>
+    </div>
+
+    <div class="test-card" onclick="toggleTip(this)">
+      <div class="test-num">04</div>
+      <div class="test-title">Timed Down & Up</div>
+      <div class="test-desc">How long does it take the client to get down to the ground and back up safely? Critical for fall recovery confidence.</div>
+      <div class="test-tip">This is about safety and confidence as much as speed. Only perform this test if the environment is safe and the client feels comfortable. Always have a spotter and a chair nearby. Getting comfortable with the floor is a key program goal.</div>
+    </div>
+
+    <div class="test-card" onclick="toggleTip(this)">
+      <div class="test-num">05</div>
+      <div class="test-title">Timed Backwards Walk</div>
+      <div class="test-desc">Client walks backwards 10 feet, timed. Tests spatial awareness, balance, and postural control — all key areas affected by PD.</div>
+      <div class="test-tip">Always have a spotter directly behind the client for this test. Watch for hesitation, foot clearance, and posture. Many clients find this test surprisingly challenging — reassure them it's normal and celebrate any improvement.</div>
+    </div>
+
+  </div>
+
+  <div class="safety-note">
+    <span style="font-size:20px;flex-shrink:0;">⚠️</span>
+    <p><strong>Safety First — Always:</strong> If you are not comfortable performing any test due to safety concerns or the client's lack of stability, do not perform it. Your judgment is the final word. Never push a client through a test that feels unsafe.</p>
+  </div>
+</section>
+
+<!-- ══════════ RED FLAGS ══════════ -->
+<section class="section reveal">
+  <p class="section-label">04 — Red Flags to Watch For</p>
+  <p style="font-size:14px;color:#888;margin-bottom:28px;max-width:540px;line-height:1.7;">
+    These are conditions that require extra care, modifications, or communication with the client's healthcare team. Tap each flag to see how to respond.
+  </p>
+
+  <div class="redflag-grid">
+
+    <div class="redflag-card" onclick="toggleFlag(this)">
+      <div class="redflag-header">
+        <div class="redflag-icon">🩺</div>
+        <div class="redflag-title">High or Low Blood Pressure</div>
+        <div class="redflag-arrow">▼</div>
+      </div>
+      <div class="redflag-body">
+        <div class="redflag-body-inner" style="padding-top:16px;">
+          Blood pressure issues are very common in PD — both high and low. <strong>High BP</strong> should be monitored by their doctor. We have seen many students with high BP who commit to the program and lower their BP over time — which can then cause <strong>low BP symptoms</strong> like dizziness and lightheadedness during class.
+          <div class="action"><strong>🥊 Action:</strong> If a client experiences dizziness or lightheadedness, tell them to see their doctor — their medication may need adjusting now that their BP is improving. This is actually a positive sign!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="redflag-card" onclick="toggleFlag(this)">
+      <div class="redflag-header">
+        <div class="redflag-icon">💊</div>
+        <div class="redflag-title">Blood Thinners</div>
+        <div class="redflag-arrow">▼</div>
+      </div>
+      <div class="redflag-body">
+        <div class="redflag-body-inner" style="padding-top:16px;">
+          Clients on blood thinners bruise <strong>very easily</strong> — even light contact can cause significant bruising. This is a medication side effect, not an injury, but it needs to be managed carefully.
+          <div class="action"><strong>🥊 Action:</strong> Assign the <strong>softest punching bags</strong> in the gym to this client. Monitor regularly for bruising changes. Ensure they're wearing proper hand wraps and gloves.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="redflag-card" onclick="toggleFlag(this)">
+      <div class="redflag-header">
+        <div class="redflag-icon">🦴</div>
+        <div class="redflag-title">Osteoporosis</div>
+        <div class="redflag-arrow">▼</div>
+      </div>
+      <div class="redflag-body">
+        <div class="redflag-body-inner" style="padding-top:16px;">
+          Osteoporosis significantly increases fracture risk from high-impact activities. Bone density is already reduced and any jarring movement can cause injury.
+          <div class="action"><strong>🥊 Action:</strong> Avoid <strong>running, jumping, or jerky movements</strong>. Focus on controlled, smooth movements. All impact-based exercises must be modified or eliminated for this client.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="redflag-card" onclick="toggleFlag(this)">
+      <div class="redflag-header">
+        <div class="redflag-icon">🧠</div>
+        <div class="redflag-title">Cognitive Impairment</div>
+        <div class="redflag-arrow">▼</div>
+      </div>
+      <div class="redflag-body">
+        <div class="redflag-body-inner" style="padding-top:16px;">
+          If a client has difficulty following instructions or processing cognitive tasks during the assessment, they likely need a different class — even if they are <strong>physically high-functioning</strong>. Cognitive capacity affects the ability to keep up and stay safe.
+          <div class="action"><strong>🥊 Action:</strong> Place in a <strong>PD ¾ class</strong> where the pace and instruction style is better suited. Having a physically capable client in the wrong class creates frustration and safety risks for everyone.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="redflag-card" onclick="toggleFlag(this)">
+      <div class="redflag-header">
+        <div class="redflag-icon">🩹</div>
+        <div class="redflag-title">Pre-Existing Injuries & Surgeries</div>
+        <div class="redflag-arrow">▼</div>
+      </div>
+      <div class="redflag-body">
+        <div class="redflag-body-inner" style="padding-top:16px;">
+          Clients often leave injuries off their health history forms — either forgetting, downplaying, or not thinking they're relevant. Knee replacements, hip surgeries, back injuries, and rotator cuff problems all significantly affect what exercises are safe.
+          <div class="action"><strong>🥊 Action:</strong> Always <strong>verbally ask</strong> about knees, hips, and back during the assessment even if the forms look clear. Probe gently — "Any old injuries you've had over the years?" often reveals important information.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ QUIZ ══════════ -->
+<section class="section reveal">
+  <p class="section-label">05 — Knowledge Check</p>
+
+  <div class="quiz-wrapper">
+    <div class="quiz-progress">
+      <div class="progress-dot active" id="qd0"></div>
+      <div class="progress-dot" id="qd1"></div>
+      <div class="progress-dot" id="qd2"></div>
+      <div class="progress-dot" id="qd3"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div id="sq1">
+      <div class="quiz-q">
+        <span class="q-num">QUESTION 01 / 04</span>
+        A new client tells you they just had a full assessment done by their neurologist last week. Do you still need to complete the B4H assessment?
+      </div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">A</span>No — a recent neurologist assessment is sufficient</div>
+        <div class="quiz-opt" onclick="ans(this,true,'sq1')"><span class="opt-letter">B</span>Yes — the B4H assessment is always required, no exceptions</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">C</span>Only if the neurologist didn't test balance specifically</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">D</span>It depends on how recent the assessment was</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq1_r">✓ Correct! No exceptions — ever. A neurologist's assessment serves a completely different purpose than your B4H assessment. You are observing how they move in YOUR environment, on YOUR equipment, for YOUR program. Those are different questions.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq1_w">The answer is always <strong>yes</strong>. The B4H assessment is required regardless of any prior assessments. No exceptions. A neurologist's assessment doesn't tell you how a client moves in your gym, on your equipment, in your specific program context.</div>
+      <div class="quiz-nav" id="snav_sq1" style="display:none;"><button class="btn btn-primary" onclick="nxt(2)">Next →</button></div>
+    </div>
+
+    <!-- Q2 -->
+    <div id="sq2" style="display:none;">
+      <div class="quiz-q">
+        <span class="q-num">QUESTION 02 / 04</span>
+        A client who uses a cane insists they should be placed in your highest-functioning class because they "feel great today." What do you do?
+      </div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">A</span>Let them try the high-functioning class and see how it goes</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">B</span>Ask their doctor what class they should be in</div>
+        <div class="quiz-opt" onclick="ans(this,true,'sq2')"><span class="opt-letter">C</span>Use your assessment findings to make the placement decision — it's always your call, not theirs</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">D</span>Let them choose since they know their body best</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq2_r">✓ Exactly right. Class placement is always the licensee's decision based on objective assessment data. Clients may overestimate their ability — especially newly diagnosed, high-functioning clients. Your job is to keep them safe AND challenged appropriately.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq2_w"><strong>Class placement is always your call</strong> as the licensee — not the client's. Your assessment gives you the objective data to make that decision. Discuss your reasoning with the client at the end of the assessment with empathy and clarity.</div>
+      <div class="quiz-nav" id="snav_sq2" style="display:none;"><button class="btn btn-primary" onclick="nxt(3)">Next →</button></div>
+    </div>
+
+    <!-- Q3 -->
+    <div id="sq3" style="display:none;">
+      <div class="quiz-q">
+        <span class="q-num">QUESTION 03 / 04</span>
+        During an assessment a client mentions they're on blood thinners. What is the most important modification to make?
+      </div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">A</span>They cannot participate in any punching activities</div>
+        <div class="quiz-opt" onclick="ans(this,true,'sq3')"><span class="opt-letter">B</span>Assign the softest punching bags and monitor regularly for bruising</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">C</span>Refer them back to their doctor before starting</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">D</span>Only allow seated participation</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq3_r">✓ Right! Blood thinners mean easy bruising — but clients can absolutely still participate. Use the softest bags, ensure proper wraps and gloves, and keep an eye on their hands and forearms. Don't exclude them unnecessarily.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq3_w">The right approach is to assign the <strong>softest punching bags</strong> and monitor for bruising. Blood thinners don't disqualify a client from participation — they just require an equipment modification and attentive monitoring.</div>
+      <div class="quiz-nav" id="snav_sq3" style="display:none;"><button class="btn btn-primary" onclick="nxt(4)">Next →</button></div>
+    </div>
+
+    <!-- Q4 -->
+    <div id="sq4" style="display:none;">
+      <div class="quiz-q">
+        <span class="q-num">QUESTION 04 / 04</span>
+        A client is physically strong and mobile but struggles significantly to follow multi-step instructions during the assessment. Where should they be placed?
+      </div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">A</span>The highest-functioning class since they are physically capable</div>
+        <div class="quiz-opt" onclick="ans(this,true,'sq4')"><span class="opt-letter">B</span>A PD ¾ class where the pace and cueing style better matches their cognitive needs</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">C</span>They should be excluded until their cognition improves</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">D</span>Ask a family member to attend and help them follow along</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq4_r">✓ Perfect. Physical ability and cognitive ability must both be considered for class placement. A physically capable client who can't process instructions in a fast-paced class will become frustrated and unsafe — regardless of how well they move.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq4_w">Physical and cognitive ability are both factors in placement. A client who struggles cognitively needs a <strong>PD ¾ class</strong> — even if they're physically strong. Placing them in a high-functioning class creates safety risks and a poor experience for everyone.</div>
+      <div class="quiz-nav" id="snav_sq4" style="display:none;"><button class="btn btn-primary" onclick="showDone()">See Results 🥊</button></div>
+    </div>
+
+    <!-- Complete -->
+    <div id="sqComplete" style="display:none;text-align:center;padding:20px 0;">
+      <p style="font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--red);" id="sqScore"></p>
+      <p style="font-size:18px;font-weight:600;color:var(--light);margin-bottom:10px;" id="sqResult"></p>
+      <p style="font-size:13px;color:var(--muted);max-width:440px;margin:0 auto 28px;" id="sqMessage"></p>
+      <button class="btn btn-ghost" onclick="resetQ()">↩ Retake Quiz</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div class="footer-text">
+    <h2>Next Up:<br><span>Lesson 5</span></h2>
+    <p>Seniors & Spouses — understanding the full support network around your clients and how to work effectively with caregivers and family members.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary" style="font-size:14px;padding:14px 32px;">Continue: Lesson 5 →</button>
+    <button class="btn btn-ghost">↩ Back to Lesson 3</button>
+  </div>
+</div>
+
+<script>
+// ── SCROLL REVEAL ──
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 }).observe(r);
+});
+
+// ── CHECKLIST ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  updateProgress();
+}
+
+function updateProgress() {
+  const total = document.querySelectorAll('.check-item').length;
+  const done = document.querySelectorAll('.check-item.checked').length;
+  document.getElementById('checkCount').textContent = `${done} / ${total} completed`;
+  document.getElementById('checkFill').style.width = `${(done / total) * 100}%`;
+}
+
+// ── TEST TIPS ──
+function toggleTip(card) {
+  const tip = card.querySelector('.test-tip');
+  tip.classList.toggle('show');
+}
+
+// ── RED FLAGS ──
+function toggleFlag(card) {
+  const body = card.querySelector('.redflag-body');
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.redflag-card').forEach(c => {
+    c.classList.remove('open');
+    c.querySelector('.redflag-body').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+// ── QUIZ ──
+let score = 0, current = 1;
+
+function ans(btn, correct, qId) {
+  const opts = btn.closest('.quiz-options').querySelectorAll('.quiz-opt');
+  opts.forEach(o => o.classList.add('disabled'));
+  if (correct) {
+    btn.classList.add('correct');
+    document.getElementById(`sfb_${qId}_r`).classList.add('show');
+    score++;
+  } else {
+    btn.classList.add('incorrect');
+    document.getElementById(`sfb_${qId}_w`).classList.add('show');
+    opts.forEach(o => { if (o.onclick && o.onclick.toString().includes('true')) o.classList.add('correct'); });
+  }
+  document.getElementById(`snav_${qId}`).style.display = 'flex';
+  document.getElementById(`qd${current - 1}`).classList.add(correct ? 'done' : 'active');
+}
+
+function nxt(num) {
+  document.getElementById(`sq${current}`).style.display = 'none';
+  current = num;
+  document.getElementById(`sq${num}`).style.display = 'block';
+  document.getElementById(`qd${num - 1}`).classList.add('active');
+}
+
+function showDone() {
+  document.getElementById('sq4').style.display = 'none';
+  document.getElementById('sqComplete').style.display = 'block';
+  const pct = Math.round((score / 4) * 100);
+  document.getElementById('sqScore').textContent = `${score}/4`;
+  document.getElementById('sqResult').textContent = pct === 100 ? '🥊 Perfect Score!' : pct >= 75 ? 'Great Work!' : 'Review & Retry';
+  document.getElementById('sqMessage').textContent = pct === 100
+    ? 'You\'re assessment-ready. Your clients are in safe, professional, capable hands.'
+    : pct >= 75
+    ? 'Solid effort. Review the red flags section and the no-exceptions rule before moving on.'
+    : 'Take another look through the assessment checklist and red flags, then give it another go. These protocols protect both you and your clients.';
+}
+
+function resetQ() {
+  score = 0; current = 1;
+  for (let i = 1; i <= 4; i++) {
+    const q = document.getElementById(`sq${i}`);
+    q.style.display = i === 1 ? 'block' : 'none';
+    q.querySelectorAll('.quiz-opt').forEach(o => { o.className = 'quiz-opt'; });
+    ['r','w'].forEach(t => {
+      const el = document.getElementById(`sfb_sq${i}_${t}`);
+      if (el) el.classList.remove('show');
+    });
+    const nav = document.getElementById(`snav_sq${i}`);
+    if (nav) nav.style.display = 'none';
+  }
+  ['qd0','qd1','qd2','qd3'].forEach((id, i) => {
+    document.getElementById(id).className = 'progress-dot' + (i === 0 ? ' active' : '');
+  });
+  document.getElementById('sqComplete').style.display = 'none';
+}
+</script>
+</body>
+</html>

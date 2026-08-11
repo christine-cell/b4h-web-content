@@ -1,0 +1,369 @@
+{
+  "program": "B4H Licensee Training Program",
+  "days": 90,
+  "sections": [
+    {
+      "index": 0,
+      "title": "Module 1- Parkinson's 101",
+      "steps": [
+        {
+          "index": 0,
+          "title": "Parkinson's 101",
+          "stepId": "f7416bcb-662a-4926-8072-8a31417ed2fc",
+          "textLen": 137,
+          "links": [
+            "https://christine-cell.github.io/boxing4health-training/b4h_module1_intro%20(1).html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 1,
+          "title": "Lesson 1- Parkinsons Symptoms",
+          "stepId": "78d0f3e2-e837-408b-998b-1db38b96b224",
+          "textLen": 4667,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_lesson1_symptoms.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 2,
+          "title": "ACTION- Freezing Video",
+          "stepId": "8765efd9-0857-4bac-a9d5-db6b5aaad1f8",
+          "textLen": 509,
+          "links": [],
+          "iframes": [
+            "https://www.youtube.com/embed/MIAFilOOloU?autoplay=0&mute=0&controls=1&origin=https%3A%2F%2Fwww.boxing4health.com&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&widgetid=1&forigin=https%3A%2F%2Fwww.boxing4health.com%2Fparticipant-page%2Fa0b3d134-ba9c-4d84-8a4e-b10ead606eb1%2Fstep%2F8765efd9-0857-4bac-a9d5-db6b5aaad1f8&aoriginsup=1&vf=1",
+            "https://www.youtube.com/embed/wrxHJaPulgc?autoplay=0&mute=0&controls=1&origin=https%3A%2F%2Fwww.boxing4health.com&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&widgetid=3&forigin=https%3A%2F%2Fwww.boxing4health.com%2Fparticipant-page%2Fa0b3d134-ba9c-4d84-8a4e-b10ead606eb1%2Fstep%2F8765efd9-0857-4bac-a9d5-db6b5aaad1f8&aoriginsup=1&vf=1"
+          ]
+        },
+        {
+          "index": 3,
+          "title": "Lesson 2- The 5 Different Stages",
+          "stepId": "9cf17afa-7fd1-449d-a09a-fec3cb42d0e6",
+          "textLen": 2482,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_lesson2_stages.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 4,
+          "title": "Lesson 3- How do you determine the stages?",
+          "stepId": "2ba89f62-03ac-40ba-8781-698818841f35",
+          "textLen": 1143,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_lesson2_stages.html",
+            "mailto:Tina@boxing4health.com"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 5,
+          "title": "Lesson 4- Assessments(ONLY for licensees)",
+          "stepId": "719e5398-2e9e-4e5e-9edc-88ffd0d439d0",
+          "textLen": 2882,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_lesson4_assessments.html",
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_lesson4_assessments.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 6,
+          "title": "ACTION- Assessment video(ONLY for licensees)",
+          "stepId": "3c1f5d89-b89a-4b39-bf69-fb0a38cd8a88",
+          "textLen": 278,
+          "links": [],
+          "iframes": []
+        },
+        {
+          "index": 7,
+          "title": "Lesson 5- Seniors & Spouses",
+          "stepId": "befdf5b9-fc02-4652-be0b-bc0634128429",
+          "textLen": 50,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_lesson5_seniors_spouses.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 8,
+          "title": "Start Up Equipment",
+          "stepId": "e9d7846f-599a-4a7e-9622-b4976a3c440a",
+          "textLen": 919,
+          "links": [
+            "mailto:christine@boxing4health.com",
+            "mailto:tina@boxing4health.com"
+          ],
+          "iframes": []
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "title": "Module 2- Class Breakdown",
+      "steps": [
+        {
+          "index": 0,
+          "title": "Module 2- Class Breakdown",
+          "stepId": "0b00c596-00d5-413b-857e-3e5b8f225c59",
+          "textLen": 1111,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_class_breakdown%20(3).html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 1,
+          "title": "Why Boxing?",
+          "stepId": "5c27e2eb-8a59-4ba2-bcd5-4e878ce23915",
+          "textLen": 970,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_why_boxing.html",
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_why_boxing.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 2,
+          "title": "ACTION- Boxing 101",
+          "stepId": "cb6ae8f4-fe1e-4104-8bb7-138c2f5e9de5",
+          "textLen": 907,
+          "links": [],
+          "iframes": []
+        },
+        {
+          "index": 3,
+          "title": "Functional Exercises",
+          "stepId": "d8dd9fc5-888b-4275-86cc-51ae1d56aa8e",
+          "textLen": 2498,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_functional_exercises.html",
+            "mailto:Christine@boxing4health.com"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 4,
+          "title": "Warm Up",
+          "stepId": "678bbe71-a149-48e6-a46e-7588a8ecdeaa",
+          "textLen": 589,
+          "links": [],
+          "iframes": []
+        },
+        {
+          "index": 5,
+          "title": "Cool Down",
+          "stepId": "af6c3a00-0730-4fdc-a76a-30c3ab78c832",
+          "textLen": 916,
+          "links": [
+            "https://www.boxing4health.com/product-page/therapy-balls",
+            "https://www.boxing4health.com/product-page/alpha-ball"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 6,
+          "title": "PD Warrior",
+          "stepId": "b13cb282-577b-425a-9602-b65389c8ac56",
+          "textLen": 2175,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_pd_warrior.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 7,
+          "title": "PD warrior Exercises- ACTION",
+          "stepId": "69c9cdb1-5ba9-4331-b5f7-16ae21b34258",
+          "textLen": 6292,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_pd_warrior_exercises.html",
+            "https://youtu.be/40Py_LXA-kQ",
+            "https://youtu.be/10Ybc-q-AaE",
+            "https://youtu.be/VhULAtOM24U",
+            "https://youtu.be/kw3XHS2swTE",
+            "https://youtu.be/DjWv0vljlzw",
+            "https://youtu.be/BeJMw-lkC9o",
+            "https://youtu.be/EM-VzOs3Xz8",
+            "https://youtu.be/Q9EWH7yaNmI",
+            "https://www.youtube.com/shorts/JBC65ii_IAM",
+            "https://youtu.be/3fo1INxGGiI",
+            "mailto:TINA@boxing4health.com"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 8,
+          "title": "Teaching 101- VIGOR",
+          "stepId": "c928fded-bfa1-4e05-93bd-7017acf04a0a",
+          "textLen": 4485,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_vigor.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 9,
+          "title": "How do I set up for a class?",
+          "stepId": "64929190-69ba-408c-9bb0-b53bde7d639c",
+          "textLen": 2040,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_class_setup.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 10,
+          "title": "FIGHTER Class Template",
+          "stepId": "eb0850f8-c113-4307-8f94-65e5703439a3",
+          "textLen": 3457,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_fighter_template.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 11,
+          "title": "CHAMPION Class Template",
+          "stepId": "a06e2f22-ca0d-4df5-9198-422ef7c2152c",
+          "textLen": 2937,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_champion_template.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 12,
+          "title": "Cueing Students",
+          "stepId": "f06f7c40-a397-4e55-a265-4331241f7bd8",
+          "textLen": 1855,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_cueing_students.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 13,
+          "title": "PRO tips & Q&A",
+          "stepId": "6492e5f1-1253-4486-b794-c017470bc9fd",
+          "textLen": 2793,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_sample_circuits.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 14,
+          "title": "Sample Circuits",
+          "stepId": "0290ba13-0bcd-435a-ae2b-deabd074a0cc",
+          "textLen": 2793,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_sample_circuits.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 15,
+          "title": "Health & Safety",
+          "stepId": "bb496eb3-b8ad-4a2a-ac56-93585e785b03",
+          "textLen": 1336,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_health_safety.html"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 16,
+          "title": "QUIZ- It's time to test your knowledge!",
+          "stepId": "d131cb20-fde2-47da-a82c-388b08e6ef54",
+          "textLen": 18,
+          "links": [
+            "https://christine-cell.github.io/boxing-4-health-PD-symptoms/b4h_module2_quiz.html"
+          ],
+          "iframes": []
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "title": "Practical Steps- Your almost there",
+      "steps": [
+        {
+          "index": 0,
+          "title": "Practical Steps- Your almost there",
+          "stepId": "b4181f1d-93f2-4fb2-b047-e277c6403059",
+          "textLen": 962,
+          "links": [
+            "mailto:TINA@BOXING4HEALTH.com",
+            "mailto:tina@boxing4health.com"
+          ],
+          "iframes": []
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "title": "Learning Resources",
+      "steps": [
+        {
+          "index": 0,
+          "title": "Learning Resources",
+          "stepId": "cdcd877f-d00a-4273-bd6d-48115c9c9400",
+          "textLen": 71,
+          "links": [],
+          "iframes": []
+        },
+        {
+          "index": 1,
+          "title": "Volunteer Orientation",
+          "stepId": "ccb827bb-5191-429a-acce-3c2b60a4d791",
+          "textLen": 2200,
+          "links": [],
+          "iframes": []
+        },
+        {
+          "index": 2,
+          "title": "Volunteer Forms",
+          "stepId": "23a811a3-9d21-4fa6-8ed2-95dfaa607a5f",
+          "textLen": 135,
+          "links": [],
+          "iframes": []
+        },
+        {
+          "index": 3,
+          "title": "Dementia 101",
+          "stepId": "b5e81435-6c14-4d8d-961a-c5c0d29b0ea9",
+          "textLen": 321,
+          "links": [
+            "https://dementiasolutions.ca/landing-page-free-course/"
+          ],
+          "iframes": []
+        },
+        {
+          "index": 4,
+          "title": "Class Tools",
+          "stepId": "14e318b2-20dd-4343-97c5-237682821a42",
+          "textLen": 784,
+          "links": [],
+          "iframes": []
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "title": "Admin Forms",
+      "steps": [
+        {
+          "index": 0,
+          "title": "Admin Forms",
+          "stepId": "d6580207-fef4-46ae-946b-c4b247f8c9ae",
+          "textLen": 773,
+          "links": [],
+          "iframes": []
+        }
+      ]
+    }
+  ]
+}

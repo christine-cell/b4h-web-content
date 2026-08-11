@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Functional Exercises</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 58vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 95% 50%, rgba(46,158,107,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 50% at 5% 80%, rgba(232,39,26,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--green); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--green); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.8;
+    color: #b0aba0;
+    max-width: 620px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  .hero-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 9px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  .section { padding: 68px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── WHAT IS FUNCTIONAL ── */
+  .functional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .func-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    border-top: 3px solid var(--green);
+    padding: 24px 20px;
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .func-card:hover { background: #1e1e1e; }
+
+  .func-icon { font-size: 32px; margin-bottom: 12px; }
+
+  .func-movement {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+
+  .func-real {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── NEUROPLASTICITY ── */
+  .neuro-block {
+    background: linear-gradient(135deg, #080d10, #0a0d14);
+    border: 1px solid rgba(58,123,213,0.2);
+    border-left: 5px solid var(--blue);
+    padding: 40px 44px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neuro-block::after {
+    content: '🧠';
+    position: absolute;
+    right: 30px; top: 20px;
+    font-size: 100px;
+    opacity: 0.06;
+  }
+
+  .neuro-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.05em;
+    color: var(--blue);
+    margin-bottom: 16px;
+  }
+
+  .neuro-block p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #a0b8d8;
+    max-width: 700px;
+    margin-bottom: 16px;
+  }
+
+  .neuro-block p:last-child { margin-bottom: 0; }
+  .neuro-block p strong { color: var(--light); }
+
+  /* ── ACSM GUIDELINES ── */
+  .acsm-block {
+    background: linear-gradient(135deg, #0a1208, #0d1408);
+    border: 1px solid rgba(46,158,107,0.3);
+    border-left: 5px solid var(--green);
+    padding: 32px 36px;
+    margin-bottom: 16px;
+  }
+
+  .acsm-block .endorse-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--green);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .acsm-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    color: var(--green);
+    margin-bottom: 14px;
+  }
+
+  .acsm-block p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #90c8a8;
+    margin-bottom: 20px;
+  }
+
+  .acsm-block p strong { color: var(--light); }
+
+  .acsm-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .acsm-cat {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(46,158,107,0.2);
+    padding: 16px 18px;
+  }
+
+  .acsm-cat.highlight {
+    background: rgba(46,158,107,0.12);
+    border-color: rgba(46,158,107,0.4);
+  }
+
+  .acsm-cat-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+
+  .acsm-cat p {
+    font-size: 13px;
+    color: #90c8a8;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+
+  .acsm-cite {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(46,158,107,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── VIGOR TEASER ── */
+  .vigor-teaser {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    border-left: 5px solid var(--gold);
+    padding: 32px 36px;
+    margin-bottom: 16px;
+  }
+
+  .vigor-teaser h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .vigor-teaser p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #c8b870;
+  }
+
+  .vigor-teaser p strong { color: var(--gold); }
+
+  .vigor-letters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .vigor-letter {
+    width: 48px; height: 48px;
+    background: rgba(200,168,75,0.12);
+    border: 1px solid rgba(200,168,75,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ACTION STEPS ── */
+  .action-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .action-item {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 26px 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .action-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 4px; height: 100%;
+  }
+
+  .action-step-1::before { background: var(--red); }
+  .action-step-2::before { background: var(--blue); }
+  .action-step-3::before { background: var(--green); }
+
+  .action-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+  }
+
+  .action-step-1 .action-num { color: rgba(232,39,26,0.3); }
+  .action-step-2 .action-num { color: rgba(58,123,213,0.3); }
+  .action-step-3 .action-num { color: rgba(46,158,107,0.3); }
+
+  .action-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+
+  .action-step-1 .action-title { color: var(--red); }
+  .action-step-2 .action-title { color: var(--blue); }
+  .action-step-3 .action-title { color: var(--green); }
+
+  .action-body {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #b0aba0;
+  }
+
+  .action-body strong { color: var(--light); }
+  .action-body a { color: var(--red); text-decoration: none; border-bottom: 1px solid rgba(232,39,26,0.4); }
+  .action-body a:hover { border-bottom-color: var(--red); }
+
+  /* ── EQUIPMENT NOTE ── */
+  .equipment-note {
+    background: rgba(200,168,75,0.07);
+    border: 1px solid rgba(200,168,75,0.2);
+    border-left: 4px solid var(--gold);
+    padding: 22px 28px;
+    margin-top: 16px;
+  }
+
+  .equipment-note p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #c8b870;
+  }
+
+  .equipment-note p strong { color: var(--gold); }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .functional-grid { grid-template-columns: repeat(2, 1fr); }
+    .acsm-categories { grid-template-columns: 1fr 1fr; }
+    .neuro-block { padding: 28px; }
+    .module-footer { flex-direction: column; }
+    body { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="breadcrumb">Module 2 — Class Breakdown &nbsp;›&nbsp; <span>Functional Exercises</span></p>
+  <h1 class="hero-title">
+    <em>Functional</em><br>Exercises
+  </h1>
+  <p class="hero-sub">
+    The movements that matter most aren't complicated — they're the ones your clients do <strong>every single day</strong>. This is where real-life independence is built.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot"></span> Module 2</div>
+    <div class="meta-pill"><span class="dot"></span> Est. 10 min</div>
+    <div class="meta-pill"><span class="dot"></span> Includes Action Steps</div>
+  </div>
+</section>
+
+<!-- ══════════ WHAT IS FUNCTIONAL ══════════ -->
+<section class="section reveal">
+  <p class="section-label">01 — What Are Functional Exercises?</p>
+
+  <p style="font-size:18px;line-height:1.85;color:#b0aba0;max-width:700px;margin-bottom:40px;">
+    Functional exercises are <strong style="color:var(--light);">natural movements we perform throughout daily life</strong> — sitting down, reaching up high, bending to pick something up, stepping over obstacles, turning around. We train these movements deliberately because they directly preserve independence and quality of life.
+  </p>
+
+  <div class="functional-grid">
+    <div class="func-card">
+      <div class="func-icon">🪑</div>
+      <div class="func-movement">Squat / Sit-Stand</div>
+      <div class="func-real">Getting in and out of a chair, car, or toilet</div>
+    </div>
+    <div class="func-card">
+      <div class="func-icon">🙌</div>
+      <div class="func-movement">Overhead Reach</div>
+      <div class="func-real">Grabbing something from a high shelf</div>
+    </div>
+    <div class="func-card">
+      <div class="func-icon">📦</div>
+      <div class="func-movement">Hinge / Bend</div>
+      <div class="func-real">Picking something up from the floor</div>
+    </div>
+    <div class="func-card">
+      <div class="func-icon">🚶</div>
+      <div class="func-movement">Gait & Stepping</div>
+      <div class="func-real">Walking, turning, stepping over objects</div>
+    </div>
+    <div class="func-card">
+      <div class="func-icon">🔄</div>
+      <div class="func-movement">Rotation</div>
+      <div class="func-real">Turning to look behind you, reaching across</div>
+    </div>
+    <div class="func-card">
+      <div class="func-icon">🤸</div>
+      <div class="func-movement">Push & Pull</div>
+      <div class="func-real">Opening doors, pushing a shopping cart</div>
+    </div>
+  </div>
+
+  <div style="background:var(--charcoal);border:1px solid #2a2a2a;border-left:4px solid var(--green);padding:24px 28px;margin-bottom:16px;">
+    <p style="font-size:17px;line-height:1.8;color:#90c8a8;">
+      <strong style="color:var(--green);">🥊 The B4H Connection:</strong> Every functional exercise in our classes maps directly to a real-life movement. When a client improves their squat, they improve their ability to get off the toilet independently. When they improve their overhead reach, they can get their own glass from the cupboard. <strong style="color:var(--light);">This is what we're really training.</strong>
+    </p>
+  </div>
+
+  <div style="background:rgba(200,168,75,0.07);border:1px solid rgba(200,168,75,0.2);border-left:4px solid var(--gold);padding:22px 28px;">
+    <p style="font-size:17px;line-height:1.8;color:#c8b870;">
+      <strong style="color:var(--gold);">Coming Up — VIGOR:</strong> This is also where you'll implement the <strong style="color:var(--light);">VIGOR acronym</strong> — a framework you're about to learn that will guide how you cue and teach every functional exercise in class.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ NEUROPLASTICITY ══════════ -->
+<section class="section reveal">
+  <p class="section-label">02 — Why These Exercises? The Brain Science</p>
+
+  <div class="neuro-block">
+    <h3>Neuroplasticity: The Brain That Rewires Itself</h3>
+    <p>
+      Did you know that your brain has the ability to <strong>change and adapt throughout a person's entire life?</strong> This is called neuroplasticity — and once you start teaching our program to seniors and people with Parkinson's, you will be able to see these changes happen in real time.
+    </p>
+    <p>
+      Think of it as the brain's way of rewiring itself in response to experiences, learning, and challenges. <strong>Just like a muscle gets stronger when you exercise it, the brain becomes more flexible and efficient when it's challenged through new activities and learning.</strong>
+    </p>
+    <p>
+      When you engage in physical activity, your brain isn't just sitting idle. Exercise actually <strong>stimulates the brain and encourages it to create new connections between nerve cells (neurons)</strong>. These connections allow different parts of the brain to communicate better — improving memory, attention, coordination, and problem-solving.
+    </p>
+    <p>
+      Regular exercise also <strong>increases blood flow to the brain</strong>, delivering more oxygen and nutrients essential for brain health. It triggers the release of neurotransmitters that help with mood regulation, stress reduction, and overall mental wellbeing.
+    </p>
+    <p>
+      Staying physically active doesn't just benefit the body — <strong>it actively maintains and enhances neuroplasticity, keeping the brain sharp, adaptable, and ready to learn new things at any age.</strong> This is why we do what we do.
+    </p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:16px;">
+    <div style="background:var(--charcoal);border:1px solid #222;padding:24px;">
+      <div style="font-size:28px;margin-bottom:10px;">🔗</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--blue);margin-bottom:8px;">New Neural Connections</div>
+      <p style="font-size:15px;line-height:1.7;color:#a8a398;">Exercise stimulates neurons to form new pathways — improving how different brain regions communicate with each other.</p>
+    </div>
+    <div style="background:var(--charcoal);border:1px solid #222;padding:24px;">
+      <div style="font-size:28px;margin-bottom:10px;">🩸</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--red);margin-bottom:8px;">Increased Blood Flow</div>
+      <p style="font-size:15px;line-height:1.7;color:#a8a398;">More oxygen and nutrients reach the brain during and after exercise — supporting neuron health and cognitive function.</p>
+    </div>
+    <div style="background:var(--charcoal);border:1px solid #222;padding:24px;">
+      <div style="font-size:28px;margin-bottom:10px;">⚗️</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--purple);margin-bottom:8px;">Neurotransmitter Release</div>
+      <p style="font-size:15px;line-height:1.7;color:#a8a398;">Exercise triggers dopamine, serotonin, and endorphins — the exact chemicals PD depletes — improving mood, reducing stress, and enhancing wellbeing.</p>
+    </div>
+    <div style="background:var(--charcoal);border:1px solid #222;padding:24px;">
+      <div style="font-size:28px;margin-bottom:10px;">🌱</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--green);margin-bottom:8px;">BDNF Production</div>
+      <p style="font-size:15px;line-height:1.7;color:#a8a398;">Physical activity increases Brain-Derived Neurotrophic Factor — a protein that supports neuron survival, growth, and the formation of new neural connections.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ACSM GUIDELINES ══════════ -->
+<section class="section reveal">
+  <p class="section-label">03 — What the Experts Recommend</p>
+
+  <div class="acsm-block">
+    <div class="endorse-tag">★ 2026 Official Guidelines</div>
+    <h3>ACSM & Parkinson's Foundation: The Exercise Blueprint</h3>
+    <p>
+      The <strong>American College of Sports Medicine</strong> and the <strong>Parkinson's Foundation</strong> published updated exercise recommendations in 2026 following review by subject matter experts and the PD community. Their four recommended exercise categories map perfectly onto what we do in every B4H class.
+    </p>
+    <div class="acsm-categories">
+      <div class="acsm-cat">
+        <div class="acsm-cat-name">🏃 Aerobic Activity</div>
+        <p>3 days/week, 30+ min. Continuous rhythmic activity at moderate-to-vigorous intensity. Our high-intensity class block covers this directly.</p>
+      </div>
+      <div class="acsm-cat">
+        <div class="acsm-cat-name">💪 Strength Training</div>
+        <p>2–3 days/week, 8–10 reps to fatigue. Major muscle groups. <strong>Functional exercises are the foundation of this category.</strong></p>
+      </div>
+      <div class="acsm-cat">
+        <div class="acsm-cat-name">🤸 Stretching</div>
+        <p>2–3 days/week with daily stretching most effective. Active range of motion with deep breathing. Our cool-down covers this completely.</p>
+      </div>
+      <div class="acsm-cat highlight">
+        <div class="acsm-cat-name">⚡ BAM — That's Us</div>
+        <p>Balance, Agility & Multitasking. 2–3 days/week. <strong>Specifically lists boxing.</strong> Multidirectional stepping, large movements, dual-tasking.</p>
+      </div>
+    </div>
+    <div class="acsm-cite">SOURCE: ACSM & Parkinson's Foundation Updated Exercise Recommendations, 2026 — Parkinson.org/about-us/news/updated-exercise-recommendations</div>
+  </div>
+
+  <div style="background:var(--charcoal);border:1px solid #2a2a2a;padding:28px 32px;">
+    <p style="font-size:17px;line-height:1.8;color:#b0aba0;">
+      <strong style="color:var(--light);">Notice anything?</strong> A well-run B4H class hits <strong style="color:var(--green);">all four categories</strong> in a single session. Functional exercises + boxing + cool-down stretching = the complete ACSM-recommended exercise prescription for Parkinson's. You're not just running a fitness class — <strong style="color:var(--light);">you're delivering a clinically validated therapeutic program.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ ACTION STEPS ══════════ -->
+<section class="section reveal">
+  <p class="section-label">04 — Your Action Steps</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:620px;margin-bottom:32px;line-height:1.75;">
+    Now that you understand the <em>why</em> behind functional exercises, here's what to do next.
+  </p>
+
+  <div class="action-grid">
+
+    <div class="action-item action-step-1">
+      <div class="action-num">1</div>
+      <div>
+        <div class="action-title">Learn the VIGOR Acronym</div>
+        <div class="action-body">
+          Your next lesson introduces <strong>VIGOR</strong> — the B4H framework for how to teach and cue every functional exercise. This is the language you'll use in every class you ever run. Don't skip ahead — come back to functional exercises with fresh eyes once you know VIGOR.
+          <div style="margin-top:14px;">
+            <div class="vigor-letters" style="display:flex;gap:10px;flex-wrap:wrap;">
+              <div style="width:48px;height:48px;background:rgba(232,39,26,0.12);border:1px solid rgba(232,39,26,0.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--red);">V</div>
+              <div style="width:48px;height:48px;background:rgba(232,39,26,0.12);border:1px solid rgba(232,39,26,0.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--red);">I</div>
+              <div style="width:48px;height:48px;background:rgba(232,39,26,0.12);border:1px solid rgba(232,39,26,0.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--red);">G</div>
+              <div style="width:48px;height:48px;background:rgba(232,39,26,0.12);border:1px solid rgba(232,39,26,0.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--red);">O</div>
+              <div style="width:48px;height:48px;background:rgba(232,39,26,0.12);border:1px solid rgba(232,39,26,0.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--red);">R</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-item action-step-2">
+      <div class="action-num">2</div>
+      <div>
+        <div class="action-title">Review the Class Program Templates</div>
+        <div class="action-body">
+          After learning VIGOR, review both the <strong>Fighter</strong> and <strong>Champion</strong> class templates. These show you exactly how functional exercises and boxing are structured within a full class — including timing, sequencing, and how VIGOR is applied in practice.
+        </div>
+      </div>
+    </div>
+
+    <div class="action-item action-step-3">
+      <div class="action-num">3</div>
+      <div>
+        <div class="action-title">Request Access to Online Classes</div>
+        <div class="action-body">
+          Watch a <strong>Fighter class</strong> and a <strong>Champion class</strong> online to see functional exercises in action. Email <a href="mailto:Christine@boxing4health.com">Christine@boxing4health.com</a> to request your class links now — don't wait until after you finish the training modules.
+          <br><br>
+          <strong>As you watch, pay close attention to:</strong> which functional exercises appear in each class, and which ones you could make more challenging by adding equipment (weights, resistance bands, balance tools) when teaching in person.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="equipment-note" style="margin-top:24px;">
+    <p>
+      <strong>🥊 Online vs In-Person:</strong> Online classes are equipment-free by necessity — clients are at home. When you're teaching in person, you have access to weights, resistance bands, balance pads, and boxing equipment. As you watch the online classes, make a mental note: <strong>"How could I make this exercise more challenging or creative with the equipment I have in the gym?"</strong> That's how you level up your in-person sessions.
+    </p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>Teaching 101 — VIGOR</span></h2>
+    <p>Learn the B4H framework for cueing every exercise with purpose, clarity, and maximum therapeutic impact.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: VIGOR →</button>
+    <button class="btn btn-ghost">↩ Back to Why Boxing?</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 }).observe(r);
+});
+</script>
+</body>
+</html>

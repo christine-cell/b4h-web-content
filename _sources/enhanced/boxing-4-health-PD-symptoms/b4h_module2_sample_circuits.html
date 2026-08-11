@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Sample Circuits</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 52vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 65% 70% at 100% 50%, rgba(232,39,26,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 50% at 0% 80%, rgba(200,168,75,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    right: -10px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 15vw, 200px);
+    color: rgba(232,39,26,0.04);
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--red); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--red); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.85;
+    color: #b0aba0;
+    max-width: 620px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  .hero-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 9px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  .dot-red { background: var(--red); }
+  .dot-blue { background: var(--blue); }
+
+  /* ── SECTION ── */
+  .section { padding: 60px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── CIRCUIT CONTAINER ── */
+  .circuit-block {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .circuit-header {
+    padding: 22px 28px;
+    cursor: pointer;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .circuit-header:hover { background: #1e1e1e; }
+
+  .circuit-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    line-height: 0.9;
+    flex-shrink: 0;
+    width: 50px;
+  }
+
+  .circuit-header-main { flex: 1; }
+
+  .circuit-format-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border: 1px solid;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .circuit-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .circuit-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .circuit-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .expand-arrow {
+    width: 28px; height: 28px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    color: var(--muted);
+    transition: transform 0.3s;
+  }
+
+  .circuit-block.open .expand-arrow { transform: rotate(180deg); }
+
+  .circuit-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .circuit-body-inner {
+    padding: 0 28px 32px 28px;
+    border-top: 1px solid #1e1e1e;
+  }
+
+  /* Fighter styling */
+  .fighter-circuit .circuit-num { color: rgba(232,39,26,0.2); }
+  .fighter-circuit .circuit-format-tag { color: var(--red); border-color: rgba(232,39,26,0.3); background: rgba(232,39,26,0.07); }
+  .fighter-circuit .circuit-title { color: var(--red); }
+
+  /* Champion styling */
+  .champion-circuit .circuit-num { color: rgba(58,123,213,0.2); }
+  .champion-circuit .circuit-format-tag { color: var(--blue); border-color: rgba(58,123,213,0.3); background: rgba(58,123,213,0.07); }
+  .champion-circuit .circuit-title { color: var(--blue); }
+
+  /* ── TWO COLUMN LAYOUT (Functional + Boxing) ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding-top: 24px;
+  }
+
+  .col-block { }
+
+  .col-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .col-functional { background: rgba(46,158,107,0.1); color: var(--green); border: 1px solid rgba(46,158,107,0.2); }
+  .col-boxing     { background: rgba(232,39,26,0.1);  color: var(--red);   border: 1px solid rgba(232,39,26,0.2); }
+
+  /* ── STATION LIST ── */
+  .station-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .station-item {
+    background: var(--mid);
+    border: 1px solid #2a2a2a;
+    padding: 12px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .station-item.functional { border-left: 3px solid var(--green); }
+  .station-item.boxing     { border-left: 3px solid var(--red); }
+  .station-item.champion-boxing { border-left: 3px solid var(--blue); }
+  .station-item.champion-func   { border-left: 3px solid rgba(58,123,213,0.5); }
+
+  .st-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 20px;
+  }
+
+  .functional .st-num { color: rgba(46,158,107,0.4); }
+  .boxing .st-num     { color: rgba(232,39,26,0.4); }
+  .champion-boxing .st-num { color: rgba(58,123,213,0.4); }
+  .champion-func .st-num   { color: rgba(58,123,213,0.3); }
+
+  .st-content { flex: 1; }
+
+  .st-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    margin-bottom: 2px;
+  }
+
+  .st-detail {
+    font-size: 13px;
+    color: #a8a398;
+    line-height: 1.55;
+  }
+
+  .st-detail strong { color: var(--light); }
+  .st-detail em { color: var(--teal); font-style: italic; font-size: 12px; }
+
+  .equipment-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(200,168,75,0.08);
+    border: 1px solid rgba(200,168,75,0.2);
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    padding: 2px 7px;
+    margin-top: 4px;
+    display: inline-block;
+  }
+
+  /* ── TIMING BADGE ── */
+  .timing-badge {
+    background: var(--mid);
+    border: 1px solid #2a2a2a;
+    padding: 14px 20px;
+    margin-top: 20px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .timing-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .timing-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .timing-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+  }
+
+  /* ── FULL CLASS SECTION ── */
+  .full-class-block {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .full-class-header {
+    padding: 26px 32px;
+    cursor: pointer;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transition: background 0.2s;
+  }
+
+  .full-class-header:hover { background: #1e1e1e; }
+
+  .full-class-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid;
+    flex-shrink: 0;
+  }
+
+  .full-class-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.04em;
+    flex: 1;
+  }
+
+  .full-class-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .full-class-inner {
+    padding: 0 32px 36px;
+    border-top: 1px solid #1e1e1e;
+  }
+
+  /* Phase headers inside full class */
+  .phase-header {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    padding: 14px 0 10px;
+    border-bottom: 1px solid #2a2a2a;
+    margin-bottom: 14px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .combo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .combo-item {
+    background: var(--mid);
+    border: 1px solid #2a2a2a;
+    padding: 12px 16px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #b0aba0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .combo-item strong { color: var(--light); }
+  .combo-item em { color: var(--teal); font-style: italic; }
+
+  .combo-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 18px;
+  }
+
+  /* ── NOTE BOX ── */
+  .note-box {
+    border: 1px solid;
+    padding: 16px 20px;
+    margin: 16px 0;
+    display: flex;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .note-box strong { color: var(--light); }
+  .note-box .n-icon { font-size: 18px; flex-shrink: 0; }
+
+  .note-gold   { border-color: rgba(200,168,75,0.3); background: rgba(200,168,75,0.06); color: #c8b870; }
+  .note-red    { border-color: rgba(232,39,26,0.3);  background: rgba(232,39,26,0.06);  color: #e8b0aa; }
+  .note-blue   { border-color: rgba(58,123,213,0.3); background: rgba(58,123,213,0.06); color: #7a9fd4; }
+  .note-green  { border-color: rgba(46,158,107,0.3); background: rgba(46,158,107,0.06); color: #90c8a8; }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 700px) {
+    .two-col { grid-template-columns: 1fr; }
+    .circuit-body-inner { padding: 0 16px 24px; }
+    .module-footer { flex-direction: column; }
+    .full-class-inner { padding: 0 18px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg-text">CIRCUITS</div>
+  <p class="breadcrumb">Module 2 — Class Breakdown &nbsp;›&nbsp; <span>Sample Circuits</span></p>
+  <h1 class="hero-title">
+    <em>Sample</em><br>Circuits
+  </h1>
+  <p class="hero-sub">
+    Ready-to-use circuits to get you started. <strong>These don't include warm-up or cool-down</strong> — they're the high-intensity portion only. Use them as-is or adapt them freely. Four Fighter sample circuits, plus two full class examples from our instructors.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot dot-red"></span> 4 Fighter Circuits</div>
+    <div class="meta-pill"><span class="dot dot-blue"></span> 2 Full Class Examples</div>
+  </div>
+</section>
+
+<!-- ══════════ FIGHTER CIRCUITS ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--red);">Fighter Sample Circuits</p>
+
+  <div class="note-box note-gold" style="margin-bottom:28px;">
+    <div class="n-icon">💡</div>
+    <div><strong>These are circuits only</strong> — they do not include warm-up or cool-down. Always bookend these with your VIGOR-based warm-up and a proper cool-down/release session.</div>
+  </div>
+
+  <!-- CIRCUIT 1 -->
+  <div class="circuit-block fighter-circuit" onclick="toggleCircuit(this)">
+    <div class="circuit-header">
+      <div class="circuit-num">1</div>
+      <div class="circuit-header-main">
+        <div class="circuit-format-tag">Fighter · Partner Option Available</div>
+        <div class="circuit-title">High to Low Rows · Ground & Pound · Bosu Boxing</div>
+        <div class="circuit-desc">Go through circuit twice each side — 1.5 min first pass, 1 min second pass</div>
+      </div>
+      <div class="circuit-right">
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="circuit-body">
+      <div class="circuit-body-inner">
+        <div class="timing-badge">
+          <div class="timing-item"><div class="timing-label">Rounds</div><div class="timing-val">×2</div></div>
+          <div class="timing-item"><div class="timing-label">Round 1</div><div class="timing-val">1.5 min</div></div>
+          <div class="timing-item"><div class="timing-label">Round 2</div><div class="timing-val">1 min</div></div>
+          <div class="timing-item"><div class="timing-label">Format</div><div class="timing-val">Single or Pairs</div></div>
+        </div>
+        <div class="two-col">
+          <div class="col-block">
+            <div class="col-label col-functional">🏋️ Functional</div>
+            <div class="station-list">
+              <div class="station-item functional"><div class="st-num">1</div><div class="st-content"><div class="st-name">High to Low Rows with Bands</div><div class="st-detail">Resistance band anchored high — pull down and back. Full shoulder and back engagement.</div><div class="equipment-tag">🔧 Resistance Band</div></div></div>
+              <div class="station-item functional"><div class="st-num">2</div><div class="st-content"><div class="st-name">Big Walk/Run + Bridge to Plank</div><div class="st-detail">Across the front of the gym, then down to bridge position and hold plank.</div></div></div>
+              <div class="station-item functional"><div class="st-num">3</div><div class="st-content"><div class="st-name">Crawling + PWR! Steps</div><div class="st-detail">Bear crawl or modified crawl into powerful PWR! up steps.</div></div></div>
+              <div class="station-item functional"><div class="st-num">4</div><div class="st-content"><div class="st-name">Plank Hold + Mountain Climbers</div><div class="st-detail">Hold plank for <strong>10 sec</strong> (count out loud, slow) then <strong>10 mountain climbers</strong> — or roll over for modification.</div></div></div>
+              <div class="station-item functional"><div class="st-num">5</div><div class="st-content"><div class="st-name">Power Squat with Medicine Ball</div><div class="st-detail">Squat with med ball — pass ball to partner while opening chest on the way up.<br><em>Partner option: open chest while other squats</em></div><div class="equipment-tag">🔧 Medicine Ball</div></div></div>
+            </div>
+          </div>
+          <div class="col-block">
+            <div class="col-label col-boxing">🥊 Boxing</div>
+            <div class="station-list">
+              <div class="station-item boxing"><div class="st-num">1</div><div class="st-content"><div class="st-name">Freestyle on the Bobs</div><div class="st-detail">Open freestyle on bob bags — encourage full amplitude and footwork.</div><div class="equipment-tag">🔧 Bob Bags</div></div></div>
+              <div class="station-item boxing"><div class="st-num">2</div><div class="st-content"><div class="st-name">Cognitive + Jab Cross on Bags</div><div class="st-detail">Call out things on signs while punching: <em>"4 movie titles" / "3 things in your fridge"</em> — dual-task challenge.</div></div></div>
+              <div class="station-item boxing"><div class="st-num">3</div><div class="st-content"><div class="st-name">Ground & Pound + Speed Bag Switch</div><div class="st-detail">One partner: <strong>ground & pound bag</strong>. Other partner: <strong>10 punches on speed bag</strong>. Switch.</div><div class="equipment-tag">🔧 Speed Bag · Floor Bag</div></div></div>
+              <div class="station-item boxing"><div class="st-num">4</div><div class="st-content"><div class="st-name">Bosu Boxing + Open Chest</div><div class="st-detail">Squat on Bosu ball, punch while balanced. Open chest between combinations.</div><div class="equipment-tag">🔧 Bosu Ball</div></div></div>
+              <div class="station-item boxing"><div class="st-num">5</div><div class="st-content"><div class="st-name">Squat Front Kicks + Hooks</div><div class="st-detail"><strong>10 squat front kicks</strong>, then <strong>10 hooks left/right</strong></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIRCUIT 2 -->
+  <div class="circuit-block fighter-circuit" onclick="toggleCircuit(this)">
+    <div class="circuit-header">
+      <div class="circuit-num">2</div>
+      <div class="circuit-header-main">
+        <div class="circuit-format-tag">Fighter · Equipment Rich</div>
+        <div class="circuit-title">Cable Rows · Burpees Over Bag · Airplane Balance · Double End Bags</div>
+        <div class="circuit-desc">One pass through — 2.5 min per station</div>
+      </div>
+      <div class="circuit-right">
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="circuit-body">
+      <div class="circuit-body-inner">
+        <div class="timing-badge">
+          <div class="timing-item"><div class="timing-label">Rounds</div><div class="timing-val">×1</div></div>
+          <div class="timing-item"><div class="timing-label">Per Station</div><div class="timing-val">2.5 min</div></div>
+        </div>
+        <div class="two-col">
+          <div class="col-block">
+            <div class="col-label col-functional">🏋️ Functional</div>
+            <div class="station-list">
+              <div class="station-item functional"><div class="st-num">1</div><div class="st-content"><div class="st-name">Cable Back Rows — Standing</div><div class="st-detail">Standing row with full scapular retraction. Upright posture throughout.</div><div class="equipment-tag">🔧 Cable Machine</div></div></div>
+              <div class="station-item functional"><div class="st-num">2</div><div class="st-content"><div class="st-name">Burpees Over the Bag</div><div class="st-detail">Burpee → step over bag → burpee on the other side. Repeat. Amplitude in the step-over.</div></div></div>
+              <div class="station-item functional"><div class="st-num">3</div><div class="st-content"><div class="st-name">Single Arm Shoulder Press on Ball</div><div class="st-detail">Sit on stability ball — single arm overhead press. Balance challenge + shoulder strength.</div><div class="equipment-tag">🔧 Stability Ball · Dumbbell</div></div></div>
+              <div class="station-item functional"><div class="st-num">4</div><div class="st-content"><div class="st-name">Squat with PVC Pipe / Broomstick</div><div class="st-detail">Rest PVC pipe or broomstick on shoulders for posture alignment during squat. Dollar store broomstick works perfectly.</div><div class="equipment-tag">🔧 PVC Pipe or Broomstick</div></div></div>
+              <div class="station-item functional"><div class="st-num">5</div><div class="st-content"><div class="st-name">Airplane Balance + Arm Swing</div><div class="st-detail">Single leg balance in airplane (hinge) position with counter-rotating arm swing.</div></div></div>
+            </div>
+          </div>
+          <div class="col-block">
+            <div class="col-label col-boxing">🥊 Boxing</div>
+            <div class="station-list">
+              <div class="station-item boxing"><div class="st-num">1</div><div class="st-content"><div class="st-name">Freestyle — Double End Bags</div><div class="st-detail">Open freestyle on double end bags — speed, reaction, and coordination focus.</div><div class="equipment-tag">🔧 Double End Bags</div></div></div>
+              <div class="station-item boxing"><div class="st-num">2</div><div class="st-content"><div class="st-name">Twist & Punch + Stance Switch</div><div class="st-detail"><strong>10 twist punches</strong>, then switch sides with a big knee turn or jump switch.</div></div></div>
+              <div class="station-item boxing"><div class="st-num">3</div><div class="st-content"><div class="st-name">PWR! Centre Stance → Reverse Lunge → Front Kick</div><div class="st-detail">Full combination: PWR! up from centre → reverse lunge → front kick. Power + balance + amplitude.</div></div></div>
+              <div class="station-item boxing"><div class="st-num">4</div><div class="st-content"><div class="st-name">Memory Game + Bag Punching</div><div class="st-detail">Call out things on <em>your own bucket list</em> while punching the bag. Personal dual-task — great for engagement.</div></div></div>
+              <div class="station-item boxing"><div class="st-num">5</div><div class="st-content"><div class="st-name">Bosu Ball Balance Punches — On Knees</div><div class="st-detail">Kneel on Bosu ball — punch from kneeling position. Core stability + upper body power.</div><div class="equipment-tag">🔧 Bosu Ball</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIRCUIT 3 -->
+  <div class="circuit-block fighter-circuit" onclick="toggleCircuit(this)">
+    <div class="circuit-header">
+      <div class="circuit-num">3</div>
+      <div class="circuit-header-main">
+        <div class="circuit-format-tag">Fighter · Smovey Rings</div>
+        <div class="circuit-title">Crawling · Surrender · Smovey Rings · Punch Ladder</div>
+        <div class="circuit-desc">Twice through each side — 1.5 min each</div>
+      </div>
+      <div class="circuit-right">
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="circuit-body">
+      <div class="circuit-body-inner">
+        <div class="timing-badge">
+          <div class="timing-item"><div class="timing-label">Rounds</div><div class="timing-val">×2</div></div>
+          <div class="timing-item"><div class="timing-label">Per Station</div><div class="timing-val">1.5 min</div></div>
+        </div>
+        <div class="two-col">
+          <div class="col-block">
+            <div class="col-label col-functional">🏋️ Functional</div>
+            <div class="station-list">
+              <div class="station-item functional"><div class="st-num">1</div><div class="st-content"><div class="st-name">Crawling + Power Steps</div><div class="st-detail">Bear crawl or modified crawl leading into powerful PWR! steps.</div></div></div>
+              <div class="station-item functional"><div class="st-num">2</div><div class="st-content"><div class="st-name">Surrender</div><div class="st-detail">From standing → kneel one knee → kneel both → stand one → stand tall. Powerful lower body + core challenge.</div></div></div>
+              <div class="station-item functional"><div class="st-num">3</div><div class="st-content"><div class="st-name">Stock the Shelves</div><div class="st-detail">Reaching movements at various heights — simulates placing objects on shelves. Functional amplitude training.</div></div></div>
+              <div class="station-item functional"><div class="st-num">4</div><div class="st-content"><div class="st-name">Smovey Rings — Double & Alternating</div><div class="st-detail"><strong>20 reps double swing</strong> → <strong>20 reps alternating swing</strong> → <strong>10 Smovey squats</strong></div><div class="equipment-tag">🔧 Smovey Rings</div></div></div>
+            </div>
+          </div>
+          <div class="col-block">
+            <div class="col-label col-boxing">🥊 Boxing</div>
+            <div class="station-list">
+              <div class="station-item boxing"><div class="st-num">1</div><div class="st-content"><div class="st-name">Punch Ladder — Count Out Loud</div><div class="st-detail">1 punch → 2 punches → up to 10, then back down to 1. Count every rep out loud — voice + boxing combined.</div></div></div>
+              <div class="station-item boxing"><div class="st-num">2</div><div class="st-content"><div class="st-name">Toe Touch → Back Step → Knee → Switch</div><div class="st-detail">Toe touch → big back step → knee strike → switch stance. Full body flow with balance challenge.</div></div></div>
+              <div class="station-item boxing"><div class="st-num">3</div><div class="st-content"><div class="st-name">Freestyle</div><div class="st-detail">Open freestyle round — clients choose their combinations. Ownership and confidence.</div></div></div>
+              <div class="station-item boxing"><div class="st-num">4</div><div class="st-content"><div class="st-name">Jab · Knee · Hook · Cross</div><div class="st-detail">Full 4-hit combination — requires coordination, stance work, and trunk rotation on the hook.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIRCUIT 4 -->
+  <div class="circuit-block fighter-circuit" onclick="toggleCircuit(this)">
+    <div class="circuit-header">
+      <div class="circuit-num">4</div>
+      <div class="circuit-header-main">
+        <div class="circuit-format-tag">Fighter · Student-Led Option</div>
+        <div class="circuit-title">Jumping Jacks · Push Ups · Superman · Boxing Intervals</div>
+        <div class="circuit-desc">10 of each → 5 of each · Then 2.5 min boxing → functional → 2 min boxing</div>
+      </div>
+      <div class="circuit-right">
+        <div class="expand-arrow">▼</div>
+      </div>
+    </div>
+    <div class="circuit-body">
+      <div class="circuit-body-inner">
+        <div class="timing-badge">
+          <div class="timing-item"><div class="timing-label">Functional</div><div class="timing-val">10 → 5</div></div>
+          <div class="timing-item"><div class="timing-label">Boxing Round 1</div><div class="timing-val">2.5 min</div></div>
+          <div class="timing-item"><div class="timing-label">Boxing Round 2</div><div class="timing-val">2 min</div></div>
+        </div>
+        <div class="note-box note-green" style="margin-top:14px;">
+          <div class="n-icon">🌟</div>
+          <div><strong>Student-Led Moment:</strong> Have students come up with the functional exercises themselves — 10 of each, then 5 of each. This builds ownership, cognitive engagement, and a sense of fun. Great for groups that know each other well.</div>
+        </div>
+        <div class="two-col">
+          <div class="col-block">
+            <div class="col-label col-functional">🏋️ Functional</div>
+            <div class="station-list">
+              <div class="station-item functional"><div class="st-num">1</div><div class="st-content"><div class="st-name">Jumping Jacks</div><div class="st-detail"><strong>10 reps → 5 reps</strong> — or marching jacks for modified version</div></div></div>
+              <div class="station-item functional"><div class="st-num">2</div><div class="st-content"><div class="st-name">Push Ups</div><div class="st-detail"><strong>10 reps → 5 reps</strong> — wall, incline, or floor based on client ability</div></div></div>
+              <div class="station-item functional"><div class="st-num">3</div><div class="st-content"><div class="st-name">Superman</div><div class="st-detail"><strong>10 reps → 5 reps</strong> — prone back extension, arms forward. Postural extensor strength.</div></div></div>
+              <div class="station-item functional"><div class="st-num">4</div><div class="st-content"><div class="st-name">Power Squats</div><div class="st-detail"><strong>10 reps → 5 reps</strong> — full amplitude, arms out, BIG finish on the rise.</div></div></div>
+            </div>
+          </div>
+          <div class="col-block">
+            <div class="col-label col-boxing">🥊 Boxing</div>
+            <div class="station-list">
+              <div class="station-item boxing"><div class="st-num">1</div><div class="st-content"><div class="st-name">Freestyle</div><div class="st-detail">Open round — full amplitude, own combinations</div></div></div>
+              <div class="station-item boxing"><div class="st-num">2</div><div class="st-content"><div class="st-name">Squat + Front Kick</div><div class="st-detail">Power squat → explosive front kick. Lower body power sequence.</div></div></div>
+              <div class="station-item boxing"><div class="st-num">3</div><div class="st-content"><div class="st-name">Bosu Balance Boxing</div><div class="st-detail">Balance on Bosu, punch from stable position. Core + upper body combined.<div class="equipment-tag">🔧 Bosu Ball</div></div></div></div>
+              <div class="station-item boxing"><div class="st-num">4</div><div class="st-content"><div class="st-name">Ground & Pound + Partner Speed Bag</div><div class="st-detail">Hit bag on the ground → partner does <strong>10 speed bag hits</strong> → switch. Then <strong>2 reverse lunges OR 1 surrender</strong>.</div><div class="equipment-tag">🔧 Floor Bag · Speed Bag</div></div></div>
+              <div class="station-item boxing"><div class="st-num">5</div><div class="st-content"><div class="st-name">Call Out Things While Punching</div><div class="st-detail">Instructor calls a category — clients shout answers while punching. Cognitive + voice + boxing all at once.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FULL CLASS EXAMPLES ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--blue);">Full Class Examples — From Our Instructors</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:640px;margin-bottom:28px;line-height:1.75;">
+    These are complete class plans — warm-up, functional work, boxing, and cool-down — contributed by B4H instructors. Watch how different instructors bring their personality and style to the same framework.
+  </p>
+
+  <!-- CHAMPION FULL CLASS -->
+  <div class="full-class-block champion-circuit" onclick="toggleFull(this)">
+    <div class="full-class-header">
+      <div class="full-class-badge" style="color:var(--blue);border-color:rgba(58,123,213,0.3);background:rgba(58,123,213,0.08);">🏆 Champion</div>
+      <div class="full-class-title" style="color:var(--blue);">Full Champion Class — Seated & Standing Format</div>
+      <div class="expand-arrow">▼</div>
+    </div>
+    <div class="full-class-body">
+      <div class="full-class-inner">
+
+        <div class="phase-header" style="color:var(--gold);border-color:rgba(200,168,75,0.2);">🌅 Warm Up</div>
+        <div class="combo-list">
+          <div class="combo-item"><div class="combo-num" style="color:rgba(200,168,75,0.4);">1</div><div><strong>Breathing:</strong> Deep inhale-exhale × 5</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(200,168,75,0.4);">2</div><div><strong>Tongue Twister + Palm Rub:</strong> Rub palms together while repeating <em>"Four fine fresh fish for you"</em> — warms voice and hands simultaneously</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(200,168,75,0.4);">3</div><div><strong>Shoulder Rolls:</strong> Forward and back — loosen the upper body before movement begins</div></div>
+        </div>
+
+        <div class="phase-header" style="color:var(--blue);border-color:rgba(58,123,213,0.2);">🏋️ Functional — Seated & Standing</div>
+        <div class="combo-list">
+          <div class="combo-item"><div class="combo-num" style="color:rgba(58,123,213,0.3);">1</div><div><strong>Seated Leg Extensions:</strong> Nice and tall, arms on hips. Extend one leg forward, tap toes to floor, return. 10 reps each side → 10 alternating → add heel tap on return. 10 alternating.</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(58,123,213,0.3);">2</div><div><strong>Apple Picking:</strong> Legs spread, right arm stretches up and across — reach for an imaginary apple and pull it down to the opposite side. 10 reps each side. <em>Can also be done standing.</em></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(58,123,213,0.3);">3</div><div><strong>Sit to Stand × 3</strong> → walk around the chair with big steps → stand at the back of the chair.</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(58,123,213,0.3);">4</div><div><strong>Big Back Steps:</strong> Holding chair back for balance — stretch leg as far back as possible. 10 each side → 10 alternating.</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(58,123,213,0.3);">5</div><div><strong>Side Open Back Steps:</strong> Big open step reaching toward the back wall (like opening a door). Arm and leg go around and back, eyes follow the hand. Return. 10 each side.</div></div>
+        </div>
+
+        <div class="phase-header" style="color:var(--red);border-color:rgba(232,39,26,0.2);">🥊 Boxing</div>
+        <div class="combo-list">
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">—</div><div><strong>30 sec freestyle warm-up</strong></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">1</div><div><strong>Combo 1:</strong> Right foot front → Jabs ×10 → Cross ×10 → switch foot. 3 sets. <strong>PWR UP!</strong></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">2</div><div><strong>Combo 2:</strong> Right foot → Jab ×2, Cross ×1 → switch side. 8 sets each.</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">3</div><div><strong>Combo 3:</strong> Right foot → Cross ×2, Jab ×1 → switch side. 8 sets each.</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">4</div><div><strong>Combo 4 — Knees on Bag:</strong> Right leg ×10 → left leg ×10 → alternating ×10.</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">5</div><div><strong>Combo 5:</strong> Double straight punches ×10 each side.</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">6</div><div><strong>30 sec freestyle → PWR UP!</strong><br><em>Variation: Freeze Dance — music on = freestyle punching, music off = PWR UP! pose. Great for reaction + fun.</em></div></div>
+        </div>
+
+        <div class="phase-header" style="color:var(--green);border-color:rgba(46,158,107,0.2);">🧘 Cool Down — Seated</div>
+        <div class="combo-list">
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">1</div><div>Big breathings — return to seated position</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">2</div><div>Hands explosion exercises — finger extension and spread</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">3</div><div>Wrist rolls — both directions</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">4</div><div>Leg extensions / gas pedal exercises</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">5</div><div>Spine stretching — flexion and extension exercises</div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FIGHTER FULL CLASS -->
+  <div class="full-class-block fighter-circuit" onclick="toggleFull(this)">
+    <div class="full-class-header">
+      <div class="full-class-badge" style="color:var(--red);border-color:rgba(232,39,26,0.3);background:rgba(232,39,26,0.08);">🥊 Fighter</div>
+      <div class="full-class-title" style="color:var(--red);">Full Fighter Circuit Class — Equipment-Based Stations</div>
+      <div class="expand-arrow">▼</div>
+    </div>
+    <div class="full-class-body">
+      <div class="full-class-inner">
+
+        <div class="phase-header" style="color:var(--green);border-color:rgba(46,158,107,0.2);">🏋️ Functional Stations</div>
+        <div class="combo-list">
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">1</div><div><strong>Balanced Squats on Bosu:</strong> Step up (legs hip-width), find balance and tall posture, arms out front at shoulder height. Squat ×10. Rest 5 sec. <em>Equipment: Bosu Ball</em></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">2</div><div><strong>Box Step — PD Warrior Exercise:</strong> Start on back dots, step in box formation (Forward R → Forward L → Back R → Back L). BIG open hands, wrists extended. Arms reach out with right leg step, pull in to chest on left. 5 reps, 5 sec active pause. <em>Equipment: Poly spot markers</em></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">3</div><div><strong>Balance XL — Superman Pose with Smovey Rings:</strong> Stand tall, swing rings parallel while lifting one leg back straight. Hinge forward simultaneously. Core and glutes tight, head is extension of spine. Move leg up and down while swinging. 10 reps → PWR UP! <em>Equipment: Smovey Rings</em></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">4</div><div><strong>007 with Pool Noodles:</strong> Feet wide, hold pool noodle in trigger grip, arms outstretched at shoulder height. Rotate both hands to one side, pivot on one foot, return and repeat. 5 reps each side. <em>Equipment: Pool Noodle</em></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">5</div><div><strong>Power Steps with Punches:</strong> Big step forward, arms out with big finger stretches, hold and punch ×6 alternating. Push back to centre, repeat other leg. <em>Add tongue twister for dual-task variation.</em> <em>Equipment: Floor markers</em></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(46,158,107,0.3);">6</div><div><strong>Banded Side Steps:</strong> Legs hip-width, big step to side, simultaneously outstretch arms into T-pose pulling band — open chest fully. Hold briefly, bring arms and feet back in. 5 reps. <em>Equipment: Resistance Band</em></div></div>
+        </div>
+
+        <div class="phase-header" style="color:var(--red);border-color:rgba(232,39,26,0.2);">🥊 Boxing Stations</div>
+        <div class="combo-list">
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">1</div><div><strong>Alternating Stance:</strong> Jabs ×10 → Hooks ×10 → <strong>PWR UP!</strong></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">2</div><div><strong>Uppercut ×8 → Hook ×8 → Toe Touch ×10 → PWR UP!</strong> Switch stance.</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">3</div><div><strong>Jab ×2, Cross ×2, Hook ×1, Up ×1 → PWR UP!</strong> Switch stance.</div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">4</div><div><strong>Ladder Punches:</strong> Count up 1–10, then back down 10–1. <strong>PWR UP!</strong></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">5</div><div><strong>Superman Double Punch:</strong> Alternating legs, superman ×10. <strong>PWR UP!</strong></div></div>
+          <div class="combo-item"><div class="combo-num" style="color:rgba(232,39,26,0.3);">6</div><div><strong>Level Changes:</strong> Alternating arms — Hooks to head ×8 → Jabs to chest ×8 → Hooks to ribs ×8 → alternating knees on bag ×8.</div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>Health & Safety</span></h2>
+    <p>Know what to watch for, how to respond, and how to keep every client safe in every session.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: Health & Safety →</button>
+    <button class="btn btn-ghost">↩ Back to Pro Tips</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 }).observe(r);
+});
+
+function toggleCircuit(block) {
+  const body = block.querySelector('.circuit-body');
+  const isOpen = block.classList.contains('open');
+  document.querySelectorAll('.circuit-block').forEach(b => {
+    b.classList.remove('open');
+    b.querySelector('.circuit-body').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    block.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+function toggleFull(block) {
+  const body = block.querySelector('.full-class-body');
+  const isOpen = block.classList.contains('open');
+  document.querySelectorAll('.full-class-block').forEach(b => {
+    b.classList.remove('open');
+    b.querySelector('.full-class-body').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    block.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+</script>
+</body>
+</html>

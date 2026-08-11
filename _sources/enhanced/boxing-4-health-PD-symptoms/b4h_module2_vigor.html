@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Teaching 101: VIGOR</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+    --orange: #D4700A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 70% at 100% 50%, rgba(232,39,26,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 50% at 0% 80%, rgba(200,168,75,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Big VIGOR letters in background */
+  .hero-bg-text {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(120px, 18vw, 220px);
+    color: rgba(232,39,26,0.04);
+    letter-spacing: 0.1em;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--red); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--red); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.8;
+    color: #b0aba0;
+    max-width: 600px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  /* ── VIGOR OVERVIEW STRIP ── */
+  .vigor-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .vigor-tile {
+    padding: 16px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-bottom: 3px solid transparent;
+  }
+
+  .vigor-tile:hover { opacity: 0.85; }
+
+  .vigor-tile.v { background: rgba(232,39,26,0.12); border-color: var(--red); }
+  .vigor-tile.i { background: rgba(200,168,75,0.12); border-color: var(--gold); }
+  .vigor-tile.g { background: rgba(46,158,107,0.12); border-color: var(--green); }
+  .vigor-tile.o { background: rgba(58,123,213,0.12); border-color: var(--blue); }
+  .vigor-tile.r { background: rgba(130,80,200,0.12); border-color: var(--purple); }
+
+  .vigor-letter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .vigor-tile.v .vigor-letter { color: var(--red); }
+  .vigor-tile.i .vigor-letter { color: var(--gold); }
+  .vigor-tile.g .vigor-letter { color: var(--green); }
+  .vigor-tile.o .vigor-letter { color: var(--blue); }
+  .vigor-tile.r .vigor-letter { color: var(--purple); }
+
+  .vigor-word {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+
+  /* ── SECTION ── */
+  .section { padding: 68px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── VIGOR SECTIONS ── */
+  .vigor-section {
+    padding: 60px 8vw;
+    border-top: 1px solid #1e1e1e;
+    scroll-margin-top: 40px;
+  }
+
+  .vigor-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .vigor-big-letter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;
+    line-height: 0.85;
+    flex-shrink: 0;
+  }
+
+  .vigor-heading-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .vigor-heading-text .vigor-sub {
+    font-size: 16px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .vigor-body {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #b0aba0;
+    max-width: 760px;
+    margin-bottom: 24px;
+  }
+
+  .vigor-body strong { color: var(--light); }
+
+  /* Color theming per letter */
+  .v-section .vigor-big-letter { color: rgba(232,39,26,0.25); }
+  .v-section .vigor-heading-text h2 { color: var(--red); }
+  .v-section .section-label { color: var(--red); }
+
+  .i-section .vigor-big-letter { color: rgba(200,168,75,0.25); }
+  .i-section .vigor-heading-text h2 { color: var(--gold); }
+  .i-section .section-label { color: var(--gold); }
+
+  .g-section .vigor-big-letter { color: rgba(46,158,107,0.25); }
+  .g-section .vigor-heading-text h2 { color: var(--green); }
+  .g-section .section-label { color: var(--green); }
+
+  .o-section .vigor-big-letter { color: rgba(58,123,213,0.25); }
+  .o-section .vigor-heading-text h2 { color: var(--blue); }
+  .o-section .section-label { color: var(--blue); }
+
+  .r-section .vigor-big-letter { color: rgba(130,80,200,0.25); }
+  .r-section .vigor-heading-text h2 { color: var(--purple); }
+  .r-section .section-label { color: var(--purple); }
+
+  /* ── VOICE EXERCISES ── */
+  .voice-exercises {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .voice-ex {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    border-left: 3px solid var(--red);
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .voice-ex-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: rgba(232,39,26,0.3);
+    flex-shrink: 0;
+    width: 28px;
+    line-height: 1;
+  }
+
+  .voice-ex-body {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #b0aba0;
+  }
+
+  .voice-ex-body strong { color: var(--light); }
+
+  /* ── WARNING / REMINDER BOX ── */
+  .warning-box {
+    border: 1px solid;
+    padding: 20px 24px;
+    margin: 20px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .warning-box p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .warning-box p strong { color: var(--light); }
+
+  /* ── INTENSITY CALLOUT ── */
+  .intensity-banner {
+    background: linear-gradient(135deg, #140808, #100a08);
+    border: 1px solid rgba(200,168,75,0.2);
+    border-left: 5px solid var(--gold);
+    padding: 28px 32px;
+    margin: 28px 0;
+  }
+
+  .intensity-banner h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .intensity-banner p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #c8b870;
+  }
+
+  .intensity-banner p strong { color: var(--light); }
+
+  /* ── HR ZONE VISUAL ── */
+  .hr-zone {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    padding: 28px 32px;
+    margin: 24px 0;
+  }
+
+  .hr-zone h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  .hr-bar-wrap {
+    position: relative;
+    height: 44px;
+    background: #111;
+    border: 1px solid #2a2a2a;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .hr-bar-fill {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+  }
+
+  .hr-bar-low { left: 0; width: 60%; background: rgba(46,158,107,0.15); border-right: 2px solid var(--green); color: var(--green); }
+  .hr-bar-target { left: 60%; width: 20%; background: rgba(232,39,26,0.2); border-right: 2px solid var(--red); color: var(--red); }
+  .hr-bar-high { left: 80%; width: 20%; background: rgba(130,80,200,0.1); color: var(--muted); }
+
+  .hr-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── ROTATION BODY IMAGE ── */
+  .rotation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 24px 0;
+  }
+
+  .rotation-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    border-top: 3px solid var(--blue);
+    padding: 24px;
+  }
+
+  .rotation-card h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+
+  .rotation-card p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #a8a398;
+  }
+
+  .rotation-card p strong { color: var(--light); }
+
+  /* ── FASCIA / RELEASE ── */
+  .body-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .body-area {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 16px;
+    text-align: center;
+    border-top: 3px solid var(--purple);
+  }
+
+  .body-area-icon { font-size: 24px; margin-bottom: 8px; }
+
+  .body-area-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    color: var(--purple);
+  }
+
+  .body-area-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ── QUIZ ── */
+  .quiz-wrapper {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    padding: 48px;
+  }
+
+  .quiz-progress { display: flex; gap: 6px; margin-bottom: 32px; }
+
+  .progress-dot {
+    height: 3px; flex: 1;
+    background: #2a2a2a;
+    transition: background 0.3s;
+  }
+
+  .progress-dot.active { background: var(--red); }
+  .progress-dot.done { background: #4CAF50; }
+
+  .quiz-q {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--light);
+    margin-bottom: 26px;
+    line-height: 1.5;
+  }
+
+  .quiz-q .q-num {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: 0.12em;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+
+  .quiz-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
+
+  .quiz-opt {
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: border-color 0.2s, background 0.2s;
+    font-size: 15px;
+    color: #c0bbb0;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  .quiz-opt:hover:not(.disabled) { border-color: #555; background: #333; color: var(--light); }
+  .quiz-opt.correct { border-color: #4CAF50; background: rgba(76,175,80,0.1); color: #81C784; }
+  .quiz-opt.incorrect { border-color: var(--red); background: rgba(232,39,26,0.1); color: #EF9A9A; }
+  .quiz-opt.disabled { cursor: default; }
+
+  .opt-letter {
+    width: 30px; height: 30px;
+    border: 1px solid #444;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .quiz-opt.correct .opt-letter { background: rgba(76,175,80,0.2); border-color: #4CAF50; }
+  .quiz-opt.incorrect .opt-letter { background: rgba(232,39,26,0.2); border-color: var(--red); }
+
+  .quiz-feedback {
+    display: none;
+    padding: 16px 20px;
+    border-left: 3px solid #4CAF50;
+    background: rgba(76,175,80,0.08);
+    font-size: 15px;
+    line-height: 1.7;
+    color: #a0cfa3;
+    margin-bottom: 18px;
+  }
+
+  .quiz-feedback.wrong { border-color: var(--red); background: rgba(232,39,26,0.08); color: #ef9a9a; }
+  .quiz-feedback.show { display: block; }
+
+  .quiz-nav { display: flex; gap: 12px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .vigor-strip { grid-template-columns: repeat(5, 1fr); gap: 2px; }
+    .vigor-letter { font-size: 32px; }
+    .vigor-word { display: none; }
+    .rotation-grid { grid-template-columns: 1fr; }
+    .vigor-big-letter { font-size: 70px; }
+    .quiz-wrapper { padding: 28px; }
+    .module-footer { flex-direction: column; }
+    .body-areas { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg-text">VIGOR</div>
+  <p class="breadcrumb">Module 2 — Teaching 101 &nbsp;›&nbsp; <span>VIGOR</span></p>
+  <h1 class="hero-title">
+    Teaching 101<br><em>VIGOR</em>
+  </h1>
+  <p class="hero-sub">
+    Every great B4H class is built on five non-negotiable principles. <strong>These are not suggestions</strong> — they are the must-haves that turn a good workout into a therapeutic experience your clients can't get anywhere else.
+  </p>
+
+  <div class="vigor-strip">
+    <div class="vigor-tile v" onclick="scrollTo('v-section')">
+      <div class="vigor-letter">V</div>
+      <div class="vigor-word">Voice &<br>Variety</div>
+    </div>
+    <div class="vigor-tile i" onclick="scrollTo('i-section')">
+      <div class="vigor-letter">I</div>
+      <div class="vigor-word">Intensity<br>60–80% HR</div>
+    </div>
+    <div class="vigor-tile g" onclick="scrollTo('g-section')">
+      <div class="vigor-letter">G</div>
+      <div class="vigor-word">Grand<br>Movements</div>
+    </div>
+    <div class="vigor-tile o" onclick="scrollTo('o-section')">
+      <div class="vigor-letter">O</div>
+      <div class="vigor-word">Overall<br>Rotation</div>
+    </div>
+    <div class="vigor-tile r" onclick="scrollTo('r-section')">
+      <div class="vigor-letter">R</div>
+      <div class="vigor-word">Release<br>Myofascial</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ V — VOICE & VARIETY ══════════ -->
+<section class="vigor-section v-section reveal" id="v-section">
+  <div class="section-label" style="color:var(--red);">V — Must Have #1</div>
+
+  <div class="vigor-heading">
+    <div class="vigor-big-letter">V</div>
+    <div class="vigor-heading-text">
+      <h2>Voice & Variety</h2>
+      <div class="vigor-sub">Use it or lose it — for real</div>
+    </div>
+  </div>
+
+  <div class="vigor-body">
+    With Parkinson's, a student's voice can be affected — but not everyone experiences this. The voice can become quiet, slow, and hard to understand. <strong>The more you use it, the less you lose it.</strong> Voice work isn't an add-on — it's a therapeutic necessity woven into every class.
+  </div>
+
+  <div class="vigor-body">
+    It's essential to add vocal exercises during warm-ups and circuits. <strong>Create dialogue with your students throughout the session</strong> — word games, call-and-response, group exercises, name games. Make it fun, make it social, make it loud.
+  </div>
+
+  <div class="warning-box" style="border-color:rgba(232,39,26,0.3);background:rgba(232,39,26,0.06);">
+    <div style="font-size:22px;flex-shrink:0;">⚠️</div>
+    <p style="color:#e8b0aa;"><strong>Do NOT start with yelling!</strong> The voicebox is a muscle too — it needs to be warmed up gradually just like the rest of the body. Start gentle and build intensity through the class.</p>
+  </div>
+
+  <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;color:var(--red);text-transform:uppercase;margin:28px 0 16px;">Voice Exercise Examples</div>
+
+  <div class="voice-exercises">
+    <div class="voice-ex">
+      <div class="voice-ex-num">1</div>
+      <div class="voice-ex-body">
+        <strong>Group Hum:</strong> Have the class hum a short song together during warm-up — Happy Birthday is perfect. See who can hold their hum the longest. This warms up the vocal cords gently and creates instant group energy.
+      </div>
+    </div>
+    <div class="voice-ex">
+      <div class="voice-ex-num">2</div>
+      <div class="voice-ex-body">
+        <strong>Word Games:</strong> During warm-up or circuits, play a naming game around the room. Example: "Name car brands using the alphabet — A is for Audi, B is for BMW, C is for Chevrolet..." Go around the room, one student per letter. You can also do vegetables, fruits, cities — anything that gets the brain and voice working together.
+      </div>
+    </div>
+    <div class="voice-ex">
+      <div class="voice-ex-num">3</div>
+      <div class="voice-ex-body">
+        <strong>Vowel Sounds:</strong> Practice A, E, I, O, U — making sure the whole face is involved and holding each sound as long as possible. <strong>Always demo it yourself first</strong> so students feel comfortable making silly sounds and noises. Your willingness to look ridiculous gives them permission to do the same.
+      </div>
+    </div>
+  </div>
+
+  <div class="intensity-banner" style="border-color:rgba(232,39,26,0.2);">
+    <h4 style="color:var(--red);">🥊 Variety Matters Too</h4>
+    <p style="color:#e8b0aa;">Variety keeps the brain engaged. <strong style="color:var(--light);">Neuroplasticity thrives on novelty</strong> — doing new things in new ways forces the brain to create new connections. Rotate your voice exercises, word games, and vocal cues so clients are always being pleasantly challenged, never bored.</p>
+  </div>
+</section>
+
+<!-- ══════════ I — INTENSITY ══════════ -->
+<section class="vigor-section i-section reveal" id="i-section">
+  <div class="section-label" style="color:var(--gold);">I — Must Have #2</div>
+
+  <div class="vigor-heading">
+    <div class="vigor-big-letter">I</div>
+    <div class="vigor-heading-text">
+      <h2>Intensity</h2>
+      <div class="vigor-sub">30–35 minutes · 60–80% Target Heart Rate · Non-Negotiable</div>
+    </div>
+  </div>
+
+  <div class="vigor-body">
+    High intensity isn't just about aerobic fitness — it's about the <strong>amount of power and output put into every movement</strong>. Think about getting off a couch: most of us use adaptations — pushing with our hands, using the armrest, or having someone help. What we're actually lacking is the <strong>power and intensity to build momentum.</strong> That's exactly what we're training.
+  </div>
+
+  <div class="vigor-body">
+    Intense exercise — specifically non-contact boxing — has been proven to <strong>reverse, reduce, and even delay the symptoms of Parkinson's.</strong> We aim to get every client working at <strong>60–80% of their target heart rate</strong> during the high-intensity portion of class. Everyone at every level can benefit. Intensity is not negotiable.
+  </div>
+
+  <div class="hr-zone">
+    <h4>Target Heart Rate Zone — The B4H Goal</h4>
+    <div class="hr-bar-wrap">
+      <div class="hr-bar-fill hr-bar-low">Below Target</div>
+      <div class="hr-bar-fill hr-bar-target">🎯 60–80%</div>
+      <div class="hr-bar-fill hr-bar-high">Max</div>
+    </div>
+    <div class="hr-labels">
+      <span>0%</span>
+      <span>60% ← B4H Zone →  80%</span>
+      <span>100%</span>
+    </div>
+    <p style="margin-top:14px;font-size:15px;color:#a8a398;line-height:1.7;">The 60–80% THR zone is where <strong style="color:var(--light);">neuroplastic and cardiovascular benefits are maximized.</strong> Below 60% is not sufficient for therapeutic benefit. Above 80% risks fatigue and safety issues for PD clients.</p>
+  </div>
+
+  <div class="warning-box" style="border-color:rgba(200,168,75,0.3);background:rgba(200,168,75,0.06);">
+    <div style="font-size:22px;flex-shrink:0;">💬</div>
+    <div>
+      <p style="color:#c8b870;margin-bottom:10px;"><strong style="color:var(--gold);">Client says: "I stay in shape — I walk every day!"</strong></p>
+      <p style="color:#c8b870;">Walking is something we need to do every day just to stay alive — it is definitely <strong style="color:var(--light);">not enough</strong> to help slow the progression of Parkinson's or many other aging-related effects. Walking maintains baseline function. <strong style="color:var(--light);">Intensity creates change.</strong></p>
+    </div>
+  </div>
+
+  <div style="background:rgba(232,39,26,0.08);border:1px solid rgba(232,39,26,0.2);border-left:5px solid var(--red);padding:24px 28px;margin-top:16px;">
+    <p style="font-size:19px;font-weight:600;color:var(--red);letter-spacing:0.02em;">INTENSITY IS NOT NEGOTIABLE.</p>
+    <p style="font-size:16px;color:#e8b0aa;margin-top:8px;line-height:1.75;">Anyone at any level — any stage of Parkinson's, any age, any fitness level — can lessen their symptoms and lead a healthier, happier life when they exercise with intensity. Your job is to help them find their version of it.</p>
+  </div>
+</section>
+
+<!-- ══════════ G — GRAND MOVEMENTS ══════════ -->
+<section class="vigor-section g-section reveal" id="g-section">
+  <div class="section-label" style="color:var(--green);">G — Must Have #3</div>
+
+  <div class="vigor-heading">
+    <div class="vigor-big-letter">G</div>
+    <div class="vigor-heading-text">
+      <h2>Grand Movements</h2>
+      <div class="vigor-sub">Go Big or Go Home</div>
+    </div>
+  </div>
+
+  <div class="vigor-body">
+    Large amplitude, whole-body movements. <strong>Everything in class should be done BIG.</strong> Big punches, big steps, big arm swings, big facial expressions, big voice. When we use grand gestures and really emphasize size in every movement, we help the brain recalibrate what "normal" feels like.
+  </div>
+
+  <div class="vigor-body">
+    People with Parkinson's tend to move smaller than they think they are — their internal sense of movement size is off. <strong>When a PD client tries to move "big" and reaches what feels like 100% effort to them, they might only be at 60% of normal amplitude.</strong> Emphasizing grand movements consistently over time helps recalibrate this internal reference point toward normal.
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:24px 0;">
+    <div style="background:var(--charcoal);border:1px solid #222;border-top:3px solid var(--green);padding:24px;">
+      <div style="font-size:28px;margin-bottom:10px;">👊</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--green);margin-bottom:8px;">Punches</div>
+      <p style="font-size:15px;color:#a8a398;line-height:1.7;">Full extension on every punch. Arm fully extended, shoulder rotating, weight transferring. <strong style="color:var(--light);">No small, tight punches.</strong></p>
+    </div>
+    <div style="background:var(--charcoal);border:1px solid #222;border-top:3px solid var(--green);padding:24px;">
+      <div style="font-size:28px;margin-bottom:10px;">🚶</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--green);margin-bottom:8px;">Steps</div>
+      <p style="font-size:15px;color:#a8a398;line-height:1.7;">Big, deliberate strides. Heel-toe. High knee lifts when appropriate. <strong style="color:var(--light);">Exaggerate the stride</strong> — that shuffle becomes a march.</p>
+    </div>
+    <div style="background:var(--charcoal);border:1px solid #222;border-top:3px solid var(--green);padding:24px;">
+      <div style="font-size:28px;margin-bottom:10px;">🙌</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--green);margin-bottom:8px;">Arm Swings</div>
+      <p style="font-size:15px;color:#a8a398;line-height:1.7;">Counter-rotating arm swing with walking and footwork. <strong style="color:var(--light);">Reduced arm swing is a hallmark PD symptom</strong> — train it deliberately.</p>
+    </div>
+    <div style="background:var(--charcoal);border:1px solid #222;border-top:3px solid var(--green);padding:24px;">
+      <div style="font-size:28px;margin-bottom:10px;">😄</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--green);margin-bottom:8px;">Facial Expressions</div>
+      <p style="font-size:15px;color:#a8a398;line-height:1.7;">PD causes facial masking — reduced expression. <strong style="color:var(--light);">Exaggerate vowel sounds</strong>, smiles, and surprised faces. The whole face is part of grand movements.</p>
+    </div>
+  </div>
+
+  <div class="intensity-banner" style="border-color:rgba(46,158,107,0.2);">
+    <h4 style="color:var(--green);">🥊 Your Job as Instructor</h4>
+    <p style="color:#90c8a8;"><strong style="color:var(--light);">Always demo big.</strong> If you do small movements, they do small movements. Your energy and amplitude set the standard for the whole room. When you go big, they go big. Lead with your whole body, every single rep.</p>
+  </div>
+</section>
+
+<!-- ══════════ O — OVERALL ROTATION ══════════ -->
+<section class="vigor-section o-section reveal" id="o-section">
+  <div class="section-label" style="color:var(--blue);">O — Must Have #4</div>
+
+  <div class="vigor-heading">
+    <div class="vigor-big-letter">O</div>
+    <div class="vigor-heading-text">
+      <h2>Overall Rotation</h2>
+      <div class="vigor-sub">Cervical & Thoracic — The Cascade Effect</div>
+    </div>
+  </div>
+
+  <div class="vigor-body">
+    Rigidity is one of the most universal symptoms of Parkinson's — and it's extremely common in seniors too. Clients can experience whole-body stiffness, but the most prominent area is the <strong>trunk region</strong>. This area has the greatest impact on their ability to rotate — and rotation affects everything.
+  </div>
+
+  <div class="rotation-grid">
+    <div class="rotation-card">
+      <h4>When Trunk Rotation Is Lost...</h4>
+      <p>The shoulders, hips, knees, and back are all forced to <strong>overcompensate</strong> for what the trunk can't do. This compensation cascade dramatically <strong>increases injury risk</strong> throughout the entire body — not just the back.</p>
+    </div>
+    <div class="rotation-card" style="border-top-color:var(--red);">
+      <h4 style="color:var(--red);">What You Must Include</h4>
+      <p>At least <strong>one exercise targeting rotation</strong> in every functional exercise circuit. And during boxing stations, <strong>always cue hip rotation</strong> — the power of every punch starts in the hips, not the arms.</p>
+    </div>
+  </div>
+
+  <div class="vigor-body">
+    Most students <strong>lack self-awareness about how little they're actually rotating</strong>. When you show them the correct range, they think they're already doing it correctly. They genuinely cannot feel the difference.
+  </div>
+
+  <div class="warning-box" style="border-color:rgba(58,123,213,0.3);background:rgba(58,123,213,0.06);">
+    <div style="font-size:22px;flex-shrink:0;">🤲</div>
+    <p style="color:#7a9fd4;"><strong style="color:var(--light);">Hands-on correction is often the only thing that works.</strong> Ask the student if you can place your hands on their hips and gently move them through the correct range of motion. Let them <em>feel</em> the difference between what they're doing and what rotation actually is. This often needs to happen multiple times across multiple sessions before it starts to stick — and that's completely normal.</p>
+  </div>
+</section>
+
+<!-- ══════════ R — RELEASE ══════════ -->
+<section class="vigor-section r-section reveal" id="r-section">
+  <div class="section-label" style="color:var(--purple);">R — Must Have #5</div>
+
+  <div class="vigor-heading">
+    <div class="vigor-big-letter">R</div>
+    <div class="vigor-heading-text">
+      <h2>Release</h2>
+      <div class="vigor-sub">Myofascial Release — Cool Down with Purpose</div>
+    </div>
+  </div>
+
+  <div class="vigor-body">
+    Releasing tight fascia improves movement, relieves tightness, and reduces overall tension throughout the body. The cool-down is not just a way to end class — <strong>it's a targeted therapeutic intervention</strong> in its own right.
+  </div>
+
+  <div style="background:var(--charcoal);border:1px solid #2a2a2a;border-left:4px solid var(--purple);padding:24px 28px;margin:20px 0;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.05em;color:var(--purple);margin-bottom:10px;">What Is Fascia?</div>
+    <p style="font-size:16px;line-height:1.8;color:#a8a398;">
+      Fascia is the <strong style="color:var(--light);">bands of connective tissue that stabilize, enclose, and separate muscles and organs</strong> throughout the entire body. When fascia becomes tight or restricted, it reduces mobility, contributes to pain, and limits the range of motion — compounding the rigidity that PD and aging already create.
+    </p>
+  </div>
+
+  <div class="vigor-body">
+    We use our cool-downs to pick a specific part of the body and work on it with <strong>self-massage balls</strong> — loosening areas that most affect alignment and posture. Rotate through these target areas across different sessions:
+  </div>
+
+  <div class="body-areas">
+    <div class="body-area">
+      <div class="body-area-icon">🔙</div>
+      <div class="body-area-name">Back</div>
+      <div class="body-area-note">Upper & lower back muscles</div>
+    </div>
+    <div class="body-area">
+      <div class="body-area-icon">💪</div>
+      <div class="body-area-name">Chest</div>
+      <div class="body-area-note">Pec muscles & front of shoulder</div>
+    </div>
+    <div class="body-area">
+      <div class="body-area-icon">🦶</div>
+      <div class="body-area-name">Feet</div>
+      <div class="body-area-note">Plantar fascia & arch</div>
+    </div>
+    <div class="body-area">
+      <div class="body-area-icon">🤷</div>
+      <div class="body-area-name">Shoulders</div>
+      <div class="body-area-note">Rotator cuff & rear deltoid</div>
+    </div>
+    <div class="body-area">
+      <div class="body-area-icon">🦵</div>
+      <div class="body-area-name">Glutes</div>
+      <div class="body-area-note">Hip flexors & piriformis</div>
+    </div>
+    <div class="body-area">
+      <div class="body-area-icon">🦷</div>
+      <div class="body-area-name">Neck</div>
+      <div class="body-area-note">Cervical area & traps</div>
+    </div>
+  </div>
+
+  <div class="intensity-banner" style="border-color:rgba(130,80,200,0.2);">
+    <h4 style="color:var(--purple);">🥊 Don't Rush the Cool Down</h4>
+    <p style="color:#b09ad4;"><strong style="color:var(--light);">The Release section is 10–15 minutes for a reason.</strong> For clients with low blood pressure — common in PD — a rushed transition from intense exercise to standing still can cause dizziness and falls. The cool-down also gives fascia time to respond to the massage work. Never cut it short.</p>
+  </div>
+</section>
+
+<!-- ══════════ QUIZ ══════════ -->
+<section class="section reveal">
+  <div class="section-label" style="color:var(--red);">Knowledge Check</div>
+
+  <div class="quiz-wrapper">
+    <div class="quiz-progress">
+      <div class="progress-dot active" id="qd0"></div>
+      <div class="progress-dot" id="qd1"></div>
+      <div class="progress-dot" id="qd2"></div>
+      <div class="progress-dot" id="qd3"></div>
+      <div class="progress-dot" id="qd4"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div id="sq1">
+      <div class="quiz-q">
+        <span class="q-num">QUESTION 01 / 05</span>
+        A client asks why you keep making them do silly voice exercises. What's the real answer?
+      </div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">A</span>It's just a fun warm-up tradition in boxing classes</div>
+        <div class="quiz-opt" onclick="ans(this,true,'sq1')"><span class="opt-letter">B</span>The voice box is a muscle — Parkinson's weakens it, and regular vocal exercise directly slows that decline</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">C</span>It helps clients remember combinations</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq1')"><span class="opt-letter">D</span>It's required by the B4H certification</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq1_r">✓ Exactly right! Hypophonia — soft, quiet voice — is a real and frustrating PD symptom. The vocal muscles respond to the same "use it or lose it" principle as all other muscles. Voice exercises are therapeutic, not silly.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq1_w">The real reason is therapeutic — Parkinson's can weaken the vocal muscles causing hypophonia (quiet, slow speech). <strong>Regular vocal exercise directly combats this.</strong> The voicebox is a muscle and needs training just like any other.</div>
+      <div class="quiz-nav" id="snav_sq1" style="display:none;"><button class="btn btn-primary" onclick="nxt(2)">Next →</button></div>
+    </div>
+
+    <!-- Q2 -->
+    <div id="sq2" style="display:none;">
+      <div class="quiz-q">
+        <span class="q-num">QUESTION 02 / 05</span>
+        A client tells you "I don't need to push so hard — I walk 45 minutes every day." How do you respond?
+      </div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">A</span>That's great — walking is enough for someone their age</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">B</span>Walking is good but encourage them to add more steps</div>
+        <div class="quiz-opt" onclick="ans(this,true,'sq2')"><span class="opt-letter">C</span>Walking is what we need to do to stay alive — it's not enough to slow PD progression. Intensity creates the neuroplastic change we need.</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq2')"><span class="opt-letter">D</span>Agree with them and reduce their class intensity</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq2_r">✓ Correct. Walking maintains baseline. Intensity creates change. This is one of the most common conversations you'll have — be confident, kind, and clear about it.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq2_w">Walking is essential for daily life — but it's not sufficient for slowing PD progression. <strong>Intensity — reaching 60–80% THR — is what triggers neuroplastic and therapeutic benefit.</strong> This is not negotiable, and it's your job to help clients understand why.</div>
+      <div class="quiz-nav" id="snav_sq2" style="display:none;"><button class="btn btn-primary" onclick="nxt(3)">Next →</button></div>
+    </div>
+
+    <!-- Q3 -->
+    <div id="sq3" style="display:none;">
+      <div class="quiz-q">
+        <span class="q-num">QUESTION 03 / 05</span>
+        What does "Grand Movements" mean in practice during a boxing class?
+      </div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">A</span>Using heavier weights for more resistance</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">B</span>Moving around the room more during class</div>
+        <div class="quiz-opt" onclick="ans(this,true,'sq3')"><span class="opt-letter">C</span>Full extension on punches, exaggerated strides, big arm swings — amplitude-focused movement that recalibrates the brain's sense of "normal" size</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq3')"><span class="opt-letter">D</span>Using gestures when explaining exercises</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq3_r">✓ Perfect. Grand movements are about amplitude — deliberately oversizing every movement to counteract the shrinking, small movements PD creates. Full extension, big steps, exaggerated arm swing. The brain recalibrates toward normal through this consistent oversize training.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq3_w">Grand Movements means <strong>amplitude — doing everything BIG.</strong> Full punch extension, high knee lifts, exaggerated arm swing. PD clients move smaller than they think they do — consistently training big movements helps the brain recalibrate its sense of normal movement size.</div>
+      <div class="quiz-nav" id="snav_sq3" style="display:none;"><button class="btn btn-primary" onclick="nxt(4)">Next →</button></div>
+    </div>
+
+    <!-- Q4 -->
+    <div id="sq4" style="display:none;">
+      <div class="quiz-q">
+        <span class="q-num">QUESTION 04 / 05</span>
+        You ask a student to rotate their trunk during a boxing combination. They look like they're rotating but seem confused about how little they're actually moving. What do you do?
+      </div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">A</span>Describe the movement again more clearly</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">B</span>Show them a video of proper rotation</div>
+        <div class="quiz-opt" onclick="ans(this,true,'sq4')"><span class="opt-letter">C</span>Ask permission to place your hands on their hips and physically guide them through the correct rotation so they can feel the difference</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq4')"><span class="opt-letter">D</span>Move on — they'll improve over time on their own</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq4_r">✓ Hands-on guidance is often the only thing that works for rotation. Most PD clients genuinely cannot feel the difference between 20% and 80% rotation — their proprioception is off. Physically guiding the movement lets them experience it and builds the neurological reference point they need.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq4_w">Most PD clients <strong>lack the self-awareness to feel how little they're rotating.</strong> Verbal cues and visual demos often aren't enough. Ask permission to place your hands on their hips and guide them through the correct range — letting them <em>feel</em> the difference is far more effective than any description.</div>
+      <div class="quiz-nav" id="snav_sq4" style="display:none;"><button class="btn btn-primary" onclick="nxt(5)">Next →</button></div>
+    </div>
+
+    <!-- Q5 -->
+    <div id="sq5" style="display:none;">
+      <div class="quiz-q">
+        <span class="q-num">QUESTION 05 / 05</span>
+        What is fascia, and why does myofascial release matter for Parkinson's clients specifically?
+      </div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="ans(this,false,'sq5')"><span class="opt-letter">A</span>Fascia is cartilage between joints — releasing it reduces arthritis pain</div>
+        <div class="quiz-opt" onclick="ans(this,true,'sq5')"><span class="opt-letter">B</span>Fascia is connective tissue that encloses muscles — when it's tight, it compounds the rigidity PD already creates, reducing mobility and increasing pain</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq5')"><span class="opt-letter">C</span>Fascia is scar tissue from old injuries — releasing it is optional for younger clients</div>
+        <div class="quiz-opt" onclick="ans(this,false,'sq5')"><span class="opt-letter">D</span>Fascia is the same as a tendon — stretching is sufficient to address it</div>
+      </div>
+      <div class="quiz-feedback show" id="sfb_sq5_r">✓ Exactly right. Fascia is connective tissue — and when it's tight and restricted, it directly compounds the rigidity that PD clients already battle. Releasing it through massage ball work improves mobility, reduces tension, and helps clients move more freely. It's a therapeutic component, not just a cool-down.</div>
+      <div class="quiz-feedback wrong" id="sfb_sq5_w">Fascia is <strong>bands of connective tissue</strong> that stabilize and enclose muscles throughout the body. When fascia is tight, it compounds PD rigidity — reducing range of motion and contributing to pain. Myofascial release during cool-down directly addresses this, making it a therapeutic component, not just a stretch.</div>
+      <div class="quiz-nav" id="snav_sq5" style="display:none;"><button class="btn btn-primary" onclick="showDone()">See Results 🥊</button></div>
+    </div>
+
+    <!-- Complete -->
+    <div id="sqComplete" style="display:none;text-align:center;padding:20px 0;">
+      <p style="font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--red);" id="sqScore"></p>
+      <p style="font-size:20px;font-weight:600;color:var(--light);margin-bottom:12px;" id="sqResult"></p>
+      <p style="font-size:16px;color:var(--muted);max-width:500px;margin:0 auto 32px;" id="sqMessage"></p>
+      <button class="btn btn-ghost" onclick="resetQ()">↩ Retake Quiz</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>How to Set Up a Class</span></h2>
+    <p>Now that you know the principles, let's build a real class — room setup, timing, circuits, and templates for Fighter and Champion formats.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: Class Setup →</button>
+    <button class="btn btn-ghost">↩ Back to PD Warrior</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 }).observe(r);
+});
+
+function scrollTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+let score = 0, current = 1;
+const total = 5;
+
+function ans(btn, correct, qId) {
+  const opts = btn.closest('.quiz-options').querySelectorAll('.quiz-opt');
+  opts.forEach(o => o.classList.add('disabled'));
+  if (correct) {
+    btn.classList.add('correct');
+    document.getElementById(`sfb_${qId}_r`).classList.add('show');
+    score++;
+  } else {
+    btn.classList.add('incorrect');
+    document.getElementById(`sfb_${qId}_w`).classList.add('show');
+    opts.forEach(o => { if (o.onclick && o.onclick.toString().includes('true')) o.classList.add('correct'); });
+  }
+  document.getElementById(`snav_${qId}`).style.display = 'flex';
+  document.getElementById(`qd${current - 1}`).classList.add(correct ? 'done' : 'active');
+}
+
+function nxt(num) {
+  document.getElementById(`sq${current}`).style.display = 'none';
+  current = num;
+  document.getElementById(`sq${num}`).style.display = 'block';
+  document.getElementById(`qd${num - 1}`).classList.add('active');
+}
+
+function showDone() {
+  document.getElementById('sq5').style.display = 'none';
+  document.getElementById('sqComplete').style.display = 'block';
+  const pct = Math.round((score / total) * 100);
+  document.getElementById('sqScore').textContent = `${score}/${total}`;
+  document.getElementById('sqResult').textContent = pct === 100 ? '🥊 VIGOR Mastered!' : pct >= 80 ? 'Strong Work!' : 'Review & Retry';
+  document.getElementById('sqMessage').textContent = pct === 100
+    ? 'You know VIGOR inside out. Every class you teach will have Voice, Intensity, Grand Movements, Overall Rotation, and Release built into its foundation. That\'s the difference between a workout and a therapeutic experience.'
+    : pct >= 80
+    ? 'Almost there! Review the sections where you got tripped up — especially the rotation and intensity principles — then come back.'
+    : 'Take another read through each VIGOR section, then give the quiz another go. These principles need to be second nature before you step in front of a class.';
+}
+
+function resetQ() {
+  score = 0; current = 1;
+  for (let i = 1; i <= total; i++) {
+    const q = document.getElementById(`sq${i}`);
+    q.style.display = i === 1 ? 'block' : 'none';
+    q.querySelectorAll('.quiz-opt').forEach(o => { o.className = 'quiz-opt'; });
+    ['r','w'].forEach(t => {
+      const el = document.getElementById(`sfb_sq${i}_${t}`);
+      if (el) el.classList.remove('show');
+    });
+    const nav = document.getElementById(`snav_sq${i}`);
+    if (nav) nav.style.display = 'none';
+  }
+  for (let i = 0; i < total; i++) {
+    document.getElementById(`qd${i}`).className = 'progress-dot' + (i === 0 ? ' active' : '');
+  }
+  document.getElementById('sqComplete').style.display = 'none';
+}
+</script>
+</body>
+</html>

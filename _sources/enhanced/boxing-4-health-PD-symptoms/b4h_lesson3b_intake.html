@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Prospective Client Intake</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    padding: 64px 8vw;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #222;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .breadcrumb span { color: var(--red); }
+
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 7vw, 80px);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+  }
+
+  .page-title em { color: var(--red); font-style: normal; }
+
+  .page-sub {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #a8a398;
+    max-width: 580px;
+  }
+
+  .page-sub strong { color: var(--light); }
+
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 7px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  /* ── CONTENT ── */
+  .content { max-width: 820px; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  .intro-block {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    border-left: 4px solid var(--gold);
+    padding: 28px 32px;
+    margin-bottom: 36px;
+  }
+
+  .intro-block p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #a8a398;
+  }
+
+  .intro-block p strong { color: var(--light); }
+
+  /* ── QUESTIONS LIST ── */
+  .questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .q-row {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 18px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .q-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: rgba(232,39,26,0.4);
+    flex-shrink: 0;
+    line-height: 1;
+    width: 24px;
+    margin-top: 1px;
+  }
+
+  .q-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #c0bbb0;
+    flex: 1;
+  }
+
+  .q-text strong { color: var(--light); }
+
+  /* ── CUSTOM FORM NOTE ── */
+  .custom-note {
+    background: rgba(200,168,75,0.08);
+    border: 1px solid rgba(200,168,75,0.25);
+    border-left: 4px solid var(--gold);
+    padding: 20px 24px;
+    margin-bottom: 36px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .custom-note-icon { font-size: 20px; flex-shrink: 0; }
+
+  .custom-note p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #c8b870;
+  }
+
+  .custom-note p strong { color: var(--gold); }
+
+  /* ── FORM PREVIEW ── */
+  .form-preview {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+
+  .form-preview-header {
+    background: var(--mid);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+  }
+
+  .form-preview-header h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .form-tag {
+    background: rgba(46,158,107,0.15);
+    border: 1px solid rgba(46,158,107,0.3);
+    color: var(--green);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    text-transform: uppercase;
+  }
+
+  /* ── SIMULATED FORM ── */
+  .sim-form {
+    padding: 32px;
+    background: #f8f4ec;
+    color: #1a1a1a;
+  }
+
+  .sim-form-title {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .sim-form-title .sim-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--red);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .sim-form-title .sim-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  .sim-form-title h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    margin-top: 12px;
+  }
+
+  .sim-field {
+    margin-bottom: 16px;
+  }
+
+  .sim-field label {
+    display: block;
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .sim-field .sim-line {
+    border-bottom: 1px solid #999;
+    height: 24px;
+    width: 100%;
+  }
+
+  .sim-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .sim-section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #222;
+    margin: 20px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* ── NEXT STEP ── */
+  .next-step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-top: 40px;
+    border-top: 1px solid #222;
+  }
+
+  .next-step-text h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .next-step-text h3 span { color: var(--red); }
+
+  .next-step-text p {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 380px;
+    line-height: 1.6;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @media (max-width: 600px) {
+    body { padding: 40px 5vw; }
+    .sim-row { grid-template-columns: 1fr; }
+    .next-step { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="content">
+
+  <!-- ── HEADER ── -->
+  <div class="page-header">
+    <p class="breadcrumb">Module 1 — Parkinson's 101 &nbsp;›&nbsp; <span>Lesson 3B — Licensees Only</span></p>
+    <h1 class="page-title">Prospective<br><em>Client Intake</em></h1>
+    <p class="page-sub">
+      Before a formal assessment ever takes place, every prospective client goes through an <strong>initial intake process</strong>. This is your first conversation — and your first opportunity to start building trust while gathering the information you need to place them correctly.
+    </p>
+    <div class="meta-row">
+      <div class="meta-pill">🔒 Licensees Only</div>
+      <div class="meta-pill">📋 Reference Lesson</div>
+      <div class="meta-pill">Est. 5 min</div>
+    </div>
+  </div>
+
+  <!-- ── WHY INTAKE ── -->
+  <div class="section-label">01 — Purpose of the Intake Form</div>
+
+  <div class="intro-block">
+    <p>
+      The prospective client intake form is completed <strong>before the formal assessment</strong>. It gives you essential background on the client's diagnosis, mobility, fall history, and current activity level — so you arrive at the assessment already informed, not starting from zero.
+      <br><br>
+      Think of this as your <strong>pre-assessment snapshot</strong>. It helps you determine which assessment tests are appropriate, what red flags to watch for, and which class might be the right fit — before you ever see them move.
+    </p>
+  </div>
+
+  <!-- ── WHAT WE ASK ── -->
+  <div class="section-label">02 — What the Form Covers</div>
+
+  <div class="questions-list">
+    <div class="q-row">
+      <div class="q-num">1</div>
+      <div class="q-text"><strong>Contact information</strong> — name, phone, email. Essential for follow-up and ongoing communication.</div>
+    </div>
+    <div class="q-row">
+      <div class="q-num">2</div>
+      <div class="q-text"><strong>How they heard about us</strong> — flyer, Facebook ad, Google, or referral. Useful for understanding your marketing reach.</div>
+    </div>
+    <div class="q-row">
+      <div class="q-num">3</div>
+      <div class="q-text"><strong>Diagnosis date & age</strong> — how long they've been living with PD and where they are in life gives important context.</div>
+    </div>
+    <div class="q-row">
+      <div class="q-num">4</div>
+      <div class="q-text"><strong>Neurologist's name</strong> — important for any future communication with their healthcare team if needed.</div>
+    </div>
+    <div class="q-row">
+      <div class="q-num">5</div>
+      <div class="q-text"><strong>Can they walk around the block independently?</strong> — a simple but powerful mobility baseline question.</div>
+    </div>
+    <div class="q-row">
+      <div class="q-num">6</div>
+      <div class="q-text"><strong>Do they use a mobility aid?</strong> — cane, walker, or other assistive device. This affects class placement significantly.</div>
+    </div>
+    <div class="q-row">
+      <div class="q-num">7</div>
+      <div class="q-text"><strong>Falls in the past year?</strong> — one of the most important fall risk indicators. Any falls require extra attention during assessment.</div>
+    </div>
+    <div class="q-row">
+      <div class="q-num">8</div>
+      <div class="q-text"><strong>Endurance & stamina</strong> — helps set realistic expectations for their first few classes and guides intensity planning.</div>
+    </div>
+    <div class="q-row">
+      <div class="q-num">9</div>
+      <div class="q-text"><strong>Current activity level & exercise habits</strong> — are they sedentary? Already active? This shapes how you approach their first session.</div>
+    </div>
+  </div>
+
+  <!-- ── CUSTOM FORM NOTE ── -->
+  <div class="custom-note">
+    <div class="custom-note-icon">📝</div>
+    <p>
+      <strong>You can use the B4H intake form below, or design your own.</strong> If you create a custom version, it must be reviewed and authorized by B4H head office before use. Your form should cover all the same core areas — contact info, diagnosis history, mobility, fall risk, and current activity level.
+    </p>
+  </div>
+
+  <!-- ── FORM PREVIEW ── -->
+  <div class="section-label">03 — B4H Prospective Client Form</div>
+
+  <div class="form-preview">
+    <div class="form-preview-header">
+      <h4>Boxing 4 Health — Prospective Client Intake Form</h4>
+      <span class="form-tag">✓ B4H Official</span>
+    </div>
+    <div class="sim-form">
+      <div class="sim-form-title">
+        <span class="sim-logo">Boxing 4 Health</span>
+        <span class="sim-sub">★★★★ I'd Rather Be Boxing ★★★★</span>
+        <h3>Prospective Client</h3>
+      </div>
+
+      <div class="sim-field">
+        <label>Name</label>
+        <div class="sim-line"></div>
+      </div>
+
+      <div class="sim-row">
+        <div class="sim-field">
+          <label>Phone Number</label>
+          <div class="sim-line"></div>
+        </div>
+        <div class="sim-field">
+          <label>E-mail Address</label>
+          <div class="sim-line"></div>
+        </div>
+      </div>
+
+      <div class="sim-field">
+        <label>How did you hear about us? (Flyer / FB Ad / Google / Friend)</label>
+        <div class="sim-line"></div>
+      </div>
+
+      <div class="sim-row">
+        <div class="sim-field">
+          <label>When were you diagnosed with PD?</label>
+          <div class="sim-line"></div>
+        </div>
+        <div class="sim-field">
+          <label>How old are you?</label>
+          <div class="sim-line"></div>
+        </div>
+      </div>
+
+      <div class="sim-field">
+        <label>Who is your Neurologist?</label>
+        <div class="sim-line"></div>
+      </div>
+
+      <div class="sim-section-title">Mobility Questions — To Help Determine the Best Class for You</div>
+
+      <div class="sim-field">
+        <label>Can you comfortably walk around the block on your own?</label>
+        <div class="sim-line"></div>
+      </div>
+
+      <div class="sim-field">
+        <label>Do you require any assistance to walk? (i.e. cane, walker)</label>
+        <div class="sim-line"></div>
+      </div>
+
+      <div class="sim-field">
+        <label>Have you had any falls in the past year?</label>
+        <div class="sim-line"></div>
+      </div>
+
+      <div class="sim-field">
+        <label>How is your endurance / stamina?</label>
+        <div class="sim-line"></div>
+      </div>
+
+      <div class="sim-field">
+        <label>What is your activity like now? Do you do any forms of exercise?</label>
+        <div class="sim-line"></div>
+        <div class="sim-line" style="margin-top:8px;"></div>
+      </div>
+
+      <div class="sim-field">
+        <label>Other notes</label>
+        <div class="sim-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NEXT STEP ── -->
+  <div class="next-step">
+    <div class="next-step-text">
+      <h3>Next Up:<br><span>Lesson 4 — Assessments</span></h3>
+      <p>Now that your client is intake-ready, it's time to learn how to conduct the full B4H assessment — tests, red flags, and class placement.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+      <button class="btn btn-primary">Continue: Lesson 4 →</button>
+      <button class="btn btn-ghost">↩ Back to Lesson 3</button>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

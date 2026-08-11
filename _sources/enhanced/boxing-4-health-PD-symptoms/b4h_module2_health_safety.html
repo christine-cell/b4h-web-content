@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxing 4 Health — Health & Safety</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8271A;
+    --dark: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #2E2E2E;
+    --light: #F5F0E8;
+    --muted: #9A9A8A;
+    --gold: #C8A84B;
+    --green: #2E9E6B;
+    --blue: #3A7BD5;
+    --purple: #8250C8;
+    --teal: #1E8A8A;
+    --orange: #D4700A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 65% 70% at 100% 50%, rgba(232,39,26,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 50% at 0% 80%, rgba(200,168,75,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    right: -10px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 14vw, 180px);
+    color: rgba(232,39,26,0.04);
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  .breadcrumb span { color: var(--red); }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(54px, 9vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title em { color: var(--red); font-style: normal; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.85;
+    color: #b0aba0;
+    max-width: 620px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s ease forwards;
+  }
+
+  .hero-sub strong { color: var(--light); }
+
+  .hero-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.7s ease forwards;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mid);
+    border: 1px solid #333;
+    padding: 9px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  .dot-red    { background: var(--red); }
+  .dot-gold   { background: var(--gold); }
+  .dot-green  { background: var(--green); }
+
+  /* ── EMERGENCY BANNER ── */
+  .emergency-banner {
+    background: linear-gradient(135deg, #140505, #100404);
+    border-top: 4px solid var(--red);
+    border-bottom: 1px solid rgba(232,39,26,0.3);
+    padding: 32px 8vw;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .emergency-banner-icon { font-size: 36px; flex-shrink: 0; }
+
+  .emergency-banner-text h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .emergency-banner-text p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #e8b0aa;
+  }
+
+  .emergency-banner-text p strong { color: var(--light); }
+
+  /* ── SECTION ── */
+  .section { padding: 60px 8vw; border-top: 1px solid #1e1e1e; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #2a2a2a, transparent);
+  }
+
+  /* ── CHECKLIST ── */
+  .safety-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .safety-item {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    padding: 22px 26px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .safety-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 4px; height: 100%;
+    transition: opacity 0.2s;
+  }
+
+  .safety-item.done::before { opacity: 1; }
+  .safety-item:not(.done)::before { opacity: 0; }
+
+  .item-red::before    { background: var(--red); }
+  .item-gold::before   { background: var(--gold); }
+  .item-green::before  { background: var(--green); }
+  .item-blue::before   { background: var(--blue); }
+  .item-purple::before { background: var(--purple); }
+
+  .safety-item.done { border-color: rgba(46,158,107,0.2); background: rgba(46,158,107,0.04); }
+
+  .check-box {
+    width: 26px; height: 26px;
+    border: 2px solid #444;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s;
+    margin-top: 2px;
+  }
+
+  .safety-item.done .check-box {
+    border-color: var(--green);
+    background: rgba(46,158,107,0.2);
+    color: var(--green);
+  }
+
+  .safety-content { flex: 1; }
+
+  .safety-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    margin-bottom: 6px;
+    transition: color 0.2s;
+  }
+
+  .safety-item.done .safety-title { color: var(--green); }
+
+  .safety-body {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #a8a398;
+  }
+
+  .safety-body strong { color: var(--light); }
+
+  .safety-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border: 1px solid;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+
+  .tag-critical { color: var(--red);    border-color: rgba(232,39,26,0.35);  background: rgba(232,39,26,0.08); }
+  .tag-required { color: var(--gold);   border-color: rgba(200,168,75,0.35); background: rgba(200,168,75,0.08); }
+  .tag-general  { color: var(--teal);   border-color: rgba(30,138,138,0.35); background: rgba(30,138,138,0.08); }
+  .tag-cert     { color: var(--purple); border-color: rgba(130,80,200,0.35); background: rgba(130,80,200,0.08); }
+
+  /* ── PROGRESS ── */
+  .checklist-progress {
+    background: var(--charcoal);
+    border: 1px solid #2a2a2a;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .progress-bar { flex: 1; height: 5px; background: #2a2a2a; border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--green); border-radius: 3px; transition: width 0.4s ease; }
+  .progress-label { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); flex-shrink: 0; white-space: nowrap; }
+
+  /* ── INCIDENT REPORT BLOCK ── */
+  .incident-block {
+    background: linear-gradient(135deg, #140505, #100404);
+    border: 1px solid rgba(232,39,26,0.25);
+    border-left: 5px solid var(--red);
+    padding: 30px 34px;
+    margin: 24px 0;
+  }
+
+  .incident-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+
+  .incident-block p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #e8b0aa;
+    margin-bottom: 12px;
+  }
+
+  .incident-block p:last-child { margin-bottom: 0; }
+  .incident-block p strong { color: var(--light); }
+
+  .incident-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 16px 0;
+  }
+
+  .incident-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #e8b0aa;
+  }
+
+  .incident-step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: rgba(232,39,26,0.35);
+    flex-shrink: 0;
+    width: 22px;
+    line-height: 1;
+  }
+
+  .incident-step strong { color: var(--light); }
+
+  /* ── CPR BLOCK ── */
+  .cpr-block {
+    background: linear-gradient(135deg, #050d0a, #060f0c);
+    border: 1px solid rgba(46,158,107,0.25);
+    border-left: 5px solid var(--green);
+    padding: 30px 34px;
+    margin: 24px 0;
+  }
+
+  .cpr-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    color: var(--green);
+    margin-bottom: 14px;
+  }
+
+  .cpr-block p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #90c8a8;
+    margin-bottom: 12px;
+  }
+
+  .cpr-block p:last-child { margin-bottom: 0; }
+  .cpr-block p strong { color: var(--light); }
+
+  .cpr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .cpr-card {
+    background: rgba(46,158,107,0.07);
+    border: 1px solid rgba(46,158,107,0.15);
+    padding: 18px;
+    text-align: center;
+  }
+
+  .cpr-card-icon { font-size: 28px; margin-bottom: 8px; }
+
+  .cpr-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.04em;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+
+  .cpr-card-body { font-size: 13px; color: #90c8a8; line-height: 1.5; }
+  .cpr-card-body strong { color: var(--light); }
+
+  /* ── AED BLOCK ── */
+  .aed-block {
+    background: linear-gradient(135deg, #070a12, #080c16);
+    border: 1px solid rgba(58,123,213,0.25);
+    border-left: 5px solid var(--blue);
+    padding: 30px 34px;
+    margin: 24px 0;
+  }
+
+  .aed-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    color: var(--blue);
+    margin-bottom: 14px;
+  }
+
+  .aed-block p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #7a9fd4;
+    margin-bottom: 12px;
+  }
+
+  .aed-block p:last-child { margin-bottom: 0; }
+  .aed-block p strong { color: var(--light); }
+
+  .aed-location {
+    background: rgba(58,123,213,0.1);
+    border: 1px solid rgba(58,123,213,0.25);
+    padding: 16px 20px;
+    margin-top: 16px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .aed-location-icon { font-size: 24px; flex-shrink: 0; }
+
+  .aed-location-text { font-size: 15px; line-height: 1.7; color: #7a9fd4; }
+  .aed-location-text strong { color: var(--light); }
+
+  /* ── HAND WRAPPING ── */
+  .wrap-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 16px 0;
+  }
+
+  .wrap-step {
+    background: var(--mid);
+    border: 1px solid #2a2a2a;
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #b0aba0;
+  }
+
+  .wrap-step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: rgba(200,168,75,0.35);
+    flex-shrink: 0;
+    width: 20px;
+    line-height: 1;
+  }
+
+  .wrap-step strong { color: var(--light); }
+
+  /* ── NOTE BOXES ── */
+  .note-box {
+    border: 1px solid;
+    padding: 18px 22px;
+    margin: 16px 0;
+    display: flex;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .note-box strong { color: var(--light); }
+  .note-box .n-icon { font-size: 20px; flex-shrink: 0; }
+  .note-gold   { border-color: rgba(200,168,75,0.3); background: rgba(200,168,75,0.06); color: #c8b870; }
+  .note-red    { border-color: rgba(232,39,26,0.3);  background: rgba(232,39,26,0.06);  color: #e8b0aa; }
+  .note-blue   { border-color: rgba(58,123,213,0.3); background: rgba(58,123,213,0.06); color: #7a9fd4; }
+  .note-purple { border-color: rgba(130,80,200,0.3); background: rgba(130,80,200,0.06); color: #b09ad4; }
+
+  /* ── PD SPECIFIC SECTION ── */
+  .pd-safety-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .pd-safety-card {
+    background: var(--charcoal);
+    border: 1px solid #222;
+    border-top: 3px solid var(--teal);
+    padding: 22px;
+  }
+
+  .pd-safety-icon { font-size: 26px; margin-bottom: 10px; }
+
+  .pd-safety-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+
+  .pd-safety-body { font-size: 14px; line-height: 1.7; color: #a8a398; }
+  .pd-safety-body strong { color: var(--light); }
+
+  /* ── FOOTER ── */
+  .module-footer {
+    padding: 68px 8vw;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--charcoal), var(--dark));
+  }
+
+  .module-footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .module-footer h2 span { color: var(--red); }
+  .module-footer p { font-size: 16px; color: var(--muted); max-width: 380px; line-height: 1.6; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: #c41f13; }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1px solid #333; }
+  .btn-ghost:hover { border-color: #555; color: var(--light); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .cpr-grid { grid-template-columns: 1fr 1fr; }
+    .pd-safety-grid { grid-template-columns: 1fr; }
+    .module-footer { flex-direction: column; }
+    .checklist-progress { flex-direction: column; align-items: flex-start; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg-text">SAFETY</div>
+  <p class="breadcrumb">Module 2 — Class Breakdown &nbsp;›&nbsp; <span>Health & Safety</span></p>
+  <h1 class="hero-title">
+    Health &<br><em>Safety</em>
+  </h1>
+  <p class="hero-sub">
+    This isn't the most exciting lesson — but it might be the most important one. <strong>Knowing what to do before something happens</strong> is what separates a confident instructor from a panicked one. Read this, know it, own it.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="dot dot-red"></span> Emergency Protocols</div>
+    <div class="meta-pill"><span class="dot dot-gold"></span> CPR Required</div>
+    <div class="meta-pill"><span class="dot dot-green"></span> PD-Specific Risks</div>
+  </div>
+</section>
+
+<!-- ── EMERGENCY BANNER ── -->
+<div class="emergency-banner">
+  <div class="emergency-banner-icon">🚨</div>
+  <div class="emergency-banner-text">
+    <h3>Know Your Building Before You Need To</h3>
+    <p>Before your first class, walk your building. <strong>Find the emergency exit plan, the defibrillator, the first aid kit, and the incident report forms.</strong> You do not want to be searching for any of these when someone is on the floor. Know where everything is before day one.</p>
+  </div>
+</div>
+
+<!-- ══════════ PRE-CLASS SAFETY CHECKLIST ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--gold);">Instructor Safety Checklist</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:640px;margin-bottom:22px;line-height:1.75;">
+    Tick these off as you familiarise yourself with each item. Before your first class, all of these should be checked.
+  </p>
+
+  <div class="checklist-progress">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-label" id="progressLabel">0 / 9 complete</div>
+  </div>
+
+  <div class="safety-checklist">
+
+    <div class="safety-item item-gold" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="safety-content">
+        <div class="safety-title">Student Forms — Leave on Main Desk</div>
+        <div class="safety-body">If you receive any forms from students (health history, waivers, medical notes), <strong>do not take them home or leave them in your bag.</strong> Leave them on the main desk with a note clearly showing the client's name. Forms need to be filed properly by the gym team — your job is to make sure they land in the right hands.</div>
+      </div>
+      <div class="safety-tag tag-general">Admin</div>
+    </div>
+
+    <div class="safety-item item-gold" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="safety-content">
+        <div class="safety-title">Pack Up Equipment & Lock Up</div>
+        <div class="safety-body"><strong>Put away all equipment used during class</strong> — resistance bands, Bosu balls, medicine balls, Smovey rings, everything. Take your personal equipment with you. When you're the last one out, <strong>lock the building.</strong> If you forget your key, there is a drop box on the door — contact Office Management for the code (HQ Ottawa only).</div>
+      </div>
+      <div class="safety-tag tag-general">General</div>
+    </div>
+
+    <div class="safety-item item-gold" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="safety-content">
+        <div class="safety-title">Hand Wrapping — High-Functioning Classes</div>
+        <div class="safety-body">Newer students need help wrapping their hands in high-functioning classes. <strong>Every student must have their hands wrapped before class begins</strong> — not after the warm-up, not partway through. Get there early enough to handle this. <strong>Use volunteers if they know how</strong> — it takes the pressure off you and gets everyone ready faster.</div>
+      </div>
+      <div class="safety-tag tag-required">Required</div>
+    </div>
+
+    <div class="safety-item item-red" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="safety-content">
+        <div class="safety-title">Know Where the Emergency Plan Is</div>
+        <div class="safety-body">Every building has an emergency plan posted somewhere. <strong>Find it before your first class.</strong> Know the primary exit route, the evacuation meeting point, and what the procedure is for a medical emergency. If you don't know where this is, ask management before you teach your first session.</div>
+      </div>
+      <div class="safety-tag tag-critical">Critical</div>
+    </div>
+
+    <div class="safety-item item-red" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="safety-content">
+        <div class="safety-title">Know Where the Defibrillator (AED) Is</div>
+        <div class="safety-body">If your gym has a defibrillator, <strong>locate it physically before your first class and know how to access it.</strong> At HQ Ottawa, it is located on the blue gym wall at the front of the building. At other locations, ask management. In a cardiac emergency, seconds matter — do not lose time searching for equipment.</div>
+      </div>
+      <div class="safety-tag tag-critical">Critical</div>
+    </div>
+
+    <div class="safety-item item-green" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="safety-content">
+        <div class="safety-title">CPR Certification — Valid & Up to Date</div>
+        <div class="safety-body"><strong>All B4H instructors are required to hold valid CPR certification.</strong> Recertification must be completed every two years — this is non-negotiable. If your certification has lapsed, book your recertification before teaching another class. Keep a copy of your certificate on file.</div>
+      </div>
+      <div class="safety-tag tag-cert">Certification</div>
+    </div>
+
+    <div class="safety-item item-red" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="safety-content">
+        <div class="safety-title">Know Where Incident Report Forms Are</div>
+        <div class="safety-body">At HQ Ottawa: forms are in the <strong>folder on the office door.</strong> At all other locations: forms are in the <strong>communication book.</strong> Know exactly where yours are before your first class. You should never have to search for this in the moment something goes wrong.</div>
+      </div>
+      <div class="safety-tag tag-critical">Critical</div>
+    </div>
+
+    <div class="safety-item item-blue" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="safety-content">
+        <div class="safety-title">Locate First Aid Kit</div>
+        <div class="safety-body">Every gym should have a stocked first aid kit on site. <strong>Find it, open it, and know what's inside.</strong> Check that it's stocked — gloves, bandages, antiseptic — before you rely on it. If it's empty or missing items, flag it to management immediately. Your clients are counting on a prepared environment.</div>
+      </div>
+      <div class="safety-tag tag-required">Required</div>
+    </div>
+
+    <div class="safety-item item-blue" onclick="toggleCheck(this)">
+      <div class="check-box">✓</div>
+      <div class="safety-content">
+        <div class="safety-title">Know Your Emergency Contact Chain</div>
+        <div class="safety-body">In an emergency, <strong>know exactly who to call and in what order:</strong> 911 first if life-threatening, then your Head Instructor, then Gym Manager. Have these numbers saved in your phone — not written on a note somewhere you might not have on you. Knowing your chain of contact means no hesitation when it counts.</div>
+      </div>
+      <div class="safety-tag tag-required">Required</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ INCIDENT REPORT ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--red);">Incident Reports</p>
+
+  <div class="incident-block">
+    <h3>⚠️ If Anyone Gets Hurt — Here's What to Do</h3>
+    <p>An incident report must be completed <strong>as soon as possible after class</strong> whenever anyone is injured, has a medical event, or anything unexpected happens. Management must be informed immediately — not at your convenience, but ASAP.</p>
+    <div class="incident-steps">
+      <div class="incident-step">
+        <div class="incident-step-num">1</div>
+        <div><strong>Attend to the client first.</strong> Ensure they are safe and stable. If it is a medical emergency, call 911 immediately before doing anything else.</div>
+      </div>
+      <div class="incident-step">
+        <div class="incident-step-num">2</div>
+        <div><strong>If you are CPR certified and it is needed — provide CPR.</strong> Use the defibrillator if available and the situation calls for it. You are trained for this.</div>
+      </div>
+      <div class="incident-step">
+        <div class="incident-step-num">3</div>
+        <div><strong>Contact management immediately</strong> — Head Instructor and/or Gym Manager. Do this as soon as the situation is under control, not the next day.</div>
+      </div>
+      <div class="incident-step">
+        <div class="incident-step-num">4</div>
+        <div><strong>Fill out the incident report</strong> as soon as class is over. While details are fresh. Be thorough: time, what happened, who was present, what action was taken, the client's condition when you left.</div>
+      </div>
+      <div class="incident-step">
+        <div class="incident-step-num">5</div>
+        <div><strong>Leave the form in the designated location:</strong> folder on the office door at HQ Ottawa, or the communication book at all other locations.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box note-red">
+    <div class="n-icon">📋</div>
+    <div><strong>What counts as an incident?</strong> Any fall — even if the client says they're fine. Any complaint of chest pain, dizziness, or shortness of breath. Any injury to a joint, muscle, or head. Any medical event of any kind. <strong>When in doubt, fill out the report.</strong> Over-reporting is never a problem. Under-reporting is.</div>
+  </div>
+</section>
+
+<!-- ══════════ CPR & AED ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--green);">CPR & Defibrillator</p>
+
+  <div class="cpr-block">
+    <h3>💚 CPR Certification — Non-Negotiable</h3>
+    <p>All B4H instructors must hold valid CPR certification and recertify every two years. This is a condition of teaching — not a recommendation. In the event of an emergency, you are expected to provide first aid or CPR if you are certified and it is needed.</p>
+
+    <div class="cpr-grid">
+      <div class="cpr-card">
+        <div class="cpr-card-icon">📅</div>
+        <div class="cpr-card-title">Recertify Every 2 Years</div>
+        <div class="cpr-card-body">Set a calendar reminder. Don't let it lapse — teach without certification and you are not covered.</div>
+      </div>
+      <div class="cpr-card">
+        <div class="cpr-card-icon">📄</div>
+        <div class="cpr-card-title">Keep Your Certificate on File</div>
+        <div class="cpr-card-body">Keep a digital copy and a physical copy. Provide it to your Head Instructor when requested.</div>
+      </div>
+      <div class="cpr-card">
+        <div class="cpr-card-icon">🏋️</div>
+        <div class="cpr-card-title">Practice Matters</div>
+        <div class="cpr-card-body">Don't just certify and forget. Refresh your knowledge regularly so the steps are automatic if you ever need them.</div>
+      </div>
+      <div class="cpr-card">
+        <div class="cpr-card-icon">👥</div>
+        <div class="cpr-card-title">Know Who Else Is Certified</div>
+        <div class="cpr-card-body">Know which volunteers or regular clients hold CPR training. In an emergency, <strong>every certified person is a resource.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="aed-block">
+    <h3>💙 Defibrillator (AED) — Know It Before You Need It</h3>
+    <p>If your gym has an AED, you must know exactly where it is and how to access it before you teach your first class. Modern AEDs are designed to guide you through the process with voice instructions — but finding it in an emergency costs precious seconds you can't afford to lose.</p>
+
+    <div class="aed-location">
+      <div class="aed-location-icon">📍</div>
+      <div class="aed-location-text">
+        <strong>HQ Ottawa:</strong> Located on the blue gym wall at the front of the building.<br><br>
+        <strong>All other locations:</strong> Ask your gym manager to physically show you the AED location before your first session. Do not assume — confirm.
+      </div>
+    </div>
+
+    <p style="margin-top:16px;">In the event of a cardiac emergency: <strong>call 911 first, start CPR, send someone to retrieve the AED.</strong> The AED will talk you through every step once it's turned on.</p>
+  </div>
+</section>
+
+<!-- ══════════ HAND WRAPPING ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--gold);">Hand Wrapping — High-Functioning Classes</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:660px;margin-bottom:24px;line-height:1.75;">
+    Proper hand wrapping protects wrist joints and knuckles during bag work. For newer students in high-functioning classes, getting everyone wrapped before class is your responsibility.
+  </p>
+
+  <div class="wrap-steps">
+    <div class="wrap-step"><div class="wrap-step-num">1</div><div><strong>Arrive early.</strong> Wrapping takes time with newer clients — don't start class late because you ran out of time to wrap hands. Budget 10–15 minutes before class begins.</div></div>
+    <div class="wrap-step"><div class="wrap-step-num">2</div><div><strong>Use volunteers.</strong> If experienced volunteers or regular clients know how to wrap, delegate to them. It gets done faster and builds community at the same time.</div></div>
+    <div class="wrap-step"><div class="wrap-step-num">3</div><div><strong>Check every pair of hands</strong> before class starts. A wrap that's too loose won't protect. Too tight can restrict circulation. Give each wrap a quick check — tight enough to support, loose enough to flex.</div></div>
+    <div class="wrap-step"><div class="wrap-step-num">4</div><div><strong>Champion classes:</strong> Many Champion clients will not use hand wraps or gloves depending on ability. Assess each client individually — focus on safety and comfort over convention.</div></div>
+  </div>
+
+  <div class="note-box note-gold">
+    <div class="n-icon">💡</div>
+    <div><strong>Teaching hand wrapping is a great class skill to develop.</strong> Over time, most regular clients will learn to wrap their own hands. Teaching them how is a fine motor skill exercise — and one more thing they can do independently.</div>
+  </div>
+</section>
+
+<!-- ══════════ PD-SPECIFIC SAFETY ══════════ -->
+<section class="section reveal">
+  <p class="section-label" style="color:var(--teal);">PD-Specific Safety Considerations</p>
+
+  <p style="font-size:17px;color:#b0aba0;max-width:660px;margin-bottom:24px;line-height:1.75;">
+    Working with Parkinson's clients means being aware of risks that don't apply in general fitness settings. <strong>These are the ones to watch for every single class.</strong>
+  </p>
+
+  <div class="pd-safety-grid">
+
+    <div class="pd-safety-card">
+      <div class="pd-safety-icon">🫸</div>
+      <div class="pd-safety-title">Falls — The #1 Risk</div>
+      <div class="pd-safety-body">PD clients have significantly elevated fall risk due to postural instability and freezing of gait. <strong>Always ensure clear paths between stations.</strong> Never rush transitions. Have chairs available. Assign a spotter for high-balance challenges. <strong>Any fall must be documented — even if the client says they're fine.</strong></div>
+    </div>
+
+    <div class="pd-safety-card">
+      <div class="pd-safety-icon">💊</div>
+      <div class="pd-safety-title">Medication & OFF Periods</div>
+      <div class="pd-safety-body">Clients may arrive in an OFF period — slower, stiffer, more fatigued than usual. <strong>Never push a client through an OFF period.</strong> Reduce intensity, offer seated modifications, and monitor closely. If a client's state concerns you, it's always okay to dial back the session.</div>
+    </div>
+
+    <div class="pd-safety-card">
+      <div class="pd-safety-icon">😵</div>
+      <div class="pd-safety-title">Orthostatic Hypotension</div>
+      <div class="pd-safety-body">Many PD clients experience a drop in blood pressure when standing up quickly — causing dizziness or fainting. <strong>Never allow clients to stand up rapidly</strong> from seated positions. Always cue slow transitions and watch for signs of dizziness during any sit-to-stand movement.</div>
+    </div>
+
+    <div class="pd-safety-card">
+      <div class="pd-safety-icon">🥵</div>
+      <div class="pd-safety-title">Overheating & Dehydration</div>
+      <div class="pd-safety-body">PD affects the body's ability to regulate temperature. Clients may not sweat normally and may not feel thirsty. <strong>Proactively prompt water breaks — don't wait for clients to ask.</strong> Keep the gym well ventilated. Watch for signs of overheating: flushed face, confusion, fatigue beyond what's expected.</div>
+    </div>
+
+    <div class="pd-safety-card">
+      <div class="pd-safety-icon">🫀</div>
+      <div class="pd-safety-title">Cardiac Considerations</div>
+      <div class="pd-safety-body">Some PD clients are on cardiac medications that affect heart rate response. <strong>The standard THR calculation may not apply to everyone.</strong> Know which clients have cardiac conditions. Use perceived exertion (the talk test) alongside heart rate for these clients. If in doubt, consult with their physician.</div>
+    </div>
+
+    <div class="pd-safety-card">
+      <div class="pd-safety-icon">🧠</div>
+      <div class="pd-safety-title">Cognitive Changes</div>
+      <div class="pd-safety-body">PD can affect processing speed, attention, and spatial awareness. <strong>A client who seems confused or disoriented may not be "off" — they may be experiencing cognitive symptoms.</strong> Slow down, simplify, and check in. If you notice sudden, significant cognitive change, take it seriously and contact management.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="module-footer reveal">
+  <div>
+    <h2>Next Up:<br><span>Knowledge Quiz</span></h2>
+    <p>You've covered everything in Module 2. Time to test your knowledge before moving on to certification.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <button class="btn btn-primary">Continue: Take the Quiz →</button>
+    <button class="btn btn-ghost">↩ Back to Sample Circuits</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach(r => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 }).observe(r);
+});
+
+const totalItems = document.querySelectorAll('.safety-item').length;
+
+function toggleCheck(item) {
+  item.classList.toggle('done');
+  const done = document.querySelectorAll('.safety-item.done').length;
+  const pct = Math.round((done / totalItems) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = done + ' / ' + totalItems + ' complete' + (done === totalItems ? ' 🎉' : '');
+}
+</script>
+</body>
+</html>
