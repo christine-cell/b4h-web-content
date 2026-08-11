@@ -1,0 +1,200 @@
+{
+ "terms": [
+  {
+   "en": "Amplitude / \"big movements\"",
+   "fr": "Amplitude / « grands mouvements »",
+   "cat": "coaching",
+   "def_en": "Making movements bigger and fuller on purpose. Parkinson's tends to shrink movement, so coaches cue large, exaggerated actions to keep motion strong and useful.",
+   "def_fr": "Rendre les mouvements plus grands et plus amples de façon volontaire. La maladie de Parkinson tend à réduire l'amplitude des gestes, alors l'entraîneur encourage de « grands mouvements » exagérés pour garder des gestes forts et utiles."
+  },
+  {
+   "en": "BDNF",
+   "fr": "facteur neurotrophique dérivé du cerveau (BDNF)",
+   "cat": "parkinsons",
+   "def_en": "BDNF (brain-derived neurotrophic factor) is a protein that helps brain cells grow, connect, and stay healthy. Exercise can raise BDNF, which may support learning and movement.",
+   "def_fr": "Le BDNF (facteur neurotrophique dérivé du cerveau) est une protéine qui aide les cellules du cerveau à croître, à se connecter et à rester en santé. L'exercice peut augmenter le BDNF, ce qui pourrait favoriser l'apprentissage et le mouvement."
+  },
+  {
+   "en": "Bradykinesia",
+   "fr": "bradykinésie",
+   "cat": "parkinsons",
+   "def_en": "Slowness of movement — one of the core motor symptoms of Parkinson's. Everyday tasks take longer and movements get smaller.",
+   "def_fr": "Lenteur des mouvements — l'un des principaux symptômes moteurs de la maladie de Parkinson. Les gestes du quotidien deviennent plus lents et plus petits."
+  },
+  {
+   "en": "Champion",
+   "fr": "Champion",
+   "cat": "program",
+   "def_en": "A lower-intensity, group-format class that uses the same exercises as Fighter, with chair-supported and seated options — suited to clients around Hoehn & Yahr stages 2–3.",
+   "def_fr": "Un cours en groupe, de plus faible intensité, qui reprend les mêmes exercices que le niveau Fighter avec des options assises et avec appui sur une chaise — adapté aux stades 2–3 de l'échelle de Hoehn et Yahr."
+  },
+  {
+   "en": "Champion Plus",
+   "fr": "Champion Plus",
+   "cat": "program",
+   "def_en": "The most supported class level — lower-intensity and often fully seated. Champion classes bring together Champion and Champion Plus clients.",
+   "def_fr": "Le niveau de cours le plus encadré — de faible intensité et souvent entièrement assis. Les cours Champion réunissent les clients Champion et Champion Plus."
+  },
+  {
+   "en": "Cueing (external cues)",
+   "fr": "guidage",
+   "cat": "coaching",
+   "def_en": "Giving a person a clear signal — spoken, visual, or sound-based — to start or improve a movement. External cues, like a line on the floor or a count out loud, can help someone move through freezing.",
+   "def_fr": "Donner à une personne un repère clair — verbal, visuel ou sonore — pour déclencher ou améliorer un mouvement. Des repères externes, comme une ligne au sol ou un décompte à voix haute, peuvent aider à surmonter un blocage."
+  },
+  {
+   "en": "Dopamine",
+   "fr": "dopamine",
+   "cat": "parkinsons",
+   "def_en": "A brain chemical that helps control movement. In Parkinson's, the cells that make dopamine are lost over time, which leads to the motor symptoms.",
+   "def_fr": "Une substance chimique du cerveau qui aide à contrôler le mouvement. Dans la maladie de Parkinson, les cellules qui produisent la dopamine disparaissent avec le temps, ce qui entraîne les symptômes moteurs."
+  },
+  {
+   "en": "Dual-tasking",
+   "fr": "double tâche",
+   "cat": "coaching",
+   "def_en": "Doing two things at once, such as walking while talking or counting. This is harder with Parkinson's, so coaches practise it safely to build everyday confidence.",
+   "def_fr": "Faire deux choses en même temps, comme marcher tout en parlant ou en comptant. C'est plus difficile avec la maladie de Parkinson, alors l'entraîneur le pratique de façon sécuritaire pour renforcer la confiance au quotidien."
+  },
+  {
+   "en": "Dysarthria",
+   "fr": "dysarthrie",
+   "cat": "parkinsons",
+   "def_en": "Weak or slurred speech caused by reduced control of the muscles used to talk. Speech may sound soft, mumbled, or hard to understand.",
+   "def_fr": "Trouble de la parole causé par un moindre contrôle des muscles utilisés pour parler. La voix peut être faible, marmonnée ou difficile à comprendre."
+  },
+  {
+   "en": "Dyskinesia",
+   "fr": "dyskinésie",
+   "cat": "parkinsons",
+   "def_en": "Extra, involuntary movements such as twisting or fidgeting. These are often a side effect of long-term Parkinson's medication, not the disease itself.",
+   "def_fr": "Mouvements involontaires supplémentaires, comme des torsions ou de l'agitation. Ils sont souvent un effet secondaire de la médication à long terme, et non de la maladie elle-même."
+  },
+  {
+   "en": "Dysphagia",
+   "fr": "dysphagie",
+   "cat": "parkinsons",
+   "def_en": "Trouble swallowing. Food or liquid can go down slowly or the wrong way, so eating and drinking may need extra care.",
+   "def_fr": "Difficulté à avaler. Les aliments ou les liquides peuvent passer lentement ou de travers, alors manger et boire peut demander plus de précaution."
+  },
+  {
+   "en": "Fall risk",
+   "fr": "risque de chute",
+   "cat": "parkinsons",
+   "def_en": "The chance that a person may fall. Balance problems, freezing, and smaller steps all raise fall risk, so classes are set up to keep people safe.",
+   "def_fr": "La probabilité qu'une personne fasse une chute. Les problèmes d'équilibre, les blocages et les petits pas augmentent le risque de chute, alors les cours sont conçus pour garder les gens en sécurité."
+  },
+  {
+   "en": "Festination",
+   "fr": "festination",
+   "cat": "parkinsons",
+   "def_en": "A pattern of quick, short, shuffling steps, often with the body leaning forward. The person may feel they are speeding up and cannot stop.",
+   "def_fr": "Une suite de pas rapides, courts et traînants, souvent avec le tronc penché vers l'avant. La personne peut avoir l'impression d'accélérer sans pouvoir s'arrêter."
+  },
+  {
+   "en": "Fighter",
+   "fr": "Fighter",
+   "cat": "program",
+   "def_en": "A class level for more independent clients — higher-intensity, circuit-based boxing. Clients receive a Fighter, Champion, or Champion Plus classification after their assessment.",
+   "def_fr": "Un niveau de cours pour les personnes plus autonomes — de la boxe en circuit, de plus haute intensité. Une classification Fighter, Champion ou Champion Plus est attribuée après l'évaluation."
+  },
+  {
+   "en": "Freezing of gait (FOG)",
+   "fr": "gel de la marche (FOG)",
+   "cat": "parkinsons",
+   "def_en": "Freezing of gait (FOG) is a sudden, brief moment when the feet feel stuck to the floor, even though the person wants to walk. It often happens when turning or passing through a doorway.",
+   "def_fr": "Le gel de la marche (FOG) est un moment soudain et bref où les pieds semblent collés au sol, même si la personne veut avancer. Il survient souvent dans les virages ou en passant une porte."
+  },
+  {
+   "en": "Hoehn & Yahr scale",
+   "fr": "échelle de Hoehn et Yahr",
+   "cat": "parkinsons",
+   "def_en": "A five-stage scale doctors use to describe how far Parkinson's has progressed, from mild, one-sided symptoms up to needing more help with movement.",
+   "def_fr": "Une échelle en cinq stades utilisée par les médecins pour décrire la progression de la maladie de Parkinson, de symptômes légers d'un seul côté jusqu'à un plus grand besoin d'aide pour bouger."
+  },
+  {
+   "en": "Hypomimia (facial masking)",
+   "fr": "hypomimie (masque facial)",
+   "cat": "parkinsons",
+   "def_en": "Reduced facial expression, sometimes called facial masking. The face may look flat or serious even when the person feels happy or engaged.",
+   "def_fr": "Réduction de l'expression du visage, parfois appelée « masque facial ». Le visage peut paraître neutre ou sérieux même si la personne se sent joyeuse ou intéressée."
+  },
+  {
+   "en": "Levodopa",
+   "fr": "lévodopa",
+   "cat": "parkinsons",
+   "def_en": "A common Parkinson's medication that the body turns into dopamine to ease motor symptoms. Coaches should know that class timing can affect how well it is working.",
+   "def_fr": "Un médicament courant contre la maladie de Parkinson que le corps transforme en dopamine pour soulager les symptômes moteurs. L'entraîneur devrait savoir que le moment du cours peut influencer son effet."
+  },
+  {
+   "en": "Micrographia",
+   "fr": "micrographie",
+   "cat": "parkinsons",
+   "def_en": "Small, cramped handwriting that often gets smaller across a line or page. It is a common sign of the shrinking movement seen in Parkinson's.",
+   "def_fr": "Écriture petite et resserrée qui rétrécit souvent au fil d'une ligne ou d'une page. C'est un signe fréquent de la réduction des mouvements observée dans la maladie de Parkinson."
+  },
+  {
+   "en": "Neuroplasticity",
+   "fr": "neuroplasticité",
+   "cat": "parkinsons",
+   "def_en": "The brain's ability to change and form new connections with practice. Regular, challenging exercise may help the brain adapt and keep movement skills.",
+   "def_fr": "La capacité du cerveau à changer et à former de nouvelles connexions grâce à la pratique. Un exercice régulier et exigeant peut aider le cerveau à s'adapter et à préserver les habiletés motrices."
+  },
+  {
+   "en": "\"On/Off\" fluctuations",
+   "fr": "fluctuations « on-off »",
+   "cat": "parkinsons",
+   "def_en": "Changes in how well Parkinson's medication is working. During \"on\" times movement is easier; during \"off\" times symptoms return and moving is harder.",
+   "def_fr": "Variations de l'efficacité de la médication contre la maladie de Parkinson. En période « on », bouger est plus facile; en période « off », les symptômes reviennent et bouger devient plus difficile."
+  },
+  {
+   "en": "Parkinson's-Plus",
+   "fr": "syndrome Parkinson plus",
+   "cat": "parkinsons",
+   "def_en": "A group of conditions that look like Parkinson's but progress differently and respond less to the usual medication. Examples include MSA (multiple system atrophy), PSP (progressive supranuclear palsy), and CBD (corticobasal degeneration).",
+   "def_fr": "Un groupe de maladies qui ressemblent à la maladie de Parkinson, mais qui évoluent différemment et répondent moins à la médication habituelle. On y trouve l'AMS (atrophie multisystématisée), la PSP (paralysie supranucléaire progressive) et la DCB (dégénérescence corticobasale)."
+  },
+  {
+   "en": "Person living with Parkinson's",
+   "fr": "personne atteinte de la maladie de Parkinson",
+   "cat": "parkinsons",
+   "def_en": "The respectful, person-first way to describe someone who has Parkinson's. It puts the person before the diagnosis — never \"patient,\" \"sufferer,\" or \"victim.\"",
+   "def_fr": "La façon respectueuse et centrée sur la personne de désigner quelqu'un qui a la maladie de Parkinson. On place la personne avant le diagnostic — jamais « patient », « souffrant » ou « victime »."
+  },
+  {
+   "en": "Postural instability",
+   "fr": "instabilité posturale",
+   "cat": "parkinsons",
+   "def_en": "Trouble keeping steady balance, especially when standing, turning, or being nudged. It develops later in Parkinson's and raises the risk of falls.",
+   "def_fr": "Difficulté à garder un bon équilibre, surtout en position debout, dans les virages ou lorsqu'on est bousculé. Elle apparaît plus tard dans la maladie de Parkinson et augmente le risque de chute."
+  },
+  {
+   "en": "Rigidity",
+   "fr": "rigidité",
+   "cat": "parkinsons",
+   "def_en": "Stiffness in the muscles that makes limbs feel tight and hard to move. It can be uncomfortable and limit range of motion.",
+   "def_fr": "Raideur des muscles qui rend les membres tendus et difficiles à bouger. Elle peut être inconfortable et limiter l'amplitude des mouvements."
+  },
+  {
+   "en": "RPE (Rate of Perceived Exertion)",
+   "fr": "perception de l'effort (RPE)",
+   "cat": "coaching",
+   "def_en": "RPE (rate of perceived exertion) is a simple way for a person to rate how hard they are working, often on a scale from 6 to 20 or 0 to 10. It helps set a safe, effective effort level.",
+   "def_fr": "Le RPE (« rate of perceived exertion », ou perception de l'effort) est une façon simple pour une personne d'évaluer l'intensité de son effort, souvent sur une échelle de 6 à 20 ou de 0 à 10. Il aide à établir un niveau d'effort sécuritaire et efficace."
+  },
+  {
+   "en": "Target Heart Rate (THR)",
+   "fr": "fréquence cardiaque cible (THR)",
+   "cat": "program",
+   "def_en": "THR (target heart rate) is the heart-rate range a person aims for during exercise to train safely and effectively. It is based on age and fitness, and any limits should follow a doctor's guidance.",
+   "def_fr": "La THR (« target heart rate », ou fréquence cardiaque cible) est la plage de fréquence cardiaque qu'une personne vise pendant l'exercice pour s'entraîner de façon sécuritaire et efficace. Elle dépend de l'âge et de la condition physique, et toute limite devrait suivre l'avis du médecin."
+  },
+  {
+   "en": "Tremor (resting tremor)",
+   "fr": "tremblement au repos",
+   "cat": "parkinsons",
+   "def_en": "A rhythmic shaking, often in a hand, that is strongest when the limb is at rest and eases with movement. It is one of the most familiar signs of Parkinson's.",
+   "def_fr": "Un tremblement rythmique, souvent dans une main, plus marqué lorsque le membre est au repos et qui s'atténue avec le mouvement. C'est l'un des signes les plus connus de la maladie de Parkinson."
+  }
+ ]
+}

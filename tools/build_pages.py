@@ -16,7 +16,7 @@ ENH_DIRS = [os.path.join(ROOT, "_sources/enhanced/boxing-4-health-PD-symptoms"),
             os.path.join(ROOT, "_sources/enhanced/boxing4health-training")]
 WIX = {r["stepId"]: r for r in json.load(open(os.path.join(ROOT, "_sources/wix/wix-extract.json")))}
 MODULES = json.load(open(os.path.join(SITE, "data/modules.json")))
-V = "17"  # asset cache-bust version
+V = "18"  # asset cache-bust version
 
 # ---------------------------------------------------------------- helpers
 def enh_path(fn):

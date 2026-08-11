@@ -4,7 +4,10 @@ import json, os, html as htmllib
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "licensee")   # program is namespaced under /licensee/
 M = json.load(open(os.path.join(SITE, "data/modules.json")))
-V = "17"
+def _data(name):
+    p=os.path.join(SITE,"data",name)
+    return json.load(open(p,encoding="utf-8")) if os.path.exists(p) else {}
+V = "18"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, prefix):
@@ -175,17 +178,157 @@ def build_hub():
 if __name__ == "__main__":
     build_hub()
 
+def _chip(ic): return f'<span class="chip" data-icon="{ic}"></span>'
+
+DOCUMENTS=[
+ {"file":"health-history-form.pdf","en":"Health History Form","fr":"Formulaire d’antécédents médicaux","ext":"PDF","size":"2.5 MB","cat":"intake"},
+ {"file":"prospective-client-questionnaire.pdf","en":"Prospective Client Questionnaire","fr":"Questionnaire du client potentiel","ext":"PDF","size":"84 KB","cat":"intake"},
+ {"file":"liability-waiver.pdf","en":"Liability Waiver","fr":"Décharge de responsabilité","ext":"PDF","size":"109 KB","cat":"intake"},
+ {"file":"new-instructor-checklists.docx","en":"New Instructor Checklists","fr":"Listes de vérification du nouvel instructeur","ext":"DOCX","size":"12 KB","cat":"program"},
+ {"file":"champion-plus-program.pdf","en":"Champion Plus Program","fr":"Programme Champion Plus","ext":"PDF","size":"237 KB","cat":"program"},
+]
+VIDEO_GROUPS=[
+ {"en":"Getting started","fr":"Pour commencer","items":[("JPnb9okYxw8","Boxing 101")]},
+ {"en":"Symptoms in action","fr":"Les symptômes en action","items":[("MIAFilOOloU","Freezing of Gait"),("wrxHJaPulgc","Freezing of Gait — example 2")]},
+ {"en":"Exercise demos","fr":"Démonstrations d’exercices","items":[("40Py_LXA-kQ","Ball Throw"),("10Ybc-q-AaE","Stop & Squat"),("VhULAtOM24U","TAHDAHS"),("kw3XHS2swTE","Scarf Snatch"),("DjWv0vljlzw","Sky Reach"),("BeJMw-lkC9o","Double 007"),("EM-VzOs3Xz8","Over the River"),("Q9EWH7yaNmI","Penguin Waddle"),("JBC65ii_IAM","Banded Side Step"),("3fo1INxGGiI","Box Step")]},
+]
+FURTHER_READING=[
+ {"icon":"heart-pulse","name":"Parkinson Canada","url":"https://www.parkinson.ca","en":"National charity — support services, education, and advocacy across Canada.","fr":"Organisme national — services de soutien, éducation et défense des droits au Canada."},
+ {"icon":"map-pin","name":"Parkinson Québec","url":"https://parkinsonquebec.ca","en":"Québec-based support, French-language resources, and local groups.","fr":"Soutien au Québec, ressources en français et groupes locaux."},
+ {"icon":"book-open","name":"Parkinson’s Foundation","url":"https://www.parkinson.org","en":"Research-backed library, a helpline, and practical living-well guides.","fr":"Bibliothèque fondée sur la recherche, ligne d’aide et guides pratiques."},
+ {"icon":"sparkles","name":"Michael J. Fox Foundation","url":"https://www.michaeljfox.org","en":"Research funding, clinical-trial matching, and patient resources.","fr":"Financement de la recherche, essais cliniques et ressources pour les patients."},
+ {"icon":"graduation-cap","name":"Davis Phinney Foundation","url":"https://davisphinneyfoundation.org","en":"“Living well” tools with a strong focus on exercise and daily function.","fr":"Outils « bien vivre » axés sur l’exercice et la fonction au quotidien."},
+ {"icon":"dumbbell","name":"PD Warrior","url":"https://pdwarrior.com","en":"Neuroplasticity-based exercise program for people with Parkinson’s.","fr":"Programme d’exercices fondé sur la neuroplasticité pour la maladie de Parkinson."},
+ {"icon":"megaphone","name":"LSVT Global (BIG & LOUD)","url":"https://www.lsvtglobal.com","en":"The LSVT BIG (movement) and LOUD (voice) therapy programs.","fr":"Les programmes de thérapie LSVT BIG (mouvement) et LOUD (voix)."},
+]
+GCAT={"parkinsons":("Parkinson’s","Parkinson"),"coaching":("Coaching","Encadrement"),"program":("Program","Programme")}
+
+def _sec_head(anchor, icon, en, fr, intro_en, intro_fr):
+    return (f'<section class="res-section" id="{anchor}"><h2>{_chip(icon)}{bilingual(en,fr)}</h2>'
+            f'<p class="res-section-intro">{bilingual(intro_en,intro_fr)}</p>')
+
+def _documents_section(prefix):
+    def card(d):
+        return (f'<a class="file-card" href="{prefix}assets/docs/{d["file"]}" download>'
+                f'<span class="file-ico"><span class="file-ext">{d["ext"]}</span></span>'
+                f'<span class="file-meta"><span class="file-name">{bilingual(esc(d["en"]),esc(d["fr"]))}</span>'
+                f'<span class="file-sub">{bilingual("Download","Télécharger")} · {d["ext"]} · {d["size"]}</span></span>'
+                f'<span class="file-dl" data-icon="download"></span></a>')
+    intake="".join(card(d) for d in DOCUMENTS if d["cat"]=="intake")
+    prog="".join(card(d) for d in DOCUMENTS if d["cat"]=="program")
+    return (_sec_head("documents","folder-open","Documents & Forms","Documents et formulaires",
+            "Print or download the forms you need to screen, protect, and run your program.",
+            "Imprimez ou téléchargez les formulaires nécessaires pour évaluer, protéger et gérer votre programme.")
+            +f'<p class="res-subhead">{bilingual("Intake &amp; screening","Admission et évaluation")}</p><div class="files-grid">{intake}</div>'
+            +f'<p class="res-subhead">{bilingual("Running your program","Gérer votre programme")}</p><div class="files-grid">{prog}</div></section>')
+
+def _glossary_section():
+    g=_data("glossary.json").get("terms",[])
+    items=""
+    for t in g:
+        cl,cf=GCAT.get(t["cat"],("",""))
+        cat=f'<span class="gcat" data-cat="{t["cat"]}">{bilingual(cl,cf)}</span>' if cl else ""
+        items+=(f'<dl class="gterm" data-cat="{t["cat"]}"><dt>{bilingual(esc(t["en"]),esc(t["fr"]))}{cat}</dt>'
+                f'<dd>{bilingual(esc(t["def_en"]),esc(t["def_fr"]))}</dd></dl>')
+    n=len(g)
+    tools=(f'<div class="glossary-tools"><label class="glossary-search">'
+           f'<span data-icon="search"></span><input id="gloss-q" type="search" autocomplete="off" '
+           f'placeholder="{bilingual("Search terms…","Rechercher un terme…","span")}" '
+           f'aria-label="Search glossary"></label>'
+           f'<span class="glossary-count"><span id="gloss-count">{n}</span> {bilingual("terms","termes")}</span></div>')
+    empty=f'<p class="glossary-empty" id="gloss-empty" hidden>{bilingual("No terms match your search.","Aucun terme ne correspond.","span")}</p>'
+    script=("<script>(function(){var i=document.getElementById('gloss-q');if(!i)return;"
+            "var terms=[].slice.call(document.querySelectorAll('#glossary .gterm'));"
+            "var c=document.getElementById('gloss-count'),e=document.getElementById('gloss-empty');"
+            "i.addEventListener('input',function(){var q=i.value.trim().toLowerCase(),n=0;"
+            "terms.forEach(function(t){var m=!q||t.textContent.toLowerCase().indexOf(q)>-1;t.hidden=!m;if(m)n++;});"
+            "if(c)c.textContent=n;if(e)e.hidden=n>0;});})();</script>")
+    return (_sec_head("glossary","book-open","Glossary","Glossaire",
+            "Plain-language definitions of the Parkinson’s, coaching, and program terms used throughout this training.",
+            "Définitions en langage clair des termes liés à la maladie de Parkinson, à l’encadrement et au programme.")
+            +tools+f'<div class="glossary">{items}</div>'+empty+script+"</section>")
+
+def _videos_section():
+    def vid(vid_id,title):
+        return (f'<div><div class="video" data-yt="{vid_id}" data-title="{esc(title)}">'
+                f'<img class="video-poster" src="https://i.ytimg.com/vi/{vid_id}/hqdefault.jpg" alt="" loading="lazy">'
+                f'<div class="video-play"><span data-icon="circle-play"></span></div></div>'
+                f'<p class="video-cap">{esc(title)}</p></div>')
+    out=""
+    for grp in VIDEO_GROUPS:
+        cards="".join(vid(i,t) for i,t in grp["items"])
+        out+=f'<p class="res-subhead">{bilingual(grp["en"],grp["fr"])}</p><div class="video-grid">{cards}</div>'
+    return (_sec_head("videos","circle-play","Video Library","Vidéothèque",
+            "Every program video in one place — click a thumbnail to play it here.",
+            "Toutes les vidéos du programme au même endroit — cliquez sur une vignette pour la lire ici.")
+            +out+"</section>")
+
+def _assessments_section():
+    tools=_data("assessment-tools.json").get("tools",[])
+    def field(lbl_en,lbl_fr,v_en,v_fr):
+        return (f'<div class="af"><div class="af-label">{bilingual(lbl_en,lbl_fr)}</div>'
+                f'<div class="af-val">{bilingual(esc(v_en),esc(v_fr))}</div></div>')
+    cards=""
+    for t in tools:
+        cards+=(f'<div class="assess-card"><div class="assess-head"><span class="assess-abbr">{esc(t.get("abbr",""))}</span>'
+                f'<h3>{bilingual(esc(t["name_en"]),esc(t["name_fr"]))}</h3></div><div class="assess-body">'
+                +field("Measures","Mesure",t["measures_en"],t["measures_fr"])
+                +field("How","Comment",t["how_en"],t["how_fr"])
+                +field("Scoring","Interprétation",t["scoring_en"],t["scoring_fr"])
+                +"</div></div>")
+    return (_sec_head("assessments","clipboard-list","Assessment Tools","Outils d’évaluation",
+            "A quick reference for the balance and mobility tests used to classify and track clients. Not a diagnosis — use alongside professional judgement.",
+            "Un aide-mémoire pour les tests d’équilibre et de mobilité servant à classer et suivre les clients. Ne remplace pas un diagnostic — à utiliser avec jugement professionnel.")
+            +f'<div class="assess-grid">{cards}</div></section>')
+
+def _quickref_section():
+    cards=_data("quick-reference.json").get("cards",[])
+    out=""
+    for c in cards:
+        danger=" qr-danger" if c.get("icon")=="triangle-alert" else ""
+        items="".join(f'<li>{bilingual(esc(a),esc(b))}</li>' for a,b in zip(c["items_en"],c["items_fr"]))
+        out+=(f'<article class="qr-card{danger}"><div class="qr-head">{_chip(c.get("icon","list-checks"))}'
+              f'<h3>{bilingual(esc(c["title_en"]),esc(c["title_fr"]))}</h3></div><div class="qr-body">'
+              f'<p class="qr-intro">{bilingual(esc(c["intro_en"]),esc(c["intro_fr"]))}</p>'
+              f'<ul class="qr-list">{items}</ul></div></article>')
+    return (_sec_head("quick-reference","printer","Quick-Reference Cards","Fiches de référence rapide",
+            "One-page cheat-sheets to print and pin up in the gym. Use your browser’s print to save any card as a PDF.",
+            "Aide-mémoire d’une page à imprimer et afficher dans la salle. Utilisez l’impression du navigateur pour enregistrer une fiche en PDF.")
+            +f'<div class="qr-grid">{out}</div></section>')
+
+def _further_section():
+    def lc(r):
+        return (f'<a class="link-card" href="{r["url"]}" target="_blank" rel="noopener noreferrer">{_chip(r["icon"])}'
+                f'<span class="link-name">{esc(r["name"])}</span>'
+                f'<span class="link-desc">{bilingual(esc(r["en"]),esc(r["fr"]))}</span>'
+                f'<span class="link-ext" data-icon="external-link"></span></a>')
+    cards="".join(lc(r) for r in FURTHER_READING)
+    return (_sec_head("further-reading","external-link","Further Reading","Pour aller plus loin",
+            "Trusted outside organisations for research, support, and continuing education. Links open in a new tab.",
+            "Organismes externes de confiance pour la recherche, le soutien et la formation continue. Les liens s’ouvrent dans un nouvel onglet.")
+            +f'<div class="link-grid">{cards}</div></section>')
+
+def _articles_section(prefix):
+    rows="".join(f'<a class="lesson-row" href="{prefix}{esc(r["url"])}"><span class="chip" data-icon="{r.get("icon","book-open")}"></span><span><span class="lr-title">{bilingual(esc(r["title"]["en"]),esc(r["title"].get("fr") or r["title"]["en"]))}</span><br><span class="lr-meta">{bilingual(esc(r["summary"]["en"]),esc(r["summary"].get("fr") or r["summary"]["en"]))}</span></span><span class="lr-mark" data-icon="arrow-right"></span></a>' for r in M["resources"])
+    return (_sec_head("articles","file-text","Learning Articles","Articles d’apprentissage",
+            "In-depth reads that go beyond the core lessons.",
+            "Des lectures approfondies qui vont au-delà des leçons de base.")
+            +f'<div class="stack">{rows}</div></section>')
+
 def build_resources_index():
     prefix="../"
-    h=head("Resources · Boxing4Health Training","Learning resources and tools for Boxing4Health licensees.",prefix)
-    rows="\n".join(f"""<a class="lesson-row" href="{prefix}{esc(r['url'])}" data-reveal><span class="chip" data-icon="{r.get('icon','book-open')}"></span><span><span class="lr-title">{bilingual(esc(r['title']['en']),esc(r['title'].get('fr') or r['title']['en']))}</span><br><span class="lr-meta">{bilingual(esc(r['summary']['en']),esc(r['summary'].get('fr') or r['summary']['en']))}</span></span><span class="lr-mark" data-icon="arrow-right"></span></a>""" for r in M["resources"])
-    body=f"""<section class="section"><div class="wrap wrap-narrow">
-      <div class="motif-line"></div>
-      <span class="eyebrow"><span data-icon="book-open"></span><span data-i18n="nav.resources">Resources</span></span>
-      <h1>{bilingual('Learning Resources','Ressources d’apprentissage','span')}</h1>
-      <p class="lead">{bilingual('Extra reading and tools to support your coaching.','Lectures et outils supplémentaires pour soutenir votre enseignement.','span')}</p>
-      <div class="stack" style="margin-top:2rem">{rows}</div>
-    </div></section>"""
+    h=head("Resources · Boxing4Health Training","Documents, glossary, videos, assessment tools, printable references, and further reading for Boxing4Health licensees.",prefix)
+    toc=[("documents","Documents"),("glossary","Glossary"),("videos","Videos"),("assessments","Assessments"),("quick-reference","Quick reference"),("further-reading","Further reading"),("articles","Articles")]
+    tocfr={"documents":"Documents","glossary":"Glossaire","videos":"Vidéos","assessments":"Évaluations","quick-reference":"Référence rapide","further-reading":"Pour aller plus loin","articles":"Articles"}
+    chips="".join(f'<a href="#{a}">{bilingual(l,tocfr[a])}</a>' for a,l in toc)
+    body=(f'<section class="section"><div class="wrap">'
+          f'<span class="eyebrow"><span data-icon="folder-open"></span><span data-i18n="nav.resources">Resources</span></span>'
+          f'<h1>{bilingual("Coach’s Resource Hub","Centre de ressources","span")}</h1>'
+          f'<p class="lead" style="max-width:60ch">{bilingual("Everything in one place — forms, key terms, videos, assessment tools, printable references, and trusted links.","Tout au même endroit — formulaires, termes clés, vidéos, outils d’évaluation, fiches imprimables et liens de confiance.","span")}</p>'
+          f'<nav class="toc-chips" aria-label="On this page">{chips}</nav>'
+          +_documents_section(prefix)+_glossary_section()+_videos_section()
+          +_assessments_section()+_quickref_section()+_further_section()+_articles_section(prefix)
+          +'</div></section>')
     open(os.path.join(SITE,"resources/index.html"),"w",encoding="utf-8").write(h+body+foot(prefix))
     print("built licensee/resources/index.html")
 

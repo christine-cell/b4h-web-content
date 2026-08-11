@@ -1,0 +1,120 @@
+{
+  "cards": [
+    {
+      "icon": "shield-check",
+      "title_en": "Class Safety Checklist",
+      "title_fr": "Liste de vérification – sécurité du cours",
+      "intro_en": "Run through this before every class.",
+      "intro_fr": "À passer en revue avant chaque cours.",
+      "items_en": [
+        "Make sure water is within reach for every participant.",
+        "Check footwear: closed, flat, non-slip shoes that fit well.",
+        "Clear the floor of cords, mats, and trip hazards.",
+        "Set out sturdy chairs for rest and support.",
+        "Ask when each person took their medication and time the class for their \"on\" period.",
+        "Know where the exits are and keep them clear.",
+        "Keep emergency contacts and a phone close by.",
+        "Check in with each person about how they feel today.",
+        "Watch for early signs of fatigue and offer rest breaks.",
+        "Confirm the space is well lit and a comfortable temperature."
+      ],
+      "items_fr": [
+        "Assurez-vous que chaque participant a de l'eau à portée de main.",
+        "Vérifiez les chaussures : fermées, plates, antidérapantes et bien ajustées.",
+        "Dégagez le plancher des fils, des tapis et des obstacles.",
+        "Placez des chaises solides pour le repos et l'appui.",
+        "Demandez à quel moment chaque personne a pris sa médication et prévoyez le cours pendant sa période « on ».",
+        "Repérez les sorties et gardez-les dégagées.",
+        "Gardez les personnes-ressources d'urgence et un téléphone à proximité.",
+        "Prenez des nouvelles de chaque personne sur comment elle se sent aujourd'hui.",
+        "Surveillez les premiers signes de fatigue et offrez des pauses.",
+        "Vérifiez que l'espace est bien éclairé et à une température confortable."
+      ]
+    },
+    {
+      "icon": "megaphone",
+      "title_en": "Cueing Through Freezing of Gait",
+      "title_fr": "Guidage lors d'un gel de la marche",
+      "intro_en": "Use these external cues when a client freezes.",
+      "intro_fr": "Utilisez ces repères externes quand un client fige.",
+      "items_en": [
+        "Stay calm and give the person space and time.",
+        "Reassure them: they are safe and not alone.",
+        "Give a steady verbal rhythm, like \"1-2-1-2\", to march to.",
+        "Offer a visual target on the floor to step over, such as a line or your foot.",
+        "Cue a gentle weight shift from side to side to start the first step.",
+        "Ask for one big, deliberate step rather than small shuffles.",
+        "Never pull or push the person forward.",
+        "Never rush them; let the freeze pass at its own pace.",
+        "If they feel unsteady, guide them to a nearby chair to rest."
+      ],
+      "items_fr": [
+        "Restez calme et laissez à la personne de l'espace et du temps.",
+        "Rassurez-la : elle est en sécurité et n'est pas seule.",
+        "Donnez un rythme verbal régulier, comme « 1-2-1-2 », pour marquer le pas.",
+        "Offrez une cible visuelle au sol à enjamber, comme une ligne ou votre pied.",
+        "Guidez un léger transfert de poids d'un côté à l'autre pour amorcer le premier pas.",
+        "Demandez un grand pas volontaire plutôt que de petits pas traînants.",
+        "Ne tirez jamais et ne poussez jamais la personne vers l'avant.",
+        "Ne la pressez jamais; laissez le gel passer à son propre rythme.",
+        "Si elle se sent instable, guidez-la vers une chaise tout près pour se reposer."
+      ]
+    },
+    {
+      "icon": "heart-pulse",
+      "title_en": "Target Heart Rate & Exertion",
+      "title_fr": "Fréquence cardiaque cible et effort",
+      "intro_en": "Use this as a guide to a safe working intensity, not a medical rule.",
+      "intro_fr": "À utiliser comme repère pour une intensité de travail sécuritaire, non comme une règle médicale.",
+      "items_en": [
+        "Use the talk test: a good working pace still lets a person speak in short sentences.",
+        "If they cannot talk at all, ease off; if they can sing easily, they can pick it up.",
+        "Aim for a \"somewhat hard\" effort, about 11 to 14 on the 6 to 20 perceived exertion scale.",
+        "Remember that some medications, like beta-blockers, keep heart rate low, so trust the talk test and perceived effort instead.",
+        "Watch for over-exertion: gasping, dizziness, or a face that looks strained.",
+        "Encourage small sips of water throughout the class.",
+        "Always finish with a gentle cool-down to bring the effort down slowly.",
+        "When in doubt, slow the pace and check in with the person."
+      ],
+      "items_fr": [
+        "Utilisez le test de la parole : à un bon rythme de travail, la personne peut encore parler en courtes phrases.",
+        "Si elle ne peut plus parler du tout, ralentissez; si elle peut chanter facilement, elle peut accélérer.",
+        "Visez un effort « un peu difficile », environ 11 à 14 sur l'échelle d'effort perçu de 6 à 20.",
+        "Rappelez-vous que certains médicaments, comme les bêtabloquants, maintiennent la fréquence cardiaque basse; fiez-vous plutôt au test de la parole et à l'effort perçu.",
+        "Surveillez le surmenage : essoufflement marqué, étourdissements ou visage crispé.",
+        "Encouragez de petites gorgées d'eau tout au long du cours.",
+        "Terminez toujours par un retour au calme doux pour faire redescendre l'effort lentement.",
+        "En cas de doute, ralentissez le rythme et prenez des nouvelles de la personne."
+      ]
+    },
+    {
+      "icon": "triangle-alert",
+      "title_en": "Red Flags: When to Stop",
+      "title_fr": "Signaux d'alarme : quand arrêter",
+      "intro_en": "Stop the activity and get help right away if you see any of these.",
+      "intro_fr": "Arrêtez l'activité et cherchez de l'aide sans tarder si vous voyez l'un de ces signes.",
+      "items_en": [
+        "Stop for chest pain, pressure, or tightness.",
+        "Stop for severe or sudden shortness of breath.",
+        "Stop for dizziness, fainting, or loss of consciousness.",
+        "Stop for a sudden, severe headache.",
+        "Stop for new confusion or trouble speaking.",
+        "Watch for signs of stroke, using FAST: Face drooping, Arm weakness, Speech difficulty, Time to call for help.",
+        "Stop for unusual pallor, cold sweat, or grey skin.",
+        "Stop for any fall with injury, or a hard blow to the head.",
+        "When in doubt, stop the activity and call emergency services."
+      ],
+      "items_fr": [
+        "Arrêtez en cas de douleur, de pression ou de serrement à la poitrine.",
+        "Arrêtez en cas d'essoufflement grave ou soudain.",
+        "Arrêtez en cas d'étourdissements, d'évanouissement ou de perte de conscience.",
+        "Arrêtez en cas de mal de tête soudain et intense.",
+        "Arrêtez en cas de confusion nouvelle ou de difficulté à parler.",
+        "Surveillez les signes d'AVC avec la méthode VITE : Visage affaissé, Incapacité à lever les bras, Trouble de la parole, Il est temps d'appeler.",
+        "Arrêtez en cas de pâleur inhabituelle, de sueurs froides ou de teint grisâtre.",
+        "Arrêtez en cas de chute avec blessure ou de choc violent à la tête.",
+        "En cas de doute, arrêtez l'activité et appelez les services d'urgence."
+      ]
+    }
+  ]
+}

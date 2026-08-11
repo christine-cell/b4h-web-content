@@ -1,0 +1,59 @@
+{
+  "tools": [
+    {
+      "name_en": "Timed Up and Go",
+      "name_fr": "Test « Lève-toi et marche » chronométré (Timed Up and Go)",
+      "abbr": "TUG",
+      "measures_en": "Functional mobility and fall risk. It gives a quick picture of how a person moves through everyday actions like standing, walking, and turning.",
+      "measures_fr": "Mobilité fonctionnelle et risque de chute. Le test donne un aperçu rapide de la façon dont la personne se déplace dans des gestes du quotidien comme se lever, marcher et faire demi-tour.",
+      "how_en": "The client starts seated in a standard chair with armrests. On your signal, they rise, walk 3 metres at a comfortable pace, turn around, walk back, and sit down again. You time the whole action in seconds. Let the client wear their usual footwear and use their usual walking aid if they have one.",
+      "how_fr": "La personne est d'abord assise sur une chaise standard avec accoudoirs. À votre signal, elle se lève, marche 3 mètres à un rythme confortable, fait demi-tour, revient et se rassoit. Vous chronométrez l'ensemble du mouvement en secondes. Laissez la personne porter ses chaussures habituelles et utiliser son aide à la marche habituelle, s'il y a lieu.",
+      "scoring_en": "Faster times mean better mobility. Under about 10 seconds is typical for an independent adult. A time of 12 seconds or more is commonly cited as a sign of increased fall risk in older adults. Use the score to track change over time, not to diagnose.",
+      "scoring_fr": "Plus le temps est court, meilleure est la mobilité. Moins d'environ 10 secondes est typique chez l'adulte autonome. Un temps de 12 secondes ou plus est souvent cité comme un signe de risque de chute accru chez l'aîné. Servez-vous du résultat pour suivre l'évolution dans le temps, et non pour poser un diagnostic."
+    },
+    {
+      "name_en": "30-Second Chair Stand (Sit-to-Stand)",
+      "name_fr": "Test de lever de chaise en 30 secondes (30-Second Chair Stand)",
+      "abbr": "30CST",
+      "measures_en": "Lower-body strength and endurance, which both affect balance and the ability to rise from a chair safely.",
+      "measures_fr": "Force et endurance du bas du corps, deux facteurs qui influencent l'équilibre et la capacité de se lever d'une chaise en toute sécurité.",
+      "how_en": "The client sits in the middle of a standard chair, back straight, feet flat on the floor, and arms crossed over the chest. On your signal, they stand up fully and sit down again as many times as they safely can in 30 seconds. You count each complete stand. If they are more than halfway up when time ends, count it as a full stand.",
+      "how_fr": "La personne s'assoit au milieu d'une chaise standard, dos droit, pieds à plat au sol et bras croisés sur la poitrine. À votre signal, elle se lève complètement puis se rassoit le plus grand nombre de fois possible en toute sécurité pendant 30 secondes. Vous comptez chaque lever complet. Si la personne est à plus de la moitié du mouvement à la fin du temps, comptez un lever complet.",
+      "scoring_en": "The score is the number of full stands in 30 seconds; more stands means more lower-body strength. Expected ranges vary by age and sex, so compare the client's score to published norms for their group and, above all, track their own progress over time. A below-average score for their age and sex may point to higher fall risk.",
+      "scoring_fr": "Le résultat est le nombre de levers complets en 30 secondes; plus il y a de levers, plus la force du bas du corps est grande. Les valeurs attendues varient selon l'âge et le sexe : comparez le résultat de la personne aux normes publiées pour son groupe et, surtout, suivez ses propres progrès dans le temps. Un résultat sous la moyenne pour l'âge et le sexe peut indiquer un risque de chute plus élevé."
+    },
+    {
+      "name_en": "Berg Balance Scale",
+      "name_fr": "Échelle d'équilibre de Berg (Berg Balance Scale)",
+      "abbr": "BBS",
+      "measures_en": "Static and dynamic balance and fall risk during common movements such as standing, reaching, turning, and stepping.",
+      "measures_fr": "Équilibre statique et dynamique ainsi que le risque de chute pendant des mouvements courants comme se tenir debout, tendre le bras, se tourner et faire un pas.",
+      "how_en": "You guide the client through 14 balance tasks, from sitting and standing to reaching forward, turning, and standing on one leg. You score each task from 0 (unable) to 4 (independent and safe) by watching how well and how safely it is done. No special equipment is needed beyond a chair, a step, and a ruler. Stay close and be ready to steady the client.",
+      "how_fr": "Vous guidez la personne à travers 14 tâches d'équilibre, allant de s'asseoir et se tenir debout jusqu'à tendre le bras vers l'avant, se tourner et se tenir sur une jambe. Vous cotez chaque tâche de 0 (incapable) à 4 (autonome et sécuritaire) en observant la qualité et la sécurité de l'exécution. Aucun matériel particulier n'est nécessaire, sauf une chaise, une marche et une règle. Restez à proximité et prêt à stabiliser la personne.",
+      "scoring_en": "Scores range from 0 to 56, and higher is better. A total of 45 or less is commonly cited as a sign of greater fall risk, and lower scores point to more difficulty with balance. Use the total to follow change over time rather than to diagnose.",
+      "scoring_fr": "Le résultat total va de 0 à 56, et plus il est élevé, mieux c'est. Un total de 45 ou moins est souvent cité comme un signe de risque de chute plus élevé, et un résultat plus bas indique plus de difficulté avec l'équilibre. Servez-vous du total pour suivre l'évolution dans le temps, et non pour poser un diagnostic."
+    },
+    {
+      "name_en": "Fullerton Advanced Balance Scale",
+      "name_fr": "Échelle d'équilibre avancée de Fullerton (Fullerton Advanced Balance Scale)",
+      "abbr": "FAB",
+      "measures_en": "Balance in more active, higher-functioning adults, including tasks that the Berg scale may be too easy to capture. It looks at balance under harder conditions such as narrow stances, walking with head turns, and reacting to a nudge.",
+      "measures_fr": "Équilibre chez les adultes plus actifs et plus autonomes, y compris des tâches que l'échelle de Berg peut être trop facile pour révéler. Elle évalue l'équilibre dans des conditions plus exigeantes, comme des appuis étroits, la marche avec rotation de la tête et la réaction à une poussée.",
+      "how_en": "You guide the client through 10 balance tasks that get progressively harder, such as standing with feet together and eyes closed, standing on foam, stepping up onto a bench, and jumping with two feet. You score each task from 0 (unable or unsafe) to 4 (best performance) based on how well and how safely it is done. Some tasks need foam and a bench. Stay close and guard the client throughout.",
+      "how_fr": "Vous guidez la personne à travers 10 tâches d'équilibre de difficulté croissante, comme se tenir debout pieds joints et yeux fermés, se tenir sur une surface de mousse, monter sur un banc et sauter à pieds joints. Vous cotez chaque tâche de 0 (incapable ou non sécuritaire) à 4 (meilleure exécution) selon la qualité et la sécurité de l'exécution. Certaines tâches nécessitent de la mousse et un banc. Restez à proximité et surveillez la personne tout au long du test.",
+      "scoring_en": "Scores range from 0 to 40, and higher is better. Lower scores point to poorer balance and greater fall risk, especially in active older adults. Because the tasks are demanding, guard the client carefully and use the total to track progress rather than to diagnose.",
+      "scoring_fr": "Le résultat total va de 0 à 40, et plus il est élevé, mieux c'est. Un résultat plus bas indique un moins bon équilibre et un risque de chute plus grand, surtout chez l'aîné actif. Comme les tâches sont exigeantes, surveillez la personne attentivement et servez-vous du total pour suivre les progrès, et non pour poser un diagnostic."
+    },
+    {
+      "name_en": "MDS-UPDRS (Movement Disorder Society – Unified Parkinson's Disease Rating Scale)",
+      "name_fr": "MDS-UPDRS (échelle unifiée d'évaluation de la maladie de Parkinson de la Movement Disorder Society)",
+      "abbr": "MDS-UPDRS",
+      "measures_en": "A broad rating scale used by clinicians to track the many effects of Parkinson's disease over time, covering both motor symptoms and non-motor symptoms. It is the most widely used clinical scale for Parkinson's.",
+      "measures_fr": "Une échelle d'évaluation étendue utilisée par les cliniciens pour suivre les nombreux effets de la maladie de Parkinson dans le temps, couvrant à la fois les symptômes moteurs et les symptômes non moteurs. C'est l'échelle clinique la plus utilisée pour la maladie de Parkinson.",
+      "how_en": "The scale has four parts: Part I covers non-motor experiences of daily living (such as mood, sleep, and thinking); Part II covers motor experiences of daily living (such as dressing, eating, and walking); Part III is a motor examination performed by a trained clinician; and Part IV covers motor complications of treatment (such as dyskinesia). Parts I and II are often completed with the person and their caregiver, while Part III is a hands-on exam. This scale is a clinician's tool. As a coach, you will usually see the results rather than administer it, and you should not use it to diagnose.",
+      "how_fr": "L'échelle comporte quatre parties : la partie I porte sur les expériences non motrices de la vie quotidienne (comme l'humeur, le sommeil et la pensée); la partie II porte sur les expériences motrices de la vie quotidienne (comme s'habiller, manger et marcher); la partie III est un examen moteur réalisé par un clinicien formé; et la partie IV porte sur les complications motrices du traitement (comme la dyskinésie). Les parties I et II sont souvent remplies avec la personne et son aidant naturel, tandis que la partie III est un examen pratique. Cette échelle est un outil de clinicien. En tant qu'entraîneur, vous verrez habituellement les résultats plutôt que de l'administrer, et vous ne devez pas vous en servir pour poser un diagnostic.",
+      "scoring_en": "Each item is scored from 0 (normal) to 4 (severe), and the four parts can be added into a total; higher scores mean a greater symptom burden. Because scoring is detailed and needs training, treat the results as clinical information shared with you rather than something you calculate. Use it to understand your client, not to diagnose or change their care.",
+      "scoring_fr": "Chaque élément est coté de 0 (normal) à 4 (sévère), et les quatre parties peuvent être additionnées en un total; un résultat plus élevé signifie un fardeau de symptômes plus grand. Comme la cotation est détaillée et exige une formation, considérez les résultats comme une information clinique qui vous est transmise plutôt que comme un calcul à faire vous-même. Servez-vous-en pour mieux comprendre la personne, et non pour poser un diagnostic ou modifier ses soins."
+    }
+  ]
+}
