@@ -18,7 +18,7 @@ def head(title, desc, prefix):
 <meta name="theme-color" content="#19679e">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'">
 <link rel="icon" href="{prefix}assets/img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="{prefix}assets/img/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="{prefix}assets/img/favicon.svg">
 <link rel="stylesheet" href="{prefix}assets/css/fonts.css?v={V}">
 <link rel="stylesheet" href="{prefix}assets/css/tokens.css?v={V}">
 <link rel="stylesheet" href="{prefix}assets/css/site.css?v={V}">
@@ -46,17 +46,21 @@ def foot(prefix, extra=None):
 </body></html>"""
 
 def bilingual(en, fr, tag="span", cls=""):
+    fr = fr or en
     c = f' class="{cls}"' if cls else ""
     return (f'<{tag}{c} data-lang-block="en">{en}</{tag}><{tag}{c} data-lang-block="fr">{fr}</{tag}>')
+
+def blf(d, key):
+    v = d.get(key, {}); return v.get("en",""), (v.get("fr") or v.get("en",""))
 
 # ---------------- HUB ----------------
 def lesson_row(l, prefix):
     icon = l.get("icon","book-open")
-    typ = {"video":"▶","quiz":"?","content":"","lesson":"","resource":""}.get(l["type"],"")
+    en, fr = blf(l, "title")
     return f"""<a class="lesson-row" href="{prefix}{esc(l['url'])}" data-lesson-ref="{esc(l['id'])}">
       <span class="chip chip-sm" data-icon="{icon}"></span>
       <span>
-        <span class="lr-title">{esc(l['title']['en'])}</span><br>
+        <span class="lr-title">{bilingual(esc(en),esc(fr))}</span><br>
         <span class="lr-meta">{l['minutes']} <span data-i18n="lesson.time">min read</span></span>
       </span>
       <span class="lr-mark"><span class="status-chip" data-lesson-status data-status="not-started"></span></span>
@@ -70,8 +74,8 @@ def module_card(m, prefix):
           <span class="chip" data-icon="{m['icon']}" style="width:60px;height:60px"></span>
           <div>
             <span class="eyebrow" style="margin:0">Module {m['num']}</span>
-            <h3 style="margin:.1rem 0 0">{esc(m['title']['en'].split('·')[-1].strip())}</h3>
-            <p class="muted" style="margin:.3rem 0 0;max-width:60ch">{esc(m['desc']['en'])}</p>
+            <h3 style="margin:.1rem 0 0">{bilingual(esc(m['title']['en'].split('·')[-1].strip()), esc((m['title'].get('fr') or m['title']['en']).split('·')[-1].strip()))}</h3>
+            <p class="muted" style="margin:.3rem 0 0;max-width:60ch">{bilingual(esc(m['desc']['en']), esc(m['desc'].get('fr') or m['desc']['en']))}</p>
           </div>
         </div>
         <div style="min-width:180px;flex:0 0 auto" data-progress-module="{esc(m['slug'])}">
@@ -129,7 +133,7 @@ def build_hub():
       <div class="stack-lg" style="margin-top:2rem">{modules}</div>
     </div></section>"""
 
-    res = "\n".join(f"""<a class="lesson-row" href="{prefix}{esc(r['url'])}"><span class="chip chip-sm" data-icon="{r.get('icon','book-open')}"></span><span><span class="lr-title">{esc(r['title']['en'])}</span><br><span class="lr-meta">{esc(r['summary']['en'])}</span></span><span class="lr-mark" data-icon="arrow-right"></span></a>""" for r in M["resources"])
+    res = "\n".join(f"""<a class="lesson-row" href="{prefix}{esc(r['url'])}"><span class="chip chip-sm" data-icon="{r.get('icon','book-open')}"></span><span><span class="lr-title">{bilingual(esc(r['title']['en']),esc(r['title'].get('fr') or r['title']['en']))}</span><br><span class="lr-meta">{bilingual(esc(r['summary']['en']),esc(r['summary'].get('fr') or r['summary']['en']))}</span></span><span class="lr-mark" data-icon="arrow-right"></span></a>""" for r in M["resources"])
     ressec = f"""<section class="section-tight"><div class="wrap">
       <h2>{bilingual('Learning resources','Ressources d’apprentissage','span')}</h2>
       <div class="grid grid-2" style="margin-top:1rem">{res}</div>
@@ -154,7 +158,7 @@ if __name__ == "__main__":
 def build_resources_index():
     prefix="../"
     h=head("Resources · Boxing4Health Training","Learning resources and tools for Boxing4Health licensees.",prefix)
-    rows="\n".join(f"""<a class="lesson-row" href="{prefix}{esc(r['url'])}" data-reveal><span class="chip" data-icon="{r.get('icon','book-open')}"></span><span><span class="lr-title">{esc(r['title']['en'])}</span><br><span class="lr-meta">{esc(r['summary']['en'])}</span></span><span class="lr-mark" data-icon="arrow-right"></span></a>""" for r in M["resources"])
+    rows="\n".join(f"""<a class="lesson-row" href="{prefix}{esc(r['url'])}" data-reveal><span class="chip" data-icon="{r.get('icon','book-open')}"></span><span><span class="lr-title">{bilingual(esc(r['title']['en']),esc(r['title'].get('fr') or r['title']['en']))}</span><br><span class="lr-meta">{bilingual(esc(r['summary']['en']),esc(r['summary'].get('fr') or r['summary']['en']))}</span></span><span class="lr-mark" data-icon="arrow-right"></span></a>""" for r in M["resources"])
     body=f"""<section class="section"><div class="wrap wrap-narrow">
       <div class="motif-line"></div>
       <span class="eyebrow"><span data-icon="book-open"></span><span data-i18n="nav.resources">Resources</span></span>

@@ -9,11 +9,11 @@
       "num": 1,
       "title": {
         "en": "Module 1 · Parkinson's 101",
-        "fr": ""
+        "fr": "Module 1 · La maladie de Parkinson 101"
       },
       "desc": {
         "en": "Understand Parkinson's disease — its symptoms, stages, assessment, and the people you'll coach.",
-        "fr": ""
+        "fr": "Comprendre la maladie de Parkinson — ses symptômes, ses stades, l'évaluation et les personnes que vous accompagnerez."
       },
       "icon": "brain",
       "lessons": [
@@ -23,11 +23,11 @@
           "url": "modules/welcome-parkinsons-101.html",
           "title": {
             "en": "Welcome & Parkinson's 101",
-            "fr": ""
+            "fr": "Bienvenue et Parkinson 101"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "An introduction to the training program and the essentials of Parkinson's disease.",
+            "fr": "Une introduction au programme de formation et aux notions essentielles de la maladie de Parkinson."
           },
           "keywords": {
             "en": "welcome  parkinsons 101",
@@ -47,11 +47,11 @@
           "url": "modules/lesson-1-parkinsons-symptoms.html",
           "title": {
             "en": "Lesson 1 · Parkinson's Symptoms",
-            "fr": ""
+            "fr": "Leçon 1 · Les symptômes de la maladie de Parkinson"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Learn to recognize the motor and non-motor symptoms of Parkinson's disease.",
+            "fr": "Apprenez à reconnaître les symptômes moteurs et non moteurs de la maladie de Parkinson."
           },
           "keywords": {
             "en": "lesson 1  parkinsons symptoms",
@@ -71,11 +71,11 @@
           "url": "modules/freezing-of-gait-video.html",
           "title": {
             "en": "Freezing of Gait (Video)",
-            "fr": ""
+            "fr": "Le gel de la marche (vidéo)"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Watch how freezing of gait appears and how good cueing helps clients keep moving.",
+            "fr": "Voyez comment se manifeste le gel de la marche et comment un bon guidage aide les clients à continuer d'avancer."
           },
           "keywords": {
             "en": "freezing of gait video",
@@ -98,11 +98,11 @@
           "url": "modules/lesson-2-the-5-stages.html",
           "title": {
             "en": "Lesson 2 · The 5 Stages",
-            "fr": ""
+            "fr": "Leçon 2 · Les 5 stades"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Understand the five stages of Parkinson's disease progression.",
+            "fr": "Comprenez les cinq stades de progression de la maladie de Parkinson."
           },
           "keywords": {
             "en": "lesson 2  the 5 stages",
@@ -122,11 +122,11 @@
           "url": "modules/lesson-3-determining-the-stage.html",
           "title": {
             "en": "Lesson 3 · Determining the Stage",
-            "fr": ""
+            "fr": "Leçon 3 · Déterminer le stade"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "How to screen a client and determine which Parkinson's stage and class suits them.",
+            "fr": "Comment évaluer un client et déterminer le stade de Parkinson et le cours qui lui conviennent."
           },
           "keywords": {
             "en": "lesson 3  determining the stage",
@@ -146,11 +146,11 @@
           "url": "modules/client-intake.html",
           "title": {
             "en": "Client Intake",
-            "fr": ""
+            "fr": "Admission du client"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Gathering health information and paperwork when a new client joins.",
+            "fr": "Recueillir les renseignements de santé et les documents lorsqu'un nouveau client se joint au groupe."
           },
           "keywords": {
             "en": "client intake",
@@ -170,11 +170,11 @@
           "url": "modules/lesson-4-assessments.html",
           "title": {
             "en": "Lesson 4 · Assessments",
-            "fr": ""
+            "fr": "Leçon 4 · Les évaluations"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "How to conduct initial and Parkinson's assessments to set a client's baseline.",
+            "fr": "Comment mener les évaluations initiales et de Parkinson pour établir le point de référence d'un client."
           },
           "keywords": {
             "en": "lesson 4  assessments",
@@ -194,11 +194,11 @@
           "url": "modules/assessment-video.html",
           "title": {
             "en": "Assessment (Video)",
-            "fr": ""
+            "fr": "L'évaluation (vidéo)"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "A video walkthrough of how to conduct a client assessment.",
+            "fr": "Une démonstration vidéo de la réalisation d'une évaluation de client."
           },
           "keywords": {
             "en": "assessment video",
@@ -218,11 +218,11 @@
           "url": "modules/lesson-5-seniors-spouses.html",
           "title": {
             "en": "Lesson 5 · Seniors & Spouses",
-            "fr": ""
+            "fr": "Leçon 5 · Aînés et conjoints"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Coaching considerations for seniors and the spouses who train alongside clients.",
+            "fr": "Éléments à considérer pour accompagner les aînés et les conjoints qui s'entraînent aux côtés des clients."
           },
           "keywords": {
             "en": "lesson 5  seniors  spouses",
@@ -242,11 +242,11 @@
           "url": "modules/start-up-equipment.html",
           "title": {
             "en": "Start-Up Equipment",
-            "fr": ""
+            "fr": "Équipement de départ"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "The essential equipment you need to start running your classes.",
+            "fr": "L'équipement essentiel dont vous avez besoin pour commencer à donner vos cours."
           },
           "keywords": {
             "en": "startup equipment",
@@ -267,11 +267,11 @@
       "num": 2,
       "title": {
         "en": "Module 2 · Class Breakdown",
-        "fr": ""
+        "fr": "Module 2 · Déroulement du cours"
       },
       "desc": {
         "en": "How a Boxing4Health class runs — the science, the structure, the exercises, and running it safely.",
-        "fr": ""
+        "fr": "Comment se déroule un cours Boxing4Health — la science, la structure, les exercices et son animation en toute sécurité."
       },
       "icon": "dumbbell",
       "lessons": [
@@ -281,11 +281,11 @@
           "url": "modules/class-breakdown-overview.html",
           "title": {
             "en": "Class Breakdown Overview",
-            "fr": ""
+            "fr": "Aperçu du déroulement du cours"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "An overview of how a Boxing4Health class is structured.",
+            "fr": "Un aperçu de la structure d'un cours Boxing4Health."
           },
           "keywords": {
             "en": "class breakdown overview",
@@ -305,11 +305,11 @@
           "url": "modules/why-boxing.html",
           "title": {
             "en": "Why Boxing?",
-            "fr": ""
+            "fr": "Pourquoi la boxe?"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "The science behind why non-contact boxing helps people living with Parkinson's.",
+            "fr": "La science derrière les bienfaits de la boxe sans contact pour les personnes atteintes de la maladie de Parkinson."
           },
           "keywords": {
             "en": "why boxing",
@@ -329,11 +329,11 @@
           "url": "modules/boxing-101-video.html",
           "title": {
             "en": "Boxing 101 (Video)",
-            "fr": ""
+            "fr": "Boxe 101 (vidéo)"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "A video introduction to basic boxing techniques for class.",
+            "fr": "Une introduction vidéo aux techniques de boxe de base pour le cours."
           },
           "keywords": {
             "en": "boxing 101 video",
@@ -353,11 +353,11 @@
           "url": "modules/functional-exercises.html",
           "title": {
             "en": "Functional Exercises",
-            "fr": ""
+            "fr": "Exercices fonctionnels"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Functional exercises that build strength and mobility for everyday movement.",
+            "fr": "Des exercices fonctionnels qui développent la force et la mobilité pour les mouvements du quotidien."
           },
           "keywords": {
             "en": "functional exercises",
@@ -377,11 +377,11 @@
           "url": "modules/warm-up.html",
           "title": {
             "en": "Warm Up",
-            "fr": ""
+            "fr": "Échauffement"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "How to lead an effective warm up at the start of class.",
+            "fr": "Comment diriger un échauffement efficace au début du cours."
           },
           "keywords": {
             "en": "warm up",
@@ -401,11 +401,11 @@
           "url": "modules/cool-down.html",
           "title": {
             "en": "Cool Down",
-            "fr": ""
+            "fr": "Retour au calme"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "How to guide clients through a safe cool down at the end of class.",
+            "fr": "Comment guider les clients dans un retour au calme sécuritaire à la fin du cours."
           },
           "keywords": {
             "en": "cool down",
@@ -425,11 +425,11 @@
           "url": "modules/pd-warrior.html",
           "title": {
             "en": "PD Warrior",
-            "fr": ""
+            "fr": "PD Warrior"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "An introduction to the PD Warrior approach to fighting Parkinson's.",
+            "fr": "Une introduction à l'approche PD Warrior pour combattre la maladie de Parkinson."
           },
           "keywords": {
             "en": "pd warrior",
@@ -449,11 +449,11 @@
           "url": "modules/pd-warrior-exercises-videos.html",
           "title": {
             "en": "PD Warrior Exercises (Videos)",
-            "fr": ""
+            "fr": "Exercices PD Warrior (vidéos)"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Video demonstrations of the core PD Warrior exercises.",
+            "fr": "Des démonstrations vidéo des exercices PD Warrior de base."
           },
           "keywords": {
             "en": "pd warrior exercises videos",
@@ -484,11 +484,11 @@
           "url": "modules/teaching-101-vigor.html",
           "title": {
             "en": "Teaching 101 · VIGOR",
-            "fr": ""
+            "fr": "Enseignement 101 · VIGOR"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "The VIGOR teaching method for coaching high-effort, engaging classes.",
+            "fr": "La méthode d'enseignement VIGOR pour animer des cours stimulants et exigeants."
           },
           "keywords": {
             "en": "teaching 101  vigor",
@@ -508,11 +508,11 @@
           "url": "modules/setting-up-a-class.html",
           "title": {
             "en": "Setting Up a Class",
-            "fr": ""
+            "fr": "Préparer un cours"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "How to set up your space, stations, and equipment before a class.",
+            "fr": "Comment aménager votre espace, vos stations et votre équipement avant un cours."
           },
           "keywords": {
             "en": "setting up a class",
@@ -532,11 +532,11 @@
           "url": "modules/fighter-class-template.html",
           "title": {
             "en": "Fighter Class Template",
-            "fr": ""
+            "fr": "Modèle de cours Fighter"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "A ready-made class plan template for your Fighter-level group.",
+            "fr": "Un modèle de plan de cours prêt à l'emploi pour votre groupe de niveau Fighter."
           },
           "keywords": {
             "en": "fighter class template",
@@ -556,11 +556,11 @@
           "url": "modules/champion-class-template.html",
           "title": {
             "en": "Champion Class Template",
-            "fr": ""
+            "fr": "Modèle de cours Champion"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "A ready-made class plan template for your Champion-level group.",
+            "fr": "Un modèle de plan de cours prêt à l'emploi pour votre groupe de niveau Champion."
           },
           "keywords": {
             "en": "champion class template",
@@ -580,11 +580,11 @@
           "url": "modules/champion-plus-program.html",
           "title": {
             "en": "Champion Plus Program",
-            "fr": ""
+            "fr": "Programme Champion Plus"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "An advanced program option for your most capable Champion clients.",
+            "fr": "Une option de programme avancé pour vos clients Champion les plus aptes."
           },
           "keywords": {
             "en": "champion plus program",
@@ -604,11 +604,11 @@
           "url": "modules/cueing-students.html",
           "title": {
             "en": "Cueing Students",
-            "fr": ""
+            "fr": "Guider les élèves"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "How to cue clients with verbal and visual prompts to improve movement.",
+            "fr": "Comment guider les élèves à l'aide de repères verbaux et visuels pour améliorer le mouvement."
           },
           "keywords": {
             "en": "cueing students",
@@ -628,11 +628,11 @@
           "url": "modules/pro-tips-qa.html",
           "title": {
             "en": "Pro Tips & Q&A",
-            "fr": ""
+            "fr": "Conseils de pro et questions-réponses"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Pro tips and answers to common questions about running classes.",
+            "fr": "Des conseils de pro et des réponses aux questions courantes sur l'animation des cours."
           },
           "keywords": {
             "en": "pro tips  qa",
@@ -652,11 +652,11 @@
           "url": "modules/sample-circuits.html",
           "title": {
             "en": "Sample Circuits",
-            "fr": ""
+            "fr": "Exemples de circuits"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Example circuit workouts you can use and adapt in your classes.",
+            "fr": "Des exemples d'entraînements en circuit que vous pouvez utiliser et adapter dans vos cours."
           },
           "keywords": {
             "en": "sample circuits",
@@ -676,11 +676,11 @@
           "url": "modules/health-safety.html",
           "title": {
             "en": "Health & Safety",
-            "fr": ""
+            "fr": "Santé et sécurité"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Health and safety essentials for keeping clients safe during class.",
+            "fr": "Les notions essentielles de santé et de sécurité pour protéger les clients pendant le cours."
           },
           "keywords": {
             "en": "health  safety",
@@ -700,11 +700,11 @@
           "url": "modules/module-2-quiz.html",
           "title": {
             "en": "Module 2 Quiz",
-            "fr": ""
+            "fr": "Questionnaire du Module 2"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Test your knowledge of the Module 2 class breakdown material.",
+            "fr": "Vérifiez vos connaissances sur le contenu du déroulement du cours du Module 2."
           },
           "keywords": {
             "en": "module 2 quiz",
@@ -725,11 +725,11 @@
       "num": 3,
       "title": {
         "en": "Practical Steps",
-        "fr": ""
+        "fr": "Étapes pratiques"
       },
       "desc": {
         "en": "You're almost there — the practical steps to launch your Boxing4Health class.",
-        "fr": ""
+        "fr": "Vous y êtes presque — les étapes pratiques pour lancer votre cours Boxing4Health."
       },
       "icon": "graduation-cap",
       "lessons": [
@@ -739,11 +739,11 @@
           "url": "modules/youre-almost-there.html",
           "title": {
             "en": "You're Almost There",
-            "fr": ""
+            "fr": "Vous y êtes presque"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "The final practical steps before you launch your own class.",
+            "fr": "Les dernières étapes pratiques avant de lancer votre propre cours."
           },
           "keywords": {
             "en": "youre almost there",
@@ -764,11 +764,11 @@
       "num": 4,
       "title": {
         "en": "Learning Resources",
-        "fr": ""
+        "fr": "Ressources d'apprentissage"
       },
       "desc": {
         "en": "Extra tools and orientation to support you and your volunteers.",
-        "fr": ""
+        "fr": "Des outils et une orientation supplémentaires pour vous soutenir, vous et vos bénévoles."
       },
       "icon": "book-open",
       "lessons": [
@@ -778,11 +778,11 @@
           "url": "modules/learning-resources.html",
           "title": {
             "en": "Learning Resources",
-            "fr": ""
+            "fr": "Ressources d'apprentissage"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "A hub of extra learning resources and tools for coaches.",
+            "fr": "Un carrefour de ressources d'apprentissage et d'outils supplémentaires pour les entraîneurs."
           },
           "keywords": {
             "en": "learning resources",
@@ -802,11 +802,11 @@
           "url": "modules/volunteer-orientation.html",
           "title": {
             "en": "Volunteer Orientation",
-            "fr": ""
+            "fr": "Orientation des bénévoles"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Orientation guidance for onboarding your class volunteers.",
+            "fr": "Des consignes d'orientation pour l'intégration de vos bénévoles."
           },
           "keywords": {
             "en": "volunteer orientation",
@@ -826,11 +826,11 @@
           "url": "modules/volunteer-forms.html",
           "title": {
             "en": "Volunteer Forms",
-            "fr": ""
+            "fr": "Formulaires des bénévoles"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "The forms volunteers need to complete before helping in class.",
+            "fr": "Les formulaires que les bénévoles doivent remplir avant d'aider en cours."
           },
           "keywords": {
             "en": "volunteer forms",
@@ -850,11 +850,11 @@
           "url": "modules/dementia-101.html",
           "title": {
             "en": "Dementia 101",
-            "fr": ""
+            "fr": "La démence 101"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "The basics of dementia and how it can affect your clients.",
+            "fr": "Les notions de base sur la démence et son incidence possible sur vos clients."
           },
           "keywords": {
             "en": "dementia 101",
@@ -874,11 +874,11 @@
           "url": "modules/class-tools.html",
           "title": {
             "en": "Class Tools",
-            "fr": ""
+            "fr": "Outils pour le cours"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "Handy tools and resources to use while running your classes.",
+            "fr": "Des outils et ressources pratiques à utiliser pendant vos cours."
           },
           "keywords": {
             "en": "class tools",
@@ -899,11 +899,11 @@
       "num": 5,
       "title": {
         "en": "Admin Forms",
-        "fr": ""
+        "fr": "Formulaires administratifs"
       },
       "desc": {
         "en": "Administrative forms and paperwork for running your licensed program.",
-        "fr": ""
+        "fr": "Les formulaires administratifs et les documents pour gérer votre programme sous licence."
       },
       "icon": "clipboard-list",
       "lessons": [
@@ -913,11 +913,11 @@
           "url": "modules/admin-forms.html",
           "title": {
             "en": "Admin Forms",
-            "fr": ""
+            "fr": "Formulaires administratifs"
           },
           "summary": {
-            "en": "",
-            "fr": ""
+            "en": "The administrative forms needed to run your licensed program.",
+            "fr": "Les formulaires administratifs nécessaires pour gérer votre programme sous licence."
           },
           "keywords": {
             "en": "admin forms",
@@ -941,11 +941,11 @@
       "url": "resources/gut-health-parkinsons.html",
       "title": {
         "en": "Gut Health & Parkinson's",
-        "fr": ""
+        "fr": "Santé intestinale et maladie de Parkinson"
       },
       "summary": {
         "en": "How a Mediterranean diet can ease constipation in Parkinson's.",
-        "fr": ""
+        "fr": "Comment un régime méditerranéen peut soulager la constipation dans la maladie de Parkinson."
       },
       "keywords": {
         "en": "constipation mediterranean diet gut brain nutrition",

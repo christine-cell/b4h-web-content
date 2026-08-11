@@ -1,0 +1,206 @@
+{
+  "modules": {
+    "module-1-parkinsons-101": {
+      "title_fr": "Module 1 · La maladie de Parkinson 101",
+      "desc_fr": "Comprendre la maladie de Parkinson — ses symptômes, ses stades, l'évaluation et les personnes que vous accompagnerez."
+    },
+    "module-2-class-breakdown": {
+      "title_fr": "Module 2 · Déroulement du cours",
+      "desc_fr": "Comment se déroule un cours Boxing4Health — la science, la structure, les exercices et son animation en toute sécurité."
+    },
+    "module-3-practical-steps": {
+      "title_fr": "Étapes pratiques",
+      "desc_fr": "Vous y êtes presque — les étapes pratiques pour lancer votre cours Boxing4Health."
+    },
+    "module-4-learning-resources": {
+      "title_fr": "Ressources d'apprentissage",
+      "desc_fr": "Des outils et une orientation supplémentaires pour vous soutenir, vous et vos bénévoles."
+    },
+    "module-5-admin-forms": {
+      "title_fr": "Formulaires administratifs",
+      "desc_fr": "Les formulaires administratifs et les documents pour gérer votre programme sous licence."
+    }
+  },
+  "lessons": {
+    "welcome-parkinsons-101": {
+      "title_fr": "Bienvenue et Parkinson 101",
+      "summary_en": "An introduction to the training program and the essentials of Parkinson's disease.",
+      "summary_fr": "Une introduction au programme de formation et aux notions essentielles de la maladie de Parkinson."
+    },
+    "lesson-1-parkinsons-symptoms": {
+      "title_fr": "Leçon 1 · Les symptômes de la maladie de Parkinson",
+      "summary_en": "Learn to recognize the motor and non-motor symptoms of Parkinson's disease.",
+      "summary_fr": "Apprenez à reconnaître les symptômes moteurs et non moteurs de la maladie de Parkinson."
+    },
+    "freezing-of-gait-video": {
+      "title_fr": "Le gel de la marche (vidéo)",
+      "summary_en": "Watch how freezing of gait appears and how good cueing helps clients keep moving.",
+      "summary_fr": "Voyez comment se manifeste le gel de la marche et comment un bon guidage aide les clients à continuer d'avancer."
+    },
+    "lesson-2-the-5-stages": {
+      "title_fr": "Leçon 2 · Les 5 stades",
+      "summary_en": "Understand the five stages of Parkinson's disease progression.",
+      "summary_fr": "Comprenez les cinq stades de progression de la maladie de Parkinson."
+    },
+    "lesson-3-determining-the-stage": {
+      "title_fr": "Leçon 3 · Déterminer le stade",
+      "summary_en": "How to screen a client and determine which Parkinson's stage and class suits them.",
+      "summary_fr": "Comment évaluer un client et déterminer le stade de Parkinson et le cours qui lui conviennent."
+    },
+    "client-intake": {
+      "title_fr": "Admission du client",
+      "summary_en": "Gathering health information and paperwork when a new client joins.",
+      "summary_fr": "Recueillir les renseignements de santé et les documents lorsqu'un nouveau client se joint au groupe."
+    },
+    "lesson-4-assessments": {
+      "title_fr": "Leçon 4 · Les évaluations",
+      "summary_en": "How to conduct initial and Parkinson's assessments to set a client's baseline.",
+      "summary_fr": "Comment mener les évaluations initiales et de Parkinson pour établir le point de référence d'un client."
+    },
+    "assessment-video": {
+      "title_fr": "L'évaluation (vidéo)",
+      "summary_en": "A video walkthrough of how to conduct a client assessment.",
+      "summary_fr": "Une démonstration vidéo de la réalisation d'une évaluation de client."
+    },
+    "lesson-5-seniors-spouses": {
+      "title_fr": "Leçon 5 · Aînés et conjoints",
+      "summary_en": "Coaching considerations for seniors and the spouses who train alongside clients.",
+      "summary_fr": "Éléments à considérer pour accompagner les aînés et les conjoints qui s'entraînent aux côtés des clients."
+    },
+    "start-up-equipment": {
+      "title_fr": "Équipement de départ",
+      "summary_en": "The essential equipment you need to start running your classes.",
+      "summary_fr": "L'équipement essentiel dont vous avez besoin pour commencer à donner vos cours."
+    },
+    "class-breakdown-overview": {
+      "title_fr": "Aperçu du déroulement du cours",
+      "summary_en": "An overview of how a Boxing4Health class is structured.",
+      "summary_fr": "Un aperçu de la structure d'un cours Boxing4Health."
+    },
+    "why-boxing": {
+      "title_fr": "Pourquoi la boxe?",
+      "summary_en": "The science behind why non-contact boxing helps people living with Parkinson's.",
+      "summary_fr": "La science derrière les bienfaits de la boxe sans contact pour les personnes atteintes de la maladie de Parkinson."
+    },
+    "boxing-101-video": {
+      "title_fr": "Boxe 101 (vidéo)",
+      "summary_en": "A video introduction to basic boxing techniques for class.",
+      "summary_fr": "Une introduction vidéo aux techniques de boxe de base pour le cours."
+    },
+    "functional-exercises": {
+      "title_fr": "Exercices fonctionnels",
+      "summary_en": "Functional exercises that build strength and mobility for everyday movement.",
+      "summary_fr": "Des exercices fonctionnels qui développent la force et la mobilité pour les mouvements du quotidien."
+    },
+    "warm-up": {
+      "title_fr": "Échauffement",
+      "summary_en": "How to lead an effective warm up at the start of class.",
+      "summary_fr": "Comment diriger un échauffement efficace au début du cours."
+    },
+    "cool-down": {
+      "title_fr": "Retour au calme",
+      "summary_en": "How to guide clients through a safe cool down at the end of class.",
+      "summary_fr": "Comment guider les clients dans un retour au calme sécuritaire à la fin du cours."
+    },
+    "pd-warrior": {
+      "title_fr": "PD Warrior",
+      "summary_en": "An introduction to the PD Warrior approach to fighting Parkinson's.",
+      "summary_fr": "Une introduction à l'approche PD Warrior pour combattre la maladie de Parkinson."
+    },
+    "pd-warrior-exercises-videos": {
+      "title_fr": "Exercices PD Warrior (vidéos)",
+      "summary_en": "Video demonstrations of the core PD Warrior exercises.",
+      "summary_fr": "Des démonstrations vidéo des exercices PD Warrior de base."
+    },
+    "teaching-101-vigor": {
+      "title_fr": "Enseignement 101 · VIGOR",
+      "summary_en": "The VIGOR teaching method for coaching high-effort, engaging classes.",
+      "summary_fr": "La méthode d'enseignement VIGOR pour animer des cours stimulants et exigeants."
+    },
+    "setting-up-a-class": {
+      "title_fr": "Préparer un cours",
+      "summary_en": "How to set up your space, stations, and equipment before a class.",
+      "summary_fr": "Comment aménager votre espace, vos stations et votre équipement avant un cours."
+    },
+    "fighter-class-template": {
+      "title_fr": "Modèle de cours Fighter",
+      "summary_en": "A ready-made class plan template for your Fighter-level group.",
+      "summary_fr": "Un modèle de plan de cours prêt à l'emploi pour votre groupe de niveau Fighter."
+    },
+    "champion-class-template": {
+      "title_fr": "Modèle de cours Champion",
+      "summary_en": "A ready-made class plan template for your Champion-level group.",
+      "summary_fr": "Un modèle de plan de cours prêt à l'emploi pour votre groupe de niveau Champion."
+    },
+    "champion-plus-program": {
+      "title_fr": "Programme Champion Plus",
+      "summary_en": "An advanced program option for your most capable Champion clients.",
+      "summary_fr": "Une option de programme avancé pour vos clients Champion les plus aptes."
+    },
+    "cueing-students": {
+      "title_fr": "Guider les élèves",
+      "summary_en": "How to cue clients with verbal and visual prompts to improve movement.",
+      "summary_fr": "Comment guider les élèves à l'aide de repères verbaux et visuels pour améliorer le mouvement."
+    },
+    "pro-tips-qa": {
+      "title_fr": "Conseils de pro et questions-réponses",
+      "summary_en": "Pro tips and answers to common questions about running classes.",
+      "summary_fr": "Des conseils de pro et des réponses aux questions courantes sur l'animation des cours."
+    },
+    "sample-circuits": {
+      "title_fr": "Exemples de circuits",
+      "summary_en": "Example circuit workouts you can use and adapt in your classes.",
+      "summary_fr": "Des exemples d'entraînements en circuit que vous pouvez utiliser et adapter dans vos cours."
+    },
+    "health-safety": {
+      "title_fr": "Santé et sécurité",
+      "summary_en": "Health and safety essentials for keeping clients safe during class.",
+      "summary_fr": "Les notions essentielles de santé et de sécurité pour protéger les clients pendant le cours."
+    },
+    "module-2-quiz": {
+      "title_fr": "Questionnaire du Module 2",
+      "summary_en": "Test your knowledge of the Module 2 class breakdown material.",
+      "summary_fr": "Vérifiez vos connaissances sur le contenu du déroulement du cours du Module 2."
+    },
+    "youre-almost-there": {
+      "title_fr": "Vous y êtes presque",
+      "summary_en": "The final practical steps before you launch your own class.",
+      "summary_fr": "Les dernières étapes pratiques avant de lancer votre propre cours."
+    },
+    "learning-resources": {
+      "title_fr": "Ressources d'apprentissage",
+      "summary_en": "A hub of extra learning resources and tools for coaches.",
+      "summary_fr": "Un carrefour de ressources d'apprentissage et d'outils supplémentaires pour les entraîneurs."
+    },
+    "volunteer-orientation": {
+      "title_fr": "Orientation des bénévoles",
+      "summary_en": "Orientation guidance for onboarding your class volunteers.",
+      "summary_fr": "Des consignes d'orientation pour l'intégration de vos bénévoles."
+    },
+    "volunteer-forms": {
+      "title_fr": "Formulaires des bénévoles",
+      "summary_en": "The forms volunteers need to complete before helping in class.",
+      "summary_fr": "Les formulaires que les bénévoles doivent remplir avant d'aider en cours."
+    },
+    "dementia-101": {
+      "title_fr": "La démence 101",
+      "summary_en": "The basics of dementia and how it can affect your clients.",
+      "summary_fr": "Les notions de base sur la démence et son incidence possible sur vos clients."
+    },
+    "class-tools": {
+      "title_fr": "Outils pour le cours",
+      "summary_en": "Handy tools and resources to use while running your classes.",
+      "summary_fr": "Des outils et ressources pratiques à utiliser pendant vos cours."
+    },
+    "admin-forms": {
+      "title_fr": "Formulaires administratifs",
+      "summary_en": "The administrative forms needed to run your licensed program.",
+      "summary_fr": "Les formulaires administratifs nécessaires pour gérer votre programme sous licence."
+    },
+    "gut-health-parkinsons": {
+      "title_fr": "Santé intestinale et maladie de Parkinson",
+      "summary_en": "How a Mediterranean diet can ease constipation in Parkinson's.",
+      "summary_fr": "Comment un régime méditerranéen peut soulager la constipation dans la maladie de Parkinson."
+    }
+  }
+}

@@ -26,6 +26,24 @@ def enh_path(fn):
 
 def esc(s): return htmllib.escape(s or "", quote=True)
 
+# French lesson bodies (produced by the translation pass); optional.
+WIXFR = {}
+_wp = os.path.join(ROOT, "i18n/wix-bodies-fr.json")
+if os.path.exists(_wp):
+    try: WIXFR = json.load(open(_wp, encoding="utf-8"))
+    except Exception: WIXFR = {}
+
+def bl(en, fr, tag="span", cls=""):
+    """Bilingual pair: shows EN or FR block per active language."""
+    fr = fr or en
+    c = f' class="{cls}"' if cls else ""
+    return f'<{tag}{c} data-lang-block="en">{en}</{tag}><{tag}{c} data-lang-block="fr">{fr}</{tag}>'
+
+def tfr(d, key="title"):
+    """Return (en, fr) for a modules.json field dict like {'en':..,'fr':..}."""
+    v = d.get(key, {})
+    return v.get("en",""), (v.get("fr") or v.get("en",""))
+
 # ---------------------------------------------------------------- CSS scoping
 def split_rules(css):
     """Yield (selector_or_at, body, is_at_block) at top level."""
@@ -143,7 +161,7 @@ def head(title, desc, extra_css="", extra_head=""):
 <meta name="theme-color" content="#19679e">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="../assets/img/favicon.svg">
 <link rel="stylesheet" href="../assets/css/fonts.css?v={V}">
 <link rel="stylesheet" href="../assets/css/tokens.css?v={V}">
 <link rel="stylesheet" href="../assets/css/site.css?v={V}">
@@ -179,11 +197,13 @@ def foot(feature_scripts):
 
 def lesson_header(mod, lesson):
     icon = lesson.get("icon","book-open")
+    men, mfr = tfr(mod, "title")
+    len_, lfr = tfr(lesson, "title")
     return f"""<section class="section-tight"><div class="wrap wrap-narrow">
   <div class="lesson-head">
-    <p class="crumbs"><a href="../index.html" data-i18n="nav.home">Home</a> · <a href="../index.html#modules">{esc(mod['title']['en'])}</a></p>
-    <span class="eyebrow"><span class="chip-sm chip" data-icon="{icon}"></span>{esc(mod['title']['en'])}</span>
-    <h1>{esc(lesson['title']['en'])}</h1>
+    <p class="crumbs"><a href="../index.html" data-i18n="nav.home">Home</a> · <a href="../index.html#modules">{bl(esc(men),esc(mfr))}</a></p>
+    <span class="eyebrow"><span class="chip-sm chip" data-icon="{icon}"></span>{bl(esc(men),esc(mfr))}</span>
+    <h1>{bl(esc(len_),esc(lfr))}</h1>
     <div class="lesson-meta">
       <span class="meta-pill"><span data-icon="hourglass"></span>{lesson['minutes']} <span data-i18n="lesson.time">min read</span></span>
       <span class="meta-pill"><span data-icon="type"></span><span data-i18n="lesson.updated">Updated</span> 2026</span>
@@ -197,7 +217,8 @@ def pager(prev, nxt):
         if not l:
             return f'<a class="{cls} disabled"><span class="pager-dir">&nbsp;</span><span class="pager-title">&nbsp;</span></a>'
         label = "lesson.prev" if dirn=="prev" else "lesson.next"
-        return f'<a class="{cls}" href="{esc(l["slug"])}.html"><span class="pager-dir" data-i18n="{label}">{dirn}</span><span class="pager-title">{esc(l["title"]["en"])}</span></a>'
+        en, fr = tfr(l, "title")
+        return f'<a class="{cls}" href="{esc(l["slug"])}.html"><span class="pager-dir" data-i18n="{label}">{dirn}</span><span class="pager-title">{bl(esc(en),esc(fr))}</span></a>'
     return f'<div class="wrap wrap-narrow"><nav class="pager" aria-label="Lesson navigation">{cell(prev,"prev","prev")}{cell(nxt,"next","next")}</nav></div>'
 
 def complete_block(lesson):
@@ -229,7 +250,16 @@ def build_enhanced_page(mod, lesson, prev, nxt):
     h = head(lesson["title"]["en"], lesson["summary"]["en"] or mod["desc"]["en"], extra_css=scoped)
     h = h.replace("{BODYATTRS}", body_attrs(lesson, hasquiz))
     parts = [h, lesson_header(mod, lesson)]
-    parts.append('<div class="section-tight"><div class="wrap"><div class="enhanced-content lesson-body" data-lesson-content>')
+    # French summary + honest notice (detailed body stays English to avoid
+    # duplicating the source page's own interactive JS across two copies).
+    _, sfr = tfr(lesson, "summary")
+    fr_notice = (f'<div data-lang-block="fr"><div class="wrap wrap-narrow">'
+                 f'<div class="callout callout-info"><span class="callout-icon" data-icon="languages"></span>'
+                 f'<p class="callout-title">{esc(sfr)}</p><div class="callout-body">'
+                 f'<p>Le contenu détaillé de cette leçon est présenté en anglais ci-dessous. '
+                 f'La traduction française complète est en cours de révision.</p></div></div></div></div>')
+    parts.append('<div class="section-tight">'+fr_notice)
+    parts.append('<div class="wrap"><div class="enhanced-content lesson-body" data-lesson-content>')
     parts.append(body)
     parts.append('</div></div></div>')
     parts.append('<section class="section-tight">'+complete_block(lesson)+'</section>')
@@ -358,8 +388,11 @@ def build_wix_page(mod, lesson, prev, nxt):
     h = head(lesson["title"]["en"], lesson["summary"]["en"] or mod["desc"]["en"])
     h = h.replace("{BODYATTRS}", body_attrs(lesson, False))
     parts=[h, lesson_header(mod, lesson)]
+    frbody = WIXFR.get(lesson["slug"])
     parts.append('<section class="section-tight"><div class="wrap wrap-narrow"><div class="prose lesson-body" data-lesson-content>')
-    if content: parts.append(content)
+    if content:
+        parts.append('<div data-lang-block="en">'+content+'</div>')
+        parts.append('<div data-lang-block="fr">'+(frbody or content)+'</div>')
     if vids:
         parts.append('<div class="video-grid" style="margin-top:1.5rem">')
         for v in vids: parts.append(video_block(v, lesson["title"]["en"]))

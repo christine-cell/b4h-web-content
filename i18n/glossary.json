@@ -1,0 +1,142 @@
+{
+  "Parkinson's disease": {
+    "fr": "maladie de Parkinson",
+    "note": "Toujours en minuscule sauf « Parkinson ». Personne concernée : « personne atteinte de la maladie de Parkinson », jamais « patient parkinsonien »."
+  },
+  "person living with Parkinson's": {
+    "fr": "personne atteinte de la maladie de Parkinson",
+    "note": "Langage centré sur la personne. Éviter « victime » ou « souffrant de »."
+  },
+  "tremor": {
+    "fr": "tremblement",
+    "note": "Souvent « tremblement au repos » pour le tremblement caractéristique du Parkinson."
+  },
+  "rigidity": {
+    "fr": "rigidité",
+    "note": "Rigidité musculaire; « rigidité en tuyau de plomb » ou « en roue dentée » selon le contexte clinique."
+  },
+  "bradykinesia": {
+    "fr": "bradykinésie",
+    "note": "Lenteur des mouvements. Terme médical établi en fr-CA."
+  },
+  "postural instability": {
+    "fr": "instabilité posturale",
+    "note": "Trouble de l'équilibre et de la posture, associé au risque de chute."
+  },
+  "freezing of gait": {
+    "fr": "gel de la marche",
+    "note": "Aussi « blocage de la marche » ou « enrayage cinétique ». « Gel de la marche » est courant et clair pour un public non spécialiste."
+  },
+  "festination": {
+    "fr": "festination",
+    "note": "Aussi « marche festinante » : pas rapides et courts, tronc penché vers l'avant."
+  },
+  "dyskinesia": {
+    "fr": "dyskinésie",
+    "note": "Mouvements involontaires, souvent liés à la médication (lévodopa)."
+  },
+  "non-motor symptoms": {
+    "fr": "symptômes non moteurs",
+    "note": "P. ex. troubles du sommeil, constipation, anxiété, dépression, troubles cognitifs."
+  },
+  "motor symptoms": {
+    "fr": "symptômes moteurs",
+    "note": "Tremblement, rigidité, bradykinésie, instabilité posturale."
+  },
+  "dopamine": {
+    "fr": "dopamine",
+    "note": "Neurotransmetteur dont la baisse est en cause dans la maladie de Parkinson."
+  },
+  "Parkinson's-Plus": {
+    "fr": "syndrome Parkinson plus",
+    "note": "Aussi « syndrome parkinsonien atypique ». Regroupe l'AMS, la PSP et la DCB."
+  },
+  "MSA (Multiple System Atrophy)": {
+    "fr": "atrophie multisystématisée (AMS)",
+    "note": "Syndrome parkinsonien atypique."
+  },
+  "PSP (Progressive Supranuclear Palsy)": {
+    "fr": "paralysie supranucléaire progressive (PSP)",
+    "note": "Syndrome parkinsonien atypique."
+  },
+  "CBD (Corticobasal Degeneration)": {
+    "fr": "dégénérescence corticobasale (DCB)",
+    "note": "Syndrome parkinsonien atypique. Ne pas confondre l'abréviation avec le cannabidiol."
+  },
+  "disease stages": {
+    "fr": "stades de la maladie",
+    "note": "« stade » (et non « étape ») pour la progression clinique; échelle de Hoehn et Yahr."
+  },
+  "assessment": {
+    "fr": "évaluation",
+    "note": "« évaluation initiale », « évaluation de Parkinson ». En contexte clinique, préférer « évaluation » à « bilan »."
+  },
+  "intake": {
+    "fr": "admission",
+    "note": "Processus d'accueil et de collecte de renseignements d'un nouveau client. Selon le contexte : « admission », « accueil » ou « prise en charge »."
+  },
+  "baseline": {
+    "fr": "point de référence",
+    "note": "Aussi « valeurs de référence » ou « mesures initiales » pour suivre les progrès."
+  },
+  "warm up": {
+    "fr": "échauffement",
+    "note": "Nom : « l'échauffement »; verbe : « s'échauffer »."
+  },
+  "cool down": {
+    "fr": "retour au calme",
+    "note": "Aussi « récupération ». « Retour au calme » est clair et convivial pour les aînés."
+  },
+  "cueing": {
+    "fr": "guidage",
+    "note": "Donner des repères pour déclencher ou améliorer le mouvement. Aussi « stimulation » ou « donner des indices/repères » (verbaux, visuels, auditifs)."
+  },
+  "functional exercises": {
+    "fr": "exercices fonctionnels",
+    "note": "Exercices reproduisant les gestes du quotidien."
+  },
+  "circuit": {
+    "fr": "circuit",
+    "note": "« entraînement en circuit »; stations d'exercices enchaînées."
+  },
+  "fall risk": {
+    "fr": "risque de chute",
+    "note": "« personne à risque de chute »."
+  },
+  "caregiver": {
+    "fr": "aidant naturel",
+    "note": "Terme consacré au Québec. « proche aidant » est aussi accepté."
+  },
+  "spouse": {
+    "fr": "conjoint",
+    "note": "Forme inclusive : « conjoint ou conjointe ». Souvent aussi aidant naturel."
+  },
+  "seniors": {
+    "fr": "aînés",
+    "note": "Terme privilégié au Québec plutôt que « personnes âgées »."
+  },
+  "dementia": {
+    "fr": "démence",
+    "note": "« trouble neurocognitif majeur » en contexte diagnostique récent; « démence » reste courant pour le grand public."
+  },
+  "licensee": {
+    "fr": "licencié",
+    "note": "Titulaire d'une licence du programme Boxing4Health. Forme inclusive : « licencié ou licenciée »."
+  },
+  "coach": {
+    "fr": "entraîneur",
+    "note": "« entraîneur ou entraîneuse ». Selon le contexte, « accompagnateur »."
+  },
+  "instructor": {
+    "fr": "instructeur",
+    "note": "« instructeur ou instructrice »; parfois « animateur » de cours."
+  },
+  "student": {
+    "fr": "élève",
+    "note": "Utilisé de façon interchangeable avec « client » dans le programme."
+  },
+  "class": {
+    "fr": "cours",
+    "note": "La séance de groupe. « donner un cours », « animer un cours »."
+  }
+}
