@@ -1,8 +1,10 @@
 {
   "_comment": "Single source for the Resources → Documents & Forms section. Every file in licensee/assets/docs/ MUST be listed here (tools/qa.py enforces it). cat is one of: intake, program.",
   "documents": [
-    { "file": "health-history-form.pdf", "en": "Health History Form", "fr": "Formulaire d’antécédents médicaux", "ext": "PDF", "size": "2.5 MB", "cat": "intake" },
+    { "file": "health-history-form.pdf", "en": "Health History Form", "fr": "Formulaire d’antécédents médicaux", "ext": "PDF", "size": "86 KB", "cat": "intake" },
     { "file": "prospective-client-questionnaire.pdf", "en": "Prospective Client Questionnaire", "fr": "Questionnaire du client potentiel", "ext": "PDF", "size": "84 KB", "cat": "intake" },
+    { "file": "fullerton-advanced-balance-scale.pdf", "en": "Fullerton Advanced Balance Scale", "fr": "Échelle d’équilibre avancée de Fullerton", "ext": "PDF", "size": "71 KB", "cat": "intake" },
+    { "file": "fullerton-instructions.pdf", "en": "Fullerton Scale — Instructions", "fr": "Échelle de Fullerton — instructions", "ext": "PDF", "size": "46 KB", "cat": "intake" },
     { "file": "liability-waiver.pdf", "en": "Liability Waiver", "fr": "Décharge de responsabilité", "ext": "PDF", "size": "109 KB", "cat": "intake" },
     { "file": "new-instructor-checklists.docx", "en": "New Instructor Checklists", "fr": "Listes de vérification du nouvel instructeur", "ext": "DOCX", "size": "12 KB", "cat": "program" },
     { "file": "champion-plus-program.pdf", "en": "Champion Plus Program", "fr": "Programme Champion Plus", "ext": "PDF", "size": "237 KB", "cat": "program" }
