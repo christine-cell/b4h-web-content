@@ -5,6 +5,7 @@
     { "file": "prospective-client-questionnaire.pdf", "en": "Prospective Client Questionnaire", "fr": "Questionnaire du client potentiel", "ext": "PDF", "size": "84 KB", "cat": "intake" },
     { "file": "fullerton-advanced-balance-scale.pdf", "en": "Fullerton Advanced Balance Scale", "fr": "Échelle d’équilibre avancée de Fullerton", "ext": "PDF", "size": "71 KB", "cat": "intake" },
     { "file": "fullerton-instructions.pdf", "en": "Fullerton Scale — Instructions", "fr": "Échelle de Fullerton — instructions", "ext": "PDF", "size": "46 KB", "cat": "intake" },
+    { "file": "b4h-assessment-form.pdf", "en": "B4H Assessment Form", "fr": "Formulaire d’évaluation B4H", "ext": "PDF", "size": "255 KB", "cat": "intake" },
     { "file": "liability-waiver.pdf", "en": "Liability Waiver", "fr": "Décharge de responsabilité", "ext": "PDF", "size": "109 KB", "cat": "intake" },
     { "file": "new-instructor-checklists.docx", "en": "New Instructor Checklists", "fr": "Listes de vérification du nouvel instructeur", "ext": "DOCX", "size": "12 KB", "cat": "program" },
     { "file": "champion-plus-program.pdf", "en": "Champion Plus Program", "fr": "Programme Champion Plus", "ext": "PDF", "size": "237 KB", "cat": "program" }
