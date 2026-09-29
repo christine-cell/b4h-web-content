@@ -6,10 +6,13 @@ upload it to the Boxing 4 Health YouTube channel as **Unlisted** with **"Allow
 embedding" on**, and send the link. The page already shows a "Video coming soon"
 box in the right place, which gets swapped for the video.
 
+**Audio-only recordings** (a voice over a still photo) don't need YouTube at all —
+just tell me which ones they are and I'll host the audio on the site directly.
+
 | # | Wix section → step | Video | Wix video id | Status |
 |---|---|---|---|---|
 | 1 | Introduction → Module 1- Welcome & My Background | French version ("Version Francaise") | 4e81e2_5f5ae0ec68384f2581b49bbedd03818d | **Done** — trAbdXxu2zU |
-| 2 | Introduction → Goal Setting | French version | 4e81e2_d8a176cd132f4f8d9aedd87f852ea2bf | Received a-9QwSLampo, but YouTube reports it as **Private** — switch it to Unlisted |
+| 2 | Introduction → Goal Setting | French version | 4e81e2_d8a176cd132f4f8d9aedd87f852ea2bf | **Done** — audio only, so it's hosted on the site as an audio player (no YouTube needed) |
 | 3 | Introduction → Action: Goal Setting | Action: Goal Setting — Christine arms out under the **GO BIG OR GO HOME** banner, 3:29 | 4e81e2_7a771e62f24840aab2c82113dfc1208b | Still needed (R2fMNLaOuCc "PPE Goals" is a different video — gym, purple shirt — already on the Goal Setting lesson) |
 | 4 | Module 2 → Module 2- Diagnosed with Parkinsons, now what? | "YOU GOT THIS!" | 4e81e2_cdcf51f8f1c14069a4c847a45876d49e | **Done** — o6pXyxpTetc |
 | 5 | Module 2 → Overview of Parkinsons | Overview of Parkinson's — **GO BIG OR GO HOME** banner, 2:34 | 4e81e2_c3a54ca1f9044b08913c126f988652c7 | Still needed (Rx99xByqnng is the *program* overview — Christine with her dog — already on the Overview of the Program lesson) |
