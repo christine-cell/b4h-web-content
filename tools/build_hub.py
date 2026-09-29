@@ -214,6 +214,10 @@ def build_hub_licensee():
     open(os.path.join(SITE,"index.html"),"w",encoding="utf-8").write(h + body + foot(rp))
     print("built licensee/index.html")
 
+def _dl(fname):
+    """PDFs open in a new tab (every phone can show them); other files download."""
+    return ' target="_blank" rel="noopener"' if fname.lower().endswith(".pdf") else " download"
+
 def _chip(ic): return f'<span class="chip" data-icon="{ic}"></span>'
 
 VIDEO_GROUPS=[
@@ -238,7 +242,7 @@ def _sec_head(anchor, icon, en, fr, intro_en, intro_fr):
 
 def _documents_section(prefix):
     def card(d):
-        return (f'<a class="file-card" href="{prefix}assets/docs/{d["file"]}" download>'
+        return (f'<a class="file-card" href="{prefix}assets/docs/{d["file"]}"{_dl(d["file"])}>'
                 f'<span class="file-ico"><span class="file-ext">{d["ext"]}</span></span>'
                 f'<span class="file-meta"><span class="file-name">{bilingual(esc(d["en"]),esc(d["fr"]))}</span>'
                 f'<span class="file-sub">{bilingual("Download","Télécharger")} · {d["ext"]} · {d["size"]}</span></span>'
@@ -398,7 +402,7 @@ PW_DOC_GROUPS=[("start","Getting started & tracking progress","Premiers pas et s
 def _pw_documents_section(prefix):
     docs=_data("documents.json").get("documents",[])
     def card(d):
-        return (f'<a class="file-card" href="{prefix}assets/docs/{d["file"]}" download>'
+        return (f'<a class="file-card" href="{prefix}assets/docs/{d["file"]}"{_dl(d["file"])}>'
                 f'<span class="file-ico"><span class="file-ext">{d["ext"]}</span></span>'
                 f'<span class="file-meta"><span class="file-name">{bilingual(esc(d["en"]),esc(d["fr"]))}</span>'
                 f'<span class="file-sub">{bilingual("Download","Télécharger")} · {d["ext"]} · {d["size"]}</span></span>'
