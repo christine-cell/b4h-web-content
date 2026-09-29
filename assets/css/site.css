@@ -719,3 +719,48 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .as-thumbs button:hover { border-color: var(--border-strong); }
 .as-thumbs button[aria-current="true"] { border-color: var(--primary); color: var(--primary); }
 .as-thumbs button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* ---------- Program finale (the closing celebration) ---------- */
+.finale { position: relative; isolation: isolate; overflow: hidden; margin: 1.5rem 0 2.5rem; padding: clamp(1.8rem, 5vw, 3.2rem) clamp(1.1rem, 4vw, 2.6rem); border-radius: var(--r-lg); text-align: center; color: #fff;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(240,169,43,.38), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(38,154,237,.30), transparent 70%),
+    linear-gradient(165deg, var(--blue-900), var(--blue-700) 70%, var(--blue-800));
+  box-shadow: var(--shadow-3), inset 0 0 0 1px rgba(255,255,255,.08); }
+/* twinkling stars */
+.finale::before, .finale::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 12% 18%, rgba(255,255,255,.9), transparent 60%),
+    radial-gradient(2px 2px at 84% 12%, rgba(255,215,130,.95), transparent 60%),
+    radial-gradient(1.5px 1.5px at 70% 32%, rgba(255,255,255,.8), transparent 60%),
+    radial-gradient(2px 2px at 22% 66%, rgba(255,215,130,.9), transparent 60%),
+    radial-gradient(1.5px 1.5px at 90% 70%, rgba(255,255,255,.85), transparent 60%),
+    radial-gradient(2px 2px at 40% 88%, rgba(255,255,255,.7), transparent 60%),
+    radial-gradient(1.5px 1.5px at 6% 90%, rgba(255,215,130,.8), transparent 60%);
+  animation: finale-twinkle 3.2s ease-in-out infinite alternate; }
+.finale::after { transform: translate(38%, 14%) scale(1.2); animation-delay: -1.6s; opacity: .7; }
+@keyframes finale-twinkle { from { opacity: .35; } to { opacity: 1; } }
+.finale-trophy { display: inline-grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; color: var(--warm-ink);
+  background: radial-gradient(circle at 35% 30%, #ffe7a8, var(--warm) 55%, var(--warm-strong));
+  box-shadow: 0 0 0 6px rgba(240,169,43,.22), 0 0 40px rgba(240,169,43,.55); animation: finale-glow 2.4s ease-in-out infinite; }
+.finale-trophy svg { width: 42px; height: 42px; }
+@keyframes finale-glow { 50% { box-shadow: 0 0 0 10px rgba(240,169,43,.16), 0 0 64px rgba(240,169,43,.75); transform: translateY(-3px); } }
+.lesson-body .finale-kicker { margin: 1rem 0 .2rem; font-family: var(--font-sans); font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: var(--fs-xs); color: #ffd27a; }
+.lesson-body .finale-title { margin: 0; font-family: var(--font-sans); font-weight: 900; font-size: var(--fs-display); line-height: 1.02; letter-spacing: -.01em;
+  background: linear-gradient(100deg, #fff 20%, #ffd27a 40%, #fff 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: finale-shine 4.5s linear infinite; }
+@keyframes finale-shine { from { background-position: 100% 0; } to { background-position: -150% 0; } }
+.lesson-body .finale-motto { margin: .6rem auto 0; max-width: 34ch; color: rgba(255,255,255,.88); font-size: var(--fs-lg); }
+.finale .video { margin: 1.8rem auto 0; box-shadow: 0 0 0 4px var(--warm), 0 0 0 10px rgba(240,169,43,.25), 0 18px 60px rgba(0,0,0,.45); }
+.finale-actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1.8rem; }
+.finale .btn-secondary { background: rgba(255,255,255,.14); color: #fff; border-color: rgba(255,255,255,.45); }
+.finale .btn-secondary:hover { background: rgba(255,255,255,.24); color: #fff; }
+.finale-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 1.8rem; }
+.finale-stats .stat { min-width: 120px; padding: .8rem 1rem; border-radius: var(--r-md); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); }
+.finale-stats .stat-num { color: #ffd27a; }
+.finale-stats .stat-label { color: rgba(255,255,255,.85); }
+.finale-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .finale::before, .finale::after, .finale-trophy, .lesson-body .finale-title { animation: none; }
+  .lesson-body .finale-title { color: #fff; background: none; }
+}
