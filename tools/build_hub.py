@@ -550,7 +550,7 @@ def build_hub_pathway():
           <span class="chip" data-icon="message-circle"></span>
           <h3 style="margin:.8rem 0 .3rem">{bilingual('Questions?','Des questions ?','span')}</h3>
           <p class="muted" style="margin:0 0 .7rem">{bilingual('Bring them to your weekly call, or reach Christine any time:','Apportez-les à votre appel hebdomadaire, ou joignez Christine en tout temps :','span')}</p>
-          <p style="margin:0"><a href="mailto:info@boxing4health.com">info@boxing4health.com</a><br><a href="tel:+16132242694">613.224.2694</a></p>
+          <p style="margin:0"><a href="mailto:christine@boxing4health.com">christine@boxing4health.com</a><br><a href="tel:+16132242694">613.224.2694</a></p>
         </article>
       </div>
     </div></section>"""
