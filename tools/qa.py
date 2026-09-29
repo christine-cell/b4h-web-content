@@ -20,9 +20,10 @@ Exit code 0 = clean, 1 = one or more gates failed (details printed).
 Pure Python stdlib so it runs the same locally, in the pre-commit hook, and in CI.
 """
 import json, os, re, sys, subprocess, glob
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from programs import ROOT, active, site_dir, authored_dir
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = os.path.join(ROOT, "licensee")
+PROGS = active()   # every program folder with a data/modules.json
 os.chdir(ROOT)
 
 problems = []
@@ -41,8 +42,8 @@ def check_build():
             fail("build", f"{' '.join(cmd)} failed:\n{r.stderr.strip()[:800]}")
 
 # ---------------------------------------------------------------- 2. drift
-GENERATED = ["index.html", "404.html", "licensee/index.html",
-             "licensee/modules", "licensee/resources/index.html"]
+GENERATED = ["index.html", "404.html"] + [p for s in PROGS for p in
+             (f"{s}/index.html", f"{s}/modules", f"{s}/resources")]
 def check_generated_in_sync():
     # After the rebuild above, the working tree must match what's staged/committed.
     # `git diff` (working vs index) is empty when the committer rebuilt and staged
@@ -65,26 +66,32 @@ def check_links():
         fail("links", r.stdout.strip()[-800:])
 
 # ---------------------------------------------------------------- 4. glossary
+GLOSS_CATS = ("parkinsons", "coaching", "program", "wellness")
 def check_glossary():
-    p = os.path.join(SITE, "data/glossary.json")
+    for s in PROGS: _check_glossary(s)
+def _check_glossary(prog):
+    p = os.path.join(site_dir(prog), "data/glossary.json")
     try: terms = json.loads(read(p))["terms"]
-    except Exception as e: return fail("glossary", f"cannot load glossary.json: {e}")
+    except Exception as e: return fail("glossary", f"{prog}: cannot load glossary.json: {e}")
     seen = set()
     for t in terms:
         name = t.get("en", "?")
         for k in ("en", "fr", "def_en", "def_fr", "cat"):
             if not t.get(k): fail("glossary", f"term {name!r} missing '{k}'")
-        if t.get("cat") not in ("parkinsons", "coaching", "program"):
-            fail("glossary", f"term {name!r} has invalid cat {t.get('cat')!r}")
-        if t.get("en") in seen: fail("glossary", f"duplicate term {name!r}")
+        if t.get("cat") not in GLOSS_CATS:
+            fail("glossary", f"{prog}: term {name!r} has invalid cat {t.get('cat')!r}")
+        if t.get("en") in seen: fail("glossary", f"{prog}: duplicate term {name!r}")
         seen.add(t.get("en"))
-    note(f"glossary: {len(terms)} terms")
+    note(f"{prog} glossary: {len(terms)} terms")
 
 # ---------------------------------------------------------------- 5. documents
 def check_documents():
+    for s in PROGS: _check_documents(s)
+def _check_documents(prog):
+    SITE = site_dir(prog)
     p = os.path.join(SITE, "data/documents.json")
     try: docs = json.loads(read(p))["documents"]
-    except Exception as e: return fail("documents", f"cannot load documents.json: {e}")
+    except Exception as e: return fail("documents", f"{prog}: cannot load documents.json: {e}")
     listed = set()
     for d in docs:
         for k in ("file", "en", "fr", "ext", "size", "cat"):
@@ -93,18 +100,21 @@ def check_documents():
         if f:
             listed.add(f)
             if not os.path.exists(os.path.join(SITE, "assets/docs", f)):
-                fail("documents", f"listed doc not found on disk: assets/docs/{f}")
+                fail("documents", f"{prog}: listed doc not found on disk: assets/docs/{f}")
     on_disk = {os.path.basename(p) for p in glob.glob(os.path.join(SITE, "assets/docs/*"))
                if not os.path.basename(p).startswith(".")}
     for f in sorted(on_disk - listed):
-        fail("documents", f"assets/docs/{f} exists but is NOT listed in data/documents.json "
+        fail("documents", f"{prog}/assets/docs/{f} exists but is NOT listed in data/documents.json "
                           f"(it won't appear in Resources — add it)")
-    note(f"documents: {len(listed)} listed, {len(on_disk)} on disk")
+    note(f"{prog} documents: {len(listed)} listed, {len(on_disk)} on disk")
 
 # ---------------------------------------------------------------- 6. lessons
 def check_lesson_sources():
-    try: mods = json.loads(read(os.path.join(SITE, "data/modules.json")))
-    except Exception as e: return fail("lessons", f"cannot load modules.json: {e}")
+    for s in PROGS: _check_lesson_sources(s)
+def _check_lesson_sources(prog):
+    AUTH = authored_dir(prog); rel = os.path.relpath(AUTH, ROOT)
+    try: mods = json.loads(read(os.path.join(site_dir(prog), "data/modules.json")))
+    except Exception as e: return fail("lessons", f"{prog}: cannot load modules.json: {e}")
     items = [l for m in mods.get("modules", []) for l in m["lessons"]] + mods.get("resources", [])
     slugs, urls = set(), set()
     for l in items:
@@ -113,15 +123,15 @@ def check_lesson_sources():
         slugs.add(slug)
         if l.get("url") in urls: fail("lessons", f"duplicate url {l.get('url')!r}")
         urls.add(l.get("url"))
-        en = os.path.join(ROOT, "_authored", f"{slug}.html")
-        fr = os.path.join(ROOT, "_authored", f"{slug}.fr.html")
-        if not os.path.exists(en): fail("lessons", f"{slug}: missing _authored/{slug}.html")
-        if not os.path.exists(fr): fail("lessons", f"{slug}: missing French _authored/{slug}.fr.html")
-    note(f"lessons: {len(items)} items checked for EN+FR sources")
+        en = os.path.join(AUTH, f"{slug}.html")
+        fr = os.path.join(AUTH, f"{slug}.fr.html")
+        if not os.path.exists(en): fail("lessons", f"{prog}/{slug}: missing {rel}/{slug}.html")
+        if not os.path.exists(fr): fail("lessons", f"{prog}/{slug}: missing French {rel}/{slug}.fr.html")
+    note(f"{prog} lessons: {len(items)} items checked for EN+FR sources")
 
 # ---------------------------------------------------------------- 7. i18n
 def check_i18n():
-    p = os.path.join(SITE, "assets/js/i18n.js")
+    p = os.path.join(ROOT, "assets/js/i18n.js")
     src = read(p)
     m = re.search(r"\ben\s*:\s*\{", src); f = re.search(r"\bfr\s*:\s*\{", src)
     if not (m and f): return fail("i18n", "could not locate en/fr blocks in i18n.js")
@@ -132,8 +142,8 @@ def check_i18n():
     for k in sorted(fr_keys - en_keys): fail("i18n", f"key {k!r} in FR but missing in EN")
     # every data-i18n key actually used must be defined
     used = set()
-    for hp in glob.glob(os.path.join(SITE, "partials/*.html")) + \
-              glob.glob(os.path.join(SITE, "**/*.html"), recursive=True):
+    for hp in [h for h in glob.glob(os.path.join(ROOT, "**/*.html"), recursive=True)
+               if not os.path.relpath(h, ROOT).startswith(("_sources", "_authored"))]:
         used |= set(re.findall(r'data-i18n="([\w.]+)"', read(hp)))
     for k in sorted(used - en_keys):
         fail("i18n", f"data-i18n=\"{k}\" is used but not defined in i18n.js")
@@ -147,7 +157,7 @@ EMOJI = re.compile("[\U0001F000-\U0001FAFF\U0001F1E6-\U0001F1FF\uFE0F]")
 HEX6 = re.compile(r"#[0-9a-fA-F]{6}\b")
 STYLE_HEX = re.compile(r'style\s*=\s*"[^"]*#[0-9a-fA-F]{3,6}')
 def check_style_lint():
-    for p in glob.glob(os.path.join(ROOT, "_authored/*.html")):
+    for p in glob.glob(os.path.join(ROOT, "_authored/*/*.html")):
         s = read(p); rel = os.path.relpath(p, ROOT)
         if HEX6.search(s):
             fail("style", f"{rel}: raw 6-digit hex colour — use design tokens, not hardcoded colours")
@@ -165,7 +175,7 @@ def check_asset_version():
     m = re.search(r'^V\s*=\s*"(\d+)"', src, re.M)
     if not m: return
     V = m.group(1)
-    for rel in ("licensee/certificate.html", "licensee/styleguide.html"):
+    for rel in ["styleguide.html"] + [f"{s}/certificate.html" for s in PROGS]:
         p = os.path.join(ROOT, rel)
         if not os.path.exists(p): continue
         vers = set(re.findall(r'(?:href|src)="[^"]+\?v=(\d+)"', read(p)))
@@ -177,9 +187,11 @@ def check_asset_version():
 
 # ---------------------------------------------------------------- 9. a11y
 def check_a11y():
-    pages = glob.glob(os.path.join(SITE, "modules/*.html")) + \
-            glob.glob(os.path.join(SITE, "resources/*.html")) + \
-            [os.path.join(SITE, "index.html"), os.path.join(ROOT, "index.html")]
+    pages = [os.path.join(ROOT, "index.html")]
+    for s in PROGS:
+        SITE = site_dir(s)
+        pages += glob.glob(os.path.join(SITE, "modules/*.html")) + \
+                 glob.glob(os.path.join(SITE, "resources/*.html")) + [os.path.join(SITE, "index.html")]
     for p in pages:
         if not os.path.exists(p): continue
         s = read(p); rel = os.path.relpath(p, ROOT)
@@ -192,7 +204,8 @@ def check_a11y():
 
 # ---------------------------------------------------------------- run
 CHECKS = [check_build, check_generated_in_sync, check_links, check_glossary,
-          check_documents, check_lesson_sources, check_i18n, check_style_lint, check_a11y]
+          check_documents, check_lesson_sources, check_i18n, check_style_lint,
+          check_asset_version, check_a11y]
 
 def main():
     for c in CHECKS:

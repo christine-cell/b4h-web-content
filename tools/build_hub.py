@@ -1,18 +1,33 @@
 #!/usr/bin/env python3
-"""Build index.html (hub), resources/index.html, and 404.html."""
-import json, os, html as htmllib
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = os.path.join(ROOT, "licensee")   # program is namespaced under /licensee/
-M = json.load(open(os.path.join(SITE, "data/modules.json")))
+"""Build each program's hub (<program>/index.html) and resources hub
+(<program>/resources/index.html), plus the root program directory (index.html)
+and the site-wide 404.html.
+
+  python3 tools/build_hub.py
+
+Path prefixes used below:
+  prefix → this program's folder (program-relative links, data, docs)
+  rp     → the site root (shared /assets/)
+"""
+import json, os, sys, html as htmllib
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from programs import ROOT, PROGRAMS, active, site_dir
+
+SITE = None; M = {}
+def use(slug):
+    global SITE, M
+    SITE = site_dir(slug)
+    M = json.load(open(os.path.join(SITE, "data/modules.json"), encoding="utf-8"))
 def _data(name):
     p=os.path.join(SITE,"data",name)
     return json.load(open(p,encoding="utf-8")) if os.path.exists(p) else {}
-V = "27"
+V = "28"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
-def head(title, desc, prefix):
+def head(title, desc, rp, program=""):
+    prog = f' data-program="{program}"' if program else ""
     return f"""<!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light"{prog}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -21,12 +36,12 @@ def head(title, desc, prefix):
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#19679e">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'">
-<link rel="icon" href="{prefix}assets/img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="{prefix}assets/img/favicon.svg">
-<link rel="stylesheet" href="{prefix}assets/css/fonts.css?v={V}">
-<link rel="stylesheet" href="{prefix}assets/css/tokens.css?v={V}">
-<link rel="stylesheet" href="{prefix}assets/css/site.css?v={V}">
-<link rel="stylesheet" href="{prefix}assets/css/print.css?v={V}" media="print">
+<link rel="icon" href="{rp}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{rp}assets/img/favicon.svg">
+<link rel="stylesheet" href="{rp}assets/css/fonts.css?v={V}">
+<link rel="stylesheet" href="{rp}assets/css/tokens.css?v={V}">
+<link rel="stylesheet" href="{rp}assets/css/site.css?v={V}">
+<link rel="stylesheet" href="{rp}assets/css/print.css?v={V}" media="print">
 <script>(function(){{try{{var d=document.documentElement,s=localStorage;
 d.setAttribute('data-theme',s.getItem('b4h-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
 d.setAttribute('lang',s.getItem('b4h-lang')||'en');
@@ -39,14 +54,14 @@ d.style.setProperty('--line-mult',s.getItem('b4h-line')||'1');}}catch(e){{}}}})(
 <main id="main">
 """
 
-def scripts(prefix, extra=None):
+def scripts(rp, extra=None):
     names = ["icons","i18n","site","progress","search","read-aloud"] + (extra or [])
-    return "\n".join(f'<script src="{prefix}assets/js/{n}.js?v={V}"></script>' for n in names)
+    return "\n".join(f'<script src="{rp}assets/js/{n}.js?v={V}"></script>' for n in names)
 
-def foot(prefix, extra=None):
+def foot(rp, extra=None):
     return f"""</main>
 <div data-include="footer"></div>
-{scripts(prefix, extra)}
+{scripts(rp, extra)}
 </body></html>"""
 
 def bilingual(en, fr, tag="span", cls=""):
@@ -94,14 +109,14 @@ def module_card(m, prefix):
       </div>
     </article>"""
 
-def build_hub():
-    prefix = ""
+def build_hub_licensee():
+    prefix, rp = "", "../"
     nlessons = sum(len(m["lessons"]) for m in M["modules"])
     total_min = sum(l["minutes"] for m in M["modules"] for l in m["lessons"])
     hours = round(total_min/60)
-    h = head("Boxing4Health Licensee Training Program", "The complete training program for Boxing4Health licensees — Parkinson's education and class delivery.", prefix)
+    h = head("Boxing4Health Licensee Training Program", "The complete training program for Boxing4Health licensees — Parkinson's education and class delivery.", rp, "licensee")
     hero = f"""<section class="hero">
-      <div class="hero-media"><img src="{prefix}assets/img/photos/hero-class.jpg" alt="A Boxing4Health class training together" loading="eager" fetchpriority="high"></div>
+      <div class="hero-media"><img src="{rp}assets/img/photos/hero-class.jpg" alt="A Boxing4Health class training together" loading="eager" fetchpriority="high"></div>
       <div class="wrap">
       <p class="eyebrow"><span data-icon="graduation-cap"></span>{bilingual('Licensee Training','Formation des licenciés')}</p>
       <p class="hero-motto">{bilingual("Our challenges don't define us — our", "Nos défis ne nous définissent pas —")} <span class="accent">{bilingual("ACTIONS", "nos ACTIONS")}</span> {bilingual("do.", "oui.")}</p>
@@ -120,7 +135,7 @@ def build_hub():
     </section>"""
 
     band = f"""<section class="band">
-      <div class="band-media"><img src="{prefix}assets/img/photos/community-seniors.jpg" alt="Boxing4Health participants together" loading="lazy"></div>
+      <div class="band-media"><img src="{rp}assets/img/photos/community-seniors.jpg" alt="Boxing4Health participants together" loading="lazy"></div>
       <div class="wrap">
         <p class="eyebrow" style="color:#ffd27a"><span data-icon="heart-pulse"></span>{bilingual('Who you serve','Ceux que vous accompagnez')}</p>
         <p class="pull-quote">{bilingual("You're not just teaching a workout —", "Vous n'enseignez pas qu'un entraînement —")} <span class="accent">{bilingual("you're giving people their fight back.", "vous redonnez aux gens leur combat.")}</span></p>
@@ -177,7 +192,7 @@ def build_hub():
       <p class="lead" style="max-width:64ch">{bilingual('Boxing4Health is an independent health facility delivering research-backed, high-intensity exercise for seniors and people living with Parkinson’s. This licensee training distills the methods used in B4H classes — across its Ottawa, Kanata, Chelsea (QC), and Regina locations — into a coaching curriculum you can run yourself.','Boxing4Health est un établissement de santé indépendant offrant de l’exercice à haute intensité, fondé sur la recherche, pour les aînés et les personnes atteintes de la maladie de Parkinson. Cette formation des licenciés transpose les méthodes des cours B4H — offerts à Ottawa, Kanata, Chelsea (QC) et Regina — en un programme d’enseignement que vous pouvez animer vous-même.','span')}</p>
       <div class="grid grid-2" style="margin-top:1.5rem">
         <article class="card" style="display:flex;gap:1.1rem;align-items:flex-start">
-          <img src="{prefix}assets/img/christine-seaby.jpg" alt="Christine Seaby, founder of Boxing4Health, with her dog" width="112" height="140" loading="lazy" style="flex:none;width:112px;height:140px;object-fit:cover;object-position:center 20%;border-radius:var(--r-md);box-shadow:var(--shadow-1)">
+          <img src="{rp}assets/img/christine-seaby.jpg" alt="Christine Seaby, founder of Boxing4Health, with her dog" width="112" height="140" loading="lazy" style="flex:none;width:112px;height:140px;object-fit:cover;object-position:center 20%;border-radius:var(--r-md);box-shadow:var(--shadow-1)">
           <div style="min-width:0">
             <h3 style="margin:.1rem 0 .3rem">Christine Seaby, RMT</h3>
             <p class="muted" style="margin:0">{bilingual('Founder &amp; owner. A Regulated Health Professional (Registered Massage Therapist) with 14+ years of experience and a background in mixed martial arts, Christine created Boxing4Health to help people living with Parkinson’s improve their quality of life through purposeful exercise.','Fondatrice et propriétaire. Professionnelle de la santé réglementée (massothérapeute agréée) comptant plus de 14 ans d’expérience et une formation en arts martiaux mixtes, Christine a fondé Boxing4Health pour aider les personnes atteintes de la maladie de Parkinson à améliorer leur qualité de vie grâce à un exercice ciblé.','span')}</p>
@@ -194,15 +209,11 @@ def build_hub():
     </div></section>"""
 
     body = hero + progress + howto + band + modsec + ressec + about + cert
-    open(os.path.join(SITE,"index.html"),"w",encoding="utf-8").write(h + body + foot(prefix))
+    open(os.path.join(SITE,"index.html"),"w",encoding="utf-8").write(h + body + foot(rp))
     print("built licensee/index.html")
-
-if __name__ == "__main__":
-    build_hub()
 
 def _chip(ic): return f'<span class="chip" data-icon="{ic}"></span>'
 
-DOCUMENTS=_data("documents.json").get("documents",[])
 VIDEO_GROUPS=[
  {"en":"Getting started","fr":"Pour commencer","items":[("JPnb9okYxw8","Boxing 101")]},
  {"en":"Symptoms in action","fr":"Les symptômes en action","items":[("MIAFilOOloU","Freezing of Gait"),("wrxHJaPulgc","Freezing of Gait — example 2")]},
@@ -230,6 +241,7 @@ def _documents_section(prefix):
                 f'<span class="file-meta"><span class="file-name">{bilingual(esc(d["en"]),esc(d["fr"]))}</span>'
                 f'<span class="file-sub">{bilingual("Download","Télécharger")} · {d["ext"]} · {d["size"]}</span></span>'
                 f'<span class="file-dl" data-icon="download"></span></a>')
+    DOCUMENTS=_data("documents.json").get("documents",[])
     intake="".join(card(d) for d in DOCUMENTS if d["cat"]=="intake")
     prog="".join(card(d) for d in DOCUMENTS if d["cat"]=="program")
     return (_sec_head("documents","folder-open","Documents & Forms","Documents et formulaires",
@@ -331,9 +343,9 @@ def _articles_section(prefix):
             "Des lectures approfondies qui vont au-delà des leçons de base.")
             +f'<div class="stack">{rows}</div></section>')
 
-def build_resources_index():
-    prefix="../"
-    h=head("Resources · Boxing4Health Training","Documents, glossary, videos, assessment tools, printable references, and further reading for Boxing4Health licensees.",prefix)
+def build_resources_index_licensee():
+    prefix, rp = "../", "../../"
+    h=head("Resources · Boxing4Health Training","Documents, glossary, videos, assessment tools, printable references, and further reading for Boxing4Health licensees.",rp,"licensee")
     toc=[("documents","Documents"),("glossary","Glossary"),("videos","Videos"),("assessments","Assessments"),("quick-reference","Quick reference"),("further-reading","Further reading"),("articles","Articles")]
     tocfr={"documents":"Documents","glossary":"Glossaire","videos":"Vidéos","assessments":"Évaluations","quick-reference":"Référence rapide","further-reading":"Pour aller plus loin","articles":"Articles"}
     chips="".join(f'<a href="#{a}">{bilingual(l,tocfr[a])}</a>' for a,l in toc)
@@ -345,13 +357,13 @@ def build_resources_index():
           +_documents_section(prefix)+_glossary_section()+_videos_section()
           +_assessments_section()+_quickref_section()+_further_section()+_articles_section(prefix)
           +'</div></section>')
-    open(os.path.join(SITE,"resources/index.html"),"w",encoding="utf-8").write(h+body+foot(prefix))
+    open(os.path.join(SITE,"resources/index.html"),"w",encoding="utf-8").write(h+body+foot(rp))
     print("built licensee/resources/index.html")
 
 def build_404():
-    # Served from the domain root for the whole site; assets live under /licensee/.
-    prefix="/licensee/"
-    h=head("Page not found · Boxing4Health Training","",prefix)
+    # Served from the domain root for the whole site (any depth) → absolute paths.
+    rp="/"
+    h=head("Page not found · Boxing4Health Training","",rp)
     body=f"""<section class="section"><div class="wrap wrap-narrow center" style="padding-block:5rem">
       <span class="chip" data-icon="triangle-alert" style="margin-inline:auto;width:72px;height:72px"></span>
       <h1 style="margin-top:1.5rem">{bilingual('Page not found','Page introuvable','span')}</h1>
@@ -361,52 +373,61 @@ def build_404():
         <a class="btn btn-secondary" href="/"><span data-icon="layers"></span>{bilingual('All programs','Tous les programmes','span')}</a>
       </div>
     </div></section>"""
-    open(os.path.join(ROOT,"404.html"),"w",encoding="utf-8").write(h+body+foot(prefix))
+    open(os.path.join(ROOT,"404.html"),"w",encoding="utf-8").write(h+body+foot(rp))
     print("built 404.html (root)")
 
+# Root program directory cards — one per program (add a program here when it ships).
+LANDING_CARDS = {
+    "licensee": {"icon": "graduation-cap",
+        "desc": ("Everything a Boxing4Health licensee needs — Parkinson’s education, assessment, and class delivery.",
+                 "Tout ce qu’un licencié Boxing4Health doit savoir — la maladie de Parkinson, l’évaluation et l’animation des cours."),
+        "who": ("For licensed coaches", "Pour les entraîneurs licenciés")},
+    "pathway": {"icon": "heart-handshake",
+        "desc": ("A 10-week program for people living with Parkinson’s — exercise, sleep, stress, balance, nutrition, voice, and more.",
+                 "Un programme de 10 semaines pour les personnes atteintes de la maladie de Parkinson — exercice, sommeil, stress, équilibre, nutrition, voix et plus."),
+        "who": ("For program participants", "Pour les participants")},
+}
+
 def build_landing():
-    # Program directory at the domain root — lists B4H training programs.
-    # Assets/partials/data resolve under /licensee/ via prefix.
-    prefix="licensee/"
-    h=head("Boxing4Health Training","Boxing4Health training programs — start with the Licensee Training Program.",prefix)
-    m0=M["modules"][0]["lessons"][0]["url"]
-    nles=sum(len(m["lessons"]) for m in M["modules"])
-    nmod=len(M["modules"])
-    prog_card=f"""<a class="card card-hover program-card" href="{prefix}index.html">
+    # Program directory at the domain root — one card per active program.
+    rp = ""
+    h=head("Boxing4Health Training","Boxing4Health training programs.",rp)
+    cards=""
+    for slug in active():
+        use(slug); c=LANDING_CARDS.get(slug, {"icon":"book-open","desc":("",""),"who":("","")})
+        name=PROGRAMS[slug]["name"]
+        nles=sum(len(m["lessons"]) for m in M["modules"]); nmod=len(M["modules"])
+        cards+=f"""<a class="card card-hover program-card" href="{slug}/index.html">
         <div class="program-card-cover">
-          <span class="program-card-wm" data-icon="graduation-cap" aria-hidden="true"></span>
-          <span class="chip" data-icon="graduation-cap"></span>
-          <span class="status-chip" data-status="next">{bilingual('Available now','Disponible','span')}</span>
+          <span class="program-card-wm" data-icon="{c['icon']}" aria-hidden="true"></span>
+          <span class="chip" data-icon="{c['icon']}"></span>
+          <span class="status-chip" data-status="next">{bilingual(*c['who'],'span')}</span>
         </div>
         <div class="program-card-body">
-          <h2>{bilingual('Licensee Training Program','Programme de formation des licenciés','span')}</h2>
-          <p class="muted">{bilingual("Everything a Boxing4Health licensee needs — Parkinson’s education, assessment, and class delivery.","Tout ce qu’un licencié Boxing4Health doit savoir — la maladie de Parkinson, l’évaluation et l’animation des cours.","span")}</p>
+          <h2>{bilingual(*name,'span')}</h2>
+          <p class="muted">{bilingual(*c['desc'],'span')}</p>
           <span class="lr-meta">{nmod} {bilingual('modules','modules')} · {nles} {bilingual('lessons','leçons')}</span>
           <span class="btn btn-primary" style="margin-top:1.1rem;pointer-events:none"><span data-icon="arrow-right"></span>{bilingual('Enter program','Ouvrir le programme','span')}</span>
         </div>
       </a>"""
-    soon_card=f"""<div class="card program-card program-card-soon" aria-disabled="true">
-        <div class="program-card-cover program-card-cover-muted">
-          <span class="program-card-wm" data-icon="dumbbell" aria-hidden="true"></span>
-          <span class="chip" data-icon="dumbbell"></span>
-          <span class="status-chip" data-status="not-started">{bilingual('Coming soon','À venir','span')}</span>
-        </div>
-        <div class="program-card-body">
-          <h2>{bilingual('More programs','Autres programmes','span')}</h2>
-          <p class="muted">{bilingual("Additional Boxing4Health training tracks will appear here as they are released.","D’autres parcours de formation Boxing4Health apparaîtront ici au fur et à mesure.","span")}</p>
-        </div>
-      </div>"""
-    body=f"""<section class="hero"><div class="hero-media"><img src="{prefix}assets/img/photos/hero-class.jpg" alt="A Boxing4Health class training together" loading="eager" fetchpriority="high"></div>
+    body=f"""<section class="hero"><div class="hero-media"><img src="{rp}assets/img/photos/hero-class.jpg" alt="A Boxing4Health class training together" loading="eager" fetchpriority="high"></div>
       <div class="wrap">
         <span class="eyebrow"><span data-icon="graduation-cap"></span><span>{bilingual('Boxing4Health','Boxing4Health')}</span></span>
         <h1>{bilingual('Training Programs','Programmes de formation','span')}</h1>
         <p>{bilingual('Choose a program to begin. Your progress is saved on this device as you go.','Choisissez un programme pour commencer. Votre progression est enregistrée sur cet appareil.','span')}</p>
       </div></section>
       <section class="section"><div class="wrap">
-        <div class="grid grid-2">{prog_card}{soon_card}</div>
+        <div class="grid grid-2">{cards}</div>
       </div></section>"""
-    open(os.path.join(ROOT,"index.html"),"w",encoding="utf-8").write(h+body+foot(prefix))
+    open(os.path.join(ROOT,"index.html"),"w",encoding="utf-8").write(h+body+foot(rp))
     print("built index.html (root landing)")
 
-if True:
-    build_resources_index(); build_404(); build_landing()
+BUILDERS = {
+    "licensee": (build_hub_licensee, build_resources_index_licensee),
+}
+
+if __name__ == "__main__":
+    for slug in active():
+        use(slug)
+        for fn in BUILDERS.get(slug, ()): fn()
+    build_404(); build_landing()

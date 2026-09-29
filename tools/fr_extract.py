@@ -1,6 +1,6 @@
 import re, json, os, glob, html as htmllib
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-AUTH=os.path.join(ROOT,"_authored")
+AUTH=os.path.join(ROOT,"_authored",os.environ.get("B4H_PROGRAM","licensee"))  # set B4H_PROGRAM=<program>
 
 def tokenize(h):
     toks=[]; parts=re.split(r'(<[^>]+>)', h); in_script=False; sattr=''

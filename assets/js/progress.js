@@ -3,11 +3,14 @@
    Completion rule: quiz lessons complete on passing the quiz;
    other lessons complete when read to the end (scroll sentinel)
    or via an explicit "mark complete" button.
-   State lives in localStorage: b4h-progress.
+   State lives in localStorage, one key per program: b4h-progress for
+   Licensee (its original key, so existing progress is kept) and
+   b4h-progress-<program> for every other program.
    ============================================================ */
 (function () {
   "use strict";
-  var KEY = "b4h-progress";
+  var PROGRAM = window.B4H_PROGRAM || "";
+  var KEY = (!PROGRAM || PROGRAM === "licensee") ? "b4h-progress" : "b4h-progress-" + PROGRAM;
   var BASE = window.B4H_BASE || "/";
 
   function read() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
@@ -77,6 +80,7 @@
   var MODULES = null;
   function loadModules() {
     if (MODULES) return Promise.resolve(MODULES);
+    if (!PROGRAM) return Promise.resolve({ modules: [] }); // program directory / 404: nothing to track
     return fetch(BASE + "data/modules.json").then(function (r) { return r.json(); }).then(function (m) { MODULES = m; window.B4H_MODULES = m; return m; }).catch(function () { return { modules: [] }; });
   }
 

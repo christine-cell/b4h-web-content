@@ -71,6 +71,14 @@ window.B4H_STRINGS = {
     "foot.contact": "Contact",
     "foot.program": "Program",
     "foot.rights": "For licensed Boxing4Health coaches.",
+    "nav.programs": "Training Programs",
+    "nav.training.pathway": "Pathway to Empowerment",
+    "foot.programs": "Programs",
+    "foot.rights.all": "Boxing4Health training programs.",
+    "foot.rights.pathway": "For Pathway to Empowerment participants. Educational only — not medical advice.",
+    "cert.body.pathway": "has completed the Parkinson’s Pathway to Empowerment Program",
+    "lesson.time.watch": "min video",
+    "lesson.time.do": "min activity",
     "fr.reviewflag": ""
   },
   fr: {
@@ -139,6 +147,14 @@ window.B4H_STRINGS = {
     "foot.contact": "Contact",
     "foot.program": "Programme",
     "foot.rights": "Pour les entraîneurs licenciés Boxing4Health.",
+    "nav.programs": "Programmes de formation",
+    "nav.training.pathway": "Parcours d’autonomisation",
+    "foot.programs": "Programmes",
+    "foot.rights.all": "Programmes de formation Boxing4Health.",
+    "foot.rights.pathway": "Pour les participants du Parcours d’autonomisation. À titre éducatif seulement — ne remplace pas un avis médical.",
+    "cert.body.pathway": "a terminé le programme Parcours d’autonomisation Parkinson",
+    "lesson.time.watch": "min de vidéo",
+    "lesson.time.do": "min d’activité",
     "fr.reviewflag": "Traduction en cours de révision"
   }
 };

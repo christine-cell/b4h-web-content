@@ -1,7 +1,8 @@
 import os, re, sys, glob
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-htmls=[f for f in glob.glob("**/*.html", recursive=True) if not f.startswith(("_sources","partials","licensee/partials","_authored"))]
+htmls=[f for f in glob.glob("**/*.html", recursive=True)
+       if not f.startswith(("_sources","_authored")) and "/partials/" not in "/"+f]
 missing=[]; checked=0
 attr=re.compile(r'(?:href|src)="([^"#?]+)(?:[?#][^"]*)?"')
 for f in htmls:
@@ -24,9 +25,12 @@ for f in htmls:
 for f in htmls:
     s=open(f,encoding="utf-8",errors="replace").read()
     for name in re.findall(r'data-include="([^"]+)"', s):
-        # partials are fetched at runtime via BASE, which resolves under licensee/
-        if not (os.path.exists(f"licensee/partials/{name}.html") or os.path.exists(f"partials/{name}.html")):
-            missing.append((f,f"partial:{name}","licensee/partials/"+name+".html"))
+        # partials are fetched at runtime from <program>/partials/ (data-program
+        # on <html>), or from the root partials/ for program-less pages
+        m=re.search(r'<html[^>]*data-program="([^"]+)"', s)
+        pdir=(m.group(1)+"/partials") if m else "partials"
+        if not os.path.exists(f"{pdir}/{name}.html"):
+            missing.append((f,f"partial:{name}",f"{pdir}/{name}.html"))
 # regression guard: a raw HTML tag leaking into an attribute value (e.g. a
 # bilingual() span dumped into placeholder="…") — almost always a bug.
 attrtag=re.compile(r'\b(?:placeholder|title|alt|value|aria-[a-z]+|content|data-title)="[^"]*<[^"]*"')

@@ -5,16 +5,22 @@
 (function () {
   "use strict";
 
-  // Resolve the site base URL from this script's own src, so every
-  // relative path (partials, assets, links) works at any URL depth
-  // and under the /repo/ GitHub Pages subpath.
+  // Resolve the site root from this script's own src (shared /assets/ live
+  // at the root), then the program base from <html data-program="…">.
+  // Every relative path (partials, data, links) works at any URL depth.
+  //   ROOT  → shared assets        (…/)
+  //   BASE  → this program's tree  (…/licensee/, …/pathway/, or ROOT)
   var thisScript = document.currentScript;
-  var BASE = (function () {
+  var ROOT = (function () {
     try {
       var src = thisScript.src;
-      return src.slice(0, src.indexOf("/assets/js/site.js") + 1);
+      return src.slice(0, src.indexOf("assets/js/site.js"));
     } catch (e) { return "/"; }
   })();
+  var PROGRAM = document.documentElement.getAttribute("data-program") || "";
+  var BASE = PROGRAM ? ROOT + PROGRAM + "/" : ROOT;
+  window.B4H_ROOT = ROOT;
+  window.B4H_PROGRAM = PROGRAM;
   window.B4H_BASE = BASE;
   var LS = window.localStorage;
 
@@ -142,8 +148,8 @@
         .then(function (r) { return r.ok ? r.text() : ""; })
         .then(function (html) {
           if (!html) return;
-          // fix relative asset/link hrefs (marked with data-base) to BASE
-          html = html.replace(/\{\{base\}\}/g, BASE);
+          // {{base}} → this program's tree; {{root}} → site root (shared assets)
+          html = html.replace(/\{\{base\}\}/g, BASE).replace(/\{\{root\}\}/g, ROOT);
           slot.outerHTML = html;
         })
         .catch(function () {});

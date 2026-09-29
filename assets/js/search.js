@@ -89,6 +89,7 @@
   }
 
   function init() {
+    if (!window.B4H_PROGRAM) return; // program-less pages have no lesson index
     fetch(BASE + "data/modules.json").then(function (r) { return r.json(); }).then(function (m) { buildIndex(m); }).catch(function () {});
     document.addEventListener("click", function (e) {
       var t = e.target.closest("[data-search-open]");
