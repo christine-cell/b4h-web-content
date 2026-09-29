@@ -16,7 +16,7 @@ just tell me which ones they are and I'll host the audio on the site directly.
 | 3 | Introduction → Action: Goal Setting | Action: Goal Setting — Christine arms out under the **GO BIG OR GO HOME** banner, 3:29 | 4e81e2_7a771e62f24840aab2c82113dfc1208b | **Done** — voice over a still picture, hosted on the site as audio (with the picture) |
 | 4 | Module 2 → Module 2- Diagnosed with Parkinsons, now what? | "YOU GOT THIS!" | 4e81e2_cdcf51f8f1c14069a4c847a45876d49e | **Done** — o6pXyxpTetc |
 | 5 | Module 2 → Overview of Parkinsons | Overview of Parkinson's — **GO BIG OR GO HOME** banner, 2:34 | 4e81e2_c3a54ca1f9044b08913c126f988652c7 | **Done** — voice over a still picture, hosted on the site as audio (with the picture) |
-| 6 | Module 2 → Your care team, Who do you call? | Your Care Team | 4e81e2_4805ff44eaf745b0ae1dd2314d36dcb4 | **Done** — voice over a still picture, hosted on the site as audio (with the picture) |
+| 6 | Module 2 → Your care team, Who do you call? | Your Care Team | 4e81e2_4805ff44eaf745b0ae1dd2314d36dcb4 | **Done** — mdZ_UAv1XxE (audio with slides, so YouTube) |
 | 7 | Module 2 → Got Dopamine | English | 4e81e2_cbb1bfbb58cc46a885b2060b20a857e2 | **Done** — voice over a still picture, hosted on the site as audio (with the picture) |
 | 8 | Module 2 → Got Dopamine | French version | 4e81e2_9abdf0be4f4e4389940b08ce51be1884 | **Done** — ndpZ27XaZBo |
 | 9 | Module 4 → Module 4- Good sleep is a reachable dream | Sleep intro | 4e81e2_497fade4bd4940089cf87cc35412c4d5 | Still needed — or tell me if it's audio only |
