@@ -18,7 +18,7 @@ just tell me which ones they are and I'll host the audio on the site directly.
 | 5 | Module 2 → Overview of Parkinsons | Overview of Parkinson's — **GO BIG OR GO HOME** banner, 2:34 | 4e81e2_c3a54ca1f9044b08913c126f988652c7 | Still needed (Rx99xByqnng is the *program* overview — Christine with her dog — already on the Overview of the Program lesson) |
 | 6 | Module 2 → Your care team, Who do you call? | Your Care Team | 4e81e2_4805ff44eaf745b0ae1dd2314d36dcb4 | Still needed |
 | 7 | Module 2 → Got Dopamine | English | 4e81e2_cbb1bfbb58cc46a885b2060b20a857e2 | Still needed |
-| 8 | Module 2 → Got Dopamine | French version | 4e81e2_9abdf0be4f4e4389940b08ce51be1884 | Still needed |
+| 8 | Module 2 → Got Dopamine | French version | 4e81e2_9abdf0be4f4e4389940b08ce51be1884 | **Done** — ndpZ27XaZBo |
 | 9 | Module 4 → Module 4- Good sleep is a reachable dream | Sleep intro | 4e81e2_497fade4bd4940089cf87cc35412c4d5 | Still needed |
 | 10 | Module 6 → Great things come to those that take action | English | 4e81e2_75eaa5cdb3fa46eaa1df1b82666023d0 | Still needed |
 | 11 | Module 6 → Great things come to those that take action | French version | 4e81e2_e066860495c44db59b57a67291994907 | Still needed |
