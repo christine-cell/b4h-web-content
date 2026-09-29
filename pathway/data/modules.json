@@ -1733,8 +1733,8 @@
      },
      "type": "lesson",
      "icon": "venus",
-     "kind": "watch",
-     "minutes": 20,
+     "kind": "read",
+     "minutes": 10,
      "wixStepId": "1ae4cc5d-cf9d-4c43-99ae-1e72d22fae7b"
     },
     {

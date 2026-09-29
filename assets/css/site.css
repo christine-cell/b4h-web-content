@@ -764,3 +764,31 @@ a.nav-link { position: relative; transition: color var(--transition), background
   .finale::before, .finale::after, .finale-trophy, .lesson-body .finale-title { animation: none; }
   .lesson-body .finale-title { color: #fff; background: none; }
 }
+
+/* ---------- Document / slide-deck viewer ---------- */
+.doc-slides { margin: 1.5rem 0; padding: 1rem; border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); box-shadow: var(--shadow-1); outline: none; }
+.doc-slides:focus-visible { box-shadow: 0 0 0 3px var(--focus); }
+.ds-stage { display: grid; gap: 1rem; }
+.lesson-body .ds-stage img { display: block; width: 100%; height: auto; margin: 0; border-radius: var(--r-md); box-shadow: var(--shadow-1); }
+.doc-slides.is-ready .ds-stage { position: relative; aspect-ratio: 16/9; gap: 0; }
+.lesson-body .doc-slides.is-ready .ds-stage img { position: absolute; inset: 0; height: 100%; object-fit: contain; opacity: 0; transition: opacity .35s ease; }
+.lesson-body .doc-slides.is-ready .ds-stage img[data-active] { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .lesson-body .doc-slides.is-ready .ds-stage img { transition: none; } }
+.ds-bar { display: none; }
+.doc-slides.is-ready .ds-bar { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: .9rem; }
+.ds-bar button { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--primary); cursor: pointer; transition: background var(--transition), border-color var(--transition); }
+.ds-bar button:hover:not(:disabled) { background: var(--blue-50); border-color: var(--primary); }
+:root[data-theme="dark"] .ds-bar button:hover:not(:disabled) { background: rgba(74,163,219,.14); }
+.ds-bar button:disabled { opacity: .35; cursor: default; }
+.ds-bar button svg { width: 22px; height: 22px; }
+.ds-bar [data-ds-count] { min-width: 4.5rem; text-align: center; font-family: var(--font-sans); font-weight: 800; color: var(--heading); }
+.ds-thumbs { display: none; }
+.doc-slides.is-ready .ds-thumbs { list-style: none; margin: .8rem 0 0; padding: 0; display: flex; gap: .5rem; overflow-x: auto; scrollbar-width: thin; }
+.ds-thumbs li { flex: none; margin: 0; padding: 0; }
+.ds-thumbs li::before { content: none; }
+.ds-thumbs button { padding: 2px; border: 2px solid transparent; border-radius: 8px; background: transparent; cursor: pointer; }
+.lesson-body .ds-thumbs img { display: block; width: 96px; height: 54px; object-fit: cover; margin: 0; border-radius: 5px; box-shadow: none; }
+.ds-thumbs button:hover { border-color: var(--border-strong); }
+.ds-thumbs button[aria-current="true"] { border-color: var(--primary); }
+.ds-thumbs button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.ds-download { margin-top: 1rem; }

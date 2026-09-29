@@ -25,7 +25,7 @@ just tell me which ones they are and I'll host the audio on the site directly.
 | 12 | Module 6 → Action-Challenge Video | Christine's video (above the TEDx talk) | 4e81e2_dca535d3cbef4948a429e9f2af78a987 | **Done** — MbyPsUkPNK8 |
 | 13 | Module 8 → Feed the need | Feed the Need | 4e81e2_44c9b97ac4a349fea07c17a62734be64 | **Done** — voice over a still picture, hosted on the site as audio (with the picture) |
 | 14 | Module 9 → Voice Work | Voice Work | 4e81e2_e18edb36be6a4b1293a552f0823f33c0 | **Done** — voice over a still picture, hosted on the site as audio (with the picture) |
-| 15 | Women Only → Estrogen has left the building! | Recorded presentation | 4e81e2_ceca9678904b4535bb87a138e777a42b | Still needed |
+| 15 | Women Only → Estrogen has left the building! | Recorded presentation | 4e81e2_ceca9678904b4535bb87a138e777a42b | **Replaced for now** — the slides are shown in a page-through viewer (the 17-min recording exists on Wix only; swap it in if it ever goes on YouTube) |
 | 16 | Module 12 → YOU DID IT! | "What Doesn't Challenge You Can't Change You" — already on YouTube (z9To_tTLKx8) but **private/deleted**: make it Unlisted, or send a new link | — | **Done** — oOJng1JQ-xU "PPE-Goodbye" (new upload), shown in a celebration finale |
 
 Already fixed (no action needed): "GRAND Movements" and "Voice Lesson" — the Wix
