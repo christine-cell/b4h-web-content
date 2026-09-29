@@ -19,7 +19,7 @@ just tell me which ones they are and I'll host the audio on the site directly.
 | 6 | Module 2 → Your care team, Who do you call? | Your Care Team | 4e81e2_4805ff44eaf745b0ae1dd2314d36dcb4 | **Done** — mdZ_UAv1XxE (audio with slides, so YouTube) |
 | 7 | Module 2 → Got Dopamine | English | 4e81e2_cbb1bfbb58cc46a885b2060b20a857e2 | **Done** — voice over a still picture, hosted on the site as audio (with the picture) |
 | 8 | Module 2 → Got Dopamine | French version | 4e81e2_9abdf0be4f4e4389940b08ce51be1884 | **Done** — ndpZ27XaZBo |
-| 9 | Module 4 → Module 4- Good sleep is a reachable dream | Sleep intro | 4e81e2_497fade4bd4940089cf87cc35412c4d5 | Still needed — or tell me if it's audio only |
+| 9 | Module 4 → Module 4- Good sleep is a reachable dream | Sleep intro | 4e81e2_497fade4bd4940089cf87cc35412c4d5 | **Done** — audio + synced slideshow of its 7 pictures |
 | 10 | Module 6 → Great things come to those that take action | English | 4e81e2_75eaa5cdb3fa46eaa1df1b82666023d0 | **Done** — voice over a still picture, hosted on the site as audio (with the picture) |
 | 11 | Module 6 → Great things come to those that take action | French version | 4e81e2_e066860495c44db59b57a67291994907 | Still needed |
 | 12 | Module 6 → Action-Challenge Video | Christine's video (above the TEDx talk) | 4e81e2_dca535d3cbef4948a429e9f2af78a987 | Still needed — or tell me if it's audio only |
