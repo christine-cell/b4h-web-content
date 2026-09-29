@@ -84,6 +84,7 @@ window.B4H_STRINGS = {
     "cert.locked.pathway": "Finish Modules 1–12 to unlock your certificate. The bonus libraries are optional.",
     "lesson.time.watch": "min video",
     "lesson.time.do": "min activity",
+    "lesson.time.listen": "min audio",
     "fr.reviewflag": ""
   },
   fr: {
@@ -165,6 +166,7 @@ window.B4H_STRINGS = {
     "cert.locked.pathway": "Terminez les modules 1 à 12 pour débloquer votre certificat. Les bibliothèques bonus sont facultatives.",
     "lesson.time.watch": "min de vidéo",
     "lesson.time.do": "min d’activité",
+    "lesson.time.listen": "min d’audio",
     "fr.reviewflag": "Traduction en cours de révision"
   }
 };

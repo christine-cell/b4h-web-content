@@ -21,7 +21,7 @@ def use(slug):
 def _data(name):
     p=os.path.join(SITE,"data",name)
     return json.load(open(p,encoding="utf-8")) if os.path.exists(p) else {}
-V = "31"
+V = "32"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, rp, program=""):
@@ -73,7 +73,7 @@ def blf(d, key):
     v = d.get(key, {}); return v.get("en",""), (v.get("fr") or v.get("en",""))
 
 # ---------------- HUB ----------------
-KIND_KEY = {"read": "lesson.time", "watch": "lesson.time.watch", "do": "lesson.time.do"}
+KIND_KEY = {"read": "lesson.time", "watch": "lesson.time.watch", "listen": "lesson.time.listen", "do": "lesson.time.do"}
 
 def lesson_row(l, prefix):
     icon = l.get("icon","book-open")

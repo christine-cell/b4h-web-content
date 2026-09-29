@@ -226,8 +226,8 @@
      },
      "type": "lesson",
      "icon": "brain",
-     "kind": "watch",
-     "minutes": 8,
+     "kind": "listen",
+     "minutes": 4,
      "wixStepId": "8159a46f-1c7d-4cbd-9973-a07ed07a1d3d"
     },
     {
@@ -270,8 +270,8 @@
      },
      "type": "lesson",
      "icon": "users",
-     "kind": "watch",
-     "minutes": 8,
+     "kind": "listen",
+     "minutes": 6,
      "wixStepId": "fbb937b4-50a9-4ff3-80f1-73515f93f7b1"
     },
     {
@@ -293,7 +293,7 @@
      "type": "lesson",
      "icon": "zap",
      "kind": "watch",
-     "minutes": 8,
+     "minutes": 9,
      "wixStepId": "9138dd84-a8a3-403a-876a-671b52a11482"
     },
     {
@@ -998,8 +998,8 @@
      },
      "type": "lesson",
      "icon": "salad",
-     "kind": "watch",
-     "minutes": 10,
+     "kind": "listen",
+     "minutes": 9,
      "wixStepId": "bad3ff84-7375-410f-b2e5-efd75c26adcb"
     },
     {
@@ -1321,8 +1321,8 @@
      },
      "type": "lesson",
      "icon": "smile",
-     "kind": "watch",
-     "minutes": 10,
+     "kind": "listen",
+     "minutes": 6,
      "wixStepId": "0adfb723-3043-4ad3-9e62-ebcef8bad79a"
     },
     {

@@ -691,7 +691,8 @@ a.nav-link { position: relative; transition: color var(--transition), background
 
 /* ---------- Audio (self-hosted, e.g. French lesson audio) ---------- */
 .audio-card { margin: 1.5rem 0; padding: 1rem 1.2rem; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); }
-.audio-card figcaption { font-family: var(--font-sans); font-weight: 700; color: var(--heading); margin-bottom: .6rem; }
+.lesson-body .audio-card figcaption, .audio-card figcaption { font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-base); color: var(--heading); margin: 0 0 .6rem; }
+.lesson-body .audio-card img { display: block; margin: 0 0 1rem; box-shadow: none; }
 .audio-card audio { width: 100%; }
 
 /* ---------- Lesson figures ---------- */
