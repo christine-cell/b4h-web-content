@@ -43,6 +43,7 @@ New clone? Run `sh tools/setup.sh` once to enable the pre-commit hook.
 | Glossary term / definition | `<p>/data/glossary.json` (drives the Glossary **and** the in-context tooltips) | rebuild |
 | A document/form | drop the file in `<p>/assets/docs/` **and** add it to `<p>/data/documents.json` | rebuild |
 | Pathway 10-day meal plan (recipes, food game, grocery list) | `pathway/data/meal-plan.json` (rendered into the lesson at build time via `<!-- include:meal-plan -->`) | rebuild |
+| Pathway Action Plan Workbook (11 weeks, tests, goals, logs) | `pathway/data/workbook.json` (rendered via `<!-- include:workbook -->`; field ids are saved answers — never rename them) | rebuild |
 | Program hub / resources hub | the program's builder functions in `tools/build_hub.py` (+ `<p>/data/*.json`) | rebuild |
 | Program directory card | `LANDING_CARDS` in `tools/build_hub.py` | rebuild |
 | UI chrome text (nav, buttons, labels) | `assets/js/i18n.js` — add the key to **both** `en` and `fr` | — |

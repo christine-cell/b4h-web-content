@@ -45,3 +45,8 @@ Edit the plan in `pathway/data/meal-plan.json`.
 - Collagen is tagged "animal protein" (levodopa timing) — confirm.
 - Some of your original meals may fall under 20–30 g protein as written (Day 1 oats, Day 3 shrimp); tips suggest boosts rather than changing amounts.
 - The food-sorting game (24 foods) is new — check the "why" lines, especially dairy ("avoid", per your Dairy lesson) and alcohol ("check with your care team").
+
+## New: interactive Action Plan Workbook (Module 1)
+Edit in `pathway/data/workbook.json`. Mirrors your 11-week printable workbook; Small Steps worksheet folded into Week 1 (the Word files were removed); baseline tests in Week 1 and re-test in Week 11 with an automatic comparison. Your original PDF is still offered on the lesson page.
+- Week 11 "Book an appointment with a health professional" reads "Talk with a health professional about supplements & diet" (no-booking rule).
+- Week 1 still lists the PDQ-39 as a to-do (not hosted) — tell me if it should go.

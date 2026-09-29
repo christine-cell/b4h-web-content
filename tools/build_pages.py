@@ -13,7 +13,7 @@ import json, re, os, sys, html as htmllib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from programs import ROOT, active, site_dir, authored_dir
 
-V = "37"  # asset cache-bust version (keep in sync with build_hub.py)
+V = "40"  # asset cache-bust version (keep in sync with build_hub.py)
 
 # Set per program by use()
 PROGRAM = SITE = AUTH = None
@@ -147,6 +147,9 @@ def _includes(html, lang):
         if name == "meal-plan":
             from render_meal_plan import render
             return render(ROOT, lang)
+        if name == "workbook":
+            from render_workbook import render
+            return render(ROOT, lang)
         raise SystemExit(f"unknown include: {name}")
     return re.sub(r"<!--\s*include:([\w-]+)\s*-->", sub, html)
 
@@ -169,7 +172,8 @@ def build_authored_page(mod, lesson, prev, nxt):
               + (["audio-slides"] if "data-audio-slides" in inner else []) \
               + (["finale"] if "data-finale" in inner else []) \
               + (["doc-slides"] if "data-doc-slides" in inner else []) \
-              + (["meal-plan"] if "data-meal-plan" in inner else [])
+              + (["meal-plan"] if "data-meal-plan" in inner else []) \
+              + (["workbook"] if "data-workbook" in inner else [])
     h = head(lesson["title"]["en"], lesson["summary"]["en"] or mod["desc"]["en"])
     h = h.replace("{BODYATTRS}", body_attrs(lesson, hasquiz))
     parts = [h, lesson_header(mod, lesson)]

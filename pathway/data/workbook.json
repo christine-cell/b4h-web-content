@@ -1,0 +1,916 @@
+{
+ "_comment": "Source for the interactive Action Plan Workbook (rendered into the action-plan-workbook lesson via <!-- include:workbook -->). Mirrors Christine's 11-week printable workbook; field ids are the storage keys — don't rename them once people have used the workbook.",
+ "days": {
+  "en": [
+   "Monday",
+   "Tuesday",
+   "Wednesday",
+   "Thursday",
+   "Friday",
+   "Saturday",
+   "Sunday"
+  ],
+  "fr": [
+   "Lundi",
+   "Mardi",
+   "Mercredi",
+   "Jeudi",
+   "Vendredi",
+   "Samedi",
+   "Dimanche"
+  ]
+ },
+ "tests": [
+  {
+   "id": "tug",
+   "unit": "s",
+   "better": "lower",
+   "en": "TUG test (walk to the line and back)",
+   "fr": "Test TUG (aller à la ligne et revenir)"
+  },
+  {
+   "id": "sitstand",
+   "unit": "s",
+   "better": "lower",
+   "en": "Sit-to-stand (5 times)",
+   "fr": "Assis-debout (5 fois)"
+  },
+  {
+   "id": "stepups",
+   "unit": "steps",
+   "better": "higher",
+   "en": "Step-ups (30 seconds)",
+   "fr": "Montées de marche (30 secondes)"
+  },
+  {
+   "id": "ground",
+   "unit": "s",
+   "better": "lower",
+   "en": "Down to the ground and back up",
+   "fr": "Descente au sol et retour debout"
+  },
+  {
+   "id": "legL",
+   "unit": "s",
+   "better": "higher",
+   "en": "Single-leg stand — left leg",
+   "fr": "Équilibre sur une jambe — jambe gauche"
+  },
+  {
+   "id": "legR",
+   "unit": "s",
+   "better": "higher",
+   "en": "Single-leg stand — right leg",
+   "fr": "Équilibre sur une jambe — jambe droite"
+  }
+ ],
+ "smallsteps": {
+  "principles": [
+   {
+    "en": "Start with your WHY — choose a goal that improves your daily life.",
+    "fr": "Commencez par votre POURQUOI — choisissez un objectif qui améliore votre quotidien."
+   },
+   {
+    "en": "Shrink the goal until it feels easy — five minutes counts.",
+    "fr": "Réduisez l’objectif jusqu’à ce qu’il semble facile — cinq minutes, ça compte."
+   },
+   {
+    "en": "Focus on actions, not outcomes — consistency beats intensity.",
+    "fr": "Misez sur les actions, pas sur les résultats — la régularité l’emporte sur l’intensité."
+   },
+   {
+    "en": "Attach the habit to your routine — after brushing your teeth, while the kettle boils.",
+    "fr": "Rattachez l’habitude à votre routine — après le brossage de dents, pendant que l’eau bout."
+   },
+   {
+    "en": "Track the win, not perfection — showing up counts.",
+    "fr": "Notez la réussite, pas la perfection — être présent(e), ça compte."
+   },
+   {
+    "en": "Celebrate small wins — you become someone who doesn’t quit.",
+    "fr": "Célébrez les petites victoires — vous devenez quelqu’un qui n’abandonne pas."
+   },
+   {
+    "en": "Miss a day? Reset. Don’t miss twice on purpose.",
+    "fr": "Vous avez manqué une journée ? Recommencez. Ne manquez pas deux fois exprès."
+   }
+  ],
+  "fields": [
+   {
+    "id": "ss.goal",
+    "kind": "text",
+    "en": "My goal:",
+    "fr": "Mon objectif :"
+   },
+   {
+    "id": "ss.step",
+    "kind": "text",
+    "en": "My smallest step:",
+    "fr": "Mon plus petit pas :"
+   },
+   {
+    "id": "ss.when",
+    "kind": "text",
+    "en": "When I will do it:",
+    "fr": "Quand je vais le faire :"
+   }
+  ]
+ },
+ "weeks": [
+  {
+   "n": 1,
+   "icon": "hand",
+   "title_en": "Welcome!",
+   "title_fr": "Bienvenue !",
+   "sections": [
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w1.pdq39",
+       "en": "PDQ-39 questionnaire",
+       "fr": "Questionnaire PDQ-39",
+       "link": "baseline-tests.html"
+      },
+      {
+       "id": "w1.sitstand",
+       "en": "Sit-to-stand test",
+       "fr": "Test assis-debout",
+       "link": "baseline-tests.html"
+      },
+      {
+       "id": "w1.tug",
+       "en": "TUG test",
+       "fr": "Test TUG",
+       "link": "baseline-tests.html"
+      },
+      {
+       "id": "w1.ground",
+       "en": "Down-to-the-ground test",
+       "fr": "Test de descente au sol",
+       "link": "baseline-tests.html"
+      },
+      {
+       "id": "w1.singleleg",
+       "en": "Single-leg test",
+       "fr": "Test sur une jambe",
+       "link": "baseline-tests.html"
+      },
+      {
+       "id": "w1.balance",
+       "en": "Start balance exercises daily",
+       "fr": "Commencer les exercices d’équilibre chaque jour",
+       "link": "lets-balance-together.html"
+      }
+     ]
+    },
+    {
+     "type": "tests",
+     "phase": "baseline"
+    },
+    {
+     "type": "fields",
+     "title_en": "My goals",
+     "title_fr": "Mes objectifs",
+     "hint_en": "What do you want this program to help you do?",
+     "hint_fr": "Qu’aimeriez-vous que ce programme vous aide à faire ?",
+     "fields": [
+      {
+       "id": "w1.goal1",
+       "kind": "textarea",
+       "en": "Goal #1",
+       "fr": "Objectif no 1"
+      },
+      {
+       "id": "w1.goal2",
+       "kind": "textarea",
+       "en": "Goal #2",
+       "fr": "Objectif no 2"
+      }
+     ]
+    },
+    {
+     "type": "smallsteps"
+    },
+    {
+     "type": "log",
+     "id": "w1.log",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Write in the exercise you complete each day.",
+     "hint_fr": "Inscrivez l’exercice que vous faites chaque jour."
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "icon": "stethoscope",
+   "title_en": "Diagnosis",
+   "title_fr": "Le diagnostic",
+   "sections": [
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w2.team",
+       "en": "Support team checklist complete",
+       "fr": "Liste de l’équipe de soutien remplie",
+       "link": "care-team.html"
+      }
+     ]
+    },
+    {
+     "type": "fields",
+     "title_en": "Sleep schedule",
+     "title_fr": "Horaire de sommeil",
+     "hint_en": "Write in your current times.",
+     "hint_fr": "Inscrivez vos heures actuelles.",
+     "fields": [
+      {
+       "id": "w2.wake",
+       "kind": "time",
+       "en": "Wake-up time (current)",
+       "fr": "Heure du lever (actuelle)"
+      },
+      {
+       "id": "w2.sleep",
+       "kind": "time",
+       "en": "Go-to-sleep time (current)",
+       "fr": "Heure du coucher (actuelle)"
+      }
+     ]
+    },
+    {
+     "type": "grid",
+     "id": "w2.grid",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Tick your balance exercise each day.",
+     "hint_fr": "Cochez votre exercice d’équilibre chaque jour.",
+     "cols": [
+      {
+       "id": "balance",
+       "en": "Balance exercise",
+       "fr": "Exercice d’équilibre"
+      }
+     ]
+    },
+    {
+     "type": "log",
+     "id": "w2.log",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Write in the exercise(s) you complete each day.",
+     "hint_fr": "Inscrivez le ou les exercices que vous faites chaque jour."
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "icon": "wind",
+   "title_en": "Stress",
+   "title_fr": "Le stress",
+   "sections": [
+    {
+     "type": "fields",
+     "title_en": "My goals",
+     "title_fr": "Mes objectifs",
+     "hint_en": "Re-write your original goals — has anything changed?",
+     "hint_fr": "Réécrivez vos objectifs de départ — quelque chose a-t-il changé ?",
+     "fields": [
+      {
+       "id": "w3.goal1",
+       "kind": "textarea",
+       "en": "Goal #1",
+       "fr": "Objectif no 1"
+      },
+      {
+       "id": "w3.goal2",
+       "kind": "textarea",
+       "en": "Goal #2",
+       "fr": "Objectif no 2"
+      }
+     ]
+    },
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w3.mind",
+       "en": "Mindfulness",
+       "fr": "Pleine conscience",
+       "link": "action-mindfulness.html"
+      },
+      {
+       "id": "w3.journal",
+       "en": "Journaling",
+       "fr": "Journal"
+      },
+      {
+       "id": "w3.grat",
+       "en": "Gratefulness questions (below)",
+       "fr": "Questions de gratitude (ci-dessous)"
+      }
+     ]
+    },
+    {
+     "type": "fields",
+     "title_en": "Gratefulness questions",
+     "title_fr": "Questions de gratitude",
+     "hint_en": "Write in your answers.",
+     "hint_fr": "Inscrivez vos réponses.",
+     "fields": [
+      {
+       "id": "w3.g1",
+       "kind": "text",
+       "en": "What 3 things am I grateful for today? — 1",
+       "fr": "Quelles sont 3 choses pour lesquelles je suis reconnaissant(e) aujourd’hui ? — 1"
+      },
+      {
+       "id": "w3.g2",
+       "kind": "text",
+       "en": "2",
+       "fr": "2"
+      },
+      {
+       "id": "w3.g3",
+       "kind": "text",
+       "en": "3",
+       "fr": "3"
+      },
+      {
+       "id": "w3.fail",
+       "kind": "textarea",
+       "en": "What did I fail at today? What did I learn from failing?",
+       "fr": "En quoi ai-je échoué aujourd’hui ? Qu’ai-je appris de cet échec ?"
+      },
+      {
+       "id": "w3.forward",
+       "kind": "textarea",
+       "en": "What am I looking forward to tomorrow?",
+       "fr": "Qu’est-ce qui me réjouit pour demain ?"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "icon": "moon",
+   "title_en": "Sleep",
+   "title_fr": "Le sommeil",
+   "sections": [
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w4.mind",
+       "en": "Mindfulness",
+       "fr": "Pleine conscience",
+       "link": "mindfulness-for-sleep.html"
+      },
+      {
+       "id": "w4.journal",
+       "en": "Journaling",
+       "fr": "Journal"
+      },
+      {
+       "id": "w4.grat",
+       "en": "Gratefulness questions",
+       "fr": "Questions de gratitude"
+      }
+     ]
+    },
+    {
+     "type": "fields",
+     "title_en": "Sleep schedule",
+     "title_fr": "Horaire de sommeil",
+     "hint_en": "Write in the time for each one.",
+     "hint_fr": "Inscrivez l’heure de chacun.",
+     "fields": [
+      {
+       "id": "w4.wake",
+       "kind": "time",
+       "en": "Wake-up time",
+       "fr": "Heure du lever"
+      },
+      {
+       "id": "w4.wind",
+       "kind": "time",
+       "en": "Mindfulness or journal time",
+       "fr": "Moment de pleine conscience ou de journal",
+       "note_en": "10–20 minutes before bed.",
+       "note_fr": "10 à 20 minutes avant le coucher."
+      },
+      {
+       "id": "w4.sleep",
+       "kind": "time",
+       "en": "Go-to-sleep time",
+       "fr": "Heure du coucher"
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "icon": "info",
+     "en": "See the Sleep Schedule lesson and fill in your sleep schedule every day.",
+     "fr": "Consultez la leçon Votre horaire de sommeil et remplissez votre horaire chaque jour.",
+     "link": "sleep-schedule.html"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "icon": "accessibility",
+   "title_en": "Steady as You Go!",
+   "title_fr": "Stable à chaque pas !",
+   "sections": [
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w5.stance",
+       "en": "Foot stance video",
+       "fr": "Vidéo sur la position des pieds",
+       "link": "balance-and-parkinsons.html"
+      },
+      {
+       "id": "w5.keith",
+       "en": "Balance exercise with Keith",
+       "fr": "Exercice d’équilibre avec Keith",
+       "link": "lets-balance-together.html"
+      },
+      {
+       "id": "w5.ground",
+       "en": "Ground exercise with Christine",
+       "fr": "Exercice au sol avec Christine",
+       "link": "down-to-the-ground.html"
+      }
+     ]
+    },
+    {
+     "type": "log",
+     "id": "w5.log",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Minimum 30 minutes of high intensity.",
+     "hint_fr": "Minimum 30 minutes à haute intensité."
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "icon": "flame",
+   "title_en": "Motivation",
+   "title_fr": "La motivation",
+   "sections": [
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w6.class",
+       "en": "Try a new exercise class",
+       "fr": "Essayer un nouveau cours d’exercice"
+      },
+      {
+       "id": "w6.social",
+       "en": "Social activity with friends",
+       "fr": "Activité sociale entre amis"
+      },
+      {
+       "id": "w6.hobby",
+       "en": "Try a new or old hobby",
+       "fr": "Essayer un nouveau passe-temps ou en reprendre un ancien"
+      }
+     ]
+    },
+    {
+     "type": "log",
+     "id": "w6.log",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Minimum 30 minutes of high intensity.",
+     "hint_fr": "Minimum 30 minutes à haute intensité."
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "icon": "dumbbell",
+   "title_en": "Exercise #1",
+   "title_fr": "L’exercice no 1",
+   "sections": [
+    {
+     "type": "fields",
+     "title_en": "What do you need in your exercise program for Parkinson’s?",
+     "title_fr": "Que doit contenir votre programme d’exercice pour la maladie de Parkinson ?",
+     "hint_en": "Fill in what each VIGOR letter stands for.",
+     "hint_fr": "Inscrivez ce que représente chaque lettre de VIGOR.",
+     "fields": [
+      {
+       "id": "w7.v",
+       "kind": "text",
+       "en": "V",
+       "fr": "V"
+      },
+      {
+       "id": "w7.i",
+       "kind": "text",
+       "en": "I",
+       "fr": "I"
+      },
+      {
+       "id": "w7.g",
+       "kind": "text",
+       "en": "G",
+       "fr": "G"
+      },
+      {
+       "id": "w7.o",
+       "kind": "text",
+       "en": "O",
+       "fr": "O"
+      },
+      {
+       "id": "w7.r",
+       "kind": "text",
+       "en": "R",
+       "fr": "R"
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "icon": "lightbulb",
+     "en": "Need a hint? Open the VIGOR lesson.",
+     "fr": "Besoin d’un indice ? Ouvrez la leçon VIGOR.",
+     "link": "vigor.html"
+    },
+    {
+     "type": "grid",
+     "id": "w7.grid",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Minimum 30 minutes of high intensity.",
+     "hint_fr": "Minimum 30 minutes à haute intensité.",
+     "cols": [
+      {
+       "id": "voice",
+       "en": "Voice exercise",
+       "fr": "Exercice de voix"
+      },
+      {
+       "id": "balance",
+       "en": "Balance exercise",
+       "fr": "Exercice d’équilibre"
+      },
+      {
+       "id": "ex30",
+       "en": "Exercise (30 min)",
+       "fr": "Exercice (30 min)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "icon": "heart-pulse",
+   "title_en": "Exercise #2",
+   "title_fr": "L’exercice no 2",
+   "sections": [
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w8.water",
+       "en": "2 glasses of warm water in the morning",
+       "fr": "2 verres d’eau tiède le matin"
+      },
+      {
+       "id": "w8.out",
+       "en": "Get outside",
+       "fr": "Sortir dehors"
+      },
+      {
+       "id": "w8.bottle",
+       "en": "Fill your water bottle for the day",
+       "fr": "Remplir sa bouteille d’eau pour la journée"
+      },
+      {
+       "id": "w8.aha",
+       "en": "AHA! moment for this module:",
+       "fr": "Mon moment « Eurêka ! » de ce module :",
+       "text": true
+      }
+     ]
+    },
+    {
+     "type": "grid",
+     "id": "w8.grid",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Minimum 30 minutes of high intensity.",
+     "hint_fr": "Minimum 30 minutes à haute intensité.",
+     "cols": [
+      {
+       "id": "voice",
+       "en": "Voice exercise",
+       "fr": "Exercice de voix"
+      },
+      {
+       "id": "balance",
+       "en": "Balance exercise",
+       "fr": "Exercice d’équilibre"
+      },
+      {
+       "id": "ex30",
+       "en": "Exercise (30 min)",
+       "fr": "Exercice (30 min)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "icon": "mic",
+   "title_en": "Voice",
+   "title_fr": "La voix",
+   "sections": [
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w9.out",
+       "en": "Get outside",
+       "fr": "Sortir dehors"
+      },
+      {
+       "id": "w9.bottle",
+       "en": "Fill your water bottle for the day",
+       "fr": "Remplir sa bouteille d’eau pour la journée"
+      },
+      {
+       "id": "w9.aha",
+       "en": "AHA! moment for this module:",
+       "fr": "Mon moment « Eurêka ! » de ce module :",
+       "text": true
+      }
+     ]
+    },
+    {
+     "type": "grid",
+     "id": "w9.grid",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Minimum 30 minutes of high intensity.",
+     "hint_fr": "Minimum 30 minutes à haute intensité.",
+     "cols": [
+      {
+       "id": "voice",
+       "en": "Voice exercise",
+       "fr": "Exercice de voix"
+      },
+      {
+       "id": "balance",
+       "en": "Balance exercise",
+       "fr": "Exercice d’équilibre"
+      },
+      {
+       "id": "ex30",
+       "en": "Exercise (30 min)",
+       "fr": "Exercice (30 min)"
+      },
+      {
+       "id": "bubbles",
+       "en": "Bubbles video",
+       "fr": "Vidéo des bulles"
+      },
+      {
+       "id": "facial",
+       "en": "Facial expressions",
+       "fr": "Expressions faciales"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "icon": "puzzle",
+   "title_en": "Wake Up Your Mind",
+   "title_fr": "Réveillez votre esprit",
+   "sections": [
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w10.finger",
+       "en": "Finger video",
+       "fr": "Vidéo des doigts",
+       "link": "wake-up-your-mind.html"
+      },
+      {
+       "id": "w10.out",
+       "en": "Get outside",
+       "fr": "Sortir dehors"
+      },
+      {
+       "id": "w10.bottle",
+       "en": "Fill your water bottle for the day",
+       "fr": "Remplir sa bouteille d’eau pour la journée"
+      },
+      {
+       "id": "w10.walk",
+       "en": "Go for a walk with a neighbour or a bike ride with a friend:",
+       "fr": "Faire une marche avec un voisin ou une randonnée à vélo avec un ami :",
+       "text": true
+      }
+     ]
+    },
+    {
+     "type": "grid",
+     "id": "w10.grid",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Minimum 30 minutes of high intensity.",
+     "hint_fr": "Minimum 30 minutes à haute intensité.",
+     "cols": [
+      {
+       "id": "voice",
+       "en": "Voice exercise",
+       "fr": "Exercice de voix"
+      },
+      {
+       "id": "balance",
+       "en": "Balance exercise",
+       "fr": "Exercice d’équilibre"
+      },
+      {
+       "id": "ex30",
+       "en": "Exercise (30 min)",
+       "fr": "Exercice (30 min)"
+      },
+      {
+       "id": "bubbles",
+       "en": "Bubbles video",
+       "fr": "Vidéo des bulles"
+      },
+      {
+       "id": "facial",
+       "en": "Facial expressions",
+       "fr": "Expressions faciales"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "icon": "pill",
+   "title_en": "Supplements — and your re-test",
+   "title_fr": "Les suppléments — et vos tests finaux",
+   "sections": [
+    {
+     "type": "todo",
+     "title_en": "To-do items",
+     "title_fr": "À faire",
+     "hint_en": "Tick each one when it’s done.",
+     "hint_fr": "Cochez chaque élément une fois terminé.",
+     "items": [
+      {
+       "id": "w11.supps",
+       "en": "Supplements I think I need:",
+       "fr": "Suppléments dont je pense avoir besoin :",
+       "link": "supplements-immune.html",
+       "text": true
+      },
+      {
+       "id": "w11.talk",
+       "en": "Talk with a health professional about supplements & diet",
+       "fr": "Parler de suppléments et d’alimentation avec un professionnel de la santé"
+      },
+      {
+       "id": "w11.bottle",
+       "en": "Fill your water bottle for the day",
+       "fr": "Remplir sa bouteille d’eau pour la journée"
+      },
+      {
+       "id": "w11.recipe",
+       "en": "Try one of the recipes",
+       "fr": "Essayer une des recettes",
+       "link": "plan-of-attack-recipes.html"
+      }
+     ]
+    },
+    {
+     "type": "grid",
+     "id": "w11.grid",
+     "title_en": "Exercise for the day",
+     "title_fr": "L’exercice du jour",
+     "hint_en": "Minimum 30 minutes of high intensity.",
+     "hint_fr": "Minimum 30 minutes à haute intensité.",
+     "cols": [
+      {
+       "id": "voice",
+       "en": "Voice exercise",
+       "fr": "Exercice de voix"
+      },
+      {
+       "id": "balance",
+       "en": "Balance exercise",
+       "fr": "Exercice d’équilibre"
+      },
+      {
+       "id": "ex30",
+       "en": "Exercise (30 min)",
+       "fr": "Exercice (30 min)"
+      },
+      {
+       "id": "bubbles",
+       "en": "Bubbles video",
+       "fr": "Vidéo des bulles"
+      },
+      {
+       "id": "facial",
+       "en": "Facial expressions",
+       "fr": "Expressions faciales"
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "icon": "trophy",
+     "en": "You’ve made it to what Christine calls “the beginning of the end” — time to re-test yourself! Don’t be discouraged if your times didn’t improve: you may have had a great day the first time and a harder day today. If so, try again tomorrow.",
+     "fr": "Vous voici à ce que Christine appelle « le début de la fin » — c’est le moment de refaire vos tests ! Ne vous découragez pas si vos temps ne se sont pas améliorés : vous avez peut-être passé une très bonne journée la première fois et une journée plus difficile aujourd’hui. Si c’est le cas, réessayez demain.",
+     "link": "re-test.html"
+    },
+    {
+     "type": "tests",
+     "phase": "retest"
+    },
+    {
+     "type": "compare"
+    },
+    {
+     "type": "fields",
+     "title_en": "Look back at your goals",
+     "title_fr": "Retour sur vos objectifs",
+     "hint_en": "Did you crush them? What’s your next goal?",
+     "hint_fr": "Les avez-vous atteints ? Quel est votre prochain objectif ?",
+     "fields": [
+      {
+       "id": "w11.review",
+       "kind": "textarea",
+       "en": "How did I do with my goals?",
+       "fr": "Comment ai-je progressé vers mes objectifs ?"
+      },
+      {
+       "id": "w11.next",
+       "kind": "textarea",
+       "en": "My next goal (short term and long term):",
+       "fr": "Mon prochain objectif (à court et à long terme) :"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
