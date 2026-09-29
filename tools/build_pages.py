@@ -13,7 +13,7 @@ import json, re, os, sys, html as htmllib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from programs import ROOT, active, site_dir, authored_dir
 
-V = "30"  # asset cache-bust version (keep in sync with build_hub.py)
+V = "31"  # asset cache-bust version (keep in sync with build_hub.py)
 
 # Set per program by use()
 PROGRAM = SITE = AUTH = None

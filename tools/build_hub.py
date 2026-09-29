@@ -21,7 +21,7 @@ def use(slug):
 def _data(name):
     p=os.path.join(SITE,"data",name)
     return json.load(open(p,encoding="utf-8")) if os.path.exists(p) else {}
-V = "30"
+V = "31"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, rp, program=""):

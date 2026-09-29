@@ -399,6 +399,9 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .video:hover .video-play span { transform: scale(1.08); }
 .video .video-play span svg { width: 34px; height: 34px; margin-left: 4px; }
 .video iframe { width: 100%; height: 100%; border: 0; }
+/* YouTube Shorts are vertical — give them a 9:16 frame instead of a letterboxed 16:9 one */
+.video[data-shape="short"] { aspect-ratio: 9/16; max-width: 340px; margin-inline: auto; }
+.video-grid .video[data-shape="short"] { max-width: none; aspect-ratio: 16/9; }
 .video-label { position:absolute; left:0; right:0; bottom:0; padding: 2.5rem 1rem .9rem; background: linear-gradient(transparent, rgba(0,0,0,.6)); color:#fff; font-family: var(--font-sans); font-weight:600; }
 .video-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1.2rem; }
 
