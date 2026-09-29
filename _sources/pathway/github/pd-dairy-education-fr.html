@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Produits Laitiers & La Maladie de Parkinson — Programme Éducatif PPE</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-deep: #1E3A5F;
+    --blue-mid: #2E6DA4;
+    --sky: #C8DEF0;
+    --cream: #F7F4EF;
+    --milk-white: #FAFAF7;
+    --terracotta: #C8603A;
+    --gold: #D4A03A;
+    --sage: #7A9E7E;
+    --deep: #1A2030;
+    --sand: #EAE0D0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--deep);
+    line-height: 1.7;
+  }
+
+  .hero {
+    background: var(--blue-deep);
+    background-image: radial-gradient(ellipse at 80% 20%, rgba(46,109,164,0.5) 0%, transparent 60%),
+                      radial-gradient(ellipse at 10% 80%, rgba(200,96,58,0.15) 0%, transparent 50%);
+    color: white;
+    padding: 60px 40px 85px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '🥛';
+    font-size: 200px;
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    opacity: 0.10;
+    transform: rotate(10deg);
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--terracotta);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 620px;
+  }
+
+  .hero h1 em { color: var(--gold); font-style: italic; }
+
+  .hero .subtitle {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    max-width: 560px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .study-tag {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.83rem;
+  }
+
+  .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px;
+    margin: -42px auto 0;
+    max-width: 820px;
+    padding: 0 24px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(30,58,95,0.14);
+    border-top: 4px solid var(--terracotta);
+    animation: slideUp 0.6s ease both;
+  }
+
+  .stat-card:nth-child(2) { border-top-color: var(--blue-mid); animation-delay: 0.1s; }
+  .stat-card:nth-child(3) { border-top-color: var(--gold); animation-delay: 0.2s; }
+  .stat-card:nth-child(4) { border-top-color: var(--sage); animation-delay: 0.3s; }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stat-number { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 700; color: var(--terracotta); line-height: 1; }
+  .stat-card:nth-child(2) .stat-number { color: var(--blue-mid); }
+  .stat-card:nth-child(3) .stat-number { color: var(--gold); }
+  .stat-card:nth-child(4) .stat-number { color: var(--sage); }
+  .stat-label { font-size: 0.8rem; color: #888; margin-top: 6px; line-height: 1.4; }
+
+  section { padding: 48px 0 20px; }
+
+  .section-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-mid); font-weight: 600; margin-bottom: 10px; }
+
+  h2 { font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 18px; color: var(--deep); line-height: 1.2; }
+
+  p { margin-bottom: 16px; font-size: 1rem; color: #2d3545; }
+
+  .highlight-box {
+    background: linear-gradient(135deg, var(--sky) 0%, #dceef8 100%);
+    border-left: 4px solid var(--blue-mid);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+
+  .highlight-box p { margin: 0; font-weight: 500; font-size: 1.02rem; color: var(--blue-deep); }
+
+  .mr-box {
+    background: var(--blue-deep);
+    color: white;
+    border-radius: 16px;
+    padding: 30px 32px;
+    margin: 24px 0;
+  }
+
+  .mr-box h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 12px; }
+  .mr-box p { color: rgba(255,255,255,0.85); margin: 0; font-size: 0.97rem; }
+
+  .finding-card {
+    background: white;
+    border-radius: 16px;
+    padding: 26px;
+    margin-bottom: 14px;
+    border: 1px solid #dde6f0;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    box-shadow: 0 2px 12px rgba(30,58,95,0.05);
+    transition: box-shadow 0.2s;
+  }
+
+  .finding-card:hover { box-shadow: 0 6px 24px rgba(30,58,95,0.1); }
+  .finding-icon { font-size: 2rem; min-width: 48px; text-align: center; }
+  .finding-title { font-weight: 600; font-size: 1.02rem; margin-bottom: 5px; color: var(--blue-deep); }
+  .finding-text { font-size: 0.92rem; color: #445; line-height: 1.6; margin: 0; }
+
+  .dairy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 22px 0; }
+
+  .dairy-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    border: 2px solid #dde6f0;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+
+  .dairy-card:hover { transform: translateY(-2px); }
+  .dairy-card.warning { border-color: #f0a0a0; background: #fff8f8; }
+  .dairy-card.neutral { border-color: #d0e8d0; background: #f8fff8; }
+  .dairy-emoji { font-size: 2rem; margin-bottom: 6px; }
+  .dairy-name { font-weight: 600; font-size: 0.9rem; }
+  .dairy-risk { font-size: 0.78rem; margin-top: 4px; }
+  .dairy-card.warning .dairy-risk { color: #c84a3a; }
+  .dairy-card.neutral .dairy-risk { color: #3a9a4a; }
+
+  .mechanism-box {
+    background: var(--deep);
+    color: white;
+    border-radius: 20px;
+    padding: 38px;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mechanism-box::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(46,109,164,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .mechanism-box h3 { font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 14px; }
+  .mechanism-box p { color: rgba(255,255,255,0.82); font-size: 0.97rem; }
+
+  .pathway { display: flex; align-items: center; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+  .pathway-step { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 8px 14px; font-size: 0.82rem; text-align: center; }
+  .pathway-arrow { color: var(--gold); font-size: 1.1rem; }
+
+  .takeaway { background: linear-gradient(135deg, var(--blue-deep) 0%, #0f2540 100%); color: white; border-radius: 20px; padding: 34px 38px; margin: 30px 0; }
+  .takeaway h3 { font-family: 'Fraunces', serif; font-size: 1.35rem; margin-bottom: 14px; color: var(--gold); }
+  .takeaway ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .takeaway li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; line-height: 1.5; opacity: 0.9; }
+  .takeaway li::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  .empowerment { background: linear-gradient(135deg, #e8f4e8 0%, #d4ecd4 100%); border-left: 4px solid var(--sage); border-radius: 0 14px 14px 0; padding: 22px 26px; margin: 24px 0; }
+  .empowerment p { margin: 0; font-size: 1rem; color: #2a4a2a; font-style: italic; font-weight: 500; }
+
+  .disclaimer { background: var(--sand); border-radius: 12px; padding: 18px 22px; margin: 28px 0; font-size: 0.85rem; color: #6a5a3a; display: flex; gap: 12px; align-items: flex-start; }
+  .disclaimer strong { color: var(--deep); }
+
+  .quiz-section { background: white; border-radius: 24px; padding: 40px; margin: 48px 0; border: 2px solid var(--sky); box-shadow: 0 8px 40px rgba(30,58,95,0.08); }
+  .quiz-header { text-align: center; margin-bottom: 34px; }
+  .quiz-header .badge { background: var(--blue-mid); }
+  .quiz-header h2 { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--deep); margin-bottom: 10px; }
+  .quiz-header p { font-size: 0.95rem; color: #888; margin: 0; }
+
+  .quiz-progress { display: flex; gap: 6px; justify-content: center; margin-bottom: 30px; }
+  .progress-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--sky); transition: background 0.3s; }
+  .progress-dot.active { background: var(--terracotta); }
+  .progress-dot.done { background: var(--blue-mid); }
+
+  .question-block { display: none; animation: fadeIn 0.4s ease; }
+  .question-block.visible { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .question-num { font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-mid); font-weight: 600; margin-bottom: 8px; }
+  .question-text { font-family: 'Fraunces', serif; font-size: 1.28rem; color: var(--deep); margin-bottom: 20px; line-height: 1.4; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+
+  .option-btn { background: var(--cream); border: 2px solid #dde6f0; border-radius: 12px; padding: 13px 18px; text-align: left; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; cursor: pointer; transition: all 0.2s; color: var(--deep); display: flex; align-items: center; gap: 12px; }
+  .option-btn:hover { border-color: var(--blue-mid); background: #eef4fb; transform: translateX(4px); }
+  .option-btn.selected { border-color: var(--blue-mid); background: #ddeef8; }
+  .option-btn.correct { border-color: #3a8a3a; background: #edf7e4; color: #1a4a1a; }
+  .option-btn.incorrect { border-color: #c84a3a; background: #fce8e4; color: #7a2018; }
+
+  .option-letter { width: 28px; height: 28px; border-radius: 50%; background: var(--sky); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; flex-shrink: 0; transition: background 0.2s; }
+  .option-btn.correct .option-letter { background: #3a8a3a; color: white; }
+  .option-btn.incorrect .option-letter { background: #c84a3a; color: white; }
+
+  .feedback-box { display: none; margin-top: 14px; padding: 14px 18px; border-radius: 10px; font-size: 0.92rem; line-height: 1.6; }
+  .feedback-box.show { display: block; }
+  .feedback-box.correct-fb { background: #edf7e4; border-left: 4px solid #3a8a3a; color: #1a4a1a; }
+  .feedback-box.incorrect-fb { background: #fce8e4; border-left: 4px solid #c84a3a; color: #6a2018; }
+
+  .quiz-nav { display: flex; justify-content: flex-end; margin-top: 22px; }
+
+  .next-btn { background: var(--blue-mid); color: white; border: none; border-radius: 12px; padding: 12px 28px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.1s; display: none; }
+  .next-btn:hover { background: #1d5a8a; transform: scale(1.02); }
+
+  .quiz-results { display: none; text-align: center; animation: fadeIn 0.5s ease; }
+  .result-emoji { font-size: 5rem; margin-bottom: 14px; display: block; }
+  .result-score { font-family: 'Fraunces', serif; font-size: 3.5rem; color: var(--blue-mid); line-height: 1; margin-bottom: 8px; }
+  .result-label { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: var(--deep); }
+  .result-message { font-size: 0.95rem; color: #666; max-width: 500px; margin: 0 auto 26px; line-height: 1.7; }
+  .result-bar { height: 14px; background: var(--sky); border-radius: 8px; max-width: 400px; margin: 0 auto 30px; overflow: hidden; }
+  .result-bar-fill { height: 100%; background: linear-gradient(90deg, var(--blue-mid), var(--sage)); border-radius: 8px; transition: width 1s ease 0.3s; width: 0; }
+
+  .retake-btn { background: var(--blue-deep); color: white; border: none; border-radius: 12px; padding: 14px 32px; font-family: 'DM Sans', sans-serif; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+  .retake-btn:hover { background: #0f2540; }
+
+  footer { text-align: center; padding: 36px 24px; font-size: 0.82rem; color: #aaa; border-top: 1px solid var(--sky); margin-top: 20px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 24px 70px; }
+    .mechanism-box, .quiz-section, .takeaway { padding: 26px 22px; }
+    .stats-row { margin-top: -30px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="badge">Programme Éducatif PPE</div>
+    <h1>Les Produits Laitiers <em>Augmentent-ils</em> le Risque de Parkinson ?</h1>
+    <p class="subtitle">Cette étude génétique de référence va au-delà des sondages alimentaires — elle utilise l'ADN pour déterminer si le lien entre produits laitiers et Parkinson est réellement causal. C'est la 8e étude pointant dans la même direction.</p>
+    <div class="study-tag">
+      📄 Domenighetti et al. (2022) · Movement Disorders · Consortium COURAGE-PD · 23 études, 18 199 participants
+    </div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-number">1,70×</div>
+    <div class="stat-label">risque accru de MP par portion quotidienne supplémentaire de produits laitiers</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">2,50×</div>
+    <div class="stat-label">risque accru chez les hommes spécifiquement — un résultat frappant</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">23</div>
+    <div class="stat-label">études internationales combinées dans le consortium COURAGE-PD</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">8e</div>
+    <div class="stat-label">étude dans un ensemble croissant de preuves reliant les produits laitiers au risque de MP</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <section>
+    <div class="section-tag">Pourquoi cette étude est différente</div>
+    <h2>Au-delà des Études Observationnelles — Dans Notre ADN</h2>
+    <p>Depuis des années, les chercheurs ont remarqué un schéma : les personnes qui consomment davantage de produits laitiers semblent présenter un risque plus élevé de développer la maladie de Parkinson. Mais les critiques ont posé des questions légitimes : pourrait-il s'agir d'une simple coïncidence ? Les personnes développant déjà la MP dans ses premières phases silencieuses pourraient-elles modifier leur alimentation ? D'autres facteurs de style de vie pourraient-ils expliquer ce lien ?</p>
+    <div class="highlight-box">
+      <p>🧬 Cette étude de 2022 a abordé ces questions de front en utilisant la <strong>Randomisation Mendélienne (RM)</strong> — une puissante technique génétique qui utilise des variants d'ADN naturellement présents comme une « expérience naturelle » pour tester si une relation est véritablement causale, et non simplement corrélationnelle.</p>
+    </div>
+    <p>Les chercheurs ont tiré parti des données du vaste <strong>Consortium COURAGE-PD</strong>, combinant 23 études internationales avec près de 10 000 patients atteints de Parkinson et plus de 8 000 témoins en bonne santé — ce qui en fait l'une des analyses les plus rigoureuses jamais réalisées sur cette question.</p>
+  </section>
+
+  <div class="mr-box">
+    <h3>🧬 Qu'est-ce que la Randomisation Mendélienne ?</h3>
+    <p>Imaginez une loterie génétique. Certaines personnes naissent avec un variant du gène <em>lactase</em> qui les prédispose naturellement à consommer davantage de produits laitiers tout au long de leur vie. Comme ce variant est attribué aléatoirement dès la conception — avant tout développement de maladie — il ne peut pas être influencé par les choix de vie ou les symptômes précoces d'une maladie. En comparant les taux de MP chez les personnes avec ou sans ce variant génétique, les chercheurs peuvent tester la causalité de manière bien plus rigoureuse que n'importe quel sondage alimentaire.</p>
+  </div>
+
+  <section>
+    <div class="section-tag">La Recherche</div>
+    <h2>Ce que l'Étude a Révélé</h2>
+
+    <div class="finding-card">
+      <div class="finding-icon">🔬</div>
+      <div>
+        <div class="finding-title">Prédisposition Génétique aux Laitiers Liée à un Risque de MP Plus Élevé</div>
+        <p class="finding-text">Les personnes génétiquement prédisposées à consommer davantage de produits laitiers présentaient un risque 70 % plus élevé de développer la maladie de Parkinson (OR = 1,70 par portion supplémentaire par jour). Ce résultat s'est maintenu même après contrôle des facteurs de confusion — une force caractéristique de l'approche par randomisation mendélienne.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">👨</div>
+      <div>
+        <div class="finding-title">L'Effet Était le Plus Marqué chez les Hommes</div>
+        <p class="finding-text">Lorsque les chercheurs ont réparti les données par sexe, l'association était beaucoup plus prononcée chez les hommes, qui présentaient une multiplication par 2,5 du risque de MP (OR = 2,50). La différence entre hommes et femmes était statistiquement significative, suggérant un mécanisme biologique potentiellement spécifique au sexe.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">🌍</div>
+      <div>
+        <div class="finding-title">Résultats Cohérents dans 23 Études Internationales</div>
+        <p class="finding-text">Les résultats se sont confirmés dans un ensemble diversifié de populations d'Europe, d'Asie, d'Australie et d'Afrique du Sud — conférant aux résultats une forte généralisabilité. Cette cohérence interculturelle est particulièrement convaincante et difficile à expliquer par des facteurs de confusion.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">⚖️</div>
+      <div>
+        <div class="finding-title">Causalité, Pas Seulement Corrélation</div>
+        <p class="finding-text">La conception par RM aborde spécifiquement deux préoccupations majeures soulevées par les études observationnelles antérieures : (1) la causalité inverse — l'idée que des symptômes précoces de MP pourraient modifier les comportements alimentaires, et (2) la confusion — l'idée que les consommateurs de produits laitiers pourraient partager d'autres facteurs de risque. Les deux ont été efficacement écartés grâce à l'approche génétique.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">Tous les laitiers ne sont pas égaux</div>
+    <h2>Ce que les Études Antérieures Nous Disent sur les Produits Spécifiques</h2>
+    <p>Bien que cette étude génétique ait examiné la consommation de produits laitiers de manière globale, de grandes études observationnelles antérieures (comme l'étude Harvard incluant 129 346 personnes) ont distingué différents produits. Le tableau qui en ressort est nuancé :</p>
+    <div class="dairy-grid">
+      <div class="dairy-card warning">
+        <div class="dairy-emoji">🥛</div>
+        <div class="dairy-name">Lait écrémé et demi-écrémé</div>
+        <div class="dairy-risk">⚠️ Signal le plus fort — résultats les plus constants</div>
+      </div>
+      <div class="dairy-card warning">
+        <div class="dairy-emoji">🍨</div>
+        <div class="dairy-name">Sorbet et Yaourt glacé</div>
+        <div class="dairy-risk">⚠️ Risque légèrement accru observé</div>
+      </div>
+      <div class="dairy-card neutral">
+        <div class="dairy-emoji">🧀</div>
+        <div class="dairy-name">Fromage entier</div>
+        <div class="dairy-risk">✅ Association faible ou non significative</div>
+      </div>
+      <div class="dairy-card neutral">
+        <div class="dairy-emoji">🥛</div>
+        <div class="dairy-name">Lait entier</div>
+        <div class="dairy-risk">✅ Aucune association significative dans l'étude Harvard</div>
+      </div>
+      <div class="dairy-card neutral">
+        <div class="dairy-emoji">🍦</div>
+        <div class="dairy-name">Crème glacée</div>
+        <div class="dairy-risk">✅ Aucune association constante trouvée</div>
+      </div>
+      <div class="dairy-card neutral">
+        <div class="dairy-emoji">🧈</div>
+        <div class="dairy-name">Beurre</div>
+        <div class="dairy-risk">✅ Aucune association significative observée</div>
+      </div>
+    </div>
+    <p style="font-size:0.88rem; color:#888; margin-top:8px;">⚠️ Note : Les résultats spécifiques aux produits proviennent d'études observationnelles et doivent être interprétés avec prudence. L'étude par RM de 2022 a examiné la consommation totale de produits laitiers.</p>
+  </section>
+
+  <div class="mechanism-box">
+    <h3>🔍 Pourquoi les Produits Laitiers Pourraient-ils être Liés à la MP ? Les Mécanismes Proposés</h3>
+    <p>Les chercheurs ont proposé plusieurs voies biologiques. Aucune explication unique n'a été confirmée, mais les principales théories incluent : des résidus de pesticides et de contaminants environnementaux (comme les organochlorés) dans les produits laitiers, retrouvés en concentrations plus élevées dans les cerveaux de patients atteints de MP ; la réduction par les produits laitiers du taux d'acide urique, un antioxydant naturel considéré comme neuroprotecteur ; et les modifications du microbiome intestinal induites par les produits laitiers, affectant l'axe intestin-cerveau. Le fait que les produits laitiers faibles en gras (et non entiers) montrent un signal plus fort a conduit certains chercheurs à supposer que certains composés protecteurs liposolubles dans les produits entiers pourraient partiellement compenser le risque.</p>
+    <div class="pathway">
+      <div class="pathway-step">Consommation de laitiers</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">↓ Acide Urique</div>
+      <div class="pathway-arrow">+</div>
+      <div class="pathway-step">Exposition aux contaminants</div>
+      <div class="pathway-arrow">+</div>
+      <div class="pathway-step">Modifications du microbiome</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">↑ Vulnérabilité neuronale</div>
+    </div>
+  </div>
+
+  <div class="empowerment">
+    <p>💚 « Il est toujours préférable de s'informer et de prendre la décision qui convient le mieux à votre santé. C'est la 8e étude montrant l'importance de considérer les produits laitiers dans le contexte du risque de Parkinson — et vous méritez d'avoir accès à cette information. »</p>
+  </div>
+
+  <div class="takeaway">
+    <h3>💡 Points Clés pour Votre Pratique</h3>
+    <ul>
+      <li>Cette étude par randomisation mendélienne de 2022 représente l'une des preuves les plus solides à ce jour que le lien produits laitiers–MP pourrait être causal, et non simplement fortuit.</li>
+      <li>Le risque était le plus prononcé chez les hommes, qui présentaient une multiplication par 2,5 — cela mérite d'être abordé lors des consultations cliniques.</li>
+      <li>Les preuves antérieures suggèrent que le lait écrémé et demi-écrémé présente le signal le plus fort ; les produits laitiers entiers pourraient ne pas comporter le même risque.</li>
+      <li>Les mécanismes proposés incluent l'exposition aux contaminants, la réduction de l'acide urique (un neuroprotecteur) et la perturbation du microbiome intestinal.</li>
+      <li>Cela ne signifie pas que les produits laitiers causent la MP chez chaque personne — le risque absolu global reste faible — mais c'est un facteur alimentaire potentiellement modifiable qui mérite d'être connu.</li>
+      <li>Encouragez les patients à discuter des modifications alimentaires avec leur équipe soignante dans le cadre d'une approche éclairée et personnalisée de la réduction du risque de MP.</li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    ⚠️ <div><strong>Note importante :</strong> Cette étude montre une association et soutient la causalité via une méthode génétique, mais aucun aliment unique ne cause ni ne prévient la maladie de Parkinson. Le risque absolu reste faible. Les décisions alimentaires doivent toujours être prises en consultation avec un professionnel de santé qualifié. Ces informations sont uniquement à des fins éducatives.</div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <div class="badge">Quiz Interactif</div>
+      <h2>Que Savez-vous des Produits Laitiers et de la MP ? 🥛</h2>
+      <p>Testez vos connaissances et réfléchissez à vos propres habitudes laitières — le savoir, c'est le pouvoir !</p>
+    </div>
+    <div class="quiz-progress" id="progressDots"></div>
+    <div id="quizContent"></div>
+    <div class="quiz-results" id="quizResults">
+      <span class="result-emoji" id="resultEmoji">🎉</span>
+      <div class="result-score" id="resultScore"></div>
+      <div class="result-label" id="resultLabel"></div>
+      <div class="result-bar"><div class="result-bar-fill" id="resultBarFill"></div></div>
+      <p class="result-message" id="resultMessage"></p>
+      <button class="retake-btn" onclick="restartQuiz()">🔁 Recommencer le Quiz</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    Source : Domenighetti C et al. (2022). <em>Dairy Intake and Parkinson's Disease: A Mendelian Randomization Study.</em> Movement Disorders, 37(4), 857–864. doi: 10.1002/mds.28902<br><br>
+    Créé pour le Programme Éducatif PPE — À des fins éducatives uniquement. Ne remplace pas un avis médical.
+  </div>
+</footer>
+
+<script>
+const questions = [
+  {
+    text: "Qu'est-ce qui fait de la Randomisation Mendélienne une preuve plus solide qu'un sondage alimentaire ordinaire ?",
+    options: [
+      "Elle utilise des variants génétiques attribués à la naissance, éliminant les biais liés aux choix de vie et aux symptômes précoces de maladie",
+      "Elle interroge davantage de personnes",
+      "Elle suit les habitudes alimentaires sur une plus longue période",
+      "Elle est réalisée en laboratoire plutôt que dans la communauté"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Exactement ! Comme les variants génétiques sont attribués aléatoirement dès la conception — avant tout développement de maladie — ils ne peuvent pas être influencés par les choix de vie ou les symptômes précoces. Cela élimine deux biais majeurs : la confusion et la causalité inverse.",
+      "❌ La taille de l'échantillon aide, mais n'élimine pas les biais fondamentaux des études alimentaires. La force de la RM vient de l'utilisation de variants génétiques, pas simplement d'avoir plus de participants.",
+      "❌ Un suivi plus long aide les études observationnelles, mais ne résout pas le problème fondamental de la confusion. L'avantage de la RM est d'utiliser l'ADN comme outil de randomisation naturelle.",
+      "❌ La RM est en réalité une méthode analytique appliquée aux données génétiques, et non une expérience de laboratoire. Sa puissance vient de l'utilisation de variants génétiques héréditaires comme « instrument » non biaisé de la consommation de produits laitiers."
+    ]
+  },
+  {
+    text: "De combien était le risque accru de maladie de Parkinson chez les hommes génétiquement prédisposés à une consommation plus élevée de produits laitiers ?",
+    options: [
+      "2,5 fois plus élevé",
+      "1,2 fois plus élevé",
+      "Aucun risque accru n'a été trouvé",
+      "10 fois plus élevé"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct ! Les hommes porteurs du variant du gène lactase les prédisposant à une consommation plus élevée de produits laitiers présentaient 2,5 fois plus de risque de développer la MP. Ce résultat spécifique au sexe est l'un des plus frappants de l'étude.",
+      "❌ L'augmentation était bien plus substantielle — les hommes présentaient une multiplication par 2,5 du risque de MP, et non une modeste augmentation de 20 %.",
+      "❌ L'étude a trouvé une association claire et statistiquement significative chez les hommes, avec un rapport de cotes de 2,50 — l'un des signaux génétiques les plus forts observés dans la recherche alimentaire sur la MP.",
+      "❌ Bien que le résultat soit significatif, l'augmentation était de 2,5 fois (OR = 2,50), pas 10 fois. C'est une augmentation du risque significative, mais pas absolue."
+    ]
+  },
+  {
+    text: "Quelle quantité de produits laitiers consommez-vous généralement par jour ?",
+    options: [
+      "3 portions ou plus — lait, yaourt, fromage quotidiennement",
+      "1 à 2 portions la plupart des jours",
+      "Moins d'une portion par jour",
+      "J'ai déjà réduit ou éliminé les produits laitiers"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "💡 C'est le niveau de consommation de produits laitiers associé au risque le plus élevé dans plusieurs études. Fort de ces informations, il peut être utile d'en discuter avec votre professionnel de santé pour savoir si réduire votre consommation est approprié pour vous.",
+      "💡 Une à deux portions par jour est modéré. La recherche montre un risque croissant avec une consommation croissante, donc être attentif au type et à la quantité de produits laitiers consommés est une approche raisonnable.",
+      "✅ Une faible consommation de produits laitiers vous place dans la catégorie à risque plus faible selon les preuves actuelles. Continuez à faire des choix éclairés !",
+      "✅ Vous avez déjà pris une mesure proactive basée sur les preuves disponibles. Continuez à surveiller les nouvelles recherches et à en discuter avec votre équipe soignante."
+    ]
+  },
+  {
+    text: "D'après les études observationnelles antérieures, quel type de produit laitier montrait l'association la PLUS FORTE avec un risque accru de MP ?",
+    options: [
+      "Le lait écrémé et demi-écrémé",
+      "Le fromage entier",
+      "Le beurre",
+      "La crème glacée"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct ! Le lait écrémé et demi-écrémé a systématiquement montré l'association la plus forte dans plusieurs grandes études, dont l'étude Harvard incluant 129 346 personnes. Les produits laitiers entiers montraient généralement des associations plus faibles ou non significatives.",
+      "❌ Le fromage entier montrait en réalité une association faible ou non significative dans la plupart des études. Fait intéressant, ce sont les produits laitiers faibles en gras qui montrent les signaux les plus forts — ce qui a conduit à des hypothèses intéressantes sur les composés protecteurs liposolubles.",
+      "❌ Le beurre ne montrait systématiquement aucune association significative avec le risque de MP dans les principales études. Le signal semble spécifique à certains produits laitiers, en particulier les variétés faibles en gras.",
+      "❌ La crème glacée ne montrait généralement pas d'association significative et constante avec le risque de MP. Le signal le plus fort provient de la consommation de lait écrémé et demi-écrémé."
+    ]
+  },
+  {
+    text: "Laquelle de ces propositions est l'une des raisons biologiques proposées pour lesquelles les produits laitiers pourraient être liés au risque de Parkinson ?",
+    options: [
+      "Les produits laitiers abaissent l'acide urique, un antioxydant neuroprotecteur naturel dans le cerveau",
+      "Les produits laitiers sont riches en graisses saturées qui détruisent directement les neurones",
+      "Les produits laitiers causent une hypertension artérielle qui déclenche Parkinson",
+      "Les produits laitiers contiennent trop de calcium qui est toxique pour le cerveau"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Exact ! L'acide urique est considéré comme un antioxydant naturel qui protège les neurones dopaminergiques. La consommation de produits laitiers a été associée à une réduction des taux d'acide urique, ce qui pourrait diminuer cette neuroprotection. D'autres mécanismes proposés incluent l'exposition aux contaminants et les modifications du microbiome intestinal.",
+      "❌ Les graisses saturées dans les produits laitiers ne constituent pas le mécanisme proposé. Fait intéressant, les produits laitiers entiers (qui contiennent plus de graisses saturées) montrent une association plus faible ou nulle avec la MP — suggérant que la graisse elle-même pourrait ne pas être le coupable.",
+      "❌ La pression artérielle n'est pas une voie bien établie entre les produits laitiers et la MP. Les mécanismes proposés principaux impliquent la déplétion en acide urique, les contaminants environnementaux dans les produits laitiers et la perturbation du microbiome intestinal.",
+      "❌ Le calcium des produits laitiers n'est pas considéré comme un mécanisme de risque pour la MP. En fait, le calcium d'autres sources ne semble pas augmenter le risque de MP — suggérant que c'est quelque chose de spécifique aux produits laitiers, et non le calcium lui-même."
+    ]
+  },
+  {
+    text: "Si vous consommez des produits laitiers, quels substituts seriez-vous le plus prêt(e) à explorer ?",
+    options: [
+      "Les laits végétaux (avoine, amande, soja)",
+      "Réduire la quantité globale tout en conservant quelques produits laitiers",
+      "Je ne suis pas encore prêt(e) à changer mes habitudes laitières",
+      "J'aimerais d'abord en discuter avec mon professionnel de santé"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "🌱 Excellent choix ! Les laits végétaux ont beaucoup progressé en termes de goût et de valeur nutritive. Recherchez des options enrichies en calcium pour assurer vos besoins quotidiens. Le lait d'avoine est particulièrement bon pour la cuisine et le café !",
+      "💡 Une position intermédiaire raisonnable ! Même des réductions modestes de la consommation de produits laitiers faibles en gras peuvent être bénéfiques selon les preuves actuelles. Être attentif au type (en optant pour des produits entiers si vous en consommez) peut également être pertinent.",
+      "💡 C'est tout à fait valide — c'est votre décision à prendre avec toutes les informations disponibles. La recherche est convaincante, mais ne mandate pas un changement pour tout le monde. Commencez par vous informer davantage et consultez votre équipe soignante.",
+      "✅ C'est l'approche la plus sage ! Votre professionnel de santé peut vous aider à peser les preuves dans le contexte de votre historique de santé personnel, de vos besoins nutritionnels et d'autres facteurs de risque."
+    ]
+  },
+  {
+    text: "Combien d'études internationales ont été combinées dans le Consortium COURAGE-PD sur lequel s'appuie cette étude de 2022 ?",
+    options: [
+      "23 études avec près de 18 000 participants",
+      "3 études",
+      "1 très grande étude",
+      "Plus de 100 études"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Tout à fait juste ! Le Consortium COURAGE-PD a combiné 23 études, dont 9 823 patients atteints de MP et 8 376 témoins en bonne santé — soit près de 18 200 participants au total. Cette envergure, combinée à la méthodologie par RM, en fait l'une des analyses les plus puissantes de cette question à ce jour.",
+      "❌ Le consortium était bien plus grand — 23 études dans de nombreux pays et continents. Cette portée internationale est ce qui rend les résultats si convaincants.",
+      "❌ Le Consortium COURAGE-PD est par définition une collaboration multi-études. Les 23 études couvrent l'Europe, l'Asie, l'Australie et l'Afrique du Sud.",
+      "❌ Bien que la recherche dans ce domaine soit en plein essor, ce consortium particulier s'est appuyé sur 23 études bien caractérisées. La qualité et la cohérence entre les études étaient essentielles."
+    ]
+  },
+  {
+    text: "Sachant ce que vous savez maintenant sur le lien entre produits laitiers et Parkinson, comment décririez-vous votre consommation globale de produits laitiers ?",
+    options: [
+      "Élevée — j'ai des produits laitiers à la plupart des repas",
+      "Modérée — quelques fois par semaine",
+      "Faible — je consomme rarement des produits laitiers",
+      "Nulle — je ne consomme déjà plus de produits laitiers"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "💡 Face à cette recherche, il pourrait valoir la peine de réfléchir à votre consommation, en particulier les produits laitiers faibles en gras comme le lait écrémé. Une conversation avec votre professionnel de santé ou diététiste pourrait vous aider à faire des choix éclairés adaptés à votre style de vie et vos objectifs de santé.",
+      "💡 Une consommation modérée vous place dans une catégorie de risque intermédiaire. Rester informé(e) et être attentif au type de produits laitiers consommés (en favorisant les options entières si vous en consommez) est une approche raisonnable selon les preuves actuelles.",
+      "✅ Une faible consommation de produits laitiers correspond bien aux profils associés à un risque de MP plus faible dans la recherche. Continuez à faire des choix alimentaires éclairés !",
+      "✅ Vous avez déjà fait un choix alimentaire cohérent avec l'ensemble croissant des recherches. Votre approche proactive de la santé est remarquable !"
+    ]
+  }
+];
+
+let currentQ = 0, score = 0, answered = false;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContent');
+  const dots = document.getElementById('progressDots');
+  dots.innerHTML = questions.map((_, i) => `<div class="progress-dot" id="dot-${i}"></div>`).join('');
+  container.innerHTML = questions.map((q, i) => `
+    <div class="question-block ${i === 0 ? 'visible' : ''}" id="qblock-${i}">
+      <div class="question-num">${q.knowledge ? '🧠 Vérification des Connaissances' : '🪞 Réflexion Personnelle'} · Question ${i + 1} sur ${questions.length}</div>
+      <div class="question-text">${q.text}</div>
+      <div class="options">
+        ${q.options.map((opt, j) => `
+          <button class="option-btn" onclick="selectAnswer(${i}, ${j})" id="opt-${i}-${j}">
+            <span class="option-letter">${String.fromCharCode(65+j)}</span>${opt}
+          </button>`).join('')}
+      </div>
+      <div class="feedback-box" id="fb-${i}"></div>
+      <div class="quiz-nav"><button class="next-btn" id="next-${i}" onclick="nextQuestion(${i})">${i < questions.length - 1 ? 'Suivant →' : 'Voir mes Résultats →'}</button></div>
+    </div>`).join('');
+  updateDots();
+}
+
+function selectAnswer(qIdx, optIdx) {
+  if (answered && currentQ === qIdx) return;
+  answered = true;
+  const q = questions[qIdx];
+  q.options.forEach((_, j) => {
+    const btn = document.getElementById(`opt-${qIdx}-${j}`);
+    if (j === optIdx) btn.classList.add(q.knowledge ? (j === q.correct ? 'correct' : 'incorrect') : 'selected');
+    if (q.knowledge && j === q.correct && j !== optIdx) btn.classList.add('correct');
+  });
+  const fb = document.getElementById(`fb-${qIdx}`);
+  fb.textContent = q.feedback[optIdx];
+  fb.className = `feedback-box show ${q.knowledge && optIdx !== q.correct ? 'incorrect-fb' : 'correct-fb'}`;
+  if (q.knowledge && optIdx === q.correct) score++;
+  document.getElementById(`next-${qIdx}`).style.display = 'block';
+}
+
+function nextQuestion(qIdx) {
+  document.getElementById(`qblock-${qIdx}`).classList.remove('visible');
+  answered = false;
+  if (qIdx + 1 < questions.length) {
+    currentQ = qIdx + 1;
+    document.getElementById(`qblock-${currentQ}`).classList.add('visible');
+    document.getElementById(`dot-${qIdx}`).classList.replace('active', 'done');
+    updateDots();
+  } else { showResults(); }
+}
+
+function updateDots() {
+  questions.forEach((_, i) => {
+    const dot = document.getElementById(`dot-${i}`);
+    if (i === currentQ) dot.classList.add('active');
+  });
+}
+
+function showResults() {
+  document.getElementById('quizContent').style.display = 'none';
+  document.getElementById('progressDots').style.display = 'none';
+  document.getElementById('quizResults').style.display = 'block';
+  const kQs = questions.filter(q => q.knowledge).length;
+  const pct = Math.round((score / kQs) * 100);
+  document.getElementById('resultScore').textContent = `${score}/${kQs}`;
+  let emoji, label, message;
+  if (pct === 100) { emoji = '🌟'; label = 'Expert en Recherche sur la MP !'; message = 'Remarquable ! Vous avez une compréhension approfondie de ce domaine complexe de la recherche sur Parkinson. Vos connaissances vous aideront à avoir des conversations éclairées avec les patients et les collègues.'; }
+  else if (pct >= 75) { emoji = '🧠'; label = 'Chercheur Perspicace !'; message = 'Excellent travail ! Vous avez une solide maîtrise des résultats clés. Revoyez les questions manquées pour compléter votre compréhension du lien produits laitiers–MP.'; }
+  else if (pct >= 50) { emoji = '📚'; label = 'Bon Début !'; message = 'Vous êtes sur la bonne voie ! C\'est une science complexe — relisez le résumé ci-dessus et envisagez de lire l\'étude originale pour approfondir vos connaissances.'; }
+  else { emoji = '🔬'; label = 'Continuez à Explorer !'; message = 'Le lien produits laitiers–MP implique une science fascinante. Relisez le contenu ci-dessus et réessayez — le concept de randomisation mendélienne vaut particulièrement la peine d\'être compris.'; }
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultLabel').textContent = label;
+  document.getElementById('resultMessage').textContent = message;
+  setTimeout(() => { document.getElementById('resultBarFill').style.width = pct + '%'; }, 100);
+}
+
+function restartQuiz() {
+  currentQ = 0; score = 0; answered = false;
+  document.getElementById('quizResults').style.display = 'none';
+  document.getElementById('quizContent').style.display = 'block';
+  document.getElementById('progressDots').style.display = 'flex';
+  buildQuiz();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

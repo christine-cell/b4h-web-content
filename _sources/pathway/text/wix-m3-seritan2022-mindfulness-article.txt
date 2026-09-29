@@ -1,0 +1,1428 @@
+Journal of Technology in Behavioral Science
+https://doi.org/10.1007/s41347-022-00261-7
+Online Mindfulness‑Based Cognitive Therapy for People
+with Parkinson’s Disease and Their Caregivers: a Pilot Study
+Andreea L. Seritan1,2
+· Ana‑Maria Iosif3 · Prarthana Prakash4 · Sarah S. Wang2,5 · Stuart Eisendrath1,2
+Received: 24 January 2022 / Revised: 16 April 2022 / Accepted: 22 April 2022
+© The Author(s), under exclusive licence to Springer Nature Switzerland AG 2022
+Abstract
+Anxiety and depression are common non-motor symptoms of Parkinson’s disease (PD). Caregivers of people with PD may
+experience severe caregiver burden. This study explored the feasibility and potential benefits of an online mindfulness-based
+cognitive therapy (MBCT) intervention for improving anxiety and depressive symptoms in people with PD and their caregivers
+(ClinicalTrials.gov NCT04469049, 7/8/2020). People with PD or parkinsonism and anxiety and/or depressive symptoms and
+caregivers of people with PD participated in one of three online MBCT groups. Demographic variables, pre- and post-MBCT
+behavioral measures (GAD-7, PHQ-9, Five Facet Mindfulness Questionnaire — FFMQ-15, Caregiver Self-Assessment
+Questionnaire — CSAQ), and satisfaction surveys were collected. Descriptive statistics were used to summarize data. Pre-
+and post-MBCT behavioral scores were compared using mixed-effect models. Fifty-six potential participants were assessed
+for eligibility. Twenty-eight entered MBCT groups; all but one completed the intervention. The overall sample analyzed (22
+people with PD, 4 caregivers) showed significant GAD-7 and PHQ-9 score reductions and FFMQ-15 total and observing and
+non-reactivity subscale score increases (all p’s < 0.05). Participants with PD and anxiety symptoms (n
+=
+14) had a significant
+GAD-7 score reduction; those with PD and depressive symptoms (n
+=
+12) had a significant PHQ-9 score reduction (both
+p’s < 0.05). Participants with PD also had a significant FFMQ-15 observing subscale score increase (p < 0.05). The caregiver
+sample was too small to be analyzed separately. Online MBCT is feasible (as measured by high attendance, completion
+rate, and participant satisfaction) and may be effective in improving anxiety and depressive symptoms in people with PD.
+Keywords Anxiety · Depression · Mindfulness-based cognitive therapy · Online · Parkinson’s disease · Caregivers
+Introduction
+Anxiety and depression are among the most common non-
+motor symptoms of Parkinson’s disease (PD) and may precede
+the onset of motor manifestations by decades (Broen et al.,
+2016; Pontone et al., 2009; Reijnders et al., 2008; Seritan et al.,
+* Andreea L. Seritan
+andreea.seritan@ucsf.edu
+1
+2
+3
+4
+5
+Department of Psychiatry and Behavioral Sciences,
+University of California, San Francisco, CA, USA
+UCSF Weill Institute for Neurosciences, San Francisco, CA,
+USA
+Department of Public Health Sciences, University
+of California, Davis, CA, USA
+Department of Neurology, Brown University, Providence, RI,
+USA
+Department of Neurology, University of California,
+San Francisco, CA, USA
+2019a). The lifetime prevalence of anxiety disorders in peo-
+ple with PD can reach 50%, while the lifetime prevalence of
+depressive disorders has been estimated at 66% (Broen et al.,
+2016; Pontone et al., 2009; Reijnders et al., 2008). Emotional
+difficulties may exacerbate PD motor symptoms; for example,
+anxiety, stress, or performance situations may worsen tremor
+or freezing of gait (Hemmerle et al., 2012; van der Heide
+et al., 2021a). In turn, motor symptoms can exacerbate anxiety,
+especially if they occur in public, creating a vicious cycle that
+PD sufferers are keenly aware of (Vandenberg et al., 2019).
+The social isolation imposed by the COVID-19 pandemic
+greatly affected people with PD (Brown et al., 2020; van der
+Heide et al., 2020). Individuals with PD, particularly those
+with preexisting neuropsychiatric symptoms and lower cogni-
+tive baseline reported increased severity of anxiety, depression,
+and motor symptoms as a result of pandemic-related stressors
+(van der Heide et al., 2020).
+Evidence-based pharmacological treatments for anxi-
+ety and depression exist. However, people with PD may be
+Vol.:(0123456789) 1 3
+sensitive to medication side effects and have a higher risk
+of drug-drug interactions because they are taking multiple
+medications concurrently. Non-pharmacological interven-
+tions can be powerful tools in the neuropsychiatric arma-
+mentarium. A recent review of psychological interventions
+for people with PD uncovered 56 studies, of which less than
+half (21) were randomized controlled trials (RCTs) (Zarotti
+et al., 2021). These included studies of cognitive behav-
+ioral therapy (CBT) and mindfulness-based interventions
+(MBIs), as well as less commonly used approaches, such as
+acceptance and commitment therapy and psychodrama. The
+authors concluded that, while there was sufficient evidence to
+recommend CBT for the treatment of insomnia and depres-
+sion in people with PD, more research was needed regarding
+the use of CBT and MBIs for anxiety, impulse control diffi-
+culties, and quality of life. MBIs have been shown to alleviate
+physical and psychological symptoms in many medical con-
+ditions including cancer, cardiovascular disease, and chronic
+pain, as well as psychiatric illnesses (notably, anxiety, and
+depressive disorders) (Bawa et al., 2015; Evans et al., 2008;
+Hilton et al., 2017; Lin et al., 2022; Marino et al., 2021; Piet
+& Hougaard, 2011). MBIs have also been studied in neuro-
+logical diseases such as multiple sclerosis, demonstrating
+improvement in anxiety, depression, fatigue, and stress lev-
+els (Ghielen et al., 2019; Hoogerwerf et al., 2017; Simpson
+et al., 2019).
+An emerging body of evidence highlights the effective-
+ness of MBIs for people with PD, showing reduced anxiety
+and depressive symptoms and improvement in activities of
+daily living, cognitive functioning, motor symptoms, and
+general well-being, although studies were small and had
+mixed results (Advocat et al., 2016; Birtwell et al., 2017;
+Cash et al., 2016; Dissanayaka et al., 2016; Kwok et al.,
+2019; Pickut et al., 2015; Vandenberg et al., 2019). A recent
+meta-analysis found MBIs to have small to moderate effect
+sizes in reducing psychological distress in people with PD
+(Ghielen et al., 2019). However, the evidence lags behind
+public opinion. In a survey of 5000 people with PD, 39% of
+respondents reported they were practicing mindfulness, with
+benefit for both their motor and non-motor symptoms (van
+der Heide et al., 2021b).
+Mindfulness-based cognitive therapy (MBCT) is a newer
+MBI that combines mindfulness practice with cognitive
+therapy elements and has been shown to prevent depression
+relapse and improve anxiety symptoms (Eisendrath et al.,
+2016; Evans et al., 2008; Kuyken et al., 2015; Segal et al.,
+2013; Tickell et al., 2020). MBCT is conducted in 8-week
+group sessions, along with independent participant home
+practice. The mechanisms through which MBIs can improve
+psychological well-being have not been clearly elucidated.
+Monitoring and acceptance skills and “decentering” (the
+ability to observe one’s thoughts and feelings as transient,
+objective events in the mind) have been postulated as main
+1 3
+Journal of Technology in Behavioral Science
+mechanisms of change (Chin et al., 2019; Moore et al., 2022).
+Additionally, a systematic review of MBCT studies in adults
+with major depressive disorder (MDD) showed that changes
+in mindfulness skills, rumination, worry, self-compassion,
+and decentering were associated with, predicted, or mediated
+treatment effects (van der Velden et al., 2015). Neuroimaging
+studies revealed reduced default mode network (DMN) acti-
+vation and enhanced DMN-central executive network (CEN)
+connectivity in experienced meditators, suggesting that CEN
+negatively regulates the DMN (Bauer et al., 2019; Brewer
+et al., 2011; Garrison et al., 2015).
+MBCT has been studied in PD, albeit not extensively
+(Dissanayaka et al., 2016; Fitzpatrick et al., 2010; Rodgers
+et al., 2019; Bogosian et al., 2022). People with PD who
+participated in an MBCT group noted improved coping
+skills and appreciated the mutual support (Fitzpatrick et al.,
+2010). Dissanayaka et al. (2016) and Rodgers et al. (2019)
+used a 6-week adapted MBCT protocol and demonstrated
+improvements in depressive and/or anxiety symptoms. A
+RCT of adapted MBCT delivered via Skype proved its fea-
+sibility and found significantly improved quality of life, but
+there were no differences between the intervention group
+and waitlist/control group with regard to any of the other
+study outcomes: anxiety, depression, pain, insomnia, fatigue,
+or daily activities (Bogosian et al., 2022).
+The COVID-19 pandemic imposed the sudden conver-
+sion of in-person to telehealth visits in healthcare systems
+throughout the world (Chen et al., 2020; Torales et al.,
+2022). Initial reports of online MBIs offered during the
+pandemic have underscored the feasibility of these inter-
+ventions, although their effectiveness has not yet been fully
+established (Accoto et al., 2021; Kang et al., 2021; Nourian
+et al., 2021). A web-based MBCT application was also stud-
+ied pre-pandemic for adults with MDD and residual depres-
+sive symptoms and found to be superior to usual depression
+care (Segal et al., 2020). In a previous pilot trial, we had to
+convert the last two sessions of an 8-week in-person MBCT
+intervention for people with PD to a virtual format when the
+pandemic started (Seritan et al., 2021). Therefore, we were
+interested to explore the feasibility and potential benefits of
+a fully online MBCT intervention and learn lessons for a
+post-pandemic future.
+Caregivers of people with PD experience mild-to-moderate
+caregiver burden, emotional difficulties, and disruption of their
+social lives (Boersma et al., 2017; Martinez-Martin et al., 2015;
+Mosley et al., 2017; Tolosa et al., 2021). Over half (65%) are
+women and spend an average of 22 h per week supporting their
+partners with PD (Tolosa et al., 2021). Caregivers desire access
+to emotional support and education regarding disease progres-
+sion and management of PD motor and non-motor symptoms
+(Boersma et al., 2017). In a sample of 584 pairs of people with
+PD and their primary caregivers, the patients’ neuropsychiat-
+ric symptoms (anxiety, mood, apathy, and psychosis) were a
+Journal of Technology in Behavioral Science
+main determinant of caregiver burden (Martinez-Martin et al.,
+2015). MBCT has been used with family caregivers of patients
+with dementia, showing reduced stress, anxiety, depression, and
+distress related to the patients’ challenging behaviors (Chacko
+et al., 2022), but it has not been studied in caregivers of cogni-
+tively intact people with PD, to our knowledge.
+In this study, we sought to evaluate the feasibility of
+an online MBCT intervention for people with PD and
+their caregivers (as measured by the ability to recruit the
+target number of participants, high attendance and com-
+pletion rate, and high participant satisfaction). Our sec-
+ond aim was to assess pre- to post-differences in anxiety
+(for people with PD who also had anxiety symptoms) and
+depression (for people with PD and depressive symptoms)
+scores, respectively. An additional, exploratory aim was
+to evaluate changes in anxiety and/or depressive symp-
+toms and caregiver burden measures for caregivers of
+people with PD who participated in the MBCT groups.
+Finally, we were interested to learn if caregiver burden
+could be reduced in carers who did not pursue MBCT, as
+an indirect effect of their partners’ participation in the
+intervention.
+Materials and Methods
+This study was approved by the Institutional Review Board
+at the University of California, San Francisco (UCSF) and
+registered on ClinicalTrials.gov (NCT04469049, 7/8/2020).
+Participants
+People with PD and self-reported anxiety and/or depres-
+sive symptoms and caregivers of people with PD were
+recruited through local neurology clinics, support groups,
+and websites (https:// clini caltr ials. ucsf. edu and Clinical-
+Trials.gov). Caregivers were also recruited directly after
+their care partners entered the study. Inclusion criteria
+were having a diagnosis of PD or parkinsonism established
+by a neurologist or being a caregiver of a person with
+PD; being able and willing to attend eight weekly 90-min
+online group sessions; experiencing minimal-to-moderate
+anxiety symptoms (Generalized Anxiety Disorder-7 item
+scale — GAD-7 score ≤ 16) and/or minimal-to-moderate
+depressive symptoms (Patient Health Questionnaire-9
+scale — PHQ-9 score ≤ 18) (Kroenke et al., 2001; Löwe
+et al., 2008). Exclusion criteria were having severe anxiety
+symptoms (GAD-7 score > 16) or moderately severe-to-
+severe depressive symptoms (PHQ-9 score > 18); cognitive
+impairment (Montreal Cognitive Assessment — MoCA
+score < 24) (Nasreddine et al., 2005); heavy alcohol or
+drug use; severe psychosis; active suicidal or homicidal
+ideation; severe motor fluctuations (less than 2 h “on” time
+per day) for people with PD; and pattern of engagement
+with health care (e.g., repeated no-shows) that indicated a
+low likelihood of completing the intervention. There were
+no geographic limitations; the virtual format allowed peo-
+ple from the entire USA to participate, as long as they met
+eligibility criteria.
+Study Design
+Prospective participants first completed a telephone pre-
+screening interview to establish whether they would meet
+preliminary inclusion criteria and receive information
+about the study. The prescreening questions covered the
+following: diagnosis of PD or parkinsonism; frequency
+of anxiety and/or depressive symptoms (at least once
+weekly was necessary to advance to the screening step);
+feeling comfortable in a group of 8–10 people; feeling
+comfortable with receiving and returning study mate-
+rials electronically; level of alcohol or drugs use; and
+daily number of “on” hours (for those with PD). Eligible
+potential participants were offered to sign study consent
+at this point. Those who chose to participate and signed
+consent were scheduled for a 90-min online screening
+interview with the principal investigator, an experienced
+geriatric psychiatrist (also the MBCT instructor). Screen-
+ing was conducted in a rolling manner throughout the
+study duration.
+The screening interview followed a semi-structured
+format, exploring current psychiatric symptoms (anxi-
+ety, depression, suicidality, impulsivity, elevated mood,
+cognition, psychosis, and substance use); past psychiat-
+ric history; medical history; current medications; family
+psychiatric history; and social support. Neurological diag-
+nosis, year of PD diagnosis, and deep brain stimulation
+treatment (for people with PD) were noted. Additional
+screening procedures included the GAD-7, PHQ-9, and
+MoCA telemedicine version (available at www. mocat est.
+com). Participants deemed eligible after screening were
+invited to join an upcoming MBCT group. If they had
+caregivers interested in participating in MBCT groups as
+well, caregivers followed the same screening protocol as
+above. Caregivers who wanted to join the study but were
+not interested in joining MBCT groups were invited to
+sign consent and provide data without participating in the
+intervention.
+In essence, there were three participant cohorts: P
+(people with PD or parkinsonism), C (caregivers who
+received the intervention/entered MBCT groups), and
+CN (caregivers who did not receive the intervention/did
+not enter MBCT groups). Table 1 summarizes the three
+cohorts, noting partner eligibility and measures collected
+for each cohort.
+1 3
+Journal of Technology in Behavioral Science
+Table 1 Description of participant cohorts and data collected
+Cohort Population In
+Partners in MBCT groups Pre-MBCT data collected Post-MBCT data collected
+MBCT
+groups
+P People with PD or parkinsonism Yes Allowed but not necessary Demographic survey; GAD-7;
+PHQ-9; FFMQ-15
+C Caregivers of people with PD Yes Allowed but not necessary Demographic survey; GAD-7;
+PHQ-9; FFMQ-15; CSAQ
+CN Caregivers of people with PD No Necessary Demographic survey; GAD-7;
+PHQ-9; CSAQ
+GAD-7; PHQ-9; FFMQ-15;
+Satisfaction survey
+GAD-7; PHQ-9; FFMQ-
+15; CSAQ; Satisfaction
+survey
+GAD-7; PHQ-9; CSAQ
+CSAQ Caregiver Self-Assessment Questionnaire, FFMQ-15 Five-Facet Mindfulness Questionnaire-15, GAD-7 Generalized Anxiety Disorder-7
+item scale, MBCT mindfulness-based cognitive therapy, PD Parkinson’s disease, PHQ-9 Patient Health Questionnaire-9
+Intervention
+In a previous pilot study, we adapted the MBCT protocol
+developed by Eisendrath et al. (Segal et al., 2013; Eisendrath
+et al., 2016) for use with people with PD (Seritan et al.,
+2021). Modifications included shortening sessions from
+2.5 h to 90 min in order to accommodate motor or non-
+motor (anxiety, attention, and mood changes) fluctuations;
+eliminating the mindful eating exercise (which could be
+perceived as insensitive by people with PD, who often have
+anosmia); and performing chair yoga instead of full body
+yoga. Mindful walking was optional since people with PD
+may have balance problems. Participants were encouraged
+to take their PD medications prior to starting the sessions
+(if applicable) and to take breaks as often as needed. This
+protocol was further modified for online delivery during the
+COVID-19 pandemic. Group sessions were conducted in
+Zoom (https:// zoom. us/). The participant manual was pro-
+vided in electronic format prior to starting the groups; hard
+copies were mailed to those who did not have access to a
+printer during the quarantine. Home practice was recorded
+in a practice log returned weekly via email; if participants
+had difficulty using email attachments, they could also take
+a photo with their phone or call the principal investigator and
+leave a message with the information. Emails were sent after
+each session explaining the home practice and any additional
+instructions for participants who had missed that session.
+The Zoom whiteboard was used for teaching, as necessary.
+Several exercises could not be performed in virtual format
+(e.g., monsters on a bus). The final week exercise, in which
+participants pass a ball of yarn from one to the next and
+thank each other for their contributions to the group, was
+conducted without props.
+Three successive online MBCT groups of 8–10 par-
+ticipants each were conducted between November 2020
+and June 2021. Each group lasted 8 weeks except for the
+first, which extended over 9 weeks due to the winter holi-
+days. Sessions were held in the evening (5–6:30 pm PST),
+so participants who worked could join (although they
+ended quite late for East Coast members). Attendance was
+recorded. The curriculum was pre-determined, with one
+change in response to external events: lovingkindness medi-
+tation was performed the week of January 6th, 2021, when
+the attack on the US Capitol took place, in response to the
+participants’ heightened anxiety, and the originally sched-
+uled sitting meditation was done the following week. Audio
+recordings (body scan, breathing space, and sitting medita-
+tions) and links to mindful yoga exercises were provided for
+independent practice. Participants were encouraged to prac-
+tice at home for 30–45 min daily between group sessions.
+Data Collection and Behavioral Measures
+A demographic survey including age, sex, education level,
+marital status, employment status, distance from the partici-
+pant’s home to UCSF clinic, previous mindfulness experi-
+ence, and goals for the course was collected for all partici-
+pants. Participants completed an emergency contact card,
+so they could be reached in case of emergency. Pre- and
+post-MBCT behavioral measures, GAD-7, PHQ-9, and Five
+Facet Mindfulness Questionnaire-15 (FFMQ-15; Baer et al.,
+2012), were collected for all MBCT participants. Caregiv-
+ers also completed the Caregiver Self-Assessment Ques-
+tionnaire (CSAQ) pre- and post-MBCT (American Medical
+Association 2010).
+The GAD-7 and PHQ-9 are standardized self-report
+instruments that quantify anxiety and depressive symp-
+toms, respectively, over the previous 2 weeks and can
+be used for screening and tracking treatment response
+over time. The score range for GAD-7 is 0–21 and that
+for PHQ-9 is 0–27, with higher scores indicating higher
+symptom severity. If screening was completed more
+than 4 weeks prior to starting the MBCT group, GAD-7
+and PHQ-9 were repeated to obtain a current measure
+of participant mood and anxiety. In our overall sample,
+1 3
+Journal of Technology in Behavioral Science
+Cronbach’s α values were 0.81 pre- and 0.86 post-MBCT
+for PHQ-9, and 0.77 pre- and 0.89 post-MBCT for GAD-7.
+The FFMQ is one of the most widely used self-report
+measures of trait mindfulness (Baer et al., 2006, 2012).
+The FFMQ-15 has 15 questions and has been shown to
+have a similar factor structure to the initial FFMQ-39
+instrument (Gu et al., 2016). Each question is rated on a
+Likert-type scale from 1 to 5, with 1
+=
+never or very rarely
+true, 2
+=
+rarely true, 3
+=
+sometimes true, 4
+=
+often true, and
+5
+=
+very often or always true. A total score is calculated,
+composed of five subscales: observing, describing, act-
+ing with awareness, non-judging of inner experiences,
+and non-reactivity to inner experiences. The total score
+range is 5–75, with subscale scores from 1 to 15; higher
+scores indicate higher mindfulness levels. In our overall
+analyzed sample, Cronbach’s α values were 0.85 pre- and
+0.86 post-MBCT for total score, and as follows for each
+subscale: observing (0.74 pre- and 0.70 post-MBCT),
+describing (0.77 pre- and 0.80 post-MBCT), acting with
+awareness (0.87 pre- and 0.77 post-MBCT), non-judging
+(0.80 pre- and 0.74 post-MBCT), and non-reactivity (0.68
+pre- and 0.86 post-MBCT).
+The CSAQ is a self-report instrument that measures
+caregiver burden. It consists of 16 yes/no questions (with
+one point assigned for each affirmative response) and
+two additional questions, asking respondents to rate their
+current stress level and health state on a scale from 1
+to 10. The maximum score is 16; scores higher than
+10 indicate high caregiver distress levels. The CSAQ
+has been compared to established screening measures of
+caregiver burden, stress, depression, and grief, although
+it has not been fully validated (Epstein-Lubow et al.,
+2010).
+Satisfaction surveys were collected after each MBCT
+group concluded, inquiring about overall satisfaction with
+the MBCT course, instructor, and handouts provided; any
+changes made by participants to their daily routine as a
+result of this course; barriers (if no changes were made);
+plans to continue to practice mindfulness; whether they
+would recommend MBCT to family or friends with PD;
+medication changes made during the course (for anxiety
+or depression); and any additional feedback. The satisfac-
+tion survey was an original questionnaire developed for
+our previous trial (Seritan et al., 2021). One question,
+“Would you recommend MBCT to family or friends with
+PD?” was adapted, with permission, from a survey used in
+the Remote Access to Care, Everywhere, for Parkinson’s
+Disease (RACE-PD) study (Dorsey et al., 2010). Data
+were collected and managed using Research Electronic
+Data Capture (REDCap), a secure, web-based software
+platform designed to support data capture for research
+studies (Harris et al., 2009).
+Statistical Analysis
+Descriptive statistics including frequencies, means, and
+standard deviations (SD) were used to summarize the demo-
+graphic and clinical variables, home practice times, and sat-
+isfaction survey responses. Pre- and post-MBCT behavioral
+measure scores were compared using linear mixed-effects
+models. The primary analysis included all MBCT partici-
+pants (people with PD and caregivers). Secondary analyses
+were conducted by restricting the sample to participants
+with PD, then to those with PD and more than minimal
+anxiety symptoms (GAD-7 score ≥ 5) and to people with
+PD and more than minimal depressive symptoms (PHQ-9
+score ≥ 5), respectively. Open-ended comments were ana-
+lyzed thematically.
+Results
+Figure 1 depicts the CONSORT flow diagram. Fifty-six indi-
+viduals were assessed for eligibility; 12 did not sign consent
+or did not meet prescreening criteria. Of the 44 participants
+who signed consent, 14 were excluded after screening, for
+the following reasons: GAD-7 score > 16 (n
+=
+3), MoCA
+score < 24 (n
+=
+5), other psychiatric conditions (history
+of psychosis or suicide attempts, n
+=
+2), or other reasons
+(decided to not join after completing screening, n
+=
+3; dif-
+ficulty keeping study appointments, n
+=
+1). Excluded partici-
+pants were provided local mental health resources, as neces-
+sary. MBCT group composition was as follows: Group 1–10
+participants (9 P, 1 C), Group 2–9 individuals (7 P, 2 C), and
+Group 3–9 people (8 P, 1 C). One CN caregiver provided data
+alongside Group 1, then joined Group 2 as C participant, and
+2 CN spouses completed questionnaires along with Group 2.
+One man with PD (4%) withdrew after two sessions due to
+competing demands. Three participants initially diagnosed
+with parkinsonism: one female fragile X premutation carrier,
+one woman with suspected progressive supranuclear palsy
+(PSP), and one man believed to have early dementia with
+Lewy bodies (DLB) also completed the intervention. The
+woman with suspected PSP was re-diagnosed with PD during
+the study; her data were analyzed as part of the P cohort. The
+other two participants were found not to have parkinsonian
+syndromes on follow-up neurological examinations and were
+not included in the analyses.
+Table 2 presents the demographic and clinical charac-
+teristics of the 28 participants who entered MBCT groups.
+Participants with PD (n
+=
+22) had a mean age of 63 years
+(SD, 7; range, 52–76) and mean time since diagnosis of
+4.7 years (SD, 3.8; range, 1–14) years. Three (14%) had
+been treated with deep brain stimulation. Eight participants
+(6 people with PD and 2 caregivers; 28% of total) lived
+outside California (in Colorado, Missouri, New Jersey, and
+1 3
+Journal of Technology in Behavioral Science
+Fig. 1 CONSORT flow diagram. aOne caregiver first provided data
+without participating in MBCT, then participated in the next MBCT
+group. bOne participant with parkinsonism was diagnosed with Par-
+kinson’s disease on follow-up neurological evaluation. cThese two
+participants were found to not have parkinsonian syndromes on fol-
+low-up neurological evaluation
+1 3
+Journal of Technology in Behavioral Science
+Table 2 MBCT participant demographic and clinical characteristics
+Variable People with Parkinson’s disease or parkinsonism
+(n
+=
+24)
+Caregivers (n
+=
+4)
+Age (years), mean (SD) [range] 62.5 (9.1) [36–76] 61.8 (8.5) [53–72]
+Male, n (%) 15 (63%) 1 (25%)
+Race, n (%)
+Asian American 5 (21%) 0 (0%)
+Black 1 (4%) 0 (0%)
+White 18 (75%) 4 (100%)
+Education (years), mean (SD) 17.7 (3.1) 16.5 (3.4)
+Marital status, n (%)
+Single/Never married 1 (4%) 0 (0%)
+Married/Long-term relationship 18 (75%) 4 (100%)
+Divorced 4 (17%) 0 (0%)
+Widowed 1 (4%) 0 (0%)
+Employment status, n (%)
+Working full-time 5 (21%) 0 (0%)
+Working part-time 5 (21%) 2 (50%)
+On disability 3 (12%) 0 (0%)
+Retired 11 (46%) 2 (50%)
+Distance from clinic (miles), median (Q1-Q3)
+26 (15–850) [2–3000] 960 (20–2384) [19–2867]
+[range]
+Previous mindfulness experience, n (%) 16 (67%) 2 (50%)
+MoCA, mean (SD) 27.9 (1.7) 27.5 (1.3)
+Initial neurological diagnosis, n (%)
+Parkinson’s disease 21 (88%) –
+Parkinsonism 3 (12%) –
+Pre-MBCT anxiety symptom severity,a n (%)
+Minimal (GAD-7 score, 1–4) 10 (42%) 2 (50%)
+Mild (GAD-7 score, 5–9) 12 (50%) 1 (25%)
+Moderate (GAD-7 score, 10–14) 1 (4%) 1 (25%)
+Severe (GAD-7 score ≥ 15) 1 (4%) 0 (0%)
+Pre-MBCT depressive symptom severity,b n
+(%)
+Minimal (PHQ-9 score, 1–4) 10 (42%) 1 (25%)
+Mild (PHQ-9 score, 5–9) 10 (42%) 2 (50%)
+Moderate (PHQ-9 score, 10–14) 2 (8%) 1 (25%)
+Moderately severe (PHQ-9 score, 15–19) 2 (8%) 0 (0%)
+Due to rounding, percentages might not add up to 100
+Q1 lower quartile, Q3 upper quartile, GAD-7 Generalized Anxiety Disorder-7 item scale, MBCT mindfulness-based cognitive ther-
+apy, MoCA Montreal Cognitive Assessment, PD Parkinson’s disease, PHQ-9 Patient Health Questionnaire-9, SD standard deviation
+a
+Participants with GAD-7 scores > 16 were excluded on initial screening; however, scores may have changed by the time participants started
+MBCT groups
+bParticipants with PHQ-9 scores > 18 were excluded on initial screening; however, scores may have changed by the time participants started
+MBCT groups
+Pennsylvania). Table 3 depicts MBCT session attendance
+and home practice time. Attendance was high; 95% of peo-
+ple with PD and 75% of caregivers attended at least 7 of
+the 8 sessions. On average, participants spent approximately
+3 h per week in independent home practice, with caregivers
+dedicating more time than people with PD.
+Table 4 summarizes pre- and post-MBCT behavioral
+measure scores. The overall analyzed sample had significant
+1 3
+Journal of Technology in Behavioral Science
+Table 3 MBCT group
+attendance and home practice
+time
+Variable People with Parkinson’s disease
+(n
+=
+22)a
+Caregivers (n
+=
+4)
+Number of sessions attended, n (%)
+2 1 (5%) 0 (0%)
+4 0 (0%) 1 (25%)
+7 6 (27%) 1 (25%)
+8 15 (68%) 2 (50%)
+Home practice time, minutes/week, mean (SD) [range]b
+Total 169.1 (56.8) [103–322] 206.6 (32.6) [185–244]
+MBCT mindfulness-based cognitive therapy, SD standard deviation
+aOne participant with Parkinson’s disease withdrew after 2 sessions
+b
+Data were first averaged within participant for all available weeks. One participant with Parkinson’s dis-
+ease and one caregiver did not provide home practice data
+GAD-7 and PHQ-9 score reductions and significant FFMQ-
+15 total score and observing and non-reactivity subscale
+score increases (all p’s < 0.05). When restricting the analyses
+to people with PD, score reductions remained significant for
+anxiety (p
+=
+0.02), but not for depression (p
+=
+0.07). When
+restricting analyses further to people with PD and at least
+mild psychiatric symptoms, both the subsample with anxiety
+symptoms (n
+=
+14, GAD-7 score ≥ 5) and the subgroup with
+depressive symptoms (n
+=
+12, PHQ-9 score ≥ 5) demonstrated
+significant improvement (both p’s < 0.05). These subsamples
+substantially overlapped; all 12 people with depressive symp-
+toms also had concurrent anxiety symptoms. Five people
+with PD achieved a 5-point reduction in PHQ-9 scores, which
+is considered clinically meaningful (Löwe et al., 2004). Par-
+ticipants with PD also had a significant FFMQ-15 observing
+subscale score increase (p < 0.05). Additionally, two partici-
+pants with PD reported being able to use mindfulness tech-
+niques to improve their motor symptoms. One man (with
+previous mindfulness experience) noted less dystonia in his
+hands or feet during and after sitting meditations, and one
+novice woman found she could interrupt the vicious cycle
+of festination-falls by using the breathing space to lower her
+anxiety in the moment, which in turn reduced falls. These
+benefits were not consistently present.
+The caregiver sample was too small to be analyzed sepa-
+rately. Caregiver GAD-7, PHQ-9, and FFMQ-15 results are
+included with the overall sample in Table 4. Individual CSAQ
+scores improved for all four caregivers. Mean pre-MBCT
+CSAQ score was 7.8 (SD, 2.2; range, 5–10), whereas mean
+post-MBCT CSAQ score was 3.3 (SD, 1.9; range, 2–6).
+Almost all (96%) of the participants who completed
+satisfaction surveys were satisfied or very satisfied with
+the course, 96% planned to continue to practice mind-
+fulness, and all stated they would recommend MBCT to
+family or friends with PD. Twenty (87%) respondents
+had made changes in their daily routine by starting or
+adding new practices, dedicating time or quiet space to
+mindfulness practice, or identifying daily activities they
+could perform mindfully. Three (13%) participants did not
+make any changes; barriers cited included time, external
+stressors, and reluctance to fully embrace mindfulness.
+Several participants had found MBCT to be extremely
+helpful in coping with current stressors and learned new
+strategies to manage their emotional difficulties. Others
+expressed interest in attending a repeat course or hav-
+ing additional sessions to consolidate gains. Participants
+shared their gratitude for having access to this interven-
+tion during the COVID-19 pandemic. Table 5 summarizes
+participant satisfaction survey responses, including sev-
+eral illustrative open-ended comments.
+Discussion
+This study aimed to evaluate the feasibility of an online
+MBCT intervention for people with PD and their caregivers.
+Feasibility was demonstrated by the ability to recruit the target
+number of participants with PD, very low attrition rate (4%),
+high attendance (95% people with PD and 75% caregivers
+attended ≥ 7 sessions), consistent home practice (approxi-
+mately 3 h/week, on average), and high/very high partici-
+pant satisfaction (96%). Attrition rate in MBCT groups can
+be as high as 30% (Crane & Williams, 2010; Rodgers et al.,
+2019). In our previous in-person MBCT study using a similar
+protocol taught by the same instructor (Seritan et al., 2021),
+only 11 of 16 (68%) participants attended ≥ 7 sessions, so it
+is likely that the online format helped ensure adherence. Our
+PD sample size was small (n
+=
+22). This was similar to prior
+MBI studies in PD, including MBCT (Birtwell et al., 2017;
+Cash et al., 2016; Dissanayaka et al., 2016; Fitzpatrick et al.,
+2010; Pickut et al., 2015; Rodgers et al., 2019), except for the
+previous online MBCT RCT that enrolled 60 people, 30 in
+the active arm and 30 in the waitlist/control arm (Bogosian
+et al., 2022).
+1 3
+Journal of Technology in Behavioral Science
+Table 4 Pre- and post-MBCT behavioral measure scores
+Pre- Post- Post -vs. pre-
+Outcome n Mean (SD) [range] Mean (SD) [range] Estimated difference (95% CI)a
+Overall sample (participants with PD and caregivers)b,c
+GAD-7 score 26 5.8 (3.3) [1–17] 3.3 (3.5) [0–14] −2.6 (−4.3 to −0.9)*
+PHQ-9 score 26 6.3 (4.3) [0–17] 4.2 (4.3) [0–18] −2.2 (−4.0 to −0.3)*
+FFMQ-15 scores
+Observing 26 10.0 (2.5) [6–15] 11.2 (2.5) [7–15] 1.0 (0.4 to 1.9)*
+Describing 26 10.8 (2.3) [7–15] 11.5 (2.4) [7–15] 0.7 (−0.2 to 1.6)
+Acting with awareness 26 10.7 (2.7) [6–15] 11.2 (2.3) [7–15] 0.4 (−0.5 to 1.3)
+Non-judging 26 12.2 (2.4) [7–15] 12.2 (2.2) [8–15] −0.02 (−1.0 to 1.0)
+Non-reactivity 26 9.7 (1.8) [6–13] 11.0 (2.7) [8–15] 1.3 (0.1 to 2.5)*
+Total 26 53.5 (7.9) [36–71] 57.0 (8.4) [43–74] 3.6 (0.4 to 6.7)*
+Participants with PDc
+GAD-7 score 22 6.0 (3.4) [1–17] 3.5 (3.8) [0–14] −2.6 (−4.5 to −0.6)*
+PHQ-9 score 22 6.4 (4.6) [0–17] 4.5 (4.6) [0–18] −1.9 (−4.1 to 0.3)
+FFMQ-15 scores
+Observing 22 10.1 (2.5) [6–15] 11.0 (2.4) [7–15] 0.8 (0.1 to 1.5)*
+Describing 22 10.6 (2.2) [7–15] 11.0 (2.3) [7–15] 0.5 (−0.4 to 1.4)
+Acting with awareness 22 10.9 (2.6) [6–15] 11.2 (2.2) [7–15] 0.3 (−0.8 to 1.3)
+Non-judging 22 12.3 (2.2) [7–15] 11.9 (2.3) [8–15] −0.3 (−1.3 to 0.7)
+Non-reactivity 22 9.6 (1.6) [6–13] 10.6 (2.6) [8–15] 1.0 (−0.2 to 2.2)
+Total 22 53.5 (6.8) [42–71] 55.7 (8.3) [43–74] 2.3 (−0.4 to 5.0)
+Participants with PD and pre-MBCT anxiety symptomsd,e
+GAD-7 score 14 7.6 (3.1) [5–17] 3.9 (3.4) [1–14] −3.8 (−6.2 to −1.4)*
+Participants with PD and pre-MBCT depressive symptomsd,e
+PHQ-9 score 12 9.8 (3.4) [6–17] 6.0 (5.3) [0–18] −3.8 (−7.3 to −0.2)*
+CI confidence interval, FFMQ-15 Five-Facet Mindfulness Questionnaire-15, GAD-7 Generalized Anxiety Disorder-7 item scale, MBCT mindfulness-
+based cognitive therapy, PD Parkinson’s disease, PHQ-9 Patient Health Questionnaire-9, SD standard deviation
+*
+p < 0.05
+a
+From linear mixed-effects regression models with a fixed effect for time (pre-, post-) and a random effect for person-specific intercept
+b
+Includes n
+=
+22 participants with Parkinson’s disease and n
+=
+4 caregivers
+cOne participant with Parkinson’s disease withdrew; all post-MBCT data are missing
+dParticipants with minimal symptoms (scores 1–4) were excluded from these analyses
+eThese subsamples substantially overlapped (all participants with Parkinson’s disease and depressive symptoms had concurrent anxiety symptoms)
+We also sought to evaluate pre- to post-MBCT changes in
+anxiety and/or depressive symptom severity. Both the overall
+participant sample (people with PD and caregivers) and the
+subsample of people with PD experienced significant anxi-
+ety symptom improvement. The overall sample also showed
+significant depressive symptom reduction. People with PD
+and anxiety symptoms had a significant GAD-7 score reduc-
+tion, whereas those with PD and depressive symptoms had a
+significant PHQ-9 score improvement. Of note, almost half
+of the PD subsample entered MBCT groups with minimal
+anxiety (GAD-7 score < 5) or depressive (PHQ-9 score < 5)
+symptoms. These participants were excluded from secondary
+analyses, thus reducing the subsample sizes. It is also impor-
+tant to note the high co-occurrence of anxious and depres-
+sive features (all 12 people with PD and depressive symp-
+toms also reported anxiety symptoms). This is much higher
+than that found in a prior MBCT trial. Rodgers et al. (2019)
+reported a 4% comorbidity of MDD and social phobia. How-
+ever, these authors used the Structured Clinical Interview for
+DSM-IV (SCID-IV, First et al., 2002) to establish psychiatric
+diagnoses, whereas we relied on participant self-report. This
+brings up the question of whether the anxiety improvements
+observed in our study were driven by alleviating depression,
+since MBCT was originally designed and has best evidence
+for MDD relapse prevention (Kuyken et al., 2015; Segal
+et al., 2013; Tickell et al., 2020). More importantly, although
+we found statistically significant differences in both anxiety
+and depression measures, it is not clear if these translated into
+clinically significant improvements. Only five participants
+with PD reached the 5-point minimal clinically important
+difference in PHQ-9 scores (Löwe et al., 2004). Anecdotally,
+we noted the greatest improvements in participants with the
+1 3
+Journal of Technology in Behavioral Science
+Table 5 Participant satisfaction survey responses (n
+=
+23)a
+Survey question n (%)
+Overall, how satisfied were you with this MBCT course?
+Very satisfied 17 (74%)
+Satisfied 5 (22%)
+Neutral 1 (4%)
+How satisfied were you with the group facilitator(s)?
+Very satisfied 21 (91%)
+Satisfied 2 (9%)
+How satisfied were you with the handouts provided?
+Very satisfied 16 (70%)
+Satisfied 6 (26%)
+Neutral 1 (4%)
+Do you plan to continue to practice mindfulness after completion of the MBCT course?
+Yesb 22 (96%)
+No 1 (4%)
+Would you recommend MBCT to a friend or family member with Parkinson’s disease?
+Yes 23 (100%)
+No 0 (0%)
+If you were taking medications for anxiety or depression, were there any medication changes made during this MBCT course?
+Yesc 2 (9%)
+No 11 (48%)
+Not taking medications 10 (43%)
+Do you have any other feedback about this MBCT course?
+“I am going through a very stressful period and trying to find a medication regimen that manages my leg tremors at night. The MBCT course
+helped to greatly reduce my anxiety during this time.” (Participant with PD)
+“I have enrolled in various mindfulness programs before but didn't maintain my daily practice. This course came at a much needed time for me
+personally […] The MBCT course really played a big role in helping me cope [with multiple stressors] with a level head […] Rediscovering
+mindfulness has been a savior for me.” (Participant with PD)
+“It was quite helpful for me, in that the social connections were a tonic during the involuntary COVID isolation.” (Participant with PD)
+“This course was a wonderful opportunity and awakening to the power of mindfulness […] I would highly recommend the course to others
+with PD. I will be using the tools I learned for years to come and I truly believe the course helped change my mindset about being a victim of
+PD to owning my experience.” (Participant with PD)
+“I am profoundly grateful for this training in mindfulness, which is now among my most useful skills for coping with life with a partner with
+Parkinson’s. As I look toward the future for my loved one, I am confident that our mindfulness practice will support our resiliency, nurture
+our mutual and self-compassion, and help us navigate the rocky emotional terrain of disease progression […] I hope this study will validate
+the need for expanded mindfulness supports for individuals with Parkinson’s and their caregivers.” (Caregiver)
+The first 3 questions were rated on a 1–5 Likert-type scale, with 1
+=
+very satisfied, 2
+=
+satisfied, 3
+isfied. Categories were not listed if no participant selected that option
+MBCT mindfulness-based cognitive therapy, PD Parkinson’s disease
+a
+n
+=
+20 people with Parkinson’s disease and n
+=
+3 caregivers completed surveys
+b
+Participants may have listed more than one mindfulness practice. Practices included body scan (n
+(n
+=
+1), mindful walking (n
+=
+4), sitting meditation (n
+=
+14), and yoga (n
+=
+4)
+c
+One participant started sertraline; one participant’s escitalopram dose was increased by 5 mg
+=
+neutral, 4
+=
+dissatisfied, and 5
+=
+very dissat-
+=
+4), breathing exercises (n
+=
+9), coping
+highest pre-MBCT scores. Future studies could focus on
+more symptomatic patients, by setting GAD-7 and PHQ-9
+scores of 5 as inclusion threshold and recruiting people with
+more severe anxiety and/or depressive symptoms. However,
+this will have to be carefully considered, because MBCT was
+not designed for use with patients experiencing active illness
+episodes. Safety aspects will also be important, given the
+online intervention format.
+When compared to previous MBCT studies in PD,
+Dissanayaka et al. (2016) found reductions in both anxi-
+ety and depressive symptoms, whereas Rodgers et al.
+(2019) showed improvement in depression, but not anxi-
+ety measures. In our previous pilot trial, we also found
+significant pre- to post-PHQ-9 score reductions only; that
+study was completed just as the COVID-19 pandemic
+was starting in the USA and our participants (many of
+1 3
+Journal of Technology in Behavioral Science
+them aging adults) were understandably very anxious
+(Seritan et al., 2021). The only other online MBCT trial
+published to date did not yield any significant differences
+in mood or anxiety measures (Bogosian et al., 2022).
+Of note, all previous studies, as well as our own, used
+adapted MBCT protocols. We did not collect data on
+the instructor’s adherence to the model. Adherence to
+protocol integrity is important in designing standardized
+interventions that can be broadly replicated (Crane &
+Hecht, 2018).
+The symptomatic improvement cannot be attributed
+exclusively to our intervention, as there can be many contrib-
+uting factors. Of note, 70% of patients and 50% of caregivers
+had prior mindfulness experience. Our intervention likely
+built on previous gains, and this may have led to more robust
+outcomes. Nevertheless, there were several complete novices
+who benefited greatly. Additionally, only two (15%) of the
+13 participants who were taking medications for anxiety and/
+or depression reported starting or titrating such medications
+during the course, suggesting a positive effect of our inter-
+vention. We did not inquire about PD medication changes,
+which may impact study outcomes through improvement
+in motor symptoms or wearing-off related anxiety. Future
+studies should note all medication changes.
+We also explored changes in trait mindfulness. We found
+a significant increase in FFMQ-15 total score, as well as
+observing and non-reactivity subscale scores in the overall
+sample. These differences were attenuated when the analy-
+sis was restricted to participants with PD; only the observ-
+ing subscale score increase remained significant. This
+was expected since MBIs, as well as some non-MBIs, can
+enhance mindfulness skills (Xia et al., 2019). This finding
+was consistent with prior MBI studies in PD which revealed
+significant improvement in FFMQ-15 or FFMQ-39 total
+score (Cash et al., 2016; Pickut et al., 2015) and/or observ-
+ing subscale score (Dissanayaka et al., 2016; Pickut et al.,
+2015). Gu et al. (2016) found that the FFMQ-15 factor struc-
+ture varies before and after MBCT as well as across samples
+of experienced meditators and nonmeditators. They sug-
+gested excluding the observing subscale and removing its
+items from the total score calculation. We chose to retain the
+observing subscale and include its items in the total score, as
+originally designed by Baer et al. (2006), because we believe
+changes in the awareness of inner states (reflected by this sub-
+scale) may translate into clinically meaningful improvements
+for people with PD, as detailed in the next paragraph. Future
+studies with larger samples may help elucidate the value of
+including the observing subscale items in the analysis. Pre-
+to post-MBCT non-reactivity subscale differences were also
+significant in the overall sample analyzed. The non-reactivity
+facet best correlates with self-compassion (Baer et al., 2006).
+Anecdotally, novice participants had lower pre-MBCT non-
+reactivity scores and improved the most in this regard. It is
+difficult to comment on non-significant FFMQ-15 subscale
+changes, given the small sample size and heterogeneous
+group composition (novices and experienced meditators).
+Larger samples would also allow correlations between GAD-
+7, PHQ-9, and FFMQ-15 results.
+Several participants were able to use techniques learned
+in the course to improve dystonia or festination leading to
+falls. This was an anecdotal finding, yet worth noting. Peo-
+ple with PD may have difficulty recognizing when motor
+symptoms occur and intervening in the moment to reduce
+associated anxiety. Our MBCT protocol emphasizes aware-
+ness of inner states and their bodily manifestations. Three
+previous MBI studies (Dissanayaka et al., 2016; Kwok
+et al., 2019; Pickut et al., 2015) also reported motor ben-
+efits, although only two (Kwok et al., 2019; Pickut et al.,
+2015) had significant results. Other teams sought to improve
+awareness of motor symptoms by using mindfulness or a
+novel body awareness training (BEWARE) that combined
+physical therapy with acceptance and commitment therapy
+elements (Buchwitz et al., 2021; Ghielen et al., 2017). None
+of these trials found significant differences with regard to
+their primary outcomes, although they uncovered benefits
+in secondary outcomes such as emotional well-being, anxi-
+ety, and cognitive functioning. Future studies should include
+standardized motor scales validated for online use to explore
+potential benefits of MBCT on motor symptoms (Dorsey
+et al., 2015).
+This study was conducted during the COVID-19 pan-
+demic, which greatly affected people with PD and their car-
+egivers, increasing stress and exacerbating anxiety and mood
+difficulties (Brown et al., 2020; van der Heide et al., 2020;
+Edwards & Carroll, 2020). The heightened stress may have
+obscured our findings, either by mitigating the benefit of our
+intervention or by enhancing a sense of solidarity among
+participants and, as such, increasing attendance and adher-
+ence with the practice. We were impressed with the partici-
+pants’ dedication to home practice (on average, 3 h/week),
+although this may have reflected the lack of social activities
+during the pandemic. A larger sample might allow correla-
+tions between home practice time and study outcomes.
+To our knowledge, the present study is the first completed
+trial of an online nationwide 8-week MBCT intervention
+conducted during the pandemic. A double-blind RCT of a
+4-week web-based MBCT intervention to prevent chronic
+pain after cardiac surgery is in progress (Martorella et al.,
+2021). Our team’s prior experience providing telehealth ser-
+vices to patients with movement disorders (Seritan et al.,
+2019b) allowed us to quickly pivot and design and conduct
+this study in a virtual format. Removing the geographic
+barriers facilitated access for people residing as far as 3000
+miles away and helped reduce isolation during this chal-
+lenging time. Additionally, it is much more convenient for
+people with PD to not travel to the clinic, even if they reside
+1 3
+locally (Seritan et al., 2019b). The environmental impact
+of not driving is also noteworthy, by reducing greenhouse
+gas emissions. On the other hand, one out-of-state group
+participant commented it was difficult to remember the
+schedule, due to the time zone difference. One important
+concern with studies of remote psychiatric interventions is
+that participants should be able to be reached in emergency
+situations. For this reason, we could not include patients
+with history of psychosis, suicide attempts, or other severe
+psychiatric illness. We asked our study participants to com-
+plete emergency contact cards prior to starting MBCT and
+discussed safety aspects in detail during the consent pro-
+cess. Fortunately, no emergencies occurred. One advantage
+of the virtual format was that the MBCT instructor was able
+to see more readily when a participant wished to speak in
+the Zoom gallery view, in contrast to in-person sessions.
+There are few comparisons of virtual and in-person MBIs;
+one RCT found online and in-person MBCT to be equally
+effective in reducing psychological distress in patients with
+cancer (Compen et al., 2018). Future studies should explore
+pros and cons of online MBIs in more detail.
+Caregivers dedicate a lot of time and energy to caring for
+their partners with PD but are often overlooked. Only one
+prior MBI study (not MBCT) included caregivers of people
+with PD (Cash et al., 2016). Our caregiver sample was too
+small to be analyzed separately, although individual CSAQ
+scores improved. We did not specifically advertise through
+caregiver support groups or websites. A larger sample would
+have allowed us to offer a separate MBCT group for caregiv-
+ers. This could have facilitated connection, ensuring a group
+dynamic that focused on the caregivers’ emotional needs.
+On the other hand, caregivers expressed better understand-
+ing of their partners’ experiences by participating alongside
+patients with PD. An additional benefit was that couples par-
+ticipating together could practice together at home, enhanc-
+ing adherence.
+We also included several caregivers who did not par-
+ticipate in MBCT groups but had a partner complete the
+training. We intended to explore the potential impact of
+an intervention targeting the care partners’ anxiety and/or
+depression on caregiver well-being. However, the CN cohort
+was too small and insufficient data were collected to allow
+meaningful inferences (e.g., no information was gathered
+regarding their medical or psychiatric history or current
+medications). A larger, better characterized caregiver sam-
+ple might have allowed exploration of associations between
+care partner behavioral measures and caregiver outcomes.
+Future studies should develop specific recruitment strategies
+aimed at caregivers and use more established caregiver bur-
+den scales such as the Zarit Burden Interview (Zarit et al.,
+1980). For this study, we selected non-proprietary instru-
+ments, given budget constraints.
+1 3
+Journal of Technology in Behavioral Science
+Three people initially diagnosed with parkinsonism also
+participated in the study. These were individuals whose
+neurologists had not yet established clear diagnoses but
+suspected atypical parkinsonian syndromes. We decided
+to include patients with parkinsonism because of the high
+prevalence of anxiety and mood manifestations in atypical
+parkinsonian syndromes such as PSP and DLB (Bono et al.,
+2021; Coughlin & Litvan, 2020; Tampi et al., 2019). There
+can be early diagnostic uncertainty before idiopathic PD is
+confirmed, especially for patients presenting with gait abnor-
+mality or atypical features (Breen et al., 2013). Moreover,
+virtual visits during the COVID-19 pandemic only allowed
+limited neurological examinations, which may have reduced
+initial diagnostic accuracy.
+Strengths of the present study included using a previously
+validated MBCT protocol adapted for people with PD, pio-
+neered in a prior trial and improved with participant feed-
+back; including caregivers; having an instructor experienced
+in group facilitation and providing telemedicine services for
+patients with PD; using validated scales for primary out-
+come quantification; and conducting the study entirely virtu-
+ally, which allowed nationwide participant recruitment and
+helped improve retention.
+Limitations include the lack of a control group, which did
+not allow to evaluate the effectiveness of the intervention;
+small caregiver sample size; limited racial/ethnic diversity
+among participants; not using a validated interview such as
+the SCID to characterize psychiatric disorders; lack of data
+collection on the instructor’s adherence to the MBCT proto-
+col integrity; and lack of longitudinal follow-up to observe
+whether gains were maintained. A measure of group cohe-
+sion would have also been helpful to explore as an outcome
+modifier.
+Conclusions
+Online MBCT is feasible and may be effective in improving
+anxiety and depressive symptoms in people with PD. These
+results should be replicated in studies with larger, more
+diverse samples, and using control groups. Benefits of mind-
+fulness are multi-faceted. We hope this study will serve as a
+catalyst for other centers to develop online MBIs, particu-
+larly given the ongoing challenges posed by the COVID-19
+pandemic to people with PD and their caregivers.
+Acknowledgements We thank all our study participants and their fami-
+lies. Parts of this work were presented in poster format at the Ameri-
+can Association for Geriatric Psychiatry Annual Meeting in Orlando,
+FL, March 18-21, 2022 and the 4th Pan American Parkinson’s Disease
+and Movement Disorders Congress in Miami, FL, May 26–28, 2022.
+Author Contribution All authors contributed to the study concep-
+tion and design. Dr. Seritan conducted the intervention. Drs. Seritan,
+Prakash, and Wang collected the data. Dr. Iosif performed the data
+Journal of Technology in Behavioral Science
+analysis. Drs. Seritan and Iosif drafted the manuscript. All co-authors
+critically reviewed and edited the manuscript draft.
+Funding Work on this project was supported by the Mount Zion Health
+Fund grant # 20200962 (Drs. Seritan, Iosif, and Wang). Dr. Iosif is also
+supported in part by the UC Davis Conte Center Biostatistics Core
+(P50MH106438).
+Declarations
+Ethics Approval The University of California, San Francisco Institu-
+tional Review Board reviewed and approved the study.
+Consent to Participate Informed consent was obtained from all indi-
+vidual participants included in the study.
+Competing Interests The authors declare no competing interests.
+References
+Accoto, A., Chiarella, S. G., Raffone, A., Montano, A., de Marco, A.,
+Mainiero, F., Rubbino, R., Valzania, A., & Conversi, D. (2021).
+Beneficial effects of mindfulness-based stress reduction training
+on the well-being of a female sample during the first total lock-
+down due to COVID-19 pandemic in Italy. International Journal
+of Environmental Research and Public Health, 18(11), 5512.
+Advocat, J., Enticott, J., Vandenberg, B., Hassed, C., Hester, J., &
+Russell, G. (2016). The effects of a mindfulness-based lifestyle
+program for adults with Parkinson’s disease: A mixed methods,
+wait list controlled randomised control study. BMC Neurology,
+16(1), 166.
+American Medical Association. Caregiver Self-Assessment Questionnaire.
+(2010). Retrieved December 20, 2021 from https:// www. healt hinag ing.
+org/ tools- and- tips/ careg iver- self- asses sment- quest ionna ire
+Baer, R. A., Smith, G. T., Hopkins, J., Krietemeyer, J., & Toney, L.
+(2006). Using self-report assessment methods to explore facets of
+mindfulness. Assessment, 13(1), 27–45.
+Baer, R. A., Carmody, J., & Hunsinger, M. (2012). Weekly change
+in mindfulness and perceived stress in a mindfulness-based
+stress reduction program. Journal of Clinical Psychology, 68(7),
+755–765.
+Bauer, C., Whitfield-Gabrieli, S., Díaz, J. L., Pasaye, E. H., & Barrios,
+F. A. (2019). From state-to-trait meditation: Reconfiguration
+of central executive and default mode networks. eNeuro, 6(6),
+ENEURO.0335–18.2019.
+Bawa, F. L., Mercer, S. W., Atherton, R. J., Clague, F., Keen, A., Scott,
+N. W., & Bond, C. M. (2015). Does mindfulness improve out-
+comes in patients with chronic pain? Systematic review and meta-
+analysis. The British Journal of General Practice : THe Journal of
+the Royal College of General Practitioners, 65(635), e387–e400.
+Birtwell, K., Dubrow-Marshall, L., Dubrow-Marshall, R., Duerden,
+T., & Dunn, A. (2017). A mixed methods evaluation of a
+mindfulness-based stress reduction course for people with
+Parkinson’s disease. Complementary Therapies in Clinical
+Practice, 29, 220–228.
+Boersma, I., Jones, J., Coughlan, C., Carter, J., Bekelman, D., Miyasaki,
+J., Kutner, J., & Kluger, B. (2017). Palliative care and Parkinson’s
+disease: Caregiver perspectives. Journal of Palliative Medicine,
+20(9), 930–938.
+Bogosian, A., Hurt, C. S., Hindle, J. V., McCracken, L. M., Sa, V. E.,
+& D. A., Axell, S., Tapper, K., Stevens, J., Hirani, P. S., Salhab,
+M., Ye, W., & Cubi-Molla, P. (2022). Acceptability and feasibility
+of a mindfulness intervention delivered via videoconferencing for
+people with Parkinson’s. Journal of Geriatric Psychiatry and Neu-
+rology, 35(1), 155–167.
+Bono, A. D., Twaite, J. T., Krch, D., McCabe, D. L., Scorpio, K. A.,
+Stafford, R. J., & Borod, J. C. (2021). Mood and emotional dis-
+orders associated with parkinsonism, Huntington disease, and
+other movement disorders. Handbook of Clinical Neurology,
+183, 175–196.
+Breen, D. P., Evans, J. R., Farrell, K., Brayne, C., & Barker, R. A.
+(2013). Determinants of delayed diagnosis in Parkinson’s disease.
+Journal of Neurology, 260(8), 1978–1981.
+Brewer, J. A., Worhunsky, P. D., Gray, J. R., Tang, Y. Y., Weber, J., &
+Kober, H. (2011). Meditation experience is associated with differ-
+ences in default mode network activity and connectivity. Proceed-
+ings of the National Academy of Sciences of the United States of
+America, 108(50), 20254–20259.
+Broen, M. P., Narayen, N. E., Kuijf, M. L., Dissanayaka, N. N., &
+Leentjens, A. F. (2016). Prevalence of anxiety in Parkinson’s dis-
+ease: A systematic review and meta-analysis. Movement Disor-
+ders: Official Journal of the Movement Disorder Society, 31(8),
+1125–1133.
+Brown, E. G., Chahine, L. M., Goldman, S. M., Korell, M., Mann, E.,
+Kinel, D. R., Arnedo, V., Marek, K. L., & Tanner, C. M. (2020).
+The effect of the COVID-19 pandemic on people with Parkinson’s
+disease. Journal of Parkinson’s Disease, 10(4), 1365–1377.
+Buchwitz, T. M., Maier, F., Greuel, A., Thieken, F., Steidel, K., Jakobs,
+V., & Eggers, C. (2021). Pilot study of mindfulness training on
+the self-awareness of motor symptoms in Parkinson’s disease - a
+randomized controlled trial. Frontiers in Psychology, 12, 763350.
+Cash, T. V., Ekouevi, V. S., Kilbourn, C., & Lageman, S. K. (2016).
+Pilot study of a mindfulness-based group intervention for indi-
+viduals with Parkinson’s disease and their caregivers. Mindful-
+ness, 7(2), 361–371.
+Chacko, E., Ling, B., Avny, N., Barak, Y., Cullum, S., Sundram, F., &
+Cheung, G. (2022). Mindfulness-based cognitive therapy for stress
+reduction in family carers of people living with dementia: A sys-
+tematic review. International Journal of Environmental Research
+and Public Health, 19(1), 614.
+Chen, J. A., Chung, W. J., Young, S. K., Tuttle, M. C., Collins, M. B.,
+Darghouth, S. L., Longley, R., Levy, R., Razafsha, M., Kerner,
+J. C., Wozniak, J., & Huffman, J. C. (2020). COVID-19 and tel-
+epsychiatry: Early outpatient experiences and implications for the
+future. General Hospital Psychiatry, 66, 89–95.
+Chin, B., Lindsay, E. K., Greco, C. M., Brown, K. W., Smyth, J. M.,
+Wright, A., & Creswell, J. D. (2019). Psychological mechanisms
+driving stress resilience in mindfulness training: A randomized
+controlled trial. Health Psychology : Official Journal of the Divi-
+sion of Health Psychology, American Psychological Association,
+38(8), 759–768.
+Compen, F., Bisseling, E., Schellekens, M., Donders, R., Carlson, L.,
+van der Lee, M., & Speckens, A. (2018). Face-to-face and internet-
+based mindfulness-based cognitive therapy compared with treat-
+ment as usual in reducing psychological distress in patients with
+cancer: A multicenter randomized controlled trial. Journal of Clini-
+cal Oncology : Official Journal of the American Society of Clinical
+Oncology, 36(23), 2413–2421.
+Coughlin, D. G., & Litvan, I. (2020). Progressive supranuclear palsy:
+Advances in diagnosis and management. Parkinsonism & Related
+Disorders, 73, 105–116.
+Crane, C., & Williams, J. M. (2010). Factors associated with attrition
+from mindfulness-based cognitive therapy in patients with a his-
+tory of suicidal depression. Mindfulness, 1(1), 10–20.
+Crane, R. S., & Hecht, F. M. (2018). Intervention Integrity in Mindful-
+ness-Based Research. Mindfulness, 9(5), 1370–1380.
+Dissanayaka, N. N., Idu Jion, F., Pachana, N. A., O’Sullivan, J. D.,
+Marsh, R., Byrne, G. J., & Harnett, P. (2016). Mindfulness for
+1 3
+motor and nonmotor dysfunctions in Parkinson’s disease. Parkin-
+son’s Disease, 2016, 7109052.
+Dorsey, E. R., Deuel, L. M., Voss, T. S., Finnigan, K., George, B. P.,
+Eason, S., Miller, D., Reminick, J. I., Appler, A., Polanowicz, J.,
+Viti, L., Smith, S., Joseph, A., & Biglan, K. M. (2010). Increasing
+access to specialty care: A pilot, randomized controlled trial of tel-
+emedicine for Parkinson’s disease. Movement Disorders : Official
+Journal of the Movement Disorder Society, 25(11), 1652–1659.
+Dorsey, E. R., Wagner, J. D., Bull, M. T., Rizzieri, A., Grischkan, J.,
+Achey, M. A., Sherer, T., Chowdhury, S., Meunier, C., Cappelletti,
+L., Rocker, C., Richard, I. H., Schwarz, H., Kang, G., Ahmad,
+S. H., Biemiller, R. A., & Biglan, K. M. (2015). Feasibility of
+virtual research visits in Fox Trial Finder. Journal of Parkinson’s
+Disease, 5(3), 505–515.
+Edwards, E., & Carroll, C. (2020). In reply to: Helmich and Bloem (2020)
+The impact of the COVID-19 pandemic on Parkinson’s disease: Hid-
+den sorrows and emerging opportunities. Journal of Parkinson's Dis-
+ease, 10(3), 1267–1268. https:// doi. org/ 10. 3233/ JPD- 202169
+Eisendrath, S. J., Gillung, E., Delucchi, K. L., Segal, Z. V., Nelson, J.
+C., McInnes, L. A., Mathalon, D. H., & Feldman, M. D. (2016).
+A randomized controlled trial of mindfulness-based cognitive
+therapy for treatment-resistant depression. Psychotherapy and
+Psychosomatics, 85(2), 99–110.
+Epstein-Lubow, G., Gaudiano, B. A., Hinckley, M., Salloway, S., &
+Miller, I. W. (2010). Evidence for the validity of the American
+Medical Association’s caregiver self-assessment questionnaire
+as a screening measure for depression. Journal of the American
+Geriatrics Society, 58(2), 387–388.
+Evans, S., Ferrando, S., Findler, M., Stowell, C., Smart, C., & Haglin,
+D. (2008). Mindfulness-based cognitive therapy for generalized
+anxiety disorder. Journal of Anxiety Disorders, 22(4), 716–721.
+First, M. B., Spitzer, R. L., Gibbon, M., & Williams, J. B. W. (2002)
+Structured Clinical Interview for DSM-IV-TR Axis I Disorders,
+Research Version, Patient Edition. (SCID-I/P). Biometrics
+Research, New York State Psychiatric Institute.
+Fitzpatrick, L., Simpson, J., & Smith, A. (2010). A qualitative analysis
+of mindfulness-based cognitive therapy (MBCT) in Parkinson’s
+disease. Psychology and Psychotherapy, 83(Pt 2), 179–192.
+Garrison, K. A., Zeffiro, T. A., Scheinost, D., Constable, R. T., &
+Brewer, J. A. (2015). Meditation leads to reduced default mode
+network activity beyond an active task. Cognitive, Affective &
+Behavioral Neuroscience, 15(3), 712–720.
+Ghielen, I., van Wegen, E., Rutten, S., de Goede, C., Houniet-de
+Gier, M., Collette, E. H., Burgers-Bots, I., Twisk, J., Kwakkel,
+G., Vermunt, K., van Vliet, B., Berendse, H. W., & van den
+Heuvel, O. A. (2017). Body awareness training in the treatment
+of wearing-off related anxiety in patients with Parkinson’s dis-
+ease: Results from a pilot randomized controlled trial. Journal
+of Psychosomatic Research, 103, 1–8.
+Ghielen, I., Rutten, S., Boeschoten, R. E., Houniet-de Gier, M., van
+Wegen, E., van den Heuvel, O. A., & Cuijpers, P. (2019). The
+effects of cognitive behavioral and mindfulness-based thera-
+pies on psychological distress in patients with multiple sclero-
+sis, Parkinson’s disease and Huntington’s disease: Two meta-
+analyses. Journal of Psychosomatic Research, 122, 43–51.
+Gu, J., Strauss, C., Crane, C., Barnhofer, T., Karl, A., Cavanagh, K., &
+Kuyken, W. (2016). Examining the factor structure of the 39-item
+and 15-item versions of the Five Facet Mindfulness Question-
+naire before and after mindfulness-based cognitive therapy for
+people with recurrent depression. Psychological Assessment,
+28(7), 791–802.
+Harris, P. A., Taylor, R., Thielke, R., Payne, J., Gonzalez, N., & Conde,
+J. G. (2009). Research electronic data capture (REDCap)–a meta-
+data-driven methodology and workflow process for providing
+translational research informatics support. Journal of Biomedi-
+cal Informatics, 42(2), 377–381.
+1 3
+Journal of Technology in Behavioral Science
+Hemmerle, A. M., Herman, J. P., & Seroogy, K. B. (2012). Stress,
+depression and Parkinson’s disease. Experimental Neurology,
+233(1), 79–86.
+Hilton, L., Hempel, S., Ewing, B. A., Apaydin, E., Xenakis, L., Newberry,
+S., Colaiaco, B., Maher, A. R., Shanman, R. M., Sorbero, M. E., &
+Maglione, M. A. (2017). Mindfulness meditation for chronic pain:
+Systematic review and meta-analysis. Annals of Behavioral Medicine :
+A Publication of the Society of Behavioral Medicine, 51(2), 199–213.
+Hoogerwerf, A., Bol, Y., Lobbestael, J., Hupperts, R., & van Heugten,
+C. M. (2017). Mindfulness-based cognitive therapy for severely
+fatigued multiple sclerosis patients: A waiting list controlled
+study. Journal of Rehabilitation Medicine, 49(6), 497–504.
+Kang, C., Sun, S., Yang, Z., Fan, X., Yuan, J., Xu, L., Wei, Y., Tong,
+H., & Yang, J. (2021). The psychological effect of internet-based
+mindfulness-based stress reduction on the survivors of breast can-
+cer during the COVID-19. Frontiers in Psychiatry, 12, 738579.
+Kroenke, K., Spitzer, R. L., & Williams, J. B. (2001). The PHQ-9:
+Validity of a brief depression severity measure. Journal of Gen-
+eral Internal Medicine, 16(9), 606–613.
+Kuyken, W., Hayes, R., Barrett, B., Byng, R., Dalgleish, T., Kessler,
+D., Lewis, G., Watkins, E., Brejcha, C., Cardy, J., Causley, A.,
+Cowderoy, S., Evans, A., Gradinger, F., Kaur, S., Lanham, P.,
+Morant, N., Richards, J., Shah, P., & Byford, S. (2015). Effec-
+tiveness and cost-effectiveness of mindfulness-based cognitive
+therapy compared with maintenance antidepressant treatment
+in the prevention of depressive relapse or recurrence (PRE-
+VENT): A randomised controlled trial. Lancet (london, England),
+386(9988), 63–73.
+Kwok, J., Kwan, J., Auyeung, M., Mok, V., Lau, C., Choi, K. C., &
+Chan, H. (2019). Effects of mindfulness yoga vs stretching and
+resistance training exercises on anxiety and depression for people
+with Parkinson disease: A randomized clinical trial. JAMA Neu-
+rology, 76(7), 755–763.
+Lin, L. Y., Lin, L. H., Tzeng, G. L., Huang, Y. H., Tai, J. F., Chen,
+Y. L., Wu, C. J., Chen, P. H., Lin, P. C., & Hung, P. L. (2022).
+Effects of mindfulness-based therapy for cancer patients: A sys-
+tematic review and meta-analysis. Journal of Clinical Psychology
+in Medical Settings. https:// doi. org/ 10. 1007/ s10880- 022- 09862-z.
+Advan ceonl inepu blica tion
+Löwe, B., Unützer, J., Callahan, C. M., Perkins, A. J., & Kroenke,
+K. (2004). Monitoring depression treatment outcomes with the
+patient health questionnaire-9. Medical Care, 42(12), 1194–1201.
+Löwe, B., Decker, O., Müller, S., Brähler, E., Schellberg, D., Herzog,
+W., & Herzberg, P. Y. (2008). Validation and standardization of
+the Generalized Anxiety Disorder Screener (GAD-7) in the gen-
+eral population. Medical Care, 46(3), 266–274.
+Marino, F., Failla, C., Carrozza, C., Ciminata, M., Chilà, P., Minutoli, R.,
+Genovese, S., Puglisi, A., Arnao, A. A., Tartarisco, G., Corpina, F.,
+Gangemi, S., Ruta, L., Cerasa, A., Vagni, D., & Pioggia, G. (2021).
+Mindfulness-based interventions for physical and psychological
+wellbeing in cardiovascular diseases: A systematic review and meta-
+analysis. Brain Sciences, 11(6), 727.
+Martinez-Martin, P., Rodriguez-Blazquez, C., Forjaz, M. J., Frades-Payo,
+B., Agüera-Ortiz, L., Weintraub, D., Riesco, A., Kurtis, M. M., &
+Chaudhuri, K. R. (2015). Neuropsychiatric symptoms and caregiver’s
+burden in Parkinson’s disease. Parkinsonism & Related Disorders,
+21(6), 629–634.
+Martorella, G., Hanley, A. W., Pickett, S. M., & Gelinas, C. (2021).
+Web- and mindfulness-based intervention to prevent chronic
+pain after cardiac surgery: Protocol for a pilot randomized con-
+trolled trial. JMIR Research Protocols, 10(8), e30951.
+Moore, M. T., Lau, M. A., Haigh, E., Willett, B. R., Bosma, C. M.,
+& Fresco, D. M. (2022). Association between decentering and
+reductions in relapse/recurrence in mindfulness-based cognitive
+therapy for depression in adults: A randomized controlled trial.
+Journal of Consulting and Clinical Psychology, 90(2), 137–147.
+Journal of Technology in Behavioral Science
+Mosley, P. E., Moodie, R., & Dissanayaka, N. (2017). Caregiver bur-
+den in Parkinson disease: A critical review of recent literature.
+Journal of Geriatric Psychiatry and Neurology, 30(5), 235–252.
+Nasreddine, Z. S., Phillips, N. A., Bédirian, V., Charbonneau, S.,
+Whitehead, V., Collin, I., Cummings, J. L., & Chertkow, H.
+(2005). The Montreal Cognitive Assessment, MoCA: A brief
+screening tool for mild cognitive impairment. Journal of the
+American Geriatrics Society, 53(4), 695–699.
+Nourian, M., Nikfarid, L., Khavari, A. M., Barati, M., & Allahgholipour,
+A. R. (2021). The impact of an online mindfulness-based stress
+reduction program on sleep quality of nurses working in COVID-
+19 care units: A clinical trial. Holistic Nursing Practice, 35(5),
+257–263.
+Pickut, B., Vanneste, S., Hirsch, M. A., Van Hecke, W., Kerckhofs,
+E., Mariën, P., Parizel, P. M., Crosiers, D., & Cras, P. (2015).
+Mindfulness training among individuals with Parkinson’s
+disease: Neurobehavioral effects. Parkinson’s Disease, 2015,
+816404.
+Piet, J., & Hougaard, E. (2011). The effect of mindfulness-based cogni-
+tive therapy for prevention of relapse in recurrent major depres-
+sive disorder: A systematic review and meta-analysis. Clinical
+Psychology Review, 31(6), 1032–1040.
+Pontone, G. M., Williams, J. R., Anderson, K. E., Chase, G., Goldstein,
+S. A., Grill, S., Hirsch, E. S., Lehmann, S., Little, J. T., Margolis,
+R. L., Rabins, P. V., Weiss, H. D., & Marsh, L. (2009). Preva-
+lence of anxiety disorders and anxiety subtypes in patients with
+Parkinson’s disease. Movement Disorders: Official Journal of the
+Movement Disorder Society, 24(9), 1333–1338.
+Reijnders, J. S., Ehrt, U., Weber, W. E., Aarsland, D., & Leentjens, A.
+F. (2008). A systematic review of prevalence studies of depression
+in Parkinson’s disease. Movement Disorders : Official Journal of
+the Movement Disorder Society, 23(2), 183–313.
+Rodgers, S. H., Schütze, R., Gasson, N., Anderson, R. A., Kane, R. T.,
+Starkstein, S., Morgan-Lowes, K., & Egan, S. J. (2019). Modified
+mindfulness-based cognitive therapy for depressive symptoms in
+Parkinson’s disease: A pilot trial. Behavioural and Cognitive Psy-
+chotherapy, 47(4), 446–461.
+Segal, Z. V., Dimidjian, S., Beck, A., Boggs, J. M., Vanderkruik, R., Metcalf,
+C. A., Gallop, R., Felder, J. N., & Levy, J. (2020). Outcomes of
+Online Mindfulness-Based Cognitive Therapy for Patients With
+Residual Depressive Symptoms. JAMA Psychiatry, 77(6), 563–573.
+Segal, Z. V., Williams, M., & Teasdale, J. D. (2013). Mindfulness-
+based cognitive therapy for depression (2nd edition). The Guil-
+ford Press.
+Seritan, A. L., Rienas, C., Duong, T., Delucchi, K., & Ostrem, J. L.
+(2019a). Ages at onset of anxiety and depressive disorders in Par-
+kinson’s disease. The Journal of Neuropsychiatry and Clinical
+Neurosciences, 31(4), 346–352.
+Seritan, A. L., Heiry, M., Iosif, A. M., Dodge, M., & Ostrem, J. L.
+(2019b). Telepsychiatry for patients with movement disorders:
+A feasibility and patient satisfaction study. Journal of Clinical
+Movement Disorders, 6, 1.
+Seritan, A., Iosif, A. M., Wang, S., Dodge, M., & Eisendrath, S. (2021).
+You can’t stop the waves but you can learn to surf: Mindfulness-
+based cognitive therapy for people with Parkinson’s disease. The
+American Journal of Geriatric Psychiatry, 29(4), S132–S134.
+Simpson, R., Simpson, S., Ramparsad, N., Lawrence, M., Booth, J., &
+Mercer, S. W. (2019). Mindfulness-based interventions for mental
+well-being among people with multiple sclerosis: A systematic
+review and meta-analysis of randomised controlled trials. Journal
+of Neurology, Neurosurgery, and Psychiatry, 90(9), 1051–1058.
+Tampi, R. R., Young, J. J., & Tampi, D. (2019). Behavioral symp-
+tomatology and psychopharmacology of Lewy body dementia.
+Handbook of Clinical Neurology, 165, 59–70.
+Tickell, A., Ball, S., Bernard, P., Kuyken, W., Marx, R., Pack, S.,
+Strauss, C., Sweeney, T., & Crane, C. (2020). The effectiveness
+of mindfulness-based cognitive therapy (MBCT) in real-world
+healthcare services. Mindfulness, 11(2), 279–290.
+Tolosa, E., Ebersbach, G., Ferreira, J. J., Rascol, O., Antonini, A.,
+Foltynie, T., Gibson, R., Magalhaes, D., Rocha, J. F., & Lees, A.
+(2021). The Parkinson’s Real-World Impact Assessment (PRISM)
+study: A European survey of the burden of Parkinson’s disease in
+patients and their carers. Journal of Parkinson’s Disease, 11(3),
+1309–1323.
+Torales, J., Vilallba-Arias, J., Bogado, J. A., O'Higgins, M., Almirón-
+Santacruz, J., Ruiz Díaz, N., García, O., Amarilla-Salvioni, D.,
+Castaldelli-Maia, J. M., Ventriglio, A., & Barrios, I. (2022). Sat-
+isfaction with telepsychiatry during the COVID-19 pandemic:
+Patients’ and psychiatrists’ report from a University Hospital. The
+International Journal of Social Psychiatry, 207640211070762.
+Advance online publication.
+van der Heide, A., Meinders, M. J., Bloem, B. R., & Helmich, R. C.
+(2020). The impact of the COVID-19 pandemic on psychological
+distress, physical activity, and symptom severity in Parkinson’s
+disease. Journal of Parkinson’s Disease, 10(4), 1355–1364.
+van der Heide, A., Meinders, M. J., Speckens, A., Peerbolte, T. F.,
+Bloem, B. R., & Helmich, R. C. (2021a). Stress and mindfulness
+in Parkinson’s disease: Clinical effects and potential underlying
+mechanisms. Movement Disorders : Official Journal of the Move-
+ment Disorder Society, 36(1), 64–70.
+van der Heide, A., Speckens, A., Meinders, M. J., Rosenthal, L. S.,
+Bloem, B. R., & Helmich, R. C. (2021b). Stress and mindfulness
+in Parkinson’s disease - A survey in 5000 patients. NPJ Parkin-
+son’s Disease, 7(1), 7.
+van der Velden, A. M., Kuyken, W., Wattar, U., Crane, C., Pallesen, K.
+J., Dahlgaard, J., Fjorback, L. O., & Piet, J. (2015). A systematic
+review of mechanisms of change in mindfulness-based cognitive
+therapy in the treatment of recurrent major depressive disorder.
+Clinical Psychology Review, 37, 26–39.
+Vandenberg, B. E., Advocat, J., Hassed, C., Hester, J., Enticott, J.,
+& Russell, G. (2019). Mindfulness-based lifestyle programs for
+the self-management of Parkinson’s disease in Australia. Health
+Promotion International, 34(4), 668–676.
+Xia, T., Hu, H., Seritan, A. L., & Eisendrath, S. (2019). The many roads
+to mindfulness: A review of nonmindfulness-based interventions
+that increase mindfulness. Journal of Alternative and Complemen-
+tary Medicine (New York, N.Y.), 25(9), 874–889.
+Zarit, S. H., Reever, K. E., & Back-Peterson, J. (1980). Relatives of the
+impaired elderly: Correlates of feelings of burden. The Gerontolo-
+gist, 20, 649–655.
+Zarotti, N., Eccles, F., Foley, J. A., Paget, A., Gunn, S., Leroi, I., &
+Simpson, J. (2021). Psychological interventions for people with
+Parkinson’s disease in the early 2020s: Where do we stand? Psy-
+chology and Psychotherapy, 94(3), 760–797.
+Publisher's Note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional affiliations.
+1 3

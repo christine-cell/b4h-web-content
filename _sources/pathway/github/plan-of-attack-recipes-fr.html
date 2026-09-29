@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan d'Attaque — Recettes | Boxing 4 Health Programme PPE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1E3A5F;
+    --green: #2D4A2D;
+    --gold: #C4913A;
+    --rust: #B85C38;
+    --cream: #F8F4EE;
+    --warm-white: #FDFAF6;
+    --text: #2A2A2A;
+    --muted: #6B6B6B;
+    --border: #E8DFD0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .hero {
+    background: var(--navy);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(196,145,58,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(45,74,45,0.3) 0%, transparent 50%);
+    color: white;
+    padding: 56px 40px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--rust), var(--gold));
+  }
+
+  .hero-inner { max-width: 800px; margin: 0 auto; }
+
+  .program-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(196,145,58,0.2);
+    border: 1px solid rgba(196,145,58,0.4);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero p { font-size: 1.05rem; opacity: 0.8; max-width: 580px; font-weight: 300; line-height: 1.7; }
+
+  .hero-tag {
+    margin-top: 26px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+
+  .nav-cards {
+    max-width: 860px;
+    margin: -30px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .nav-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 6px 24px rgba(30,58,95,0.12);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 3px solid var(--gold);
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .nav-card:nth-child(2) { border-top-color: var(--rust); }
+  .nav-card:nth-child(3) { border-top-color: var(--green); }
+  .nav-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(30,58,95,0.16); }
+  .nav-emoji { font-size: 1.8rem; margin-bottom: 6px; }
+  .nav-label { font-size: 0.82rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  .pd-note {
+    background: linear-gradient(135deg, #e8f0f8 0%, #d4e4f4 100%);
+    border-left: 4px solid var(--navy);
+    border-radius: 0 14px 14px 0;
+    padding: 18px 24px;
+    margin: 48px 0 36px;
+  }
+
+  .pd-note-title { font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; color: var(--navy); margin-bottom: 6px; }
+  .pd-note p { font-size: 0.95rem; color: #2a3a4a; margin: 0; line-height: 1.6; }
+
+  .recipe-section {
+    background: var(--warm-white);
+    border-radius: 24px;
+    padding: 42px;
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(30,58,95,0.06);
+    scroll-margin-top: 20px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .recipe-section:nth-child(2) { animation-delay: 0.1s; }
+  .recipe-section:nth-child(3) { animation-delay: 0.2s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .recipe-header { margin-bottom: 28px; }
+
+  .recipe-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+  .recipe-tag.gold { color: var(--gold); }
+  .recipe-tag.rust { color: var(--rust); }
+  .recipe-tag.green { color: var(--green); }
+
+  .recipe-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy); margin-bottom: 12px; line-height: 1.2; }
+  .recipe-description { font-size: 1rem; color: #444; line-height: 1.7; margin-bottom: 20px; }
+
+  .recipe-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+
+  .meta-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 20px 0 28px; }
+
+  .benefit-pill {
+    background: linear-gradient(135deg, #eef4e8 0%, #e4eedc 100%);
+    border: 1px solid #c8dcc0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    color: var(--green);
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 24px; }
+
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } .nav-cards { grid-template-columns: 1fr; } }
+
+  .ingredients-block h3, .steps-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .ingredient-list { list-style: none; }
+  .ingredient-list li { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f0ebe3; font-size: 0.92rem; line-height: 1.5; }
+  .ingredient-list li:last-child { border-bottom: none; }
+  .ing-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
+
+  .step-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .step-item { display: flex; gap: 14px; align-items: flex-start; font-size: 0.92rem; line-height: 1.6; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .tip-box { background: linear-gradient(135deg, #fdf4e3 0%, #faebd7 100%); border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; padding: 16px 20px; margin-top: 20px; }
+  .tip-box p { font-size: 0.9rem; color: #5a3a10; margin: 0; line-height: 1.6; font-style: italic; }
+  .tip-box strong { color: #3a2010; font-style: normal; }
+
+  .section-divider { text-align: center; margin: 12px 0; color: var(--muted); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
+  .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .brand-box { background: var(--navy); color: white; border-radius: 14px; padding: 22px 26px; margin-top: 22px; display: flex; gap: 16px; align-items: flex-start; }
+  .brand-box-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .brand-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold); margin-bottom: 5px; }
+  .brand-box p { font-size: 0.85rem; color: rgba(255,255,255,0.82); margin: 0; line-height: 1.6; }
+  .reasons-list { margin-top: 10px; list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .reasons-list li { font-size: 0.84rem; color: rgba(255,255,255,0.78); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+  .reasons-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  .nutrition-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+  .nutrition-item { text-align: center; }
+  .nutrition-value { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); font-weight: 700; }
+  .nutrition-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+  footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); margin-top: 20px; font-size: 0.82rem; color: var(--muted); }
+  footer strong { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="program-badge">🥊 Boxing 4 Health · Programme PPE</div>
+    <h1>Plan d'Attaque<br><em>Collection de Recettes</em></h1>
+    <p>Des recettes simples, puissantes et anti-inflammatoires qui nourrissent votre cerveau, soutiennent votre intestin et alimentent votre corps — sans étapes compliquées.</p>
+    <div class="hero-tag">🍲 3 Recettes · Bouillon d'os · Lait Doré · Smoothie Immunité</div>
+  </div>
+</div>
+
+<div class="nav-cards">
+  <a class="nav-card" href="#bouillon">
+    <div class="nav-emoji">🍖</div>
+    <div class="nav-label">Bouillon d'Os à l'Instant Pot</div>
+  </a>
+  <a class="nav-card" href="#lait-dore">
+    <div class="nav-emoji">🌿</div>
+    <div class="nav-label">Lait Doré Anti-Inflammatoire</div>
+  </a>
+  <a class="nav-card" href="#smoothie">
+    <div class="nav-emoji">🥤</div>
+    <div class="nav-label">Smoothie Immunité</div>
+  </a>
+</div>
+
+<div class="container">
+
+  <div class="pd-note">
+    <div class="pd-note-title">💊 Conseil Médicaments Parkinson</div>
+    <p>Les protéines et la lévodopa ne font pas toujours bon ménage. Utiliser de la <strong>protéine végane en poudre</strong> avec ces recettes aide à éviter les conflits. Si vous consommez des protéines animales, prenez votre médicament <strong>au moins 2 heures avant ou après</strong> votre repas riche en protéines dans la mesure du possible.</p>
+  </div>
+
+  <!-- BOUILLON D'OS -->
+  <div class="recipe-section" id="bouillon">
+    <div class="recipe-header">
+      <div class="recipe-tag gold">Recette 01 · Santé Intestinale · Immunité</div>
+      <h2 class="recipe-title">Bouillon d'Os de Poulet à l'Instant Pot</h2>
+      <p class="recipe-description">Un tonique riche en minéraux qui stimule votre système immunitaire, améliore la digestion, et regorge de collagène et de glucosamine — aidant à soulager les articulations douloureuses, réhydrater la peau et renforcer les os. Fait maison, c'est toujours le meilleur.</p>
+      <div class="recipe-meta">
+        <div class="meta-pill">⏱ ~3 heures au total</div>
+        <div class="meta-pill">🍗 1 carcasse de poulet entier</div>
+        <div class="meta-pill">❄️ Se congèle très bien</div>
+        <div class="meta-pill">🫙 7 jours au réfrigérateur</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="ingredients-block">
+        <h3>🍗 Les Os</h3>
+        <ul class="ingredient-list">
+          <li><span class="ing-dot"></span>Os, peau, cartilage d'un poulet rôti</li>
+          <li><span class="ing-dot"></span>Gésiers, cou, et tous les restes</li>
+          <li><span class="ing-dot"></span>Pieds de poulet si disponibles (chez votre boucher)</li>
+        </ul>
+        <h3 style="margin-top:20px;">🥕 Les Extras</h3>
+        <ul class="ingredient-list">
+          <li><span class="ing-dot"></span>Oignons</li>
+          <li><span class="ing-dot"></span>Carottes</li>
+          <li><span class="ing-dot"></span>Céleri</li>
+          <li><span class="ing-dot"></span>Ail</li>
+          <li><span class="ing-dot"></span>Herbes : romarin, thym, sauge, feuilles de laurier</li>
+          <li><span class="ing-dot"></span>Sel de mer de qualité &amp; poivre</li>
+          <li><span class="ing-dot"></span>1 c. à soupe de vinaigre de cidre (aide à dissoudre les os)</li>
+          <li><span class="ing-dot"></span>Eau filtrée froide pour couvrir</li>
+        </ul>
+      </div>
+      <div class="steps-block">
+        <h3>📋 Méthode Rapide</h3>
+        <ol class="step-list">
+          <li class="step-item"><span class="step-num">1</span><span>Mettre les os + légumes + herbes + sel + 1 c. à soupe de vinaigre dans l'Instant Pot. Couvrir d'eau froide filtrée (2,5 cm au-dessus des os — pas plus).</span></li>
+          <li class="step-item"><span class="step-num">2</span><span>Sélectionner <strong>« Soupe »</strong> → régler manuellement sur <strong>119 minutes</strong> (ou Haute Pression, 120 min).</span></li>
+          <li class="step-item"><span class="step-num">3</span><span>Laisser la pression se libérer naturellement (~20 min). Ou utiliser la valve de libération rapide si pressé.</span></li>
+          <li class="step-item"><span class="step-num">4</span><span>Filtrer dans une passoire fine ou une étamine dans un pichet en verre résistant à la chaleur. Presser les os pour extraire tout le bouillon.</span></li>
+          <li class="step-item"><span class="step-num">5</span><span>Écumer le gras (ou réfrigérer d'abord et retirer le gras solidifié). Conserver en bocaux Mason — laisser 2,5 cm d'espace si on congèle !</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <p><strong>Le conseil de Christine :</strong> Je fais cuire mon bouillon au minimum 2 heures — 30 minutes donne un bouillon de poulet ordinaire, pas le bouillon d'os riche, épais et gélatineux qu'on veut ! Plus on lui donne de temps, meilleur il sera.</p>
+    </div>
+
+    <div class="brand-box">
+      <div class="brand-box-icon">🏆</div>
+      <div>
+        <h4>Pas le temps de le faire ? Une marque recommandée : Kettle &amp; Fire</h4>
+        <ul class="reasons-list">
+          <li>Os de bœuf 100 % nourri à l'herbe et légumes (jamais congelé)</li>
+          <li>Quantités extrêmement élevées de collagène, glycine et acides aminés</li>
+          <li>Mijotage lent pour une extraction maximale des nutriments</li>
+          <li>Stable à température ambiante, emballage non toxique — idéal pour voyager</li>
+          <li>Ça a vraiment bon goût !</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">✦ ✦ ✦</div>
+
+  <!-- LAIT DORÉ -->
+  <div class="recipe-section" id="lait-dore">
+    <div class="recipe-header">
+      <div class="recipe-tag rust">Recette 02 · Anti-Inflammatoire · Santé Cérébrale</div>
+      <h2 class="recipe-title">Lait Doré Anti-Inflammatoire</h2>
+      <p class="recipe-description">La curcumine — le composé le plus puissant du curcuma — a des propriétés médicinales utilisées pour réduire les douleurs articulaires, l'arthrite, l'inflammation et même traiter la dépression. Ce breuvage chaud est votre dose quotidienne de bienfaits dorés.</p>
+      <div class="recipe-meta">
+        <div class="meta-pill">⏱ 20 minutes</div>
+        <div class="meta-pill">☕ 1 portion</div>
+        <div class="meta-pill">🌿 Sans produits laitiers</div>
+      </div>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-pill">Réduit l'inflammation</div>
+      <div class="benefit-pill">Soulage les douleurs articulaires</div>
+      <div class="benefit-pill">Améliore la digestion</div>
+      <div class="benefit-pill">Soutient le foie</div>
+      <div class="benefit-pill">Soulage le SCI</div>
+      <div class="benefit-pill">Élève l'humeur</div>
+      <div class="benefit-pill">Réduit les ballonnements</div>
+      <div class="benefit-pill">Abaisse le cholestérol</div>
+    </div>
+
+    <div class="two-col">
+      <div class="ingredients-block">
+        <h3>🧴 Ingrédients</h3>
+        <ul class="ingredient-list">
+          <li><span class="ing-dot"></span>1 tasse de lait de coco bio entier (canette sans BPA) <em>— OU —</em> 1 tasse de lait d'amande non sucré + 1 c. à thé d'huile de coco</li>
+          <li><span class="ing-dot"></span>½ c. à thé de curcuma moulu</li>
+          <li><span class="ing-dot"></span>Grosse pincée de poivre noir fraîchement moulu <em>(active la curcumine !)</em></li>
+          <li><span class="ing-dot"></span>1 petit morceau de gingembre frais (¼ po, pelé &amp; râpé)</li>
+          <li><span class="ing-dot"></span>1 grosse pincée de cardamome moulue</li>
+          <li><span class="ing-dot"></span>¼ c. à thé de miel brut — ajouté hors du feu (facultatif)</li>
+        </ul>
+      </div>
+      <div class="steps-block">
+        <h3>📋 Instructions</h3>
+        <ol class="step-list">
+          <li class="step-item"><span class="step-num" style="background:var(--rust)">1</span><span>Mélanger ou fouetter tous les ingrédients ensemble.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--rust)">2</span><span>Chauffer à feu moyen pendant <strong>15 minutes</strong>. Laisser frémir doucement — ne pas bouillir.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--rust)">3</span><span>Pour une boisson plus mousseuse, mixer au blender haute vitesse avant de servir.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--rust)">4</span><span>Ajouter le miel hors du feu pour préserver ses enzymes.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tip-box" style="border-left-color: var(--rust); background: linear-gradient(135deg, #fdf0ec 0%, #faebdc 100%);">
+      <p><strong>Pourquoi le poivre noir ?</strong> La pipérine dans le poivre noir augmente l'absorption de la curcumine jusqu'à 2000 %. Ne l'omettez jamais ! Même quelques tours de moulin font une énorme différence.</p>
+    </div>
+  </div>
+
+  <div class="section-divider">✦ ✦ ✦</div>
+
+  <!-- SMOOTHIE -->
+  <div class="recipe-section" id="smoothie">
+    <div class="recipe-header">
+      <div class="recipe-tag green">Recette 03 · Immunité · Énergie · Anti-inflammatoire</div>
+      <h2 class="recipe-title">Smoothie Bien-Être pour l'Immunité</h2>
+      <p class="recipe-description">Rempli de gingembre frais, de racine de curcuma, d'épinards, d'ananas et de banane — ce smoothie est absolument délicieux, excellent pour la digestion et un coup de pouce quotidien pour votre système immunitaire. Christine en boit un chaque jour !</p>
+      <div class="recipe-meta">
+        <div class="meta-pill">⏱ 5 minutes</div>
+        <div class="meta-pill">🥤 2 smoothies</div>
+        <div class="meta-pill">🌱 À base de plantes</div>
+        <div class="meta-pill">~139 cal chacun</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="ingredients-block">
+        <h3>🛒 Ingrédients</h3>
+        <ul class="ingredient-list">
+          <li><span class="ing-dot" style="background:var(--green)"></span>1 banane</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>1 tasse d'ananas congelé</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>2–3 tasses d'épinards biologiques</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>1 morceau de gingembre frais pelé (~5 cm)</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>1 morceau de racine de curcuma frais (~5 cm)</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>½ c. à soupe de miel manuka ou brut</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>⅛ c. à thé de poivre noir fraîchement moulu</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>½–¾ tasse de lait d'amande ou de coco</li>
+        </ul>
+      </div>
+      <div class="steps-block">
+        <h3>📋 Instructions</h3>
+        <ol class="step-list">
+          <li class="step-item"><span class="step-num" style="background:var(--green)">1</span><span>Ajouter tous les ingrédients dans un grand blender haute puissance.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--green)">2</span><span>Mixer à haute vitesse pendant <strong>1–2 minutes</strong> jusqu'à consistance homogène.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--green)">3</span><span>Ajouter plus de lait d'amande si nécessaire pour atteindre la consistance désirée.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--green)">4</span><span>Verser et déguster — donne 2 smoothies !</span></li>
+        </ol>
+        <div class="tip-box" style="border-left-color:var(--green); background: linear-gradient(135deg, #eef4e8 0%, #e4eedc 100%); margin-top:16px;">
+          <p><strong>Substitutions et ajouts :</strong> Ajoutez une mesure de poudre de collagène — elle n'a aucun goût et ajoute un excellent boost protéiné ! Pas de bananes ? Remplacez par une pomme évidée.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nutrition-grid">
+      <div class="nutrition-item">
+        <div class="nutrition-value">139</div>
+        <div class="nutrition-label">Calories</div>
+      </div>
+      <div class="nutrition-item">
+        <div class="nutrition-value">2,7g</div>
+        <div class="nutrition-label">Lipides</div>
+      </div>
+      <div class="nutrition-item">
+        <div class="nutrition-value">32,6g</div>
+        <div class="nutrition-label">Glucides</div>
+      </div>
+      <div class="nutrition-item">
+        <div class="nutrition-value">4g</div>
+        <div class="nutrition-label">Fibres</div>
+      </div>
+      <div class="nutrition-item">
+        <div class="nutrition-value">2,8g</div>
+        <div class="nutrition-label">Protéines</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <strong>Boxing 4 Health — Programme PPE</strong><br>
+    Nos défis ne nous définissent pas. Nos actions, oui.<br><br>
+    Ces recettes sont à des fins éducatives. Veuillez discuter de tout changement alimentaire avec votre équipe soignante.
+  </div>
+</footer>
+
+</body>
+</html>

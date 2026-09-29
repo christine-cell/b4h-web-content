@@ -21,7 +21,7 @@ def use(slug):
 def _data(name):
     p=os.path.join(SITE,"data",name)
     return json.load(open(p,encoding="utf-8")) if os.path.exists(p) else {}
-V = "28"
+V = "30"
 def esc(s): return htmllib.escape(s or "", quote=True)
 
 def head(title, desc, rp, program=""):
@@ -73,6 +73,8 @@ def blf(d, key):
     v = d.get(key, {}); return v.get("en",""), (v.get("fr") or v.get("en",""))
 
 # ---------------- HUB ----------------
+KIND_KEY = {"read": "lesson.time", "watch": "lesson.time.watch", "do": "lesson.time.do"}
+
 def lesson_row(l, prefix):
     icon = l.get("icon","book-open")
     en, fr = blf(l, "title")
@@ -80,7 +82,7 @@ def lesson_row(l, prefix):
       <span class="chip chip-sm" data-icon="{icon}"></span>
       <span>
         <span class="lr-title">{bilingual(esc(en),esc(fr))}</span><br>
-        <span class="lr-meta">{l['minutes']} <span data-i18n="lesson.time">min read</span></span>
+        <span class="lr-meta">{l['minutes']} <span data-i18n="{KIND_KEY.get(l.get('kind','read'),'lesson.time')}">min read</span></span>
       </span>
       <span class="lr-mark"><span class="status-chip" data-lesson-status data-status="not-started"></span></span>
     </a>"""
@@ -94,7 +96,7 @@ def module_card(m, prefix):
         <span class="module-cover-wm" data-icon="{m['icon']}" aria-hidden="true"></span>
         <span class="module-cover-chip" data-icon="{m['icon']}"></span>
         <div class="module-cover-txt">
-          <span class="eyebrow">Module {m['num']}</span>
+          <span class="eyebrow">{"Bonus" if m.get("optional") else f"Module {m['num']}"}</span>
           <h3>{bilingual(ten, tfr)}</h3>
         </div>
         <span class="module-cover-count"><span data-progress-module="{esc(m['slug'])}"><span data-progress-count>0/{len(m['lessons'])}</span></span></span>
@@ -228,7 +230,7 @@ FURTHER_READING=[
  {"icon":"dumbbell","name":"PD Warrior","url":"https://pdwarrior.com","en":"Neuroplasticity-based exercise program for people with Parkinson’s.","fr":"Programme d’exercices fondé sur la neuroplasticité pour la maladie de Parkinson."},
  {"icon":"megaphone","name":"LSVT Global (BIG & LOUD)","url":"https://www.lsvtglobal.com","en":"The LSVT BIG (movement) and LOUD (voice) therapy programs.","fr":"Les programmes de thérapie LSVT BIG (mouvement) et LOUD (voix)."},
 ]
-GCAT={"parkinsons":("Parkinson’s","Parkinson"),"coaching":("Coaching","Encadrement"),"program":("Program","Programme")}
+GCAT={"parkinsons":("Parkinson’s","Parkinson"),"coaching":("Coaching","Encadrement"),"program":("Program","Programme"),"wellness":("Wellness","Mieux-être")}
 
 def _sec_head(anchor, icon, en, fr, intro_en, intro_fr):
     return (f'<section class="res-section" id="{anchor}"><h2>{_chip(icon)}{bilingual(en,fr)}</h2>'
@@ -250,7 +252,8 @@ def _documents_section(prefix):
             +f'<p class="res-subhead">{bilingual("Intake &amp; screening","Admission et évaluation")}</p><div class="files-grid">{intake}</div>'
             +f'<p class="res-subhead">{bilingual("Running your program","Gérer votre programme")}</p><div class="files-grid">{prog}</div></section>')
 
-def _glossary_section():
+def _glossary_section(intro_en="Plain-language definitions of the Parkinson’s, coaching, and program terms used throughout this training.",
+                      intro_fr="Définitions en langage clair des termes liés à la maladie de Parkinson, à l’encadrement et au programme."):
     g=_data("glossary.json").get("terms",[])
     items=""
     for t in g:
@@ -271,9 +274,7 @@ def _glossary_section():
             "i.addEventListener('input',function(){var q=i.value.trim().toLowerCase(),n=0;"
             "terms.forEach(function(t){var m=!q||t.textContent.toLowerCase().indexOf(q)>-1;t.hidden=!m;if(m)n++;});"
             "if(c)c.textContent=n;if(e)e.hidden=n>0;});})();</script>")
-    return (_sec_head("glossary","book-open","Glossary","Glossaire",
-            "Plain-language definitions of the Parkinson’s, coaching, and program terms used throughout this training.",
-            "Définitions en langage clair des termes liés à la maladie de Parkinson, à l’encadrement et au programme.")
+    return (_sec_head("glossary","book-open","Glossary","Glossaire", intro_en, intro_fr)
             +tools+f'<div class="glossary">{items}</div>'+empty+script+"</section>")
 
 def _videos_section():
@@ -376,6 +377,195 @@ def build_404():
     open(os.path.join(ROOT,"404.html"),"w",encoding="utf-8").write(h+body+foot(rp))
     print("built 404.html (root)")
 
+
+# ======================================================================
+# Pathway to Empowerment (participants)
+# ======================================================================
+PW_FURTHER=[
+ {"icon":"heart-pulse","name":"Parkinson Canada","url":"https://www.parkinson.ca","en":"Support services, education, a helpline and local support groups across Canada.","fr":"Services de soutien, éducation, ligne d’aide et groupes de soutien partout au Canada."},
+ {"icon":"map","name":"Parkinson Québec","url":"https://parkinsonquebec.ca","en":"French-language information, support and local groups in Québec.","fr":"Information, soutien et groupes locaux en français au Québec."},
+ {"icon":"book-open","name":"Parkinson’s Foundation","url":"https://www.parkinson.org","en":"Easy-to-read guides on symptoms, treatment and living well, plus a helpline.","fr":"Guides faciles à lire sur les symptômes, le traitement et le mieux-vivre, plus une ligne d’aide."},
+ {"icon":"sparkles","name":"Davis Phinney Foundation","url":"https://davisphinneyfoundation.org","en":"“Every Victory Counts” tools for living well, with a strong focus on exercise.","fr":"Outils « Every Victory Counts » pour bien vivre, axés sur l’exercice."},
+ {"icon":"venus","name":"Parkinson’s Europe — Women & Parkinson’s","url":"https://parkinsonseurope.org/i-have-parkinsons/self-help-and-living-well/women-and-parkinsons/","en":"Women’s health and Parkinson’s: periods, pregnancy, breastfeeding and menopause.","fr":"Santé des femmes et maladie de Parkinson : règles, grossesse, allaitement et ménopause."},
+ {"icon":"megaphone","name":"LSVT Global (BIG & LOUD)","url":"https://www.lsvtglobal.com","en":"Find LSVT BIG (movement) and LSVT LOUD (voice) therapists near you.","fr":"Trouvez des thérapeutes LSVT BIG (mouvement) et LSVT LOUD (voix) près de chez vous."},
+]
+PW_DOC_GROUPS=[("start","Getting started & tracking progress","Premiers pas et suivi des progrès"),
+               ("health","Understanding Parkinson’s, stress & sleep","Comprendre la maladie, le stress et le sommeil"),
+               ("movement","Exercise, voice & brain","Exercice, voix et cerveau"),
+               ("nutrition","Nutrition & gut health","Nutrition et santé intestinale"),
+               ("women","Women’s health","Santé des femmes")]
+
+def _pw_documents_section(prefix):
+    docs=_data("documents.json").get("documents",[])
+    def card(d):
+        return (f'<a class="file-card" href="{prefix}assets/docs/{d["file"]}" download>'
+                f'<span class="file-ico"><span class="file-ext">{d["ext"]}</span></span>'
+                f'<span class="file-meta"><span class="file-name">{bilingual(esc(d["en"]),esc(d["fr"]))}</span>'
+                f'<span class="file-sub">{bilingual("Download","Télécharger")} · {d["ext"]} · {d["size"]}</span></span>'
+                f'<span class="file-dl" data-icon="download"></span></a>')
+    out=""
+    for cat,en,fr in PW_DOC_GROUPS:
+        cards="".join(card(d) for d in docs if d["cat"]==cat)
+        if cards: out+=f'<p class="res-subhead">{bilingual(en,fr)}</p><div class="files-grid">{cards}</div>'
+    return (_sec_head("documents","folder-open","Worksheets & Handouts","Fiches et documents",
+            "Every worksheet, checklist and handout from the program — print them or save them to your device.",
+            "Toutes les fiches, listes et documents du programme — imprimez-les ou enregistrez-les sur votre appareil.")+out+"</section>")
+
+def _pw_video_library():
+    """Every YouTube video used in a Pathway lesson, grouped by module (read from the authored lessons)."""
+    import re as _re
+    from programs import authored_dir
+    AUTH=authored_dir("pathway"); out=""; seen=set(); total=0
+    for m in M["modules"]:
+        items=[]
+        for l in m["lessons"]:
+            p=os.path.join(AUTH, l["slug"]+".html")
+            if not os.path.exists(p): continue
+            src=open(p,encoding="utf-8").read()
+            for vid,title in _re.findall(r'data-yt="([\w-]{11})"\s+data-title="([^"]*)"', src):
+                if vid in seen: continue
+                seen.add(vid); items.append((vid,title,l))
+        if not items: continue
+        cards="".join(
+            f'<div><div class="video" data-yt="{v}" data-title="{t}">'
+            f'<img class="video-poster" src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="" loading="lazy">'
+            f'<div class="video-play"><span data-icon="circle-play"></span></div></div>'
+            f'<p class="video-cap">{t}</p></div>' for v,t,l in items)
+        total+=len(items)
+        mt=m["title"]
+        out+=f'<p class="res-subhead">{bilingual(esc(mt["en"]),esc(mt["fr"]))}</p><div class="video-grid">{cards}</div>'
+    return (_sec_head("videos","circle-play","Video Library","Vidéothèque",
+            f"All {total} program videos in one place — tap a thumbnail to play it here.",
+            f"Les {total} vidéos du programme au même endroit — touchez une vignette pour la lire ici.")+out+"</section>")
+
+def _pw_further_section():
+    def lc(r):
+        return (f'<a class="link-card" href="{r["url"]}" target="_blank" rel="noopener noreferrer">{_chip(r["icon"])}'
+                f'<span class="link-name">{esc(r["name"])}</span>'
+                f'<span class="link-desc">{bilingual(esc(r["en"]),esc(r["fr"]))}</span>'
+                f'<span class="link-ext" data-icon="external-link"></span></a>')
+    return (_sec_head("further-reading","external-link","Trusted Organizations","Organismes de confiance",
+            "Reliable places to learn more and find support. Links open in a new tab.",
+            "Des sources fiables pour en apprendre davantage et trouver du soutien. Les liens s’ouvrent dans un nouvel onglet.")
+            +f'<div class="link-grid">{"".join(lc(r) for r in PW_FURTHER)}</div></section>')
+
+def build_resources_index_pathway():
+    prefix, rp = "../", "../../"
+    h=head("Resources · Pathway to Empowerment","Worksheets, glossary, video library and trusted organizations for Pathway to Empowerment participants.",rp,"pathway")
+    toc=[("documents","Worksheets","Fiches"),("videos","Videos","Vidéos"),("glossary","Glossary","Glossaire"),("further-reading","Trusted organizations","Organismes de confiance")]
+    chips="".join(f'<a href="#{a}">{bilingual(en,fr)}</a>' for a,en,fr in toc)
+    body=(f'<section class="section"><div class="wrap">'
+          f'<span class="eyebrow"><span data-icon="folder-open"></span><span data-i18n="nav.resources">Resources</span></span>'
+          f'<h1>{bilingual("Your Resource Library","Votre bibliothèque de ressources","span")}</h1>'
+          f'<p class="lead" style="max-width:60ch">{bilingual("Everything from the program in one place — worksheets to print, every video, plain-language definitions, and trusted places for more support.","Tout le programme au même endroit — fiches à imprimer, toutes les vidéos, des définitions en langage clair et des sources fiables de soutien.","span")}</p>'
+          f'<nav class="toc-chips" aria-label="On this page">{chips}</nav>'
+          +_pw_documents_section(prefix)+_pw_video_library()
+          +_glossary_section("Plain-language meanings of the words you’ll meet in this program.","La signification, en langage clair, des mots que vous rencontrerez dans ce programme.")
+          +_pw_further_section()
+          +'</div></section>')
+    os.makedirs(os.path.join(SITE,"resources"),exist_ok=True)
+    open(os.path.join(SITE,"resources/index.html"),"w",encoding="utf-8").write(h+body+foot(rp))
+    print("built pathway/resources/index.html")
+
+def build_hub_pathway():
+    prefix, rp = "", "../"
+    core=[m for m in M["modules"] if not m.get("optional")]
+    bonus=[m for m in M["modules"] if m.get("optional")]
+    nreq=sum(len(m["lessons"]) for m in core)
+    h = head("Parkinson’s Pathway to Empowerment · Boxing4Health", "A 10-week program for people living with Parkinson’s — exercise, sleep, stress, balance, nutrition, voice and more.", rp, "pathway")
+    first=core[0]["lessons"][0]["url"]
+    hero = f"""<section class="hero">
+      <div class="hero-media"><img src="{rp}assets/img/photos/class-rings.jpg" alt="A Boxing4Health class moving together under the motto Our challenges don’t define us" loading="eager" fetchpriority="high"></div>
+      <div class="wrap">
+      <p class="eyebrow"><span data-icon="heart-handshake"></span>{bilingual('Pathway to Empowerment','Parcours d’autonomisation')}</p>
+      <p class="hero-motto">{bilingual("Our challenges don’t define us. Our", "Nos défis ne nous définissent pas. Nos")} <span class="accent">{bilingual("ACTIONS", "ACTIONS")}</span> {bilingual("do.", "oui.")}</p>
+      <h1>{bilingual("Parkinson’s Pathway to Empowerment","Parcours d’autonomisation Parkinson","span")}</h1>
+      <p>{bilingual("Welcome — you made it, and that already says so much about you. Over the next 10 weeks you’ll learn simple, powerful ways to move better, sleep better, eat well and feel stronger. Go at your own pace.","Bienvenue — vous êtes là, et c’est déjà une belle preuve de votre courage. Au cours des 10 prochaines semaines, vous découvrirez des moyens simples et puissants de mieux bouger, mieux dormir, bien manger et vous sentir plus fort(e). Allez à votre rythme.","span")}</p>
+      <div class="hero-actions">
+        <a class="btn btn-lg btn-warm" data-continue href="{prefix}{first}"><span data-icon="arrow-right"></span><span data-i18n="hub.start">Start the program</span></a>
+        <a class="btn btn-lg btn-secondary" href="#modules"><span data-icon="layers"></span>{bilingual('See all modules','Voir tous les modules')}</a>
+      </div>
+      <div class="stat-row" style="margin-top:2.2rem;max-width:640px">
+        <div class="stat"><div class="stat-num">{len(core)}</div><div class="stat-label">Modules</div></div>
+        <div class="stat"><div class="stat-num">10</div><div class="stat-label">{bilingual('weeks','semaines')}</div></div>
+        <div class="stat"><div class="stat-num">{len(bonus)}</div><div class="stat-label">{bilingual('bonus libraries','bibliothèques bonus','span')}</div></div>
+      </div>
+      </div>
+    </section>"""
+    progress = f"""<section class="section-tight"><div class="wrap">
+      <div class="panel panel-tinted" data-progress-overall>
+        <div class="cluster" style="justify-content:space-between">
+          <h3 style="margin:0"><span data-i18n="hub.progress">Your progress</span></h3>
+          <span class="badge badge-primary"><span data-progress-count>0 / {nreq}</span></span>
+        </div>
+        <div class="progressbar" style="margin-top:1rem"><span data-progress-fill></span></div>
+        <p class="muted" style="margin:.6rem 0 0"><span data-progress-label>0%</span> <span data-i18n="hub.complete">complete</span><span data-reset-wrap hidden> · <button class="btn-ghost" style="padding:.2rem .4rem;font-size:.9rem;border:0;background:none;cursor:pointer;color:var(--link)" data-progress-reset><span data-i18n="progress.reset">Reset my progress</span></button></span></p>
+      </div>
+    </div></section>"""
+    howto = f"""<section class="section section-tint"><div class="wrap">
+      <p class="eyebrow center" style="justify-content:center">{bilingual('How this works','Comment ça marche')}</p>
+      <div class="grid grid-3" style="margin-top:1rem">
+        <div class="card" data-reveal><span class="chip" data-icon="footprints"></span><h4 style="margin:.8rem 0 .3rem">{bilingual('One step at a time','Un pas à la fois','span')}</h4><p class="muted">{bilingual('You don’t need to do everything at once. Choose what feels right for you today — you can come back to any lesson, any time. Your place is saved on this device.','Pas besoin de tout faire d’un coup. Choisissez ce qui vous convient aujourd’hui — vous pouvez revenir à n’importe quelle leçon, en tout temps. Votre progression est enregistrée sur cet appareil.','span')}</p></div>
+        <div class="card" data-reveal><span class="chip" data-icon="message-circle"></span><h4 style="margin:.8rem 0 .3rem">{bilingual('Bring your questions','Apportez vos questions','span')}</h4><p class="muted">{bilingual('Bring your questions to our weekly calls — no question is too big or too small. Between sessions, reach out any time.','Apportez vos questions à nos appels hebdomadaires — aucune question n’est trop grande ou trop petite. Entre les séances, écrivez-nous en tout temps.','span')}</p></div>
+        <div class="card" data-reveal><span class="chip" data-icon="a-large-small"></span><h4 style="margin:.8rem 0 .3rem">{bilingual('Make it comfortable','Adaptez le confort','span')}</h4><p class="muted">{bilingual('Tap the reading menu (top right) for bigger text, dark mode, extra spacing, French — or have any page read aloud to you.','Touchez le menu de lecture (en haut à droite) pour agrandir le texte, passer en mode sombre, espacer les lignes, lire en français — ou faire lire la page à voix haute.','span')}</p></div>
+      </div>
+      <div class="callout callout-safety" style="margin-top:2rem;max-width:860px;margin-inline:auto">
+        <span class="callout-icon" data-icon="stethoscope"></span>
+        <p class="callout-title">{bilingual('Education, not medical advice','Éducation, et non avis médical','span')}</p>
+        <div class="callout-body"><p>{bilingual('This program is for education and support. It doesn’t replace advice from your doctor, neurologist or pharmacist. Check with your care team before starting a new exercise routine, supplement, or big change to your diet or medication — and stop any exercise that causes pain or dizziness.','Ce programme est offert à des fins d’éducation et de soutien. Il ne remplace pas les conseils de votre médecin, de votre neurologue ou de votre pharmacien. Consultez votre équipe de soins avant de commencer un nouveau programme d’exercice, un supplément ou un changement important à votre alimentation ou à votre médication — et arrêtez tout exercice qui cause de la douleur ou des étourdissements.','span')}</p></div>
+      </div>
+    </div></section>"""
+    band = f"""<section class="band">
+      <div class="band-media"><img src="{rp}assets/img/photos/snowball-crew.jpg" alt="Smiling Boxing4Health participants holding snowballs" loading="lazy"></div>
+      <div class="wrap">
+        <p class="eyebrow" style="color:#ffd27a"><span data-icon="users"></span>{bilingual('You’re not alone','Vous n’êtes pas seul(e)')}</p>
+        <p class="pull-quote">{bilingual("You don’t have to navigate Parkinson’s alone —", "Vous n’avez pas à affronter la maladie de Parkinson seul(e) —")} <span class="accent">{bilingual("with the right tools and community, there is so much strength to be found.", "avec les bons outils et la bonne communauté, on trouve tant de force.")}</span></p>
+        <p class="quote-by">Christine Seaby, RMT</p>
+      </div>
+    </section>"""
+    modsec = f"""<section class="section" id="modules"><div class="wrap">
+      <div class="motif-line"></div>
+      <h2>{bilingual('Your 12 modules','Vos 12 modules','span')}</h2>
+      <p class="lead" style="max-width:60ch">{bilingual('From understanding Parkinson’s to sleep, balance, nutrition, voice and your brain — each module gives you knowledge and a simple action to take.','De la compréhension de la maladie au sommeil, à l’équilibre, à la nutrition, à la voix et au cerveau — chaque module vous donne des connaissances et une action simple à poser.','span')}</p>
+      <div class="stack-lg" style="margin-top:2rem">{"".join(module_card(m, prefix) for m in core)}</div>
+    </div></section>
+    <section class="section section-tint" id="bonus"><div class="wrap">
+      <span class="eyebrow"><span data-icon="star"></span>{bilingual('Bonus libraries','Bibliothèques bonus')}</span>
+      <h2>{bilingual('Extra resources, whenever you want them','Des ressources en plus, quand vous voulez','span')}</h2>
+      <p class="lead" style="max-width:60ch">{bilingual('Women’s health and menopause, freezing and joint health, and recorded webinars with guest experts. These are optional — they don’t count toward your certificate.','Santé des femmes et ménopause, blocage de la marche et santé articulaire, et webinaires enregistrés avec des experts invités. Ils sont facultatifs — ils ne comptent pas pour votre certificat.','span')}</p>
+      <div class="stack-lg" style="margin-top:2rem">{"".join(module_card(m, prefix) for m in bonus)}</div>
+    </div></section>"""
+    about = f"""<section class="section-tight"><div class="wrap">
+      <span class="eyebrow"><span data-icon="heart-pulse"></span>{bilingual('Your guide','Votre guide')}</span>
+      <h2>{bilingual('Meet Christine','Faites la connaissance de Christine','span')}</h2>
+      <div class="grid grid-2" style="margin-top:1.5rem">
+        <article class="card" style="display:flex;gap:1.1rem;align-items:flex-start">
+          <img src="{rp}assets/img/christine-seaby.jpg" alt="Christine Seaby, founder of Boxing4Health, with her dog" width="112" height="140" loading="lazy" style="flex:none;width:112px;height:140px;object-fit:cover;object-position:center 20%;border-radius:var(--r-md);box-shadow:var(--shadow-1)">
+          <div style="min-width:0">
+            <h3 style="margin:.1rem 0 .3rem">Christine Seaby, RMT</h3>
+            <p class="muted" style="margin:0">{bilingual('Founder of Boxing4Health and a Registered Massage Therapist, Christine created this program to help people living with Parkinson’s take action — through exercise, education and community. “I am truly honoured to be part of your journey.”','Fondatrice de Boxing4Health et massothérapeute agréée, Christine a créé ce programme pour aider les personnes atteintes de la maladie de Parkinson à passer à l’action — par l’exercice, l’éducation et la communauté. « C’est un véritable honneur de faire partie de votre chemin. »','span')}</p>
+          </div>
+        </article>
+        <article class="card">
+          <span class="chip" data-icon="message-circle"></span>
+          <h3 style="margin:.8rem 0 .3rem">{bilingual('Questions?','Des questions ?','span')}</h3>
+          <p class="muted" style="margin:0 0 .7rem">{bilingual('Bring them to your weekly call, or reach Christine any time:','Apportez-les à votre appel hebdomadaire, ou joignez Christine en tout temps :','span')}</p>
+          <p style="margin:0"><a href="mailto:info@boxing4health.com">info@boxing4health.com</a><br><a href="tel:+16132242694">613.224.2694</a></p>
+        </article>
+      </div>
+    </div></section>"""
+    cert = f"""<section class="section"><div class="wrap wrap-narrow" data-cert-gate data-unlocked="false">
+      <div class="panel" style="text-align:center">
+        <span class="chip" data-icon="award" style="margin-inline:auto"></span>
+        <h2 style="margin-top:1rem"><span data-i18n="cert.title">Certificate of Completion</span></h2>
+        <p class="muted" data-cert-locked><span data-i18n="cert.locked.pathway">Finish Modules 1–12 to unlock your certificate. The bonus libraries are optional.</span></p>
+        <a class="btn btn-primary" href="{prefix}certificate.html" data-cert-open><span data-icon="award"></span>{bilingual('View certificate','Voir le certificat','span')}</a>
+      </div>
+    </div></section>"""
+    body = hero + progress + howto + modsec + band + about + cert
+    open(os.path.join(SITE,"index.html"),"w",encoding="utf-8").write(h + body + foot(rp))
+    print("built pathway/index.html")
+
 # Root program directory cards — one per program (add a program here when it ships).
 LANDING_CARDS = {
     "licensee": {"icon": "graduation-cap",
@@ -424,6 +614,7 @@ def build_landing():
 
 BUILDERS = {
     "licensee": (build_hub_licensee, build_resources_index_licensee),
+    "pathway":  (build_hub_pathway, build_resources_index_pathway),
 }
 
 if __name__ == "__main__":

@@ -1,0 +1,205 @@
+{
+ "_comment": "Single source for the Pathway Resources → Documents section. Every file in pathway/assets/docs/ MUST be listed here (tools/qa.py enforces it). cat is one of: start, health, movement, nutrition, women.",
+ "documents": [
+  {
+   "file": "baseline-tests.pdf",
+   "en": "Baseline Tests",
+   "fr": "Tests de départ",
+   "ext": "PDF",
+   "size": "153 KB",
+   "cat": "start"
+  },
+  {
+   "file": "action-plan-workbook.pdf",
+   "en": "Action Plan Workbook",
+   "fr": "Cahier Plan d’action",
+   "ext": "PDF",
+   "size": "185 KB",
+   "cat": "start"
+  },
+  {
+   "file": "action-plan-workbook-instructions.pdf",
+   "en": "Action Plan Workbook — Instructions",
+   "fr": "Cahier Plan d’action — instructions",
+   "ext": "PDF",
+   "size": "80 KB",
+   "cat": "start"
+  },
+  {
+   "file": "small-steps-worksheet.docx",
+   "en": "Small Steps, Real Progress — Worksheet",
+   "fr": "Petits pas, vrais progrès — fiche (anglais)",
+   "ext": "DOCX",
+   "size": "11 KB",
+   "cat": "start"
+  },
+  {
+   "file": "small-steps-worksheet-fr.docx",
+   "en": "Small Steps, Real Progress — Worksheet (French)",
+   "fr": "Petits pas, vrais progrès — fiche",
+   "ext": "DOCX",
+   "size": "11 KB",
+   "cat": "start"
+  },
+  {
+   "file": "final-retest.pdf",
+   "en": "Final Re-Test",
+   "fr": "Tests de fin de programme",
+   "ext": "PDF",
+   "size": "90 KB",
+   "cat": "start"
+  },
+  {
+   "file": "pd-symptoms-motor-non-motor.pdf",
+   "en": "Parkinson’s Motor & Non-Motor Symptoms",
+   "fr": "Symptômes moteurs et non moteurs de la maladie de Parkinson",
+   "ext": "PDF",
+   "size": "192 KB",
+   "cat": "health"
+  },
+  {
+   "file": "care-team-checklist.pdf",
+   "en": "Care Team Support Checklist",
+   "fr": "Liste de vérification de l’équipe de soins",
+   "ext": "PDF",
+   "size": "103 KB",
+   "cat": "health"
+  },
+  {
+   "file": "top-7-dopamine-tips.pdf",
+   "en": "Top 7 Dopamine Tips",
+   "fr": "Les 7 meilleurs conseils pour la dopamine",
+   "ext": "PDF",
+   "size": "318 KB",
+   "cat": "health"
+  },
+  {
+   "file": "mindfulness-practice.pdf",
+   "en": "Mindfulness Practice",
+   "fr": "Pratique de la pleine conscience",
+   "ext": "PDF",
+   "size": "145 KB",
+   "cat": "health"
+  },
+  {
+   "file": "pd-care-laser-info.pdf",
+   "en": "PD Care Laser — Patient Information",
+   "fr": "Laser PD Care — information pour les patients",
+   "ext": "PDF",
+   "size": "1.1 MB",
+   "cat": "health"
+  },
+  {
+   "file": "sleep-schedule.pdf",
+   "en": "Sleep Schedule",
+   "fr": "Horaire de sommeil",
+   "ext": "PDF",
+   "size": "139 KB",
+   "cat": "health"
+  },
+  {
+   "file": "sleep-schedule-template.pdf",
+   "en": "Sleep Schedule Template",
+   "fr": "Modèle d’horaire de sommeil",
+   "ext": "PDF",
+   "size": "183 KB",
+   "cat": "health"
+  },
+  {
+   "file": "anxiety-and-parkinsons.pdf",
+   "en": "Anxiety & Parkinson’s",
+   "fr": "L’anxiété et la maladie de Parkinson",
+   "ext": "PDF",
+   "size": "282 KB",
+   "cat": "health"
+  },
+  {
+   "file": "why-intensity-is-key.pdf",
+   "en": "Why Intensity Is Key",
+   "fr": "Pourquoi l’intensité est la clé",
+   "ext": "PDF",
+   "size": "82 KB",
+   "cat": "movement"
+  },
+  {
+   "file": "facial-gymnastics.pdf",
+   "en": "Facial Gymnastics",
+   "fr": "Gymnastique faciale",
+   "ext": "PDF",
+   "size": "195 KB",
+   "cat": "movement"
+  },
+  {
+   "file": "wake-up-your-mind.pdf",
+   "en": "Wake Up Your Mind",
+   "fr": "Réveillez votre esprit",
+   "ext": "PDF",
+   "size": "407 KB",
+   "cat": "movement"
+  },
+  {
+   "file": "clean-15-dirty-dozen.pdf",
+   "en": "Clean 15 & Dirty Dozen",
+   "fr": "Les 15 propres et les 12 sales",
+   "ext": "PDF",
+   "size": "72 KB",
+   "cat": "nutrition"
+  },
+  {
+   "file": "smoothies.pdf",
+   "en": "Smoothie Recipes",
+   "fr": "Recettes de smoothies",
+   "ext": "PDF",
+   "size": "153 KB",
+   "cat": "nutrition"
+  },
+  {
+   "file": "mediterranean-meal-plan.pdf",
+   "en": "Mediterranean Diet — Sample Meal Plans",
+   "fr": "Alimentation méditerranéenne — exemples de menus",
+   "ext": "PDF",
+   "size": "226 KB",
+   "cat": "nutrition"
+  },
+  {
+   "file": "gut-research.pdf",
+   "en": "Your Gut & Parkinson’s — Research Summary",
+   "fr": "Votre intestin et la maladie de Parkinson — résumé de recherche",
+   "ext": "PDF",
+   "size": "13 KB",
+   "cat": "nutrition"
+  },
+  {
+   "file": "gut-health-fiber.docx",
+   "en": "Gut Health: Fibre",
+   "fr": "Santé intestinale : les fibres",
+   "ext": "DOCX",
+   "size": "10 KB",
+   "cat": "nutrition"
+  },
+  {
+   "file": "estrogen-has-left-the-building.pdf",
+   "en": "Estrogen Has Left the Building!",
+   "fr": "L’œstrogène a quitté l’édifice !",
+   "ext": "PDF",
+   "size": "232 KB",
+   "cat": "women"
+  },
+  {
+   "file": "protein-for-the-win.pdf",
+   "en": "Protein for the Win! — Meals & Snacks",
+   "fr": "Misez sur les protéines ! — repas et collations",
+   "ext": "PDF",
+   "size": "2.5 MB",
+   "cat": "women"
+  },
+  {
+   "file": "menopause-meals-snacks.docx",
+   "en": "Menopause Meal & Snack Suggestions",
+   "fr": "Suggestions de repas et de collations pour la ménopause",
+   "ext": "DOCX",
+   "size": "11 KB",
+   "cat": "women"
+  }
+ ]
+}

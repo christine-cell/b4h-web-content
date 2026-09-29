@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renforcer votre système immunitaire — Programme PPE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:   #2D4A2D;
+  --moss:     #4A6741;
+  --sage:     #7A9B6E;
+  --lime:     #B8D4A8;
+  --cream:    #F7F3EC;
+  --warm:     #EDE6D8;
+  --gold:     #C4913A;
+  --amber:    #E8B86D;
+  --rust:     #B85C38;
+  --ink:      #1C2B1C;
+  --muted:    #6B7B62;
+  --white:    #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+}
+
+.hero {
+  background: var(--forest);
+  background-image:
+    radial-gradient(ellipse at 10% 60%, rgba(74,103,65,0.7) 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 10%, rgba(196,145,58,0.25) 0%, transparent 50%);
+  color: white;
+  padding: 72px 44px 108px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '🌿';
+  font-size: 320px;
+  position: absolute;
+  right: -40px;
+  top: -60px;
+  opacity: 0.05;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.hero .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196,145,58,0.22);
+  border: 1px solid rgba(196,145,58,0.45);
+  color: var(--amber);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 26px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.1rem, 5vw, 3.7rem);
+  line-height: 1.1;
+  max-width: 680px;
+  margin-bottom: 20px;
+}
+
+.hero h1 em { color: var(--amber); font-style: italic; }
+
+.hero .sub {
+  font-size: 1.05rem;
+  opacity: 0.78;
+  max-width: 540px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.hero-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.hero-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.72);
+}
+
+.hero-pill strong {
+  color: var(--lime);
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 1px;
+}
+
+.supplements-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  max-width: 900px;
+  margin: -52px auto 0;
+  padding: 0 28px;
+  position: relative;
+  z-index: 10;
+}
+
+.supp-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 22px 16px;
+  text-align: center;
+  box-shadow: 0 12px 44px rgba(29,43,28,0.14);
+  animation: rise 0.5s ease both;
+  border-bottom: 4px solid var(--moss);
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.supp-card:nth-child(2) { border-bottom-color: var(--gold); animation-delay: .08s; }
+.supp-card:nth-child(3) { border-bottom-color: var(--rust); animation-delay: .16s; }
+.supp-card:nth-child(4) { border-bottom-color: var(--sage); animation-delay: .24s; }
+.supp-card:nth-child(5) { border-bottom-color: var(--amber); animation-delay: .32s; }
+
+.supp-card:hover { transform: translateY(-4px); box-shadow: 0 18px 52px rgba(29,43,28,0.18); }
+
+@keyframes rise { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+.supp-emoji { font-size: 2.4rem; margin-bottom: 10px; }
+.supp-name { font-weight: 600; font-size: 0.88rem; color: var(--forest); line-height: 1.3; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+
+.sec-tag {
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--moss);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  color: var(--forest);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+p { font-size: 1rem; color: #3A4A36; margin-bottom: 16px; line-height: 1.78; }
+
+section { padding: 56px 0 20px; }
+
+.intro-hl {
+  background: linear-gradient(135deg, var(--forest) 0%, var(--moss) 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 32px 36px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-hl::after {
+  content: '💪';
+  font-size: 140px;
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  opacity: 0.07;
+}
+
+.intro-hl p {
+  color: rgba(255,255,255,0.88);
+  margin: 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.65;
+}
+
+.intro-hl p strong { color: var(--amber); font-style: normal; }
+
+.supp-section {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 38px 40px;
+  margin: 28px 0;
+  border: 1px solid #DDE8D4;
+  box-shadow: 0 4px 24px rgba(45,74,45,0.07);
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 30px;
+}
+
+.supp-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--moss);
+  border-radius: 24px 0 0 24px;
+}
+
+.supp-section:nth-child(2)::before { background: var(--gold); }
+.supp-section:nth-child(3)::before { background: var(--rust); }
+.supp-section:nth-child(4)::before { background: var(--sage); }
+.supp-section:nth-child(5)::before { background: var(--amber); }
+
+.supp-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 22px; }
+.supp-header-emoji { font-size: 3.2rem; line-height: 1; flex-shrink: 0; }
+
+.supp-header-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  color: var(--forest);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.supp-header-text .supp-tagline {
+  font-size: 0.83rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.supp-section p { color: #3A4A36; }
+
+.tip-box {
+  background: var(--warm);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin: 20px 0;
+  border-left: 4px solid var(--gold);
+}
+
+.tip-box p { margin: 0; font-size: 0.94rem; color: var(--forest); font-weight: 500; }
+.tip-box p strong { color: var(--rust); }
+
+.dosage-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+
+.dosage-badge {
+  background: var(--forest);
+  color: white;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dosage-badge.gold { background: var(--gold); }
+.dosage-badge.rust { background: var(--rust); }
+.dosage-badge.sage { background: var(--sage); color: var(--forest); }
+
+.research-block {
+  background: var(--ink);
+  background-image: radial-gradient(ellipse at 85% 25%, rgba(74,103,65,0.35) 0%, transparent 60%);
+  color: white;
+  border-radius: 22px;
+  padding: 40px 44px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-block::before {
+  content: '🔬';
+  font-size: 160px;
+  position: absolute;
+  right: -10px;
+  bottom: -28px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.research-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--lime);
+  margin-bottom: 24px;
+}
+
+.research-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.research-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 22px 24px;
+}
+
+.rc-label {
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.rc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.rc-body {
+  font-size: 0.86rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.rc-finding {
+  display: inline-block;
+  background: rgba(196,145,58,0.25);
+  border: 1px solid rgba(196,145,58,0.4);
+  color: var(--amber);
+  font-size: 0.73rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 12px;
+}
+
+.takeaway {
+  background: linear-gradient(135deg, var(--moss) 0%, var(--forest) 100%);
+  color: white;
+  border-radius: 22px;
+  padding: 40px 44px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.takeaway::after {
+  content: '✨';
+  font-size: 160px;
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  opacity: 0.07;
+}
+
+.takeaway h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  color: var(--lime);
+  margin-bottom: 18px;
+}
+
+.takeaway ul { list-style: none; padding: 0; }
+
+.takeaway ul li {
+  padding: 10px 0;
+  padding-left: 28px;
+  position: relative;
+  font-size: 0.97rem;
+  color: rgba(255,255,255,0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.65;
+}
+
+.takeaway ul li:last-child { border-bottom: none; }
+
+.takeaway ul li::before {
+  content: '🌿';
+  position: absolute;
+  left: 0;
+  font-size: 0.9rem;
+}
+
+.disclaimer {
+  background: var(--warm);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 0.85rem;
+  color: #5A4A2A;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border: 1px solid #DDD4BE;
+}
+
+.disclaimer strong { color: var(--forest); }
+
+.references {
+  background: var(--warm);
+  border-radius: 18px;
+  padding: 30px 36px;
+  margin: 20px 0 60px;
+}
+
+.references h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--forest);
+  margin-bottom: 16px;
+}
+
+.ref-item {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 8px 0;
+  border-bottom: 1px solid #DDD4BE;
+  display: flex;
+  gap: 10px;
+}
+
+.ref-item:last-child { border-bottom: none; }
+.ref-num { color: var(--moss); font-weight: 700; flex-shrink: 0; }
+
+footer {
+  text-align: center;
+  padding: 36px 28px;
+  font-size: 0.8rem;
+  color: #aaa;
+  border-top: 1px solid #DDE8D4;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 48px 24px 88px; }
+  .supp-section { padding: 28px 24px; }
+  .research-block, .takeaway { padding: 28px 24px; }
+  .research-cards { grid-template-columns: 1fr; }
+  .references { padding: 24px 22px; }
+  .supp-header { flex-direction: column; gap: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HÉRO -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">🌿 Programme PPE Éducatif</div>
+    <h1>Construire votre <em>armure immunitaire</em> — de l'intérieur vers l'extérieur</h1>
+    <p class="sub">Le guide essentiel de Christine sur les suppléments clés et les stratégies de mode de vie qui soutiennent un système immunitaire fort dans la maladie de Parkinson. Simple, pratique et fondé sur la science.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><strong>Thème</strong>Antioxydants et neuroprotection</div>
+      <div class="hero-pill"><strong>Source</strong>Brain Sciences / MDPI · 2023</div>
+      <div class="hero-pill"><strong>Source</strong>PMC · Vitamines dans la MP · 2022</div>
+      <div class="hero-pill"><strong>Source</strong>Nutrients · Vitamine D dans la MP · 2022</div>
+    </div>
+  </div>
+</div>
+
+<!-- CARTES DES SUPPLÉMENTS -->
+<div class="supplements-row">
+  <div class="supp-card" onclick="document.getElementById('vitC').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">🍊</div>
+    <div class="supp-name">Vitamine C</div>
+  </div>
+  <div class="supp-card" onclick="document.getElementById('vitD').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">☀️</div>
+    <div class="supp-name">Vitamine D</div>
+  </div>
+  <div class="supp-card" onclick="document.getElementById('water').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">💧</div>
+    <div class="supp-name">Eau</div>
+  </div>
+  <div class="supp-card" onclick="document.getElementById('turmeric').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">🌿</div>
+    <div class="supp-name">Curcuma / Curcumine</div>
+  </div>
+  <div class="supp-card" onclick="document.getElementById('garlic').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">🧄</div>
+    <div class="supp-name">Ail</div>
+  </div>
+</div>
+
+<!-- CONTENU PRINCIPAL -->
+<div class="container">
+
+  <section>
+    <span class="sec-tag">Introduction</span>
+    <h2>Votre système immunitaire est l'un de vos atouts les plus précieux</h2>
+    <p>Renforcer le système immunitaire joue un rôle important dans le maintien d'une bonne santé — et pour les personnes vivant avec la maladie de Parkinson, c'est particulièrement vrai. Si aucun supplément ne remplace les médicaments ou les soins médicaux, les bonnes stratégies nutritionnelles peuvent donner à votre corps l'avantage pour combattre les infections, réduire l'inflammation et vous aider à vous sentir au mieux de votre forme.</p>
+    <p>Ce qui suit est la liste soigneusement élaborée de Christine des suppléments et habitudes fondamentaux — ceux vers lesquels elle revient encore et encore avec ses clients atteints de la MP. N'oubliez pas : nous sommes tous des individus uniques. Le mélange optimal pour chaque personne doit être adapté individuellement. Mais ce sont d'excellents points de départ.</p>
+
+    <div class="intro-hl">
+      <p><strong>« Ce ne sont pas nos épreuves qui nous définissent. Ce sont nos actions. »</strong><br>
+      Adopter une alimentation saine à base d'aliments entiers avec beaucoup de légumes sera le véritable facteur de changement. L'ajout de suppléments aide à combler les lacunes et à renforcer votre système immunitaire pour que votre corps fonctionne de manière optimale.</p>
+    </div>
+  </section>
+
+  <!-- VITAMINE C -->
+  <div class="supp-section" id="vitC">
+    <div class="supp-header">
+      <div class="supp-header-emoji">🍊</div>
+      <div class="supp-header-text">
+        <h3>Vitamine C</h3>
+        <div class="supp-tagline">Antioxydant · Absorption du lévodopa · Soutien immunitaire</div>
+      </div>
+    </div>
+
+    <p>La vitamine C est un puissant antioxydant bien connu pour soutenir un système immunitaire en bonne santé. Pour les personnes atteintes de la maladie de Parkinson, elle présente une valeur particulière car elle peut réellement aider à augmenter votre capacité à absorber le lévodopa — ce qui en fait un supplément essentiel selon Christine.</p>
+
+    <p>Notre corps ne peut pas absorber plus de 1 000 mg de vitamine C à la fois. Il est donc préférable de répartir la dose tout au long de la journée. Une excellente stratégie est de la prendre avec votre lévodopa. La vitamine C est hydrosoluble, ce qui signifie que votre corps élimine simplement tout excédent dont il n'a pas besoin — ce qui en fait l'un des suppléments les plus sûrs disponibles.</p>
+
+    <div class="dosage-row">
+      <div class="dosage-badge">💊 Dose de départ : 2 000–3 000 mg/jour</div>
+      <div class="dosage-badge gold">📦 Comprimés de 1 000 mg ou en poudre</div>
+      <div class="dosage-badge rust">⏱ Répartir tout au long de la journée</div>
+    </div>
+
+    <div class="tip-box">
+      <p>🧪 <strong>Test de tolérance intestinale :</strong> Vous pouvez tester vous-même vos besoins personnels en vitamine C. Augmentez progressivement votre dose jusqu'à ce que vos selles commencent à se ramollir — c'est le maximum que votre corps peut tolérer. Christine note qu'elle n'a encore jamais entendu un client atteint de MP atteindre son niveau de tolérance !</p>
+    </div>
+
+    <p>La forme en poudre prise avec le lévodopa est particulièrement pratique et efficace. Certaines personnes peuvent avoir besoin d'un peu plus ou d'un peu moins selon des facteurs individuels tels que le poids corporel, l'état de santé général et la charge médicamenteuse.</p>
+  </div>
+
+  <!-- VITAMINE D -->
+  <div class="supp-section" id="vitD">
+    <div class="supp-header">
+      <div class="supp-header-emoji">☀️</div>
+      <div class="supp-header-text">
+        <h3>Vitamine D</h3>
+        <div class="supp-tagline">Neuroprotection · Santé osseuse · Modulation immunitaire</div>
+      </div>
+    </div>
+
+    <p>La carence en vitamine D est étonnamment courante — et le risque augmente considérablement si vous vivez loin de l'équateur, si vous êtes plus sédentaire, si vous restez principalement à l'intérieur ou si vous vous couvrez avec des vêtements à l'extérieur. Les personnes atteintes de la maladie de Parkinson ont un risque plus élevé que la moyenne de développer un cancer de la peau, c'est pourquoi Christine recommande fortement d'explorer des alternatives à l'exposition directe au soleil pour obtenir de la vitamine D.</p>
+
+    <div class="tip-box">
+      <p>⚠️ <strong>Important :</strong> Il est très important de déterminer votre taux de vitamine D AVANT de commencer un supplément. Demandez à votre médecin de famille de vérifier ces niveaux — c'est une simple prise de sang. Votre résultat de base déterminera exactement la quantité dont vous avez besoin.</p>
+    </div>
+
+    <p>Les clients de Christine ont eu besoin de 2 000 UI jusqu'à 10 000 UI par jour pour atteindre des niveaux sains — une large plage qui reflète à quel point ce supplément est vraiment individuel. Le poids corporel est l'un des facteurs clés pour déterminer la bonne dose.</p>
+
+    <div class="dosage-row">
+      <div class="dosage-badge">🩸 Faire tester les niveaux sanguins d'abord</div>
+      <div class="dosage-badge gold">💊 Plage typique : 2 000–10 000 UI/jour</div>
+      <div class="dosage-badge sage">👨‍⚕️ Dose guidée par les résultats sanguins</div>
+    </div>
+
+    <p>Les personnes atteintes de MP ont un risque accru de chutes et de fractures, et la vitamine D est importante pour la solidité des os et la fonction musculaire — deux raisons supplémentaires convaincantes de s'assurer que vos niveaux sont optimaux.</p>
+  </div>
+
+  <!-- BLOC RECHERCHE -->
+  <div class="research-block">
+    <h3>🔬 Ce que dit la recherche — Vitamines C et D dans la maladie de Parkinson</h3>
+    <div class="research-cards">
+
+      <div class="research-card">
+        <div class="rc-label">Brain Sciences · MDPI · 2023</div>
+        <div class="rc-title">Les vitamines peuvent-elles avoir un impact positif sur le traitement de la maladie de Parkinson ?</div>
+        <p class="rc-body">Une revue de 2023 a confirmé que le stress oxydatif est un moteur central de la neurodégénérescence dans la MP, et que la vitamine C représente une stratégie thérapeutique prometteuse. La vitamine C est concentrée dans les zones riches en neurones du cerveau et peut y être transportée via des protéines dédiées, lui conférant un potentiel neuroprotecteur direct.</p>
+        <span class="rc-finding">📌 La vitamine C est concentrée dans le cerveau avec un potentiel neuroprotecteur direct</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-label">PMC · Antioxydants alimentaires et MP · 2020</div>
+        <div class="rc-title">Vitamine C et biodisponibilité du lévodopa</div>
+        <p class="rc-body">Une analyse évaluée par des pairs a révélé que la vitamine C peut améliorer la capacité thérapeutique du lévodopa en améliorant sa biodisponibilité et en contribuant à réduire ses effets secondaires toxiques. Une étude de cohorte chez des patients âgés atteints de MP a documenté une augmentation de l'absorption du lévodopa lors de la co-administration d'acide ascorbique.</p>
+        <span class="rc-finding">📌 La vitamine C améliore la biodisponibilité du lévodopa chez les patients atteints de MP</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-label">Nutrients · Pignolo et al. · 2022</div>
+        <div class="rc-title">La carence en vitamine D est très répandue dans la maladie de Parkinson</div>
+        <p class="rc-body">Une revue complète de 2022 a confirmé que la carence en vitamine D est significativement plus fréquente chez les patients atteints de MP que chez les personnes en bonne santé. Le récepteur de la vitamine D est fortement exprimé dans la substance noire — la région cérébrale la plus touchée par la MP — ce qui suggère un rôle neuroprotecteur direct.</p>
+        <span class="rc-finding">📌 55 % des patients atteints de MP ont une insuffisance en vitamine D contre 36 % des témoins sains</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-label">Scientific Reports · 2025 · Essai contrôlé randomisé</div>
+        <div class="rc-title">La vitamine D3 améliore la fonction motrice et la réponse immunitaire</div>
+        <p class="rc-body">Un essai clinique en double aveugle avec placebo mené en 2024-2025 auprès de 51 patients atteints de MP avec carence en vitamine D a montré que trois mois de supplémentation en vitamine D3 produisaient des améliorations mesurables de la fonction motrice et des marqueurs immunitaires comparativement au placebo.</p>
+        <span class="rc-finding">📌 3 mois de vitamine D3 ont amélioré la fonction motrice et la réponse immunitaire dans la MP</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EAU -->
+  <div class="supp-section" id="water">
+    <div class="supp-header">
+      <div class="supp-header-emoji">💧</div>
+      <div class="supp-header-text">
+        <h3>Eau</h3>
+        <div class="supp-tagline">Détoxification · Soulagement de la constipation · Énergie</div>
+      </div>
+    </div>
+
+    <p>Vous avez probablement déjà entendu dire qu'il faut boire plus d'eau — et c'est particulièrement vrai pour les personnes atteintes de la maladie de Parkinson. Les toxines s'accumulent constamment dans notre organisme tout au long de la journée, et plus vous buvez d'eau, plus elles sont éliminées efficacement.</p>
+
+    <p>La constipation est l'un des symptômes non moteurs les plus courants de la MP, et la déshydratation en est un facteur clé. Christine recommande de commencer chaque matin par 1 à 2 verres d'eau. Cela aide à éliminer les toxines et stimule le système digestif pour bien démarrer la journée.</p>
+
+    <div class="tip-box">
+      <p>💡 <strong>Conseils d'hydratation :</strong> Ajoutez du citron à votre eau, ou quelques morceaux de fruits surgelés — les bleuets la gardent fraîche et ajoutent une petite saveur naturelle. Trouvez ce qui convient à votre mode de vie et faites-en un rituel quotidien.</p>
+    </div>
+
+    <div class="dosage-row">
+      <div class="dosage-badge">🌅 Commencer par 1–2 verres dès le matin</div>
+      <div class="dosage-badge gold">🎯 Viser 6–8 verres (1,5–2 L) par jour</div>
+    </div>
+  </div>
+
+  <!-- CURCUMA -->
+  <div class="supp-section" id="turmeric">
+    <div class="supp-header">
+      <div class="supp-header-emoji">🌿</div>
+      <div class="supp-header-text">
+        <h3>Curcuma / Curcumine</h3>
+        <div class="supp-tagline">Anti-inflammatoire · Santé intestinale · Soutien cérébral</div>
+      </div>
+    </div>
+
+    <p>Avez-vous entendu parler de la curcumine ? C'est l'ingrédient actif dérivé du curcuma — l'épice jaune vif commune dans les cuisines asiatiques et centraméricaines. Bien que vous puissiez ajouter du curcuma à vos repas pour la saveur, vous auriez besoin d'une très grande quantité pour obtenir un niveau thérapeutique de curcumine par l'alimentation seule. Un supplément dédié est la solution pratique.</p>
+
+    <p>La curcumine est un puissant antioxydant qui aide à réduire l'inflammation dans le corps, stimule les fonctions cérébrales et améliore la digestion intestinale. Elle possède également des propriétés cicatrisantes qui soutiennent la paroi des vaisseaux sanguins et maintiennent le coeur en bonne santé.</p>
+
+    <div class="tip-box">
+      <p>🔍 <strong>La qualité du supplément est importante :</strong> Recherchez spécifiquement une forme <strong>biodisponible</strong> de curcumine — comme celles combinées avec la pipérine (extrait de poivre noir) ou en formulation liposomale. Les formes biodisponibles sont absorbées et utilisées par l'organisme bien plus rapidement que les suppléments standard.</p>
+    </div>
+  </div>
+
+  <!-- AIL -->
+  <div class="supp-section" id="garlic">
+    <div class="supp-header">
+      <div class="supp-header-emoji">🧄</div>
+      <div class="supp-header-text">
+        <h3>Ail</h3>
+        <div class="supp-tagline">Stimulation immunitaire · Antimicrobien · Partenaire des bouillons d'os</div>
+      </div>
+    </div>
+
+    <p>Christine adore personnellement l'ail — moins l'haleine qui s'ensuit, mais c'est un petit prix à payer ! L'ail est un ingrédient merveilleux pour renforcer l'immunité, particulièrement savoureux dans les bouillons d'os. Et il existe une technique simple pour maximiser ses bienfaits.</p>
+
+    <div class="tip-box">
+      <p>🔪 <strong>Conseil de préparation :</strong> Coupez l'ail puis <strong>pressez-le ou écrasez-le</strong> avant la cuisson. Cela active un composé appelé allicine, responsable des puissantes propriétés antimicrobiennes et immunostimulantes de l'ail. Consommer beaucoup d'ail est particulièrement bénéfique pendant les mois plus froids.</p>
+    </div>
+
+    <p>Ajouter généreusement de l'ail aux soupes, bouillons d'os et plats cuisinés est l'un des moyens les plus simples et les plus savoureux de donner quotidiennement un coup de pouce à votre système immunitaire.</p>
+  </div>
+
+  <!-- POINTS CLÉS -->
+  <div class="takeaway">
+    <h3>🌿 Points clés à retenir</h3>
+    <ul>
+      <li>La vitamine C est essentielle pour les personnes atteintes de MP — elle agit comme un puissant antioxydant ET peut améliorer l'absorption du lévodopa. Prenez-la répartie tout au long de la journée, idéalement avec vos médicaments.</li>
+      <li>Faites tester votre taux sanguin de vitamine D avant de prendre un supplément. La carence est très courante dans la MP et la bonne dose varie considérablement d'une personne à l'autre.</li>
+      <li>Commencez chaque matin par 1 à 2 verres d'eau. La déshydratation est un facteur majeur, souvent négligé, de la constipation dans la MP.</li>
+      <li>Choisissez une forme biodisponible de curcumine pour une absorption maximale. Ajouter du curcuma dans les aliments seul ne fournira pas une dose thérapeutique.</li>
+      <li>Écrasez ou pressez votre ail avant la cuisson pour activer ses composés soutenant l'immunité — et consommez-en davantage pendant les mois plus froids.</li>
+      <li>Aucun supplément ne remplace une alimentation saine à base d'aliments entiers. Les suppléments comblent les lacunes ; la vraie nourriture est le fondement.</li>
+      <li>Nous sommes tous uniques. Travaillez avec votre équipe de soins pour trouver la bonne combinaison et les bonnes doses pour vous personnellement.</li>
+    </ul>
+  </div>
+
+  <!-- AVERTISSEMENT -->
+  <div class="disclaimer">
+    ⚠️ <div><strong>Important :</strong> Ce guide est à titre éducatif uniquement et ne remplace pas un avis médical. Consultez toujours votre prestataire de soins de santé ou un nutritionniste qualifié avant de commencer de nouveaux suppléments, notamment en raison des interactions potentielles avec les médicaments contre la maladie de Parkinson tels que le lévodopa. Les besoins individuels varient considérablement.</div>
+  </div>
+
+  <!-- RÉFÉRENCES -->
+  <div class="references">
+    <h3>📚 Sources de recherche</h3>
+    <div class="ref-item"><span class="ref-num">[1]</span><span>Sahu S, Rani M, Kharat L, Arun, Mondal A. (2023). Could Vitamins Have a Positive Impact on the Treatment of Parkinson's Disease? <em>Brain Sciences</em>, 13(2), 272. doi: 10.3390/brainsci13020272</span></div>
+    <div class="ref-item"><span class="ref-num">[2]</span><span>Park H-A et al. (2020). Dietary Antioxidants and Parkinson's Disease. <em>Antioxidants</em>, 9(7), 570. PMC7402163. doi: 10.3390/antiox9070570</span></div>
+    <div class="ref-item"><span class="ref-num">[3]</span><span>Pignolo A, Mastrilli S, Davi C, et al. (2022). Vitamin D and Parkinson's Disease. <em>Nutrients</em>, 14(6), 1220. doi: 10.3390/nu14061220</span></div>
+    <div class="ref-item"><span class="ref-num">[4]</span><span>Wang et al. (2025). Impact of vitamin D3 supplementation on motor functionality and the immune response in Parkinson's disease patients with vitamin D deficiency. <em>Scientific Reports</em>. doi: 10.1038/s41598-025-10821-5</span></div>
+    <div class="ref-item"><span class="ref-num">[5]</span><span>Taher J et al. (2022). Role of Vitamins in Advanced Therapy for Parkinson's Disease: Decoding the Paradox. <em>Canadian Journal of Neurological Sciences</em>, 49(1), 3–4. doi: 10.1017/cjn.2021.106</span></div>
+  </div>
+
+</div>
+
+<footer>
+  Programme PPE — À titre éducatif uniquement. Ne remplace pas un avis médical.<br>
+  Contenu développé par Christine pour les personnes vivant avec la maladie de Parkinson et leurs proches aidants.
+</footer>
+
+</body>
+</html>

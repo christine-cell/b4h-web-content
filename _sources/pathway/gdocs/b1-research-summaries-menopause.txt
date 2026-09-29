@@ -1,0 +1,77 @@
+📖  RESEARCH STUDIES
+Menopause, Women’s Health & Parkinson’s Disease
+PPE Program  ·  Boxing 4 Health
+Summaries and references for the evidence base underlying the PPE program’s approach to women’s health and Parkinson’s disease. Sources are cited in full and links are provided where available.
+🧬  MENOPAUSE & PARKINSON’S DISEASE
+
+[1]  Women and PD: Experienced Changes in Parkinson Symptoms After Menopause
+Kapelle W. et al., Radboud University Medical Centre  ·  MDS International Congress (Abstract 1310), Cleveland Clinic Journal of Medicine  ·  2023
+Summary: A Dutch survey study of 31 postmenopausal women with Parkinson’s disease examined how symptoms changed after menopause. This was a substudy of a larger investigation into women-specific issues and hormonal fluctuations in PD, involving 110 Dutch-speaking women aged 21–60 diagnosed with PD by a neurologist.
+Key Findings:
+	•	68% of postmenopausal women with PD reported worsening of symptoms after menopause — both PD-specific and general symptoms.
+	•	The most frequently worsened symptoms were fatigue (45%), increased perspiration (42%), and urinary tract issues (42%).
+	•	PD-specific symptoms that worsened included bradykinesia (23%) and tremor (19%).
+	•	Despite this, few women discussed menopausal symptom changes with their healthcare provider.
+	•	Recommendations include treatment adjustments, greater neurologist engagement, and referral to gynaecologist to explore hormonal therapy.
+	•	Up to 10% of all PD patients are diagnosed before age 50, and almost half of those are women.
+🔗 https://www.ccjm.org/page/mds-2023/memopause-pd
+
+[2]  Menopause, Hormone Replacement Therapy and Parkinson’s Disease: A State-of-the-Art Review
+Multiple authors  ·  Frontiers in Neurology / PMC  ·  2022
+Summary: A comprehensive clinical review examining the relationship between gonadal hormones, reproductive life events, and Parkinson’s disease. The review synthesizes evidence on lifetime estrogen exposure, menopause timing, and hormone replacement therapy (HRT) in the context of PD onset and progression.
+Key Findings:
+	•	Women have a lower prevalence of PD than men, suggesting estrogen may have a neuroprotective role.
+	•	Perimenopause — the ~5 year transition period typically ages 45–55 — coincides with the PD prodromal phase (10–20 years before clinical symptoms emerge).
+	•	Erratic hormonal fluctuations during perimenopause may interact with dopaminergic vulnerability during this critical window.
+	•	Longer lifetime estrogen exposure (longer fertile years) is associated with reduced PD risk.
+	•	Evidence on HRT and PD is inconsistent across studies; the relationship is complex and requires individualized clinical assessment.
+	•	The authors call for more sex-specific research to address current knowledge gaps.
+🔗 https://pmc.ncbi.nlm.nih.gov/articles/PMC9631815/
+
+♀️  WOMEN’S HEALTH ACROSS THE LIFESPAN WITH PARKINSON’S
+
+[3]  Women and Parkinson’s: Menstruation, Pregnancy, Breastfeeding & Menopause
+Parkinson’s Europe Editorial Team  ·  Parkinson’s Europe — Self-Help & Living Well  ·  Updated 2024
+Summary: A comprehensive patient-facing evidence summary covering all major women’s health stages in relation to Parkinson’s disease. Parkinson’s Europe is a pan-European patient organization representing people affected by PD across Europe. While written for a general audience, the content is grounded in current clinical evidence and regularly updated.
+Key Findings:
+	•	Almost 50% of people with Parkinson’s are women, yet women-specific research remains very limited — much of what is known is anecdotal.
+	•	Up to 11 out of 12 pre-menopausal women with PD experience worsening symptoms (particularly tremor, dyskinesia, and rigidity) and reduced medication effectiveness in the days before and during menstruation.
+	•	Pregnancy: no evidence of higher rates of birth or foetal complications in women with PD; however hormonal changes may affect brain sensitivity and medication needs.
+	•	Breastfeeding: levodopa is considered relatively safe; amantadine and COMT inhibitors should be avoided as they pass into breast milk.
+	•	Menopause: symptoms of menopause (fatigue, sweating, depression) can overlap with and worsen PD symptoms, creating diagnostic confusion.
+	•	Hormone Replacement Therapy (HRT) may help some women but evidence is limited; vaginal HRT specifically may help with vaginal dryness common in menopause.
+	•	Authors emphasize the importance of gynaecologist-neurologist collaboration for women with PD.
+🔗 https://parkinsonseurope.org/i-have-parkinsons/self-help-and-living-well/women-and-parkinsons/
+
+[4]  The Menstrual Cycle and Pregnancy Commonly Impact Symptoms of Women with Early-Onset Parkinson’s Disease
+Lie et al., Norwegian longitudinal PD study  ·  Movement Disorders Clinical Practice (Wiley)  ·  2025
+Summary: A Norwegian cross-sectional interview study of 17 women with early-onset Parkinson’s disease (EOPD), aged 21–49 at motor symptom onset. Participants were interviewed about the effect of menstrual cycle, pregnancy, breastfeeding, postpartum period, and transition to menopause on their PD symptoms and treatment.
+Key Findings:
+	•	60% of women (9/15) reported menstrual cycle-related deterioration in PD symptoms.
+	•	Of those, 55.6% required specific therapeutic adjustments to manage the worsening.
+	•	66.7% of women who were pregnant during their PD experience reported either onset of PD symptoms or worsening of existing symptoms during pregnancy.
+	•	Symptom changes during pregnancy were partially transient in some participants.
+	•	The study reinforces that hormonal stages uniquely affect women with PD and that this area remains significantly under-researched.
+	•	Findings support the need for individualized, hormone-aware clinical management in women with early-onset PD.
+🔗 https://movementdisorders.onlinelibrary.wiley.com/doi/10.1002/mdc3.70438
+
+🦴  MUSCULOSKELETAL HEALTH — PENDING
+
+⚠️  Note: The PDF “The Musculoskeletal Syndrome of Menopause” was referenced but did not upload successfully. Please re-attach the file and this entry will be completed with a full summary and key findings.
+
+[5]  The Musculoskeletal Syndrome of Menopause  ⚠️ PDF PENDING
+PDF not received. Please re-upload this file to complete the reference entry with full citation, summary, and key findings.
+
+🎯  CLINICAL IMPLICATIONS FOR PRACTICE
+
+What the evidence tells us for the PPE program:
+	•	Hormonal fluctuations at every stage — menstruation, pregnancy, perimenopause, and post-menopause — directly affect PD symptom severity and medication effectiveness.
+	•	Two-thirds of postmenopausal women with PD experience worsening symptoms after menopause, yet this is rarely discussed with healthcare providers. Awareness is the first step.
+	•	The perimenopause window (ages ~45–55) coincides with the PD prodromal phase, making it a critical period for early identification and intervention.
+	•	Estrogen appears neuroprotective, but evidence on HRT is inconsistent — clinical decisions must be individualized in collaboration with neurology and gynaecology.
+	•	Exercise — including the boxing, rhythm, and strength work in the PPE program — remains one of the most evidence-supported interventions for women with PD at any hormonal stage.
+	•	Women-specific research in PD is critically underfunded. Advocating for clients to participate in research (such as the UCC hormonal fluctuation study) contributes to the evidence base.
+
+
+Boxing 4 Health  ·  PPE Program  ·  Research References
+For educational purposes only. This document does not constitute medical advice. All URLs accessed March 2026.

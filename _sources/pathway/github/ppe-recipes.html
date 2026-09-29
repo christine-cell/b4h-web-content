@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Favourite Healthy Recipes — PPE Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #3D6B4F;
+    --green-light: #5A8A6A;
+    --green-pale: #EAF2EC;
+    --gold: #C8873A;
+    --gold-pale: #FDF3E7;
+    --cream: #FDFAF5;
+    --warm: #F5EDE0;
+    --deep: #1E2A1F;
+    --text: #2E3D2F;
+    --muted: #7A8C7B;
+    --pink: #C85A6A;
+    --pink-pale: #FDF0F2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--green);
+    background-image:
+      radial-gradient(ellipse at 90% 10%, rgba(200,135,58,0.25) 0%, transparent 55%),
+      radial-gradient(ellipse at 5% 90%, rgba(90,138,106,0.4) 0%, transparent 50%);
+    color: white;
+    padding: 64px 40px 90px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '🌿';
+    font-size: 220px;
+    position: absolute;
+    right: -30px; bottom: -40px;
+    opacity: 0.08;
+    transform: rotate(-20deg);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    max-width: 560px;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 em { color: #f0c87a; font-style: italic; }
+
+  .hero .sub {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    max-width: 500px;
+    font-weight: 300;
+  }
+
+  /* ── INTRO CARDS ── */
+  .intro-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 860px;
+    margin: -44px auto 0;
+    padding: 0 24px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .intro-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px 26px;
+    box-shadow: 0 8px 36px rgba(30,42,31,0.11);
+    border-top: 5px solid var(--green);
+    animation: rise 0.6s ease both;
+  }
+
+  .intro-card:nth-child(2) { border-top-color: var(--pink); animation-delay: 0.1s; }
+  .intro-card:nth-child(3) { border-top-color: var(--gold); animation-delay: 0.2s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .intro-card .icon { font-size: 2rem; margin-bottom: 10px; }
+  .intro-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 8px; color: var(--deep); }
+  .intro-card p { font-size: 0.9rem; color: #556; line-height: 1.6; margin: 0; }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    text-align: center;
+    padding: 60px 0 10px;
+  }
+
+  .section-header .tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    color: var(--deep);
+    line-height: 1.2;
+  }
+
+  .section-header p {
+    font-size: 0.97rem;
+    color: var(--muted);
+    max-width: 540px;
+    margin: 12px auto 0;
+  }
+
+  /* ── MED TIP BANNER ── */
+  .med-banner {
+    background: linear-gradient(135deg, #1E2A1F 0%, #2E4A32 100%);
+    border-radius: 18px;
+    padding: 26px 30px;
+    margin: 36px 0 10px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    color: white;
+  }
+
+  .med-banner .med-icon { font-size: 2rem; flex-shrink: 0; }
+
+  .med-banner h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #f0c87a;
+    margin-bottom: 6px;
+  }
+
+  .med-banner p { font-size: 0.9rem; opacity: 0.85; margin: 0; }
+
+  /* ── RECIPE CARDS ── */
+  .recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+    margin: 32px 0 60px;
+  }
+
+  .recipe-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(30,42,31,0.08);
+    border: 1px solid #e8f0e9;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(30,42,31,0.13);
+  }
+
+  .recipe-header {
+    padding: 22px 24px 16px;
+    border-bottom: 1px solid #f0f5f0;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .recipe-emoji { font-size: 2.6rem; flex-shrink: 0; }
+
+  .recipe-title-block { flex: 1; }
+
+  .recipe-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--deep);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .recipe-note { font-size: 0.78rem; color: var(--muted); font-style: italic; }
+
+  .recipe-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .tag-pill {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .tag-protein { background: var(--green-pale); color: var(--green); }
+  .tag-mind { background: #EAF0FB; color: #3A5BA0; }
+  .tag-vegan { background: #FDF3E7; color: #8A5A1A; }
+  .tag-gluten { background: #FDF0F2; color: #8A2A3A; }
+  .tag-quick { background: #F0EAFB; color: #5A3A8A; }
+
+  .recipe-body { padding: 18px 24px 22px; }
+
+  .ingredients-title {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .ingredients-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .ingredients-list li {
+    font-size: 0.9rem;
+    color: var(--text);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .ingredients-list li::before {
+    content: '•';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .method-title {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .method-text {
+    font-size: 0.9rem;
+    color: #445;
+    line-height: 1.65;
+  }
+
+  .protein-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--green-pale);
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-top: 14px;
+  }
+
+  /* ── WOMEN'S BANNER ── */
+  .women-banner {
+    background: linear-gradient(135deg, var(--pink) 0%, #a0304a 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 36px 40px;
+    margin: 10px 0 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .women-banner::before {
+    content: '💪';
+    font-size: 160px;
+    position: absolute;
+    right: -20px; top: -20px;
+    opacity: 0.08;
+  }
+
+  .women-banner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #ffd4dc;
+  }
+
+  .women-banner p { font-size: 0.95rem; opacity: 0.9; max-width: 600px; line-height: 1.65; margin: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 0.82rem;
+    color: #aaa;
+    border-top: 1px solid #e8f0e9;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 44px 24px 80px; }
+    .recipes-grid { grid-template-columns: 1fr; }
+    .med-banner, .women-banner { padding: 22px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">PPE Program</div>
+    <h1>My <em>Favourite</em> Healthy Recipes</h1>
+    <p class="sub">High-protein, MIND diet-friendly meals that are actually easy — preteen-approved and Parkinson's-smart.</p>
+  </div>
+</div>
+
+<!-- INTRO CARDS -->
+<div class="intro-row">
+  <div class="intro-card">
+    <div class="icon">💬</div>
+    <h3>From Me to You</h3>
+    <p>I wanted to put some great recipes together for you — and don't worry, if they're coming from me, they're <em>not that complicated!</em> Promise.</p>
+  </div>
+  <div class="intro-card">
+    <div class="icon">💊</div>
+    <h3>Protein & Your Meds</h3>
+    <p>Protein and Parkinson's meds don't always play nicely together. I use <strong>vegan protein powder</strong> — no issues! If you use animal protein, take your pill <strong>2 hours away</strong> from that meal.</p>
+  </div>
+  <div class="intro-card">
+    <div class="icon">💪</div>
+    <h3>Why Protein Matters</h3>
+    <p>As we age, protein becomes <em>essential</em> — for muscle mass, bone health, immune function, hormone regulation, and fighting sarcopenia. Don't skip it!</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- WOMEN'S SECTION -->
+  <div class="section-header">
+    <span class="tag">For the Ladies</span>
+    <h2>Women — This One's for You 👩</h2>
+    <p>Protein isn't just for men. I actually think it's even MORE important for women.</p>
+  </div>
+
+  <div class="women-banner">
+    <h3>Ladies, Listen Up! 😉</h3>
+    <p>After 45, hormonal shifts from menopause can accelerate muscle loss and weaken bones. Protein fights back — supporting muscle retention, metabolic function, weight management, and bone density. It's not optional, it's essential. Make it a daily priority and your future self will thank you.</p>
+  </div>
+
+  <!-- MED TIP -->
+  <div class="med-banner">
+    <div class="med-icon">💊</div>
+    <div>
+      <h4>Quick Reminder About Your Meds</h4>
+      <p>Vegan protein powder (like the one I use from Costco) is totally fine with your Parkinson's medication — no waiting needed! If you do use animal protein (eggs, chicken, fish), try to take your levodopa at least <strong>2 hours before or after</strong> that meal whenever possible.</p>
+    </div>
+  </div>
+
+  <!-- RECIPES -->
+  <div class="section-header" style="padding-top: 48px;">
+    <span class="tag">The Good Stuff</span>
+    <h2>High-Protein MIND Diet Recipes</h2>
+    <p>All brain-friendly, all delicious, all simple. Here we go!</p>
+  </div>
+
+  <div class="recipes-grid">
+
+    <!-- WAFFLES -->
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <div class="recipe-emoji">🧇</div>
+        <div class="recipe-title-block">
+          <div class="recipe-title">High-Protein Power Waffles</div>
+          <div class="recipe-note">Preteen-approved — my whole family of 4 loves these!</div>
+          <div class="recipe-tags">
+            <span class="tag-pill tag-protein">High Protein</span>
+            <span class="tag-pill tag-vegan">Dairy-Free</span>
+            <span class="tag-pill tag-gluten">GF Option</span>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-body">
+        <div class="ingredients-title">Ingredients</div>
+        <ul class="ingredients-list">
+          <li>2 scoops vegan protein powder (I use Costco's)</li>
+          <li>2 eggs</li>
+          <li>1 cup almond milk</li>
+          <li>2 tbsp nut butter</li>
+          <li>1½ cups rolled oats (I use Costco GF oats — regular works too!)</li>
+          <li>1 ripe banana</li>
+          <li>Optional: handful of chocolate chips 🍫</li>
+        </ul>
+        <div class="method-title">Method</div>
+        <div class="method-text">Blend everything together. Spray your waffle maker generously with coconut oil — don't be shy or they'll stick! Pour in the batter and cook 3–4 minutes until golden. That's it. Seriously.</div>
+        <div class="protein-badge">💪 ~25–30g protein per serving</div>
+      </div>
+    </div>
+
+    <!-- BERRY PROTEIN SMOOTHIE -->
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <div class="recipe-emoji">🫐</div>
+        <div class="recipe-title-block">
+          <div class="recipe-title">MIND Diet Berry Protein Smoothie</div>
+          <div class="recipe-note">Blueberries are a MIND diet superstar — packed with brain-protective antioxidants</div>
+          <div class="recipe-tags">
+            <span class="tag-pill tag-protein">High Protein</span>
+            <span class="tag-pill tag-mind">MIND Diet</span>
+            <span class="tag-pill tag-vegan">Dairy-Free</span>
+            <span class="tag-pill tag-quick">5 Min</span>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-body">
+        <div class="ingredients-title">Ingredients</div>
+        <ul class="ingredients-list">
+          <li>1 scoop vegan protein powder</li>
+          <li>1 cup frozen blueberries (or mixed berries)</li>
+          <li>1 cup almond or oat milk</li>
+          <li>1 tbsp almond butter</li>
+          <li>1 tbsp ground flaxseed</li>
+          <li>½ frozen banana</li>
+          <li>Handful of spinach (you won't taste it!)</li>
+        </ul>
+        <div class="method-title">Method</div>
+        <div class="method-text">Throw everything in the blender and blitz until smooth. Drink immediately or pour into a jar and refrigerate overnight for a grab-and-go breakfast.</div>
+        <div class="protein-badge">💪 ~22g protein per serving</div>
+      </div>
+    </div>
+
+    <!-- LENTIL SOUP -->
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <div class="recipe-emoji">🍲</div>
+        <div class="recipe-title-block">
+          <div class="recipe-title">Easy Red Lentil & Spinach Soup</div>
+          <div class="recipe-note">Make a big pot on Sunday — eat all week. Legumes are a MIND diet must!</div>
+          <div class="recipe-tags">
+            <span class="tag-pill tag-protein">High Protein</span>
+            <span class="tag-pill tag-mind">MIND Diet</span>
+            <span class="tag-pill tag-vegan">Vegan</span>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-body">
+        <div class="ingredients-title">Ingredients</div>
+        <ul class="ingredients-list">
+          <li>1½ cups red lentils, rinsed</li>
+          <li>1 can diced tomatoes</li>
+          <li>4 cups vegetable broth</li>
+          <li>2 big handfuls of fresh spinach</li>
+          <li>1 onion, diced</li>
+          <li>3 garlic cloves, minced</li>
+          <li>2 tsp cumin + 1 tsp turmeric</li>
+          <li>Olive oil, salt & pepper</li>
+          <li>Squeeze of lemon to finish</li>
+        </ul>
+        <div class="method-title">Method</div>
+        <div class="method-text">Sauté onion and garlic in olive oil for 3 minutes. Add spices, then lentils, tomatoes, and broth. Simmer 20 minutes until lentils are soft. Stir in spinach and lemon juice. Done! Freezes beautifully.</div>
+        <div class="protein-badge">💪 ~18g protein per bowl</div>
+      </div>
+    </div>
+
+    <!-- SALMON BOWL -->
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <div class="recipe-emoji">🐟</div>
+        <div class="recipe-title-block">
+          <div class="recipe-title">10-Minute Salmon Power Bowl</div>
+          <div class="recipe-note">Fatty fish = top MIND diet food. Omega-3s for your brain, protein for your muscles</div>
+          <div class="recipe-tags">
+            <span class="tag-pill tag-protein">High Protein</span>
+            <span class="tag-pill tag-mind">MIND Diet</span>
+            <span class="tag-pill tag-quick">10 Min</span>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-body">
+        <div class="ingredients-title">Ingredients</div>
+        <ul class="ingredients-list">
+          <li>1 salmon fillet (fresh or canned wild salmon works great!)</li>
+          <li>1 cup cooked brown rice or quinoa</li>
+          <li>Big handful of leafy greens or kale</li>
+          <li>½ avocado, sliced</li>
+          <li>Handful of cherry tomatoes</li>
+          <li>Drizzle of olive oil + squeeze of lemon</li>
+          <li>Salt, pepper, and everything bagel seasoning</li>
+        </ul>
+        <div class="method-title">Method</div>
+        <div class="method-text">Pan-sear or bake the salmon 8–10 minutes. Assemble your bowl: grains first, then greens, salmon, avocado, and tomatoes. Drizzle with olive oil and lemon. Done in the time it takes to cook the rice!</div>
+        <div class="protein-badge">💪 ~40g protein per bowl</div>
+      </div>
+    </div>
+
+    <!-- CHICKPEA SALAD -->
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <div class="recipe-emoji">🥗</div>
+        <div class="recipe-title-block">
+          <div class="recipe-title">Loaded Chickpea & Walnut Salad</div>
+          <div class="recipe-note">Walnuts are a MIND diet superstar — eat them daily if you can!</div>
+          <div class="recipe-tags">
+            <span class="tag-pill tag-protein">High Protein</span>
+            <span class="tag-pill tag-mind">MIND Diet</span>
+            <span class="tag-pill tag-vegan">Vegan</span>
+            <span class="tag-pill tag-quick">No Cook</span>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-body">
+        <div class="ingredients-title">Ingredients</div>
+        <ul class="ingredients-list">
+          <li>1 can chickpeas, drained and rinsed</li>
+          <li>¼ cup walnuts, roughly chopped</li>
+          <li>2 cups mixed greens or arugula</li>
+          <li>½ cup cherry tomatoes, halved</li>
+          <li>¼ red onion, thinly sliced</li>
+          <li>¼ cup parsley or fresh herbs</li>
+          <li>3 tbsp olive oil + 2 tbsp lemon juice</li>
+          <li>1 tsp Dijon mustard + salt & pepper</li>
+        </ul>
+        <div class="method-title">Method</div>
+        <div class="method-text">Whisk together the olive oil, lemon, and mustard for the dressing. Toss everything else together in a big bowl, drizzle over the dressing, and toss again. Zero cooking required — done in 5 minutes flat.</div>
+        <div class="protein-badge">💪 ~18g protein per serving</div>
+      </div>
+    </div>
+
+    <!-- OVERNIGHT OATS -->
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <div class="recipe-emoji">🌙</div>
+        <div class="recipe-title-block">
+          <div class="recipe-title">Overnight Protein Oats</div>
+          <div class="recipe-note">Make it tonight, eat it tomorrow. Breakfast done before you wake up!</div>
+          <div class="recipe-tags">
+            <span class="tag-pill tag-protein">High Protein</span>
+            <span class="tag-pill tag-mind">MIND Diet</span>
+            <span class="tag-pill tag-vegan">Dairy-Free</span>
+            <span class="tag-pill tag-quick">5 Min Prep</span>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-body">
+        <div class="ingredients-title">Ingredients</div>
+        <ul class="ingredients-list">
+          <li>½ cup rolled oats (GF if needed)</li>
+          <li>1 scoop vegan protein powder</li>
+          <li>¾ cup almond or oat milk</li>
+          <li>1 tbsp chia seeds</li>
+          <li>1 tbsp almond butter</li>
+          <li>½ cup blueberries or strawberries (fresh or frozen)</li>
+          <li>Drizzle of maple syrup or honey to taste</li>
+        </ul>
+        <div class="method-title">Method</div>
+        <div class="method-text">Stir oats, protein powder, milk, chia seeds, and almond butter together in a jar. Pop the lid on and refrigerate overnight. In the morning, top with berries and a little sweetener. Grab and go!</div>
+        <div class="protein-badge">💪 ~25g protein per jar</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  Created with ❤️ for the PPE Program — These recipes are for informational and nutritional guidance only. Always consult your healthcare team regarding dietary changes and medication timing.
+</footer>
+
+</body>
+</html>

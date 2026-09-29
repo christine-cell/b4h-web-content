@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicotinamide Riboside (NR) — PPE Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:   #2D4A2D;
+  --moss:     #4A6741;
+  --sage:     #7A9B6E;
+  --lime:     #B8D4A8;
+  --cream:    #F7F3EC;
+  --warm:     #EDE6D8;
+  --gold:     #C4913A;
+  --amber:    #E8B86D;
+  --rust:     #B85C38;
+  --teal:     #2E6B6B;
+  --teal-lt:  #E4F0F0;
+  --ink:      #1C2B1C;
+  --muted:    #6B7B62;
+  --white:    #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--forest);
+  background-image:
+    radial-gradient(ellipse at 15% 70%, rgba(46,107,107,0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 10%, rgba(196,145,58,0.22) 0%, transparent 50%);
+  color: white;
+  padding: 72px 44px 112px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '⚡';
+  font-size: 300px;
+  position: absolute;
+  right: -20px;
+  top: -40px;
+  opacity: 0.04;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.hero .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(46,107,107,0.35);
+  border: 1px solid rgba(46,107,107,0.6);
+  color: #7ECECE;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 26px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.08;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+.hero h1 em { color: var(--amber); font-style: italic; }
+
+.hero .sub {
+  font-size: 1.05rem;
+  opacity: 0.78;
+  max-width: 560px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.hero-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.hero-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.72);
+}
+
+.hero-pill strong {
+  color: var(--lime);
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 1px;
+}
+
+/* ── WHAT IS NR CARD ── */
+.what-card {
+  max-width: 900px;
+  margin: -54px auto 0;
+  padding: 0 28px;
+  position: relative;
+  z-index: 10;
+}
+
+.what-card-inner {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 14px 50px rgba(29,43,28,0.16);
+  padding: 36px 44px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  border-top: 5px solid var(--teal);
+  animation: rise 0.5s ease both;
+}
+
+@keyframes rise { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+.wc-item { text-align: center; }
+
+.wc-emoji { font-size: 2.2rem; margin-bottom: 10px; }
+
+.wc-label {
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.wc-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--forest);
+  line-height: 1.3;
+}
+
+.wc-divider {
+  width: 1px;
+  background: #E0E8D8;
+  align-self: stretch;
+}
+
+/* ── CONTAINER ── */
+.container { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+
+/* ── SECTION TAGS ── */
+.sec-tag {
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  color: var(--forest);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+p { font-size: 1rem; color: #3A4A36; margin-bottom: 16px; line-height: 1.78; }
+
+section { padding: 56px 0 24px; }
+
+/* ── INTRO HIGHLIGHT ── */
+.intro-hl {
+  background: linear-gradient(135deg, var(--teal) 0%, #1A4A4A 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 32px 36px;
+  margin: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-hl::after {
+  content: '🔋';
+  font-size: 130px;
+  position: absolute;
+  right: -10px;
+  bottom: -28px;
+  opacity: 0.07;
+}
+
+.intro-hl p {
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.intro-hl p strong { color: var(--amber); }
+
+/* ── HOW IT WORKS STEPS ── */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.how-card {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid #DDE8D4;
+  box-shadow: 0 3px 16px rgba(45,74,45,0.07);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--teal);
+}
+
+.how-card:nth-child(2)::before { background: var(--gold); }
+.how-card:nth-child(3)::before { background: var(--moss); }
+.how-card:nth-child(4)::before { background: var(--rust); }
+
+.how-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: rgba(46,107,107,0.12);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.how-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--forest);
+  margin-bottom: 8px;
+}
+
+.how-card p { font-size: 0.91rem; margin: 0; color: var(--muted); }
+
+/* ── TIP BOX ── */
+.tip-box {
+  background: var(--warm);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin: 20px 0;
+  border-left: 4px solid var(--gold);
+}
+
+.tip-box p { margin: 0; font-size: 0.94rem; color: var(--forest); font-weight: 500; }
+.tip-box p strong { color: var(--rust); }
+
+/* ── DOSAGE ── */
+.dosage-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+
+.dosage-badge {
+  background: var(--teal);
+  color: white;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dosage-badge.gold  { background: var(--gold); }
+.dosage-badge.moss  { background: var(--moss); }
+.dosage-badge.rust  { background: var(--rust); }
+.dosage-badge.sage  { background: var(--sage); color: var(--forest); }
+
+/* ── RESEARCH BLOCK ── */
+.research-block {
+  background: var(--ink);
+  background-image: radial-gradient(ellipse at 80% 20%, rgba(46,107,107,0.45) 0%, transparent 55%);
+  color: white;
+  border-radius: 22px;
+  padding: 40px 44px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-block::before {
+  content: '🔬';
+  font-size: 160px;
+  position: absolute;
+  right: -10px;
+  bottom: -28px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.research-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #7ECECE;
+  margin-bottom: 24px;
+}
+
+.research-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.research-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 22px 24px;
+}
+
+.rc-label {
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.rc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.rc-body {
+  font-size: 0.86rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+
+.rc-finding {
+  display: inline-block;
+  background: rgba(196,145,58,0.25);
+  border: 1px solid rgba(196,145,58,0.4);
+  color: var(--amber);
+  font-size: 0.73rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ── QUOTE BLOCK ── */
+.quote-block {
+  background: var(--teal-lt);
+  border-left: 5px solid var(--teal);
+  border-radius: 0 16px 16px 0;
+  padding: 24px 28px;
+  margin: 28px 0;
+}
+
+.quote-block blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--teal);
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0 0 10px;
+}
+
+.quote-block .quote-plain {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.quote-block .quote-plain strong { color: var(--forest); }
+
+/* ── CHRISTINE'S NOTE ── */
+.christine-note {
+  background: linear-gradient(135deg, var(--moss) 0%, var(--forest) 100%);
+  border-radius: 22px;
+  padding: 36px 40px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.christine-note::after {
+  content: '🌿';
+  font-size: 160px;
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  opacity: 0.07;
+}
+
+.christine-note .cn-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--lime);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.christine-note h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.christine-note p { color: rgba(255,255,255,0.88); margin-bottom: 12px; font-size: 0.98rem; }
+.christine-note p:last-child { margin-bottom: 0; }
+.christine-note strong { color: var(--amber); }
+
+/* ── TAKEAWAY ── */
+.takeaway {
+  background: linear-gradient(135deg, var(--teal) 0%, #1A4A4A 100%);
+  color: white;
+  border-radius: 22px;
+  padding: 40px 44px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.takeaway::after {
+  content: '✨';
+  font-size: 160px;
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  opacity: 0.07;
+}
+
+.takeaway h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  color: #7ECECE;
+  margin-bottom: 18px;
+}
+
+.takeaway ul { list-style: none; padding: 0; }
+
+.takeaway ul li {
+  padding: 10px 0 10px 30px;
+  position: relative;
+  font-size: 0.97rem;
+  color: rgba(255,255,255,0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.65;
+}
+
+.takeaway ul li:last-child { border-bottom: none; }
+
+.takeaway ul li::before {
+  content: '⚡';
+  position: absolute;
+  left: 0;
+  font-size: 0.85rem;
+}
+
+/* ── DISCLAIMER ── */
+.disclaimer {
+  background: var(--warm);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 0.85rem;
+  color: #5A4A2A;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border: 1px solid #DDD4BE;
+}
+
+.disclaimer strong { color: var(--forest); }
+
+/* ── REFERENCES ── */
+.references {
+  background: var(--warm);
+  border-radius: 18px;
+  padding: 30px 36px;
+  margin: 20px 0 60px;
+}
+
+.references h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--forest);
+  margin-bottom: 16px;
+}
+
+.ref-item {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 8px 0;
+  border-bottom: 1px solid #DDD4BE;
+  display: flex;
+  gap: 10px;
+}
+
+.ref-item:last-child { border-bottom: none; }
+.ref-num { color: var(--teal); font-weight: 700; flex-shrink: 0; }
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 36px 28px;
+  font-size: 0.8rem;
+  color: #aaa;
+  border-top: 1px solid #DDE8D4;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 48px 24px 88px; }
+  .what-card-inner { grid-template-columns: 1fr; }
+  .wc-divider { display: none; }
+  .research-block, .takeaway, .christine-note { padding: 28px 24px; }
+  .research-cards { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">⚡ PPE Educational Program — New Supplement</div>
+    <h1>Nicotinamide Riboside — <em>Fuelling the Brain</em> from Within</h1>
+    <p class="sub">A promising new addition to Christine's supplement toolkit. NR is one of the most exciting emerging therapies in Parkinson's research — and early results, both in the lab and in Christine's own clients, are genuinely encouraging.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><strong>Type</strong>Vitamin B3 Precursor</div>
+      <div class="hero-pill"><strong>Target</strong>NAD+ / Cellular Energy</div>
+      <div class="hero-pill"><strong>Trial</strong>NADPARK · Cell Metabolism · 2022</div>
+      <div class="hero-pill"><strong>Status</strong>New · Updated as research grows</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IS NR CARD -->
+<div class="what-card">
+  <div class="what-card-inner">
+    <div class="wc-item">
+      <div class="wc-emoji">🧬</div>
+      <span class="wc-label">Full Name</span>
+      <div class="wc-value">Nicotinamide Riboside (NR)</div>
+    </div>
+    <div class="wc-divider"></div>
+    <div class="wc-item">
+      <div class="wc-emoji">⚗️</div>
+      <span class="wc-label">What it makes</span>
+      <div class="wc-value">NAD+ — the cellular energy currency</div>
+    </div>
+    <div class="wc-divider"></div>
+    <div class="wc-item">
+      <div class="wc-emoji">🔬</div>
+      <span class="wc-label">Category</span>
+      <div class="wc-value">Form of Vitamin B3 — safe & well-tolerated</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <section>
+    <span class="sec-tag">Introduction</span>
+    <h2>What Is NR — and Why Does It Matter for Parkinson's?</h2>
+    <p>Nicotinamide Riboside (NR) is a naturally occurring form of Vitamin B3 that your body uses as a building block to produce <strong>NAD+</strong> — nicotinamide adenine dinucleotide. NAD+ is one of the most important molecules in every cell of your body. It powers energy metabolism, repairs damaged DNA, and keeps your mitochondria — the tiny power plants inside your cells — functioning at their best.</p>
+    <p>Here is the challenge: as we age, our NAD+ levels decline significantly. This drop has been directly linked to age-related diseases including Alzheimer's and Parkinson's disease. The exciting possibility with NR is that it offers a practical, safe way to replenish NAD+ levels through supplementation — and this is exactly what researchers have been testing.</p>
+
+    <div class="intro-hl">
+      <p>💡 <strong>The Core Idea:</strong> Mitochondrial dysfunction, neuroinflammation, and poor cellular energy are all implicated in Parkinson's disease. NAD+ helps address all three. NR is a well-tolerated, evidence-backed way to raise your body's NAD+ levels — and early clinical results in PD patients are genuinely promising.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <span class="sec-tag">How It Works</span>
+    <h2>What NAD+ Does in the Body</h2>
+    <p>Understanding why NR matters starts with understanding what NAD+ does — and why its decline is such a problem as we age.</p>
+
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <h4>⚡ Powers Cellular Energy</h4>
+        <p>NAD+ is essential for mitochondria to convert food into usable energy. Low levels mean less energy — and for people with PD, already-stressed mitochondria struggle even more.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <h4>🛠 Repairs DNA</h4>
+        <p>NAD+ is a key cofactor for enzymes that repair damaged DNA. Neurons are especially vulnerable to DNA damage, making this function critically important in neurodegeneration.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <h4>🛡 Reduces Inflammation</h4>
+        <p>NAD+ supports anti-inflammatory pathways. In the NADPARK trial, NR supplementation measurably reduced inflammatory cytokines in both blood and cerebrospinal fluid.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">04</div>
+        <h4>🧹 Supports Cell Cleanup</h4>
+        <p>NAD+ is involved in lysosomal and proteasomal function — the systems your cells use to clear out damaged proteins, including the alpha-synuclein implicated in Parkinson's.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH BLOCK -->
+  <div class="research-block">
+    <h3>🔬 What the Research Says — NR in Parkinson's Disease</h3>
+    <div class="research-cards">
+
+      <div class="research-card">
+        <div class="rc-label">Cell Metabolism · NADPARK Study · 2022</div>
+        <div class="rc-title">The NADPARK Study: A Randomized Phase I Trial of NR Supplementation in Parkinson's Disease</div>
+        <p class="rc-body">This landmark double-blind Phase I trial — led by Norwegian researchers at Haukeland University Hospital — gave 30 newly diagnosed, treatment-naive PD patients 1,000 mg of NR or placebo daily for 30 days. NR was well-tolerated and produced a significant increase in cerebral NAD+ levels. Patients whose brain NAD+ increased showed measurable changes in cerebral metabolism on PET imaging, associated with mild clinical improvement in motor scores (MDS-UPDRS). NR also increased activity of genes related to mitochondrial, lysosomal and proteasomal function, and reduced inflammatory cytokines in blood and cerebrospinal fluid.</p>
+        <span class="rc-finding">📌 Selected among Top 10 most influential studies in Cell Metabolism 2022</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-label">Nature Communications · NR-SAFE Trial · 2023</div>
+        <div class="rc-title">NR-SAFE: High-Dose NR in Parkinson's Disease — Safety Confirmed</div>
+        <p class="rc-body">A follow-up Phase I trial tested higher doses (3,000 mg/day) in 20 PD patients. High-dose NR was found to be safe and produced a pronounced augmentation of the NAD metabolome — including up to a 5-fold increase in blood NAD+ levels. NR recipients also showed clinical improvement in total MDS-UPDRS scores. The authors concluded that Phase II trials extending to 3,000 mg/day are supported. A larger trial, the NOPARK study, is now recruiting 400 participants for a one-year investigation.</p>
+        <span class="rc-finding">📌 5× increase in blood NAD+ levels — safe at 3,000 mg/day</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- THE QUOTE -->
+  <div class="quote-block">
+    <blockquote>"NR augmented the NAD metabolome and induced transcriptional upregulation of processes related to mitochondrial, lysosomal, and proteasomal function in blood cells and/or skeletal muscle. Furthermore, NR decreased the levels of inflammatory cytokines in serum and cerebrospinal fluid. Our findings nominate NR as a potential neuroprotective therapy for PD, warranting further investigation in larger trials."</blockquote>
+    <p class="quote-plain">— Brakedal et al., <em>Cell Metabolism</em>, 2022 · <strong>Christine's plain-language translation:</strong> It definitely made a meaningful difference in terms of energy function in skeletal muscle and blood — and reduced brain inflammation too.</p>
+  </div>
+
+  <!-- DOSAGE -->
+  <section>
+    <span class="sec-tag">Dosage & Practical Guidance</span>
+    <h2>How to Take NR</h2>
+    <p>NR has an excellent safety profile and is well-tolerated at doses tested in clinical trials up to 3,000 mg per day. That said, Christine always recommends starting low and building up — and working with your healthcare provider, particularly given the complexity of PD medications.</p>
+
+    <div class="dosage-row">
+      <div class="dosage-badge">💊 Clinical trial dose: 1,000 mg/day</div>
+      <div class="dosage-badge gold">📈 Research-supported up to 3,000 mg/day</div>
+      <div class="dosage-badge moss">🌅 Take in the morning for energy support</div>
+      <div class="dosage-badge rust">👨‍⚕️ Always discuss with your doctor first</div>
+    </div>
+
+    <div class="tip-box">
+      <p>🛒 <strong>What to Look For:</strong> Choose a reputable brand with third-party testing. NR is sold under brand names including <strong>Tru Niagen®</strong> (ChromaDex) and <strong>Basis®</strong> (Elysium). Look for products that specify nicotinamide riboside chloride (NR-Cl), which is the form used in clinical trials.</p>
+    </div>
+
+    <p>NR is water-soluble and does not accumulate in the body — excess is eliminated naturally. It is generally taken once daily in the morning, as it supports cellular energy and may be mildly stimulating for some people.</p>
+  </section>
+
+  <!-- CHRISTINE'S NOTE -->
+  <div class="christine-note">
+    <span class="cn-label">💬 Christine's Clinical Note</span>
+    <h3>New to Christine's Toolkit — and Already Showing Results</h3>
+    <p>This supplement is new to Christine this year, but it has quickly generated a lot of excitement — and for good reason. The research backing NR is more rigorous than most supplements in this space: a double-blind, placebo-controlled, randomised clinical trial published in one of the most respected journals in the world.</p>
+    <p>Several of Christine's clients are currently using NR and are reporting a <strong>significant increase in energy</strong>, <strong>less pain</strong>, and <strong>better "off" periods</strong> — the windows between medication doses when PD symptoms can resurface. These are exactly the kinds of improvements the clinical trial suggested were possible.</p>
+    <p>Christine will continue to update this page as the research grows. The <strong>NOPARK study</strong> — currently recruiting 400 participants for a 52-week trial — will be a major step forward, and we are watching it closely.</p>
+  </div>
+
+  <!-- TAKEAWAY -->
+  <div class="takeaway">
+    <h3>⚡ Key Takeaways to Remember</h3>
+    <ul>
+      <li>NR is a form of Vitamin B3 that boosts NAD+ — a molecule essential for cellular energy, DNA repair, and fighting inflammation. All three of these processes are impaired in Parkinson's disease.</li>
+      <li>NAD+ levels decline with age. Supplementing with NR is a safe, practical way to restore them — and this has been tested directly in PD patients.</li>
+      <li>The NADPARK Phase I trial (2022) confirmed NR is safe, raises brain NAD+ levels, and is associated with mild motor improvement and reduced neuroinflammation.</li>
+      <li>Christine's clients using NR are reporting significant increases in energy, less pain, and better medication "off" periods.</li>
+      <li>Start with 1,000 mg/day and discuss with your doctor before beginning — particularly if you are on levodopa or other PD medications.</li>
+      <li>Choose a high-quality, third-party tested brand. Look for nicotinamide riboside chloride (NR-Cl) specifically.</li>
+      <li>This page will be updated as new research emerges. The NOPARK trial (400 participants, 52 weeks) is a study to watch.</li>
+    </ul>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    ⚠️ <div><strong>Important:</strong> This guide is for educational purposes only and does not replace medical advice. Always consult your healthcare provider before starting NR or any new supplement, especially if you are taking Parkinson's medications. Individual responses to supplementation vary. The research on NR in PD is promising but still in early stages — larger clinical trials are ongoing.</div>
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="references">
+    <h3>📚 Research Sources</h3>
+    <div class="ref-item"><span class="ref-num">[1]</span><span>Brakedal B, Dölle C, Riemer F, et al. (2022). The NADPARK study: A randomized phase I trial of nicotinamide riboside supplementation in Parkinson's disease. <em>Cell Metabolism</em>, 34(3), 396–407. doi: 10.1016/j.cmet.2022.02.001</span></div>
+    <div class="ref-item"><span class="ref-num">[2]</span><span>Sverkeli LJ, Dölle C, Nido GS, et al. (2023). NR-SAFE: a randomized, double-blind safety trial of high dose nicotinamide riboside in Parkinson's disease. <em>Nature Communications</em>, 14, 7730. doi: 10.1038/s41467-023-43514-6</span></div>
+    <div class="ref-item"><span class="ref-num">[3]</span><span>Lautrup S, Sinclair DA, Mattson MP, Fang EF. (2019). NAD+ in brain aging and neurodegenerative disorders. <em>Cell Metabolism</em>, 30(4), 630–655. doi: 10.1016/j.cmet.2019.09.001</span></div>
+  </div>
+
+</div>
+
+<footer>
+  PPE Educational Program — For educational purposes only. Not a substitute for medical advice.<br>
+  Content developed by Christine for people living with Parkinson's disease and their care partners. Page updated as new research emerges.
+</footer>
+
+</body>
+</html>

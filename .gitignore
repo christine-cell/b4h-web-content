@@ -7,3 +7,7 @@
 # CI workflow — kept on disk but untracked until the git token has the `workflow` scope.
 # To enable CI once the scope is granted:  git add -f .github/workflows/qa.yml && git push
 .github/workflows/qa.yml
+
+# Raw Wix/Drive downloads for Pathway (large originals) — text extracts in _sources/pathway/text are tracked;
+# the served, compressed copies live in pathway/assets/docs.
+_sources/pathway/files/

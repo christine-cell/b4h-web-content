@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building Your Immune Armour — PPE Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:   #2D4A2D;
+  --moss:     #4A6741;
+  --sage:     #7A9B6E;
+  --lime:     #B8D4A8;
+  --cream:    #F7F3EC;
+  --warm:     #EDE6D8;
+  --gold:     #C4913A;
+  --amber:    #E8B86D;
+  --rust:     #B85C38;
+  --ink:      #1C2B1C;
+  --muted:    #6B7B62;
+  --white:    #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--forest);
+  background-image:
+    radial-gradient(ellipse at 10% 60%, rgba(74,103,65,0.7) 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 10%, rgba(196,145,58,0.25) 0%, transparent 50%);
+  color: white;
+  padding: 72px 44px 108px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '🌿';
+  font-size: 320px;
+  position: absolute;
+  right: -40px;
+  top: -60px;
+  opacity: 0.05;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.hero .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196,145,58,0.22);
+  border: 1px solid rgba(196,145,58,0.45);
+  color: var(--amber);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 26px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  line-height: 1.08;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+
+.hero h1 em { color: var(--amber); font-style: italic; }
+
+.hero .sub {
+  font-size: 1.05rem;
+  opacity: 0.78;
+  max-width: 530px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.72);
+}
+
+.hero-pill strong {
+  color: var(--lime);
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 1px;
+}
+
+/* ─── SUPPLEMENT CARDS ROW ─── */
+.supplements-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  max-width: 900px;
+  margin: -52px auto 0;
+  padding: 0 28px;
+  position: relative;
+  z-index: 10;
+}
+
+.supp-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 22px 16px;
+  text-align: center;
+  box-shadow: 0 12px 44px rgba(29,43,28,0.14);
+  animation: rise 0.5s ease both;
+  border-bottom: 4px solid var(--moss);
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.supp-card:nth-child(2) { border-bottom-color: var(--gold); animation-delay: .08s; }
+.supp-card:nth-child(3) { border-bottom-color: var(--rust); animation-delay: .16s; }
+.supp-card:nth-child(4) { border-bottom-color: var(--sage); animation-delay: .24s; }
+.supp-card:nth-child(5) { border-bottom-color: var(--amber); animation-delay: .32s; }
+
+.supp-card:hover { transform: translateY(-4px); box-shadow: 0 18px 52px rgba(29,43,28,0.18); }
+
+@keyframes rise { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+.supp-emoji { font-size: 2.4rem; margin-bottom: 10px; }
+.supp-name { font-weight: 600; font-size: 0.88rem; color: var(--forest); line-height: 1.3; }
+
+/* ─── CONTAINER ─── */
+.container { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+
+/* ─── SECTION TAGS ─── */
+.sec-tag {
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--moss);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  color: var(--forest);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+p { font-size: 1rem; color: #3A4A36; margin-bottom: 16px; line-height: 1.78; }
+
+section { padding: 56px 0 20px; }
+
+/* ─── INTRO HIGHLIGHT ─── */
+.intro-hl {
+  background: linear-gradient(135deg, var(--forest) 0%, var(--moss) 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 32px 36px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-hl::after {
+  content: '💪';
+  font-size: 140px;
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  opacity: 0.07;
+}
+
+.intro-hl p {
+  color: rgba(255,255,255,0.88);
+  margin: 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.65;
+}
+
+.intro-hl p strong { color: var(--amber); font-style: normal; }
+
+/* ─── SUPPLEMENT SECTIONS ─── */
+.supp-section {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 38px 40px;
+  margin: 28px 0;
+  border: 1px solid #DDE8D4;
+  box-shadow: 0 4px 24px rgba(45,74,45,0.07);
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 30px;
+}
+
+.supp-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--moss);
+  border-radius: 24px 0 0 24px;
+}
+
+.supp-section:nth-child(2)::before { background: var(--gold); }
+.supp-section:nth-child(3)::before { background: var(--rust); }
+.supp-section:nth-child(4)::before { background: var(--sage); }
+.supp-section:nth-child(5)::before { background: var(--amber); }
+
+.supp-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.supp-header-emoji {
+  font-size: 3.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.supp-header-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  color: var(--forest);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.supp-header-text .supp-tagline {
+  font-size: 0.83rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.supp-section p { color: #3A4A36; }
+
+/* Tip box */
+.tip-box {
+  background: var(--warm);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin: 20px 0;
+  border-left: 4px solid var(--gold);
+}
+
+.tip-box p { margin: 0; font-size: 0.94rem; color: var(--forest); font-weight: 500; }
+.tip-box p strong { color: var(--rust); }
+
+/* Dosage badge */
+.dosage-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.dosage-badge {
+  background: var(--forest);
+  color: white;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dosage-badge.gold { background: var(--gold); }
+.dosage-badge.rust { background: var(--rust); }
+.dosage-badge.sage { background: var(--sage); color: var(--forest); }
+
+/* ─── RESEARCH BLOCK ─── */
+.research-block {
+  background: var(--ink);
+  background-image: radial-gradient(ellipse at 85% 25%, rgba(74,103,65,0.35) 0%, transparent 60%);
+  color: white;
+  border-radius: 22px;
+  padding: 40px 44px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-block::before {
+  content: '🔬';
+  font-size: 160px;
+  position: absolute;
+  right: -10px;
+  bottom: -28px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.research-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--lime);
+  margin-bottom: 24px;
+}
+
+.research-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.research-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 22px 24px;
+}
+
+.rc-label {
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.rc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.rc-body {
+  font-size: 0.86rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.rc-finding {
+  display: inline-block;
+  background: rgba(196,145,58,0.25);
+  border: 1px solid rgba(196,145,58,0.4);
+  color: var(--amber);
+  font-size: 0.73rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 12px;
+}
+
+/* ─── TAKEAWAY ─── */
+.takeaway {
+  background: linear-gradient(135deg, var(--moss) 0%, var(--forest) 100%);
+  color: white;
+  border-radius: 22px;
+  padding: 40px 44px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.takeaway::after {
+  content: '✨';
+  font-size: 160px;
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  opacity: 0.07;
+}
+
+.takeaway h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  color: var(--lime);
+  margin-bottom: 18px;
+}
+
+.takeaway ul {
+  list-style: none;
+  padding: 0;
+}
+
+.takeaway ul li {
+  padding: 10px 0;
+  padding-left: 28px;
+  position: relative;
+  font-size: 0.97rem;
+  color: rgba(255,255,255,0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.65;
+}
+
+.takeaway ul li:last-child { border-bottom: none; }
+
+.takeaway ul li::before {
+  content: '🌿';
+  position: absolute;
+  left: 0;
+  font-size: 0.9rem;
+}
+
+/* ─── DISCLAIMER ─── */
+.disclaimer {
+  background: var(--warm);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 0.85rem;
+  color: #5A4A2A;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border: 1px solid #DDD4BE;
+}
+
+.disclaimer strong { color: var(--forest); }
+
+/* ─── REFERENCES ─── */
+.references {
+  background: var(--warm);
+  border-radius: 18px;
+  padding: 30px 36px;
+  margin: 20px 0 60px;
+}
+
+.references h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--forest);
+  margin-bottom: 16px;
+}
+
+.ref-item {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 8px 0;
+  border-bottom: 1px solid #DDD4BE;
+  display: flex;
+  gap: 10px;
+}
+
+.ref-item:last-child { border-bottom: none; }
+.ref-num { color: var(--moss); font-weight: 700; flex-shrink: 0; }
+
+/* ─── FOOTER ─── */
+footer {
+  text-align: center;
+  padding: 36px 28px;
+  font-size: 0.8rem;
+  color: #aaa;
+  border-top: 1px solid #DDE8D4;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 48px 24px 88px; }
+  .supp-section { padding: 28px 24px; }
+  .research-block, .takeaway { padding: 28px 24px; }
+  .research-cards { grid-template-columns: 1fr; }
+  .references { padding: 24px 22px; }
+  .supp-header { flex-direction: column; gap: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">🌿 PPE Educational Program</div>
+    <h1>Building Your <em>Immune Armour</em> — From the Inside Out</h1>
+    <p class="sub">Christine's go-to guide for key supplements and lifestyle strategies that support a strong immune system in Parkinson's disease. Simple, practical, and backed by science.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><strong>Focus</strong>Antioxidants & Neuroprotection</div>
+      <div class="hero-pill"><strong>Source</strong>Brain Sciences / MDPI · 2023</div>
+      <div class="hero-pill"><strong>Source</strong>PMC · Vitamins in PD · 2022</div>
+      <div class="hero-pill"><strong>Source</strong>Nutrients · Vitamin D in PD · 2022</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SUPPLEMENT CARD ROW ═══ -->
+<div class="supplements-row">
+  <div class="supp-card" onclick="document.getElementById('vitC').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">🍊</div>
+    <div class="supp-name">Vitamin C</div>
+  </div>
+  <div class="supp-card" onclick="document.getElementById('vitD').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">☀️</div>
+    <div class="supp-name">Vitamin D</div>
+  </div>
+  <div class="supp-card" onclick="document.getElementById('water').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">💧</div>
+    <div class="supp-name">Water</div>
+  </div>
+  <div class="supp-card" onclick="document.getElementById('turmeric').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">🌿</div>
+    <div class="supp-name">Turmeric / Curcumin</div>
+  </div>
+  <div class="supp-card" onclick="document.getElementById('garlic').scrollIntoView({behavior:'smooth'})">
+    <div class="supp-emoji">🧄</div>
+    <div class="supp-name">Garlic</div>
+  </div>
+</div>
+
+<!-- ═══ CONTENT ═══ -->
+<div class="container">
+
+  <section>
+    <span class="sec-tag">Introduction</span>
+    <h2>Your Immune System Is One of Your Greatest Assets</h2>
+    <p>Boosting the immune system plays an important role in maintaining good health — and for people living with Parkinson's disease, this is especially true. While no supplement replaces medications or medical care, the right nutritional strategies can give your body the upper hand to fight off bugs, reduce inflammation, and help keep you feeling your best.</p>
+    <p>What follows is Christine's carefully curated list of foundational supplements and habits — the ones she returns to again and again with her Parkinson's clients. Remember: we are all unique individuals. The optimum mix for each person must be tailored individually. But these are excellent places to start.</p>
+
+    <div class="intro-hl">
+      <p><strong>"Our challenges don't define us. Our actions do."</strong><br>
+      Eating a clean, whole-foods diet with lots of vegetables is going to be the game changer. Adding supplements helps fill in the gaps and buffer your immune system to get your whole body working optimally for you.</p>
+    </div>
+  </section>
+
+  <!-- ═══ VITAMIN C ═══ -->
+  <div class="supp-section" id="vitC">
+    <div class="supp-header">
+      <div class="supp-header-emoji">🍊</div>
+      <div class="supp-header-text">
+        <h3>Vitamin C</h3>
+        <div class="supp-tagline">Antioxidant · Levodopa Absorption · Immune Support</div>
+      </div>
+    </div>
+
+    <p>Vitamin C is a potent antioxidant that is well known for supporting a healthy immune system. For people with Parkinson's disease, it holds particular value because it can actually help increase your ability to absorb levodopa — making it an essential supplement in Christine's view.</p>
+
+    <p>Our body cannot absorb more than 1,000 mg of Vitamin C at a time, so it is best to split your dose throughout the day. An excellent strategy is to take it alongside your levodopa. Vitamin C is water-soluble, meaning your body simply eliminates any excess that is not needed — making it one of the safest supplements available.</p>
+
+    <div class="dosage-row">
+      <div class="dosage-badge">💊 Starting dose: 2,000–3,000 mg/day</div>
+      <div class="dosage-badge gold">📦 1,000 mg tablets or powder form</div>
+      <div class="dosage-badge rust">⏱ Split throughout the day</div>
+    </div>
+
+    <div class="tip-box">
+      <p>🧪 <strong>Bowel Tolerance Test:</strong> You can self-test your personal Vitamin C needs. Gradually increase your dose until your stools start to become loose — that is your body's maximum. Christine notes she has yet to hear any PD client reach their tolerance level!</p>
+    </div>
+
+    <p>The powder form taken with levodopa is especially convenient and effective. Some individuals may need slightly more or less depending on individual factors such as body weight, overall health status, and medication load.</p>
+  </div>
+
+  <!-- ═══ VITAMIN D ═══ -->
+  <div class="supp-section" id="vitD">
+    <div class="supp-header">
+      <div class="supp-header-emoji">☀️</div>
+      <div class="supp-header-text">
+        <h3>Vitamin D</h3>
+        <div class="supp-tagline">Neuroprotection · Bone Health · Immune Modulation</div>
+      </div>
+    </div>
+
+    <p>Vitamin D deficiency is surprisingly common — and the risk increases significantly if you live further from the equator, are more sedentary, stay primarily indoors, or cover up with clothing when outside. People with Parkinson's disease have a higher than average chance of developing skin cancer, so Christine strongly recommends exploring alternatives to direct sunlight for obtaining Vitamin D.</p>
+
+    <div class="tip-box">
+      <p>⚠️ <strong>Important:</strong> It is very important to determine your Vitamin D levels BEFORE starting a supplement. Ask your family doctor to check these levels — it's a simple blood test. Your baseline result will determine exactly how much you need.</p>
+    </div>
+
+    <p>Christine's clients have needed anywhere from 2,000 IU up to 10,000 IU daily to achieve healthy levels — a wide range that reflects how individual this supplement truly is. Body weight is one of the key factors determining the right dose.</p>
+
+    <div class="dosage-row">
+      <div class="dosage-badge">🩸 Get blood levels tested first</div>
+      <div class="dosage-badge gold">💊 Typical range: 2,000–10,000 IU/day</div>
+      <div class="dosage-badge sage">👨‍⚕️ Dose guided by blood results</div>
+    </div>
+
+    <p>People with PD have an increased risk of falls and fractures, and Vitamin D is important for both bone strength and muscle function — two more compelling reasons to ensure your levels are optimal.</p>
+  </div>
+
+  <!-- ═══ RESEARCH BLOCK ═══ -->
+  <div class="research-block">
+    <h3>🔬 What the Research Says — Vitamins C & D in Parkinson's</h3>
+    <div class="research-cards">
+
+      <div class="research-card">
+        <div class="rc-label">Brain Sciences · MDPI · 2023</div>
+        <div class="rc-title">Could Vitamins Have a Positive Impact on the Treatment of Parkinson's Disease?</div>
+        <p class="rc-body">A 2023 review in Brain Sciences confirmed that oxidative stress is a central driver of neurodegeneration in PD, and that vitamins with antioxidant properties — including Vitamin C — represent a promising therapeutic strategy. The review highlighted that Vitamin C is concentrated in neuron-rich brain areas and can be transported to the brain via dedicated transport proteins, giving it direct neuroprotective potential.</p>
+        <span class="rc-finding">📌 Vitamin C is concentrated in the brain and has direct neuroprotective potential</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-label">PMC · Dietary Antioxidants & PD · 2020</div>
+        <div class="rc-title">Vitamin C and Levodopa Bioavailability</div>
+        <p class="rc-body">A peer-reviewed analysis found that Vitamin C may improve the therapeutic capacity of levodopa by enhancing its bioavailability and helping to reduce its toxic side effects. A cohort study in elderly PD patients documented increases in levodopa absorption when co-administered with dietary ascorbic acid — particularly relevant for those with poor medication bioavailability.</p>
+        <span class="rc-finding">📌 Vitamin C enhances levodopa bioavailability in elderly PD patients</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-label">Nutrients · Pignolo et al. · 2022</div>
+        <div class="rc-title">Vitamin D Deficiency Is Highly Prevalent in Parkinson's Disease</div>
+        <p class="rc-body">A comprehensive 2022 review confirmed that Vitamin D deficiency is significantly more common in PD patients than in healthy controls or those with Alzheimer's disease. The Vitamin D receptor and the enzyme that converts it to its active form are both highly expressed in the substantia nigra — the brain region most affected by PD — suggesting a direct neuroprotective role.</p>
+        <span class="rc-finding">📌 55% of PD patients have Vitamin D insufficiency vs 36% of healthy controls</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-label">Scientific Reports · 2025 · Randomized Controlled Trial</div>
+        <div class="rc-title">Vitamin D3 Supplementation Improves Motor Function & Immune Response</div>
+        <p class="rc-body">A 2024–2025 double-blind, placebo-controlled clinical trial in 51 PD patients with Vitamin D deficiency found that three months of Vitamin D3 supplementation produced measurable improvements in motor functionality and immune response markers compared to placebo. The authors concluded that correcting deficiency has meaningful clinical benefits beyond bone health alone.</p>
+        <span class="rc-finding">📌 3 months of Vitamin D3 improved motor function and immune response in PD</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ WATER ═══ -->
+  <div class="supp-section" id="water">
+    <div class="supp-header">
+      <div class="supp-header-emoji">💧</div>
+      <div class="supp-header-text">
+        <h3>Water</h3>
+        <div class="supp-tagline">Detoxification · Constipation Relief · Energy</div>
+      </div>
+    </div>
+
+    <p>You have probably been told at some point that you need to drink more water — and this is especially true for people with Parkinson's disease. Toxins are constantly accumulating in our system throughout the day, and the more water you drink, the more efficiently they are flushed out.</p>
+
+    <p>Constipation is one of the most common non-motor symptoms of PD, and dehydration is a key contributor. Christine recommends starting every morning with 1–2 glasses of water. Not only does this help flush toxins, it kick-starts the gut and sets the digestive system up for the day.</p>
+
+    <div class="tip-box">
+      <p>💡 <strong>Hydration Tips:</strong> Add lemon to your water, or drop in a few pieces of frozen fruit — blueberries keep it chilled and add a little natural flavour. Find what works for your lifestyle and make it a daily ritual.</p>
+    </div>
+
+    <div class="dosage-row">
+      <div class="dosage-badge">🌅 Start with 1–2 glasses first thing in the morning</div>
+      <div class="dosage-badge gold">🎯 Aim for 6–8 glasses (1.5–2L) daily</div>
+    </div>
+  </div>
+
+  <!-- ═══ TURMERIC ═══ -->
+  <div class="supp-section" id="turmeric">
+    <div class="supp-header">
+      <div class="supp-header-emoji">🌿</div>
+      <div class="supp-header-text">
+        <h3>Turmeric / Curcumin</h3>
+        <div class="supp-tagline">Anti-inflammatory · Gut Health · Brain Support</div>
+      </div>
+    </div>
+
+    <p>Have you heard of Curcumin? It is the active ingredient derived from turmeric — the vivid yellow spice common in Asian and Central American cuisine. While you can add turmeric to your meals for flavour, you would need a very large amount to get the therapeutic level of curcumin from food alone. A dedicated supplement is the practical solution.</p>
+
+    <p>Curcumin is a powerful antioxidant that helps reduce inflammation in the body, boosts brain power, and helps improve gut digestion. It also has healing properties that support the lining of blood vessels and keep the heart strong.</p>
+
+    <div class="tip-box">
+      <p>🔍 <strong>Supplement Quality Matters:</strong> Look specifically for a <strong>bioavailable</strong> form of curcumin — such as those combined with piperine (black pepper extract) or in a liposomal formulation. Bioavailable forms are more easily absorbed and put to use by the body much more quickly than standard curcumin supplements.</p>
+    </div>
+  </div>
+
+  <!-- ═══ GARLIC ═══ -->
+  <div class="supp-section" id="garlic">
+    <div class="supp-header">
+      <div class="supp-header-emoji">🧄</div>
+      <div class="supp-header-text">
+        <h3>Garlic</h3>
+        <div class="supp-tagline">Immune Stimulation · Antimicrobial · Bone Broth Partner</div>
+      </div>
+    </div>
+
+    <p>Christine personally loves garlic — less keen on the breath, but that is a small price to pay! Garlic is a wonderful immune-boosting ingredient, especially wonderful in bone broths. And there is a simple technique to maximise its benefits.</p>
+
+    <div class="tip-box">
+      <p>🔪 <strong>Prep Tip:</strong> Cut the garlic and then <strong>press or crush it</strong> before cooking. This activates a compound called allicin, which is responsible for garlic's powerful antimicrobial and immune-stimulating properties. Loading up on garlic is especially worthwhile over the cooler months.</p>
+    </div>
+
+    <p>Adding garlic liberally to soups, bone broths, and cooked dishes is one of the simplest, most delicious ways to give your immune system a daily boost.</p>
+  </div>
+
+  <!-- ═══ TAKEAWAY ═══ -->
+  <div class="takeaway">
+    <h3>🌿 Key Takeaways to Remember</h3>
+    <ul>
+      <li>Vitamin C is essential for people with PD — it acts as a powerful antioxidant AND may enhance levodopa absorption. Take it split throughout the day, ideally with your medication.</li>
+      <li>Get your Vitamin D blood levels tested before supplementing. Deficiency is very common in PD and the right dose varies widely from person to person.</li>
+      <li>Start every morning with 1–2 glasses of water. Dehydration is a major, often overlooked contributor to constipation in PD.</li>
+      <li>Choose a bioavailable form of curcumin for maximum absorption and benefit. Adding turmeric to food alone will not provide a therapeutic dose.</li>
+      <li>Crush or press your garlic before cooking to activate its immune-supporting compounds — and load up especially in cooler months.</li>
+      <li>No supplement replaces a clean, whole-foods diet. Supplements fill the gaps; real food is the foundation.</li>
+      <li>We are all unique. Work with your healthcare team to find the right combination and doses for you personally.</li>
+    </ul>
+  </div>
+
+  <!-- ═══ DISCLAIMER ═══ -->
+  <div class="disclaimer">
+    ⚠️ <div><strong>Important:</strong> This guide is for educational purposes only and does not replace medical advice. Always consult your healthcare provider or a qualified nutritionist before starting new supplements, especially given potential interactions with Parkinson's medications such as levodopa. Individual needs vary significantly.</div>
+  </div>
+
+  <!-- ═══ REFERENCES ═══ -->
+  <div class="references">
+    <h3>📚 Research Sources</h3>
+    <div class="ref-item"><span class="ref-num">[1]</span><span>Sahu S, Rani M, Kharat L, Arun, Mondal A. (2023). Could Vitamins Have a Positive Impact on the Treatment of Parkinson's Disease? <em>Brain Sciences</em>, 13(2), 272. doi: 10.3390/brainsci13020272</span></div>
+    <div class="ref-item"><span class="ref-num">[2]</span><span>Park H-A et al. (2020). Dietary Antioxidants and Parkinson's Disease. <em>Antioxidants</em>, 9(7), 570. PMC7402163. doi: 10.3390/antiox9070570</span></div>
+    <div class="ref-item"><span class="ref-num">[3]</span><span>Pignolo A, Mastrilli S, Davi C, et al. (2022). Vitamin D and Parkinson's Disease. <em>Nutrients</em>, 14(6), 1220. doi: 10.3390/nu14061220</span></div>
+    <div class="ref-item"><span class="ref-num">[4]</span><span>Wang et al. (2025). Impact of vitamin D3 supplementation on motor functionality and the immune response in Parkinson's disease patients with vitamin D deficiency. <em>Scientific Reports</em>. doi: 10.1038/s41598-025-10821-5</span></div>
+    <div class="ref-item"><span class="ref-num">[5]</span><span>Taher J et al. (2022). Role of Vitamins in Advanced Therapy for Parkinson's Disease: Decoding the Paradox. <em>Canadian Journal of Neurological Sciences</em>, 49(1), 3–4. doi: 10.1017/cjn.2021.106</span></div>
+  </div>
+
+</div>
+
+<footer>
+  PPE Educational Program — For educational purposes only. Not a substitute for medical advice.<br>
+  Content developed by Christine for people living with Parkinson's disease and their care partners.
+</footer>
+
+</body>
+</html>

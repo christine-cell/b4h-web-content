@@ -147,6 +147,10 @@ main { display: block; min-height: 60vh; }
 .drop-item b { font-family: var(--font-sans); color: var(--heading); }
 .drop-item:hover, .drop-item:focus-visible { background: var(--blue-50); color: var(--primary); }
 :root[data-theme="dark"] .drop-item:hover, :root[data-theme="dark"] .drop-item:focus-visible { background: rgba(74,163,219,.14); }
+/* Long module lists (Pathway): two columns on desktop, scrolls if tall */
+@media (min-width: 861px){
+  .nav-dropdown[data-open="true"] .nav-drop-cols { display:grid; grid-template-columns: 1fr 1fr; gap:.1rem .4rem; min-width: 620px; max-height: min(72vh, 640px); overflow:auto; }
+}
 @media (max-width: 860px){
   .nav-drop-menu { position:static; box-shadow:none; border:0; padding:0 0 0 1rem; display:block; min-width:0; }
   .nav-drop-toggle { width:100%; justify-content:space-between; padding:.9rem 1rem; font-size:1.05rem; }
@@ -401,8 +405,12 @@ a.nav-link { position: relative; transition: color var(--transition), background
 /* ---------- Glossary tooltip ---------- */
 .gloss { border-bottom: 1.5px dashed var(--primary); cursor: help; color: inherit; font-weight: 600; position: relative; }
 .gloss:focus-visible { outline: 2px solid var(--focus); }
-.gloss[data-open="true"] .gloss-pop, .gloss:hover .gloss-pop { opacity:1; visibility:visible; transform: translate(-50%, 0); }
-.gloss-pop { position:absolute; bottom: calc(100% + 8px); left:50%; transform: translate(-50%, 6px); width: max-content; max-width: 280px; background: var(--blue-900); color:#fff; padding: .6rem .8rem; border-radius: var(--r-sm); font-size: var(--fs-sm); font-weight: 400; line-height:1.4; box-shadow: var(--shadow-3); opacity:0; visibility:hidden; transition: var(--transition); z-index: 50; }
+/* Closed popovers are display:none — an invisible-but-laid-out popover near the
+   screen edge widened the page and caused sideways scrolling on phones. */
+.gloss[data-open="true"] .gloss-pop, .gloss:hover .gloss-pop { display:block; animation: gloss-in .15s ease-out; }
+@keyframes gloss-in { from { opacity:0; } to { opacity:1; } }
+@media (prefers-reduced-motion: reduce) { .gloss-pop { animation:none !important; } }
+.gloss-pop { position:absolute; bottom: calc(100% + 8px); left:50%; transform: translate(-50%, 0); width: max-content; max-width: min(280px, calc(100vw - 24px)); background: var(--blue-900); color:#fff; padding: .6rem .8rem; border-radius: var(--r-sm); font-size: var(--fs-sm); font-weight: 400; line-height:1.4; box-shadow: var(--shadow-3); display:none; z-index: 50; }
 .gloss-pop::after { content:""; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color: var(--blue-900); }
 
 /* ---------- Flashcard (robust click-to-reveal, no fragile 3D) ---------- */
@@ -655,3 +663,38 @@ a.nav-link { position: relative; transition: color var(--transition), background
 :root[data-theme="dark"] .qr-list li::before { background-color:rgba(74,163,219,.16); }
 .qr-danger .qr-list li::before { background:var(--danger-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cf4b4b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E") center/13px no-repeat; }
 @media print { .toc-chips, .video-grid, .glossary-tools { display:none !important; } .qr-card { box-shadow:none; border:1px solid #999; } }
+
+/* ---------- Self-check (scored self-assessment, no right/wrong) ---------- */
+.selfcheck { border: 1px solid var(--blue-200); border-radius: var(--r-lg); background: linear-gradient(180deg,var(--blue-50),var(--surface)); padding: clamp(1.2rem,3vw,2rem); margin: 2rem 0; }
+:root[data-theme="dark"] .selfcheck { background: linear-gradient(180deg,rgba(74,163,219,.10),var(--surface)); border-color: var(--border-strong); }
+.sc-list { display: grid; gap: 1.1rem; }
+.sc-q { border: 0; margin: 0; padding: 0; }
+.sc-q legend { display: flex; gap: .7rem; align-items: flex-start; font-family: var(--font-sans); font-weight: 700; color: var(--heading); margin-bottom: .6rem; padding: 0; }
+.sc-num { flex: none; display: inline-grid; place-items: center; width: 1.8em; height: 1.8em; border-radius: 50%; background: var(--primary); color: var(--primary-contrast); font-size: .85em; }
+.sc-opt { display: flex; gap: .7rem; align-items: center; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r-md); padding: .75rem 1rem; margin-top: .45rem; cursor: pointer; transition: border-color var(--transition), background var(--transition); }
+.sc-opt:hover { border-color: var(--blue-400); }
+.sc-opt:has(input:checked) { border-color: var(--primary); background: var(--blue-50); }
+:root[data-theme="dark"] .sc-opt:has(input:checked) { background: rgba(74,163,219,.14); }
+.sc-opt input { width: 1.2em; height: 1.2em; accent-color: var(--primary); flex: none; }
+.sc-bar { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; margin-top: 1.4rem; }
+.sc-count { color: var(--text-muted); font-size: var(--fs-sm); }
+.sc-result:empty { display: none; }
+.sc-result { margin-top: 1.4rem; padding: 1.2rem 1.4rem; border-radius: var(--r-md); background: var(--surface); border: 1px solid var(--border); outline: none; }
+.sc-score { display: flex; align-items: baseline; gap: .4rem; font-family: var(--font-sans); }
+.sc-total { font-size: 2.6rem; font-weight: 800; color: var(--primary); line-height: 1; }
+.sc-max { color: var(--text-muted); font-weight: 700; }
+.sc-band { margin: .6rem 0 .3rem; }
+.sc-note { margin: 0; color: var(--safety); font-weight: 600; }
+
+/* ---------- Audio (self-hosted, e.g. French lesson audio) ---------- */
+.audio-card { margin: 1.5rem 0; padding: 1rem 1.2rem; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); }
+.audio-card figcaption { font-family: var(--font-sans); font-weight: 700; color: var(--heading); margin-bottom: .6rem; }
+.audio-card audio { width: 100%; }
+
+/* ---------- Lesson figures ---------- */
+.lesson-body figure { margin: 1.5rem 0; }
+.lesson-body figure img { width: 100%; height: auto; border-radius: var(--r-md); box-shadow: var(--shadow-1); }
+.lesson-body figure figcaption { color: var(--text-muted); font-size: var(--fs-sm); margin-top: .5rem; }
+
+/* ---------- Video still being moved from Wix ---------- */
+[data-video-pending] { border-style: dashed; }

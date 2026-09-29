@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Free 2-Week Trial — Boxing 4 Health</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #EDEBE7;
+    font-family: 'DM Sans', sans-serif;
+    padding: 40px 16px;
+  }
+
+  .email-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #111111;
+    padding: 36px 48px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 38px,
+      rgba(192,57,43,0.07) 38px,
+      rgba(192,57,43,0.07) 39px
+    );
+  }
+
+  .header-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    letter-spacing: 3px;
+    color: #FFFFFF;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  .header-logo span { color: #C0392B; }
+
+  .header-tagline {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #777777;
+    font-weight: 400;
+    position: relative;
+  }
+
+  /* ── RED BAR ── */
+  .red-bar { height: 5px; background: #C0392B; }
+
+  /* ── TRIAL BAND ── */
+  .trial-band {
+    background: #C0392B;
+    padding: 28px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trial-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(0,0,0,0.04) 20px,
+      rgba(0,0,0,0.04) 21px
+    );
+  }
+
+  .trial-badge {
+    display: inline-block;
+    background: #FFFFFF;
+    color: #C0392B;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    padding: 5px 16px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+
+  .trial-band h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    line-height: 1;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .trial-band p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 300;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* ── COUNTDOWN STRIP ── */
+  .countdown-strip {
+    background: #F8F6F3;
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    border-bottom: 1px solid #EBEBEB;
+  }
+
+  .countdown-item {
+    text-align: center;
+  }
+
+  .countdown-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: #C0392B;
+    line-height: 1;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #999999;
+    margin-top: 2px;
+  }
+
+  .countdown-divider {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #DDDDDD;
+    margin-bottom: 16px;
+  }
+
+  /* ── BODY ── */
+  .body-content {
+    padding: 40px 48px;
+  }
+
+  .intro-text {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 36px;
+    border-left: 3px solid #C0392B;
+    padding-left: 18px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #C0392B;
+    margin-bottom: 16px;
+  }
+
+  /* ── CLASS BLOCKS ── */
+  .class-block {
+    background: #F8F6F3;
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    border-left: 4px solid #C0392B;
+  }
+
+  .class-block.voice {
+    border-left-color: #6B3FA0;
+    background: #F6F3FA;
+  }
+
+  .class-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #111111;
+    margin-bottom: 10px;
+  }
+
+  .class-block.voice .class-title { color: #6B3FA0; }
+
+  .schedule-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .schedule-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #C0392B;
+    flex-shrink: 0;
+  }
+
+  .class-block.voice .schedule-dot { background: #6B3FA0; }
+
+  .schedule-text {
+    font-size: 14px;
+    color: #333333;
+    font-weight: 500;
+  }
+
+  .schedule-time {
+    font-size: 14px;
+    color: #777777;
+    font-weight: 300;
+    margin-left: auto;
+  }
+
+  /* ── JOIN BUTTON ── */
+  .join-btn-wrapper { margin-top: 18px; }
+
+  .join-btn {
+    display: block;
+    background: #C0392B;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    border-radius: 3px;
+    text-align: center;
+  }
+
+  .class-block.voice .join-btn { background: #6B3FA0; }
+
+  .join-btn-note {
+    font-size: 11px;
+    color: #999999;
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 300;
+  }
+
+  /* ── NO COMMITMENT BOX ── */
+  .no-commitment {
+    background: #111111;
+    border-radius: 4px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+
+  .no-commitment-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .no-commitment h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+
+  .no-commitment p {
+    font-size: 13px;
+    color: #AAAAAA;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .no-commitment p strong { color: #FFFFFF; font-weight: 500; }
+
+  /* ── TIPS BOX ── */
+  .tips-box {
+    background: #F8F6F3;
+    border-radius: 4px;
+    padding: 28px;
+    margin: 0 0 32px;
+    border-left: 4px solid #111111;
+  }
+
+  .tips-box .section-label { color: #111111; margin-bottom: 16px; }
+
+  .tip-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+
+  .tip-row:last-child { margin-bottom: 0; }
+
+  .tip-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: #C0392B;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 24px;
+  }
+
+  .tip-text {
+    font-size: 13px;
+    color: #444444;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .tip-text strong { color: #111111; font-weight: 500; }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    padding: 28px;
+    background: #F8F6F3;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+
+  .contact-section .section-label { margin-bottom: 12px; }
+
+  .contact-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #444444;
+    font-weight: 300;
+  }
+
+  .contact-icon { font-size: 15px; width: 20px; text-align: center; }
+  .contact-line a { color: #C0392B; text-decoration: none; font-weight: 500; }
+
+  /* ── CLOSING ── */
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 28px 0;
+  }
+
+  .closing-text {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .signature-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #111111;
+  }
+
+  .signature-title {
+    font-size: 12px;
+    color: #888888;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #111111;
+    padding: 24px 48px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+
+  .footer-logo span { color: #C0392B; }
+
+  .footer-text {
+    font-size: 11px;
+    color: #555555;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .footer-text a { color: #C0392B; text-decoration: none; }
+
+  @media (max-width: 480px) {
+    .body-content { padding: 28px 24px; }
+    .header { padding: 28px 24px 22px; }
+    .trial-band { padding: 22px 24px; }
+    .footer { padding: 20px 24px; }
+    .countdown-strip { gap: 20px; padding: 20px 24px; }
+    .schedule-time { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="email-wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-logo">BOXING <span>4</span> HEALTH</div>
+    <div class="header-tagline">Online Exercise Program</div>
+  </div>
+  <div class="red-bar"></div>
+
+  <!-- TRIAL BAND -->
+  <div class="trial-band">
+    <div class="trial-badge">🎁 &nbsp; Complimentary Trial</div>
+    <h1>Your 2 Weeks Start Now!</h1>
+    <p>No cost, no commitment — just show up, move, and see how you feel.</p>
+  </div>
+
+  <!-- COUNTDOWN STRIP -->
+  <div class="countdown-strip">
+    <div class="countdown-item">
+      <div class="countdown-number">2</div>
+      <div class="countdown-label">Weeks Free</div>
+    </div>
+    <div class="countdown-divider">·</div>
+    <div class="countdown-item">
+      <div class="countdown-number">8</div>
+      <div class="countdown-label">Classes Available</div>
+    </div>
+    <div class="countdown-divider">·</div>
+    <div class="countdown-item">
+      <div class="countdown-number">0</div>
+      <div class="countdown-label">Commitment</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-content">
+
+    <p class="intro-text">
+      Welcome! We're so glad you're giving Boxing 4 Health a try. For the next two weeks, all of our online classes are completely free for you to attend — as many or as few as you like. Your class links are below. Simply click the button to join on any class day.
+    </p>
+
+    <!-- EXERCISE CLASSES -->
+    <div class="section-label">Exercise Classes — Included in Your Trial</div>
+
+    <div class="class-block">
+      <div class="class-title">Boxing & Exercise Classes</div>
+
+      <div class="schedule-row">
+        <div class="schedule-dot"></div>
+        <span class="schedule-text">Monday</span>
+        <span class="schedule-time">10:00 AM EST</span>
+      </div>
+      <div class="schedule-row">
+        <div class="schedule-dot"></div>
+        <span class="schedule-text">Tuesday</span>
+        <span class="schedule-time">10:00 AM EST</span>
+      </div>
+      <div class="schedule-row">
+        <div class="schedule-dot"></div>
+        <span class="schedule-text">Thursday</span>
+        <span class="schedule-time">10:00 AM EST</span>
+      </div>
+      <div class="schedule-row">
+        <div class="schedule-dot"></div>
+        <span class="schedule-text">Friday</span>
+        <span class="schedule-time">10:00 AM EST</span>
+      </div>
+
+      <div class="join-btn-wrapper">
+        <a class="join-btn" href="https://us02web.zoom.us/j/82930496659?pwd=1V75pXd4LYMuqEtpCi1xd3tDaoazCr.1">
+          🥊 &nbsp; Click Here to Join Exercise Class
+        </a>
+        <p class="join-btn-note">This link works for all four days — Monday, Tuesday, Thursday & Friday</p>
+      </div>
+    </div>
+
+    <!-- VOICE CLASS -->
+    <div class="section-label" style="margin-top: 24px;">Voice Class — Also Included in Your Trial</div>
+
+    <div class="class-block voice">
+      <div class="class-title">Voice Class</div>
+
+      <div class="schedule-row">
+        <div class="schedule-dot"></div>
+        <span class="schedule-text">Thursday</span>
+        <span class="schedule-time">5:15 PM – 6:00 PM EST</span>
+      </div>
+
+      <div class="join-btn-wrapper">
+        <a class="join-btn" href="https://us02web.zoom.us/j/89966568657?pwd=gVH4QHEheeWjXNK8T4I0vMtoA54yPX.1">
+          🎙️ &nbsp; Click Here to Join Voice Class
+        </a>
+        <p class="join-btn-note">This link is for Thursday voice class only — 5:15 PM EST</p>
+      </div>
+    </div>
+
+    <!-- NO COMMITMENT BOX -->
+    <div class="no-commitment">
+      <span class="no-commitment-icon">🤝</span>
+      <h3>Absolutely No Commitment</h3>
+      <p>Your two-week trial is completely free — <strong>no credit card, no obligation, no pressure.</strong> At the end of your trial, if you'd like to continue we'll share your membership options. If it's not the right fit, that's perfectly okay too. We just want you to try it and enjoy it.</p>
+    </div>
+
+    <!-- TIPS -->
+    <div class="tips-box">
+      <div class="section-label">A Few Tips Before Your First Class</div>
+
+      <div class="tip-row">
+        <div class="tip-number">1</div>
+        <div class="tip-text"><strong>Click the button above a few minutes early.</strong> Zoom may take a moment to open — joining 5 minutes before class starts means you won't miss a thing.</div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-number">2</div>
+        <div class="tip-text"><strong>Keep this email somewhere easy to find.</strong> The same link works every week — no need to search for it again.</div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-number">3</div>
+        <div class="tip-text"><strong>Wear comfortable clothing</strong> and have a chair nearby. Go at whatever pace feels right — every level is welcome.</div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-number">4</div>
+        <div class="tip-text"><strong>Having trouble with the link?</strong> Just reach out to us directly and we'll get you connected right away.</div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-section">
+      <div class="section-label">Need Help? We're Here.</div>
+      <div class="contact-line">
+        <span class="contact-icon">📧</span>
+        <span>Email: <a href="mailto:info@boxing4health.com">info@boxing4health.com</a></span>
+      </div>
+      <div class="contact-line">
+        <span class="contact-icon">📞</span>
+        <span>Phone: <a href="tel:6132242694">(613) 224-2694</a></span>
+      </div>
+      <div class="contact-line">
+        <span class="contact-icon">🌐</span>
+        <span>Website: <a href="https://www.boxing4health.com">www.boxing4health.com</a></span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CLOSING -->
+    <p class="closing-text">
+      We hope you love every class. These two weeks are yours — come as often as you like, try both the exercise and voice sessions, and most importantly, have fun. We can't wait to see you on screen!
+    </p>
+
+    <div class="signature-name">Christine Seaby</div>
+    <div class="signature-title">Founder &nbsp;·&nbsp; Boxing 4 Health</div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="red-bar"></div>
+  <div class="footer">
+    <div class="footer-logo">BOXING <span>4</span> HEALTH</div>
+    <p class="footer-text">
+      <a href="https://www.boxing4health.com">boxing4health.com</a> &nbsp;·&nbsp;
+      <a href="mailto:info@boxing4health.com">info@boxing4health.com</a> &nbsp;·&nbsp;
+      (613) 224-2694
+    </p>
+    <p class="footer-text" style="margin-top: 10px; font-size: 10px;">
+      Our Challenges Don't Define Us. Our Actions Do.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>

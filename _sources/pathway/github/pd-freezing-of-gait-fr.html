@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blocage de la marche — Programme PPE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:#2D4A2D; --moss:#4A6741; --sage:#7A9B6E; --lime:#B8D4A8;
+  --cream:#F7F3EC; --warm:#EDE6D8; --gold:#C4913A; --amber:#E8B86D;
+  --rust:#B85C38; --navy:#1E3A5F; --navy-lt:#E8EFF7; --teal:#2E6B6B;
+  --teal-lt:#E4F0F0; --ink:#1C2B1C; --muted:#6B7B62; --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;}
+
+.hero{background:var(--navy);background-image:radial-gradient(ellipse at 5% 80%,rgba(45,74,45,.6) 0%,transparent 50%),radial-gradient(ellipse at 95% 10%,rgba(196,145,58,.2) 0%,transparent 50%);color:white;padding:72px 44px 120px;position:relative;overflow:hidden;}
+.hero::after{content:'🚶';font-size:320px;position:absolute;right:-30px;top:-30px;opacity:.04;line-height:1;pointer-events:none;}
+.hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(45,74,45,.35);border:1px solid rgba(45,74,45,.6);color:var(--lime);font-size:10.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:26px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,5vw,3.7rem);line-height:1.09;max-width:700px;margin-bottom:20px;}
+.hero h1 em{color:var(--amber);font-style:italic;}
+.hero .sub{font-size:1.05rem;opacity:.78;max-width:560px;font-weight:300;line-height:1.7;margin-bottom:32px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;}
+.hero-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:7px 14px;font-size:.78rem;color:rgba(255,255,255,.72);}
+.hero-pill strong{color:var(--lime);display:block;font-size:.68rem;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:1px;}
+
+.stat-row{max-width:900px;margin:-54px auto 0;padding:0 28px;position:relative;z-index:10;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;animation:rise .5s ease both;}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.stat-card{background:white;border-radius:20px;padding:24px 20px;text-align:center;box-shadow:0 12px 44px rgba(29,43,28,.14);}
+.stat-card:nth-child(1){border-bottom:4px solid var(--navy);}
+.stat-card:nth-child(2){border-bottom:4px solid var(--rust);}
+.stat-card:nth-child(3){border-bottom:4px solid var(--forest);}
+.stat-emoji{font-size:2rem;margin-bottom:8px;}
+.stat-value{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--forest);line-height:1;margin-bottom:4px;}
+.stat-label{font-size:.78rem;color:var(--muted);line-height:1.3;}
+
+.container{max-width:900px;margin:0 auto;padding:0 28px;}
+.sec-tag{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--navy);font-weight:700;display:block;margin-bottom:10px;}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--forest);line-height:1.2;margin-bottom:18px;}
+h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--forest);margin-bottom:12px;}
+p{font-size:1rem;color:#3A4A36;margin-bottom:16px;line-height:1.78;}
+section{padding:52px 0 20px;}
+
+.info-box{border-radius:20px;padding:28px 34px;margin:28px 0;position:relative;overflow:hidden;}
+.info-box.navy{background:linear-gradient(135deg,var(--navy) 0%,#2A4A7A 100%);color:white;}
+.info-box.navy p{color:rgba(255,255,255,.88);margin:0;}
+.info-box.navy p strong{color:var(--amber);}
+.info-box.navy::after{content:'🧠';font-size:120px;position:absolute;right:-10px;bottom:-24px;opacity:.06;}
+.info-box.rust{background:linear-gradient(135deg,var(--rust) 0%,#8A3A20 100%);color:white;}
+.info-box.rust p{color:rgba(255,255,255,.9);margin:0;}
+.info-box.rust p strong{color:var(--amber);}
+.info-box.rust::after{content:'⚠️';font-size:120px;position:absolute;right:-10px;bottom:-24px;opacity:.07;}
+.info-box.green{background:linear-gradient(135deg,var(--forest) 0%,var(--moss) 100%);color:white;}
+.info-box.green p{color:rgba(255,255,255,.88);margin:0;}
+.info-box.green p strong{color:var(--amber);}
+.info-box.green::after{content:'💬';font-size:120px;position:absolute;right:-10px;bottom:-24px;opacity:.07;}
+.info-box .ib-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:10px;color:rgba(255,255,255,.55);}
+
+.what-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0;}
+.what-card{background:white;border-radius:18px;padding:26px 22px;border:1px solid #DDE8D4;box-shadow:0 3px 16px rgba(45,74,45,.07);position:relative;overflow:hidden;}
+.what-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;}
+.what-card.navy-top::before{background:var(--navy);}
+.what-card.rust-top::before{background:var(--rust);}
+.what-card.gold-top::before{background:var(--gold);}
+.what-card.green-top::before{background:var(--forest);}
+.what-card .wc-emoji{font-size:2rem;margin-bottom:10px;}
+.what-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--forest);margin-bottom:8px;}
+.what-card p{font-size:.89rem;color:var(--muted);margin:0;line-height:1.6;}
+
+.trigger-section{margin:28px 0;}
+.trigger-cats{display:flex;flex-wrap:wrap;gap:24px;}
+.trigger-cat h4{font-size:.82rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:12px;}
+.trigger-cat.env h4{color:var(--navy);}
+.trigger-cat.phys h4{color:var(--rust);}
+.trigger-cat.cog h4{color:var(--gold);}
+.trigger-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{border-radius:20px;padding:7px 14px;font-size:.8rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;}
+.chip.navy{background:var(--navy-lt);color:var(--navy);border:1px solid rgba(30,58,95,.2);}
+.chip.rust{background:#FBE8E2;color:var(--rust);border:1px solid rgba(184,92,56,.2);}
+.chip.gold{background:var(--warm);color:#7A5A1A;border:1px solid rgba(196,145,58,.3);}
+
+.cue-tabs{margin:28px 0;}
+.cue-tab-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:0;}
+.cue-tab-btn{background:white;border:2px solid #DDE8D4;border-bottom:none;border-radius:14px 14px 0 0;padding:12px 22px;font-size:.86rem;font-weight:600;font-family:'Jost',sans-serif;color:var(--muted);cursor:pointer;transition:all .2s;}
+.cue-tab-btn:hover{background:#F0F6EC;color:var(--forest);}
+.cue-tab-btn.active{background:var(--navy);color:white;border-color:var(--navy);}
+.cue-tab-wrap{background:white;border:2px solid #DDE8D4;border-radius:0 16px 16px 16px;padding:36px 40px;box-shadow:0 4px 24px rgba(45,74,45,.07);}
+.cue-panel{display:none;}
+.cue-panel.active{display:block;}
+.cue-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px;}
+.cue-card{border-radius:16px;padding:22px 20px;border-left:4px solid;}
+.cue-card.auditory{background:#EBF4E5;border-color:var(--forest);}
+.cue-card.visual{background:var(--navy-lt);border-color:var(--navy);}
+.cue-card.tactile{background:var(--warm);border-color:var(--gold);}
+.cue-card.internal{background:#FBE8E2;border-color:var(--rust);}
+.cue-card .cc-emoji{font-size:1.8rem;margin-bottom:8px;}
+.cue-card h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--forest);margin-bottom:6px;}
+.cue-card p{font-size:.88rem;color:#3A4A36;margin:0;line-height:1.6;}
+
+.strategy-list{margin:24px 0;}
+.strategy-item{background:white;border-radius:16px;margin-bottom:10px;border:1px solid #DDE8D4;overflow:hidden;box-shadow:0 2px 10px rgba(45,74,45,.05);}
+.strategy-header{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;user-select:none;transition:background .2s;}
+.strategy-header:hover{background:#F7FBF5;}
+.strategy-header.open{background:var(--navy);color:white;}
+.strategy-header.open .sh-title{color:white;}
+.sh-emoji{font-size:1.6rem;flex-shrink:0;}
+.sh-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--forest);flex:1;}
+.sh-arrow{font-size:1.1rem;color:var(--muted);transition:transform .25s;flex-shrink:0;}
+.strategy-header.open .sh-arrow{transform:rotate(180deg);color:rgba(255,255,255,.7);}
+.strategy-body{display:none;padding:0 22px 22px;animation:slideDown .25s ease;}
+.strategy-body.open{display:block;}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.strategy-body p{font-size:.92rem;color:#3A4A36;margin:14px 0 0;line-height:1.7;}
+.strategy-body .steps{margin-top:14px;list-style:none;padding:0;}
+.strategy-body .steps li{padding:8px 0 8px 28px;position:relative;font-size:.9rem;color:#3A4A36;line-height:1.6;border-bottom:1px solid #EEF4E8;}
+.strategy-body .steps li:last-child{border-bottom:none;}
+.strategy-body .steps li::before{content:'→';position:absolute;left:0;color:var(--navy);font-weight:700;}
+
+.exercise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0;}
+.exercise-card{background:white;border-radius:20px;padding:26px 22px;border:1px solid #DDE8D4;box-shadow:0 3px 16px rgba(45,74,45,.07);}
+.exercise-card .ec-num{font-family:'Playfair Display',serif;font-size:3rem;color:rgba(30,58,95,.08);line-height:1;margin-bottom:2px;}
+.exercise-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:8px;}
+.exercise-card .ec-badge{display:inline-block;margin-bottom:10px;background:var(--navy-lt);color:var(--navy);font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;}
+.exercise-card p{font-size:.88rem;color:var(--muted);margin:0;line-height:1.6;}
+
+.safety-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:24px 0;}
+.safety-card{border-radius:16px;padding:20px;display:flex;gap:14px;align-items:flex-start;}
+.safety-card.do-card{background:#EBF4E5;border:1px solid #C4DCBA;}
+.safety-card.dont-card{background:#FBE8E2;border:1px solid #E8B8A8;}
+.safety-card .sc-icon{font-size:1.6rem;flex-shrink:0;}
+.safety-card h4{font-family:'Playfair Display',serif;font-size:.98rem;color:var(--forest);margin-bottom:4px;}
+.safety-card p{font-size:.85rem;color:#3A4A36;margin:0;line-height:1.55;}
+
+.takeaway{background:linear-gradient(135deg,var(--navy) 0%,#2A4570 100%);color:white;border-radius:22px;padding:40px 44px;margin:36px 0;position:relative;overflow:hidden;}
+.takeaway::after{content:'💪';font-size:160px;position:absolute;right:-10px;bottom:-30px;opacity:.06;}
+.takeaway h3{font-size:1.45rem;color:var(--lime);margin-bottom:18px;}
+.takeaway ul{list-style:none;padding:0;}
+.takeaway ul li{padding:10px 0 10px 30px;position:relative;font-size:.97rem;color:rgba(255,255,255,.88);border-bottom:1px solid rgba(255,255,255,.08);line-height:1.65;}
+.takeaway ul li:last-child{border-bottom:none;}
+.takeaway ul li::before{content:'✦';position:absolute;left:0;font-size:.8rem;color:var(--amber);}
+
+.disclaimer{background:var(--warm);border-radius:14px;padding:20px 24px;margin:28px 0;font-size:.85rem;color:#5A4A2A;display:flex;gap:12px;align-items:flex-start;border:1px solid #DDD4BE;}
+.disclaimer strong{color:var(--forest);}
+.references{background:var(--warm);border-radius:18px;padding:30px 36px;margin:20px 0 60px;}
+.references h3{font-size:1.1rem;color:var(--forest);margin-bottom:16px;}
+.ref-item{font-size:.82rem;color:var(--muted);line-height:1.6;padding:8px 0;border-bottom:1px solid #DDD4BE;display:flex;gap:10px;}
+.ref-item:last-child{border-bottom:none;}
+.ref-num{color:var(--navy);font-weight:700;flex-shrink:0;}
+
+footer{text-align:center;padding:36px 28px;font-size:.8rem;color:#aaa;border-top:1px solid #DDE8D4;}
+
+@media(max-width:640px){
+  .hero{padding:48px 24px 90px;}
+  .stat-row{grid-template-columns:1fr;}
+  .cue-tab-wrap{padding:24px 20px;}
+  .takeaway{padding:28px 24px;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="badge">🚶 Programme PPE Éducatif — Leçon sur le mouvement</div>
+    <h1>Blocage de la marche — <em>Comprendre et surmonter</em> le blocage</h1>
+    <p class="sub">L'un des symptômes les plus difficiles et les moins compris de la maladie de Parkinson. Le blocage de la marche affecte l'indépendance, la confiance et la sécurité — mais avec les bonnes stratégies, il peut être géré efficacement.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><strong>Touche</strong>Jusqu'à 80 % des patients MP</div>
+      <div class="hero-pill"><strong>Type</strong>Symptôme moteur / marche</div>
+      <div class="hero-pill"><strong>Approche</strong>Indices · Exercice · Stratégie</div>
+      <div class="hero-pill"><strong>Risque</strong>Cause principale de chutes</div>
+    </div>
+  </div>
+</div>
+
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-emoji">👣</div>
+    <div class="stat-value">80%</div>
+    <div class="stat-label">des personnes atteintes de MP vivent un blocage à un moment donné</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-emoji">🏥</div>
+    <div class="stat-value">#1</div>
+    <div class="stat-label">cause de chutes et de blessures liées aux chutes dans la MP</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-emoji">🎯</div>
+    <div class="stat-value">Indices</div>
+    <div class="stat-label">contournent les circuits défectueux des ganglions de la base</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <section>
+    <span class="sec-tag">Comprendre le blocage</span>
+    <h2>Qu'est-ce que le blocage de la marche — et pourquoi arrive-t-il ?</h2>
+    <p>Le blocage de la marche (BM) est une incapacité soudaine et transitoire à initier ou à continuer de marcher, malgré l'intention de se déplacer. On a l'impression que les pieds sont soudainement collés au sol — souvent pendant quelques secondes, parfois plus longtemps. La personne reste pleinement consciente, ce qui peut rendre l'expérience encore plus effrayante et frustrante.</p>
+    <p>Le blocage n'est pas simplement une « faiblesse » — c'est une rupture dans la capacité du cerveau à générer les séquences de mouvement automatiques nécessaires à la marche. Dans la maladie de Parkinson, la perte de dopamine dans les ganglions de la base perturbe le « générateur de rythme » interne du cerveau.</p>
+
+    <div class="what-grid">
+      <div class="what-card navy-top">
+        <div class="wc-emoji">🧠</div>
+        <h4>Le mécanisme cérébral</h4>
+        <p>Les ganglions de la base régulent normalement le mouvement automatique. Dans la MP, la perte de dopamine perturbe ce circuit, rendant l'initiation et la poursuite de la marche peu fiables — surtout dans des situations complexes ou à double tâche.</p>
+      </div>
+      <div class="what-card rust-top">
+        <div class="wc-emoji">⏱️</div>
+        <h4>À quoi ça ressemble</h4>
+        <p>Pas courts et traînants; pieds semblant collés au sol; tremblements des jambes sans mouvement vers l'avant; arrêt soudain à mi-foulée. Les épisodes durent typiquement 1 à 30 secondes mais semblent bien plus longs.</p>
+      </div>
+      <div class="what-card gold-top">
+        <div class="wc-emoji">📍</div>
+        <h4>Quand ça se produit le plus</h4>
+        <p>Au démarrage de la marche, dans les tournants, les embrasures de portes, en approchant d'une destination, dans les espaces bondés, ou lors de double tâche (marcher et parler simultanément).</p>
+      </div>
+      <div class="what-card green-top">
+        <div class="wc-emoji">💊</div>
+        <h4>Médicaments et blocage</h4>
+        <p>Le blocage est souvent pire pendant les périodes « off » lorsque les médicaments s'épuisent — mais il peut aussi survenir lors des périodes « on ». Cette imprévisibilité est l'un des aspects les plus difficiles à gérer.</p>
+      </div>
+    </div>
+
+    <div class="info-box navy">
+      <span class="ib-label">💡 Pourquoi les indices fonctionnent</span>
+      <p>Quand le générateur de rythme interne du cerveau cale, <strong>les indices externes contournent les circuits défectueux des ganglions de la base</strong> et recrutent des voies motrices alternatives — permettant essentiellement au cerveau d'utiliser un itinéraire différent pour générer le mouvement. C'est pourquoi un simple battement, une ligne sur le sol ou même compter peut immédiatement débloquer un blocage qui semble totalement impossible à surmonter.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="sec-tag">Déclencheurs et signes avant-coureurs</span>
+    <h2>Ce qui déclenche le blocage — et comment le reconnaître</h2>
+    <p>Le blocage n'est pas aléatoire. Comprendre vos déclencheurs personnels est l'un des outils les plus puissants pour le gérer. La plupart des déclencheurs appartiennent à trois catégories : environnementaux, physiques et cognitifs.</p>
+
+    <div class="trigger-section">
+      <div class="trigger-cats">
+        <div class="trigger-cat env" style="flex:1;min-width:220px;">
+          <h4>🏠 Déclencheurs environnementaux</h4>
+          <div class="trigger-chips">
+            <span class="chip navy">🚪 Embrasures de portes</span>
+            <span class="chip navy">↩️ Virages</span>
+            <span class="chip navy">🏁 Approche d'une destination</span>
+            <span class="chip navy">👥 Espaces bondés</span>
+            <span class="chip navy">📏 Couloirs étroits</span>
+            <span class="chip navy">🚶 Démarrage de la marche</span>
+            <span class="chip navy">🪑 Se lever d'une chaise</span>
+            <span class="chip navy">🧗 Obstacles sur le chemin</span>
+          </div>
+        </div>
+        <div class="trigger-cat phys" style="flex:1;min-width:220px;">
+          <h4>⚡ Déclencheurs physiques</h4>
+          <div class="trigger-chips">
+            <span class="chip rust">💊 Périodes « off »</span>
+            <span class="chip rust">😴 Fatigue</span>
+            <span class="chip rust">😰 Anxiété ou stress</span>
+            <span class="chip rust">🏃 Mouvement rapide</span>
+            <span class="chip rust">🔄 Changement de direction</span>
+          </div>
+        </div>
+        <div class="trigger-cat cog" style="flex:1;min-width:220px;">
+          <h4>🧩 Déclencheurs cognitifs</h4>
+          <div class="trigger-chips">
+            <span class="chip gold">🗣️ Marcher et parler</span>
+            <span class="chip gold">📱 Porter des objets</span>
+            <span class="chip gold">🤔 Attention divisée</span>
+            <span class="chip gold">⏰ Pression du temps</span>
+            <span class="chip gold">😨 Peur de tomber</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box rust">
+      <span class="ib-label">⚠️ Signes avant-coureurs à surveiller</span>
+      <p>Le blocage présente souvent des signes avant-coureurs : la <strong>festination</strong> (pas devenant progressivement plus petits et plus rapides), une sensation de pieds qui « collent », une difficulté accrue à initier les virages, ou une légère hésitation avant les portes. Reconnaître ces signes tôt vous donne le temps d'appliquer une stratégie d'indices <em>avant</em> qu'un blocage complet ne se produise.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="sec-tag">Se débloquer</span>
+    <h2>Stratégies d'indices — votre trousse à outils pour briser un blocage</h2>
+    <p>Les indices sont l'approche la mieux appuyée par les données probantes pour gérer le blocage de la marche. La clé est de trouver quels types d'indices fonctionnent le mieux <em>pour vous</em> — et de les pratiquer quand vous n'êtes PAS bloqué, pour qu'ils deviennent automatiques.</p>
+
+    <div class="cue-tabs">
+      <div class="cue-tab-nav">
+        <button class="cue-tab-btn active" onclick="showCue('auditif',this)">🎵 Auditifs</button>
+        <button class="cue-tab-btn" onclick="showCue('visuel',this)">👁️ Visuels</button>
+        <button class="cue-tab-btn" onclick="showCue('tactile',this)">✋ Tactiles</button>
+        <button class="cue-tab-btn" onclick="showCue('interne',this)">🧠 Internes</button>
+      </div>
+
+      <div class="cue-tab-wrap">
+        <div class="cue-panel active" id="cue-auditif">
+          <p>Les indices auditifs fournissent un rythme sur lequel le cerveau peut se synchroniser, contournant les ganglions de la base calés et activant des voies motrices alternatives. La recherche montre de manière cohérente que les indices auditifs améliorent la longueur des pas et la vitesse de marche.</p>
+          <div class="cue-grid">
+            <div class="cue-card auditory">
+              <div class="cc-emoji">🎵</div>
+              <h4>Métronome</h4>
+              <p>Une application métronome (réglée sur votre rythme de marche normal) fournit un battement régulier pour marcher. Réglez-le légèrement plus vite que votre rythme actuel pour encourager des pas complets.</p>
+            </div>
+            <div class="cue-card auditory">
+              <div class="cc-emoji">🎶</div>
+              <h4>Musique rythmée</h4>
+              <p>Choisissez de la musique avec un tempo clair et régulier correspondant à votre rythme de marche naturel. Créez une « liste de lecture pour la marche » dédiée. Le rythme fournit un signal de rythme externe que votre cerveau peut suivre.</p>
+            </div>
+            <div class="cue-card auditory">
+              <div class="cc-emoji">🗣️</div>
+              <h4>Comptage ou commandes</h4>
+              <p>Comptez « 1-2, 1-2 » ou dites « gauche, droite, gauche, droite » à voix haute ou mentalement. Cela recrute le système moteur cognitif comme solution de contournement. Le rythme verbal simple fonctionne remarquablement bien.</p>
+            </div>
+            <div class="cue-card auditory">
+              <div class="cc-emoji">👏</div>
+              <h4>Rythme des applaudissements</h4>
+              <p>Applaudissez deux fois, puis avancez d'un pas. L'applaudissement crée une « rampe de lancement » rythmique qui peut briser un blocage. Votre aidant peut aussi taper un rythme de marche pour vous aider.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cue-panel" id="cue-visuel">
+          <p>Les indices visuels fournissent des cibles spatiales ou des lignes qui guident le placement des pieds, contournant le système automatique en faisant de la marche une action consciente et orientée vers un but.</p>
+          <div class="cue-grid">
+            <div class="cue-card visual">
+              <div class="cc-emoji">〰️</div>
+              <h4>Lignes au sol / ruban adhésif</h4>
+              <p>Placez des bandes de ruban coloré sur le sol aux endroits à risque élevé (cuisine, couloir, seuil de chambre). Enjambez les lignes délibérément. Cela transforme la marche en une tâche d'enjambement consciente.</p>
+            </div>
+            <div class="cue-card visual">
+              <div class="cc-emoji">🔦</div>
+              <h4>Canne laser / lumière</h4>
+              <p>Des aides à la marche spécialement conçues projettent une ligne laser sur le sol devant vous pour l'enjamber. Des recherches ont montré que les cannes à laser réduisent significativement la durée et la fréquence des blocages.</p>
+            </div>
+            <div class="cue-card visual">
+              <div class="cc-emoji">🎯</div>
+              <h4>Marche vers une cible</h4>
+              <p>Concentrez votre regard sur une cible spécifique à 1–2 mètres devant vous et visez votre prochain pas vers elle. Cela fait passer la marche de « automatique » à « dirigée » — une voie qui reste plus intacte dans la MP.</p>
+            </div>
+            <div class="cue-card visual">
+              <div class="cc-emoji">↔️</div>
+              <h4>Transfert de poids latéral</h4>
+              <p>Balancez votre poids du pied gauche au pied droit en visualisant chaque pied qui se lève. Cette stratégie physique + visuelle est l'une des façons les plus fiables de briser un blocage.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cue-panel" id="cue-tactile">
+          <p>Les indices tactiles utilisent la sensation physique pour déclencher le mouvement. Une recherche de 2023 a confirmé que les indices somatosensoriels — en particulier la vibration — peuvent réduire la fréquence et la sévérité du blocage, surtout lors des virages.</p>
+          <div class="cue-grid">
+            <div class="cue-card tactile">
+              <div class="cc-emoji">✋</div>
+              <h4>Toucher sur l'épaule</h4>
+              <p>Un léger toucher ou tapotement sur l'épaule de la part d'un aidant peut briser un blocage. L'entrée sensorielle interrompt la « boucle » dans laquelle le cerveau est coincé et fournit un signal de réinitialisation.</p>
+            </div>
+            <div class="cue-card tactile">
+              <div class="cc-emoji">🦵</div>
+              <h4>Levée de genou / marche sur place</h4>
+              <p>Levez consciemment un genou haut (en exagérant le mouvement), puis l'autre, comme si vous marchiez sur place. Cette entrée proprioceptive délibérée peut réengager le système moteur.</p>
+            </div>
+            <div class="cue-card tactile">
+              <div class="cc-emoji">📳</div>
+              <h4>Appareils de vibration</h4>
+              <p>Des appareils de vibration portables (appliqués aux poignets ou aux chevilles) fournissent un signal tactile rythmique qui peut servir d'indice de rythme. Une recherche publiée en 2023 a montré que les indices vibrotactiles réduisent significativement le blocage lors des virages.</p>
+            </div>
+            <div class="cue-card tactile">
+              <div class="cc-emoji">🦶</div>
+              <h4>Focus sur l'attaque du talon</h4>
+              <p>Concentrez-vous consciemment sur le fait de frapper le sol talon en premier, plutôt que de traîner sur la plante du pied. Ce retour proprioceptif du talon fait de chaque pas un événement sensoriel délibéré qui réengage le rythme moteur.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cue-panel" id="cue-interne">
+          <p>Les stratégies d'indices internes (cognitifs) impliquent de générer mentalement vos propres signaux de mouvement. Elles nécessitent de la pratique mais sont toujours disponibles — aucun appareil requis.</p>
+          <div class="cue-grid">
+            <div class="cue-card internal">
+              <div class="cc-emoji">🧘</div>
+              <h4>STOP — Respirer — Réinitialiser</h4>
+              <p>Quand vous sentez un blocage arriver : ARRÊTEZ d'essayer de forcer le mouvement. Prenez une respiration lente. Déplacez légèrement votre poids vers l'arrière. Puis initiez un premier pas délibéré. Forcer aggrave l'anxiété, qui aggrave le blocage.</p>
+            </div>
+            <div class="cue-card internal">
+              <div class="cc-emoji">🏃</div>
+              <h4>Imagerie mentale</h4>
+              <p>Visualisez-vous marchant normalement — imaginez votre talon qui frappe, vos bras qui se balancent, votre corps qui se déplace. Puis initiez le mouvement. La répétition mentale active certaines des mêmes voies neuronales que le mouvement réel.</p>
+            </div>
+            <div class="cue-card internal">
+              <div class="cc-emoji">🔢</div>
+              <h4>Stratégie de compte à rebours</h4>
+              <p>Comptez à rebours depuis 3 : « 3 — 2 — 1 — PAS ». Cela fournit un timing interne et réduit la pression cognitive d'initier le mouvement. Le compte à rebours crée un moment de lancement prévisible que le cerveau peut préparer.</p>
+            </div>
+            <div class="cue-card internal">
+              <div class="cc-emoji">💃</div>
+              <h4>Changer de tâche mentale</h4>
+              <p>Parfois, reformuler mentalement la tâche brise le blocage : au lieu de « marcher jusqu'à la porte », pensez « marcher au pas jusqu'à la porte » ou « danser jusqu'à la porte ». Changer l'étiquette mentale du mouvement peut recruter des circuits moteurs différents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="sec-tag">Stratégies étape par étape</span>
+    <h2>Que faire quand un blocage se produit</h2>
+    <p>Avoir un protocole répété est essentiel. Quand vous êtes en plein blocage, il est difficile de penser clairement — alors avoir une séquence pratiquée qui vient automatiquement est la clé.</p>
+
+    <div class="strategy-list">
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">🛑</span>
+          <span class="sh-title">Étape 1 — S'arrêter et ne pas paniquer</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>La première étape la plus importante. La panique et la force aggravent le blocage en augmentant l'anxiété et la tension musculaire.</p>
+          <ul class="steps">
+            <li>Cessez immédiatement d'essayer d'avancer</li>
+            <li>Restez debout, pieds écartés à la largeur des épaules pour la stabilité</li>
+            <li>Prenez une inspiration lente et délibérée par le nez</li>
+            <li>Expirez lentement — cela active le système nerveux parasympathique et réduit l'anxiété</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">⚖️</span>
+          <span class="sh-title">Étape 2 — Transfert de poids gauche-droite</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>C'est l'une des stratégies les plus fiables. L'acte physique de déplacer le poids réengage le système moteur.</p>
+          <ul class="steps">
+            <li>Déplacez lentement votre poids sur votre pied gauche</li>
+            <li>Puis déplacez-le sur votre pied droit</li>
+            <li>Répétez 2 à 3 fois en augmentant le mouvement à chaque fois</li>
+            <li>Au prochain transfert, laissez le pied non chargé se lever — et marchez</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">🦵</span>
+          <span class="sh-title">Étape 3 — Marcher sur place</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>Si le transfert de poids seul ne brise pas le blocage, ajoutez des levées de genoux exagérées :</p>
+          <ul class="steps">
+            <li>Levez le genou droit aussi haut que possible en toute sécurité</li>
+            <li>Posez le pied fermement — sentez le talon frapper</li>
+            <li>Levez le genou gauche à la même hauteur</li>
+            <li>Continuez à marcher sur place 4 à 6 fois, puis passez à la marche vers l'avant</li>
+            <li>Gardez les bras qui se balancent pour renforcer le rythme</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">🎵</span>
+          <span class="sh-title">Étape 4 — Ajouter un rythme ou un indice</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>Tout en marchant sur place ou en transférant le poids, ajoutez un indice auditif pour renforcer le rythme :</p>
+          <ul class="steps">
+            <li>Comptez à voix haute : « 1-2, 1-2 » ou « gauche-droite-gauche-droite »</li>
+            <li>Fredonnez ou chantez une chanson avec un rythme de marche clair</li>
+            <li>Si vous portez des écouteurs, activez votre métronome ou votre liste de lecture</li>
+            <li>Votre aidant peut taper un rythme régulier pour vous aider à synchroniser</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">👀</span>
+          <span class="sh-title">Étape 5 — Utiliser une cible visuelle</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>Redirigez votre attention de « je suis bloqué » vers « je vais vers cette cible » :</p>
+          <ul class="steps">
+            <li>Choisissez un point spécifique sur le sol à 1 à 2 mètres devant vous</li>
+            <li>Pensez uniquement à marcher VERS ce point — pas à la marche en général</li>
+            <li>Enjambez une ligne imaginaire si aucun indice visuel n'est disponible</li>
+            <li>Une fois la cible atteinte, choisissez-en immédiatement une nouvelle</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">🔄</span>
+          <span class="sh-title">Étape 6 — Changer de direction d'abord</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>Si le mouvement vers l'avant est impossible, essayez d'abord de bouger dans une direction différente :</p>
+          <ul class="steps">
+            <li>Faites un pas en arrière (la marche en arrière contourne souvent le blocage)</li>
+            <li>Ou faites un pas sur le côté — puis réinitiez le mouvement vers l'avant</li>
+            <li>Le cerveau trouve souvent le mouvement latéral ou en arrière plus facile à initier</li>
+            <li>Ne faites cela qu'en toute sécurité — assurez-vous qu'il n'y a rien derrière ou sur le côté</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="sec-tag">Exercice et entraînement</span>
+    <h2>Exercices qui réduisent le blocage à long terme</h2>
+    <p>La recherche montre que l'entraînement régulier — en particulier les activités qui combinent le mouvement rythmique, la double tâche et des pas grands et intentionnels — peut réduire la fréquence et la sévérité du blocage au fil du temps. Une méta-analyse de 2021 portant sur 41 études a trouvé un effet modéré significatif de l'entraînement sur la sévérité subjective du blocage.</p>
+
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <div class="ec-num">01</div>
+        <span class="ec-badge">Rythme et marche</span>
+        <h4>🥁 Tango / Danse rythmique</h4>
+        <p>Le tango a été particulièrement bien étudié dans la MP. La musique fournit des indices rythmiques, les pas impliquent des virages (un déclencheur majeur), et l'aspect social réduit l'anxiété. Même une pratique de pas de tango simplifiée à la maison est bénéfique.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">02</div>
+        <span class="ec-badge">Entraînement double tâche</span>
+        <h4>🗣️ Marcher et parler</h4>
+        <p>Pratiquez délibérément la marche tout en parlant, en comptant à rebours ou en portant un objet léger. Cela entraîne le cerveau à gérer l'attention divisée — le scénario exact qui déclenche le plus souvent le blocage.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">03</div>
+        <span class="ec-badge">Entraînement aux indices</span>
+        <h4>〰️ Parcours d'obstacles</h4>
+        <p>Créez un simple parcours d'obstacles à la maison avec des bandes de ruban coloré à enjamber, des virages à négocier et une porte à franchir — en jouant de la musique. Pratiquer les situations déclenchantes en toute sécurité renforce la résilience.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">04</div>
+        <span class="ec-badge">Force des membres inférieurs</span>
+        <h4>🦵 Pas exagérés</h4>
+        <p>Pratiquez la marche avec genoux hauts, de grands pas délibérés et l'accent sur l'attaque du talon lors de votre exercice quotidien. Les grands pas intentionnels activent des voies motrices différentes de celles du traînage des pieds.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">05</div>
+        <span class="ec-badge">Équilibre et virages</span>
+        <h4>🔄 Pratique des virages</h4>
+        <p>Pratiquez les virages en toute sécurité — en utilisant la méthode du « virage en horloge » (tourner en petits pas, dans le sens des aiguilles d'une montre ou en sens inverse, plutôt qu'en pivotant sur un pied). Les virages sont l'un des moments à plus haut risque de blocage et de chutes.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">06</div>
+        <span class="ec-badge">Mouvement conscient</span>
+        <h4>🧘 Tai-chi</h4>
+        <p>Le tai-chi améliore l'équilibre, ralentit la vitesse de mouvement à un rythme sûr et incorpore des transferts de poids délibérés — ciblant directement plusieurs mécanismes du blocage. Les recherches montrent constamment des améliorations de l'équilibre et de la marche chez les personnes atteintes de MP.</p>
+      </div>
+    </div>
+
+    <div class="info-box green">
+      <span class="ib-label">💬 Note clinique de Christine</span>
+      <p>Chez Boxing 4 Health, Christine intègre spécifiquement l'<strong>entraînement basé sur le rythme, les exercices de virage et la marche à double tâche</strong> dans les séances pour les clients qui vivent un blocage. La clé est de pratiquer les situations difficiles — embrasures de portes, virages, démarrage depuis l'arrêt — dans un <strong>environnement sûr et soutenu</strong> pour que le cerveau construise les voies compensatoires avant d'en avoir besoin au quotidien. La régularité compte plus que l'intensité ici.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="sec-tag">Sécurité et prévention des chutes</span>
+    <h2>Rester en sécurité — avant, pendant et après un blocage</h2>
+    <p>Le blocage est la principale cause de chutes dans la maladie de Parkinson. La plupart des chutes lors d'un blocage surviennent quand les personnes essaient de forcer le mouvement contre le blocage. La préparation, les modifications du domicile et un plan de sécurité pratiqué réduisent considérablement le risque de chutes.</p>
+
+    <div class="safety-grid">
+      <div class="safety-card do-card">
+        <div class="sc-icon">✅</div>
+        <div>
+          <h4>À FAIRE — Modifications du domicile</h4>
+          <p>Placez des bandes de ruban coloré aux points de blocage connus (portes, entrées de couloir). Enlevez les tapis et objets encombrants. Assurez un bon éclairage. Installez des barres d'appui aux endroits clés.</p>
+        </div>
+      </div>
+      <div class="safety-card do-card">
+        <div class="sc-icon">✅</div>
+        <div>
+          <h4>À FAIRE — Planifier vos trajets</h4>
+          <p>Identifiez les endroits à plus haut risque chez vous et à l'extérieur. Planifiez des itinéraires alternatifs autour des espaces étroits. Prévoyez du temps supplémentaire — la pression du temps est un déclencheur majeur.</p>
+        </div>
+      </div>
+      <div class="safety-card do-card">
+        <div class="sc-icon">✅</div>
+        <div>
+          <h4>À FAIRE — Avoir votre outil d'indices</h4>
+          <p>Ayez toujours votre outil d'indices de prédilection — un téléphone avec une application métronome, des écouteurs avec votre liste de lecture, ou une canne équipée d'un laser. Préparez votre trousse avant d'en avoir besoin.</p>
+        </div>
+      </div>
+      <div class="safety-card do-card">
+        <div class="sc-icon">✅</div>
+        <div>
+          <h4>À FAIRE — Informer votre aidant</h4>
+          <p>Assurez-vous que votre aidant connaît votre protocole de blocage. Il doit offrir un soutien stable — sans tirer ni pousser — et peut utiliser un rythme d'applaudissements pour vous aider. Pratiquez ensemble régulièrement.</p>
+        </div>
+      </div>
+      <div class="safety-card dont-card">
+        <div class="sc-icon">❌</div>
+        <div>
+          <h4>À NE PAS FAIRE — Forcer à travers un blocage</h4>
+          <p>Essayer de marcher à travers un blocage par la force est la cause la plus fréquente de chutes. Plus vous forcez, plus le système se bloque. Arrêtez, respirez, et utilisez une stratégie à la place.</p>
+        </div>
+      </div>
+      <div class="safety-card dont-card">
+        <div class="sc-icon">❌</div>
+        <div>
+          <h4>À NE PAS FAIRE — Se précipiter ou accepter la pression du temps</h4>
+          <p>La pression du temps est un puissant déclencheur de blocage. Prévoyez du temps supplémentaire pour chaque sortie. Ce sentiment seul peut déclencher un blocage — communiquez clairement vos besoins aux autres.</p>
+        </div>
+      </div>
+      <div class="safety-card dont-card">
+        <div class="sc-icon">❌</div>
+        <div>
+          <h4>À NE PAS FAIRE — Marcher sans plan dans les endroits à risque</h4>
+          <p>Si vous allez dans un endroit avec des déclencheurs connus (centres commerciaux, restaurants), ayez votre stratégie d'indices prête avant d'entrer. N'attendez pas d'être déjà bloqué pour réfléchir à quoi faire.</p>
+        </div>
+      </div>
+      <div class="safety-card dont-card">
+        <div class="sc-icon">❌</div>
+        <div>
+          <h4>À NE PAS FAIRE — Éviter de marcher</h4>
+          <p>La peur du blocage pousse beaucoup de personnes à arrêter de marcher — ce qui aggrave rapidement le blocage et les symptômes généraux de la MP. L'objectif est une gestion confiante, pas l'évitement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="takeaway">
+    <h3>✦ Points clés — Blocage de la marche</h3>
+    <ul>
+      <li>Le blocage touche jusqu'à 80 % des personnes atteintes de MP et est la principale cause de chutes. C'est un problème de circuit cérébral, pas un problème de force ou de motivation.</li>
+      <li>Les indices externes — auditifs, visuels, tactiles — fonctionnent en contournant les circuits défectueux des ganglions de la base et en recrutant des voies motrices alternatives.</li>
+      <li>En cas de blocage : STOP, respirez, ne paniquez pas. Transférez le poids, marchez sur place, ajoutez un rythme, choisissez une cible visuelle — dans cet ordre.</li>
+      <li>Identifiez vos déclencheurs personnels et pratiquez vos stratégies d'indices exactement dans ces situations et ces endroits avant que le blocage ne se produise.</li>
+      <li>L'exercice régulier — surtout rythmique, à double tâche et basé sur les virages — réduit la fréquence du blocage au fil du temps. Le tango, le tai-chi et les parcours d'obstacles sont parmi les mieux étudiés.</li>
+      <li>Les modifications du domicile et un aidant préparé sont des éléments essentiels d'un plan de sécurité contre le blocage.</li>
+      <li>Ne jamais essayer de forcer à travers un blocage. Plus vous poussez, plus ça empire. Arrêtez, respirez, réinitialisez, puis utilisez votre trousse à outils.</li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    ⚠️ <div><strong>Important :</strong> Ce guide est à titre éducatif uniquement et ne remplace pas un avis médical. Le blocage de la marche est un symptôme complexe — travaillez avec votre neurologue, physiothérapeute et équipe de soins pour la MP pour développer un plan de gestion personnalisé. Si le blocage affecte gravement votre sécurité, parlez à votre prestataire de soins de santé d'ajustements médicamenteux ou d'une référence spécialisée.</div>
+  </div>
+
+  <div class="references">
+    <h3>📚 Sources de recherche</h3>
+    <div class="ref-item"><span class="ref-num">[1]</span><span>Zoetewei D, Herman T, Ginis P, et al. (2024). On-Demand Cueing for Freezing of Gait in Parkinson's Disease: A Randomized Controlled Trial. <em>Movement Disorders</em>, 39(5), 876–886.</span></div>
+    <div class="ref-item"><span class="ref-num">[2]</span><span>Nieuwboer A, et al. (2021). A systematic review on exercise and training-based interventions for freezing of gait in Parkinson's disease. <em>npj Parkinson's Disease</em>, 7, 81.</span></div>
+    <div class="ref-item"><span class="ref-num">[3]</span><span>Cosentino C, et al. (2023). One cue does not fit all: a systematic review of the effectiveness of cueing on freezing of gait in Parkinson's disease. <em>Neuroscience &amp; Biobehavioral Reviews</em>, 150, 105189.</span></div>
+    <div class="ref-item"><span class="ref-num">[4]</span><span>Klaver EC, et al. (2023). Good vibrations: tactile cueing for freezing of gait in Parkinson's disease. <em>Journal of Neurology</em>, 270, 3424–3432.</span></div>
+    <div class="ref-item"><span class="ref-num">[5]</span><span>Nutt JG, Bloem BR, Giladi N, et al. (2011). Freezing of gait: moving forward on a mysterious clinical phenomenon. <em>The Lancet Neurology</em>, 10(8), 734–744.</span></div>
+  </div>
+
+</div>
+
+<footer>
+  Programme PPE — À titre éducatif uniquement. Ne remplace pas un avis médical.<br>
+  Contenu développé par Christine pour les personnes vivant avec la maladie de Parkinson et leurs proches aidants.
+</footer>
+
+<script>
+function showCue(id,btn){
+  document.querySelectorAll('.cue-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.cue-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('cue-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+function toggleStrategy(header){
+  const body=header.nextElementSibling;
+  const isOpen=header.classList.contains('open');
+  document.querySelectorAll('.strategy-header').forEach(h=>h.classList.remove('open'));
+  document.querySelectorAll('.strategy-body').forEach(b=>b.classList.remove('open'));
+  if(!isOpen){header.classList.add('open');body.classList.add('open');}
+}
+</script>
+</body>
+</html>

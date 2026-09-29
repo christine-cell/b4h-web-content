@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Ventre a Beaucoup à Dire sur la Maladie de Parkinson</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive: #6B7A3A;
+    --warm-cream: #FAF6EE;
+    --terracotta: #C8603A;
+    --sand: #E8DCC8;
+    --deep: #2C2416;
+    --sage: #A8B87A;
+    --accent: #E8A04A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-cream);
+    color: var(--deep);
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--olive);
+    background-image: radial-gradient(ellipse at 80% 20%, rgba(168,184,122,0.4) 0%, transparent 60%),
+                      radial-gradient(ellipse at 20% 80%, rgba(200,96,58,0.2) 0%, transparent 50%);
+    color: white;
+    padding: 60px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '🫒';
+    font-size: 200px;
+    position: absolute;
+    right: -20px;
+    top: -30px;
+    opacity: 0.12;
+    transform: rotate(-15deg);
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--terracotta);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 600px;
+  }
+
+  .hero h1 em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .hero .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    max-width: 550px;
+    font-weight: 300;
+  }
+
+  .study-tag {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  /* MAIN */
+  .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  /* STAT CARDS */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: -40px auto 0;
+    max-width: 820px;
+    padding: 0 24px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(44,36,22,0.12);
+    border-top: 4px solid var(--terracotta);
+    animation: slideUp 0.6s ease both;
+  }
+
+  .stat-card:nth-child(2) { border-top-color: var(--olive); animation-delay: 0.1s; }
+  .stat-card:nth-child(3) { border-top-color: var(--accent); animation-delay: 0.2s; }
+  .stat-card:nth-child(4) { border-top-color: var(--sage); animation-delay: 0.3s; }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stat-number {
+    font-family: 'Fraunces', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+
+  .stat-card:nth-child(2) .stat-number { color: var(--olive); }
+  .stat-card:nth-child(3) .stat-number { color: var(--accent); }
+  .stat-card:nth-child(4) .stat-number { color: var(--sage); }
+
+  .stat-label {
+    font-size: 0.82rem;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* SECTIONS */
+  section { padding: 48px 0 24px; }
+
+  .section-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 20px;
+    color: var(--deep);
+    line-height: 1.2;
+  }
+
+  p { margin-bottom: 16px; font-size: 1rem; color: #3d3222; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--sand) 0%, #f0e8d4 100%);
+    border-left: 4px solid var(--olive);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+
+  .highlight-box p { margin: 0; font-weight: 500; font-size: 1.05rem; }
+
+  /* WHAT IS SECTION */
+  .meddiet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 24px 0;
+  }
+
+  .food-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid #e8dcc8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .food-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(44,36,22,0.1); }
+
+  .food-emoji { font-size: 2rem; }
+  .food-text { font-size: 0.9rem; font-weight: 500; }
+  .food-sub { font-size: 0.78rem; color: #999; }
+
+  /* FINDINGS */
+  .finding-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 16px;
+    border: 1px solid #ede4d4;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 2px 12px rgba(44,36,22,0.05);
+    transition: box-shadow 0.2s;
+  }
+
+  .finding-card:hover { box-shadow: 0 6px 24px rgba(44,36,22,0.1); }
+
+  .finding-icon {
+    font-size: 2rem;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  .finding-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 6px; }
+  .finding-text { font-size: 0.92rem; color: #5a4e3a; line-height: 1.6; margin: 0; }
+
+  /* GUT-BRAIN SECTION */
+  .gut-brain {
+    background: var(--deep);
+    color: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 32px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gut-brain::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(168,184,122,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .gut-brain h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+
+  .gut-brain p { color: rgba(255,255,255,0.82); margin: 0; }
+
+  .pathway {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .pathway-step {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .pathway-arrow { color: var(--accent); font-size: 1.2rem; }
+
+  /* TAKEAWAY */
+  .takeaway {
+    background: linear-gradient(135deg, var(--olive) 0%, #4a5528 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 36px 40px;
+    margin: 32px 0;
+  }
+
+  .takeaway h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+  }
+
+  .takeaway ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .takeaway li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  .takeaway li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+  /* ===== QUIZ ===== */
+  .quiz-section {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 48px 0;
+    border: 2px solid var(--sand);
+    box-shadow: 0 8px 40px rgba(44,36,22,0.08);
+  }
+
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .quiz-header .badge { background: var(--olive); }
+
+  .quiz-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--deep);
+    margin-bottom: 10px;
+  }
+
+  .quiz-header p { font-size: 0.95rem; color: #888; margin: 0; }
+
+  .quiz-progress {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .progress-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--sand);
+    transition: background 0.3s;
+  }
+
+  .progress-dot.active { background: var(--terracotta); }
+  .progress-dot.done { background: var(--olive); }
+
+  .question-block { display: none; animation: fadeIn 0.4s ease; }
+  .question-block.visible { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .question-num {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .question-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    color: var(--deep);
+    margin-bottom: 22px;
+    line-height: 1.4;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+
+  .option-btn {
+    background: var(--warm-cream);
+    border: 2px solid var(--sand);
+    border-radius: 12px;
+    padding: 14px 20px;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--deep);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .option-btn:hover { border-color: var(--olive); background: #f0ece2; transform: translateX(4px); }
+  .option-btn.selected { border-color: var(--olive); background: #edf2df; }
+  .option-btn.correct { border-color: #5a9a3a; background: #edf7e4; color: #2a5a18; }
+  .option-btn.incorrect { border-color: #c84a3a; background: #fce8e4; color: #7a2018; }
+
+  .option-letter {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--sand);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .option-btn.correct .option-letter { background: #5a9a3a; color: white; }
+  .option-btn.incorrect .option-letter { background: #c84a3a; color: white; }
+
+  .feedback-box {
+    display: none;
+    margin-top: 16px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .feedback-box.show { display: block; }
+  .feedback-box.correct-fb { background: #edf7e4; border-left: 4px solid #5a9a3a; color: #2a4a18; }
+  .feedback-box.incorrect-fb { background: #fce8e4; border-left: 4px solid #c84a3a; color: #6a2018; }
+
+  .quiz-nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+  }
+
+  .next-btn {
+    background: var(--terracotta);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: none;
+  }
+
+  .next-btn:hover { background: #b3502e; transform: scale(1.02); }
+
+  /* RESULTS */
+  .quiz-results {
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .result-emoji { font-size: 5rem; margin-bottom: 16px; display: block; }
+
+  .result-score {
+    font-family: 'Fraunces', serif;
+    font-size: 3.5rem;
+    color: var(--terracotta);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .result-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--deep);
+  }
+
+  .result-message {
+    font-size: 0.95rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+
+  .result-bar {
+    height: 14px;
+    background: var(--sand);
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto 32px;
+    overflow: hidden;
+  }
+
+  .result-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--olive), var(--sage));
+    border-radius: 8px;
+    transition: width 1s ease 0.3s;
+    width: 0;
+  }
+
+  .retake-btn {
+    background: var(--olive);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .retake-btn:hover { background: #556030; }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: var(--sand);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 32px 0;
+    font-size: 0.85rem;
+    color: #6a5a3a;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .disclaimer strong { color: var(--deep); }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 0.82rem;
+    color: #aaa;
+    border-top: 1px solid var(--sand);
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 24px 70px; }
+    .gut-brain, .quiz-section, .takeaway { padding: 28px 24px; }
+    .stats-row { margin-top: -30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">Programme Éducatif PPE</div>
+    <h1>Votre Ventre a <em>Beaucoup</em> à Dire sur Parkinson</h1>
+    <p class="subtitle">Comment le régime méditerranéen a transformé le microbiome intestinal et soulagé la constipation chez les personnes atteintes de la maladie de Parkinson — ce que dit la recherche.</p>
+    <div class="study-tag">
+      📄 Source : Rusch et al. (2021) — Université de Floride · Frontiers in Neurology
+    </div>
+  </div>
+</div>
+
+<!-- STAT CARDS -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-number">80%</div>
+    <div class="stat-label">des personnes atteintes de MP souffrent de constipation</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">5 sem.</div>
+    <div class="stat-label">durée de l'intervention diététique dans l'étude pilote</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">↑ Fibres</div>
+    <div class="stat-label">augmentation significative de la consommation quotidienne de fibres</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">🦠</div>
+    <div class="stat-label">microbiome intestinal modifié de façon mesurable</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- WHY IT MATTERS -->
+  <section>
+    <div class="section-tag">Pourquoi c'est important</div>
+    <h2>La Constipation dans Parkinson : Bien Plus qu'un Simple Inconfort</h2>
+    <p>Quand on pense à la maladie de Parkinson (MP), on pense souvent aux tremblements et aux troubles du mouvement. Mais l'intestin raconte aussi une histoire — et cette histoire commence souvent <em>des années avant</em> l'apparition des symptômes moteurs. Jusqu'à 80 % des personnes atteintes de MP souffrent de constipation, ce qui peut détériorer la qualité de vie, altérer l'absorption des médicaments, et pourrait même être lié à la progression de la maladie.</p>
+    <div class="highlight-box">
+      <p>🔬 Des chercheurs de l'Université de Floride ont posé une question simple mais puissante : <em>Un régime méditerranéen peut-il améliorer les symptômes intestinaux et modifier le microbiome chez les personnes atteintes de la maladie de Parkinson ?</em></p>
+    </div>
+    <p>La réponse — même issue de cette petite étude pilote — était encourageante. En seulement 5 semaines, les participants ayant suivi un régime méditerranéen ont présenté une réduction des symptômes de constipation et des changements notables dans leur flore bactérienne intestinale.</p>
+  </section>
+
+  <!-- WHAT IS MED DIET -->
+  <section>
+    <div class="section-tag">Le Régime</div>
+    <h2>Qu'est-ce que le Régime Méditerranéen ?</h2>
+    <p>Imaginez que vous mangez comme si vous viviez près des côtes grecques. Ce régime est riche en végétaux, en bonnes graisses et en aliments entiers — naturellement riche en fibres et en nutriments anti-inflammatoires que l'intestin adore.</p>
+    <div class="meddiet-grid">
+      <div class="food-card"><div class="food-emoji">🫒</div><div><div class="food-text">Huile d'olive</div><div class="food-sub">Principale source de gras</div></div></div>
+      <div class="food-card"><div class="food-emoji">🥦</div><div><div class="food-text">Légumes</div><div class="food-sub">En abondance, chaque jour</div></div></div>
+      <div class="food-card"><div class="food-emoji">🫘</div><div><div class="food-text">Légumineuses</div><div class="food-sub">Sources de fibres essentielles</div></div></div>
+      <div class="food-card"><div class="food-emoji">🐟</div><div><div class="food-text">Poisson</div><div class="food-sub">Surtout les poissons gras</div></div></div>
+      <div class="food-card"><div class="food-emoji">🫐</div><div><div class="food-text">Fruits et baies</div><div class="food-sub">Riches en antioxydants</div></div></div>
+      <div class="food-card"><div class="food-emoji">🌾</div><div><div class="food-text">Grains entiers</div><div class="food-sub">Peu transformés</div></div></div>
+      <div class="food-card"><div class="food-emoji">🥜</div><div><div class="food-text">Noix et graines</div><div class="food-sub">Bonnes graisses + fibres</div></div></div>
+      <div class="food-card"><div class="food-emoji">🍷</div><div><div class="food-text">Vin rouge modéré</div><div class="food-sub">Facultatif, avec les repas</div></div></div>
+    </div>
+  </section>
+
+  <!-- THE STUDY -->
+  <section>
+    <div class="section-tag">La Recherche</div>
+    <h2>Ce que l'Étude a Révélé</h2>
+    <p>Huit personnes atteintes de la maladie de Parkinson ont suivi un régime méditerranéen pendant 5 semaines, encadrées par des diététistes de l'étude. Leurs partenaires de vie ont servi de groupe de contrôle. Voici ce qui s'est passé :</p>
+
+    <div class="finding-card">
+      <div class="finding-icon">💩</div>
+      <div>
+        <div class="finding-title">Amélioration des Symptômes de Constipation</div>
+        <p class="finding-text">Les participants ont signalé moins de symptômes de constipation — notamment moins d'efforts à la selle, des selles moins dures et une sensation réduite d'évacuation incomplète — après seulement 5 semaines de régime.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">🦠</div>
+      <div>
+        <div class="finding-title">Modification du Microbiome Intestinal</div>
+        <p class="finding-text">L'analyse des selles a révélé de véritables changements dans les types et l'équilibre des bactéries intestinales. On a notamment observé une augmentation des bactéries associées à la fermentation des fibres et à la production d'acides gras à chaîne courte (AGCC) — des composés bénéfiques pour la santé intestinale et potentiellement pour le cerveau.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">🌾</div>
+      <div>
+        <div class="finding-title">Augmentation Significative des Apports en Fibres</div>
+        <p class="finding-text">Les participants ont considérablement augmenté leur consommation quotidienne de fibres grâce au régime méditerranéen. C'est particulièrement important car la plupart des personnes atteintes de MP ne consomment pas suffisamment de fibres, ce qui a un impact direct sur la régularité intestinale.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">🔬</div>
+      <div>
+        <div class="finding-title">Mesure de la Perméabilité Intestinale</div>
+        <p class="finding-text">Les chercheurs ont également évalué les marqueurs d'hyperperméabilité intestinale (« intestin poreux »). Bien que l'étude pilote soit trop petite pour tirer des conclusions définitives, le suivi de ces marqueurs témoigne de l'importance accordée à l'intégrité intestinale dans la recherche sur Parkinson.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUT-BRAIN AXIS -->
+  <div class="gut-brain">
+    <h3>🧠 La Connexion Intestin–Cerveau</h3>
+    <p>Les scientifiques croient de plus en plus que la maladie de Parkinson pourrait trouver son origine dans l'intestin — plus précisément avec le mauvais repliement d'une protéine appelée alpha-synucléine, qui pourrait migrer de l'intestin vers le cerveau via le nerf vague. Un microbiome intestinal perturbé (dysbiose) peut déclencher une inflammation et contribuer à la progression de la maladie.</p>
+    <div class="pathway">
+      <div class="pathway-step">Mauvaise Alimentation</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">Dysbiose Intestinale</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">Inflammation</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">↑ Alpha-Synucléine</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">Impact Cérébral</div>
+    </div>
+  </div>
+
+  <!-- TAKEAWAYS -->
+  <div class="takeaway">
+    <h3>💡 Points Clés pour Votre Pratique</h3>
+    <ul>
+      <li>La constipation est l'un des symptômes non moteurs les plus fréquents de Parkinson et mérite une prise en charge proactive.</li>
+      <li>Un régime méditerranéen — riche en fibres, légumes et bonnes graisses — peut réduire significativement la constipation chez les personnes atteintes de MP.</li>
+      <li>Le microbiome intestinal est modifiable par l'alimentation, et des changements peuvent survenir en quelques semaines.</li>
+      <li>Les acides gras à chaîne courte (AGCC) produits par les bactéries intestinales pourraient avoir des effets neuroprotecteurs — une raison de plus pour laquelle l'alimentation compte dans la MP.</li>
+      <li>Bien que cette étude pilote soit petite (n=8), un essai contrôlé randomisé ultérieur de la même équipe a confirmé des bénéfices clés, notamment une réduction de l'inflammation intestinale.</li>
+      <li>Encourager les patients à augmenter leur consommation de fruits, légumes, légumineuses et grains entiers est une stratégie à faible risque et à fort impact.</li>
+    </ul>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    ⚠️ <div><strong>À noter :</strong> Il s'agit d'une étude pilote avec un petit échantillon (n=8). Les résultats sont prometteurs mais doivent être considérés comme exploratoires. Consultez toujours l'équipe soignante du patient avant d'apporter des changements alimentaires significatifs, notamment en raison des interactions médicamenteuses dans la MP (ex. : les repas riches en protéines peuvent affecter l'absorption de la lévodopa).</div>
+  </div>
+
+  <!-- ===== QUIZ ===== -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <div class="badge">Quiz Interactif</div>
+      <h2>Êtes-vous à l'Écoute de Votre Ventre ? 🌿</h2>
+      <p>Testez vos connaissances — et découvrez si vous pourriez avoir des symptômes de constipation à discuter avec un professionnel de santé !</p>
+    </div>
+
+    <div class="quiz-progress" id="progressDots"></div>
+    <div id="quizContent"></div>
+
+    <div class="quiz-results" id="quizResults">
+      <span class="result-emoji" id="resultEmoji">🎉</span>
+      <div class="result-score" id="resultScore"></div>
+      <div class="result-label" id="resultLabel"></div>
+      <div class="result-bar"><div class="result-bar-fill" id="resultBarFill"></div></div>
+      <p class="result-message" id="resultMessage"></p>
+      <button class="retake-btn" onclick="restartQuiz()">🔁 Recommencer le Quiz</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    Source : Rusch et al. (2021). <em>Mediterranean Diet Adherence in People With Parkinson's Disease Reduces Constipation Symptoms and Changes Fecal Microbiota After a 5-Week Single-Arm Pilot Study.</em> Frontiers in Neurology, 12, 794640.<br><br>
+    Créé pour le Programme Éducatif PPE — À des fins éducatives uniquement. Ne remplace pas un avis médical.
+  </div>
+</footer>
+
+<script>
+const questions = [
+  {
+    text: "À quelle fréquence avez-vous une selle ?",
+    options: [
+      "Tous les 1 à 2 jours — régulier comme une horloge",
+      "Tous les 3 jours — c'est normal pour moi",
+      "Tous les 4 à 5 jours ou moins souvent",
+      "Rarement — parfois je passe une semaine ou plus"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "✅ C'est une fréquence saine ! La plupart des recommandations considèrent entre 3 fois par jour et 3 fois par semaine comme une plage normale. Restez bien hydraté(e) et consommez des fibres pour maintenir ce rythme.",
+      "⚠️ Aller tous les 3 jours est dans la limite basse de la normale, mais peut convenir à certaines personnes. Si cela s'accompagne d'efforts ou de selles dures, mentionnez-le à votre médecin.",
+      "⚠️ Des selles moins fréquentes que tous les 3 jours peuvent indiquer une constipation, surtout si elles s'accompagnent de difficultés. Envisagez d'augmenter votre apport en fibres et en liquides.",
+      "🚨 Aller une fois par semaine ou moins est préoccupant et est considéré comme de la constipation. Cela peut affecter l'absorption des médicaments et la qualité de vie dans la MP. Parlez-en à votre équipe soignante."
+    ]
+  },
+  {
+    text: "Quand vous allez à la selle, comment décririez-vous l'expérience ?",
+    options: [
+      "Facile et complète — sans effort",
+      "Parfois difficile, mais généralement ça va",
+      "Je dois souvent faire beaucoup d'efforts",
+      "J'ai fréquemment l'impression de ne pas avoir tout évacué"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "✅ Excellent ! Des selles faciles et confortables sont un signe de bonne santé intestinale. Continuez avec les fibres et l'hydratation !",
+      "🟡 Des efforts occasionnels peuvent être normaux, mais s'ils deviennent plus fréquents, essayez d'ajouter plus d'aliments riches en fibres comme les légumes, les légumineuses et les grains entiers.",
+      "⚠️ Des efforts fréquents sont un signe clé de constipation. Un régime méditerranéen riche en fibres peut aider — et il vaut la peine d'en discuter avec votre équipe soignante.",
+      "⚠️ La sensation d'évacuation incomplète est l'un des symptômes caractéristiques de la constipation et est très fréquente dans la MP. Ce symptôme justifie à lui seul une conversation avec votre professionnel de santé."
+    ]
+  },
+  {
+    text: "Vrai ou Faux : La constipation dans la maladie de Parkinson peut apparaître AVANT les symptômes moteurs comme les tremblements.",
+    options: [
+      "Vrai — les symptômes intestinaux précèdent souvent les symptômes moteurs de plusieurs années",
+      "Faux — les symptômes moteurs apparaissent toujours en premier",
+      "Ils apparaissent toujours en même temps",
+      "La constipation n'a rien à voir avec la maladie de Parkinson"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct ! La recherche suggère que les symptômes gastro-intestinaux, dont la constipation, peuvent apparaître des années — parfois une décennie ou plus — avant les tremblements et troubles du mouvement typiques de la MP. C'est pourquoi l'intestin est si important dans la recherche sur Parkinson.",
+      "❌ En réalité, la constipation et d'autres problèmes intestinaux peuvent précéder les symptômes moteurs de la MP de plusieurs années. La connexion intestin-cerveau est un domaine clé de la recherche actuelle sur Parkinson.",
+      "❌ Pas tout à fait — les symptômes intestinaux comme la constipation sont souvent parmi les premiers signes non moteurs de la MP, apparaissant bien avant les troubles du mouvement.",
+      "❌ La constipation est en fait l'un des symptômes non moteurs les plus fréquents de Parkinson, touchant jusqu'à 80 % des personnes atteintes."
+    ]
+  },
+  {
+    text: "Quelle est la principale raison pour laquelle les fibres sont si importantes pour les personnes atteintes de Parkinson ?",
+    options: [
+      "Elles nourrissent les bonnes bactéries intestinales qui produisent des acides gras à chaîne courte bénéfiques",
+      "Elles réduisent directement les tremblements",
+      "Elles remplacent les médicaments contre Parkinson",
+      "Elles n'ont aucun effet réel — l'alimentation ne compte pas dans la MP"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Parfaitement ! Les fibres alimentaires nourrissent les bactéries intestinales bénéfiques, qui les fermentent en acides gras à chaîne courte (AGCC). Les AGCC soutiennent la santé de la muqueuse intestinale, réduisent l'inflammation et pourraient même avoir des effets neuroprotecteurs bénéfiques pour le cerveau.",
+      "❌ Les fibres ne réduisent pas directement les tremblements, mais elles soutiennent la santé intestinale et l'équilibre du microbiome, ce qui peut avoir des effets plus larges sur la MP via l'axe intestin-cerveau.",
+      "❌ Les changements alimentaires ne doivent jamais remplacer les médicaments prescrits. Cependant, un régime sain comme le régime méditerranéen peut compléter le traitement médical pour améliorer les symptômes et la qualité de vie.",
+      "❌ L'alimentation a un effet très réel sur la santé intestinale, la composition du microbiome, l'inflammation et potentiellement même la santé cérébrale via l'axe intestin-cerveau. Le régime méditerranéen a montré des bénéfices mesurables dans la recherche sur la MP."
+    ]
+  },
+  {
+    text: "Combien de portions de légumes et de fruits consommez-vous habituellement par jour ?",
+    options: [
+      "5 ou plus — j'adore les fruits et légumes !",
+      "3 à 4 portions la plupart des jours",
+      "1 à 2 portions — je pourrais faire mieux",
+      "Rarement ou presque jamais"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "🌟 Fantastique ! Une consommation élevée de fruits et légumes est un pilier du régime méditerranéen et fournit les fibres, antioxydants et composés prébiotiques qui soutiennent un microbiome intestinal sain.",
+      "🟡 Bon effort ! Visez 5 portions ou plus en ajoutant une poignée supplémentaire de légumes aux repas ou un fruit en collation. Les petits changements s'accumulent.",
+      "⚠️ La plupart des gens bénéficient d'au moins 5 portions de fruits et légumes par jour. Essayez d'ajouter une salade au déjeuner, des légumes rôtis au dîner, ou une banane au petit-déjeuner. Vos bactéries intestinales vous remercieront !",
+      "🚨 Un apport très faible en fruits et légumes est un facteur de risque clé de constipation et de faible diversité du microbiome intestinal. Commencez doucement — même ajouter une portion par jour peut faire une différence au fil du temps."
+    ]
+  },
+  {
+    text: "Qu'a spécifiquement révélé l'étude de 5 semaines sur le régime méditerranéen concernant le microbiome intestinal des personnes atteintes de Parkinson ?",
+    options: [
+      "Il a changé de façon mesurable — avec une augmentation des bactéries fermentant les fibres",
+      "Le microbiome a été complètement normalisé",
+      "Il n'y a eu aucun changement",
+      "Le régime a rendu le microbiome plus perturbé"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct ! L'étude a trouvé des changements mesurables dans le microbiome intestinal après seulement 5 semaines, notamment une augmentation des bactéries qui fermentent les fibres et produisent des acides gras à chaîne courte. C'est passionnant car cela montre que l'alimentation peut modifier l'intestin relativement rapidement.",
+      "❌ L'étude n'a pas prétendu à une « normalisation complète », mais elle a bien trouvé des changements significatifs et mesurables dans la composition du microbiome — ce qui est encourageant comme point de départ pour des études plus larges.",
+      "❌ Il y a eu des changements notables dans le microbiome intestinal, notamment une évolution vers des bactéries plus bénéfiques fermentant les fibres.",
+      "❌ Le régime a été associé à des changements bénéfiques dans le microbiome, pas à des changements néfastes. C'est cohérent avec la recherche plus large sur le régime méditerranéen."
+    ]
+  },
+  {
+    text: "Combien d'eau buvez-vous par jour ?",
+    options: [
+      "6 à 8 verres (1,5 à 2 litres) — je reste bien hydraté(e)",
+      "Environ 4 à 5 verres",
+      "2 à 3 verres — j'oublie souvent",
+      "À peine 1 à 2 verres — l'eau n'est pas vraiment ma boisson préférée"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "💧 Excellente hydratation ! L'eau agit en complément des fibres pour maintenir les selles molles et faciliter leur passage. C'est particulièrement important dans Parkinson, où la constipation est déjà un défi majeur.",
+      "🟡 Pas mal, mais essayez d'atteindre 6 à 8 verres par jour. Gardez une bouteille d'eau avec vous, configurez des rappels ou essayez des tisanes pour augmenter votre apport en liquides.",
+      "⚠️ Un faible apport hydrique est une cause majeure de constipation. Même avec un bon apport en fibres, sans suffisamment d'eau, les selles peuvent devenir dures et difficiles à évacuer. Essayez d'augmenter progressivement.",
+      "🚨 Une très faible hydratation est un facteur de risque sérieux de constipation. Essayez de commencer la journée avec un verre d'eau et d'en garder un à portée de main en permanence."
+    ]
+  },
+  {
+    text: "Lequel de ces éléments NE fait PAS partie du régime méditerranéen ?",
+    options: [
+      "Les aliments ultra-transformés et les boissons sucrées",
+      "L'huile d'olive comme principale matière grasse",
+      "Beaucoup de légumes et de légumineuses",
+      "Le poisson et les grains entiers"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct ! Les aliments ultra-transformés et les boissons sucrées ne font PAS partie du régime méditerranéen. Ces aliments peuvent nuire au microbiome intestinal, augmenter l'inflammation et aggraver la constipation. Le régime méditerranéen met l'accent sur les aliments entiers et peu transformés.",
+      "❌ L'huile d'olive EST un pilier du régime méditerranéen — c'est la principale matière grasse utilisée pour la cuisson et les vinaigrettes, et elle fournit des bienfaits anti-inflammatoires.",
+      "❌ Les légumes et les légumineuses FONT partie du régime méditerranéen, fournissant les fibres qui nourrissent les bactéries intestinales bénéfiques.",
+      "❌ Le poisson et les grains entiers FONT partie du régime méditerranéen. Les poissons gras fournissent des oméga-3, et les grains entiers contribuent en fibres et en nutriments."
+    ]
+  }
+];
+
+let currentQ = 0;
+let score = 0;
+let answered = false;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContent');
+  const dots = document.getElementById('progressDots');
+  dots.innerHTML = questions.map((_, i) => `<div class="progress-dot" id="dot-${i}"></div>`).join('');
+  container.innerHTML = questions.map((q, i) => `
+    <div class="question-block ${i === 0 ? 'visible' : ''}" id="qblock-${i}">
+      <div class="question-num">${q.knowledge ? '🧠 Vérification des Connaissances' : '🪞 Réflexion Personnelle'} · Question ${i + 1} sur ${questions.length}</div>
+      <div class="question-text">${q.text}</div>
+      <div class="options">
+        ${q.options.map((opt, j) => `
+          <button class="option-btn" onclick="selectAnswer(${i}, ${j})" id="opt-${i}-${j}">
+            <span class="option-letter">${String.fromCharCode(65+j)}</span>
+            ${opt}
+          </button>
+        `).join('')}
+      </div>
+      <div class="feedback-box" id="fb-${i}"></div>
+      <div class="quiz-nav"><button class="next-btn" id="next-${i}" onclick="nextQuestion(${i})">${i < questions.length - 1 ? 'Suivant →' : 'Voir mes Résultats →'}</button></div>
+    </div>
+  `).join('');
+  updateDots();
+}
+
+function selectAnswer(qIdx, optIdx) {
+  if (answered && currentQ === qIdx) return;
+  answered = true;
+
+  const q = questions[qIdx];
+  const isCorrect = q.knowledge ? optIdx === q.correct : true;
+
+  q.options.forEach((_, j) => {
+    const btn = document.getElementById(`opt-${qIdx}-${j}`);
+    if (j === optIdx) {
+      btn.classList.add(q.knowledge ? (j === q.correct ? 'correct' : 'incorrect') : 'selected');
+    }
+    if (q.knowledge && j === q.correct && j !== optIdx) {
+      btn.classList.add('correct');
+    }
+  });
+
+  const fb = document.getElementById(`fb-${qIdx}`);
+  fb.textContent = q.feedback[optIdx];
+  fb.className = `feedback-box show ${q.knowledge && optIdx !== q.correct ? 'incorrect-fb' : 'correct-fb'}`;
+
+  if (q.knowledge && isCorrect) score++;
+
+  document.getElementById(`next-${qIdx}`).style.display = 'block';
+}
+
+function nextQuestion(qIdx) {
+  document.getElementById(`qblock-${qIdx}`).classList.remove('visible');
+  answered = false;
+
+  if (qIdx + 1 < questions.length) {
+    currentQ = qIdx + 1;
+    document.getElementById(`qblock-${currentQ}`).classList.add('visible');
+    document.getElementById(`dot-${qIdx}`).classList.remove('active');
+    document.getElementById(`dot-${qIdx}`).classList.add('done');
+    updateDots();
+  } else {
+    showResults();
+  }
+}
+
+function updateDots() {
+  questions.forEach((_, i) => {
+    const dot = document.getElementById(`dot-${i}`);
+    if (i === currentQ) dot.classList.add('active');
+  });
+}
+
+function showResults() {
+  document.getElementById('quizContent').style.display = 'none';
+  document.getElementById('progressDots').style.display = 'none';
+  const results = document.getElementById('quizResults');
+  results.style.display = 'block';
+
+  const knowledgeQs = questions.filter(q => q.knowledge).length;
+  const pct = Math.round((score / knowledgeQs) * 100);
+
+  document.getElementById('resultScore').textContent = `${score}/${knowledgeQs}`;
+
+  let emoji, label, message;
+  if (pct === 100) {
+    emoji = '🌟'; label = 'Expert en Santé Intestinale !';
+    message = 'Remarquable ! Vous avez une excellente compréhension du lien intestin–Parkinson et du rôle de l\'alimentation. Partagez ces connaissances avec vos patients et collègues !';
+  } else if (pct >= 75) {
+    emoji = '🫒'; label = 'Spécialiste Méditerranéen !';
+    message = 'Excellent travail ! Vous maîtrisez la plupart des concepts clés. Revoyez les questions manquées pour approfondir votre compréhension du rôle de l\'alimentation dans la santé intestinale liée à la MP.';
+  } else if (pct >= 50) {
+    emoji = '🌱'; label = 'En Bonne Progression !';
+    message = 'Bon effort ! Il y a encore à explorer sur la connexion intestin–cerveau dans Parkinson. Nous vous encourageons à relire le résumé ci-dessus et à consulter la recherche originale.';
+  } else {
+    emoji = '🔍'; label = 'Continuez à Explorer !';
+    message = 'C\'est un sujet complexe — continuez d\'apprendre ! La connexion intestin–Parkinson est l\'un des domaines de recherche les plus passionnants. Relisez le résumé ci-dessus et réessayez.';
+  }
+
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultLabel').textContent = label;
+  document.getElementById('resultMessage').textContent = message;
+
+  setTimeout(() => {
+    document.getElementById('resultBarFill').style.width = pct + '%';
+  }, 100);
+}
+
+function restartQuiz() {
+  currentQ = 0;
+  score = 0;
+  answered = false;
+  document.getElementById('quizResults').style.display = 'none';
+  document.getElementById('quizContent').style.display = 'block';
+  document.getElementById('progressDots').style.display = 'flex';
+  buildQuiz();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

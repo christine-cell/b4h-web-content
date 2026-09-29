@@ -185,6 +185,19 @@ def check_asset_version():
                                   f"(bump this page's ?v to {V} so it cache-busts)")
     note(f"asset-version: static pages pinned to build V={V}")
 
+# ---------------------------------------------------------------- 8c. pending
+def check_pending():
+    # Not a failure — a running tally of work still owed to the content owner:
+    # videos not yet on YouTube, and <!-- REVIEW: … --> notes left by authors.
+    for s in PROGS:
+        pend, rev = set(), 0
+        for p in glob.glob(os.path.join(authored_dir(s), "*.html")):
+            t = read(p)
+            pend |= set(re.findall(r'data-video-pending="([^"]+)"', t))
+            rev += len(re.findall(r"<!--\s*REVIEW:", t))
+        if pend or rev:
+            note(f"{s} pending: {len(pend)} video(s) awaiting upload, {rev} REVIEW note(s) in sources")
+
 # ---------------------------------------------------------------- 9. a11y
 def check_a11y():
     pages = [os.path.join(ROOT, "index.html")]
@@ -205,7 +218,7 @@ def check_a11y():
 # ---------------------------------------------------------------- run
 CHECKS = [check_build, check_generated_in_sync, check_links, check_glossary,
           check_documents, check_lesson_sources, check_i18n, check_style_lint,
-          check_asset_version, check_a11y]
+          check_asset_version, check_pending, check_a11y]
 
 def main():
     for c in CHECKS:

@@ -1,0 +1,776 @@
+Climacteric
+ISSN: (Print) (Online) Journal homepage: www.tandfonline.com/journals/icmt20
+The musculoskeletal syndrome of menopause
+Vonda J. Wright, Jonathan D. Schwartzman, Rafael Itinoche & Jocelyn
+Wittstein
+To cite this article: Vonda J. Wright, Jonathan D. Schwartzman, Rafael Itinoche & Jocelyn
+Wittstein (30 Jul 2024): The musculoskeletal syndrome of menopause, Climacteric, DOI:
+10.1080/13697137.2024.2380363
+To link to this article: https://doi.org/10.1080/13697137.2024.2380363
+© 2024 The Author(s). Published by Informa
+UK Limited, trading as Taylor & Francis
+Group
+Published online: 30 Jul 2024.
+Submit your article to this journal
+Article views: 178131
+View related articles
+View Crossmark data
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=icmt20
+Climacteric
+https://doi.org/10.1080/13697137.2024.2380363
+Review Article
+The musculoskeletal syndrome of menopause
+Vonda J. Wrighta, Jonathan D. Schwartzmana , Rafael Itinochea and Jocelyn Wittsteinb
+aUniversity of Central Florida College of Medicine, Orlando, FL, USA; bDuke University School of Medicine, Durham, NC, USA
+ABSTRACT
+Fifty-one percent of humans are born with ovaries. As the ovarian production of estrogen diminishes in
+midlife and ultimately stops, it is estimated that more than 47 million women worldwide enter the
+menopause transition annually. More than 70% will experience musculoskeletal symptoms and 25% will
+be disabled by them through the transition from perimenopause to postmenopause. This often-unrecognized
+collective of musculoskeletal symptoms, largely influenced by estrogen flux, includes arthralgia, loss of
+muscle mass, loss of bone density and progression of osteoarthritis, among others. In isolation, it can
+be difficult for clinicians and patients to adequately appreciate the substantial role of decreasing
+estrogen, anticipate the onset of related symptoms and actively treat to mitigate future detrimental
+processes. Thus, in this review we introduce a new term, the musculoskeletal syndrome of menopause,
+to describe the collective musculoskeletal signs and symptoms associated with the loss of estrogen.
+Given the significant effects of these processes on quality of life and the associated personal and
+financial costs, it is important for clinicians and the women they care for to be aware of this terminology
+and the constellation of musculoskeletal processes for which proper risk assessment and prophylactic
+management are of consequence.
+ARTICLE HISTORY
+Received 21 March 2024
+Revised 22 May 2024
+Accepted 10 July 2024
+KEYWORDS
+Musculoskeletal system;
+menopause;
+perimenopause; estrogen
+deficiency
+Introduction
+Approximately 2 million women in the USA and more than
+47 million women worldwide will enter menopause annually,
+reaching this transition between ages 45 and 55 years on
+average with a duration of symptoms lasting 2–10 years [1,2].
+More than 35 symptoms are known to be associated with
+menopause, including hot flashes, brain fog, sleep distur-
+bances, anxiety and loss of libido; however, musculoskeletal
+symptoms are less commonly recognized by clinicians or
+patients and can be silent, devastating and permanent unless
+addressed.
+Clinician awareness of the musculoskeletal syndrome of
+menopause is critical as an estimated 70% of all midlife
+women will experience the musculoskeletal syndrome of
+menopause, 25% will experience severe symptoms and 40%
+will have no structural findings [3]. The musculoskeletal syn-
+drome of menopause is a term being introduced here to
+describe the typical symptoms impacted by the precipitous
+drop in estrogen surrounding the menopause transition.
+Understanding the role of diminished estrogen in the muscu-
+loskeletal systems of midlife women will enable clinicians to
+provide more complete guidance and increase patient satis-
+faction. The musculoskeletal syndrome of menopause
+includes, but is not limited to, musculoskeletal pain, arthral-
+gia, loss of lean muscle mass, loss of bone density with
+increased risk of resultant fracture, increased tendon and
+ligament injury, adhesive capsulitis and cartilage matrix fra-
+gility with the progression of osteoarthritis.
+The musculoskeletal syndrome of menopause may have a
+profound negative impact on the quality of life of postmeno-
+pausal women. Women and clinicians alike should thus be
+versed in the recognition and treatment of these problems. In
+this review, we introduce new terminology, discuss the impor-
+tance of comprehension of the musculoskeletal syndrome of
+menopause and stress the importance of prevention and active
+treatment of this syndrome in postmenopausal women.
+The significance of proper terminology in a similar
+estrogen-related process can be found concerning the geni-
+tourinary syndrome of menopause, which consists of genital
+symptoms including dryness, burning and irritation, sexual
+symptoms including lack of lubrication, discomfort or pain
+and impaired function, as well as urinary symptoms including
+urgency, dysuria and recurrent urinary tract infections [4,5].
+Due to the lack of clarity regarding the menopausal effects
+of previously used terminology such as vulvovaginal atrophy
+and atrophic vaginitis, the Board of Directors of the
+International Society for the Study of Women’s Sexual Health
+and the Board of the North American Menopause Society
+officially approved the term genitourinary syndrome of
+menopause in 2014 [5]. It is evident that the precedent set
+by the genitourinary syndrome of menopause is that of
+increasing awareness of decreasing estrogen-related states to
+provide more comprehensive care for patients and give
+CONTACT Vonda J. Wright vondawright@gmail.com University of Central Florida College of Medicine, Orlando, FL, USA
+© 2024 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group
+This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives License (http://creativecommons.org/licenses/by-nc-nd/4.0/),
+which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited, and is not altered, transformed, or built upon in any
+way. The terms on which this article has been published allow the posting of the Accepted Manuscript in a repository by the author(s) or with their consent.
+2V. J. WRIGHT et AL.
+women a more encompassing term to understand their phys-
+iological changes.
+Musculoskeletal syndrome of menopause
+The overall prevalence of musculoskeletal pain in perimeno-
+pausal women is approximately 71%, with perimenopausal
+women demonstrating a higher risk for musculoskeletal
+pain than their premenopausal counterparts [3]. These
+patients’ imaging results may show no structural findings;
+however, it is important to be conscious of the hormonal
+changes that occur in this cohort, especially related to
+estrogen. Often the primary point of contact in the care of
+these patients with musculoskeletal ailments, orthopedic
+surgeons should be aware of the musculoskeletal changes
+associated with menopause since they can have permanent
+and devastating consequences including bone loss, muscle
+loss, muscle weakness, frailty and fractures, and metabolic
+dysfunction. Primary care physicians and obstetrics and
+gynecology practitioners, on the other hand, may be the
+first point of contact in the early phases before musculo-
+skeletal symptoms present. In these cases, conversations
+with women about the musculoskeletal syndrome of meno-
+pause at regular check-ups or appointments to discuss
+other common perimenopausal complaints, including hot
+flashes, may be beneficial for preventative care.
+The National Institutes of Health defines menopause as a
+point in time 12 months after a woman’s last period and per-
+imenopause, or the menopausal transition, as the years lead-
+ing up to that point when women may have changes in their
+monthly cycles, hot flashes or other symptoms. The average
+age for onset of perimenopause is 47.5 years [6], while the
+average age of menopause is 52.6 ± 2.5 years, with Hispanics
+having an onset approximately 2 years earlier [7].
+During perimenopause, women have an average reduc-
+tion of 10% in bone mineral density [8]. Furthermore, women
+have a reduction of 0.6% in muscle mass per year after
+menopause [9]. These musculoskeletal issues can be attributed
+to the decline in estradiol, the most biologically active form
+of estrogen, which impacts nearly all types of musculoskele-
+tal tissue including bone, tendon, muscle, cartilage, ligament
+and adipose [10,11]. The fall in estradiol levels leads to five
+primary changes (Table 1): an increase in inflammation, a
+decrease in bone mineral density leading to osteopenia/oste-
+oporosis, arthritis, sarcopenia and a decrease in the prolifera-
+tion of satellite cells (muscle stem cells).
+Table 1. musculoskeletal syndrome of menopause: processes and signs.
+Process Signs
+InflammationArthralgia, joint pain, joint discomfort, frozen
+shoulder
+Sarcopenia Poor balance, falls, decreased muscle mass, loss
+of stamina, walking slowly
+Decreased satellite cell
+Decreased muscle mass, inability to gain muscle
+proliferation
+OsteoporosisLoss of height, back pain, stooped posture,
+low-impact fracture
+ArthritisArthralgia, joint pain, joint stiffness
+Inflammation
+Estrogen is an inflammatory regulator that plays a role in the
+prevention of generalized arthralgia, the subjective experi-
+ence of joint pain. The pain experienced increases across the
+menopausal transition, peaking in early postmenopause, and
+often has no specific magnetic resonance imaging findings
+and may not require specific intervention. Nevertheless, more
+than half of perimenopausal women report arthralgia symp-
+toms [12,13]. There is also evidence to support increased
+arthralgia reporting in postmenopausal women compared
+with premenopausal women and similar results have been
+found in patients who experience sudden withdrawal of
+menopausal hormone therapy (MHT) or aromatase inhibitors
+[14,15]. The regulation of inflammation occurs via
+17β-estradiol, which inhibits the release of inflammatory
+cytokine TNF-α [16], which can degrade muscle proteins and
+reduce the ability of the adult muscle to respond to damage
+[17]. TNF-α is released by adipocytes and can promote the
+accumulation of fat mass and impair muscle function [18–20].
+Estrogen replacement therapy can attenuate fat gain and
+decrease lean muscle loss [21,22], with evidence that estro-
+gen acts and influences adipose tissue through estrogen
+receptor-α [18].
+Estrogen is a potent anti-inflammatory factor modulated
+by the inflammasome, an element of the innate immune sys-
+tem [23,24]. The inflammasome is a multiprotein complex
+that activates caspase-1 and processes pro-inflammatory
+cytokines such as il-1β and il-18 [25,26]. Moreover, there is
+increasing and compelling evidence that inflammasome is
+modulated by estrogen receptor-β [27]. Since estrogen can
+be used to inhibit the inflammation-mediated release of
+pro-inflammatory cytokines and regulate the inflammasome,
+MHT is an interesting alternative to ameliorate symptoms.
+Sarcopenia
+Sarcopenia, or age-related loss of lean muscle mass, is char-
+acterized by atrophy of fast muscle fibers, loss of type ii
+fibers, decreased number of motor units and increased intra-
+muscular adipose tissue [28]. According to the updated defi-
+nitions from the European Working Group on Sarcopenia in
+Older People, sarcopenia is probable when low muscle
+strength is detected, diagnosed when the quantity or quality
+of muscle is low and considered severe when low muscle
+strength, low muscle quantity or quality and low physical
+performance are all present [29]. Regarding possible interven-
+tions to attenuate sarcopenia, it is suggested that nutritional
+interventions, including intake of proteins, vitamin D and cre-
+atine, as well as exercise including resistance training, may
+improve muscle mass and strength, although more
+high-quality studies are needed [30].
+Estrogen has important functions related to muscle mass
+and strength. It has been shown that the decline in estrogen
+through ovariectomy in animals leads to a decrease in mito-
+chondrial function, membrane microviscosity, and complex I
+and i + iii activity [31]. Moreover, the decline in estrogen leads
+to increased mitochondrial H2O2 production [32], decreased
+levels of antioxidant proteins [32,33] and impaired insulin
+sensitivity [31]. These changes occur due to estrogen’s capac-
+ity to restore cellular redox and glucose homeostasis in skel-
+etal muscle [31,34,35]. There is evidence for estrogen being
+beneficial to muscle mass and strength in animal models
+[36,37]. In one experiment, 24 weeks of estrogen deficiency
+resulted in a 10% decrease in strength that corresponded
+with an 18% decrease in fiber cross-sectional area [36]. In
+another experiment with ovariectomized mice, it was sug-
+gested that in the absence of estrogen, muscle is more prone
+to injury and regrowth is limited [37].
+Aging in perimenopause and postmenopause is another
+factor that contributes to decreased muscle mass and
+strength. It has been shown that postmenopausal women
+experience a rapid decrease in muscle mass and strength
+and, thus, are more vulnerable to age-related frailty [38]. To
+counteract such losses, MHT is a plausible method, especially
+when paired with resistance training [39,40]. In a
+cross-sectional study involving postmenopausal women, it
+was found that muscle cross-sectional area and grip strength
+were greater in estrogen replacement therapy users than in
+non-users [41]. Furthermore, it is suggested that MHT can
+help improve sensitivity to anabolic stimuli since it was found
+that protein synthesis increased significantly following resis-
+tance training [42].
+Satellite cell proliferation
+Satellite cells, stem cells located on muscle fibers, promote
+plasticity and regeneration [43]. Type I oxidative fibers have
+much higher numbers of satellite cells due to their better
+blood supply [43]. Satellite cells are quiescent in a steady
+state [44,45], but following injury or anabolic stimulation are
+activated to repair muscle tissue in chronic inflammatory
+states [46,47]. Estradiol stimulates the activation and prolifer-
+ation of the satellite cells through estrogen receptors [48]
+and part of the force generated by skeletal muscle appears
+to be determined by the binding of estradiol to estrogen
+receptor-α [49,50]. By losing the stimulation that estrogen
+promotes by binding to estrogen receptor-α, muscle strength
+and recovery after injury are impaired.
+Although limited research exists quantifying satellite cells
+in postmenopausal women, Collins et al. recently took a
+mechanistic approach to investigate this phenomenon in a
+murine model. Compared to control mice, ovariectomized
+mice were found to have 30–60% fewer satellite cells, specif-
+ically with decreased concentrations in the tibialis anterior,
+and the reduction was associated with the duration of the
+hormone deficiency [49]. This finding was consistent in other
+muscles including the extensor digitorum longus, gastrocne-
+mius and diaphragm, although the soleus, comparatively
+more difficult to fatigue, was unaffected by hormonal
+changes. Along with risk reduction, postmenopausal osteopo-
+rosis management guidelines typically include strengthening
+the muscles around areas of weaker bone, especially around
+the back, hips and lower legs. These data suggest that, with-
+out replacement therapy, a decrease in satellite cells may
+compound osteopenia/osteoporosis and increase frailty due
+to difficulty in generating muscle power and adequate
+regeneration.
+CliMActeric 3
+Bone density
+Osteoporosis is a serious problem with 200 million post-
+menopausal women affected worldwide [51]. It is under-
+diagnosed, preventable and treatable. Between 30% and 50%
+of women suffer a clinical fracture in their life and 70% of hip
+fractures occur in women [51]. Osteoporotic fractures are
+extremely detrimental since they can lead to chronic pain,
+deformity, disability and even death [52]. Osteoporosis is
+diagnosed based on bone mineral density assessment using
+a dual-energy X-ray absorptiometry scan, while the 10-year
+probability of fracture in a patient with osteoporosis can be
+estimated using the Fracture Risk Assessment Tool (FRAX)
+score [53]. A FRAX score is calculated using demographic
+data, important clinical risk factors such as smoking, cortico-
+steroid use and history of rheumatoid arthritis, as well as an
+optional input of bone mineral density data obtained from a
+dual-energy X-ray absorptiometry scan [54].
+Estrogen deficiency is associated with significant bone loss
+[21], increasing fragility and risk of fracture. The prevention of
+osteoporosis includes appropriate nutrition and exercise and
+the removal of risk factors. Furthermore, it has been shown
+that MHT was adequate and effective in the prevention of
+osteoporotic fractures in at-risk women [55]. Treatment with
+MHT in postmenopausal women was able to preserve or
+increase bone mineral density at all skeletal locations [55].
+Further, it has been demonstrated that MHT can decrease the
+incidence of osteoporotic fractures [56–59]. Therefore, MHT
+should be indicated for the prevention and treatment of
+osteoporotic fractures due to its evidence of effectiveness,
+cost and safety [60]. Future research needs to be conducted
+to determine the dosing thresholds and efficacy of MHT in
+managing osteoporosis in various age-specific cohorts of
+postmenopausal women.
+Cartilage damage and osteoarthritis
+Cartilage is composed of a dense extracellular matrix and
+highly specialized chondrocytes, cells that are partly regu-
+lated by estrogen [61]. While both mechanical and biochem-
+ical factors contribute toward the osteoarthritis progression,
+it is understood that osteoarthritis incidence in women
+increases dramatically around the time of menopause and
+recent literature claims that women experience more debili-
+tating arthritic pain than men [62–64]. In a comprehensive
+review of estrogen and osteoarthritis by Richette et al. a pos-
+sible association was suggested between menopausal estro-
+gen deprivation and the frequency of knee, hip and finger
+osteoarthritis and severity of hip osteoarthritis [65].
+The subject of MHT in the prevention and treatment of
+osteoarthritis in postmenopausal women is controversial. There
+is evidence that estrogen has protective and mitogenic proper-
+ties in intervertebral disks [66] and that the estrogen decrease
+during menopause leads to changes in the connective tissue
+matrix which may be prevented by estrogen replacement ther-
+apy [67]. In an ovariectomized rat model for osteoarthritis, Xu
+et al. found that estrogen therapy reduced the extent of carti-
+laginous degeneration and resorption of subchondral bone in
+estrogen-deficiency [68]. However, a recent meta-analysis found
+4V. J. WRIGHT et AL.
+a significant positive association between the use of MHT and
+joint replacement [69]. Further research is necessary to deter-
+mine whether there is a specific age range or dosage for which
+MHT may be beneficial for osteoarthritis.
+Clinical applications
+Given the variety of negative implications on women’s health,
+and specifically the musculoskeletal system, associated with
+estrogen depletion during menopause, it is important for
+both practitioners and patients to be cognizant of prevention
+and management approaches. Conservative approaches
+include testing, nutrition and exercise. Updated guidelines
+recommend osteoporosis screening for women aged 65 years
+or older and for those aged 50–64 years who have certain
+risk factors, including a positive family history of osteoporosis
+[70]. Nutritional vitamin D has been shown to effectively
+improve hip bone mineral density in postmenopausal women
+and reduce the incidence of falls [71,72]. A recent random-
+ized, double-blind, placebo-controlled trial investigating iso-
+lated vitamin D supplementation on bone turnover markers
+in postmenopausal women aged 50–65 years with vitamin D
+deficiency found that 1000 iU of vitamin D3 for 9 months was
+associated with reduced bone turnover markers, suggesting
+the relationship between proper nutritional supplementation
+and decreased bone loss in these patients [73]. Intrinsically
+linked with vitamin D in phosphorus–calcium metabolism is
+magnesium, which is necessary for the functioning of para-
+thyroid hormone and suggested by several authors to
+improve postmenopausal musculoskeletal symptoms [74–77].
+A recent randomized controlled trial of 52 postmenopausal
+women aged between 44–76 years found that daily treatment
+with 500 mg of magnesium resulted in significantly increased
+vitamin D levels [74]. More research is needed to determine
+protocols and strategies to maximize the benefit of magne-
+sium supplementation and determine which patient parame-
+ters should guide treatment.
+Another vitamin supplementation that may decrease the
+progression and treat osteoporosis is vitamin K2. A recent
+meta-analysis by Zhou et al. of nine randomized controlled
+trials consisting of a total of 6853 postmenopausal patients
+with osteoporosis found a significantly increased change in
+lumbar and forearm bone mineral density without evidence
+of serious adverse effects related to the supplementation
+[78]. Further research is necessary to determine whether sup-
+plementation of these two vitamins in premenopausal or
+perimenopausal patients before the onset of osteoporosis, or
+during the transition to osteopenia, is effective.
+Among the various prevention and treatment approaches
+associated with menopause, exercise is perhaps the only
+non-controversial modality. Decreasing estrogen is associated
+with loss of type ii muscle fibers and subsequently decreased
+power, which has been suggested as the primary measure for
+completing activities of daily living [79–81]. Although there is
+at present a lack of concrete evidence among postmeno-
+pausal women regarding optimal weight training, it is gener-
+ally acknowledged that resistance training with heavier
+weights in lower repetition sets tends to increase muscular
+power more effectively than training with lighter weights in
+higher repetition sets [82]. Along with dietary changes,
+including increased protein intake and the aforementioned
+vitamins, resistance exercise may be critical for postmeno-
+pausal women to decrease their risk of falls and fractures.
+Other supplements are currently being investigated in tan-
+dem with resistance training in the postmenopausal female,
+including creatine which has shown positive bone mineral
+density and muscle power results in preliminary research [83].
+MHT is perhaps the next frontier in the treatment of post-
+menopausal women in general, and particularly for the mus-
+culoskeletal syndrome of menopause. By slowing the rate of
+estrogen loss, MHT offers a unique modality to mitigate the
+potentially devastating musculoskeletal effects of estrogen
+withdrawal and allows for a smoother physiological transi-
+tion. MHT is typically administered with estradiol and pro-
+gestogens, the latter of which is included if the patient has a
+uterus. Systemic MHT may be administered via pills, transder-
+mal patches or sprays depending on patient and clinician
+preference. Given that perimenopausal patients often present
+with musculoskeletal symptoms without positive imaging,
+physicians must be aware of the musculoskeletal syndrome
+of menopause, communicate the potential role of MHT and
+lifestyle interventions in their management, and potentially
+refer them to a specialist who can guide these plans.
+The role of the clinician in managing the musculoskeletal
+syndrome of menopause should not be overlooked, espe-
+cially among orthopedic surgeons who may be less familiar
+with the musculoskeletal manifestations of estrogen decline
+than primary care and obstetrics and gynecology physicians.
+For example, when midlife women present with symptoms of
+adhesive capsulitis or atraumatic joint pain, or describe recent
+loss of muscle or height, the adept physician should intro-
+duce the musculoskeletal syndrome of menopause and
+encourage their agency in treatment. Nevertheless, it remains
+clinically imperative that each woman deserves a thorough
+clinical evaluation for structural damage or other pathologies
+that may explain the presenting symptomatology and con-
+tribute to the overall picture, which may in part be influ-
+enced by estrogen deficiency. However, clinicians should
+keep the physiologic effects of estrogen on the musculoskel-
+etal system centered in their care plans in perimenopausal
+and postmenopausal patient populations. Psychologically,
+this may increase patient satisfaction by reassuring them that
+their condition is normal due to expected biochemical
+changes and, more substantially, that these changes are
+treatable and that proper steps can be taken immediately to
+prevent further manifestations. This approach to care is in
+stark contrast to common adages told to the perimenopausal
+patient including ‘it is time to start slowing down’ and ‘this
+tends to happen as women age’, non-descript sentiments
+that offer little value in the management of common muscu-
+loskeletal conditions in this cohort.
+Conclusions
+The musculoskeletal syndrome of menopause is a novel
+nomenclature to describe the common musculoskeletal
+CliMActeric 5
+symptoms related to loss of estrogen levels, including joint
+pain, inflammation, sarcopenia, osteoporosis and cartilage
+damage. In isolation, these terms do not adequately commu-
+nicate to patients the role of decreasing estrogen or suggest
+how treatment with proper nutrition, resistance training, vita-
+min intake and/or MHT may have a substantial role in quality
+of life, preventing falls and decreasing frailty mortality.
+Physicians should embrace this terminology as a means of
+expressing understanding to patients, instilling agency that
+may increase patient satisfaction and offering appropriate
+active treatment to give more comprehensive care. More
+broadly, recognition of this terminology is important to stim-
+ulate research interest. Multiple salient clinical research ques-
+tions remain regarding optimal management and prevention,
+including the potential prevention of multiple entities in the
+musculoskeletal syndrome of menopause with early MHT,
+such as the rapid progression of arthritis, acute worsening of
+arthralgia, frozen shoulder and loss of skeletal muscle mass.
+Investigations to determine the minimum effective dosing
+regimens for this preventive approach are also outstanding,
+as is re-evaluating the current standard of diagnosing osteo-
+porosis at age 65 years with a dual-energy X-ray absorptiom-
+etry scan versus earlier screening. In the meantime, it is
+prudent for physicians to complete detailed history and
+physical examinations to identify early-onset or increased
+susceptibility to developing future ailments, utilize preven-
+tion recommendations of dietary and exercise modifications,
+vitamin supplementation and MHT, as well as discuss the
+musculoskeletal syndrome of menopause early and thor-
+oughly to best prepare patients. Answering the myriad of
+questions that remain in understanding the mechanisms, pre-
+vention of and treatments for the musculoskeletal syndrome
+of menopause may profoundly change the health and quality
+of life of the millions of women transitioning through meno-
+pause worldwide.
+Disclosure statement
+No potential conflict of interest was reported by the authors.
+Funding
+Nil.
+ORCID
+Jonathan D. Schwartzman http://orcid.org/0000-0002-1379-0529
+References
+[1] takahashi TA, Johnson KM. Menopause. Med Clin North Am.
+2015;99(3):521–534. doi: 10.1016/j.mcna.2015.01.006.
+[2] Hill K. The demography of menopause. Maturitas. 1996;23(2):113–
+127. doi: 10.1016/0378-5122(95)00968-x.
+[3] lu CB, Liu PF, Zhou YS, et al. Musculoskeletal pain during the meno-
+pausal transition: a systematic review and meta-analysis. Neural Plast.
+2020;2020:8842110–8842110. doi: 10.1155/2020/8842110.
+[4] Portman DJ, Gass ML. Genitourinary syndrome of menopause: new
+terminology for vulvovaginal atrophy from the international society
+for the study of women’s sexual health and the North American
+Menopause Society. Menopause. 2014;21(10):1063–1068. doi:
+10.1097/gme.0000000000000329.
+[5] Kim HK, Kang SY, Chung YJ, et al. The recent review of the genito-
+urinary syndrome of menopause. J Menopausal Med. 2015;21(2):65–
+71. doi: 10.6118/jmm.2015.21.2.65.
+[6] McKinlay SM, Brambilla DJ, Posner JG. The normal menopause tran-
+sition. Maturitas. 1992;14(2):103–115. doi: 10.1016/0378-5122(92)
+90003-m.
+[7] chan S, Gomes A, Singh RS. Is menopause still evolving? Evidence
+from a longitudinal study of multiethnic populations and its rele-
+vance to women’s health. BMC Womens Health. 2020;20(1):74. doi:
+10.1186/s12905-020-00932-8.
+[8] Ji MX, Yu Q. Primary osteoporosis in postmenopausal women.
+Chronic Dis Transl Med. 2015;1(1):9–13. doi: 10.1016/j.cdtm.2015.
+02.006.
+[9] Rolland YM, Perry HM, 3rd, Patrick P, et al. Loss of appendicular
+muscle mass and loss of muscle strength in young postmenopaus-
+al women. J Gerontol A Biol Sci Med Sci. 2007;62(3):330–335. doi:
+10.1093/gerona/62.3.330.
+[10] wend K, Wend P, Krum SA. Tissue-specific effects of loss of estro-
+gen during menopause and aging. Front Endocrinol (Lausanne).
+2012;3:19. doi: 10.3389/fendo.2012.00019.
+[11] chidi-Ogbolu N, Baar K. Effect of estrogen on musculoskeletal per-
+formance and injury risk. Front Physiol. 2018;9:1834. doi: 10.3389/
+fphys.2018.01834.
+[12] Szoeke ce, Cicuttini F, Guthrie J, et al. Self-reported arthritis and
+the menopause. Climacteric. 2005;8(1):49–55. doi: 10.1080/13697130
+400012296.
+[13] Olaolorun FM, Lawoyin TO. Experience of menopausal symptoms
+by women in an urban community in Ibadan, Nigeria. Menopause.
+2009;16(4):822–830. doi: 10.1097/gme.0b013e318198d6e7.
+[14] Magliano M. Menopausal arthralgia: fact or fiction. Maturitas.
+2010;67(1):29–33. doi: 10.1016/j.maturitas.2010.04.009.
+[15] Ho SC, Chan SG, Yip YB, et al. Menopausal symptoms and symp-
+tom clustering in chinese women. Maturitas. 1999;33(3):219–227.
+doi: 10.1016/s0378-5122(99)00056-0.
+[16] lambert KC, Curran EM, Judy BM, et al. Estrogen receptor-alpha
+deficiency promotes increased tnf-alpha secretion and bacterial
+killing by murine macrophages in response to microbial stimuli in
+vitro. J Leukoc Biol. 2004;75(6):1166–1172. doi: 10.1189/jlb.1103589.
+[17] li YP, Reid MB. Nf-kappab mediates the protein loss induced by
+TNF-alpha in differentiated skeletal muscle myotubes. Am J Physiol
+Regul Integr Comp Physiol. 2000;279(4):R1165–1170. doi: 10.1152/
+ajpregu.2000.279.4.R1165.
+[18] Arthur ST, Cooley ID. The effect of physiological stimuli on sarco-
+penia; impact of notch and WNT signaling on impaired aged skel-
+etal muscle repair. Int J Biol Sci. 2012;8(5):731–760. doi: 10.7150/
+ijbs.4262.
+[19] Buford tw, Anton SD, Judge AR, et al. Models of accelerated sar-
+copenia: critical pieces for solving the puzzle of age-related muscle
+atrophy. Ageing Res Rev. 2010;9(4):369–383. doi: 10.1016/j.
+arr.2010.04.004.
+[20] Roth SM, Metter EJ, Ling S, et al. Inflammatory factors in age-related
+muscle wasting. Curr Opin Rheumatol. 2006;18(6):625–630. doi:
+10.1097/01.bor.0000245722.10136.6d.
+[21] Gambacciani M, Ciaponi M. Postmenopausal osteoporosis manage-
+ment. Curr Opin Obstet Gynecol. 2000;12(3):189–197. doi: 10.1097/
+00001703-200006000-00005.
+[22] lee H, Kim YI, Nirmala FS, et al. MIR-141-3p promotes mitochondri-
+al dysfunction in ovariectomy-induced sarcopenia via targeting
+FKBP5 and Fibin. Aging (Albany NY). 2021;13(4):4881–4894. doi:
+10.18632/aging.202617.
+[23] de Rivero Vaccari JP, Dietrich WD, Keane RW. Activation and regu-
+lation of cellular inflammasomes: gaps in our knowledge for cen-
+tral nervous system injury. J Cereb Blood Flow Metab. 2014;34(3):
+369–375. doi: 10.1038/jcbfm.2013.227.
+6V. J. WRIGHT et AL.
+[24] tomura S, de Rivero Vaccari JP, Keane RW, et al. Effects of thera-
+peutic hypothermia on inflammasome signaling after traumatic
+brain injury. J Cereb Blood Flow Metab. 2012;32(10):1939–1947.
+doi: 10.1038/jcbfm.2012.99.
+[25] Broz P, Dixit VM. Inflammasomes: mechanism of assembly, regula-
+tion and signalling. Nat Rev Immunol. 2016;16(7):407–420. doi:
+10.1038/nri.2016.58.
+[26] lamkanfi M, Dixit VM. Mechanisms and functions of inflammasomes.
+Cell. 2014;157(5):1013–1022. doi: 10.1016/j.cell.2014.04.007.
+[27] McCarthy M, Raval AP. The peri-menopause in a woman’s life: a
+systemic inflammatory phase that enables later neurodegenerative
+disease. J Neuroinflammation. 2020;17(1):317. doi: 10.1186/
+s12974-020-01998-9.
+[28] Khadilkar SS. Musculoskeletal disorders and menopause. J Obstet
+Gynaecol India. 2019;69(2):99–103. doi: 10.1007/s13224-019-01213-7.
+[29] cruz-Jentoft AJ, Bahat G, Bauer J, et al. Sarcopenia: revised
+European consensus on definition and diagnosis. Age Ageing.
+2019;48(1):16–31. doi: 10.1093/ageing/afy169.
+[30] Yoshimura Y, Wakabayashi H, Yamada M, et al. Interventions for
+treating sarcopenia: a systematic review and meta-analysis of ran-
+domized controlled studies. J Am Med Dir Assoc. 2017;18(6):553.
+e551–553.e516. doi: 10.1016/j.jamda.2017.03.019.
+[31] torres MJ, Kew KA, Ryan te, et al. 17β-estradiol directly lowers mi-
+tochondrial membrane microviscosity and improves bioenergetic
+function in skeletal muscle. Cell Metab. 2018;27(1):167–179.e7. doi:
+10.1016/j.cmet.2017.10.003.
+[32] valencia AP, Schappal AE, Morris EM, et al. The presence of the
+ovary prevents hepatic mitochondrial oxidative stress in young and
+aged female mice through glutathione peroxidase 1. Exp Gerontol.
+2016;73:14–22. doi: 10.1016/j.exger.2015.11.011.
+[33] Baltgalvis KA, Greising SM, Warren GL, et al. Estrogen regulates estro-
+gen receptors and antioxidant gene expression in mouse skeletal mus-
+cle. PLoS One. 2010;5(4):e10164. doi: 10.1371/journal.pone.0010164.
+[34] camporez JP, Jornayvaz FR, Lee HY, et al. Cellular mechanism by
+which estradiol protects female ovariectomized mice from high-fat
+diet-induced hepatic and muscle insulin resistance. Endocrinology.
+2013;154(3):1021–1028. doi: 10.1210/en.2012-1989.
+[35] Spangenburg ee, Geiger PC, Leinwand LA, et al. Regulation of
+physiological and metabolic function of muscle by female sex ste-
+roids. Med Sci Sports Exerc. 2012;44(9):1653–1662. doi: 10.1249/
+MSS.0b013e31825871fa.
+[36] Kitajima Y, Ono Y. Estrogens maintain skeletal muscle and satellite
+cell functions. J Endocrinol. 2016;229(3):267–275. doi: 10.1530/
+joe-15-0476.
+[37] McClung JM, Davis JM, Wilson MA, et al. Estrogen status and skel-
+etal muscle recovery from disuse atrophy. J Appl Physiol (1985).
+2006;100(6):2012–2023. doi: 10.1152/japplphysiol.01583.2005.
+[38] Hansen M, Kjaer M. Influence of sex and estrogen on musculoten-
+dinous protein turnover at rest and after exercise. Exerc Sport Sci
+Rev. 2014;42(4):183–192. doi: 10.1249/jes.0000000000000026.
+[39] Dieli-Conwright CM, Spektor TM, Rice JC, et al. Influence of hormone
+replacement therapy on eccentric exercise induced myogenic gene
+expression in postmenopausal women. J Appl Physiol (1985).
+2009;107(5):1381–1388. doi: 10.1152/japplphysiol.00590.2009.
+[40] Pöllänen E, Fey V, Törmäkangas T, et al. Power training and post-
+menopausal hormone therapy affect transcriptional control of spe-
+cific co-regulated gene clusters in skeletal muscle. Age (Dordr).
+2010;32(3):347–363. doi: 10.1007/s11357-010-9140-1.
+[41] taaffe DR, Newman AB, Haggerty cl, et al. Estrogen replacement,
+muscle composition, and physical function: the health ABC study.
+Med Sci Sports Exerc. 2005;37(10):1741–1747. doi: 10.1249/01.
+mss.0000181678.28092.31.
+[42] Hansen M, Skovgaard D, Reitelseder S, et al. Effects of estrogen
+replacement and lower androgen status on skeletal muscle colla-
+gen and myofibrillar protein synthesis in postmenopausal women.
+J Gerontol A Biol Sci Med Sci. 2012;67(10):1005–1013. doi: 10.1093/
+gerona/gls007.
+[43] Hawke TJ, Garry DJ. Myogenic satellite cells: physiology to molecu-
+lar biology. J Appl Physiol (1985). 2001;91(2):534–551. doi: 10.1152/
+jappl.2001.91.2.534.
+[44] Keefe AC, Lawson JA, Flygare SD, et al. Muscle stem cells contrib-
+ute to myofibres in sedentary adult mice. Nat Commun.
+2015;6(1):7087. doi: 10.1038/ncomms8087.
+[45] Kuang S, Kuroda K, Le Grand F, et al. Asymmetric self-renewal and
+commitment of satellite stem cells in muscle. Cell. 2007;129(5):999–
+1010. doi: 10.1016/j.cell.2007.03.044.
+[46] Dumont NA, Bentzinger CF, Sincennes MC, et al. Satellite cells and
+skeletal muscle regeneration. Compr Physiol. 2015;5(3):1027–1059.
+doi: 10.1002/cphy.c140068.
+[47] Hindi SM, Kumar A. TRAF6 regulates satellite stem cell self-renewal
+and function during regenerative myogenesis. J Clin Invest.
+2016;126(1):151–168. doi: 10.1172/jci81655.
+[48] velders M, Schleipen B, Fritzemeier KH, et al. Selective estrogen
+receptor-β activation stimulates skeletal muscle growth and regen-
+eration. FASEB J. 2012;26(5):1909–1920. doi: 10.1096/fj.11-194779.
+[49] collins BC, Arpke RW, Larson AA, et al. Estrogen regulates the sat-
+ellite cell compartment in females. Cell Rep. 2019;28(2):368–381.
+e366. doi: 10.1016/j.celrep.2019.06.025.
+[50] collins BC, Mader tl, Cabelka CA, et al. Deletion of estrogen recep-
+tor α in skeletal muscle results in impaired contractility in female
+mice. J Appl Physiol (1985). 2018;124(4):980–992. doi: 10.1152/jap-
+plphysiol.00864.2017.
+[51] Johnell O, Kanis JA. An estimate of the worldwide prevalence and
+disability associated with osteoporotic fractures. Osteoporos Int.
+2006;17(12):1726–1733. doi: 10.1007/s00198-006-0172-4.
+[52] leslie WD, Morin SN. Osteoporosis epidemiology 2013: implications
+for diagnosis, risk assessment, and treatment. Curr Opin Rheumatol.
+2014;26(4):440–446. doi: 10.1097/bor.0000000000000064.
+[53] Hans D, Šteňová E, Lamy O. The trabecular bone score (TBS) com-
+plements DXA and the FRAX as a fracture risk assessment tool in
+routine clinical practice. Curr Osteoporos Rep. 2017;15(6):521–531.
+doi: 10.1007/s11914-017-0410-z.
+[54] teeratakulpisarn N, Charoensri S, Theerakulpisut D, et al. Frax score
+with and without bone mineral density: a comparison and factors
+affecting the discordance in osteoporosis treatment in thais. Arch
+Osteoporos. 2021;16(1):44. doi: 10.1007/s11657-021-00911-y.
+[55] wells G, Tugwell P, Shea B, et al. Meta-analyses of therapies for
+postmenopausal osteoporosis. V. Meta-analysis of the efficacy of
+hormone replacement therapy in treating and preventing osteopo-
+rosis in postmenopausal women. Endocr Rev. 2002;23(4):529–539.
+doi: 10.1210/er.2001-5002.
+[56] de Villiers TJ, Pines A, Panay N, et al. Updated 2013 international
+menopause society recommendations on menopausal hormone
+therapy and preventive strategies for midlife health. Climacteric.
+2013;16(3):316–337. doi: 10.3109/13697137.2013.795683.
+[57] Genazzani AR, Gambacciani M, Schneider HP, et al. Postmenopausal
+osteoporosis: therapeutic options. Climacteric. 2005;8(2):99–109.
+doi: 10.1080/13697130500118027.
+[58] Rossouw JE, Anderson GL, Prentice RL, et al. Risks and benefits of
+estrogen plus progestin in healthy postmenopausal women: prin-
+cipal results from the women’s health initiative randomized con-
+trolled trial. JAMA. 2002;288(3):321–333. doi: 10.1001/
+jama.288.3.321.
+[59] torgerson DJ, Bell-Syer SE. Hormone replacement therapy and pre-
+vention of nonvertebral fractures: a meta-analysis of randomized
+trials. JAMA. 2001;285(22):2891–2897. doi: 10.1001/jama.285.22.2891.
+[60] Gambacciani M, Levancini M. Hormone replacement therapy and
+the prevention of postmenopausal osteoporosis. Prz Menopauzalny.
+2014;13(4):213–220. doi: 10.5114/pm.2014.44996.
+[61] carballo CB, Nakagawa Y, Sekiya I, et al. Basic science of articular
+cartilage. Clin Sports Med. 2017;36(3):413–425. doi: 10.1016/j.
+csm.2017.02.001.
+[62] Hawker GA. Osteoarthritis is a serious disease. Clin Exp Rheumatol.
+2019;37 Suppl 120(5):3–6.
+[63] Stevens-Lapsley JE, Kohrt WM. Osteoarthritis in women: effects of
+estrogen, obesity and physical activity. Womens Health (Lond).
+2010;6(4):601–615. doi: 10.2217/whe.10.38.
+[64] tschon M, Contartese D, Pagani S, et al. Gender and sex are key
+determinants in osteoarthritis not only confounding variables. A
+systematic review of clinical data. J Clin Med. 2021;10(14):3178.
+doi: 10.3390/jcm10143178.
+[65] Richette P, Corvol M, Bardin T. Estrogens, cartilage, and osteoarthri-
+tis. Joint Bone Spine. 2003;70(4):257–262. doi: 10.1016/
+s1297-319x(03)00067-8.
+[66] Gruber HE, Yamaguchi D, Ingram J, et al. Expression and localiza-
+tion of estrogen receptor-beta in annulus cells of the human inter-
+vertebral disc and the mitogenic effect of 17-beta-estradiol in vitro.
+BMC Musculoskelet Disord. 2002;3(1):4. doi: 10.1186/1471-2474-3-4.
+[67] Muscat Baron Y, Brincat MP, Galea R, et al. Low intervertebral disc
+height in postmenopausal women with osteoporotic vertebral frac-
+tures compared to hormone-treated and untreated postmenopaus-
+al women and premenopausal women without fractures.
+Climacteric. 2007;10(4):314–319. doi: 10.1080/13697130701460640.
+[68] Xu X, Li X, Liang Y, et al. Estrogen modulates cartilage and sub-
+chondral bone remodeling in an ovariectomized rat model of post-
+menopausal osteoarthritis. Med Sci Monit. 2019;25:3146–3153. doi:
+10.12659/msm.916254.
+[69] Hou WY, Zhu CY, Gu YF, et al. Association of hormone replacement
+therapy and the risk of knee osteoarthritis: a meta-analysis. Medicine
+(Baltimore). 2022;101(51):e32466. doi: 10.1097/md.0000000000032466.
+[70] viswanathan M, Reddy S, Berkman N, et al. U.S. Preventive services
+task force evidence syntheses, formerly systematic evidence re-
+views. Screening to prevent osteoporotic fractures: an evidence
+review for the U.S. Preventive services task force. Rockville (MD):
+Agency for Healthcare Research and Quality (US); 2018.
+[71] Mei Z, Hu H, Zou Y, et al. The role of vitamin D in menopausal
+women’s health. Front Physiol. 2023;14:1211896. doi: 10.3389/
+fphys.2023.1211896.
+[72] Jackson RD, LaCroix AZ, Gass M, et al. Calcium plus vitamin D sup-
+plementation and the risk of fractures. N Engl J Med.
+2006;354(7):669–683. doi: 10.1056/NEJMoa055218.
+CliMActeric 7
+[73] Nahas-Neto J, Cangussu LM, Orsatti cl, et al. Effect of isolated vi-
+tamin d supplementation on bone turnover markers in younger
+postmenopausal women: a randomized, double-blind, placebo-
+controlled trial. Osteoporos Int. 2018;29(5):1125–1133. doi: 10.1007/
+s00198-018-4395-y.
+[74] vázquez-Lorente H, Herrera-Quintana L, Molina-López J, et al.
+Response of vitamin D after magnesium intervention in a post-
+menopausal population from the province of granada, spain.
+Nutrients. 2020;12(8):2283. doi: 10.3390/nu12082283.
+[75] Agus ZS. Mechanisms and causes of hypomagnesemia. Curr Opin
+Nephrol Hypertens. 2016;25(4):301–307. doi: 10.1097/
+mnh.0000000000000238.
+[76] Ayuk J, Gittoes NJ. Contemporary view of the clinical relevance of
+magnesium homeostasis. Ann Clin Biochem. 2014;51(Pt 2):179–188.
+doi: 10.1177/0004563213517628.
+[77] Parazzini F, Di Martino M, Pellegrino P. Magnesium in the gyneco-
+logical practice: a literature review. Magnes Res. 2017;30(1):1–7.
+doi: 10.1684/mrh.2017.0419.
+[78] Zhou M, Han S, Zhang W, et al. Efficacy and safety of vitamin K2
+for postmenopausal women with osteoporosis at a long-term
+follow-up: meta-analysis and systematic review. J Bone Miner
+Metab. 2022;40(5):763–772. doi: 10.1007/s00774-022-01342-6.
+[79] Maltais ML, Desroches J, Dionne IJ. Changes in muscle mass and
+strength after menopause. J Musculoskelet Neuronal Interact.
+2009;9(4):186–197.
+[80] carville SF, Rutherford OM, Newham DJ. Power output, isometric
+strength and steadiness in the leg muscles of pre- and postmeno-
+pausal women; the effects of hormone replacement therapy. Eur J
+Appl Physiol. 2006;96(3):292–298. doi: 10.1007/s00421-005-0078-4.
+[81] Bassey EJ, Fiatarone MA, O’Neill EF, et al. Leg extensor power and
+functional performance in very old men and women. Clin Sci
+(Lond). 1992;82(3):321–327. doi: 10.1042/cs0820321.
+[82] Mishra N, Mishra VN, Devanshi. Exercise beyond menopause: dos and
+don’ts. J Midlife Health. 2011;2(2):51–56. doi: 10.4103/0976-7800.92524.
+[83] Smith-Ryan AE, Cabre HE, Eckerson JM, et al. Creatine supplemen-
+tation in women’s health: a lifespan perspective. Nutrients.
+2021;13(3):877. doi: 10.3390/nu13030877.

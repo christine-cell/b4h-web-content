@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dairy & Parkinson's Disease — PPE Educational Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-deep: #1E3A5F;
+    --blue-mid: #2E6DA4;
+    --sky: #C8DEF0;
+    --cream: #F7F4EF;
+    --milk-white: #FAFAF7;
+    --terracotta: #C8603A;
+    --gold: #D4A03A;
+    --sage: #7A9E7E;
+    --deep: #1A2030;
+    --sand: #EAE0D0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--deep);
+    line-height: 1.7;
+  }
+
+  .hero {
+    background: var(--blue-deep);
+    background-image: radial-gradient(ellipse at 80% 20%, rgba(46,109,164,0.5) 0%, transparent 60%),
+                      radial-gradient(ellipse at 10% 80%, rgba(200,96,58,0.15) 0%, transparent 50%);
+    color: white;
+    padding: 60px 40px 85px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '🥛';
+    font-size: 200px;
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    opacity: 0.10;
+    transform: rotate(10deg);
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--terracotta);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .badge.gold { background: var(--gold); }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 620px;
+  }
+
+  .hero h1 em { color: var(--gold); font-style: italic; }
+
+  .hero .subtitle {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    max-width: 560px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .study-tag {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.83rem;
+  }
+
+  .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px;
+    margin: -42px auto 0;
+    max-width: 820px;
+    padding: 0 24px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(30,58,95,0.14);
+    border-top: 4px solid var(--terracotta);
+    animation: slideUp 0.6s ease both;
+  }
+
+  .stat-card:nth-child(2) { border-top-color: var(--blue-mid); animation-delay: 0.1s; }
+  .stat-card:nth-child(3) { border-top-color: var(--gold); animation-delay: 0.2s; }
+  .stat-card:nth-child(4) { border-top-color: var(--sage); animation-delay: 0.3s; }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stat-number {
+    font-family: 'Fraunces', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+
+  .stat-card:nth-child(2) .stat-number { color: var(--blue-mid); }
+  .stat-card:nth-child(3) .stat-number { color: var(--gold); }
+  .stat-card:nth-child(4) .stat-number { color: var(--sage); }
+
+  .stat-label { font-size: 0.8rem; color: #888; margin-top: 6px; line-height: 1.4; }
+
+  section { padding: 48px 0 20px; }
+
+  .section-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 18px;
+    color: var(--deep);
+    line-height: 1.2;
+  }
+
+  p { margin-bottom: 16px; font-size: 1rem; color: #2d3545; }
+
+  .highlight-box {
+    background: linear-gradient(135deg, var(--sky) 0%, #dceef8 100%);
+    border-left: 4px solid var(--blue-mid);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+
+  .highlight-box p { margin: 0; font-weight: 500; font-size: 1.02rem; color: var(--blue-deep); }
+
+  /* What is MR */
+  .mr-box {
+    background: var(--blue-deep);
+    color: white;
+    border-radius: 16px;
+    padding: 30px 32px;
+    margin: 24px 0;
+  }
+
+  .mr-box h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .mr-box p { color: rgba(255,255,255,0.85); margin: 0; font-size: 0.97rem; }
+
+  /* Finding cards */
+  .finding-card {
+    background: white;
+    border-radius: 16px;
+    padding: 26px;
+    margin-bottom: 14px;
+    border: 1px solid #dde6f0;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    box-shadow: 0 2px 12px rgba(30,58,95,0.05);
+    transition: box-shadow 0.2s;
+  }
+
+  .finding-card:hover { box-shadow: 0 6px 24px rgba(30,58,95,0.1); }
+
+  .finding-icon { font-size: 2rem; min-width: 48px; text-align: center; }
+  .finding-title { font-weight: 600; font-size: 1.02rem; margin-bottom: 5px; color: var(--blue-deep); }
+  .finding-text { font-size: 0.92rem; color: #445; line-height: 1.6; margin: 0; }
+
+  /* Dairy types grid */
+  .dairy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 22px 0;
+  }
+
+  .dairy-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    border: 2px solid #dde6f0;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+
+  .dairy-card:hover { transform: translateY(-2px); }
+  .dairy-card.warning { border-color: #f0a0a0; background: #fff8f8; }
+  .dairy-card.neutral { border-color: #d0e8d0; background: #f8fff8; }
+
+  .dairy-emoji { font-size: 2rem; margin-bottom: 6px; }
+  .dairy-name { font-weight: 600; font-size: 0.9rem; }
+  .dairy-risk { font-size: 0.78rem; margin-top: 4px; }
+  .dairy-card.warning .dairy-risk { color: #c84a3a; }
+  .dairy-card.neutral .dairy-risk { color: #3a9a4a; }
+
+  /* Mechanism section */
+  .mechanism-box {
+    background: var(--deep);
+    color: white;
+    border-radius: 20px;
+    padding: 38px;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mechanism-box::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(46,109,164,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .mechanism-box h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .mechanism-box p { color: rgba(255,255,255,0.82); font-size: 0.97rem; }
+
+  .pathway {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+  }
+
+  .pathway-step {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  .pathway-arrow { color: var(--gold); font-size: 1.1rem; }
+
+  /* Takeaway */
+  .takeaway {
+    background: linear-gradient(135deg, var(--blue-deep) 0%, #0f2540 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 34px 38px;
+    margin: 30px 0;
+  }
+
+  .takeaway h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    color: var(--gold);
+  }
+
+  .takeaway ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .takeaway li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  .takeaway li::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  /* Empowerment box */
+  .empowerment {
+    background: linear-gradient(135deg, #e8f4e8 0%, #d4ecd4 100%);
+    border-left: 4px solid var(--sage);
+    border-radius: 0 14px 14px 0;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+
+  .empowerment p { margin: 0; font-size: 1rem; color: #2a4a2a; font-style: italic; font-weight: 500; }
+
+  /* Disclaimer */
+  .disclaimer {
+    background: var(--sand);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 28px 0;
+    font-size: 0.85rem;
+    color: #6a5a3a;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .disclaimer strong { color: var(--deep); }
+
+  /* ===== QUIZ ===== */
+  .quiz-section {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 48px 0;
+    border: 2px solid var(--sky);
+    box-shadow: 0 8px 40px rgba(30,58,95,0.08);
+  }
+
+  .quiz-header { text-align: center; margin-bottom: 34px; }
+  .quiz-header .badge { background: var(--blue-mid); }
+  .quiz-header h2 { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--deep); margin-bottom: 10px; }
+  .quiz-header p { font-size: 0.95rem; color: #888; margin: 0; }
+
+  .quiz-progress { display: flex; gap: 6px; justify-content: center; margin-bottom: 30px; }
+  .progress-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--sky); transition: background 0.3s; }
+  .progress-dot.active { background: var(--terracotta); }
+  .progress-dot.done { background: var(--blue-mid); }
+
+  .question-block { display: none; animation: fadeIn 0.4s ease; }
+  .question-block.visible { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .question-num {
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .question-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1.28rem;
+    color: var(--deep);
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+
+  .option-btn {
+    background: var(--cream);
+    border: 2px solid #dde6f0;
+    border-radius: 12px;
+    padding: 13px 18px;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--deep);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .option-btn:hover { border-color: var(--blue-mid); background: #eef4fb; transform: translateX(4px); }
+  .option-btn.selected { border-color: var(--blue-mid); background: #ddeef8; }
+  .option-btn.correct { border-color: #3a8a3a; background: #edf7e4; color: #1a4a1a; }
+  .option-btn.incorrect { border-color: #c84a3a; background: #fce8e4; color: #7a2018; }
+
+  .option-letter {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--sky);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .option-btn.correct .option-letter { background: #3a8a3a; color: white; }
+  .option-btn.incorrect .option-letter { background: #c84a3a; color: white; }
+
+  .feedback-box {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .feedback-box.show { display: block; }
+  .feedback-box.correct-fb { background: #edf7e4; border-left: 4px solid #3a8a3a; color: #1a4a1a; }
+  .feedback-box.incorrect-fb { background: #fce8e4; border-left: 4px solid #c84a3a; color: #6a2018; }
+
+  .quiz-nav { display: flex; justify-content: flex-end; margin-top: 22px; }
+
+  .next-btn {
+    background: var(--blue-mid);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: none;
+  }
+
+  .next-btn:hover { background: #1d5a8a; transform: scale(1.02); }
+
+  .quiz-results { display: none; text-align: center; animation: fadeIn 0.5s ease; }
+  .result-emoji { font-size: 5rem; margin-bottom: 14px; display: block; }
+
+  .result-score {
+    font-family: 'Fraunces', serif;
+    font-size: 3.5rem;
+    color: var(--blue-mid);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .result-label { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: var(--deep); }
+  .result-message { font-size: 0.95rem; color: #666; max-width: 500px; margin: 0 auto 26px; line-height: 1.7; }
+
+  .result-bar { height: 14px; background: var(--sky); border-radius: 8px; max-width: 400px; margin: 0 auto 30px; overflow: hidden; }
+  .result-bar-fill { height: 100%; background: linear-gradient(90deg, var(--blue-mid), var(--sage)); border-radius: 8px; transition: width 1s ease 0.3s; width: 0; }
+
+  .retake-btn {
+    background: var(--blue-deep);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .retake-btn:hover { background: #0f2540; }
+
+  footer {
+    text-align: center;
+    padding: 36px 24px;
+    font-size: 0.82rem;
+    color: #aaa;
+    border-top: 1px solid var(--sky);
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 24px 70px; }
+    .mechanism-box, .quiz-section, .takeaway { padding: 26px 22px; }
+    .stats-row { margin-top: -30px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="badge">PPE Educational Program</div>
+    <h1>Does Dairy <em>Increase</em> Your Risk of Parkinson's?</h1>
+    <p class="subtitle">This landmark genetic study goes beyond dietary surveys — using DNA to ask whether the dairy–Parkinson's link is truly causal. It's the 8th study pointing in the same direction.</p>
+    <div class="study-tag">
+      📄 Domenighetti et al. (2022) · Movement Disorders · COURAGE-PD Consortium · 23 studies, 18,199 participants
+    </div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-number">1.70×</div>
+    <div class="stat-label">increased PD risk per extra daily dairy serving (overall)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">2.50×</div>
+    <div class="stat-label">increased risk in men specifically — a striking finding</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">23</div>
+    <div class="stat-label">international studies combined in the COURAGE-PD consortium</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">8th</div>
+    <div class="stat-label">study in a growing body of evidence linking dairy to PD risk</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <section>
+    <div class="section-tag">Why This Study Is Different</div>
+    <h2>Moving Beyond Observational Evidence — Into Our DNA</h2>
+    <p>For years, researchers have noticed a pattern: people who consume more dairy products appear to have a higher risk of developing Parkinson's disease. But critics rightly asked: could this just be coincidence? Could people who were already developing PD in its early, silent stages be changing their diet? Could other lifestyle factors explain the link?</p>
+    <div class="highlight-box">
+      <p>🧬 This 2022 study tackled those questions head-on by using <strong>Mendelian Randomization (MR)</strong> — a powerful genetic technique that uses naturally occurring DNA variants as a "natural experiment" to test whether a relationship is truly causal, not just correlational.</p>
+    </div>
+    <p>The researchers drew on data from the massive <strong>COURAGE-PD Consortium</strong>, combining 23 international studies with nearly 10,000 Parkinson's patients and over 8,000 healthy controls — making it one of the largest and most rigorous analyses of this question ever conducted.</p>
+  </section>
+
+  <div class="mr-box">
+    <h3>🧬 What Is Mendelian Randomization?</h3>
+    <p>Think of it as a genetic lottery. Some people are born with a gene variant (in the <em>lactase</em> gene) that makes them naturally predisposed to consume more dairy throughout their lives. Because this variant is assigned randomly at conception — before any disease develops — it can't be influenced by lifestyle choices or early disease symptoms. By comparing PD rates in people with vs. without this gene variant, researchers can test causality far more rigorously than any dietary survey.</p>
+  </div>
+
+  <section>
+    <div class="section-tag">The Research</div>
+    <h2>What the Study Found</h2>
+
+    <div class="finding-card">
+      <div class="finding-icon">🔬</div>
+      <div>
+        <div class="finding-title">Genetic Dairy Predisposition Linked to Higher PD Risk</div>
+        <p class="finding-text">People genetically predisposed to consume more dairy had a 70% higher odds of developing Parkinson's disease (OR = 1.70 per one extra serving per day). This held up even after controlling for confounding factors — a hallmark strength of the Mendelian randomization approach.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">👨</div>
+      <div>
+        <div class="finding-title">The Effect Was Strongest in Men</div>
+        <p class="finding-text">When the researchers split the data by sex, the association was far more pronounced in men, who showed a 2.5-fold increase in PD risk (OR = 2.50). The difference between men and women was statistically significant, suggesting a possible sex-specific biological mechanism worth investigating further.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">🌍</div>
+      <div>
+        <div class="finding-title">Consistent Across 23 International Studies</div>
+        <p class="finding-text">The finding held across a diverse set of populations from Europe, Asia, Australia, and South Africa — giving the results strong generalisability. This cross-cultural consistency is particularly compelling and difficult to explain by confounding alone.</p>
+      </div>
+    </div>
+
+    <div class="finding-card">
+      <div class="finding-icon">⚖️</div>
+      <div>
+        <div class="finding-title">Causality, Not Just Correlation</div>
+        <p class="finding-text">The MR design specifically addresses two key concerns raised about earlier observational studies: (1) reverse causation — the idea that early PD symptoms might drive dietary changes, and (2) confounding — the idea that dairy consumers might share other risk factors. Both were effectively ruled out by the genetic approach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAIRY TYPES -->
+  <section>
+    <div class="section-tag">Not All Dairy Is Equal</div>
+    <h2>What Earlier Studies Tell Us About Specific Products</h2>
+    <p>While this genetic study examined dairy intake broadly, earlier large observational studies (like the 129,346-person Harvard study) teased apart different dairy products. The picture that emerges is nuanced:</p>
+    <div class="dairy-grid">
+      <div class="dairy-card warning">
+        <div class="dairy-emoji">🥛</div>
+        <div class="dairy-name">Low-fat & Skim Milk</div>
+        <div class="dairy-risk">⚠️ Highest concern — strongest signal across studies</div>
+      </div>
+      <div class="dairy-card warning">
+        <div class="dairy-emoji">🍨</div>
+        <div class="dairy-name">Sherbet & Frozen Yogurt</div>
+        <div class="dairy-risk">⚠️ Modest increased risk observed</div>
+      </div>
+      <div class="dairy-card neutral">
+        <div class="dairy-emoji">🧀</div>
+        <div class="dairy-name">Full-fat Cheese</div>
+        <div class="dairy-risk">✅ Weaker or no significant association</div>
+      </div>
+      <div class="dairy-card neutral">
+        <div class="dairy-emoji">🥛</div>
+        <div class="dairy-name">Whole Milk / Full-fat</div>
+        <div class="dairy-risk">✅ No significant association in Harvard study</div>
+      </div>
+      <div class="dairy-card neutral">
+        <div class="dairy-emoji">🍦</div>
+        <div class="dairy-name">Ice Cream</div>
+        <div class="dairy-risk">✅ No consistent association found</div>
+      </div>
+      <div class="dairy-card neutral">
+        <div class="dairy-emoji">🧈</div>
+        <div class="dairy-name">Butter</div>
+        <div class="dairy-risk">✅ No significant association observed</div>
+      </div>
+    </div>
+    <p style="font-size:0.88rem; color:#888; margin-top:8px;">⚠️ Note: Product-specific findings are from observational studies and should be interpreted cautiously. The 2022 MR study examined total dairy intake.</p>
+  </section>
+
+  <!-- MECHANISM -->
+  <div class="mechanism-box">
+    <h3>🔍 Why Might Dairy Be Linked to PD? The Proposed Mechanisms</h3>
+    <p>Researchers have proposed several biological pathways. No single explanation has been confirmed, but the leading theories include: pesticide and environmental contaminant residues (such as organochlorines) in dairy, which have been found in higher concentrations in the brains of PD patients; dairy lowering uric acid levels, which is a natural antioxidant thought to be neuroprotective; and dairy-related changes to the gut microbiome affecting the gut–brain axis. The fact that low-fat dairy (not full-fat) shows a stronger signal has led some researchers to hypothesise that certain fat-soluble protective compounds in full-fat products may partly offset the risk.</p>
+    <div class="pathway">
+      <div class="pathway-step">Dairy Intake</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">↓ Uric Acid</div>
+      <div class="pathway-arrow">+</div>
+      <div class="pathway-step">Contaminant Exposure</div>
+      <div class="pathway-arrow">+</div>
+      <div class="pathway-step">Gut Microbiome Changes</div>
+      <div class="pathway-arrow">→</div>
+      <div class="pathway-step">↑ Neuronal Vulnerability</div>
+    </div>
+  </div>
+
+  <!-- EMPOWERMENT -->
+  <div class="empowerment">
+    <p>💚 "It's always best to educate yourself and make a decision that's best for you and your health. This is the 8th study showing the importance of considering dairy in the context of Parkinson's risk — and you deserve to have this information."</p>
+  </div>
+
+  <!-- TAKEAWAYS -->
+  <div class="takeaway">
+    <h3>💡 Key Takeaways for Your Practice</h3>
+    <ul>
+      <li>This 2022 Mendelian Randomization study is among the strongest evidence yet that the dairy–PD link may be causal, not just coincidental.</li>
+      <li>The risk was most pronounced for men, who showed a 2.5-fold increase — worth discussing in clinical conversations.</li>
+      <li>Earlier evidence suggests low-fat and skim milk carry the strongest signal; full-fat dairy may not carry the same risk.</li>
+      <li>Proposed mechanisms include contaminant exposure, reduced uric acid (a neuroprotectant), and gut microbiome disruption.</li>
+      <li>This does not mean dairy causes PD in every person — overall absolute risk remains low — but it is a potentially modifiable dietary factor worth awareness.</li>
+      <li>Encourage patients to discuss dietary modifications with their healthcare team as part of an informed, personalised approach to PD risk reduction.</li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    ⚠️ <div><strong>Important note:</strong> This study shows association and supports causality via a genetic method, but no single food causes or prevents Parkinson's disease. Absolute risk remains low. Dietary decisions should always be made in consultation with a qualified healthcare professional, and this information is intended for educational purposes only.</div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <div class="badge">Interactive Quiz</div>
+      <h2>How Much Do You Know About Dairy & PD? 🥛</h2>
+      <p>Test your knowledge and reflect on your own dairy habits — knowledge is power!</p>
+    </div>
+    <div class="quiz-progress" id="progressDots"></div>
+    <div id="quizContent"></div>
+    <div class="quiz-results" id="quizResults">
+      <span class="result-emoji" id="resultEmoji">🎉</span>
+      <div class="result-score" id="resultScore"></div>
+      <div class="result-label" id="resultLabel"></div>
+      <div class="result-bar"><div class="result-bar-fill" id="resultBarFill"></div></div>
+      <p class="result-message" id="resultMessage"></p>
+      <button class="retake-btn" onclick="restartQuiz()">🔁 Retake Quiz</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    Source: Domenighetti C et al. (2022). <em>Dairy Intake and Parkinson's Disease: A Mendelian Randomization Study.</em> Movement Disorders, 37(4), 857–864. doi: 10.1002/mds.28902<br><br>
+    Created for PPE Educational Program — For educational purposes only. Not a substitute for medical advice.
+  </div>
+</footer>
+
+<script>
+const questions = [
+  {
+    text: "What makes Mendelian Randomization a stronger type of evidence than a standard dietary survey?",
+    options: [
+      "It uses genetic variants assigned at birth, removing the bias of lifestyle choices and early disease symptoms",
+      "It surveys more people",
+      "It asks about diet over a longer time period",
+      "It is conducted in a lab rather than in the community"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Exactly! Because genetic variants are assigned randomly at conception — before any disease develops — they can't be influenced by lifestyle choices or early symptoms. This removes two major biases: confounding and reverse causation.",
+      "❌ Sample size helps, but it doesn't remove the core biases of dietary studies. MR's strength comes from using genetic variants, not just having more participants.",
+      "❌ Longer follow-up helps observational studies but doesn't resolve the fundamental issue of confounding. MR's advantage is using DNA as a natural randomisation tool.",
+      "❌ MR is actually an analytical method applied to genetic data, not a lab experiment. Its power comes from using inherited gene variants as an unbiased 'instrument' for dairy intake."
+    ]
+  },
+  {
+    text: "How much higher was the risk of Parkinson's disease for men genetically predisposed to higher dairy intake?",
+    options: [
+      "2.5 times higher",
+      "1.2 times higher",
+      "No increased risk was found",
+      "10 times higher"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct! Men with the lactase gene variant predisposing them to higher dairy intake had 2.5 times the odds of developing PD compared to those without it. This sex-specific finding is one of the study's most striking results.",
+      "❌ The increase was much more substantial — men showed a 2.5-fold increase in PD risk, not a modest 20% increase.",
+      "❌ The study found a clear and statistically significant association in men, with an odds ratio of 2.50 — one of the strongest genetic signals seen in dietary PD research.",
+      "❌ While the finding is significant, the increase was 2.5-fold (OR = 2.50), not 10 times. It's a meaningful but not absolute increase in risk."
+    ]
+  },
+  {
+    text: "How much dairy do you typically consume per day?",
+    options: [
+      "3 or more servings — milk, yogurt, cheese daily",
+      "1–2 servings most days",
+      "Less than 1 serving per day",
+      "I have already reduced or eliminated dairy"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "💡 This is the level of dairy associated with the highest risk in several studies. Armed with this research, it may be worth having a conversation with your healthcare provider about whether reducing dairy intake is right for you personally.",
+      "💡 1–2 servings per day is moderate. The research shows increasing risk with increasing intake, so being mindful of the type and amount of dairy you consume is a reasonable approach.",
+      "✅ Low dairy intake puts you in the lower-risk category based on current evidence. Keep making informed choices!",
+      "✅ You've already taken a proactive step based on available evidence. Continue to monitor emerging research and discuss with your care team."
+    ]
+  },
+  {
+    text: "Based on earlier observational studies, which type of dairy product showed the STRONGEST association with increased PD risk?",
+    options: [
+      "Low-fat and skim milk",
+      "Full-fat cheese",
+      "Butter",
+      "Ice cream"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Correct! Low-fat and skim milk consistently showed the strongest association across multiple large studies, including the 129,346-person Harvard study. Full-fat dairy products generally showed weaker or no significant associations.",
+      "❌ Full-fat cheese actually showed weak or no significant association in most studies. Interestingly, it's the low-fat dairy products that show the stronger signals — which has led to interesting hypotheses about fat-soluble protective compounds.",
+      "❌ Butter consistently showed no significant association with PD risk across major studies. The signal seems specific to certain milk products, particularly low-fat varieties.",
+      "❌ Ice cream generally did not show a consistent significant association with PD risk. The strongest signal comes from low-fat and skim milk consumption."
+    ]
+  },
+  {
+    text: "Which of these is one of the proposed biological reasons why dairy might be linked to Parkinson's risk?",
+    options: [
+      "Dairy lowers uric acid, a natural neuroprotective antioxidant in the brain",
+      "Dairy is high in saturated fat which directly destroys neurons",
+      "Dairy causes high blood pressure which triggers Parkinson's",
+      "Dairy contains too much calcium which is toxic to the brain"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Right! Uric acid is thought to be a natural antioxidant that protects dopamine neurons. Dairy consumption has been shown to lower uric acid levels, which could reduce this neuroprotection. Other proposed mechanisms include contaminant exposure and gut microbiome changes.",
+      "❌ Saturated fat in dairy is not the proposed mechanism. Interestingly, full-fat dairy (which has more saturated fat) shows weaker or no association with PD — suggesting fat itself may not be the culprit.",
+      "❌ Blood pressure is not a well-established pathway between dairy and PD. The leading proposed mechanisms involve uric acid depletion, environmental contaminants in dairy, and gut microbiome disruption.",
+      "❌ Calcium from dairy is not considered a risk mechanism for PD. In fact, calcium from non-dairy sources does not appear to increase PD risk — suggesting it is something dairy-specific, not calcium itself."
+    ]
+  },
+  {
+    text: "If you do consume dairy, which substitutes are you most open to exploring?",
+    options: [
+      "Plant-based milks (oat, almond, soy)",
+      "Reducing overall quantity but keeping some dairy",
+      "I'm not ready to change my dairy habits yet",
+      "I'd like to discuss this with my healthcare provider first"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "🌱 Great choice! Plant-based milks have come a long way in terms of taste and nutrition. Look for calcium-fortified options to ensure you're meeting your calcium needs. Oat milk is particularly good for cooking and coffee!",
+      "💡 A reasonable middle ground! Even modest reductions in low-fat dairy intake may be worthwhile based on current evidence. Being mindful of type (opting for full-fat if you do consume dairy) may also be relevant.",
+      "💡 That's completely valid — this is your decision to make with full information. The research is compelling but doesn't mandate change for everyone. Start by learning more and speaking with your care team.",
+      "✅ That's the wisest approach! Your healthcare provider can help you weigh the evidence in the context of your personal health history, nutritional needs, and other risk factors."
+    ]
+  },
+  {
+    text: "How many international studies were combined in the COURAGE-PD Consortium that this 2022 study drew upon?",
+    options: [
+      "23 studies with nearly 18,000 participants",
+      "3 studies",
+      "1 very large study",
+      "100+ studies"
+    ],
+    correct: 0,
+    knowledge: true,
+    feedback: [
+      "✅ Exactly right! The COURAGE-PD Consortium combined 23 studies, including 9,823 patients with PD and 8,376 healthy controls — totalling nearly 18,200 participants. This scale, combined with the MR methodology, makes it one of the most powerful analyses of this question to date.",
+      "❌ The consortium was much larger — 23 studies across multiple countries and continents. This international scope is what makes the findings so compelling.",
+      "❌ The COURAGE-PD Consortium is by definition a multi-study collaboration. The 23 studies spanned Europe, Asia, Australia, and South Africa.",
+      "❌ While research in this area is growing, this particular consortium drew on 23 well-characterised studies, not hundreds. Quality and consistency across studies was key."
+    ]
+  },
+  {
+    text: "Knowing what you now know about the dairy–Parkinson's connection, how would you describe your overall dairy intake?",
+    options: [
+      "High — I have dairy with most meals",
+      "Moderate — a few times a week",
+      "Low — I rarely have dairy",
+      "None — I'm already dairy-free"
+    ],
+    correct: 0,
+    knowledge: false,
+    feedback: [
+      "💡 Given this research, it may be worth reflecting on your intake, especially low-fat dairy products like skim milk. A conversation with your healthcare provider or dietitian could help you make informed choices that fit your lifestyle and health goals.",
+      "💡 Moderate intake puts you in a mid-range risk category. Staying informed and being mindful of the type of dairy you consume (favouring full-fat options if you do have dairy) is a reasonable approach based on current evidence.",
+      "✅ Low dairy intake aligns well with the patterns associated with lower PD risk in the research. Continue making informed dietary choices!",
+      "✅ You've already made a dietary choice consistent with the growing body of research. Your proactive approach to health is commendable!"
+    ]
+  }
+];
+
+let currentQ = 0, score = 0, answered = false;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContent');
+  const dots = document.getElementById('progressDots');
+  dots.innerHTML = questions.map((_, i) => `<div class="progress-dot" id="dot-${i}"></div>`).join('');
+  container.innerHTML = questions.map((q, i) => `
+    <div class="question-block ${i === 0 ? 'visible' : ''}" id="qblock-${i}">
+      <div class="question-num">${q.knowledge ? '🧠 Knowledge Check' : '🪞 Self-Reflection'} · Question ${i + 1} of ${questions.length}</div>
+      <div class="question-text">${q.text}</div>
+      <div class="options">
+        ${q.options.map((opt, j) => `
+          <button class="option-btn" onclick="selectAnswer(${i}, ${j})" id="opt-${i}-${j}">
+            <span class="option-letter">${String.fromCharCode(65+j)}</span>${opt}
+          </button>`).join('')}
+      </div>
+      <div class="feedback-box" id="fb-${i}"></div>
+      <div class="quiz-nav"><button class="next-btn" id="next-${i}" onclick="nextQuestion(${i})">${i < questions.length - 1 ? 'Next →' : 'See My Results →'}</button></div>
+    </div>`).join('');
+  updateDots();
+}
+
+function selectAnswer(qIdx, optIdx) {
+  if (answered && currentQ === qIdx) return;
+  answered = true;
+  const q = questions[qIdx];
+  q.options.forEach((_, j) => {
+    const btn = document.getElementById(`opt-${qIdx}-${j}`);
+    if (j === optIdx) btn.classList.add(q.knowledge ? (j === q.correct ? 'correct' : 'incorrect') : 'selected');
+    if (q.knowledge && j === q.correct && j !== optIdx) btn.classList.add('correct');
+  });
+  const fb = document.getElementById(`fb-${qIdx}`);
+  fb.textContent = q.feedback[optIdx];
+  fb.className = `feedback-box show ${q.knowledge && optIdx !== q.correct ? 'incorrect-fb' : 'correct-fb'}`;
+  if (q.knowledge && optIdx === q.correct) score++;
+  document.getElementById(`next-${qIdx}`).style.display = 'block';
+}
+
+function nextQuestion(qIdx) {
+  document.getElementById(`qblock-${qIdx}`).classList.remove('visible');
+  answered = false;
+  if (qIdx + 1 < questions.length) {
+    currentQ = qIdx + 1;
+    document.getElementById(`qblock-${currentQ}`).classList.add('visible');
+    document.getElementById(`dot-${qIdx}`).classList.replace('active', 'done');
+    updateDots();
+  } else { showResults(); }
+}
+
+function updateDots() {
+  questions.forEach((_, i) => {
+    const dot = document.getElementById(`dot-${i}`);
+    if (i === currentQ) dot.classList.add('active');
+  });
+}
+
+function showResults() {
+  document.getElementById('quizContent').style.display = 'none';
+  document.getElementById('progressDots').style.display = 'none';
+  document.getElementById('quizResults').style.display = 'block';
+  const kQs = questions.filter(q => q.knowledge).length;
+  const pct = Math.round((score / kQs) * 100);
+  document.getElementById('resultScore').textContent = `${score}/${kQs}`;
+  let emoji, label, message;
+  if (pct === 100) { emoji = '🌟'; label = 'PD Research Expert!'; message = 'Outstanding! You have a thorough understanding of this complex area of Parkinson\'s research. Your knowledge will help you have informed conversations with patients and colleagues.'; }
+  else if (pct >= 75) { emoji = '🧠'; label = 'Sharp Researcher!'; message = 'Great work! You have a solid grasp of the key findings. Review any missed questions to complete your understanding of the dairy–PD connection.'; }
+  else if (pct >= 50) { emoji = '📚'; label = 'Good Start!'; message = 'You\'re on your way! This is complex science — revisit the summary above and consider reading the original study to deepen your knowledge.'; }
+  else { emoji = '🔬'; label = 'Keep Exploring!'; message = 'The dairy–PD connection involves some fascinating science. Re-read the material above and try again — the Mendelian randomization concept is particularly worth understanding.'; }
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultLabel').textContent = label;
+  document.getElementById('resultMessage').textContent = message;
+  setTimeout(() => { document.getElementById('resultBarFill').style.width = pct + '%'; }, 100);
+}
+
+function restartQuiz() {
+  currentQ = 0; score = 0; answered = false;
+  document.getElementById('quizResults').style.display = 'none';
+  document.getElementById('quizContent').style.display = 'block';
+  document.getElementById('progressDots').style.display = 'flex';
+  buildQuiz();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

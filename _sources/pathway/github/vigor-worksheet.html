@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VIGOR — Plan of Attack Worksheet | Boxing 4 Health</title>
+<style>
+  :root {
+    --navy: #1E3A5F;
+    --gold: #C4913A;
+    --green: #2D4A2D;
+    --cream: #FAF7F2;
+    --light-gold: #F5E8D0;
+    --white: #ffffff;
+    --text: #1a1a1a;
+    --font: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font);
+    background-color: var(--cream);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  .page-header {
+    background: var(--navy);
+    padding: 36px 40px 28px;
+    text-align: center;
+    border-bottom: 5px solid var(--gold);
+  }
+
+  .logo-placeholder {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .logo-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--navy);
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    text-align: left;
+  }
+
+  .logo-text .brand {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .logo-text .tagline {
+    font-size: 13px;
+    color: var(--gold);
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .header-label {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 10px;
+    margin-bottom: 6px;
+  }
+
+  .header-tagline {
+    font-size: 15px;
+    color: #cdd8e8;
+    font-style: italic;
+  }
+
+  /* TITLE BAND */
+  .title-band {
+    background: var(--gold);
+    padding: 22px 40px;
+    text-align: center;
+  }
+
+  .title-band h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: var(--navy);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+
+  .title-band p {
+    font-size: 16px;
+    color: var(--navy);
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* PROGRESS NAV */
+  .progress-nav {
+    background: var(--navy);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-pill {
+    background: transparent;
+    border: 2px solid rgba(196,145,58,0.4);
+    color: #cdd8e8;
+    font-family: var(--font);
+    font-size: 14px;
+    padding: 8px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-pill:hover,
+  .nav-pill.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+    font-weight: bold;
+  }
+
+  /* MAIN CONTENT */
+  .main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 40px 80px;
+  }
+
+  /* SECTION CARDS */
+  .section-card {
+    background: var(--white);
+    border-radius: 12px;
+    border-left: 8px solid var(--navy);
+    box-shadow: 0 4px 20px rgba(30,58,95,0.08);
+    margin-bottom: 36px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    display: none;
+  }
+
+  .section-card.visible {
+    display: block;
+    animation: fadeSlideIn 0.4s ease forwards;
+  }
+
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-card:nth-child(2) { border-left-color: var(--gold); }
+  .section-card:nth-child(3) { border-left-color: var(--green); }
+  .section-card:nth-child(4) { border-left-color: var(--navy); }
+  .section-card:nth-child(5) { border-left-color: var(--gold); }
+
+  .card-header {
+    padding: 22px 30px 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    user-select: none;
+    background: var(--cream);
+    border-bottom: 1px solid #e8e0d4;
+  }
+
+  .card-header:hover {
+    background: var(--light-gold);
+  }
+
+  .letter-badge {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(30,58,95,0.25);
+  }
+
+  .section-card:nth-child(2) .letter-badge { background: var(--gold); color: var(--navy); }
+  .section-card:nth-child(3) .letter-badge { background: var(--green); color: var(--gold); }
+  .section-card:nth-child(4) .letter-badge { background: var(--navy); color: var(--gold); }
+  .section-card:nth-child(5) .letter-badge { background: var(--gold); color: var(--navy); }
+
+  .card-title-group {
+    flex: 1;
+  }
+
+  .card-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--navy);
+    letter-spacing: 1px;
+  }
+
+  .card-subtitle {
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .toggle-icon {
+    font-size: 24px;
+    color: var(--gold);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .toggle-icon.open {
+    transform: rotate(45deg);
+  }
+
+  .card-body {
+    padding: 28px 30px 32px;
+    display: none;
+  }
+
+  .card-body.open {
+    display: block;
+    animation: fadeSlideIn 0.3s ease forwards;
+  }
+
+  .card-body p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #2a2a2a;
+    margin-bottom: 16px;
+  }
+
+  .card-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* HIGHLIGHT BOXES */
+  .highlight-box {
+    background: var(--light-gold);
+    border-left: 5px solid var(--gold);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 16px;
+    color: var(--navy);
+    font-style: italic;
+  }
+
+  .tip-box {
+    background: #edf3ee;
+    border-left: 5px solid var(--green);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 16px;
+    color: var(--green);
+  }
+
+  .tip-box strong {
+    display: block;
+    margin-bottom: 6px;
+    font-style: normal;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .emphasis-text {
+    color: var(--navy);
+    font-weight: bold;
+    font-size: 17px;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    margin: 18px 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+    color: #2a2a2a;
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+
+  .checklist li input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    accent-color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+
+  .checklist li label {
+    cursor: pointer;
+  }
+
+  .checklist li.checked label {
+    text-decoration: line-through;
+    color: #999;
+  }
+
+  /* ACRONYM OVERVIEW */
+  .vigor-overview {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin-bottom: 44px;
+    text-align: center;
+  }
+
+  .vigor-overview h2 {
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+  }
+
+  .vigor-letters {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .vigor-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .vigor-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .vigor-big-letter {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 34px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: background 0.2s ease;
+  }
+
+  .vigor-item:hover .vigor-big-letter {
+    background: white;
+  }
+
+  .vigor-word {
+    color: #cdd8e8;
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  /* NOTES AREA */
+  .notes-section {
+    background: var(--white);
+    border: 2px dashed var(--gold);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 44px;
+  }
+
+  .notes-section h3 {
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
+
+  .notes-section textarea {
+    width: 100%;
+    min-height: 130px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--font);
+    font-size: 16px;
+    padding: 14px 16px;
+    color: var(--text);
+    resize: vertical;
+    line-height: 1.7;
+    background: var(--cream);
+  }
+
+  .notes-section textarea:focus {
+    outline: 2px solid var(--gold);
+    background: white;
+  }
+
+  /* FOOTER */
+  .page-footer {
+    background: var(--navy);
+    color: #cdd8e8;
+    text-align: center;
+    padding: 28px 40px;
+    font-size: 14px;
+    border-top: 4px solid var(--gold);
+    font-style: italic;
+  }
+
+  .page-footer strong {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ALL BUTTON */
+  .show-all-btn {
+    display: block;
+    margin: 0 auto 44px;
+    background: var(--navy);
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    font-family: var(--font);
+    font-size: 15px;
+    padding: 12px 32px;
+    border-radius: 30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+  }
+
+  .show-all-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  @media (max-width: 600px) {
+    .main { padding: 28px 18px 60px; }
+    .vigor-letters { gap: 10px; }
+    .vigor-big-letter { width: 54px; height: 54px; font-size: 26px; }
+    .title-band h1 { font-size: 30px; }
+    .card-title { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="logo-placeholder">
+    <div class="logo-icon">B4H</div>
+    <div class="logo-text">
+      <div class="brand">Boxing 4 Health</div>
+      <div class="tagline">★★★★ I'd rather be boxing ★★★★</div>
+    </div>
+  </div>
+  <div class="header-label">Plan of Attack &bull; Worksheet</div>
+  <div class="header-tagline">Our challenges don't define us. Our actions do.</div>
+</header>
+
+<!-- TITLE BAND -->
+<div class="title-band">
+  <h1>V I G O R</h1>
+  <p>The five pillars of your Parkinson's exercise practice</p>
+</div>
+
+<!-- PROGRESS NAV -->
+<nav class="progress-nav">
+  <button class="nav-pill active" onclick="showAll()">All Topics</button>
+  <button class="nav-pill" onclick="filterSection('voice')">Voice &amp; Variety</button>
+  <button class="nav-pill" onclick="filterSection('intensity')">Intensity</button>
+  <button class="nav-pill" onclick="filterSection('grand')">Grand Movements</button>
+  <button class="nav-pill" onclick="filterSection('overall')">Overall Rotation</button>
+  <button class="nav-pill" onclick="filterSection('release')">Release</button>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- VIGOR OVERVIEW -->
+  <div class="vigor-overview">
+    <h2>What does VIGOR stand for?</h2>
+    <div class="vigor-letters">
+      <div class="vigor-item" onclick="filterSection('voice')">
+        <div class="vigor-big-letter">V</div>
+        <div class="vigor-word">Voice &amp; Variety</div>
+      </div>
+      <div class="vigor-item" onclick="filterSection('intensity')">
+        <div class="vigor-big-letter">I</div>
+        <div class="vigor-word">Intensity</div>
+      </div>
+      <div class="vigor-item" onclick="filterSection('grand')">
+        <div class="vigor-big-letter">G</div>
+        <div class="vigor-word">Grand Movements</div>
+      </div>
+      <div class="vigor-item" onclick="filterSection('overall')">
+        <div class="vigor-big-letter">O</div>
+        <div class="vigor-word">Overall Rotation</div>
+      </div>
+      <div class="vigor-item" onclick="filterSection('release')">
+        <div class="vigor-big-letter">R</div>
+        <div class="vigor-word">Release</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="show-all-btn" onclick="expandAll()">▼ Expand All Sections</button>
+
+  <!-- V: VOICE & VARIETY -->
+  <div class="section-card visible" id="card-voice">
+    <div class="card-header" onclick="toggleCard('voice')">
+      <div class="letter-badge">V</div>
+      <div class="card-title-group">
+        <div class="card-title">Voice &amp; Variety</div>
+        <div class="card-subtitle">Keep your brain guessing — and your voice strong</div>
+      </div>
+      <div class="toggle-icon" id="icon-voice">+</div>
+    </div>
+    <div class="card-body" id="body-voice">
+      <p>Voice and Variety are more important than many people realize — and they come up again and again in the testimonials we hear from program participants. <strong>Without Variety, you have Monotony.</strong> Doing the same exercises day in and day out is, simply put, boring!</p>
+
+      <div class="highlight-box">
+        "If it doesn't challenge you, it won't change you."
+      </div>
+
+      <p>Variety keeps your brain guessing and your body challenged. Students often share that they love showing up to every class because it's always different — they truly never know what to expect. Variety also needs to include <span class="emphasis-text">cognitive exercises alongside physical exercise</span>. These two elements work hand in hand to create the best possible exercise experience for someone living with Parkinson's.</p>
+
+      <p>With Parkinson's, your Voice can be affected — though not everyone will experience this. Your voice may become quieter, slower, or harder to understand. The more you use it, the stronger it will be. It's very important to choose an exercise class that incorporates voice exercises.</p>
+
+      <div class="tip-box">
+        <strong>💡 Important Reminder</strong>
+        Because your voice box is made up of muscles, you can strain it. Never skip your vocal warm-up and jump straight into loud exercises. Warm up first — then use the loudest voice you can. Voice exercises are covered in depth in <strong>Module #9</strong>.
+      </div>
+
+      <p><strong>Your voice box is a muscle too.</strong> Keep it in good shape, just as much as the rest of your body.</p>
+
+      <p><strong>Your action step checklist:</strong></p>
+      <ul class="checklist" id="check-voice">
+        <li><input type="checkbox" id="cv1" onchange="markItem(this)"><label for="cv1">Choose exercise classes that are always different — no two should be the same</label></li>
+        <li><input type="checkbox" id="cv2" onchange="markItem(this)"><label for="cv2">Make sure cognitive exercises are part of your weekly routine</label></li>
+        <li><input type="checkbox" id="cv3" onchange="markItem(this)"><label for="cv3">Warm up your voice before every session</label></li>
+        <li><input type="checkbox" id="cv4" onchange="markItem(this)"><label for="cv4">Practice voice exercises daily — try reading aloud or singing along to music</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- I: INTENSITY -->
+  <div class="section-card visible" id="card-intensity">
+    <div class="card-header" onclick="toggleCard('intensity')">
+      <div class="letter-badge">I</div>
+      <div class="card-title-group">
+        <div class="card-title">Intensity</div>
+        <div class="card-subtitle">Power and output — not just aerobic effort</div>
+      </div>
+      <div class="toggle-icon" id="icon-intensity">+</div>
+    </div>
+    <div class="card-body" id="body-intensity">
+      <p>High intensity includes aerobic exercise, but it is also about the <span class="emphasis-text">power and output</span> you bring to every movement. When getting off the couch, most of us naturally use adaptations — pushing off with our hands, using the armrest, or leaning on someone else. These compensatory strategies reduce the effort demanded from your core muscles.</p>
+
+      <p>What you may be missing is effort in the <strong>POWER</strong> and <strong>INTENSITY</strong> departments — the momentum-building effort that helps your body relearn how to move with authority.</p>
+
+      <div class="highlight-box">
+        Intense exercise — especially non-contact boxing — has been shown to reverse, reduce, or even delay the symptoms of Parkinson's disease.
+      </div>
+
+      <p>How do you know if you're pushing hard enough? Look for all three of these signs:</p>
+
+      <ul class="checklist">
+        <li><input type="checkbox" id="ci1" onchange="markItem(this)"><label for="ci1">You are having a hard time catching your breath</label></li>
+        <li><input type="checkbox" id="ci2" onchange="markItem(this)"><label for="ci2">You can barely carry on a conversation</label></li>
+        <li><input type="checkbox" id="ci3" onchange="markItem(this)"><label for="ci3">You are sweating</label></li>
+      </ul>
+
+      <div class="tip-box">
+        <strong>🥊 Your Goal</strong>
+        Aim to stay at your maximum effort level for at least <strong>30 minutes</strong> per session. Brownie points if you hit all three signs above!
+      </div>
+    </div>
+  </div>
+
+  <!-- G: GRAND MOVEMENTS -->
+  <div class="section-card visible" id="card-grand">
+    <div class="card-header" onclick="toggleCard('grand')">
+      <div class="letter-badge">G</div>
+      <div class="card-title-group">
+        <div class="card-title">Grand Movements</div>
+        <div class="card-subtitle">Big, bold, whole-body movements</div>
+      </div>
+      <div class="toggle-icon" id="icon-grand">+</div>
+    </div>
+    <div class="card-body" id="body-grand">
+      <p>"Grand Movements" is a way of saying <span class="emphasis-text">large amplitude, whole-body movements</span>. It is really important to emphasize every movement and make it as big and proud as possible. This is a key factor in helping your body return to normal movement patterns.</p>
+
+      <div class="highlight-box">
+        When demonstrating a big walking gait, both arms swing through their fullest range and each step is as long as possible. It may look exaggerated — but for someone with Parkinson's, copying that movement may feel completely natural.
+      </div>
+
+      <p>The primary goal is simple: <strong>move big to move normally.</strong> What looks like an exaggeration for a healthy person is often exactly the right level of movement for someone with Parkinson's.</p>
+
+      <ul class="checklist">
+        <li><input type="checkbox" id="cg1" onchange="markItem(this)"><label for="cg1">Focus on making every movement as large as possible — no small, cautious motions</label></li>
+        <li><input type="checkbox" id="cg2" onchange="markItem(this)"><label for="cg2">Swing your arms fully when walking</label></li>
+        <li><input type="checkbox" id="cg3" onchange="markItem(this)"><label for="cg3">Take the biggest steps you safely can</label></li>
+        <li><input type="checkbox" id="cg4" onchange="markItem(this)"><label for="cg4">Practice "walking big" at home every day</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- O: OVERALL ROTATION -->
+  <div class="section-card visible" id="card-overall">
+    <div class="card-header" onclick="toggleCard('overall')">
+      <div class="letter-badge">O</div>
+      <div class="card-title-group">
+        <div class="card-title">Overall Rotation</div>
+        <div class="card-subtitle">Rotation, rotation, rotation — your spine needs it</div>
+      </div>
+      <div class="toggle-icon" id="icon-overall">+</div>
+    </div>
+    <div class="card-body" id="body-overall">
+      <p><strong>ROTATION. ROTATION. ROTATION.</strong> We all need more of it — starting with the mid-back, or <span class="emphasis-text">thoracic region</span>. As we age, it's common to develop a slight forward hunch in this area. For people with Parkinson's, a very rigid core is especially common.</p>
+
+      <p>The thoracic region is the back portion of your core. Any exercise program you follow <strong>needs to include rotation movements</strong> — because the longer you wait, the harder it becomes to get rotation back.</p>
+
+      <div class="highlight-box">
+        Rotation in your mid-back also relieves strain on your lower back and shoulders — the two most common areas of pain and injury seen in clients.
+      </div>
+
+      <div class="tip-box">
+        <strong>🔄 Try This Right Now</strong>
+        Stand tall and raise both hands toward the ceiling. Now hunch forward and try again. Notice how much higher your arms go when you're upright? That's why posture and rotation matter — restricted movement leads to compensation and potential injury.
+      </div>
+
+      <p>When one part of the spine stops rotating properly, other parts try to compensate. Your lower back is not designed to rotate — forcing it to do so sets the stage for injury. <strong>Keeping your thoracic region mobile protects your entire spine.</strong></p>
+
+      <ul class="checklist">
+        <li><input type="checkbox" id="co1" onchange="markItem(this)"><label for="co1">Include rotation exercises in every workout session</label></li>
+        <li><input type="checkbox" id="co2" onchange="markItem(this)"><label for="co2">Work on standing tall and upright posture throughout the day</label></li>
+        <li><input type="checkbox" id="co3" onchange="markItem(this)"><label for="co3">Try a seated or standing thoracic twist stretch daily</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- R: RELEASE -->
+  <div class="section-card visible" id="card-release">
+    <div class="card-header" onclick="toggleCard('release')">
+      <div class="letter-badge">R</div>
+      <div class="card-title-group">
+        <div class="card-title">Release</div>
+        <div class="card-subtitle">Myofascial release — freeing the body from the inside out</div>
+      </div>
+      <div class="toggle-icon" id="icon-release">+</div>
+    </div>
+    <div class="card-body" id="body-release">
+      <p>The R in VIGOR stands for <span class="emphasis-text">Release</span> — specifically, <strong>Myofascial Release</strong>. What is fascia? It is the network of connective tissue that stabilizes, encloses, and separates your muscles and organs. Think of the white connective tissue you see in a piece of steak — that is fascia, and it covers your entire body.</p>
+
+      <div class="highlight-box">
+        If your fascia is restricted, your muscles cannot function at their best. Releasing tight fascia improves movement, relieves tension, and reduces overall tightness throughout the body.
+      </div>
+
+      <p>Stretching must be a consistent part of your daily routine — whether it is built into your exercise class or done at home. <strong>Massage balls</strong> are excellent tools for loosening the areas that most affect alignment and posture: the back, chest, feet, and shoulders.</p>
+
+      <div class="tip-box">
+        <strong>🏀 Recommended Tools</strong>
+        <strong>Yoga Tune-Up Balls</strong> and <strong>Alpha Balls</strong> are highly recommended. If these feel too firm, softer balls work just as well — the key is consistency, not intensity.
+      </div>
+
+      <p>You will be shown three favourite releases that you can try today. Find a comfortable space where you can get down to the ground and relax — notice the difference before and after.</p>
+
+      <ul class="checklist">
+        <li><input type="checkbox" id="cr1" onchange="markItem(this)"><label for="cr1">Stretch daily — even on rest days</label></li>
+        <li><input type="checkbox" id="cr2" onchange="markItem(this)"><label for="cr2">Try one myofascial release today using a massage ball or similar tool</label></li>
+        <li><input type="checkbox" id="cr3" onchange="markItem(this)"><label for="cr3">Pay attention to tight areas: back, chest, feet, shoulders</label></li>
+        <li><input type="checkbox" id="cr4" onchange="markItem(this)"><label for="cr4">Practice the three favourite releases shown in the module</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- NOTES SECTION -->
+  <div class="notes-section">
+    <h3>📝 My Personal Notes</h3>
+    <p style="font-size:15px; color:#666; margin-bottom:14px; font-style:italic;">Use this space to write down anything you want to remember or questions to bring to your next session.</p>
+    <textarea placeholder="Write your notes here..."></textarea>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <p><strong>Boxing 4 Health</strong> &nbsp;|&nbsp; <strong>Parkinson's Pathway to Empowerment</strong></p>
+  <p style="margin-top:6px;">613.224.2694 &nbsp;|&nbsp; info@boxing4health.com &nbsp;|&nbsp; boxing4health.com</p>
+  <p style="margin-top:8px; color:#8a9cb5;">Our challenges don't define us. Our actions do.</p>
+</footer>
+
+<script>
+  function toggleCard(id) {
+    const body = document.getElementById('body-' + id);
+    const icon = document.getElementById('icon-' + id);
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    icon.classList.toggle('open', !isOpen);
+    icon.textContent = isOpen ? '+' : '×';
+  }
+
+  function showAll() {
+    // Show all cards, update nav
+    document.querySelectorAll('.section-card').forEach(c => c.classList.add('visible'));
+    document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  function filterSection(id) {
+    document.querySelectorAll('.section-card').forEach(c => c.classList.remove('visible'));
+    document.getElementById('card-' + id).classList.add('visible');
+    document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    // auto-expand
+    const body = document.getElementById('body-' + id);
+    const icon = document.getElementById('icon-' + id);
+    if (!body.classList.contains('open')) {
+      body.classList.add('open');
+      icon.classList.add('open');
+      icon.textContent = '×';
+    }
+    document.getElementById('card-' + id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function expandAll() {
+    showAll();
+    document.querySelectorAll('.card-body').forEach(b => b.classList.add('open'));
+    document.querySelectorAll('.toggle-icon').forEach(i => { i.classList.add('open'); i.textContent = '×'; });
+  }
+
+  function markItem(checkbox) {
+    const li = checkbox.parentElement;
+    li.classList.toggle('checked', checkbox.checked);
+  }
+
+  // Click the VIGOR circles in overview
+  document.querySelectorAll('.vigor-item').forEach(item => {
+    item.addEventListener('click', function() {
+      const onclick = this.getAttribute('onclick');
+    });
+  });
+</script>
+</body>
+</html>

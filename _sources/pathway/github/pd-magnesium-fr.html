@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnésium — Programme PPE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:    #2D4A2D;
+  --moss:      #4A6741;
+  --sage:      #7A9B6E;
+  --lime:      #B8D4A8;
+  --cream:     #F7F3EC;
+  --warm:      #EDE6D8;
+  --gold:      #C4913A;
+  --amber:     #E8B86D;
+  --rust:      #B85C38;
+  --plum:      #6B3FA0;
+  --plum-lt:   #F0EAF9;
+  --ink:       #1C2B1C;
+  --muted:     #6B7B62;
+  --white:     #FFFFFF;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--ink); line-height:1.75; }
+
+.hero {
+  background: var(--forest);
+  background-image:
+    radial-gradient(ellipse at 10% 60%, rgba(107,63,160,0.3) 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 10%, rgba(196,145,58,0.22) 0%, transparent 50%);
+  color: white;
+  padding: 72px 44px 116px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after { content:'✦'; font-size:380px; position:absolute; right:-40px; top:-60px; opacity:0.03; line-height:1; pointer-events:none; }
+.hero .badge { display:inline-flex; align-items:center; gap:8px; background:rgba(107,63,160,0.25); border:1px solid rgba(107,63,160,0.5); color:#C9A8F0; font-size:10.5px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; padding:6px 16px; border-radius:20px; margin-bottom:26px; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.1rem,5vw,3.8rem); line-height:1.08; max-width:700px; margin-bottom:20px; }
+.hero h1 em { color:var(--amber); font-style:italic; }
+.hero .sub { font-size:1.05rem; opacity:0.78; max-width:560px; font-weight:300; line-height:1.7; margin-bottom:32px; }
+.hero-pills { display:flex; flex-wrap:wrap; gap:10px; }
+.hero-pill { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:8px; padding:7px 14px; font-size:0.78rem; color:rgba(255,255,255,0.72); }
+.hero-pill strong { color:var(--lime); display:block; font-size:0.68rem; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:1px; }
+
+.stat-row { max-width:900px; margin:-52px auto 0; padding:0 28px; position:relative; z-index:10; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; animation:rise 0.5s ease both; }
+@keyframes rise { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+.stat-card { background:white; border-radius:20px; padding:24px 20px; text-align:center; box-shadow:0 12px 44px rgba(29,43,28,0.14); }
+.stat-card:nth-child(1) { border-bottom:4px solid var(--forest); }
+.stat-card:nth-child(2) { border-bottom:4px solid var(--gold); }
+.stat-card:nth-child(3) { border-bottom:4px solid var(--plum); }
+.stat-emoji { font-size:2rem; margin-bottom:8px; }
+.stat-value { font-family:'Playfair Display',serif; font-size:1.9rem; font-weight:700; color:var(--forest); line-height:1; margin-bottom:4px; }
+.stat-label { font-size:0.78rem; color:var(--muted); letter-spacing:0.5px; line-height:1.3; }
+
+.container { max-width:900px; margin:0 auto; padding:0 28px; }
+.sec-tag { font-size:10px; letter-spacing:3.5px; text-transform:uppercase; color:var(--moss); font-weight:700; display:block; margin-bottom:10px; }
+h2 { font-family:'Playfair Display',serif; font-size:clamp(1.7rem,3vw,2.3rem); color:var(--forest); line-height:1.2; margin-bottom:18px; }
+h3 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--forest); margin-bottom:14px; }
+p { font-size:1rem; color:#3A4A36; margin-bottom:16px; line-height:1.78; }
+section { padding:52px 0 20px; }
+
+.intro-hl { background:linear-gradient(135deg,var(--forest) 0%,var(--moss) 100%); color:white; border-radius:20px; padding:30px 36px; margin:32px 0; position:relative; overflow:hidden; }
+.intro-hl::after { content:'💊'; font-size:130px; position:absolute; right:-10px; bottom:-28px; opacity:0.07; }
+.intro-hl p { color:rgba(255,255,255,0.9); margin:0; font-size:1.02rem; line-height:1.7; }
+.intro-hl p strong { color:var(--amber); }
+
+/* SYMPTOM CHECKER */
+.symptom-checker { background:white; border-radius:28px; padding:44px 44px 36px; margin:36px 0; border:2px solid #E0EDD8; box-shadow:0 8px 40px rgba(45,74,45,0.10); position:relative; overflow:hidden; }
+.symptom-checker::before { content:''; position:absolute; top:0; left:0; right:0; height:5px; background:linear-gradient(90deg,var(--forest),var(--plum),var(--gold)); border-radius:28px 28px 0 0; }
+.sc-header { text-align:center; margin-bottom:32px; }
+.sc-header h3 { font-size:1.6rem; margin-bottom:8px; }
+.sc-header p { color:var(--muted); font-size:0.95rem; margin:0; }
+.symptom-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:12px; margin-bottom:32px; }
+.symptom-btn { background:var(--cream); border:2px solid #DDE8D4; border-radius:14px; padding:14px 12px; cursor:pointer; text-align:center; transition:all 0.2s ease; user-select:none; }
+.symptom-btn:hover { border-color:var(--sage); background:#F0F6EC; transform:translateY(-2px); box-shadow:0 4px 16px rgba(45,74,45,0.12); }
+.symptom-btn.active { background:var(--forest); border-color:var(--forest); color:white; transform:translateY(-2px); box-shadow:0 6px 20px rgba(45,74,45,0.25); }
+.symptom-btn .sb-emoji { font-size:1.6rem; display:block; margin-bottom:6px; }
+.symptom-btn .sb-label { font-size:0.82rem; font-weight:600; color:var(--forest); line-height:1.3; }
+.symptom-btn.active .sb-label { color:white; }
+.sc-results { min-height:80px; transition:all 0.35s ease; }
+.sc-empty { text-align:center; color:var(--muted); font-size:0.93rem; padding:20px; border:2px dashed #DDE8D4; border-radius:16px; }
+.sc-result-cards { display:flex; flex-direction:column; gap:14px; }
+.sc-result-card { border-radius:16px; padding:20px 24px; display:flex; gap:16px; align-items:flex-start; animation:fadeIn 0.3s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.sc-result-card.pd      { background:#EBF4E5; border-left:4px solid var(--forest); }
+.sc-result-card.women   { background:var(--plum-lt); border-left:4px solid var(--plum); }
+.sc-result-card.general { background:#FBF0DC; border-left:4px solid var(--gold); }
+.sc-rc-emoji { font-size:1.8rem; flex-shrink:0; margin-top:2px; }
+.sc-rc-body h4 { font-family:'Playfair Display',serif; font-size:1rem; color:var(--forest); margin-bottom:4px; }
+.sc-rc-body p { font-size:0.88rem; color:#3A4A36; margin:0; line-height:1.6; }
+.sc-rc-tag { font-size:0.65rem; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; margin-bottom:4px; display:block; }
+.pd .sc-rc-tag { color:var(--moss); }
+.women .sc-rc-tag { color:var(--plum); }
+.general .sc-rc-tag { color:var(--gold); }
+.sc-clear-btn { display:block; margin:20px auto 0; background:none; border:1px solid #CCD8C4; border-radius:20px; padding:8px 24px; font-size:0.82rem; color:var(--muted); cursor:pointer; font-family:'Jost',sans-serif; transition:all 0.2s; }
+.sc-clear-btn:hover { border-color:var(--rust); color:var(--rust); }
+
+/* TABS */
+.tab-section { margin:40px 0; }
+.tab-nav { display:flex; gap:8px; margin-bottom:0; flex-wrap:wrap; }
+.tab-btn { background:white; border:2px solid #DDE8D4; border-bottom:none; border-radius:14px 14px 0 0; padding:12px 22px; font-size:0.86rem; font-weight:600; font-family:'Jost',sans-serif; color:var(--muted); cursor:pointer; transition:all 0.2s; }
+.tab-btn:hover { background:#F0F6EC; color:var(--forest); }
+.tab-btn.active { background:var(--forest); color:white; border-color:var(--forest); }
+.tab-content-wrap { background:white; border:2px solid #DDE8D4; border-radius:0 16px 16px 16px; padding:36px 40px; box-shadow:0 4px 24px rgba(45,74,45,0.07); }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+.benefit-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:20px; }
+.benefit-card { background:var(--cream); border-radius:16px; padding:22px 20px; border:1px solid #E0EDD8; }
+.benefit-card .bc-emoji { font-size:2rem; margin-bottom:10px; }
+.benefit-card h4 { font-family:'Playfair Display',serif; font-size:1rem; color:var(--forest); margin-bottom:6px; }
+.benefit-card p { font-size:0.88rem; color:var(--muted); margin:0; line-height:1.6; }
+
+/* FORMS */
+.forms-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin:24px 0; }
+.form-card { background:white; border-radius:20px; padding:28px 24px; border:1px solid #DDE8D4; box-shadow:0 3px 16px rgba(45,74,45,0.07); position:relative; overflow:hidden; }
+.form-card::before { content:''; position:absolute; top:0; left:0; width:100%; height:4px; }
+.form-card.glycinate::before { background:var(--forest); }
+.form-card.citrate::before   { background:var(--gold); }
+.form-card.malate::before    { background:var(--moss); }
+.fc-star { position:absolute; top:16px; right:16px; background:var(--amber); color:var(--forest); font-size:0.65rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 10px; border-radius:20px; }
+.fc-emoji { font-size:2.4rem; margin-bottom:10px; }
+.form-card h4 { font-family:'Playfair Display',serif; font-size:1.15rem; color:var(--forest); margin-bottom:6px; }
+.form-card .fc-sub { font-size:0.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; font-weight:600; }
+.form-card p { font-size:0.88rem; color:#3A4A36; margin:0; line-height:1.6; }
+
+.tip-box { background:var(--warm); border-radius:14px; padding:18px 22px; margin:20px 0; border-left:4px solid var(--gold); }
+.tip-box p { margin:0; font-size:0.94rem; color:var(--forest); font-weight:500; }
+.tip-box p strong { color:var(--rust); }
+
+.dosage-row { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+.dosage-badge { background:var(--forest); color:white; border-radius:10px; padding:8px 16px; font-size:0.82rem; font-weight:600; display:inline-flex; align-items:center; gap:7px; }
+.dosage-badge.gold { background:var(--gold); }
+.dosage-badge.plum { background:var(--plum); }
+.dosage-badge.rust { background:var(--rust); }
+
+.food-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; margin:24px 0; }
+.food-item { background:white; border-radius:14px; padding:18px 12px; text-align:center; border:1px solid #DDE8D4; box-shadow:0 2px 10px rgba(45,74,45,0.06); }
+.food-item .fi-emoji { font-size:2rem; display:block; margin-bottom:8px; }
+.food-item .fi-name  { font-size:0.82rem; font-weight:600; color:var(--forest); display:block; }
+.food-item .fi-mg    { font-size:0.75rem; color:var(--muted); }
+
+.shop-box { background:linear-gradient(135deg,var(--forest) 0%,var(--moss) 100%); border-radius:22px; padding:36px 40px; margin:36px 0; color:white; position:relative; overflow:hidden; }
+.shop-box::after { content:'🛒'; font-size:140px; position:absolute; right:-10px; bottom:-28px; opacity:0.07; }
+.shop-box .sb-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--lime); font-weight:700; display:block; margin-bottom:12px; }
+.shop-box h3 { color:white; margin-bottom:14px; }
+.shop-box p { color:rgba(255,255,255,0.85); margin-bottom:16px; font-size:0.97rem; }
+.shop-box p:last-of-type { margin-bottom:0; }
+.shop-box strong { color:var(--amber); }
+.shop-link { display:inline-block; margin-top:18px; background:var(--amber); color:var(--forest); text-decoration:none; font-weight:700; font-size:0.88rem; padding:11px 26px; border-radius:10px; letter-spacing:0.5px; transition:background 0.2s; }
+.shop-link:hover { background:var(--gold); }
+
+.takeaway { background:linear-gradient(135deg,var(--moss) 0%,var(--forest) 100%); color:white; border-radius:22px; padding:40px 44px; margin:36px 0; position:relative; overflow:hidden; }
+.takeaway::after { content:'✨'; font-size:160px; position:absolute; right:-10px; bottom:-30px; opacity:0.07; }
+.takeaway h3 { font-size:1.45rem; color:var(--lime); margin-bottom:18px; }
+.takeaway ul { list-style:none; padding:0; }
+.takeaway ul li { padding:10px 0 10px 30px; position:relative; font-size:0.97rem; color:rgba(255,255,255,0.88); border-bottom:1px solid rgba(255,255,255,0.08); line-height:1.65; }
+.takeaway ul li:last-child { border-bottom:none; }
+.takeaway ul li::before { content:'✦'; position:absolute; left:0; font-size:0.8rem; color:var(--amber); }
+
+.disclaimer { background:var(--warm); border-radius:14px; padding:20px 24px; margin:28px 0; font-size:0.85rem; color:#5A4A2A; display:flex; gap:12px; align-items:flex-start; border:1px solid #DDD4BE; }
+.disclaimer strong { color:var(--forest); }
+
+.references { background:var(--warm); border-radius:18px; padding:30px 36px; margin:20px 0 60px; }
+.references h3 { font-size:1.1rem; color:var(--forest); margin-bottom:16px; }
+.ref-item { font-size:0.82rem; color:var(--muted); line-height:1.6; padding:8px 0; border-bottom:1px solid #DDD4BE; display:flex; gap:10px; }
+.ref-item:last-child { border-bottom:none; }
+.ref-num { color:var(--moss); font-weight:700; flex-shrink:0; }
+
+footer { text-align:center; padding:36px 28px; font-size:0.8rem; color:#aaa; border-top:1px solid #DDE8D4; }
+
+@media (max-width:640px) {
+  .hero { padding:48px 24px 88px; }
+  .stat-row { grid-template-columns:1fr; }
+  .symptom-checker { padding:28px 20px; }
+  .symptom-grid { grid-template-columns:repeat(2,1fr); }
+  .tab-content-wrap { padding:24px 20px; }
+  .takeaway { padding:28px 24px; }
+  .shop-box { padding:28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HÉRO -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">✦ Programme PPE — Supplément no 1 de Christine</div>
+    <h1>Magnésium — <em>Le minéral essentiel</em> dont votre cerveau a besoin</h1>
+    <p class="sub">L'un des suppléments préférés de Christine. Le magnésium est impliqué dans plus de 300 processus dans le corps — et pour les personnes vivant avec la maladie de Parkinson, il joue un rôle particulièrement puissant dans la neuroprotection, le soutien de la dopamine et le bien-être quotidien.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><strong>Priorité</strong>Supplément no 1 de Christine</div>
+      <div class="hero-pill"><strong>Rôle</strong>Neuro · Hormonal · Énergie</div>
+      <div class="hero-pill"><strong>Meilleure forme</strong>Glycinate de magnésium</div>
+      <div class="hero-pill"><strong>Source</strong>Atrium Pro · Qualité canadienne</div>
+    </div>
+  </div>
+</div>
+
+<!-- CARTES STATISTIQUES -->
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-emoji">⚠️</div>
+    <div class="stat-value">50%</div>
+    <div class="stat-label">des adultes occidentaux sont déficients en magnésium</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-emoji">⚙️</div>
+    <div class="stat-value">300+</div>
+    <div class="stat-label">réactions biochimiques dans le corps nécessitent du magnésium</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-emoji">📉</div>
+    <div class="stat-value">4×</div>
+    <div class="stat-label">moins de magnésium dans les régimes modernes que ceux de l'Âge de pierre</div>
+  </div>
+</div>
+
+<!-- CONTENU -->
+<div class="container">
+
+  <section>
+    <span class="sec-tag">Introduction</span>
+    <h2>Pourquoi le magnésium est important — surtout pour la maladie de Parkinson</h2>
+    <p>Le magnésium est l'un des minéraux les plus essentiels du corps humain — et pourtant, il est aussi l'un des plus chroniquement sous-consommés. Contrairement à de nombreux suppléments, le magnésium ne peut pas être fabriqué par le corps; il doit provenir entièrement de l'alimentation ou de la supplémentation. Et dans le monde d'aujourd'hui avec ses grains raffinés et ses sols appauvris, la plupart des gens n'en obtiennent tout simplement pas assez.</p>
+    <p>Pour les personnes vivant avec la maladie de Parkinson, les enjeux sont encore plus importants. Le magnésium joue des rôles directs dans la protection des neurones, le soutien de la production de dopamine, le calme des cellules nerveuses hyperactives et la réduction de l'inflammation et du stress oxydatif qui conduisent la progression de la MP.</p>
+
+    <div class="intro-hl">
+      <p>💡 <strong>Note de Christine :</strong> Vous pouvez certainement travailler à augmenter votre apport en magnésium par l'alimentation — mais il est difficile d'être suffisamment régulier ou d'en consommer assez pour en bénéficier réellement. Un supplément de haute qualité est la solution pratique. C'est un supplément vers lequel Christine revient encore et encore avec ses clients atteints de MP, et les résultats parlent d'eux-mêmes.</p>
+    </div>
+  </section>
+
+  <!-- VÉRIFICATEUR DE SYMPTÔMES -->
+  <div class="symptom-checker">
+    <div class="sc-header">
+      <h3>🔍 Vérificateur de symptômes — Magnésium</h3>
+      <p>Sélectionnez les symptômes ou défis que vous vivez actuellement — et découvrez comment le magnésium peut vous aider spécifiquement.</p>
+    </div>
+
+    <div class="symptom-grid" id="symptomGrid">
+      <button class="symptom-btn" data-id="tremors" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">🤲</span>
+        <span class="sb-label">Tremblements</span>
+      </button>
+      <button class="symptom-btn" data-id="sleep" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">😴</span>
+        <span class="sb-label">Mauvais sommeil / insomnie</span>
+      </button>
+      <button class="symptom-btn" data-id="anxiety" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">😰</span>
+        <span class="sb-label">Anxiété ou stress</span>
+      </button>
+      <button class="symptom-btn" data-id="cramps" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">⚡</span>
+        <span class="sb-label">Crampes ou spasmes musculaires</span>
+      </button>
+      <button class="symptom-btn" data-id="fatigue" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">🔋</span>
+        <span class="sb-label">Faible énergie / fatigue</span>
+      </button>
+      <button class="symptom-btn" data-id="constipation" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">🌀</span>
+        <span class="sb-label">Constipation</span>
+      </button>
+      <button class="symptom-btn" data-id="brain-fog" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">🌫️</span>
+        <span class="sb-label">Brouillard cérébral / concentration</span>
+      </button>
+      <button class="symptom-btn" data-id="mood" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">😔</span>
+        <span class="sb-label">Humeur basse / dépression</span>
+      </button>
+      <button class="symptom-btn" data-id="restless-legs" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">🦵</span>
+        <span class="sb-label">Jambes sans repos</span>
+      </button>
+      <button class="symptom-btn" data-id="hot-flashes" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">🌡️</span>
+        <span class="sb-label">Bouffées de chaleur / sueurs nocturnes</span>
+      </button>
+      <button class="symptom-btn" data-id="bones" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">🦴</span>
+        <span class="sb-label">Santé osseuse / ostéoporose</span>
+      </button>
+      <button class="symptom-btn" data-id="stiffness" onclick="toggleSymptom(this)">
+        <span class="sb-emoji">🧍</span>
+        <span class="sb-label">Raideur ou rigidité</span>
+      </button>
+    </div>
+
+    <div class="sc-results" id="scResults">
+      <div class="sc-empty">👆 Sélectionnez un ou plusieurs symptômes ci-dessus pour voir comment le magnésium peut vous aider spécifiquement.</div>
+    </div>
+    <button class="sc-clear-btn" id="clearBtn" style="display:none" onclick="clearAll()">✕ Tout effacer</button>
+  </div>
+
+  <!-- ONGLETS BÉNÉFICES -->
+  <div class="tab-section">
+    <span class="sec-tag">Bénéfices en profondeur</span>
+    <h2>Ce que le magnésium fait pour vous</h2>
+
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="showTab('pd', this)">🧠 Maladie de Parkinson</button>
+      <button class="tab-btn" onclick="showTab('women', this)">🌸 Santé des femmes</button>
+      <button class="tab-btn" onclick="showTab('general', this)">⚙️ Santé générale</button>
+    </div>
+
+    <div class="tab-content-wrap">
+      <!-- ONGLET MP -->
+      <div class="tab-panel active" id="tab-pd">
+        <p>Le magnésium a plusieurs mécanismes spécifiques qui le rendent particulièrement précieux pour les personnes vivant avec la maladie de Parkinson. Ce ne sont pas seulement des bienfaits généraux pour la santé — ils ciblent directement les processus qui conduisent la progression de la MP.</p>
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="bc-emoji">🛡️</div>
+            <h4>Neuroprotection</h4>
+            <p>Réduit l'excitabilité neuronale et diminue l'inflammation et le stress oxydatif — deux des principaux moteurs des dommages neuronaux dans la maladie de Parkinson.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">🔬</div>
+            <h4>Soutien de la dopamine</h4>
+            <p>Le magnésium améliore la production de dopamine et soutient les enzymes nécessaires à sa synthèse — s'attaquant directement à la déficience centrale dans la MP.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">💊</div>
+            <h4>Optimisation du L-DOPA</h4>
+            <p>Aide à optimiser l'efficacité de la thérapie à la lévodopa — le principal médicament contre la MP — faisant travailler vos médicaments plus fort pour vous.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">🧲</div>
+            <h4>Blocage des récepteurs NMDA</h4>
+            <p>Agit comme un bloqueur naturel des récepteurs NMDA, réduisant l'excitotoxicité — la suractivation des cellules nerveuses qui contribue à la mort neuronale dans la MP.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ONGLET FEMMES -->
+      <div class="tab-panel" id="tab-women">
+        <p>Le Dr Mary Claire Haver, une gynécologue-obstétricienne de premier plan et experte en santé des femmes, souligne le magnésium comme l'un des minéraux les plus importants pour les femmes vieillissantes — particulièrement pendant la périménopause et la ménopause.</p>
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="bc-emoji">🌡️</div>
+            <h4>Symptômes de la ménopause</h4>
+            <p>Aide à atténuer les bouffées de chaleur, les sueurs nocturnes et les sautes d'humeur en calmant le système nerveux et en réduisant l'inflammation associée aux changements hormonaux.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">⚖️</div>
+            <h4>Équilibre hormonal</h4>
+            <p>Essentiel pour équilibrer les œstrogènes et la progestérone, et soutient la santé des glandes surrénales — ce qui affecte directement la façon dont le corps gère le stress hormonal.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">😴</div>
+            <h4>Sommeil et mélatonine</h4>
+            <p>Améliore la production de mélatonine et calme le système nerveux, améliorant directement la qualité du sommeil — qui se détériore souvent de manière significative pendant la ménopause.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">🦴</div>
+            <h4>Force osseuse</h4>
+            <p>Travaille avec le calcium et la vitamine D pour maintenir la densité osseuse, contrebalançant le risque accru d'ostéoporose lié au déclin des œstrogènes à la ménopause.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">😊</div>
+            <h4>Humeur et sérotonine</h4>
+            <p>Soutient la production de sérotonine et aide à réguler les niveaux de cortisol, réduisant l'anxiété et la dépression souvent associées aux transitions hormonales.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">🩸</div>
+            <h4>SPM et douleurs menstruelles</h4>
+            <p>Pour les femmes qui menstruent encore, le magnésium détend les muscles et régule les neurotransmetteurs, soulageant significativement les ballonnements, crampes et sautes d'humeur prémenstruels.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ONGLET GÉNÉRAL -->
+      <div class="tab-panel" id="tab-general">
+        <p>Au-delà de ses rôles spécifiques dans la MP et la santé hormonale, le magnésium est fondamental pour des dizaines de fonctions quotidiennes qui affectent comment vous vous sentez, bougez et pensez chaque jour.</p>
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="bc-emoji">⚡</div>
+            <h4>Production d'énergie</h4>
+            <p>Le magnésium est nécessaire pour produire l'ATP — la molécule qui alimente chaque cellule de votre corps. Faible magnésium = faible énergie cellulaire au niveau le plus fondamental.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">🩸</div>
+            <h4>Équilibre glycémique</h4>
+            <p>Régule le métabolisme du glucose, des lipides et des protéines, soutenant la sensibilité à l'insuline et aidant à maintenir une glycémie stable tout au long de la journée.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">💪</div>
+            <h4>Fonction musculaire</h4>
+            <p>Maintient la fonction nerveuse et musculaire en régulant le calcium — le minéral responsable des contractions musculaires. Sans assez de magnésium, les muscles restent « allumés ».</p>
+          </div>
+          <div class="benefit-card">
+            <div class="bc-emoji">🔥</div>
+            <h4>Anti-inflammatoire</h4>
+            <p>Joue un rôle direct dans la réduction de l'inflammation systémique et du stress oxydatif — qui accélèrent tous deux le vieillissement, la neurodégénérescence et la progression des maladies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMES -->
+  <section>
+    <span class="sec-tag">Quelle forme vous convient ?</span>
+    <h2>Tous les magnésiums ne sont pas égaux</h2>
+    <p>La forme de magnésium que vous choisissez fait une différence significative dans la qualité d'absorption et ses meilleures indications. Voici les trois formes les plus pertinentes sur le plan clinique pour les clients PPE.</p>
+
+    <div class="forms-grid">
+      <div class="form-card glycinate">
+        <div class="fc-star">⭐ Choix no 1 de Christine</div>
+        <div class="fc-emoji">💚</div>
+        <h4>Glycinate de magnésium</h4>
+        <div class="fc-sub">Idéal pour : Sommeil · Stress · Anxiété · MP</div>
+        <p>La forme la plus douce pour l'estomac et la plus biodisponible. Lié à la glycine (un acide aminé calmant), il est exceptionnel pour la qualité du sommeil, le soulagement du stress et le calme nerveux. C'est la recommandation principale de Christine — elle le vend en forme liquide (saveur grenade, marque Genestra) et c'est le supplément le plus populaire parmi ses clients.</p>
+      </div>
+      <div class="form-card citrate">
+        <div class="fc-emoji">🍋</div>
+        <h4>Citrate de magnésium</h4>
+        <div class="fc-sub">Idéal pour : Constipation · Santé intestinale</div>
+        <p>Très absorbable avec un léger effet laxatif — ce qui en fait un excellent choix pour la constipation, l'un des symptômes non moteurs les plus courants de la maladie de Parkinson. Également une bonne option de supplémentation générale.</p>
+      </div>
+      <div class="form-card malate">
+        <div class="fc-emoji">🍎</div>
+        <h4>Malate de magnésium</h4>
+        <div class="fc-sub">Idéal pour : Énergie · Douleurs musculaires · Fatigue</div>
+        <p>Lié à l'acide malique, qui joue un rôle clé dans la production d'énergie. Un excellent choix pour les personnes souffrant de fatigue, de douleurs musculaires ou de malaise post-effort. Particulièrement pertinent pour les clients atteints de MP qui font face aux exigences énergétiques de la vie quotidienne et de l'exercice.</p>
+      </div>
+    </div>
+
+    <div class="dosage-row">
+      <div class="dosage-badge">👨 Hommes : 420 mg / jour (ANR)</div>
+      <div class="dosage-badge gold">👩 Femmes : 320 mg / jour (ANR)</div>
+      <div class="dosage-badge plum">🌙 Prendre le glycinate le soir pour le sommeil</div>
+      <div class="dosage-badge rust">⚠️ Discuter de la dose avec votre médecin</div>
+    </div>
+
+    <div class="tip-box">
+      <p>🔬 <strong>Vérifier vos niveaux :</strong> Ne devinez pas — testez ! Demandez à votre médecin un <strong>test de magnésium érythrocytaire</strong> (magnésium dans les globules rouges), qui donne une bien meilleure image de votre statut en magnésium qu'un test sérique standard. Les tests capillaires peuvent également indiquer des carences à long terme dans les conditions neurologiques.</p>
+    </div>
+  </section>
+
+  <!-- ALIMENTS -->
+  <section>
+    <span class="sec-tag">Sources alimentaires</span>
+    <h2>Aliments riches en magnésium à ajouter à votre alimentation</h2>
+    <p>Bien que l'alimentation seule soit rarement suffisante pour des niveaux thérapeutiques, construire une alimentation riche en magnésium est une excellente base aux côtés de la supplémentation.</p>
+
+    <div class="food-grid">
+      <div class="food-item">
+        <span class="fi-emoji">🎃</span>
+        <span class="fi-name">Graines de citrouille</span>
+        <span class="fi-mg">168 mg / 30 g</span>
+      </div>
+      <div class="food-item">
+        <span class="fi-emoji">🥬</span>
+        <span class="fi-name">Épinards (cuits)</span>
+        <span class="fi-mg">78 mg / ½ tasse</span>
+      </div>
+      <div class="food-item">
+        <span class="fi-emoji">🍫</span>
+        <span class="fi-name">Chocolat noir</span>
+        <span class="fi-mg">64 mg / 30 g</span>
+      </div>
+      <div class="food-item">
+        <span class="fi-emoji">🥑</span>
+        <span class="fi-name">Avocat</span>
+        <span class="fi-mg">58 mg / 1 entier</span>
+      </div>
+      <div class="food-item">
+        <span class="fi-emoji">🫘</span>
+        <span class="fi-name">Haricots noirs</span>
+        <span class="fi-mg">60 mg / ½ tasse</span>
+      </div>
+      <div class="food-item">
+        <span class="fi-emoji">🌾</span>
+        <span class="fi-name">Quinoa</span>
+        <span class="fi-mg">59 mg / 1 tasse</span>
+      </div>
+      <div class="food-item">
+        <span class="fi-emoji">🐟</span>
+        <span class="fi-name">Saumon</span>
+        <span class="fi-mg">53 mg / 100 g</span>
+      </div>
+      <div class="food-item">
+        <span class="fi-emoji">🥜</span>
+        <span class="fi-name">Amandes</span>
+        <span class="fi-mg">80 mg / 30 g</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUTIQUE -->
+  <div class="shop-box">
+    <span class="sb-label">🛒 Où se le procurer</span>
+    <h3>Disponible chez Boxing 4 Health</h3>
+    <p>Christine vend le magnésium sous toutes ses formes chez Boxing 4 Health. Son produit le plus populaire auprès des clients est le <strong>glycinate de magnésium en forme liquide (saveur grenade)</strong> de la marque Genestra — doux, délicieux et très efficace.</p>
+    <p>Tous les suppléments sont fournis par <strong>Atrium Pro</strong> — un fabricant canadien de suppléments de qualité professionnelle. Vous pouvez envoyer votre commande par courriel et la faire livrer à domicile, ou la récupérer dans l'un des emplacements de Boxing 4 Health.</p>
+    <a href="https://www.atriumpro.ca/" target="_blank" class="shop-link">Parcourir les suppléments Atrium Pro →</a>
+  </div>
+
+  <!-- POINTS CLÉS -->
+  <div class="takeaway">
+    <h3>✦ Points clés à retenir</h3>
+    <ul>
+      <li>Le magnésium est le supplément no 1 de Christine pour ses clients atteints de MP — et pour de bonnes raisons. Il soutient directement la neuroprotection, la production de dopamine, l'efficacité de la lévodopa et le calme nerveux.</li>
+      <li>Environ 50 % des adultes occidentaux sont déficients. Les régimes modernes et les sols appauvris rendent très difficile l'obtention de suffisamment par l'alimentation seule.</li>
+      <li>Tous les magnésiums ne sont pas égaux. Le glycinate est idéal pour le sommeil et le stress ; le citrate pour la constipation ; le malate pour l'énergie et les douleurs musculaires.</li>
+      <li>Le choix principal de Christine : glycinate de magnésium en forme liquide (grenade, marque Genestra) — le supplément le plus populaire qu'elle vend à ses clients atteints de MP.</li>
+      <li>Pour les femmes, le magnésium est tout aussi essentiel — soutenant l'équilibre hormonal, le sommeil, la santé osseuse et l'humeur pendant la périménopause et au-delà.</li>
+      <li>Demandez à votre médecin un test de magnésium érythrocytaire pour connaître votre niveau de base avant de commencer la supplémentation.</li>
+      <li>Prenez le glycinate de magnésium le soir — il fonctionne magnifiquement avec le processus naturel de relaxation de votre corps pour favoriser un sommeil profond et réparateur.</li>
+    </ul>
+  </div>
+
+  <!-- AVERTISSEMENT -->
+  <div class="disclaimer">
+    ⚠️ <div><strong>Important :</strong> Ce guide est à titre éducatif uniquement et ne remplace pas un avis médical. Consultez toujours votre prestataire de soins de santé avant de commencer la supplémentation en magnésium, surtout si vous prenez des médicaments contre la maladie de Parkinson ou si vous avez une maladie rénale. Les besoins individuels varient. Les apports nutritionnels recommandés indiqués sont des lignes directrices générales — les doses thérapeutiques peuvent différer.</div>
+  </div>
+
+  <!-- RÉFÉRENCES -->
+  <div class="references">
+    <h3>📚 Sources de recherche</h3>
+    <div class="ref-item"><span class="ref-num">[1]</span><span>Veronese N, Zurlo A, Solmi M, et al. (2016). Magnesium Status in Alzheimer's Disease: A Systematic Review. <em>American Journal of Alzheimer's Disease &amp; Other Dementias</em>, 31(3), 208–213.</span></div>
+    <div class="ref-item"><span class="ref-num">[2]</span><span>Fiorentini D, Cappadone C, Farruggia G, Prata C. (2021). Magnesium: Biochemistry, Nutrition, Detection, and Social Impact of Diseases Linked to Its Deficiency. <em>Nutrients</em>, 13(4), 1136. doi: 10.3390/nu13041136</span></div>
+    <div class="ref-item"><span class="ref-num">[3]</span><span>Tarleton EK, Littenberg B. (2015). Magnesium Intake and Depression in Adults. <em>Journal of the American Board of Family Medicine</em>, 28(2), 249–256.</span></div>
+    <div class="ref-item"><span class="ref-num">[4]</span><span>Boyle NB, Lawton C, Dye L. (2017). The Effects of Magnesium Supplementation on Subjective Anxiety and Stress. <em>Nutrients</em>, 9(5), 429. doi: 10.3390/nu9050429</span></div>
+  </div>
+
+</div>
+
+<footer>
+  Programme PPE — À titre éducatif uniquement. Ne remplace pas un avis médical.<br>
+  Contenu développé par Christine pour les personnes vivant avec la maladie de Parkinson et leurs proches aidants.
+</footer>
+
+<script>
+const symptomData = {
+  "tremors": {
+    type:"pd", emoji:"🤲", title:"Tremblements et secousses", tag:"Maladie de Parkinson",
+    text:"Le magnésium agit comme un bloqueur naturel des récepteurs NMDA, réduisant l'excitotoxicité — la suractivation des cellules nerveuses responsable des tremblements et de l'instabilité musculaire. Il régule également le calcium à la jonction neuromusculaire, jouant un rôle direct dans l'activité musculaire et le contrôle des tremblements."
+  },
+  "sleep": {
+    type:"general", emoji:"😴", title:"Mauvais sommeil et insomnie", tag:"Santé générale",
+    text:"Le glycinate de magnésium est l'un des aides naturelles au sommeil les mieux appuyées par les données probantes. Il améliore l'activité du GABA (le principal neurotransmetteur calmant du cerveau), réduit le cortisol et soutient la production de mélatonine. Le prendre le soir peut améliorer considérablement l'endormissement et la qualité du sommeil."
+  },
+  "anxiety": {
+    type:"general", emoji:"😰", title:"Anxiété et stress", tag:"Santé générale",
+    text:"Le magnésium régule l'axe HPA (le système de réponse au stress du corps) et aide à contrôler les niveaux de cortisol. Il soutient également les récepteurs GABA dans le cerveau, produisant un effet calmant naturel. La carence est fortement associée à une anxiété accrue, et la supplémentation a démontré des réductions mesurables de celle-ci."
+  },
+  "cramps": {
+    type:"pd", emoji:"⚡", title:"Crampes et spasmes musculaires", tag:"Maladie de Parkinson",
+    text:"Le magnésium et le calcium travaillent en opposition pour contrôler la contraction et la relaxation musculaires. Quand le magnésium est trop bas, les muscles ne peuvent pas se détendre complètement — entraînant des crampes, spasmes et contractions. C'est particulièrement pertinent dans la MP, où la rigidité musculaire est déjà un symptôme central."
+  },
+  "fatigue": {
+    type:"general", emoji:"🔋", title:"Faible énergie et fatigue", tag:"Santé générale",
+    text:"Le magnésium est nécessaire pour produire l'ATP — la molécule d'énergie qui alimente chaque cellule de votre corps. Sans magnésium adéquat, vos mitochondries ne peuvent pas fonctionner de manière optimale, entraînant une fatigue persistante. Le malate de magnésium est particulièrement utile ici, car l'acide malique lui-même joue un rôle clé dans la production d'énergie cellulaire."
+  },
+  "constipation": {
+    type:"pd", emoji:"🌀", title:"Constipation", tag:"Maladie de Parkinson",
+    text:"La constipation est l'un des symptômes non moteurs les plus courants et impactants de la MP. Le citrate de magnésium aide en attirant l'eau dans les intestins et en stimulant le péristaltisme — les contractions musculaires qui font avancer les aliments dans l'intestin. C'est une option douce et naturelle qui fonctionne avec le corps."
+  },
+  "brain-fog": {
+    type:"general", emoji:"🌫️", title:"Brouillard cérébral et mauvaise concentration", tag:"Santé générale",
+    text:"Le magnésium est essentiel pour la plasticité synaptique — la capacité du cerveau à former et maintenir des connexions. Des niveaux bas altèrent la mémoire, la concentration et la flexibilité cognitive. Il réduit également la neuroinflammation, qui est un contributeur significatif au brouillard cérébral dans la MP et le vieillissement général."
+  },
+  "mood": {
+    type:"general", emoji:"😔", title:"Humeur basse et dépression", tag:"Santé générale",
+    text:"Le magnésium est un cofacteur pour la production de sérotonine et de dopamine — les deux neurotransmetteurs les plus associés à l'humeur. Des études ont montré qu'un faible taux de magnésium est fortement corrélé à la dépression, et la supplémentation a produit des améliorations mesurables des scores d'humeur dans des essais cliniques."
+  },
+  "restless-legs": {
+    type:"pd", emoji:"🦵", title:"Syndrome des jambes sans repos", tag:"Maladie de Parkinson",
+    text:"Le syndrome des jambes sans repos (SJSR) est significativement plus courant chez les personnes atteintes de la maladie de Parkinson. Le magnésium aide en calmant la signalisation nerveuse hyperactive et en régulant la relaxation musculaire. De nombreuses personnes signalent une réduction significative des symptômes du SJSR en quelques jours après le début du glycinate de magnésium au coucher."
+  },
+  "hot-flashes": {
+    type:"women", emoji:"🌡️", title:"Bouffées de chaleur et sueurs nocturnes", tag:"Santé des femmes",
+    text:"Le magnésium aide à stabiliser l'hypothalamus — la région du cerveau qui régule la température corporelle. En calmant le système nerveux et en réduisant l'inflammation, des niveaux adéquats de magnésium peuvent réduire à la fois la fréquence et l'intensité des bouffées de chaleur et des sueurs nocturnes pendant la périménopause et la ménopause."
+  },
+  "bones": {
+    type:"women", emoji:"🦴", title:"Santé osseuse et ostéoporose", tag:"Santé des femmes",
+    text:"Le magnésium est un cofacteur pour l'activation de la vitamine D et travaille directement avec le calcium pour construire et maintenir la densité osseuse. Les femmes atteintes de MP font face à un double risque d'ostéoporose — du déclin des œstrogènes et du risque de chutes. Assurer un magnésium optimal est l'une des choses les plus pratiques que vous puissiez faire pour la protection osseuse à long terme."
+  },
+  "stiffness": {
+    type:"pd", emoji:"🧍", title:"Raideur et rigidité", tag:"Maladie de Parkinson",
+    text:"Le magnésium bloque les récepteurs NMDA, qui sont hyperactifs dans la maladie de Parkinson, contribuant à la rigidité musculaire caractéristique. En réduisant l'excitotoxicité et en soutenant l'équilibre calcium-magnésium à la jonction neuromusculaire, le magnésium peut aider à atténuer la raideur et la rigidité qui rendent les mouvements quotidiens si difficiles."
+  }
+};
+
+let activeSymptoms = new Set();
+
+function toggleSymptom(btn) {
+  const id = btn.getAttribute('data-id');
+  if (activeSymptoms.has(id)) {
+    activeSymptoms.delete(id);
+    btn.classList.remove('active');
+  } else {
+    activeSymptoms.add(id);
+    btn.classList.add('active');
+  }
+  renderResults();
+}
+
+function renderResults() {
+  const container = document.getElementById('scResults');
+  const clearBtn  = document.getElementById('clearBtn');
+
+  if (activeSymptoms.size === 0) {
+    container.innerHTML = '<div class="sc-empty">👆 Sélectionnez un ou plusieurs symptômes ci-dessus pour voir comment le magnésium peut vous aider spécifiquement.</div>';
+    clearBtn.style.display = 'none';
+    return;
+  }
+
+  clearBtn.style.display = 'block';
+
+  const cards = [...activeSymptoms].map(id => {
+    const d = symptomData[id];
+    return `
+      <div class="sc-result-card ${d.type}">
+        <div class="sc-rc-emoji">${d.emoji}</div>
+        <div class="sc-rc-body">
+          <span class="sc-rc-tag">${d.tag}</span>
+          <h4>${d.title}</h4>
+          <p>${d.text}</p>
+        </div>
+      </div>`;
+  }).join('');
+
+  container.innerHTML = `<div class="sc-result-cards">${cards}</div>`;
+}
+
+function clearAll() {
+  activeSymptoms.clear();
+  document.querySelectorAll('.symptom-btn').forEach(b => b.classList.remove('active'));
+  renderResults();
+}
+
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>

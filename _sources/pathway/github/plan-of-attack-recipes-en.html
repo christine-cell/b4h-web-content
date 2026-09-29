@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan of Attack — Recipes | Boxing 4 Health PPE Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1E3A5F;
+    --green: #2D4A2D;
+    --gold: #C4913A;
+    --rust: #B85C38;
+    --cream: #F8F4EE;
+    --warm-white: #FDFAF6;
+    --text: #2A2A2A;
+    --muted: #6B6B6B;
+    --border: #E8DFD0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(196,145,58,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(45,74,45,0.3) 0%, transparent 50%);
+    color: white;
+    padding: 56px 40px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--rust), var(--gold));
+  }
+
+  .hero-inner { max-width: 800px; margin: 0 auto; }
+
+  .program-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(196,145,58,0.2);
+    border: 1px solid rgba(196,145,58,0.4);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 em { color: var(--gold); font-style: italic; }
+
+  .hero p {
+    font-size: 1.05rem;
+    opacity: 0.8;
+    max-width: 580px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .hero-tag {
+    margin-top: 26px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+
+  /* RECIPE CARDS ROW */
+  .nav-cards {
+    max-width: 860px;
+    margin: -30px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .nav-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 6px 24px rgba(30,58,95,0.12);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 3px solid var(--gold);
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .nav-card:nth-child(2) { border-top-color: var(--rust); }
+  .nav-card:nth-child(3) { border-top-color: var(--green); }
+  .nav-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(30,58,95,0.16); }
+
+  .nav-emoji { font-size: 1.8rem; margin-bottom: 6px; }
+  .nav-label { font-size: 0.82rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+
+  /* MAIN CONTENT */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  /* PD NOTE BANNER */
+  .pd-note {
+    background: linear-gradient(135deg, #e8f0f8 0%, #d4e4f4 100%);
+    border-left: 4px solid var(--navy);
+    border-radius: 0 14px 14px 0;
+    padding: 18px 24px;
+    margin: 48px 0 36px;
+  }
+
+  .pd-note-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .pd-note p { font-size: 0.95rem; color: #2a3a4a; margin: 0; line-height: 1.6; }
+
+  /* RECIPE SECTION */
+  .recipe-section {
+    background: var(--warm-white);
+    border-radius: 24px;
+    padding: 42px;
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(30,58,95,0.06);
+    scroll-margin-top: 20px;
+  }
+
+  .recipe-header { margin-bottom: 28px; }
+
+  .recipe-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .recipe-tag.gold { color: var(--gold); }
+  .recipe-tag.rust { color: var(--rust); }
+  .recipe-tag.green { color: var(--green); }
+
+  .recipe-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .recipe-description { font-size: 1rem; color: #444; line-height: 1.7; margin-bottom: 20px; }
+
+  .recipe-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .meta-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  /* BENEFITS GRID */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    margin: 20px 0 28px;
+  }
+
+  .benefit-pill {
+    background: linear-gradient(135deg, #eef4e8 0%, #e4eedc 100%);
+    border: 1px solid #c8dcc0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    color: var(--green);
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* TWO-COL LAYOUT */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } .nav-cards { grid-template-columns: 1fr; } }
+
+  .ingredients-block h3, .steps-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .ingredient-list { list-style: none; }
+  .ingredient-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid #f0ebe3;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .ingredient-list li:last-child { border-bottom: none; }
+
+  .ing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .step-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+  .step-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* FULL-WIDTH STEPS */
+  .full-steps { margin-top: 24px; }
+  .full-steps h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .step-card {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .step-card .step-num { background: var(--rust); font-size: 0.8rem; }
+  .step-card p { font-size: 0.93rem; line-height: 1.6; color: var(--text); margin: 0; }
+  .step-card strong { color: var(--navy); }
+
+  /* TIP BOX */
+  .tip-box {
+    background: linear-gradient(135deg, #fdf4e3 0%, #faebd7 100%);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin-top: 20px;
+  }
+
+  .tip-box p { font-size: 0.9rem; color: #5a3a10; margin: 0; line-height: 1.6; font-style: italic; }
+  .tip-box strong { color: #3a2010; font-style: normal; }
+
+  /* DIVIDER */
+  .section-divider {
+    text-align: center;
+    margin: 12px 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-divider::before, .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* BRAND BOX */
+  .brand-box {
+    background: var(--navy);
+    color: white;
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-top: 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .brand-box-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .brand-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold); margin-bottom: 5px; }
+  .brand-box p { font-size: 0.85rem; color: rgba(255,255,255,0.82); margin: 0; line-height: 1.6; }
+
+  .reasons-list { margin-top: 10px; list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .reasons-list li { font-size: 0.84rem; color: rgba(255,255,255,0.78); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+  .reasons-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  /* NUTRITION GRID */
+  .nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .nutrition-item { text-align: center; }
+  .nutrition-value { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); font-weight: 700; }
+  .nutrition-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  footer strong { color: var(--navy); }
+
+  /* ANIMATIONS */
+  .recipe-section {
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .recipe-section:nth-child(2) { animation-delay: 0.1s; }
+  .recipe-section:nth-child(3) { animation-delay: 0.2s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="program-badge">🥊 Boxing 4 Health · PPE Program</div>
+    <h1>Plan of Attack<br><em>Recipe Collection</em></h1>
+    <p>Simple, powerful, anti-inflammatory recipes that nourish your brain, support your gut, and fuel your body — no complicated steps required.</p>
+    <div class="hero-tag">🍲 3 Recipes · Bone Broth · Golden Milk · Wellness Smoothie</div>
+  </div>
+</div>
+
+<div class="nav-cards">
+  <a class="nav-card" href="#bone-broth">
+    <div class="nav-emoji">🍖</div>
+    <div class="nav-label">Instant Pot Bone Broth</div>
+  </a>
+  <a class="nav-card" href="#golden-milk">
+    <div class="nav-emoji">🌿</div>
+    <div class="nav-label">Anti-Inflammatory Golden Milk</div>
+  </a>
+  <a class="nav-card" href="#smoothie">
+    <div class="nav-emoji">🥤</div>
+    <div class="nav-label">Immune Boosting Smoothie</div>
+  </a>
+</div>
+
+<div class="container">
+
+  <div class="pd-note">
+    <div class="pd-note-title">💊 Parkinson's Medication Tip</div>
+    <p>Protein and levodopa don't always play nicely together. Using <strong>vegan protein powder</strong> with these recipes helps avoid conflicts. If you're having animal protein, take your medication <strong>at least 2 hours away</strong> from your higher-protein meal when possible.</p>
+  </div>
+
+  <!-- BONE BROTH -->
+  <div class="recipe-section" id="bone-broth">
+    <div class="recipe-header">
+      <div class="recipe-tag gold">Recipe 01 · Gut Health · Immunity</div>
+      <h2 class="recipe-title">Instant Pot Chicken Bone Broth</h2>
+      <p class="recipe-description">A mineral-rich tonic that boosts your immune system, improves digestion, and is rich in collagen and glucosamine — helping ease achy joints, rehydrate skin, and build stronger bones. Homemade is always best.</p>
+      <div class="recipe-meta">
+        <div class="meta-pill">⏱ ~3 hours total</div>
+        <div class="meta-pill">🍗 1 whole chicken carcass</div>
+        <div class="meta-pill">❄️ Freezes beautifully</div>
+        <div class="meta-pill">🫙 Store 7 days fridge</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="ingredients-block">
+        <h3>🍗 The Bones</h3>
+        <ul class="ingredient-list">
+          <li><span class="ing-dot"></span>Bones, skin, cartilage from 1 roast chicken</li>
+          <li><span class="ing-dot"></span>Gizzards, neck, any extras</li>
+          <li><span class="ing-dot"></span>Chicken feet if available (from your butcher)</li>
+        </ul>
+        <h3 style="margin-top:20px;">🥕 The Extras</h3>
+        <ul class="ingredient-list">
+          <li><span class="ing-dot"></span>Onions</li>
+          <li><span class="ing-dot"></span>Carrots</li>
+          <li><span class="ing-dot"></span>Celery</li>
+          <li><span class="ing-dot"></span>Garlic</li>
+          <li><span class="ing-dot"></span>Herbs: rosemary, thyme, sage, bay leaves</li>
+          <li><span class="ing-dot"></span>High-quality sea salt &amp; pepper</li>
+          <li><span class="ing-dot"></span>1 tbsp apple cider vinegar (helps break down bones)</li>
+          <li><span class="ing-dot"></span>Filtered water to just cover</li>
+        </ul>
+      </div>
+      <div class="steps-block">
+        <h3>📋 Quick Method</h3>
+        <ol class="step-list">
+          <li class="step-item"><span class="step-num">1</span><span>Add bones + veggies + herbs + salt + 1 tbsp ACV to Instant Pot. Cover with cold filtered water (1 inch over bones — no more).</span></li>
+          <li class="step-item"><span class="step-num">2</span><span>Select <strong>"Soup"</strong> setting → manually set to <strong>119 minutes</strong> (or High Pressure, 120 min).</span></li>
+          <li class="step-item"><span class="step-num">3</span><span>Let pressure release naturally (~20 min). Or use quick release if in a hurry.</span></li>
+          <li class="step-item"><span class="step-num">4</span><span>Strain through fine mesh strainer or cheesecloth into a heat-safe glass pitcher. Push on bones to extract all broth.</span></li>
+          <li class="step-item"><span class="step-num">5</span><span>Skim fat cap (or refrigerate first and remove solidified fat cap). Store in mason jars — leave 1 inch space if freezing!</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <p><strong>Christine's tip:</strong> I cook my broth for 2 hours minimum — 30 minutes creates chicken broth, not the rich, thick, might-even-gel-in-the-fridge bone broth you want. The more time, the better!</p>
+    </div>
+
+    <div class="brand-box">
+      <div class="brand-box-icon">🏆</div>
+      <div>
+        <h4>No Time to Make It? One Brand We Recommend: Kettle &amp; Fire</h4>
+        <ul class="reasons-list">
+          <li>100% grass-fed beef bones and vegetables (never frozen)</li>
+          <li>Extremely high collagen, glycine and amino acids</li>
+          <li>Slow-simmered for maximum nutrient extraction</li>
+          <li>Shelf-stable, safe non-toxic packaging — great for travel</li>
+          <li>Actually tastes really good!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">✦ ✦ ✦</div>
+
+  <!-- GOLDEN MILK -->
+  <div class="recipe-section" id="golden-milk">
+    <div class="recipe-header">
+      <div class="recipe-tag rust">Recipe 02 · Anti-Inflammatory · Brain Health</div>
+      <h2 class="recipe-title">Anti-Inflammatory Golden Milk</h2>
+      <p class="recipe-description">Curcumin — turmeric's most powerful compound — has medicinal properties used to reduce joint pain, arthritis, inflammation, and even treat depression. This warm drink is your daily dose of golden goodness.</p>
+      <div class="recipe-meta">
+        <div class="meta-pill">⏱ 20 minutes</div>
+        <div class="meta-pill">☕ 1 serving</div>
+        <div class="meta-pill">🌿 Dairy-free</div>
+      </div>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-pill">Reduces inflammation</div>
+      <div class="benefit-pill">Joint pain relief</div>
+      <div class="benefit-pill">Improves digestion</div>
+      <div class="benefit-pill">Supports liver health</div>
+      <div class="benefit-pill">Eases IBS symptoms</div>
+      <div class="benefit-pill">Lifts mood</div>
+      <div class="benefit-pill">Reduces bloating</div>
+      <div class="benefit-pill">Lowers cholesterol</div>
+    </div>
+
+    <div class="two-col">
+      <div class="ingredients-block">
+        <h3>🧴 Ingredients</h3>
+        <ul class="ingredient-list">
+          <li><span class="ing-dot"></span>1 cup organic full-fat coconut milk (BPA-free can) <em>— OR —</em> 1 cup unsweetened almond milk + 1 tsp coconut oil</li>
+          <li><span class="ing-dot"></span>½ tsp ground turmeric</li>
+          <li><span class="ing-dot"></span>Big pinch freshly ground black pepper <em>(activates curcumin!)</em></li>
+          <li><span class="ing-dot"></span>1 small piece fresh ginger root (¼ inch, peeled &amp; grated)</li>
+          <li><span class="ing-dot"></span>1 big pinch ground cardamom</li>
+          <li><span class="ing-dot"></span>¼ tsp raw honey — added off the heat (optional)</li>
+        </ul>
+      </div>
+      <div class="steps-block">
+        <h3>📋 Instructions</h3>
+        <ol class="step-list">
+          <li class="step-item"><span class="step-num" style="background:var(--rust)">1</span><span>Blend or whisk all ingredients together.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--rust)">2</span><span>Warm over medium heat for <strong>15 minutes</strong>. Let it gently simmer — do not boil.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--rust)">3</span><span>For a frothier drink, blend in a high-speed blender before serving.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--rust)">4</span><span>Add honey off the heat to preserve its enzymes.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tip-box" style="border-left-color: var(--rust); background: linear-gradient(135deg, #fdf0ec 0%, #faebdc 100%);">
+      <p><strong>Why black pepper?</strong> The piperine in black pepper increases curcumin absorption by up to 2000%. Never skip it! Even a couple of grinds makes a huge difference.</p>
+    </div>
+  </div>
+
+  <div class="section-divider">✦ ✦ ✦</div>
+
+  <!-- SMOOTHIE -->
+  <div class="recipe-section" id="smoothie">
+    <div class="recipe-header">
+      <div class="recipe-tag green">Recipe 03 · Immunity · Energy · Anti-inflammatory</div>
+      <h2 class="recipe-title">Immune Boosting Wellness Smoothie</h2>
+      <p class="recipe-description">Packed with fresh ginger, turmeric root, spinach, pineapple, and banana — this smoothie is absolutely delicious, great for digestion, and a daily boost for your immune system. Christine drinks this every day!</p>
+      <div class="recipe-meta">
+        <div class="meta-pill">⏱ 5 minutes</div>
+        <div class="meta-pill">🥤 Makes 2 smoothies</div>
+        <div class="meta-pill">🌱 Plant-based</div>
+        <div class="meta-pill">~139 cal each</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="ingredients-block">
+        <h3>🛒 Ingredients</h3>
+        <ul class="ingredient-list">
+          <li><span class="ing-dot" style="background:var(--green)"></span>1 banana</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>1 cup frozen pineapple</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>2–3 cups organic spinach</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>1 knob fresh ginger, peeled (~2 inches)</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>1 knob fresh turmeric root (~2 inches)</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>½ tbsp manuka or raw honey</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>⅛ tsp freshly ground black pepper</li>
+          <li><span class="ing-dot" style="background:var(--green)"></span>½–¾ cup almond milk or coconut milk</li>
+        </ul>
+      </div>
+      <div class="steps-block">
+        <h3>📋 Instructions</h3>
+        <ol class="step-list">
+          <li class="step-item"><span class="step-num" style="background:var(--green)">1</span><span>Add all ingredients to a large high-powered blender.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--green)">2</span><span>Blend on high for <strong>1–2 minutes</strong> until completely smooth.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--green)">3</span><span>Add more almond milk if needed to reach your desired consistency.</span></li>
+          <li class="step-item"><span class="step-num" style="background:var(--green)">4</span><span>Pour and enjoy — makes 2 smoothies!</span></li>
+        </ol>
+        <div class="tip-box" style="border-left-color:var(--green); background: linear-gradient(135deg, #eef4e8 0%, #e4eedc 100%); margin-top:16px;">
+          <p><strong>Swaps &amp; Add-ons:</strong> Add a scoop of collagen protein powder — it has no taste and adds a great protein boost! No bananas? Sub a cored apple instead.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nutrition-grid">
+      <div class="nutrition-item">
+        <div class="nutrition-value">139</div>
+        <div class="nutrition-label">Calories</div>
+      </div>
+      <div class="nutrition-item">
+        <div class="nutrition-value">2.7g</div>
+        <div class="nutrition-label">Fat</div>
+      </div>
+      <div class="nutrition-item">
+        <div class="nutrition-value">32.6g</div>
+        <div class="nutrition-label">Carbs</div>
+      </div>
+      <div class="nutrition-item">
+        <div class="nutrition-value">4g</div>
+        <div class="nutrition-label">Fiber</div>
+      </div>
+      <div class="nutrition-item">
+        <div class="nutrition-value">2.8g</div>
+        <div class="nutrition-label">Protein</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <strong>Boxing 4 Health — PPE Program</strong><br>
+    Our challenges don't define us. Our actions do.<br><br>
+    These recipes are for educational purposes. Please discuss dietary changes with your healthcare team.
+  </div>
+</footer>
+
+</body>
+</html>

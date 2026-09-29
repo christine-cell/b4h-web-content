@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Parkinson's Pathway to Empowerment — Program Guide</title>
+<style>
+  :root {
+    --navy:       #1E3A5F;
+    --navy-light: #2a4f7c;
+    --gold:       #C4913A;
+    --gold-light: #F5E8D0;
+    --green:      #2D4A2D;
+    --green-light:#EDF3EE;
+    --cream:      #FAF7F2;
+    --white:      #ffffff;
+    --text:       #1a1a1a;
+    --muted:      #5a5a5a;
+    --font:       'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+
+    /* Module accent colours */
+    --m1: #1E3A5F;
+    --m2: #2D4A2D;
+    --m3: #7B3F00;
+    --m4: #1a5276;
+    --m5: #4a235a;
+    --m6: #922B21;
+    --m7: #1E3A5F;
+    --m8: #2D4A2D;
+    --m9: #7B3F00;
+    --m10:#1a5276;
+    --m11:#4a235a;
+    --bonus:#5D4037;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  /* ── TOP HEADER ─────────────────────────────────── */
+  .site-header {
+    background: var(--navy);
+    padding: 28px 32px 22px;
+    text-align: center;
+    border-bottom: 5px solid var(--gold);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .logo-group { display: flex; align-items: center; gap: 14px; }
+
+  .logo-badge {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 18px;
+    font-weight: bold;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .logo-text .brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .logo-text .tagline {
+    font-size: 12px;
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .header-title {
+    text-align: right;
+  }
+
+  .header-title h1 {
+    font-size: 22px;
+    color: var(--gold);
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .header-title p {
+    font-size: 13px;
+    color: #cdd8e8;
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  /* ── HERO BANNER ─────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #2a4f7c 60%, #1E3A5F 100%);
+    padding: 52px 32px 48px;
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+
+  .hero h2 {
+    font-size: 36px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    color: #cdd8e8;
+    max-width: 680px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .hero-note {
+    display: inline-block;
+    background: rgba(196,145,58,0.15);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 14px 24px;
+    color: var(--gold-light);
+    font-size: 16px;
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  /* ── JUMP NAV ─────────────────────────────────────── */
+  .jump-nav {
+    background: var(--white);
+    border-bottom: 3px solid var(--gold-light);
+    padding: 18px 32px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .jump-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .jump-pill {
+    display: inline-block;
+    background: var(--cream);
+    border: 2px solid var(--navy);
+    color: var(--navy);
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .jump-pill:hover {
+    background: var(--navy);
+    color: var(--gold);
+  }
+
+  /* ── MAIN ─────────────────────────────────────────── */
+  .main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── MODULE CARD ──────────────────────────────────── */
+  .module-card {
+    background: var(--white);
+    border-radius: 14px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    box-shadow: 0 3px 16px rgba(30,58,95,0.09);
+    border: 1px solid rgba(30,58,95,0.08);
+  }
+
+  .module-header {
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+  }
+
+  .module-header:hover { filter: brightness(1.08); }
+
+  .module-number {
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.4);
+  }
+
+  .module-title-group { flex: 1; }
+
+  .module-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+  }
+
+  .module-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.78);
+    font-style: italic;
+    margin-top: 3px;
+  }
+
+  .module-toggle {
+    font-size: 28px;
+    color: rgba(255,255,255,0.7);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .module-toggle.open { transform: rotate(45deg); }
+
+  /* Module colour theming */
+  .m1  .module-header { background: var(--m1); }
+  .m2  .module-header { background: var(--m2); }
+  .m3  .module-header { background: var(--m3); }
+  .m4  .module-header { background: var(--m4); }
+  .m5  .module-header { background: var(--m5); }
+  .m6  .module-header { background: var(--m6); }
+  .m7  .module-header { background: var(--m7); }
+  .m8  .module-header { background: var(--m8); }
+  .m9  .module-header { background: var(--m9); }
+  .m10 .module-header { background: var(--m10); }
+  .m11 .module-header { background: var(--m11); }
+  .bonus-card .module-header { background: var(--bonus); }
+
+  /* Section inside module */
+  .module-body { display: none; }
+  .module-body.open { display: block; }
+
+  .section-block {
+    padding: 0 28px;
+    border-bottom: 1px solid var(--gold-light);
+  }
+
+  .section-block:last-child { border-bottom: none; }
+
+  .section-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 18px 0 10px;
+    border-bottom: 2px solid var(--gold-light);
+    margin-bottom: 4px;
+  }
+
+  /* Resource rows */
+  .resource-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f0ebe2;
+  }
+
+  .resource-item:last-child { border-bottom: none; }
+
+  .resource-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .icon-video    { background: #fdecea; }
+  .icon-read     { background: var(--gold-light); }
+  .icon-audio    { background: #e8f4fd; }
+  .icon-print    { background: #f3e5f5; }
+  .icon-action   { background: var(--green-light); }
+  .icon-checklist{ background: #e3f2fd; }
+  .icon-recipe   { background: #fff3e0; }
+  .icon-research { background: #e8eaf6; }
+  .icon-quiz     { background: #fce4ec; }
+
+  .resource-content { flex: 1; }
+
+  .resource-label {
+    font-size: 17px;
+    color: var(--text);
+    font-weight: bold;
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+
+  .resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+  }
+
+  .res-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--navy);
+    color: white;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 16px;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+  }
+
+  .res-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-1px);
+  }
+
+  .res-btn.gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .res-btn.gold:hover {
+    background: var(--navy);
+    color: var(--gold);
+  }
+
+  .res-btn.green {
+    background: var(--green);
+    color: white;
+  }
+
+  .res-btn.green:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  /* ── COMPLETION NOTE ──────────────────────────────── */
+  .completion-note {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 32px 36px;
+    text-align: center;
+    margin-top: 40px;
+    border: 2px solid var(--gold);
+  }
+
+  .completion-note p {
+    color: #cdd8e8;
+    font-size: 18px;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .completion-note strong {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  .site-footer {
+    background: var(--navy);
+    color: #cdd8e8;
+    text-align: center;
+    padding: 28px 32px;
+    font-size: 15px;
+    border-top: 4px solid var(--gold);
+    font-style: italic;
+  }
+
+  .site-footer strong { color: var(--gold); font-style: normal; }
+  .site-footer a { color: var(--gold); }
+
+  /* ── EXPAND ALL BUTTON ────────────────────────────── */
+  .expand-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .expand-btn {
+    background: var(--navy);
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    font-family: var(--font);
+    font-size: 15px;
+    padding: 10px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: bold;
+  }
+
+  .expand-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  /* ── RESPONSIVE ───────────────────────────────────── */
+  @media (max-width: 620px) {
+    .header-inner { flex-direction: column; text-align: center; }
+    .header-title { text-align: center; }
+    .hero h2 { font-size: 26px; }
+    .module-title { font-size: 18px; }
+    .resource-label { font-size: 16px; }
+    .main { padding: 24px 14px 60px; }
+    .section-block { padding: 0 16px; }
+    .module-header { padding: 16px 18px; }
+    .jump-nav { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo-badge">B4H</div>
+      <div class="logo-text">
+        <div class="brand">Boxing 4 Health</div>
+        <div class="tagline">★★★★ I'd rather be boxing ★★★★</div>
+      </div>
+    </div>
+    <div class="header-title">
+      <h1>Parkinson's Pathway<br>to Empowerment</h1>
+      <p>Your Complete Program Guide</p>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h2>Welcome to Your Program</h2>
+  <p>Everything you need is here — organized by topic, easy to find, and ready when you are.</p>
+  <div class="hero-note">
+    📌 <strong>You do not need to do everything at once.</strong> Choose what feels right for you today. 
+    You can return to any section at any time. This program is here to <em>support</em> you — not add pressure.
+  </div>
+</div>
+
+<!-- JUMP NAV -->
+<nav class="jump-nav">
+  <div class="jump-nav-inner">
+    <a class="jump-pill" href="#m1">#1 Welcome</a>
+    <a class="jump-pill" href="#m2">#2 Understanding PD</a>
+    <a class="jump-pill" href="#m3">#3 Stress & Mindset</a>
+    <a class="jump-pill" href="#m4">#4 Sleep</a>
+    <a class="jump-pill" href="#m5">#5 Balance</a>
+    <a class="jump-pill" href="#m6">#6 Motivation</a>
+    <a class="jump-pill" href="#m7">#7 Exercise</a>
+    <a class="jump-pill" href="#m8">#8 Nutrition</a>
+    <a class="jump-pill" href="#m9">#9 Voice</a>
+    <a class="jump-pill" href="#m10">#10 Cognitive Fitness</a>
+    <a class="jump-pill" href="#m11">#11 Supplements</a>
+    <a class="jump-pill" href="#bonus">Bonus Libraries</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="expand-bar">
+    <button class="expand-btn" onclick="expandAll()">▼ Expand All</button>
+    <button class="expand-btn" onclick="collapseAll()">▲ Collapse All</button>
+  </div>
+
+  <!-- ── MODULE 1 ── -->
+  <div class="module-card m1" id="m1">
+    <div class="module-header" onclick="toggleModule('mod1')">
+      <div class="module-number">1</div>
+      <div class="module-title-group">
+        <div class="module-title">Welcome</div>
+        <div class="module-subtitle">Start here — get oriented and set your goals</div>
+      </div>
+      <div class="module-toggle" id="icon-mod1">+</div>
+    </div>
+    <div class="module-body" id="body-mod1">
+
+      <div class="section-block">
+        <div class="section-title">Welcome</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Welcome to the Parkinson's Pathway to Empowerment</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/x3sgH2r9HnE" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">📖</div>
+          <div class="resource-content">
+            <div class="resource-label">My Background &amp; Why This Program Exists</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Baseline &amp; Goals</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-print">🖨️</div>
+          <div class="resource-content">
+            <div class="resource-label">Baseline Action Tests</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/11Vh1DGHuP-QnUJO6IJLQpidwdEoJoIipO-A7tjfXECQ/edit?usp=sharing" target="_blank">📄 Print / Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-audio">🎧</div>
+          <div class="resource-content">
+            <div class="resource-label">Setting Your Personal Goals <span style="font-size:14px;color:#888;">(Guided on Call #1)</span></div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/R2fMNLaOuCc" target="_blank">🎧 Listen</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-print">🖨️</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Goal Setting Worksheet</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/1DXv-uGY6rXcSR3RtklTmH82mP76aotk08ARf3nP3HQk/edit?usp=sharing" target="_blank">📄 Print / Open</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 2 ── -->
+  <div class="module-card m2" id="m2">
+    <div class="module-header" onclick="toggleModule('mod2')">
+      <div class="module-number">2</div>
+      <div class="module-title-group">
+        <div class="module-title">Core Support Library: Understanding Parkinson's</div>
+        <div class="module-subtitle">Learn the basics and build your care team</div>
+      </div>
+      <div class="module-toggle" id="icon-mod2">+</div>
+    </div>
+    <div class="module-body" id="body-mod2">
+
+      <div class="section-block">
+        <div class="section-title">Parkinson's Basics</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-audio">🎧</div>
+          <div class="resource-content">
+            <div class="resource-label">Overview of Parkinson's Disease</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/Rx99xByqnng" target="_blank">🎧 Listen</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">📖</div>
+          <div class="resource-content">
+            <div class="resource-label">Parkinson's Motor &amp; Non-Motor Symptoms</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/1b9q_tnxrwjkW7PlJ-oQtCiYbsC7AitB_gMG8sHOO-ug/edit?usp=sharing" target="_blank">📄 Open Document</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Your Care Team</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-audio">🎧</div>
+          <div class="resource-content">
+            <div class="resource-label">Your Care Team: Who Do You Call?</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/Rx99xByqnng" target="_blank">🎧 Listen</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-checklist">✅</div>
+          <div class="resource-content">
+            <div class="resource-label">Care Team Support List</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://drive.google.com/file/d/1qY7I0fxZ9aWBRKnIJ9VXbQtwtd3HUlB7/view?usp=sharing" target="_blank">📋 Open Checklist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 3 ── -->
+  <div class="module-card m3" id="m3">
+    <div class="module-header" onclick="toggleModule('mod3')">
+      <div class="module-number">3</div>
+      <div class="module-title-group">
+        <div class="module-title">Stress, Mindset &amp; the Nervous System</div>
+        <div class="module-subtitle">Dopamine, stress, and calming your nervous system</div>
+      </div>
+      <div class="module-toggle" id="icon-mod3">+</div>
+    </div>
+    <div class="module-body" id="body-mod3">
+
+      <div class="section-block">
+        <div class="section-title">Dopamine &amp; the Brain</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">📖</div>
+          <div class="resource-content">
+            <div class="resource-label">Dopamine: What You Need to Know</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/1LV_2ele6mBnhetmqjCnpQZ5dANhalYgv0psVjCpm-yA/edit?usp=sharing" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-checklist">✅</div>
+          <div class="resource-content">
+            <div class="resource-label">Dopamine Checklist</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://drive.google.com/file/d/1Y_Jkc_sUy4S1btdp_e_9A5IGY_Rg-vAt/view?usp=sharing" target="_blank">📋 Open Checklist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Understanding Stress</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Stress &amp; Parkinson's Disease</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/14Glf0MQElg" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-research">🔬</div>
+          <div class="resource-content">
+            <div class="resource-label">Research on Mindfulness &amp; Parkinson's</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/1SAvZ7oTE1fi6WiH_H3zcYvigMitM_dzM/edit?usp=sharing&rtpof=true&sd=true" target="_blank">📄 Read Document</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Calming the Nervous System</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🧘</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Mindfulness Practice</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/--HbwP1Za_E" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 4 ── -->
+  <div class="module-card m4" id="m4">
+    <div class="module-header" onclick="toggleModule('mod4')">
+      <div class="module-number">4</div>
+      <div class="module-title-group">
+        <div class="module-title">Sleep Support</div>
+        <div class="module-subtitle">Understanding and improving your sleep with Parkinson's</div>
+      </div>
+      <div class="module-toggle" id="icon-mod4">+</div>
+    </div>
+    <div class="module-body" id="body-mod4">
+
+      <div class="section-block">
+        <div class="section-title">Understanding Sleep &amp; Parkinson's</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Sleep and Parkinson's Disease</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/f5y4_0fJObs" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Improving Sleep</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🌙</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: 8 Steps for Better Sleep</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/Z7c3ePSTgUs" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🧘</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Mindfulness Session for Sleep</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/NADNF-WAQ08" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-print">🖨️</div>
+          <div class="resource-content">
+            <div class="resource-label">Sleep Schedule Template</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/u/0/d/1Jhd3hBlo3n8cnXourTz-6yFRMFIWRVKAehLnxIjak9s/edit" target="_blank">📄 Open / Print</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 5 ── -->
+  <div class="module-card m5" id="m5">
+    <div class="module-header" onclick="toggleModule('mod5')">
+      <div class="module-number">5</div>
+      <div class="module-title-group">
+        <div class="module-title">Balance &amp; Confidence</div>
+        <div class="module-subtitle">Build balance, reduce fall risk, move with confidence</div>
+      </div>
+      <div class="module-toggle" id="icon-mod5">+</div>
+    </div>
+    <div class="module-body" id="body-mod5">
+
+      <div class="section-block">
+        <div class="section-title">Balance &amp; Safety</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Balance &amp; Parkinson's Disease</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/6MPxkhuYO_w" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Practical Balance Support</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🥊</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Balance Exercises</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/EndOnuN2_v4" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🪑</div>
+          <div class="resource-content">
+            <div class="resource-label">Beginner Seated PWR Exercises</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/EtKPBMmFNKc" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🛡️</div>
+          <div class="resource-content">
+            <div class="resource-label">Eliminating the Fear of Falling</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/h8b45ySWyls" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🧍</div>
+          <div class="resource-content">
+            <div class="resource-label">Intermediate Standing PWR Exercises</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/T1CmQkxyXK0" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">⬇️</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Down to the Ground We Go</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/XYtIKS6uXbo" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 6 ── -->
+  <div class="module-card m6" id="m6">
+    <div class="module-header" onclick="toggleModule('mod6')">
+      <div class="module-number">6</div>
+      <div class="module-title-group">
+        <div class="module-title">Motivation &amp; Mental Strength</div>
+        <div class="module-subtitle">Mindset tools to keep you moving forward</div>
+      </div>
+      <div class="module-toggle" id="icon-mod6">+</div>
+    </div>
+    <div class="module-body" id="body-mod6">
+
+      <div class="section-block">
+        <div class="section-title">Understanding Motivation</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">📖</div>
+          <div class="resource-content">
+            <div class="resource-label">Why Motivation Matters</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/1n6OCCuoCX-l0dz5Jr3cggCgsu6mbEWhHqi_GnriNAH4/edit?usp=sharing" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">💛</div>
+          <div class="resource-content">
+            <div class="resource-label">Great Things Come to Those Who Take Action</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Supporting the Brain</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-research">🔬</div>
+          <div class="resource-content">
+            <div class="resource-label">Changing Your Brain: Anxiety &amp; Parkinson's</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://drive.google.com/file/d/1Alz5VielZVLqFtQQkL5hSEKlK_Qz6y2z/view?usp=sharing" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">💪</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Challenge Yourself</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://www.youtube.com/watch?v=59XFt6t2syM&t=29s" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🥊</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Let's Kick Parkinson's — Motivational Video</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/KlYKenDR4-U" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 7 ── -->
+  <div class="module-card m7" id="m7">
+    <div class="module-header" onclick="toggleModule('mod7')">
+      <div class="module-number">7</div>
+      <div class="module-title-group">
+        <div class="module-title">Exercise</div>
+        <div class="module-subtitle">Why it matters, how to do it, and your full movement library</div>
+      </div>
+      <div class="module-toggle" id="icon-mod7">+</div>
+    </div>
+    <div class="module-body" id="body-mod7">
+
+      <div class="section-block">
+        <div class="section-title">Why Exercise Matters</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Why Exercise Is Non-Negotiable</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/iScgOp0wBuw" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">📖</div>
+          <div class="resource-content">
+            <div class="resource-label">Why Intensity Is Key</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://drive.google.com/file/d/1p-jbY5IDAPs7JxGYX4WdSUjiqDSqRqYY/view?usp=sharing" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Movement Library</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">💥</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: VIGOR — Your Exercise Framework</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/vigor-worksheet.html" target="_blank">📋 Open VIGOR Guide</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🚶</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: GRAND Movements</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/oFMVElFHOoU" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🔄</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Rotation Exercises</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtube.com/shorts/ndjiR-QihnQ" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🔄</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Overall Rotation — Lying Down &amp; Rolling Over</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtube.com/shorts/md2ifGXERNY" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🦵</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Hamstring Release</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/bkxnaAOpN-A" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🥊</div>
+          <div class="resource-content">
+            <div class="resource-label">60-Minute Exercise Class — Fighter Level</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/eOomqJWWvMQ" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🪑</div>
+          <div class="resource-content">
+            <div class="resource-label">60-Minute Exercise Class — Champion (Seated)</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/WEXwha1uy3g" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 8 ── -->
+  <div class="module-card m8" id="m8">
+    <div class="module-header" onclick="toggleModule('mod8')">
+      <div class="module-number">8</div>
+      <div class="module-title-group">
+        <div class="module-title">Nutrition &amp; Gut Health</div>
+        <div class="module-subtitle">Feed your brain, support your gut, feel the difference</div>
+      </div>
+      <div class="module-toggle" id="icon-mod8">+</div>
+    </div>
+    <div class="module-body" id="body-mod8">
+
+      <div class="section-block">
+        <div class="section-title">Nutrition Basics</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">📖</div>
+          <div class="resource-content">
+            <div class="resource-label">Feeding the Need — Nutrition Overview</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/10fCULs_OuYMZa2h8a_d3SWkp1Z9qUspsI7GYFzSse6U/edit?usp=sharing" target="_blank">📄 Read Article</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Your Gut &amp; Parkinson's Disease</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/ua5nuyaNrMY" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Practical Nutrition Support</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🥦</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Clean 15 &amp; Dirty Dozen</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://drive.google.com/file/d/1mUzIIwEv2M8aZ5pBTAFmJF9xCnjBVm3j/view?usp=sharing" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-recipe">🥤</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Smoothie Recipes</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://drive.google.com/file/d/1g4mGeYtMaAoV9atMLaCxG2tr0hTiBJ-e/view?usp=sharing" target="_blank">🥤 Open Recipes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-recipe">🍽️</div>
+          <div class="resource-content">
+            <div class="resource-label">Mediterranean Diet &amp; 10-Day Sample Meal Plan</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/1hsAFsyPfeHZHFH09GVcadDlt0tivRYhke146bZLiSSM/edit?usp=sharing" target="_blank">🍽️ Open Meal Plan</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-recipe">👩‍🍳</div>
+          <div class="resource-content">
+            <div class="resource-label">My Favourite Healthy Recipes</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/ppe-recipes.html" target="_blank">👩‍🍳 Open Recipes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Research &amp; Education</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Webinar: Gut &amp; the Microbiome</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/UPRHTgcfOSY" target="_blank">▶ Watch Webinar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-research">🔬</div>
+          <div class="resource-content">
+            <div class="resource-label">Research Articles: Gut &amp; Parkinson's</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://drive.google.com/file/d/1-60cqW84RWi1eLS2CJLXgI5vleEIXYBT/view?usp=sharing" target="_blank">📄 Read Research</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-quiz">❓</div>
+          <div class="resource-content">
+            <div class="resource-label">Constipation: Results of a Specific Diet</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/pd-constipation-education-3.html" target="_blank">📖 Read &amp; Take Quiz</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-research">🔬</div>
+          <div class="resource-content">
+            <div class="resource-label">Best Research to Date: Dairy &amp; Parkinson's</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/pd-dairy-education.html" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 9 ── -->
+  <div class="module-card m9" id="m9">
+    <div class="module-header" onclick="toggleModule('mod9')">
+      <div class="module-number">9</div>
+      <div class="module-title-group">
+        <div class="module-title">Voice, Facial Expression &amp; Communication</div>
+        <div class="module-subtitle">Keep your voice strong and your expressions vibrant</div>
+      </div>
+      <div class="module-toggle" id="icon-mod9">+</div>
+    </div>
+    <div class="module-body" id="body-mod9">
+
+      <div class="section-block">
+        <div class="section-title">Understanding Changes</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">What's the Deal with My Voice?</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/TtVTujJMBsM" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">📖</div>
+          <div class="resource-content">
+            <div class="resource-label">Voice Work — Facial Expressions Guide</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/1531ogMFUqmRXajO75kV1ce6m_hr33_0OYBH84JuKZQ8/edit?usp=sharing" target="_blank">📄 Open Document</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Practice &amp; Exercises</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🗣️</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Let's Practice — Voice Exercises</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/3DmjkbY8iS4" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">😄</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Facial Expression Exercises</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/UNktry6BfW8" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🫧</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Let's Blow Bubbles — Breath &amp; Voice</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/q0BTtW8qZ10" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🎤</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Voice Lesson</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/BTQdYyysF4E" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 10 ── -->
+  <div class="module-card m10" id="m10">
+    <div class="module-header" onclick="toggleModule('mod10')">
+      <div class="module-number">10</div>
+      <div class="module-title-group">
+        <div class="module-title">Cognitive Fitness</div>
+        <div class="module-subtitle">Keep your mind sharp with cognitive challenges</div>
+      </div>
+      <div class="module-toggle" id="icon-mod10">+</div>
+    </div>
+    <div class="module-body" id="body-mod10">
+
+      <div class="section-block">
+        <div class="section-title">Why Cognitive Exercise Matters</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">🧠</div>
+          <div class="resource-content">
+            <div class="resource-label">Wake Up Your Mind</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/presentation/d/1w3RuozI3HYRJwMI_cLtkLgmDphETeSzF/edit?usp=sharing&ouid=100074584490534298192&rtpof=true&sd=true" target="_blank">📊 Open Presentation</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Cognitive Exercises — Video</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/H6Qf8li6vY8" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-research">🔬</div>
+          <div class="resource-content">
+            <div class="resource-label">Why Cognitive Exercises Matter</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/pd-cognitive-exercise.html" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Cognitive Practice</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🧩</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Cognitive Challenge</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/NsxNC676dOQ" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">🥊</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Boxing 101 &amp; Dual Tasking</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/JPnb9okYxw8" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODULE 11 ── -->
+  <div class="module-card m11" id="m11">
+    <div class="module-header" onclick="toggleModule('mod11')">
+      <div class="module-number">11</div>
+      <div class="module-title-group">
+        <div class="module-title">Supplements &amp; Immune Support</div>
+        <div class="module-subtitle">What supplements may help and how to build immunity</div>
+      </div>
+      <div class="module-toggle" id="icon-mod11">+</div>
+    </div>
+    <div class="module-body" id="body-mod11">
+
+      <div class="section-block">
+        <div class="section-title">Supplement Education</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">💊</div>
+          <div class="resource-content">
+            <div class="resource-label">Supplements &amp; Parkinson's Disease</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/pd-supplements-immune-en.html" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">🛡️</div>
+          <div class="resource-content">
+            <div class="resource-label">Building a Strong Immune System</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/pd-immune-system.html" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-research">🔬</div>
+          <div class="resource-content">
+            <div class="resource-label">New &amp; Emerging Supplements</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/pd-nr-supplement.html" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Practical Support</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">💡</div>
+          <div class="resource-content">
+            <div class="resource-label">Magnesium: One of Christine's Go-To's</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/pd-magnesium.html" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-recipe">🍽️</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Plan of Attack Recipes</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/plan-of-attack-recipes-en.html" target="_blank">👩‍🍳 Open Recipes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Completion &amp; Reflection</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">What Doesn't Challenge You Can't Change You</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/z9To_tTLKx8" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-action">✅</div>
+          <div class="resource-content">
+            <div class="resource-label">Action: Re-Test Using Your Assessment from Module #1</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── BONUS ── -->
+  <div class="module-card bonus-card" id="bonus">
+    <div class="module-header" onclick="toggleModule('modbonus')">
+      <div class="module-number">★</div>
+      <div class="module-title-group">
+        <div class="module-title">Bonus Libraries</div>
+        <div class="module-subtitle">Extra resources: Menopause, Freezing, Joint Health &amp; Webinars</div>
+      </div>
+      <div class="module-toggle" id="icon-modbonus">+</div>
+    </div>
+    <div class="module-body" id="body-modbonus">
+
+      <div class="section-block">
+        <div class="section-title">Women Only: Menopause &amp; Parkinson's Disease</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">👩</div>
+          <div class="resource-content">
+            <div class="resource-label">Estrogen Has Left the Building!</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://drive.google.com/file/d/14al4dCfiZxHTXDjMLno8Dbjcb5jyM2K4/view?usp=sharing" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-recipe">🍽️</div>
+          <div class="resource-content">
+            <div class="resource-label">Meals &amp; Snack Suggestions</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/1NaBipooHM5cjxc2dAo5SQbJCk-ZzLpi7/edit?usp=sharing&ouid=100074584490534298192&rtpof=true&sd=true" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-research">🔬</div>
+          <div class="resource-content">
+            <div class="resource-label">Research Summaries — Menopause &amp; PD</div>
+            <div class="resource-links">
+              <a class="res-btn" href="https://docs.google.com/document/d/1yldjGLzrtSJChyfjEj4cjO661JyCl7_D/edit?usp=sharing&ouid=100074584490534298192&rtpof=true&sd=true" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Freezing &amp; Movement Challenges</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Freezing: What, Why, When, How</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/N5l4Bm3p2kI" target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">📖</div>
+          <div class="resource-content">
+            <div class="resource-label">Why Do We Freeze and What Can We Do About It?</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/pd-freezing-of-gait.html" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Joint Health</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-read">🦴</div>
+          <div class="resource-content">
+            <div class="resource-label">Osteoarthritis &amp; Nutrition</div>
+            <div class="resource-links">
+              <a class="res-btn green" href="https://christine-cell.github.io/PPE-program/oa-nutrition.html" target="_blank">📄 Read</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Webinars &amp; Guest Experts</div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Webinar: Your Gut Microbiome</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/UPRHTgcfOSY" target="_blank">▶ Watch Webinar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-item">
+          <div class="resource-icon icon-video">🎬</div>
+          <div class="resource-content">
+            <div class="resource-label">Webinar: Speech Pathologist</div>
+            <div class="resource-links">
+              <a class="res-btn gold" href="https://youtu.be/jCH0yDGtpso" target="_blank">▶ Watch Webinar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COMPLETION NOTE -->
+  <div class="completion-note">
+    <p>You are not expected to complete everything in this program.</p>
+    <p>Choose what supports you <strong>right now</strong>. You can return to any section at any time.</p>
+    <p style="margin-top:14px;"><strong>This program exists to support you — not to add pressure.</strong></p>
+    <p style="margin-top:16px; font-size:15px;">Questions? Reach Christine at <strong>info@boxing4health.com</strong> or <strong>613.224.2694</strong></p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p><strong>Boxing 4 Health</strong> &nbsp;|&nbsp; <strong>Parkinson's Pathway to Empowerment</strong></p>
+  <p style="margin-top:6px;">613.224.2694 &nbsp;|&nbsp; info@boxing4health.com &nbsp;|&nbsp; <a href="https://boxing4health.com" target="_blank">boxing4health.com</a></p>
+  <p style="margin-top:8px; font-size:13px;">Our challenges don't define us. Our actions do.</p>
+</footer>
+
+<script>
+  function toggleModule(id) {
+    const body = document.getElementById('body-' + id);
+    const icon = document.getElementById('icon-' + id);
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    icon.classList.toggle('open', !isOpen);
+    icon.textContent = isOpen ? '+' : '×';
+  }
+
+  function expandAll() {
+    document.querySelectorAll('.module-body').forEach(b => b.classList.add('open'));
+    document.querySelectorAll('.module-toggle').forEach(i => { i.classList.add('open'); i.textContent = '×'; });
+  }
+
+  function collapseAll() {
+    document.querySelectorAll('.module-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.module-toggle').forEach(i => { i.classList.remove('open'); i.textContent = '+'; });
+  }
+</script>
+
+</body>
+</html>

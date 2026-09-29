@@ -84,16 +84,19 @@
     return fetch(BASE + "data/modules.json").then(function (r) { return r.json(); }).then(function (m) { MODULES = m; window.B4H_MODULES = m; return m; }).catch(function () { return { modules: [] }; });
   }
 
+  // Lessons in modules marked "optional": true (bonus sections) are tracked per
+  // module but don't count toward overall progress or the certificate.
   function allLessons(m) {
     var out = [];
-    (m.modules || []).forEach(function (mod) { (mod.lessons || []).forEach(function (l) { out.push(Object.assign({ module: mod.slug, moduleTitle: mod.title }, l)); }); });
+    (m.modules || []).forEach(function (mod) { (mod.lessons || []).forEach(function (l) { out.push(Object.assign({ module: mod.slug, moduleTitle: mod.title, optional: !!mod.optional }, l)); }); });
     return out;
   }
 
   /* ---------- Rendering ---------- */
   function render() {
     if (!MODULES) return;
-    var lessons = allLessons(MODULES);
+    var everything = allLessons(MODULES);
+    var lessons = everything.filter(function (l) { return !l.optional; });
     var total = lessons.length;
     var done = lessons.filter(function (l) { return P.isComplete(l.id); }).length;
     var pct = total ? Math.round((done / total) * 100) : 0;

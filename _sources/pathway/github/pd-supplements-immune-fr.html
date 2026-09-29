@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suppléments & Votre Système Immunitaire | Programme PPE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1E3A5F;
+    --green: #2D4A2D;
+    --gold: #C4913A;
+    --rust: #B85C38;
+    --teal: #1A6B6B;
+    --cream: #F8F4EE;
+    --warm-white: #FDFAF6;
+    --text: #2A2A2A;
+    --muted: #6B6B6B;
+    --border: #E8DFD0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+
+  .hero { background: var(--green); background-image: radial-gradient(ellipse at 15% 60%, rgba(196,145,58,0.2) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(26,107,107,0.3) 0%, transparent 50%); color: white; padding: 56px 40px 80px; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold), var(--teal), var(--gold)); }
+  .hero::before { content: '💊'; font-size: 180px; position: absolute; right: -20px; top: -10px; opacity: 0.07; }
+  .hero-inner { max-width: 820px; margin: 0 auto; }
+  .program-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(196,145,58,0.2); border: 1px solid rgba(196,145,58,0.4); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin-bottom: 14px; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero p { font-size: 1.05rem; opacity: 0.85; max-width: 580px; font-weight: 300; line-height: 1.7; }
+  .hero-meta { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 8px 14px; font-size: 0.83rem; opacity: 0.88; }
+
+  .section-nav { max-width: 860px; margin: -28px auto 0; padding: 0 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; position: relative; z-index: 10; }
+  .nav-pill { background: white; border-radius: 12px; padding: 14px 12px; text-align: center; box-shadow: 0 4px 18px rgba(30,58,95,0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-top: 3px solid var(--gold); text-decoration: none; color: var(--text); }
+  .nav-pill:nth-child(2) { border-top-color: var(--teal); }
+  .nav-pill:nth-child(3) { border-top-color: var(--rust); }
+  .nav-pill:nth-child(4) { border-top-color: var(--green); }
+  .nav-pill:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(30,58,95,0.14); }
+  .nav-icon { font-size: 1.5rem; margin-bottom: 5px; }
+  .nav-label { font-size: 0.75rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  .pro-note { background: linear-gradient(135deg, #fff8e8 0%, #fdf0d0 100%); border-left: 4px solid var(--gold); border-radius: 0 14px 14px 0; padding: 18px 24px; margin: 48px 0 36px; display: flex; gap: 14px; align-items: flex-start; }
+  .pro-note-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .pro-note-title { font-weight: 700; font-size: 0.88rem; letter-spacing: 1px; text-transform: uppercase; color: #6a3a00; margin-bottom: 5px; }
+  .pro-note p { font-size: 0.93rem; color: #5a3a0a; margin: 0; line-height: 1.6; }
+
+  .lesson-card { background: var(--warm-white); border-radius: 22px; padding: 40px; margin-bottom: 28px; border: 1px solid var(--border); box-shadow: 0 4px 18px rgba(30,58,95,0.05); scroll-margin-top: 20px; animation: fadeUp 0.5s ease both; }
+  .lesson-card:nth-child(2) { animation-delay: 0.1s; }
+  .lesson-card:nth-child(3) { animation-delay: 0.15s; }
+  .lesson-card:nth-child(4) { animation-delay: 0.2s; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+  .card-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+  .card-tag.gold { color: var(--gold); }
+  .card-tag.teal { color: var(--teal); }
+  .card-tag.rust { color: var(--rust); }
+  .card-tag.green { color: var(--green); }
+  .card-title { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--navy); margin-bottom: 14px; line-height: 1.2; }
+  .card-body { font-size: 0.97rem; color: #3a3a3a; line-height: 1.75; }
+  .card-body p { margin-bottom: 14px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  .forms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin: 20px 0; }
+  .form-card { background: white; border: 2px solid var(--border); border-radius: 12px; padding: 16px 12px; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+  .form-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .form-icon { font-size: 1.8rem; margin-bottom: 6px; }
+  .form-label { font-size: 0.82rem; font-weight: 600; color: var(--navy); }
+
+  .highlight-box { background: linear-gradient(135deg, #e8f0f8 0%, #d4e4f4 100%); border-left: 4px solid var(--navy); border-radius: 0 12px 12px 0; padding: 16px 22px; margin: 20px 0; }
+  .highlight-box p { font-size: 0.95rem; color: #1a2a3a; font-weight: 500; margin: 0; line-height: 1.6; }
+
+  .scenario-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 20px 0; }
+  .scenario-card { background: var(--cream); border-radius: 12px; padding: 18px; border: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
+  .scenario-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .scenario-text { font-size: 0.88rem; line-height: 1.5; color: var(--text); }
+
+  .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 20px 0; }
+  .food-card { background: white; border-radius: 14px; padding: 18px 16px; text-align: center; border: 2px solid #d0e0d0; transition: transform 0.2s; }
+  .food-card:hover { transform: translateY(-2px); }
+  .food-card.caution { border-color: #f0d0b0; background: #fffaf5; }
+  .food-emoji { font-size: 2rem; margin-bottom: 8px; }
+  .food-name { font-weight: 600; font-size: 0.88rem; color: var(--green); }
+  .food-card.caution .food-name { color: var(--rust); }
+  .food-note { font-size: 0.78rem; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+  .winter-block { background: var(--navy); color: white; border-radius: 20px; padding: 36px; margin: 24px 0; position: relative; overflow: hidden; }
+  .winter-block::before { content: '❄️'; font-size: 120px; position: absolute; right: -10px; top: -10px; opacity: 0.1; }
+  .winter-block h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 12px; }
+  .winter-block p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin-bottom: 12px; }
+  .winter-block p:last-child { margin-bottom: 0; }
+  .prep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+  .prep-item { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 12px 16px; font-size: 0.86rem; display: flex; gap: 10px; align-items: center; color: rgba(255,255,255,0.85); }
+  .prep-item.body { border-color: rgba(196,145,58,0.4); background: rgba(196,145,58,0.1); }
+
+  .divider { text-align: center; margin: 10px 0; color: var(--muted); font-size: 0.8rem; letter-spacing: 2px; display: flex; align-items: center; gap: 12px; }
+  .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .quiz-section { background: white; border-radius: 24px; padding: 42px; margin: 20px 0 40px; border: 2px solid #d4e4f4; box-shadow: 0 6px 32px rgba(30,58,95,0.08); }
+  .quiz-header { text-align: center; margin-bottom: 32px; }
+  .quiz-badge { display: inline-block; background: var(--teal); color: white; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 14px; }
+  .quiz-header h2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--navy); margin-bottom: 8px; }
+  .quiz-header p { font-size: 0.93rem; color: var(--muted); }
+
+  .quiz-progress { display: flex; gap: 6px; justify-content: center; margin-bottom: 28px; }
+  .qdot { width: 10px; height: 10px; border-radius: 50%; background: #d4e4f4; transition: background 0.3s; }
+  .qdot.active { background: var(--teal); }
+  .qdot.done { background: var(--navy); }
+
+  .q-block { display: none; animation: fadeUp 0.4s ease; }
+  .q-block.visible { display: block; }
+  .q-num { font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
+  .q-text { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 18px; line-height: 1.4; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .opt-btn { background: var(--cream); border: 2px solid var(--border); border-radius: 12px; padding: 13px 18px; text-align: left; font-family: 'Jost', sans-serif; font-size: 0.93rem; cursor: pointer; transition: all 0.2s; color: var(--text); display: flex; align-items: center; gap: 12px; }
+  .opt-btn:hover { border-color: var(--teal); background: #eef6f6; transform: translateX(4px); }
+  .opt-btn.correct { border-color: #3a8a3a; background: #edf7e4; color: #1a4a1a; }
+  .opt-btn.incorrect { border-color: var(--rust); background: #fce8e4; color: #7a2018; }
+  .opt-letter { width: 28px; height: 28px; border-radius: 50%; background: #d4e4f4; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.78rem; flex-shrink: 0; }
+  .opt-btn.correct .opt-letter { background: #3a8a3a; color: white; }
+  .opt-btn.incorrect .opt-letter { background: var(--rust); color: white; }
+  .feedback { display: none; margin-top: 14px; padding: 14px 18px; border-radius: 10px; font-size: 0.91rem; line-height: 1.6; }
+  .feedback.show { display: block; }
+  .feedback.correct-fb { background: #edf7e4; border-left: 4px solid #3a8a3a; color: #1a4a1a; }
+  .feedback.incorrect-fb { background: #fce8e4; border-left: 4px solid var(--rust); color: #6a2018; }
+  .q-nav { display: flex; justify-content: flex-end; margin-top: 20px; }
+  .next-btn { background: var(--teal); color: white; border: none; border-radius: 12px; padding: 12px 26px; font-family: 'Jost', sans-serif; font-size: 0.93rem; font-weight: 600; cursor: pointer; transition: background 0.2s; display: none; }
+  .next-btn:hover { background: #145555; }
+  .quiz-results { display: none; text-align: center; animation: fadeUp 0.5s ease; }
+  .res-emoji { font-size: 4.5rem; margin-bottom: 12px; display: block; }
+  .res-score { font-family: 'Playfair Display', serif; font-size: 3.2rem; color: var(--teal); line-height: 1; margin-bottom: 6px; }
+  .res-label { font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; color: var(--navy); }
+  .res-msg { font-size: 0.93rem; color: var(--muted); max-width: 480px; margin: 0 auto 24px; line-height: 1.7; }
+  .res-bar { height: 12px; background: #d4e4f4; border-radius: 8px; max-width: 380px; margin: 0 auto 28px; overflow: hidden; }
+  .res-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--green)); border-radius: 8px; transition: width 1s ease 0.3s; width: 0; }
+  .retake-btn { background: var(--navy); color: white; border: none; border-radius: 12px; padding: 13px 30px; font-family: 'Jost', sans-serif; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; }
+  .retake-btn:hover { background: #0f2540; }
+
+  footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); margin-top: 10px; font-size: 0.82rem; color: var(--muted); }
+  footer strong { color: var(--navy); }
+
+  @media (max-width: 640px) { .section-nav { grid-template-columns: repeat(2, 1fr); } .prep-grid { grid-template-columns: 1fr; } .lesson-card, .quiz-section { padding: 26px 22px; } .hero { padding: 40px 24px 70px; } }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="program-badge">🥊 Boxing 4 Health · Programme PPE</div>
+    <h1>Suppléments &<br><em>Votre Système Immunitaire</em></h1>
+    <p>Découvrez comment les suppléments peuvent soutenir votre intestin, renforcer votre immunité et vous aider à bâtir des bases plus solides pour votre santé — surtout pendant la saison froide.</p>
+    <div class="hero-meta">
+      <div class="hero-tag">💊 Que sont les suppléments</div>
+      <div class="hero-tag">🦠 Santé intestinale & probiotiques</div>
+      <div class="hero-tag">🛡️ Soutien immunitaire</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-nav">
+  <a class="nav-pill" href="#what-are">
+    <div class="nav-icon">💊</div>
+    <div class="nav-label">Que sont les suppléments ?</div>
+  </a>
+  <a class="nav-pill" href="#gut-health">
+    <div class="nav-icon">🦠</div>
+    <div class="nav-label">Santé intestinale</div>
+  </a>
+  <a class="nav-pill" href="#food-sources">
+    <div class="nav-icon">🥣</div>
+    <div class="nav-label">Aliments qui aident</div>
+  </a>
+  <a class="nav-pill" href="#immunity">
+    <div class="nav-icon">🛡️</div>
+    <div class="nav-label">Soutien immunitaire</div>
+  </a>
+</div>
+
+<div class="container">
+
+  <div class="pro-note">
+    <div class="pro-note-icon">⚕️</div>
+    <div>
+      <div class="pro-note-title">Travaillez toujours avec votre équipe soignante</div>
+      <p>Avant de commencer tout supplément, consultez votre professionnel de santé — surtout si vous prenez des médicaments ou gérez une maladie chronique comme la maladie de Parkinson. Il peut vous aider à déterminer ce qui est sûr et approprié pour vous.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="lesson-card" id="what-are">
+    <div class="card-tag gold">Section 01 · Les Bases</div>
+    <h2 class="card-title">Que sont les suppléments ?</h2>
+    <div class="card-body">
+      <p>Les compléments alimentaires sont des substances utilisées pour ajouter des nutriments à votre alimentation ou aider à résoudre certains problèmes de santé — notamment les problèmes digestifs, l'ostéoporose, l'arthrite ou les carences nutritionnelles générales.</p>
+      <p>Utilisés de manière appropriée, les suppléments peuvent aider à soutenir les niveaux d'énergie, l'humeur, la clarté mentale et le bien-être général.</p>
+    </div>
+
+    <div class="forms-grid">
+      <div class="form-card"><div class="form-icon">💊</div><div class="form-label">Comprimés</div></div>
+      <div class="form-card"><div class="form-icon">🔵</div><div class="form-label">Capsules</div></div>
+      <div class="form-card"><div class="form-icon">🥄</div><div class="form-label">Poudres</div></div>
+      <div class="form-card"><div class="form-icon">🟡</div><div class="form-label">Gélules souples</div></div>
+      <div class="form-card"><div class="form-icon">🧴</div><div class="form-label">Liquides</div></div>
+    </div>
+
+    <div class="highlight-box">
+      <p>⚠️ <strong>Les suppléments ne doivent jamais remplacer une alimentation saine.</strong> Si vous mangez déjà une alimentation à base d'aliments entiers — en privilégiant les aliments riches en nutriments et en limitant les aliments inflammatoires et les excès de produits laitiers — vous avez déjà fait un grand pas en avant.</p>
+    </div>
+
+    <div class="card-body" style="margin-top:16px;">
+      <p>Une alimentation saine soutient votre intestin, et un intestin sain joue un rôle important dans le soutien de votre système immunitaire. Les suppléments fonctionnent mieux en complément d'une bonne nutrition, et non comme substitut.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- SECTION 2 -->
+  <div class="lesson-card" id="gut-health">
+    <div class="card-tag teal">Section 02 · Santé Intestinale</div>
+    <h2 class="card-title">Santé Intestinale & Probiotiques</h2>
+    <div class="card-body">
+      <p>L'un des premiers endroits où j'aime commencer lors de la discussion sur les suppléments est la santé intestinale — et cela nous amène souvent aux <strong>probiotiques</strong>.</p>
+      <p>Les probiotiques sont des bactéries bénéfiques qui peuvent aider à maintenir un équilibre sain dans votre système digestif. Ils peuvent être utiles pour les personnes souffrant de problèmes digestifs tels que l'indigestion, les ballonnements ou la constipation.</p>
+      <p>Notre intestin contient naturellement un mélange de bonnes et de mauvaises bactéries, et les probiotiques aident à reconstituer les bactéries bénéfiques qui maintiennent notre système digestif en bon état de fonctionnement.</p>
+      <p>Un supplément probiotique de haute qualité peut aider à soutenir la restauration de cet équilibre.</p>
+    </div>
+
+    <p style="font-size:0.93rem; font-weight:600; color:var(--navy); margin: 20px 0 12px;">Par exemple, si vous avez déjà :</p>
+    <div class="scenario-row">
+      <div class="scenario-card">
+        <div class="scenario-icon">💉</div>
+        <div class="scenario-text"><strong>Pris des antibiotiques</strong> — ils peuvent éliminer les bactéries bénéfiques en même temps que les nuisibles</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-icon">🤢</div>
+        <div class="scenario-text"><strong>Souffert d'un virus gastrique</strong> — la maladie peut perturber l'équilibre naturel de l'intestin</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-icon">🦠</div>
+        <div class="scenario-text"><strong>Eu un parasite ou une maladie digestive importante</strong> — ces situations peuvent perturber l'équilibre des bactéries intestinales</div>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:20px; border-left-color:var(--teal); background: linear-gradient(135deg, #e4f2f2 0%, #d0eaea 100%);">
+      <p>💡 De nombreuses personnes n'ont pas besoin de prendre des probiotiques indéfiniment. Ils sont souvent utilisés pendant une période de temps pour aider à améliorer la santé intestinale, selon les besoins individuels.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- SECTION 3 -->
+  <div class="lesson-card" id="food-sources">
+    <div class="card-tag rust">Section 03 · Les Aliments Comme Médecine</div>
+    <h2 class="card-title">Aliments qui soutiennent la santé intestinale</h2>
+    <div class="card-body">
+      <p>En plus des suppléments, certains aliments peuvent également aider à soutenir les bactéries bénéfiques dans l'intestin.</p>
+    </div>
+
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-emoji">🍖</div>
+        <div class="food-name">Bouillon d'os</div>
+        <div class="food-note">Idéalement nourri à l'herbe et bio. Riche en collagène et en composés qui guérissent l'intestin.</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🌶️</div>
+        <div class="food-name">Kimchi</div>
+        <div class="food-note">Légumes fermentés regorgeant de bactéries bénéfiques.</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🥬</div>
+        <div class="food-name">Choucroute</div>
+        <div class="food-note">Chou fermenté — un aliment classique riche en probiotiques.</div>
+      </div>
+      <div class="food-card caution">
+        <div class="food-emoji">🥛</div>
+        <div class="food-name">Kéfir</div>
+        <div class="food-note">Boisson de lait fermenté — pas idéal pour tout le monde. Introduire progressivement.</div>
+      </div>
+    </div>
+
+    <div class="pro-note" style="margin-top:20px; margin-bottom:0;">
+      <div class="pro-note-icon">⚠️</div>
+      <div>
+        <div class="pro-note-title">Une mise en garde sur les aliments fermentés</div>
+        <p>Les aliments fermentés ne conviennent pas à tout le monde. Si vous avez des problèmes digestifs sous-jacents, ils peuvent parfois <em>aggraver</em> les symptômes. Introduisez ces aliments progressivement et idéalement sous la guidance d'un professionnel de santé. <strong>Comprendre la cause profonde des symptômes digestifs est toujours la première étape.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- SECTION 4 -->
+  <div class="lesson-card" id="immunity">
+    <div class="card-tag green">Section 04 · Soutien Immunitaire</div>
+    <h2 class="card-title">Soutenir votre système immunitaire</h2>
+    <div class="card-body">
+      <p>Je veux aussi que vous pensiez à quelque chose d'important.</p>
+      <p>La plupart d'entre nous se préparent pour l'hiver en achetant des vêtements chauds, en changeant les pneus et en préparant nos maisons pour le froid. Mais combien d'entre nous préparent leur <em>corps</em> pour la saison des rhumes et de la grippe ?</p>
+    </div>
+
+    <div class="winter-block">
+      <h3>❄️ Préparation hivernale — Pour votre corps</h3>
+      <p>Soutenir votre système immunitaire toute l'année devient particulièrement important pendant les mois plus froids. Certains suppléments et choix alimentaires peuvent aider à soutenir votre système immunitaire et peuvent réduire la durée ou la gravité des symptômes lorsque la maladie survient.</p>
+      <div class="prep-grid">
+        <div class="prep-item">🧥 Vêtements chauds pour le froid</div>
+        <div class="prep-item">🚗 Pneus d'hiver sur la voiture</div>
+        <div class="prep-item">🏠 Préparer la maison</div>
+        <div class="prep-item body">💊 Préparer votre corps ← N'oubliez pas !</div>
+      </div>
+    </div>
+
+    <div class="card-body" style="margin-top:20px;">
+      <p>Avant de commencer tout supplément, veuillez consulter votre professionnel de santé pour vous assurer qu'il n'y a pas de contre-indications avec vos médicaments ou conditions de santé.</p>
+      <p>Dans votre prochaine tâche d'action, je vous fournirai une liste de certains des suppléments clés et aliments couramment utilisés pour soutenir la santé immunitaire.</p>
+    </div>
+
+    <div class="highlight-box" style="border-left-color:var(--green); background: linear-gradient(135deg, #eef4e8 0%, #e4eedc 100%);">
+      <p>💪 <strong>Rendez-vous à la prochaine section</strong>, et continuons à travailler ensemble pour vous aider à bâtir une base plus solide et plus saine.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- QUIZ -->
+  <div class="quiz-section" id="quiz">
+    <div class="quiz-header">
+      <div class="quiz-badge">Vérification des Connaissances</div>
+      <h2>Testez ce que vous avez appris 🛡️</h2>
+      <p>Un quiz rapide pour renforcer les idées clés de cette leçon.</p>
+    </div>
+    <div class="quiz-progress" id="progressDots"></div>
+    <div id="quizContent"></div>
+    <div class="quiz-results" id="quizResults">
+      <span class="res-emoji" id="resEmoji">🎉</span>
+      <div class="res-score" id="resScore"></div>
+      <div class="res-label" id="resLabel"></div>
+      <div class="res-bar"><div class="res-fill" id="resFill"></div></div>
+      <p class="res-msg" id="resMsg"></p>
+      <button class="retake-btn" onclick="restartQuiz()">🔄 Recommencer le Quiz</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <strong>Boxing 4 Health — Programme PPE</strong><br>
+    Nos défis ne nous définissent pas. Nos actions, oui.<br><br>
+    Cette leçon est à des fins éducatives uniquement. Consultez toujours votre équipe soignante avant de commencer tout supplément.
+  </div>
+</footer>
+
+<script>
+const questions = [
+  {
+    text: "Les suppléments devraient remplacer une alimentation saine quand vous vous sentez mal.",
+    options: ["Vrai — les suppléments sont plus efficaces que les aliments", "Faux — les suppléments doivent compléter, et non remplacer, une alimentation saine", "Vrai — avec les bons suppléments, l'alimentation n'a pas d'importance", "Cela dépend du supplément"],
+    correct: 1,
+    feedback: [
+      "❌ Pas tout à fait. Les suppléments peuvent être utiles, mais ne remplacent jamais la vraie nourriture entière. Les aliments contiennent des milliers de composés que les suppléments ne peuvent pas reproduire.",
+      "✅ Correct ! Les suppléments doivent toujours compléter une alimentation saine, jamais la remplacer. Une alimentation à base d'aliments entiers est votre outil le plus puissant.",
+      "❌ Aucun supplément ne peut remplacer la complexité et les bienfaits d'une alimentation riche en nutriments. Les suppléments fonctionnent mieux aux côtés d'une bonne nutrition.",
+      "❌ Dans l'ensemble, les suppléments sont destinés à compléter — c'est-à-dire à ajouter à — votre alimentation, pas à la remplacer."
+    ]
+  },
+  {
+    text: "Quel est le rôle principal des probiotiques dans votre corps ?",
+    options: ["Remplacer toutes les bactéries intestinales", "Aider à reconstituer les bactéries bénéfiques et soutenir un équilibre intestinal sain", "Éliminer définitivement toutes les mauvaises bactéries", "Réduire le besoin d'une alimentation saine"],
+    correct: 1,
+    feedback: [
+      "❌ Les probiotiques ne remplacent pas toutes les bactéries intestinales — votre intestin contient naturellement un mélange complexe. Les probiotiques aident à restaurer et soutenir les bactéries bénéfiques.",
+      "✅ Exactement ! Les probiotiques aident à reconstituer les bactéries bénéfiques dans votre intestin qui peuvent être perturbées par les antibiotiques, la maladie ou d'autres facteurs.",
+      "❌ Les probiotiques soutiennent l'équilibre — ils n'éliminent pas définitivement les mauvaises bactéries. Un intestin sain contient un mélange des deux, avec une majorité de bactéries bénéfiques.",
+      "❌ Les probiotiques sont un complément à un mode de vie sain, pas un substitut à une bonne nutrition."
+    ]
+  },
+  {
+    text: "Laquelle des situations suivantes peut perturber l'équilibre des bactéries dans votre intestin ?",
+    options: ["Boire plus d'eau", "Prendre un traitement antibiotique", "Manger plus de légumes", "Dormir davantage"],
+    correct: 1,
+    feedback: [
+      "❌ Rester hydraté est excellent pour votre intestin ! L'eau soutient la digestion mais ne perturbe pas l'équilibre bactérien.",
+      "✅ Oui ! Les antibiotiques sont conçus pour tuer les bactéries nuisibles, mais ils peuvent aussi éliminer les bactéries intestinales bénéfiques — c'est pourquoi un probiotique est souvent recommandé après un traitement.",
+      "❌ Manger plus de légumes est merveilleux pour la santé intestinale ! Les fibres nourrissent les bactéries bénéfiques.",
+      "❌ Le sommeil est important pour la santé globale, mais il ne perturbe pas l'équilibre des bactéries intestinales."
+    ]
+  },
+  {
+    text: "Les aliments fermentés comme le kimchi et la choucroute sont bénéfiques pour la santé intestinale de tout le monde.",
+    options: ["Vrai — ils sont toujours bénéfiques", "Faux — ils peuvent aggraver les symptômes chez les personnes ayant des problèmes digestifs sous-jacents", "Vrai — plus d'aliments fermentés, mieux c'est", "Cela ne concerne que les personnes de plus de 60 ans"],
+    correct: 1,
+    feedback: [
+      "❌ Bien que les aliments fermentés soient bénéfiques pour beaucoup, ils peuvent en fait aggraver les symptômes chez certaines personnes ayant des conditions digestives. La réponse individuelle est importante.",
+      "✅ Correct ! Les aliments fermentés ne conviennent pas à tout le monde. Si vous avez des problèmes digestifs sous-jacents, introduisez-les progressivement et consultez d'abord un professionnel de santé.",
+      "❌ Plus n'est pas toujours mieux — surtout avec les aliments fermentés. Commencez lentement et observez la réaction de votre corps.",
+      "❌ La santé intestinale est importante à tout âge. La mise en garde sur les aliments fermentés s'applique quel que soit l'âge."
+    ]
+  },
+  {
+    text: "Pourquoi est-il important de soutenir votre système immunitaire toute l'année, pas seulement quand vous êtes malade ?",
+    options: ["Ce n'est pas important — votre système immunitaire prend soin de lui-même", "Un soutien annuel aide à préparer votre corps, réduisant potentiellement la durée et la gravité des maladies", "Vous devez seulement penser à l'immunité en hiver", "Les suppléments ne fonctionnent que si vous les prenez déjà malade"],
+    correct: 1,
+    feedback: [
+      "❌ Votre système immunitaire bénéficie grandement d'un soutien constant. Attendre d'être malade, c'est comme attendre l'hiver pour acheter un manteau !",
+      "✅ Exactement ! Tout comme vous préparez votre maison et votre voiture pour l'hiver, préparer votre corps toute l'année aide à renforcer la résilience. Un soutien proactif peut réduire la sévérité des maladies.",
+      "❌ Bien que l'hiver soit souvent une période à plus haut risque, la santé immunitaire est une priorité toute l'année. Des habitudes constantes offrent la meilleure protection.",
+      "❌ La supplémentation préventive est souvent plus efficace que la supplémentation réactive. L'objectif est de renforcer votre système immunitaire avant que la maladie ne survienne."
+    ]
+  },
+  {
+    text: "Que devriez-vous toujours faire avant de commencer un nouveau supplément ?",
+    options: ["Rien — les suppléments sont naturels donc toujours sûrs", "Consulter votre professionnel de santé pour obtenir des conseils et vérifier les contre-indications", "Demander à un ami qui prend le même supplément", "Rechercher le produit le mieux noté en ligne"],
+    correct: 1,
+    feedback: [
+      "❌ « Naturel » ne signifie pas automatiquement sûr — surtout en combinaison avec des médicaments. Certains suppléments peuvent interagir avec les médicaments contre Parkinson et d'autres médicaments.",
+      "✅ Correct ! Votre équipe soignante peut confirmer quels suppléments vous conviennent, vérifier les interactions avec vos médicaments et aider à déterminer la bonne dose.",
+      "❌ Vos besoins de santé sont individuels. Ce qui fonctionne pour un ami peut ne pas être approprié — ou même sûr — pour vous, étant donné vos médicaments et vos antécédents médicaux.",
+      "❌ Les évaluations en ligne peuvent être un point de départ pour la recherche, mais votre professionnel de santé possède le contexte médical nécessaire pour guider votre situation spécifique."
+    ]
+  }
+];
+
+let current = 0, score = 0, answered = false;
+
+function buildQuiz() {
+  const content = document.getElementById('quizContent');
+  const dots = document.getElementById('progressDots');
+  dots.innerHTML = questions.map((_, i) => `<div class="qdot" id="dot-${i}"></div>`).join('');
+  content.innerHTML = questions.map((q, i) => `
+    <div class="q-block ${i === 0 ? 'visible' : ''}" id="qblock-${i}">
+      <div class="q-num">Question ${i + 1} sur ${questions.length}</div>
+      <div class="q-text">${q.text}</div>
+      <div class="options">
+        ${q.options.map((opt, j) => `
+          <button class="opt-btn" onclick="selectAnswer(${i}, ${j})" id="opt-${i}-${j}">
+            <span class="opt-letter">${String.fromCharCode(65 + j)}</span>${opt}
+          </button>`).join('')}
+      </div>
+      <div class="feedback" id="fb-${i}"></div>
+      <div class="q-nav"><button class="next-btn" id="next-${i}" onclick="nextQ(${i})">${i < questions.length - 1 ? 'Suivant →' : 'Voir les Résultats →'}</button></div>
+    </div>`).join('');
+  updateDots();
+}
+
+function selectAnswer(qIdx, optIdx) {
+  if (answered && current === qIdx) return;
+  answered = true;
+  const q = questions[qIdx];
+  q.options.forEach((_, j) => {
+    const btn = document.getElementById(`opt-${qIdx}-${j}`);
+    if (j === optIdx) btn.classList.add(j === q.correct ? 'correct' : 'incorrect');
+    if (j === q.correct && j !== optIdx) btn.classList.add('correct');
+  });
+  const fb = document.getElementById(`fb-${qIdx}`);
+  fb.textContent = q.feedback[optIdx];
+  fb.className = `feedback show ${optIdx !== q.correct ? 'incorrect-fb' : 'correct-fb'}`;
+  if (optIdx === q.correct) score++;
+  document.getElementById(`next-${qIdx}`).style.display = 'block';
+}
+
+function nextQ(qIdx) {
+  document.getElementById(`qblock-${qIdx}`).classList.remove('visible');
+  document.getElementById(`dot-${qIdx}`).classList.replace('active', 'done');
+  answered = false;
+  if (qIdx + 1 < questions.length) {
+    current = qIdx + 1;
+    document.getElementById(`qblock-${current}`).classList.add('visible');
+    updateDots();
+  } else { showResults(); }
+}
+
+function updateDots() {
+  questions.forEach((_, i) => {
+    const dot = document.getElementById(`dot-${i}`);
+    if (i === current) dot.classList.add('active');
+  });
+}
+
+function showResults() {
+  document.getElementById('quizContent').style.display = 'none';
+  document.getElementById('progressDots').style.display = 'none';
+  document.getElementById('quizResults').style.display = 'block';
+  const pct = Math.round((score / questions.length) * 100);
+  document.getElementById('resScore').textContent = `${score}/${questions.length}`;
+  let emoji, label, msg;
+  if (pct === 100) { emoji = '🌟'; label = 'Score Parfait !'; msg = 'Remarquable ! Vous avez une compréhension approfondie des suppléments et de la santé immunitaire. Ces connaissances vous aideront à prendre des décisions éclairées pour votre santé.'; }
+  else if (pct >= 80) { emoji = '🛡️'; label = 'Excellent travail !'; msg = 'Bravo ! Vous avez une bonne maîtrise des concepts clés. Revoyez les questions manquées pour compléter votre compréhension.'; }
+  else if (pct >= 60) { emoji = '📚'; label = 'Bonne progression !'; msg = 'Vous êtes sur la bonne voie ! Relisez les sections qui vous ont semblé difficiles et réessayez le quiz.'; }
+  else { emoji = '💪'; label = 'Continuez !'; msg = 'Tout expert a commencé comme débutant. Relisez la leçon ci-dessus et réessayez — vous pouvez y arriver !'; }
+  document.getElementById('resEmoji').textContent = emoji;
+  document.getElementById('resLabel').textContent = label;
+  document.getElementById('resMsg').textContent = msg;
+  setTimeout(() => { document.getElementById('resFill').style.width = pct + '%'; }, 100);
+}
+
+function restartQuiz() {
+  current = 0; score = 0; answered = false;
+  document.getElementById('quizResults').style.display = 'none';
+  document.getElementById('quizContent').style.display = 'block';
+  document.getElementById('progressDots').style.display = 'flex';
+  buildQuiz();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

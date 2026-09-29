@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Cognitive Exercise Matters — PPE Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1A1F2E;
+  --purple: #4A3880;
+  --purple-mid: #6B52B0;
+  --purple-light: #E8E2F8;
+  --gold: #C89A2A;
+  --gold-pale: #FBF4E0;
+  --coral: #D4604A;
+  --teal: #2A7A8A;
+  --teal-pale: #E0F2F5;
+  --cream: #FDFAF4;
+  --warm: #F4EFE8;
+  --muted: #6E7080;
+  --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.72;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--ink);
+  background-image:
+    radial-gradient(ellipse at 15% 50%, rgba(74,56,128,0.55) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 20%, rgba(200,154,42,0.2) 0%, transparent 50%);
+  color: white;
+  padding: 70px 40px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-text {
+  position: absolute;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 280px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.03);
+  right: -30px;
+  top: -40px;
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -10px;
+}
+
+.hero .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200,154,42,0.25);
+  border: 1px solid rgba(200,154,42,0.4);
+  color: #f0c84a;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2.3rem, 5.5vw, 3.8rem);
+  line-height: 1.1;
+  max-width: 640px;
+  margin-bottom: 18px;
+}
+
+.hero h1 em { color: #c4a8f8; font-style: italic; }
+
+.hero .sub {
+  font-size: 1.05rem;
+  opacity: 0.78;
+  max-width: 520px;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+/* ─── RESEARCH PILLS ─── */
+.research-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.3;
+}
+
+.pill strong { color: #c4a8f8; display: block; font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+
+/* ─── STAT CARDS ─── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 16px;
+  max-width: 880px;
+  margin: -46px auto 0;
+  padding: 0 28px;
+  position: relative;
+  z-index: 10;
+}
+
+.stat-card {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(26,31,46,0.14);
+  border-top: 5px solid var(--purple);
+  animation: rise 0.6s ease both;
+}
+
+.stat-card:nth-child(2) { border-top-color: var(--teal); animation-delay:.1s; }
+.stat-card:nth-child(3) { border-top-color: var(--gold); animation-delay:.2s; }
+.stat-card:nth-child(4) { border-top-color: var(--coral); animation-delay:.3s; }
+
+@keyframes rise { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+.stat-num {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--purple);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-card:nth-child(2) .stat-num { color: var(--teal); }
+.stat-card:nth-child(3) .stat-num { color: var(--gold); }
+.stat-card:nth-child(4) .stat-num { color: var(--coral); }
+.stat-label { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+
+/* ─── CONTAINER ─── */
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+/* ─── SECTION HEADERS ─── */
+.sec-tag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--purple-mid);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+p { font-size: 1rem; color: #323645; margin-bottom: 16px; }
+
+section { padding: 54px 0 16px; }
+
+/* ─── HIGHLIGHT ─── */
+.hl {
+  background: var(--purple-light);
+  border-left: 5px solid var(--purple-mid);
+  border-radius: 0 14px 14px 0;
+  padding: 20px 24px;
+  margin: 22px 0;
+}
+.hl p { margin: 0; font-weight: 500; color: var(--purple); font-size: 1.02rem; }
+
+/* ─── RESEARCH CARDS ─── */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.research-card {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 26px;
+  border: 1px solid #E0DBF4;
+  box-shadow: 0 4px 20px rgba(74,56,128,0.07);
+  transition: transform .22s, box-shadow .22s;
+}
+
+.research-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(74,56,128,0.13); }
+
+.rc-journal {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--purple-mid);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.rc-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.rc-body { font-size: 0.88rem; color: #445; line-height: 1.65; margin: 0; }
+
+.rc-finding {
+  display: inline-block;
+  background: var(--purple-light);
+  color: var(--purple);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 12px;
+}
+
+/* ─── DARK BLOCK ─── */
+.dark-block {
+  background: var(--ink);
+  background-image: radial-gradient(ellipse at 80% 30%, rgba(74,56,128,0.4) 0%, transparent 60%);
+  color: white;
+  border-radius: 22px;
+  padding: 42px 44px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-block::before {
+  content: '🧠';
+  font-size: 180px;
+  position: absolute;
+  right: -20px; bottom: -30px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.dark-block h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.55rem;
+  color: #c4a8f8;
+  margin-bottom: 14px;
+}
+
+.dark-block p { color: rgba(255,255,255,0.82); font-size: 0.97rem; margin-bottom: 14px; }
+.dark-block p:last-child { margin: 0; }
+
+/* ─── BENEFIT GRID ─── */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 26px 0;
+}
+
+.benefit-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 22px 20px;
+  border: 1px solid #ede8f8;
+  text-align: center;
+}
+
+.benefit-icon { font-size: 2.2rem; margin-bottom: 10px; }
+.benefit-title { font-weight: 600; font-size: 0.95rem; color: var(--purple); margin-bottom: 6px; }
+.benefit-text { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+/* ─── DUAL TASK SECTION ─── */
+.dual-banner {
+  background: linear-gradient(135deg, var(--teal) 0%, #1a5a68 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 36px 40px;
+  margin: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dual-banner::after {
+  content: '🔄';
+  font-size: 160px;
+  position: absolute;
+  right: -10px; bottom: -30px;
+  opacity: 0.07;
+}
+
+.dual-banner h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.4rem;
+  color: #a8eaf4;
+  margin-bottom: 12px;
+}
+
+.dual-banner p { font-size: 0.95rem; opacity: 0.88; max-width: 600px; margin-bottom: 10px; }
+.dual-banner p:last-child { margin: 0; }
+
+/* ═══════════════════════════════════════
+   GAMES SECTION
+═══════════════════════════════════════ */
+.games-intro {
+  text-align: center;
+  padding: 60px 0 10px;
+}
+
+.games-intro h2 { margin-bottom: 12px; }
+.games-intro p { color: var(--muted); max-width: 520px; margin: 0 auto; }
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 28px;
+  margin: 36px 0 60px;
+}
+
+/* ─── GAME CARD BASE ─── */
+.game-card {
+  background: var(--white);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px rgba(26,31,46,0.09);
+  border: 1px solid #ede8f8;
+}
+
+.game-header {
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid #f0ecfa;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.game-icon { font-size: 2.4rem; }
+
+.game-meta { flex: 1; }
+.game-title { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 2px; }
+.game-sub { font-size: 0.78rem; color: var(--muted); }
+
+.game-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--purple-light);
+  color: var(--purple);
+}
+
+.game-body { padding: 22px 24px 24px; }
+
+/* ─── GAME 1: WORD MEMORY ─── */
+#memoryGame .words-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  min-height: 60px;
+  margin: 14px 0;
+}
+
+.word-chip {
+  background: var(--purple-light);
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 18px;
+  border-radius: 10px;
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn { from{opacity:0;transform:scale(0.8)} to{opacity:1;transform:scale(1)} }
+
+#memoryGame textarea {
+  width: 100%;
+  border: 2px solid #ddd8f4;
+  border-radius: 12px;
+  padding: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  resize: none;
+  height: 80px;
+  transition: border-color .2s;
+  color: var(--ink);
+}
+
+#memoryGame textarea:focus { outline: none; border-color: var(--purple-mid); }
+
+/* ─── GAME 2: COLOUR STROOP ─── */
+#stroopGame .stroop-word {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.stroop-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.stroop-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, opacity .15s;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.stroop-btn:hover { transform: scale(1.03); }
+.stroop-btn:active { transform: scale(0.97); }
+
+/* ─── GAME 3: COUNTING BACKWARDS ─── */
+#countGame .count-display {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--teal);
+  padding: 16px 0;
+  line-height: 1;
+}
+
+.count-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.count-btn {
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: var(--cream);
+  padding: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+  color: var(--ink);
+}
+
+.count-btn:hover { border-color: var(--teal); background: var(--teal-pale); }
+.count-btn.correct { background: #e4f8ea; border-color: #3a9a5a; color: #1a5a2a; }
+.count-btn.wrong { background: #fce8e4; border-color: #c84a3a; color: #8a2018; }
+
+/* ─── GAME 4: PATTERN SEQUENCE ─── */
+#patternGame .pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 240px;
+  margin: 14px auto;
+}
+
+.pattern-cell {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  transition: background .15s, transform .1s;
+  font-size: 0;
+}
+
+.pattern-cell:hover { transform: scale(1.05); }
+.pattern-cell.lit { background: var(--purple-mid); box-shadow: 0 0 16px rgba(107,82,176,0.5); }
+.pattern-cell.player-hit { background: var(--gold); box-shadow: 0 0 16px rgba(200,154,42,0.5); }
+.pattern-cell.wrong-hit { background: var(--coral); }
+
+/* ─── SHARED GAME CONTROLS ─── */
+.game-btn {
+  background: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 26px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+  margin-top: 14px;
+}
+
+.game-btn:hover { background: var(--purple-mid); }
+.game-btn:active { transform: scale(0.97); }
+.game-btn.teal { background: var(--teal); }
+.game-btn.teal:hover { background: #236a78; }
+
+.game-score {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #f0ecfa;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.game-score strong { color: var(--purple); font-size: 1.05rem; }
+
+.game-feedback {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 26px;
+  color: var(--purple-mid);
+  margin-top: 8px;
+}
+
+.game-phase {
+  background: var(--warm);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* ─── REFERENCES ─── */
+.references {
+  background: var(--warm);
+  border-radius: 18px;
+  padding: 32px 36px;
+  margin: 20px 0 60px;
+}
+
+.references h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.ref-item {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.55;
+  padding: 8px 0;
+  border-bottom: 1px solid #e8e2d8;
+  display: flex;
+  gap: 10px;
+}
+
+.ref-item:last-child { border-bottom: none; }
+.ref-num { color: var(--purple-mid); font-weight: 700; flex-shrink: 0; }
+
+footer {
+  text-align: center;
+  padding: 36px 28px;
+  font-size: 0.8rem;
+  color: #bbb;
+  border-top: 1px solid #ede8f8;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 48px 24px 80px; }
+  .games-grid { grid-template-columns: 1fr; }
+  .dark-block, .dual-banner { padding: 28px 24px; }
+  .references { padding: 24px 22px; }
+  .research-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-bg-text">🧠</div>
+  <div class="container">
+    <div class="badge">🧠 PPE Educational Program</div>
+    <h1>Your Brain Needs a <em>Workout</em> Too</h1>
+    <p class="sub">Why cognitive exercise is one of the most powerful — and underused — tools in Parkinson's disease management. Backed by the latest research.</p>
+    <div class="research-pills">
+      <div class="pill"><strong>Source</strong>van Balkom et al., 2022 · Amsterdam UMC</div>
+      <div class="pill"><strong>Source</strong>Gavelin et al., 2022 · Ageing Research Reviews</div>
+      <div class="pill"><strong>Source</strong>Brain Sciences, 2023 · Dual-Task Meta-Analysis</div>
+      <div class="pill"><strong>Source</strong>MDPI Systematic Review, 2025 · 23 RCTs</div>
+      <div class="pill"><strong>Source</strong>Frontiers in Neuroscience, 2025</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-num">75%</div>
+    <div class="stat-label">of people with PD develop cognitive symptoms at some point</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">18mo</div>
+    <div class="stat-label">duration that cognitive training benefits were maintained in key studies</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">23</div>
+    <div class="stat-label">randomised controlled trials reviewed in the most recent 2025 systematic review</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">↑BDNF</div>
+    <div class="stat-label">brain-derived neurotrophic factor — the brain's own growth hormone — rises with cognitive exercise</div>
+  </div>
+</div>
+
+<!-- ═══ CONTENT ═══ -->
+<div class="container">
+
+  <!-- SECTION 1 -->
+  <section>
+    <span class="sec-tag">Why It Matters</span>
+    <h2>Parkinson's Isn't Just a Movement Disorder</h2>
+    <p>When most people think of Parkinson's disease, they picture tremors, stiffness, and slowness of movement. But research has firmly established that PD is much more than that. Cognitive changes — including difficulties with memory, attention, processing speed, executive function (planning and problem-solving), and visuospatial skills — are among the most common and impactful non-motor symptoms of the disease.</p>
+
+    <div class="hl">
+      <p>🔬 A landmark 2021 review in <em>Nature Reviews Disease Primers</em> (Aarsland et al.) confirmed that cognitive impairment in PD is now recognised as a defined clinical entity — and one that profoundly affects quality of life, independence, and caregiver burden.</p>
+    </div>
+
+    <p>Up to 75% of people living with Parkinson's will develop some degree of cognitive impairment over the course of their disease. Yet cognitive health is one of the areas where proactive, non-pharmacological interventions like cognitive training can genuinely make a difference — and the evidence to support this is growing fast.</p>
+    <p>The good news? The brain has a remarkable ability to adapt, rewire, and build new connections — a phenomenon called <strong>neuroplasticity</strong>. And just like physical exercise keeps your muscles strong, cognitive exercise keeps your brain resilient. You can actually train it.</p>
+  </section>
+
+  <!-- NEUROPLASTICITY BLOCK -->
+  <div class="dark-block">
+    <h3>🔬 Neuroplasticity — Your Brain Can Change</h3>
+    <p>Neuroplasticity is the brain's lifelong capacity to reorganise itself by forming new neural connections. This is not just a theory — it's measurable. Cognitive training studies in PD have used MRI imaging to show actual structural changes in white matter microstructure after just 8 weeks of training (Vriend et al., 2021, <em>Neurotherapeutics</em>).</p>
+    <p>A key player in this process is <strong>Brain-Derived Neurotrophic Factor (BDNF)</strong> — essentially your brain's own fertiliser. Exercise and cognitive stimulation both increase BDNF levels, which promotes the survival and growth of neurons, strengthens synaptic connections, and has been shown to support hippocampal neurogenesis — the birth of brand new brain cells.</p>
+    <p>The most exciting finding from dual-task research (doing a physical and mental task at the same time) is the "guided plasticity facilitation hypothesis" — motor exercise opens the door for neuroplasticity, and cognitive stimulation guides where that plasticity goes. Together, they are more powerful than either alone.</p>
+  </div>
+
+  <!-- SECTION 2 — RESEARCH -->
+  <section>
+    <span class="sec-tag">The Evidence</span>
+    <h2>What the Research Actually Shows</h2>
+    <p>This is no longer fringe science. Multiple high-quality randomised controlled trials and large systematic reviews now support cognitive training as a meaningful intervention for people with Parkinson's disease.</p>
+
+    <div class="research-grid">
+
+      <div class="research-card">
+        <div class="rc-journal">Parkinsonism & Related Disorders · 2022 · Amsterdam UMC</div>
+        <div class="rc-title">8-Week Online Cognitive Training — Double-Blind RCT</div>
+        <p class="rc-body">van Balkom and colleagues at Amsterdam's Vrije Universiteit conducted a rigorous double-blind randomised controlled trial of 8 weeks of online cognitive training in people with PD. The trial showed measurable improvements in cognitive performance and, notably, white matter microstructure changes on MRI — meaning the brain physically changed. A follow-up 2023 study confirmed that while booster sessions are needed to sustain effects long-term, participants who completed training showed significantly fewer depressive symptoms at follow-up.</p>
+        <span class="rc-finding">📌 Key finding: Brain structure measurably changed after 8 weeks</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-journal">Ageing Research Reviews · 2022 · Systematic Review & Meta-Analysis</div>
+        <div class="rc-title">Computerised Cognitive Training in PD — 14 RCTs</div>
+        <p class="rc-body">Gavelin and colleagues conducted a comprehensive systematic review and meta-analysis following PRISMA 2020 guidelines, covering 14 high-quality randomised controlled trials of computerised cognitive training in Parkinson's disease. The review found consistent positive effects across multiple cognitive domains, with the most robust evidence for attention, processing speed, and executive function. Critically, improvements were maintained for up to 18 months in studies that included follow-up booster sessions.</p>
+        <span class="rc-finding">📌 Key finding: Benefits maintained up to 18 months with booster sessions</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-journal">Brain Sciences · 2023 · Meta-Analysis · West China Hospital, Sichuan University</div>
+        <div class="rc-title">Motor-Cognitive Dual-Task Training — Impact on Brain & Body</div>
+        <p class="rc-body">This meta-analysis synthesised evidence from multiple RCTs on dual-task training — where participants perform a physical and cognitive task simultaneously (e.g., walking while counting backwards). The research showed dual-task training improved both physical and cognitive outcomes in PD, outperforming either type of training alone. The proposed mechanism is the "guided plasticity facilitation hypothesis": physical exercise stimulates BDNF and opens the brain for neuroplasticity, while the cognitive component guides where those new connections form.</p>
+        <span class="rc-finding">📌 Key finding: Dual-task training superior to either physical or cognitive training alone</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-journal">Archives of Physical Medicine & Rehabilitation · 2023</div>
+        <div class="rc-title">Dual-Task Training Meta-Analysis — Gait, Attention & Cognition</div>
+        <p class="rc-body">Wong, Cheng, Yang and colleagues published a meta-analysis with moderate-quality evidence demonstrating that dual-task training significantly improved dual-task gait speed, step and stride length, and measures of attention in people with PD — compared to usual care or conventional physical training alone. This is particularly important because dual-task performance (e.g., walking while talking) is a major determinant of fall risk and independence in PD.</p>
+        <span class="rc-finding">📌 Key finding: Dual-task gait and attention both improved with cognitive-motor training</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-journal">Brain Sciences / MDPI Systematic Review · 2025 · 23 RCTs</div>
+        <div class="rc-title">Comprehensive Identification of Cognitive Training for PD</div>
+        <p class="rc-body">The most recent 2025 systematic review — covering 23 randomised controlled trials across PubMed, PsycINFO, and Web of Science — found strong evidence across a range of cognitive training modalities, including exergames, virtual reality, executive function training, multidomain programmes, and dual-task interventions. The authors highlight that cognitive impairment in PD "might lead to an increased risk of developing dementia," making early and sustained cognitive training a priority.</p>
+        <span class="rc-finding">📌 Key finding: Multiple modalities effective — start early, be consistent</span>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-journal">Frontiers in Neuroscience · 2025</div>
+        <div class="rc-title">Physical Activity, Neuroplasticity & Cognitive Training — Comprehensive Review</div>
+        <p class="rc-body">This sweeping 2025 Frontiers review confirmed that the combination of physical activity and cognitive training produces additive neuroplastic benefits far beyond either alone. Specifically for PD, virtual reality-based exercise systems with cognitive components improved motor function by 35% compared to conventional physiotherapy. The review also highlights that BDNF — elevated by both physical and cognitive exercise — is a central mediator of these brain-changing effects.</p>
+        <span class="rc-finding">📌 Key finding: Combined physical + cognitive training = most powerful approach</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DUAL TASK BANNER -->
+  <div class="dual-banner">
+    <h3>💡 The Power of Dual-Tasking</h3>
+    <p>One of the most exciting insights from recent research is the power of doing two things at once — a cognitive task and a physical task simultaneously. This directly targets a known challenge in PD: the brain's reduced capacity to divide attention between competing tasks, which is why walking and talking can feel so much harder than it used to.</p>
+    <p>Try it yourself today: count backwards from 100 by 3s while walking. Or recite the alphabet while doing gentle exercises. These aren't party tricks — they're evidence-based interventions that train exactly the cognitive-motor pathways that Parkinson's challenges.</p>
+  </div>
+
+  <!-- BENEFITS GRID -->
+  <section>
+    <span class="sec-tag">The Benefits</span>
+    <h2>What Cognitive Training Can Do For You</h2>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <div class="benefit-title">Processing Speed</div>
+        <div class="benefit-text">Training improves the speed at which the brain processes information — one of the first things to slow in PD</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <div class="benefit-title">Attention & Focus</div>
+        <div class="benefit-text">Sustained and divided attention can be meaningfully improved, reducing the "brain fog" that many experience</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📋</div>
+        <div class="benefit-title">Executive Function</div>
+        <div class="benefit-text">Planning, organising, and problem-solving — all trainable skills that help maintain independence in daily life</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💾</div>
+        <div class="benefit-title">Working Memory</div>
+        <div class="benefit-text">The ability to hold and manipulate information in the moment — key for conversations, tasks, and navigation</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">😌</div>
+        <div class="benefit-title">Mood & Depression</div>
+        <div class="benefit-text">The 2023 van Balkom follow-up found significantly fewer depressive symptoms in the cognitive training group</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🚶</div>
+        <div class="benefit-title">Safer Walking</div>
+        <div class="benefit-text">Dual-task training directly improves the cognitive-motor coordination needed to walk safely in real-world environments</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GAMES SECTION ═══ -->
+  <div class="games-intro">
+    <span class="sec-tag">Brain Games</span>
+    <h2>Now Let's Put Your Brain to Work! 🎮</h2>
+    <p>These games aren't just for fun — each one targets a specific cognitive domain affected by Parkinson's disease. Play them daily for best results.</p>
+  </div>
+
+  <div class="games-grid">
+
+    <!-- GAME 1: WORD MEMORY -->
+    <div class="game-card">
+      <div class="game-header">
+        <div class="game-icon">📝</div>
+        <div class="game-meta">
+          <div class="game-title">Word Memory Challenge</div>
+          <div class="game-sub">Targets: Working Memory · Recall</div>
+        </div>
+        <div class="game-tag">Memory</div>
+      </div>
+      <div class="game-body" id="memoryGame">
+        <div class="game-phase" id="memPhase">Press Start to begin. You'll have 8 seconds to memorise the words.</div>
+        <div class="words-display" id="memWords"></div>
+        <textarea id="memInput" placeholder="Type the words you remember, separated by commas..." style="display:none"></textarea>
+        <div class="game-feedback" id="memFeedback"></div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="game-btn" id="memBtn" onclick="memoryAction()">▶ Start Game</button>
+        </div>
+        <div class="game-score">
+          <span>Round: <strong id="memRound">1</strong></span>
+          <span>Best: <strong id="memBest">0</strong> words</span>
+          <span>Score: <strong id="memScore">0</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME 2: COLOUR STROOP -->
+    <div class="game-card">
+      <div class="game-header">
+        <div class="game-icon">🎨</div>
+        <div class="game-meta">
+          <div class="game-title">Colour-Word Stroop</div>
+          <div class="game-sub">Targets: Attention · Processing Speed · Inhibition</div>
+        </div>
+        <div class="game-tag">Focus</div>
+      </div>
+      <div class="game-body" id="stroopGame">
+        <div class="game-phase">Tap the button that matches the <strong>INK COLOUR</strong> — not the word! This is the classic Stroop test used in clinical cognitive assessments.</div>
+        <div class="stroop-word" id="stroopWord">Press Start!</div>
+        <div class="stroop-buttons" id="stroopBtns" style="display:none">
+          <button class="stroop-btn" style="background:#e05540" onclick="stroopAnswer('red')">RED</button>
+          <button class="stroop-btn" style="background:#3a7fc1" onclick="stroopAnswer('blue')">BLUE</button>
+          <button class="stroop-btn" style="background:#4a9a5a" onclick="stroopAnswer('green')">GREEN</button>
+          <button class="stroop-btn" style="background:#c89a2a" onclick="stroopAnswer('orange')">ORANGE</button>
+        </div>
+        <div class="game-feedback" id="stroopFeedback"></div>
+        <button class="game-btn" id="stroopBtn" onclick="stroopStart()">▶ Start Game</button>
+        <div class="game-score">
+          <span>Correct: <strong id="stroopCorrect">0</strong></span>
+          <span>Streak: <strong id="stroopStreak">0</strong> 🔥</span>
+          <span>Time: <strong id="stroopTime">0s</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME 3: BACKWARDS COUNTING -->
+    <div class="game-card">
+      <div class="game-header">
+        <div class="game-icon">🔢</div>
+        <div class="game-meta">
+          <div class="game-title">Count Backwards</div>
+          <div class="game-sub">Targets: Working Memory · Processing Speed · Dual-Task Prep</div>
+        </div>
+        <div class="game-tag">Dual-Task</div>
+      </div>
+      <div class="game-body" id="countGame">
+        <div class="game-phase" id="countPhase">Classic clinical exercise! Count down by 7 from the number shown. Used in the Montreal Cognitive Assessment (MoCA) test.</div>
+        <div class="count-display" id="countDisplay">—</div>
+        <div class="count-options" id="countOptions" style="display:none"></div>
+        <div class="game-feedback" id="countFeedback"></div>
+        <button class="game-btn teal" id="countBtn" onclick="countStart()">▶ Start Game</button>
+        <div class="game-score">
+          <span>Correct: <strong id="countCorrect">0</strong> / 10</span>
+          <span>Streak: <strong id="countStreak">0</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME 4: PATTERN SEQUENCE -->
+    <div class="game-card">
+      <div class="game-header">
+        <div class="game-icon">🟣</div>
+        <div class="game-meta">
+          <div class="game-title">Pattern Sequence (Simon Says)</div>
+          <div class="game-sub">Targets: Visual Memory · Attention · Sequence Processing</div>
+        </div>
+        <div class="game-tag">Visual Memory</div>
+      </div>
+      <div class="game-body" id="patternGame">
+        <div class="game-phase" id="patPhase">Watch the sequence of squares light up, then repeat it in the same order. Level increases as you succeed.</div>
+        <div class="pattern-grid" id="patGrid"></div>
+        <div class="game-feedback" id="patFeedback"></div>
+        <button class="game-btn" id="patBtn" onclick="patternStart()">▶ Start Game</button>
+        <div class="game-score">
+          <span>Level: <strong id="patLevel">1</strong></span>
+          <span>Best: <strong id="patBest">0</strong></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="references">
+    <h3>📚 Research Sources</h3>
+    <div class="ref-item"><span class="ref-num">[1]</span><span>van Balkom TD et al. (2022). Effect of eight-week online cognitive training in Parkinson's disease: A double-blind, randomized, controlled trial. <em>Parkinsonism & Related Disorders</em>, 96, 80–87. doi: 10.1016/j.parkreldis.2022.02.018</span></div>
+    <div class="ref-item"><span class="ref-num">[2]</span><span>van Balkom TD et al. (2023). Long-term effects of cognitive training in Parkinson's disease: A randomized, controlled trial. <em>Clinical Parkinsonism & Related Disorders</em>, 9, 100204. doi: 10.1016/j.prdoa.2023.100204</span></div>
+    <div class="ref-item"><span class="ref-num">[3]</span><span>Gavelin HM et al. (2022). Computerized cognitive training in Parkinson's disease: A systematic review and meta-analysis. <em>Ageing Research Reviews</em>, 80, 101671. doi: 10.1016/j.arr.2022.101671</span></div>
+    <div class="ref-item"><span class="ref-num">[4]</span><span>Zhang et al. (2023). The impact of motor-cognitive dual-task training on physical and cognitive functions in Parkinson's disease. <em>Brain Sciences</em>, 13(3), 437. doi: 10.3390/brainsci13030437</span></div>
+    <div class="ref-item"><span class="ref-num">[5]</span><span>Wong PL, Cheng SJ, Yang YR, Wang RY. (2023). Effects of dual task training on dual task gait performance and cognitive function in individuals with Parkinson disease: A meta-analysis. <em>Archives of Physical Medicine and Rehabilitation</em>, 104(6), 950–964.</span></div>
+    <div class="ref-item"><span class="ref-num">[6]</span><span>Pinto et al. (2025). Identification of Cognitive Training for Individuals with Parkinson's Disease: A Systematic Review. <em>Brain Sciences</em> (MDPI), 15(1), 61. doi: 10.3390/brainsci15010061</span></div>
+    <div class="ref-item"><span class="ref-num">[7]</span><span>Aarsland D et al. (2021). Parkinson disease-associated cognitive impairment. <em>Nature Reviews Disease Primers</em>, 7, 47. doi: 10.1038/s41572-021-00280-3</span></div>
+    <div class="ref-item"><span class="ref-num">[8]</span><span>Frontiers in Neuroscience. (2025). Physical activity and neuroplasticity in neurodegenerative disorders: a comprehensive review of exercise interventions, cognitive training, and AI applications. doi: 10.3389/fnins.2025.1502417</span></div>
+  </div>
+
+</div>
+
+<footer>
+  PPE Educational Program — For educational purposes only. Not a substitute for medical advice.<br>
+  Sources cited above are peer-reviewed publications from PubMed, Frontiers, and MDPI databases.
+</footer>
+
+<!-- ═══════════════════════════════════
+     GAME JAVASCRIPT
+═══════════════════════════════════ -->
+<script>
+
+/* ──────────────────────────────
+   GAME 1: WORD MEMORY
+────────────────────────────── */
+const wordBank = [
+  ['apple','river','coat','thunder','spoon'],
+  ['purple','ticket','lantern','drum','forest'],
+  ['monday','eagle','mirror','blanket','cloud'],
+  ['bridge','pillow','candle','garden','stone'],
+  ['window','carpet','lemon','rabbit','winter'],
+  ['ocean','pencil','helmet','copper','flame'],
+  ['harvest','cellar','diamond','whistle','maple'],
+  ['compass','velvet','anchor','shadow','kettle'],
+];
+
+let memState = 'idle', memRoundNum = 1, memScoreVal = 0, memBestVal = 0;
+let memCurrentWords = [];
+
+function memoryAction() {
+  const btn = document.getElementById('memBtn');
+  if (memState === 'idle' || memState === 'result') {
+    // Show words
+    memState = 'showing';
+    btn.style.display = 'none';
+    const setIdx = (memRoundNum - 1) % wordBank.length;
+    memCurrentWords = wordBank[setIdx];
+    document.getElementById('memPhase').textContent = 'Memorise these words! You have 8 seconds...';
+    document.getElementById('memFeedback').textContent = '';
+    const disp = document.getElementById('memWords');
+    disp.innerHTML = memCurrentWords.map(w => `<div class="word-chip">${w}</div>`).join('');
+    document.getElementById('memInput').style.display = 'none';
+
+    let t = 8;
+    const interval = setInterval(() => {
+      t--;
+      document.getElementById('memPhase').textContent = `Memorise these words! ${t} seconds remaining...`;
+      if (t <= 0) {
+        clearInterval(interval);
+        disp.innerHTML = '';
+        document.getElementById('memPhase').textContent = 'Now type the words you remember, separated by commas:';
+        document.getElementById('memInput').style.display = 'block';
+        document.getElementById('memInput').value = '';
+        document.getElementById('memInput').focus();
+        btn.textContent = '✓ Check My Answers';
+        btn.style.display = 'block';
+        memState = 'answering';
+      }
+    }, 1000);
+
+  } else if (memState === 'answering') {
+    // Check answers
+    const input = document.getElementById('memInput').value.toLowerCase();
+    const typed = input.split(',').map(s => s.trim()).filter(s => s.length > 0);
+    let correct = 0;
+    memCurrentWords.forEach(w => { if (typed.includes(w.toLowerCase())) correct++; });
+    if (correct > memBestVal) {
+      memBestVal = correct;
+      document.getElementById('memBest').textContent = memBestVal;
+    }
+    memScoreVal += correct;
+    document.getElementById('memScore').textContent = memScoreVal;
+    document.getElementById('memInput').style.display = 'none';
+    // Show which were correct
+    document.getElementById('memWords').innerHTML = memCurrentWords.map(w => {
+      const hit = typed.includes(w.toLowerCase());
+      return `<div class="word-chip" style="background:${hit?'#edf7e4':'#fce8e4'};color:${hit?'#1a5a2a':'#8a2018'}">${w} ${hit?'✓':'✗'}</div>`;
+    }).join('');
+    document.getElementById('memFeedback').textContent = `You remembered ${correct} / ${memCurrentWords.length} words! ${correct === memCurrentWords.length ? '🌟 Perfect!' : correct >= 3 ? '👏 Great effort!' : '💪 Keep practising!'}`;
+    document.getElementById('memPhase').textContent = `Round ${memRoundNum} complete.`;
+    memRoundNum++;
+    document.getElementById('memRound').textContent = memRoundNum;
+    btn.textContent = '▶ Next Round';
+    memState = 'result';
+  }
+}
+
+/* ──────────────────────────────
+   GAME 2: STROOP
+────────────────────────────── */
+const stroopData = [
+  { word:'RED',   color:'blue',   label:'blue'   },
+  { word:'BLUE',  color:'green',  label:'green'  },
+  { word:'GREEN', color:'orange', label:'orange' },
+  { word:'ORANGE',color:'red',   label:'red'    },
+  { word:'RED',   color:'red',    label:'red'    },
+  { word:'BLUE',  color:'blue',   label:'blue'   },
+  { word:'GREEN', color:'red',    label:'red'    },
+  { word:'ORANGE',color:'green',  label:'green'  },
+  { word:'RED',   color:'orange', label:'orange' },
+  { word:'BLUE',  color:'red',    label:'red'    },
+  { word:'GREEN', color:'blue',   label:'blue'   },
+  { word:'ORANGE',color:'orange', label:'orange' },
+];
+const stroopColors = { red:'#e05540', blue:'#3a7fc1', green:'#4a9a5a', orange:'#c89a2a' };
+
+let stroopActive = false, stroopCorrectVal = 0, stroopStreakVal = 0, stroopTimer = null;
+let stroopStartTime, stroopCurrent, stroopIdx = 0;
+
+function stroopStart() {
+  stroopActive = true;
+  stroopCorrectVal = 0; stroopStreakVal = 0; stroopIdx = 0;
+  document.getElementById('stroopCorrect').textContent = 0;
+  document.getElementById('stroopStreak').textContent = 0;
+  document.getElementById('stroopFeedback').textContent = '';
+  document.getElementById('stroopBtns').style.display = 'grid';
+  document.getElementById('stroopBtn').style.display = 'none';
+  stroopStartTime = Date.now();
+  stroopTimer = setInterval(() => {
+    const elapsed = Math.floor((Date.now() - stroopStartTime) / 1000);
+    document.getElementById('stroopTime').textContent = elapsed + 's';
+  }, 500);
+  nextStroop();
+}
+
+function nextStroop() {
+  if (stroopIdx >= stroopData.length) { stroopEnd(); return; }
+  const s = stroopData[stroopIdx % stroopData.length];
+  stroopCurrent = s;
+  const el = document.getElementById('stroopWord');
+  el.textContent = s.word;
+  el.style.color = stroopColors[s.label];
+  stroopIdx++;
+}
+
+function stroopAnswer(color) {
+  if (!stroopActive) return;
+  const correct = color === stroopCurrent.label;
+  if (correct) {
+    stroopCorrectVal++;
+    stroopStreakVal++;
+    document.getElementById('stroopFeedback').textContent = '✅ Correct!';
+    document.getElementById('stroopFeedback').style.color = '#3a8a3a';
+  } else {
+    stroopStreakVal = 0;
+    document.getElementById('stroopFeedback').textContent = `❌ The ink colour was ${stroopCurrent.label.toUpperCase()}`;
+    document.getElementById('stroopFeedback').style.color = '#c84a3a';
+  }
+  document.getElementById('stroopCorrect').textContent = stroopCorrectVal;
+  document.getElementById('stroopStreak').textContent = stroopStreakVal;
+  if (stroopIdx >= stroopData.length) { setTimeout(stroopEnd, 800); return; }
+  setTimeout(nextStroop, 600);
+}
+
+function stroopEnd() {
+  stroopActive = false;
+  clearInterval(stroopTimer);
+  const elapsed = Math.floor((Date.now() - stroopStartTime) / 1000);
+  document.getElementById('stroopWord').textContent = `Done! ${stroopCorrectVal}/${stroopData.length} correct in ${elapsed}s`;
+  document.getElementById('stroopWord').style.color = '#4A3880';
+  document.getElementById('stroopBtns').style.display = 'none';
+  document.getElementById('stroopBtn').style.display = 'block';
+  document.getElementById('stroopBtn').textContent = '▶ Play Again';
+  document.getElementById('stroopFeedback').textContent = stroopCorrectVal >= 10 ? '🌟 Outstanding!' : stroopCorrectVal >= 7 ? '👏 Well done!' : '💪 Keep practising — this one gets easier!';
+  document.getElementById('stroopFeedback').style.color = '#4A3880';
+}
+
+/* ──────────────────────────────
+   GAME 3: COUNT BACKWARDS
+────────────────────────────── */
+let countNum, countTarget, countCorrectVal = 0, countStreakVal = 0, countTotal = 0, countStep = 7;
+const countStarts = [100, 93, 86, 79, 72, 65, 58, 51, 44, 37];
+
+function countStart() {
+  countCorrectVal = 0; countStreakVal = 0; countTotal = 0;
+  document.getElementById('countCorrect').textContent = '0';
+  document.getElementById('countStreak').textContent = '0';
+  document.getElementById('countPhase').textContent = 'Tap the correct next number — subtracting 7 each time!';
+  document.getElementById('countBtn').style.display = 'none';
+  countNum = countStarts[0];
+  document.getElementById('countDisplay').textContent = countNum;
+  nextCount();
+}
+
+function nextCount() {
+  if (countTotal >= 10) { countEnd(); return; }
+  countTarget = countNum - countStep;
+  const wrong1 = countTarget + (Math.random() > 0.5 ? 3 : -3);
+  const wrong2 = countTarget + (Math.random() > 0.5 ? 5 : -5);
+  const wrong3 = countTarget + (Math.random() > 0.5 ? 10 : -10);
+  const opts = shuffle([countTarget, wrong1, wrong2, wrong3]);
+  const container = document.getElementById('countOptions');
+  container.style.display = 'grid';
+  container.innerHTML = opts.map(n =>
+    `<button class="count-btn" onclick="countAnswer(this, ${n})">${n}</button>`
+  ).join('');
+}
+
+function countAnswer(btn, val) {
+  const btns = document.querySelectorAll('.count-btn');
+  btns.forEach(b => b.disabled = true);
+  countTotal++;
+  if (val === countTarget) {
+    countCorrectVal++;
+    countStreakVal++;
+    btn.classList.add('correct');
+    document.getElementById('countFeedback').textContent = `✅ Correct! ${countNum} − 7 = ${countTarget}`;
+    document.getElementById('countFeedback').style.color = '#3a8a3a';
+    countNum = countTarget;
+    document.getElementById('countDisplay').textContent = countNum;
+  } else {
+    countStreakVal = 0;
+    btn.classList.add('wrong');
+    // Show correct
+    btns.forEach(b => { if (parseInt(b.textContent) === countTarget) b.classList.add('correct'); });
+    document.getElementById('countFeedback').textContent = `❌ The answer was ${countTarget} (${countNum} − 7)`;
+    document.getElementById('countFeedback').style.color = '#c84a3a';
+    countNum = countTarget;
+    document.getElementById('countDisplay').textContent = countNum;
+  }
+  document.getElementById('countCorrect').textContent = `${countCorrectVal}`;
+  document.getElementById('countStreak').textContent = countStreakVal;
+  setTimeout(nextCount, 900);
+}
+
+function countEnd() {
+  document.getElementById('countOptions').style.display = 'none';
+  document.getElementById('countPhase').textContent = `Game over! You got ${countCorrectVal}/10 correct. ${countCorrectVal >= 9 ? '🌟 Outstanding!' : countCorrectVal >= 6 ? '👏 Great job!' : '💪 This is genuinely hard — keep at it!'}`;
+  document.getElementById('countBtn').textContent = '▶ Play Again';
+  document.getElementById('countBtn').style.display = 'block';
+  document.getElementById('countFeedback').textContent = '';
+}
+
+/* ──────────────────────────────
+   GAME 4: PATTERN SEQUENCE
+────────────────────────────── */
+let patSequence = [], patPlayerSeq = [], patLevel = 1, patBestVal = 0;
+let patPlaying = false, patPlayerTurn = false;
+
+function patternBuild() {
+  const grid = document.getElementById('patGrid');
+  grid.innerHTML = '';
+  for (let i = 0; i < 9; i++) {
+    const cell = document.createElement('button');
+    cell.className = 'pattern-cell';
+    cell.dataset.idx = i;
+    cell.onclick = () => patternClick(i);
+    grid.appendChild(cell);
+  }
+}
+
+function patternStart() {
+  patLevel = 1; patBestVal = 0;
+  document.getElementById('patLevel').textContent = 1;
+  document.getElementById('patBest').textContent = 0;
+  document.getElementById('patBtn').style.display = 'none';
+  document.getElementById('patFeedback').textContent = '';
+  patBuild();
+}
+
+function patBuild() {
+  patSequence = [];
+  for (let i = 0; i < patLevel + 1; i++) {
+    patSequence.push(Math.floor(Math.random() * 9));
+  }
+  document.getElementById('patPhase').textContent = `Level ${patLevel} — Watch the sequence!`;
+  patPlaySequence();
+}
+
+function patPlaySequence() {
+  patPlayerTurn = false;
+  const cells = document.querySelectorAll('.pattern-cell');
+  let i = 0;
+  function flash() {
+    if (i >= patSequence.length) {
+      setTimeout(() => {
+        document.getElementById('patPhase').textContent = 'Now repeat the sequence!';
+        document.getElementById('patFeedback').textContent = '';
+        patPlayerSeq = [];
+        patPlayerTurn = true;
+      }, 500);
+      return;
+    }
+    const idx = patSequence[i];
+    cells[idx].classList.add('lit');
+    setTimeout(() => {
+      cells[idx].classList.remove('lit');
+      i++;
+      setTimeout(flash, 300);
+    }, 500);
+  }
+  setTimeout(flash, 600);
+}
+
+function patternClick(idx) {
+  if (!patPlayerTurn) return;
+  const cells = document.querySelectorAll('.pattern-cell');
+  cells[idx].classList.add('player-hit');
+  setTimeout(() => cells[idx].classList.remove('player-hit'), 300);
+  patPlayerSeq.push(idx);
+  const pos = patPlayerSeq.length - 1;
+  if (patPlayerSeq[pos] !== patSequence[pos]) {
+    // Wrong
+    patPlayerTurn = false;
+    cells[idx].classList.add('wrong-hit');
+    setTimeout(() => cells[idx].classList.remove('wrong-hit'), 500);
+    document.getElementById('patFeedback').textContent = `❌ Oops! You reached level ${patLevel}. ${patLevel > patBestVal ? '🎉 New best!' : ''}`;
+    document.getElementById('patFeedback').style.color = '#c84a3a';
+    if (patLevel > patBestVal) {
+      patBestVal = patLevel;
+      document.getElementById('patBest').textContent = patBestVal;
+    }
+    document.getElementById('patBtn').style.display = 'block';
+    document.getElementById('patBtn').textContent = '▶ Try Again';
+    return;
+  }
+  if (patPlayerSeq.length === patSequence.length) {
+    patPlayerTurn = false;
+    patLevel++;
+    document.getElementById('patLevel').textContent = patLevel;
+    document.getElementById('patFeedback').textContent = `✅ Level ${patLevel - 1} complete! Getting harder...`;
+    document.getElementById('patFeedback').style.color = '#3a8a3a';
+    setTimeout(patBuild, 1000);
+  }
+}
+
+/* ─── UTILITY ─── */
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* ─── INIT ─── */
+patternBuild();
+
+</script>
+</body>
+</html>

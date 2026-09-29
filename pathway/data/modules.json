@@ -1,0 +1,1931 @@
+{
+ "program": {
+  "en": "Parkinson’s Pathway to Empowerment",
+  "fr": "Parcours d’autonomisation Parkinson"
+ },
+ "modules": [
+  {
+   "slug": "module-1-welcome",
+   "num": 1,
+   "title": {
+    "en": "Module 1 · Welcome & Getting Started",
+    "fr": "Module 1 · Bienvenue et premiers pas"
+   },
+   "desc": {
+    "en": "Meet Christine, see how the program works, take your baseline tests, and set your goals.",
+    "fr": "Rencontrez Christine, découvrez le fonctionnement du programme, faites vos tests de départ et fixez vos objectifs."
+   },
+   "icon": "sparkles",
+   "lessons": [
+    {
+     "id": "pw-welcome",
+     "slug": "welcome",
+     "url": "modules/welcome.html",
+     "title": {
+      "en": "Welcome to Your Journey",
+      "fr": "Bienvenue dans votre parcours"
+     },
+     "summary": {
+      "en": "A personal welcome from Christine to the next 10 weeks.",
+      "fr": "Un mot de bienvenue de Christine pour les 10 prochaines semaines."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "heart-handshake",
+     "kind": "read",
+     "minutes": 3,
+     "wixStepId": "a587f725-2d3e-4b3b-a7a7-665ff269a40f"
+    },
+    {
+     "id": "pw-my-background",
+     "slug": "my-background",
+     "url": "modules/my-background.html",
+     "title": {
+      "en": "Welcome & My Background",
+      "fr": "Bienvenue et mon parcours"
+     },
+     "summary": {
+      "en": "Why this program exists, and the story behind it.",
+      "fr": "Pourquoi ce programme existe, et l’histoire derrière lui."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "user",
+     "kind": "watch",
+     "minutes": 6,
+     "wixStepId": "9ad781ea-0070-4e2f-a622-47cdb6963a7b"
+    },
+    {
+     "id": "pw-program-overview",
+     "slug": "program-overview",
+     "url": "modules/program-overview.html",
+     "title": {
+      "en": "Overview of the Program",
+      "fr": "Aperçu du programme"
+     },
+     "summary": {
+      "en": "What the next 10 weeks look like and how to get the most from them.",
+      "fr": "À quoi ressemblent les 10 prochaines semaines et comment en profiter au maximum."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "map",
+     "kind": "watch",
+     "minutes": 5,
+     "wixStepId": "70b9e55a-a3ff-4818-a20a-b4093f494752"
+    },
+    {
+     "id": "pw-baseline-tests",
+     "slug": "baseline-tests",
+     "url": "modules/baseline-tests.html",
+     "title": {
+      "en": "Action: Your Baseline Tests",
+      "fr": "Action : vos tests de départ"
+     },
+     "summary": {
+      "en": "Five simple tests to measure where you’re starting from.",
+      "fr": "Cinq tests simples pour mesurer votre point de départ."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "timer",
+     "kind": "do",
+     "minutes": 20,
+     "wixStepId": "3f2caa1b-4fd0-46cf-b4af-5ea013a8d0bf"
+    },
+    {
+     "id": "pw-goal-setting",
+     "slug": "goal-setting",
+     "url": "modules/goal-setting.html",
+     "title": {
+      "en": "Setting Your Personal Goals",
+      "fr": "Fixer vos objectifs personnels"
+     },
+     "summary": {
+      "en": "How to choose goals that matter to you.",
+      "fr": "Comment choisir des objectifs qui comptent pour vous."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "target",
+     "kind": "watch",
+     "minutes": 8,
+     "wixStepId": "60e54cfb-e989-41d3-a53a-2a85bcd3081c"
+    },
+    {
+     "id": "pw-action-goal-setting",
+     "slug": "action-goal-setting",
+     "url": "modules/action-goal-setting.html",
+     "title": {
+      "en": "Action: Small Steps, Real Progress",
+      "fr": "Action : petits pas, vrais progrès"
+     },
+     "summary": {
+      "en": "Turn your goal into a small, doable daily action.",
+      "fr": "Transformez votre objectif en une petite action quotidienne réalisable."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "footprints",
+     "kind": "do",
+     "minutes": 10,
+     "wixStepId": "97ced5ab-8e61-4178-92b6-7ef63fa96497"
+    },
+    {
+     "id": "pw-action-plan-workbook",
+     "slug": "action-plan-workbook",
+     "url": "modules/action-plan-workbook.html",
+     "title": {
+      "en": "Your Action Plan Workbook",
+      "fr": "Votre cahier Plan d’action"
+     },
+     "summary": {
+      "en": "Print the workbook you’ll use to track your progress.",
+      "fr": "Imprimez le cahier qui vous servira à suivre vos progrès."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "book-open",
+     "kind": "do",
+     "minutes": 5,
+     "wixStepId": "f924cb8d-a10d-43bf-932e-88c30e403e42"
+    }
+   ]
+  },
+  {
+   "slug": "module-2-understanding-parkinsons",
+   "num": 2,
+   "title": {
+    "en": "Module 2 · Understanding Parkinson’s",
+    "fr": "Module 2 · Comprendre la maladie de Parkinson"
+   },
+   "desc": {
+    "en": "Diagnosed with Parkinson’s — now what? Learn the basics, build your care team, and get to know dopamine.",
+    "fr": "Un diagnostic de Parkinson — et maintenant ? Apprenez l’essentiel, bâtissez votre équipe de soins et découvrez la dopamine."
+   },
+   "icon": "brain",
+   "lessons": [
+    {
+     "id": "pw-you-got-this",
+     "slug": "you-got-this",
+     "url": "modules/you-got-this.html",
+     "title": {
+      "en": "You Got This!",
+      "fr": "Vous êtes capable !"
+     },
+     "summary": {
+      "en": "A word of encouragement as you start learning about Parkinson’s.",
+      "fr": "Un mot d’encouragement pour commencer à en apprendre sur la maladie de Parkinson."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "flame",
+     "kind": "watch",
+     "minutes": 3,
+     "wixStepId": "87bd2732-0225-45c9-8d05-f90f32077f2b"
+    },
+    {
+     "id": "pw-overview-of-parkinsons",
+     "slug": "overview-of-parkinsons",
+     "url": "modules/overview-of-parkinsons.html",
+     "title": {
+      "en": "Overview of Parkinson’s",
+      "fr": "Aperçu de la maladie de Parkinson"
+     },
+     "summary": {
+      "en": "What Parkinson’s is, in plain language.",
+      "fr": "Ce qu’est la maladie de Parkinson, en langage simple."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "brain",
+     "kind": "watch",
+     "minutes": 8,
+     "wixStepId": "8159a46f-1c7d-4cbd-9973-a07ed07a1d3d"
+    },
+    {
+     "id": "pw-motor-non-motor-symptoms",
+     "slug": "motor-non-motor-symptoms",
+     "url": "modules/motor-non-motor-symptoms.html",
+     "title": {
+      "en": "Motor & Non-Motor Symptoms",
+      "fr": "Symptômes moteurs et non moteurs"
+     },
+     "summary": {
+      "en": "The symptoms you can see — and the ones you can’t.",
+      "fr": "Les symptômes visibles… et ceux qui ne le sont pas."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "activity",
+     "kind": "read",
+     "minutes": 8,
+     "wixStepId": "968a5212-ba56-48c4-90f0-fc926de28a6c"
+    },
+    {
+     "id": "pw-care-team",
+     "slug": "care-team",
+     "url": "modules/care-team.html",
+     "title": {
+      "en": "Your Care Team: Who Do You Call?",
+      "fr": "Votre équipe de soins : qui appeler ?"
+     },
+     "summary": {
+      "en": "The people who can support you, and when to reach out to each one.",
+      "fr": "Les personnes qui peuvent vous soutenir, et quand faire appel à chacune."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "users",
+     "kind": "watch",
+     "minutes": 8,
+     "wixStepId": "fbb937b4-50a9-4ff3-80f1-73515f93f7b1"
+    },
+    {
+     "id": "pw-got-dopamine",
+     "slug": "got-dopamine",
+     "url": "modules/got-dopamine.html",
+     "title": {
+      "en": "Got Dopamine?",
+      "fr": "La dopamine, parlons-en"
+     },
+     "summary": {
+      "en": "What dopamine does and why it matters so much in Parkinson’s.",
+      "fr": "Le rôle de la dopamine et pourquoi elle compte autant dans la maladie de Parkinson."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "zap",
+     "kind": "watch",
+     "minutes": 8,
+     "wixStepId": "9138dd84-a8a3-403a-876a-671b52a11482"
+    },
+    {
+     "id": "pw-dopamine-checklist",
+     "slug": "dopamine-checklist",
+     "url": "modules/dopamine-checklist.html",
+     "title": {
+      "en": "Action: Your Dopamine Checklist",
+      "fr": "Action : votre liste dopamine"
+     },
+     "summary": {
+      "en": "Seven everyday ways to support your dopamine.",
+      "fr": "Sept façons au quotidien de soutenir votre dopamine."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "list-checks",
+     "kind": "do",
+     "minutes": 6,
+     "wixStepId": "cd5e686c-6add-41e6-8074-a7d152f75b33"
+    }
+   ]
+  },
+  {
+   "slug": "module-3-stress-mindset",
+   "num": 3,
+   "title": {
+    "en": "Module 3 · Stress, Mindset & Your Nervous System",
+    "fr": "Module 3 · Stress, état d’esprit et système nerveux"
+   },
+   "desc": {
+    "en": "The good, the bad and the ugly of stress — and simple ways to calm your nervous system.",
+    "fr": "Le bon, le mauvais et le pire du stress — et des moyens simples de calmer votre système nerveux."
+   },
+   "icon": "wind",
+   "lessons": [
+    {
+     "id": "pw-stress-and-parkinsons",
+     "slug": "stress-and-parkinsons",
+     "url": "modules/stress-and-parkinsons.html",
+     "title": {
+      "en": "Stress: The Good, the Bad & the Ugly",
+      "fr": "Le stress : le bon, le mauvais et le pire"
+     },
+     "summary": {
+      "en": "How stress affects Parkinson’s symptoms, and what helps.",
+      "fr": "Comment le stress influence les symptômes, et ce qui aide."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "activity",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "e54b6d31-b88c-4a5b-a6b7-7e78d8045fc8"
+    },
+    {
+     "id": "pw-action-mindfulness",
+     "slug": "action-mindfulness",
+     "url": "modules/action-mindfulness.html",
+     "title": {
+      "en": "Action: Mindfulness Practice",
+      "fr": "Action : pratique de la pleine conscience"
+     },
+     "summary": {
+      "en": "A simple mindfulness practice to calm your body and mind.",
+      "fr": "Une pratique simple de pleine conscience pour calmer le corps et l’esprit."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "leaf",
+     "kind": "do",
+     "minutes": 10,
+     "wixStepId": "bfa31e6c-ca08-472f-bf90-72f5c374a310"
+    },
+    {
+     "id": "pw-mindfulness-research",
+     "slug": "mindfulness-research",
+     "url": "modules/mindfulness-research.html",
+     "title": {
+      "en": "Research: Mindfulness & Parkinson’s",
+      "fr": "Recherche : pleine conscience et Parkinson"
+     },
+     "summary": {
+      "en": "What the research says about mindfulness for people living with Parkinson’s.",
+      "fr": "Ce que dit la recherche sur la pleine conscience et la maladie de Parkinson."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "file-text",
+     "kind": "read",
+     "minutes": 6,
+     "wixStepId": "c907c16d-4845-46d1-8638-faa2a9bbecb4"
+    },
+    {
+     "id": "pw-lets-move",
+     "slug": "lets-move",
+     "url": "modules/lets-move.html",
+     "title": {
+      "en": "Let’s Move! PWR Moves with Christine",
+      "fr": "Bougeons ! Les mouvements PWR avec Christine"
+     },
+     "summary": {
+      "en": "Move the stress out with Christine.",
+      "fr": "Évacuez le stress en bougeant avec Christine."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "dumbbell",
+     "kind": "watch",
+     "minutes": 15,
+     "wixStepId": "0b1382b9-2eb6-4360-aa27-548d93bde417"
+    },
+    {
+     "id": "pw-pd-care-laser",
+     "slug": "pd-care-laser",
+     "url": "modules/pd-care-laser.html",
+     "title": {
+      "en": "A New Treatment Option: The PD Care Laser",
+      "fr": "Une nouvelle option : le laser PD Care"
+     },
+     "summary": {
+      "en": "What light therapy is and how it may support the gut–brain connection.",
+      "fr": "Ce qu’est la luminothérapie et comment elle pourrait soutenir le lien intestin-cerveau."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "sparkles",
+     "kind": "read",
+     "minutes": 5,
+     "wixStepId": "92c72d5b-6c2f-48f8-b184-7852615d3b12"
+    }
+   ]
+  },
+  {
+   "slug": "module-4-sleep",
+   "num": 4,
+   "title": {
+    "en": "Module 4 · Sleep Support",
+    "fr": "Module 4 · Mieux dormir"
+   },
+   "desc": {
+    "en": "Good sleep is a reachable dream — understand sleep with Parkinson’s and build a better routine.",
+    "fr": "Un bon sommeil est un rêve accessible — comprenez le sommeil avec la maladie de Parkinson et bâtissez une meilleure routine."
+   },
+   "icon": "moon",
+   "lessons": [
+    {
+     "id": "pw-sleep-intro",
+     "slug": "sleep-intro",
+     "url": "modules/sleep-intro.html",
+     "title": {
+      "en": "Good Sleep Is a Reachable Dream",
+      "fr": "Un bon sommeil est un rêve accessible"
+     },
+     "summary": {
+      "en": "An introduction to the sleep module.",
+      "fr": "Une introduction au module sur le sommeil."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "moon",
+     "kind": "watch",
+     "minutes": 4,
+     "wixStepId": "a7cddfe1-3c02-413b-ad2a-a96c82173b6b"
+    },
+    {
+     "id": "pw-sleep-and-parkinsons",
+     "slug": "sleep-and-parkinsons",
+     "url": "modules/sleep-and-parkinsons.html",
+     "title": {
+      "en": "Sleep & Parkinson’s",
+      "fr": "Le sommeil et la maladie de Parkinson"
+     },
+     "summary": {
+      "en": "Why sleep changes with Parkinson’s, and why it matters.",
+      "fr": "Pourquoi le sommeil change avec la maladie de Parkinson, et pourquoi c’est important."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "brain",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "332b1847-432b-4a83-9e09-e55c0c0b79e0"
+    },
+    {
+     "id": "pw-eight-steps-better-sleep",
+     "slug": "eight-steps-better-sleep",
+     "url": "modules/eight-steps-better-sleep.html",
+     "title": {
+      "en": "Action: 8 Steps for Better Sleep",
+      "fr": "Action : 8 étapes pour mieux dormir"
+     },
+     "summary": {
+      "en": "Eight practical habits for a better night’s sleep.",
+      "fr": "Huit habitudes pratiques pour de meilleures nuits."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "list-checks",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "1fc76923-7d91-413e-8d8b-e535c0fd3469"
+    },
+    {
+     "id": "pw-mindfulness-for-sleep",
+     "slug": "mindfulness-for-sleep",
+     "url": "modules/mindfulness-for-sleep.html",
+     "title": {
+      "en": "Action: Wind-Down Session",
+      "fr": "Action : séance de détente"
+     },
+     "summary": {
+      "en": "A 30-minute relaxation session to get you ready for bed.",
+      "fr": "Une séance de détente de 30 minutes pour vous préparer au sommeil."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "leaf",
+     "kind": "watch",
+     "minutes": 30,
+     "wixStepId": "fcbb15da-179c-4027-bf6e-434a30e809e7"
+    },
+    {
+     "id": "pw-sleep-schedule",
+     "slug": "sleep-schedule",
+     "url": "modules/sleep-schedule.html",
+     "title": {
+      "en": "Your Sleep Schedule",
+      "fr": "Votre horaire de sommeil"
+     },
+     "summary": {
+      "en": "Track your sleep and build a steady routine.",
+      "fr": "Suivez votre sommeil et bâtissez une routine régulière."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "calendar",
+     "kind": "do",
+     "minutes": 5,
+     "wixStepId": "fccf09e9-7233-4453-b7f6-63a7f0894770"
+    }
+   ]
+  },
+  {
+   "slug": "module-5-balance",
+   "num": 5,
+   "title": {
+    "en": "Module 5 · Balance & Confidence",
+    "fr": "Module 5 · Équilibre et confiance"
+   },
+   "desc": {
+    "en": "Build balance, reduce your risk of falling, and move with confidence.",
+    "fr": "Améliorez votre équilibre, réduisez le risque de chute et bougez avec confiance."
+   },
+   "icon": "accessibility",
+   "lessons": [
+    {
+     "id": "pw-balance-and-parkinsons",
+     "slug": "balance-and-parkinsons",
+     "url": "modules/balance-and-parkinsons.html",
+     "title": {
+      "en": "Balance & Parkinson’s",
+      "fr": "L’équilibre et la maladie de Parkinson"
+     },
+     "summary": {
+      "en": "Why balance changes, and what you can do about it.",
+      "fr": "Pourquoi l’équilibre change, et ce que vous pouvez y faire."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "accessibility",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "4234ead3-1be9-43a8-b8bc-8bf19f9561b3"
+    },
+    {
+     "id": "pw-lets-balance-together",
+     "slug": "lets-balance-together",
+     "url": "modules/lets-balance-together.html",
+     "title": {
+      "en": "Action: Let’s Balance Together",
+      "fr": "Action : travaillons l’équilibre ensemble"
+     },
+     "summary": {
+      "en": "Follow along with a balance-training session.",
+      "fr": "Suivez une séance d’entraînement de l’équilibre."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "footprints",
+     "kind": "watch",
+     "minutes": 15,
+     "wixStepId": "85730852-32b9-4510-8b06-9cf55a95ea33"
+    },
+    {
+     "id": "pw-fear-of-falling",
+     "slug": "fear-of-falling",
+     "url": "modules/fear-of-falling.html",
+     "title": {
+      "en": "Eliminating the Fear of Falling",
+      "fr": "Vaincre la peur de tomber"
+     },
+     "summary": {
+      "en": "Face the fear of falling and rebuild your confidence.",
+      "fr": "Affronter la peur de tomber et retrouver confiance."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "shield-check",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "40e4c29c-4616-4ed5-ba20-51ec4a772ad5"
+    },
+    {
+     "id": "pw-down-to-the-ground",
+     "slug": "down-to-the-ground",
+     "url": "modules/down-to-the-ground.html",
+     "title": {
+      "en": "Action: Down to the Ground We Go",
+      "fr": "Action : on descend au sol"
+     },
+     "summary": {
+      "en": "Practise getting down to the floor — and back up — safely.",
+      "fr": "Apprenez à descendre au sol — et à vous relever — en toute sécurité."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "arrow-down",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "b7a826f9-2e43-406b-bdcc-253811eb5365"
+    },
+    {
+     "id": "pw-pwr-moves",
+     "slug": "pwr-moves",
+     "url": "modules/pwr-moves.html",
+     "title": {
+      "en": "Action: Seated & Standing PWR Moves",
+      "fr": "Action : mouvements PWR assis et debout"
+     },
+     "summary": {
+      "en": "Beginner seated and intermediate standing PWR exercises.",
+      "fr": "Exercices PWR assis (débutant) et debout (intermédiaire)."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "dumbbell",
+     "kind": "watch",
+     "minutes": 20,
+     "wixStepId": ""
+    }
+   ]
+  },
+  {
+   "slug": "module-6-motivation",
+   "num": 6,
+   "title": {
+    "en": "Module 6 · Motivation & Mental Strength",
+    "fr": "Module 6 · Motivation et force mentale"
+   },
+   "desc": {
+    "en": "Find your why, lean on your community, and keep moving forward.",
+    "fr": "Trouvez votre pourquoi, appuyez-vous sur votre communauté et continuez d’avancer."
+   },
+   "icon": "flame",
+   "lessons": [
+    {
+     "id": "pw-your-why-matters",
+     "slug": "your-why-matters",
+     "url": "modules/your-why-matters.html",
+     "title": {
+      "en": "Motivation & Hope: Your Why Matters",
+      "fr": "Motivation et espoir : votre pourquoi compte"
+     },
+     "summary": {
+      "en": "Why a clear “why” keeps you going on the hard days.",
+      "fr": "Pourquoi un « pourquoi » clair vous aide à tenir les jours difficiles."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "heart",
+     "kind": "read",
+     "minutes": 6,
+     "wixStepId": "66413c6b-b020-4c10-98ea-ef11bf0ad0be"
+    },
+    {
+     "id": "pw-take-action",
+     "slug": "take-action",
+     "url": "modules/take-action.html",
+     "title": {
+      "en": "Great Things Come to Those Who Take Action",
+      "fr": "Les grandes choses arrivent à ceux qui passent à l’action"
+     },
+     "summary": {
+      "en": "Why taking action — even small action — changes everything.",
+      "fr": "Pourquoi passer à l’action — même un petit peu — change tout."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "zap",
+     "kind": "watch",
+     "minutes": 6,
+     "wixStepId": "3b6e6cfc-bbf3-48dd-9315-c70330460ad2"
+    },
+    {
+     "id": "pw-challenge-yourself",
+     "slug": "challenge-yourself",
+     "url": "modules/challenge-yourself.html",
+     "title": {
+      "en": "Action: Challenge Yourself",
+      "fr": "Action : relevez le défi"
+     },
+     "summary": {
+      "en": "Parkinson’s: adversity or adventure?",
+      "fr": "La maladie de Parkinson : adversité ou aventure ?"
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "mountain",
+     "kind": "watch",
+     "minutes": 15,
+     "wixStepId": "994eec74-7643-4558-88d7-c72ee0180d84"
+    },
+    {
+     "id": "pw-community-is-key",
+     "slug": "community-is-key",
+     "url": "modules/community-is-key.html",
+     "title": {
+      "en": "Action: Let’s Kick Parkinson’s — Why Community Is Key",
+      "fr": "Action : combattons Parkinson — la communauté, la clé"
+     },
+     "summary": {
+      "en": "How the right community keeps you motivated.",
+      "fr": "Comment la bonne communauté vous garde motivé(e)."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "users",
+     "kind": "read",
+     "minutes": 7,
+     "wixStepId": "8d3fab23-20cc-433b-80da-64016841e73d"
+    },
+    {
+     "id": "pw-anxiety-and-parkinsons",
+     "slug": "anxiety-and-parkinsons",
+     "url": "modules/anxiety-and-parkinsons.html",
+     "title": {
+      "en": "Changing Your Brain: Anxiety & Parkinson’s",
+      "fr": "Changer son cerveau : l’anxiété et la maladie de Parkinson"
+     },
+     "summary": {
+      "en": "Anxiety is common with Parkinson’s — and there are ways to ease it.",
+      "fr": "L’anxiété est fréquente avec la maladie de Parkinson — et il existe des moyens de l’apaiser."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "brain",
+     "kind": "read",
+     "minutes": 15,
+     "wixStepId": "c757fd25-0ebc-4cb5-90f3-29850508e7bb"
+    }
+   ]
+  },
+  {
+   "slug": "module-7-exercise",
+   "num": 7,
+   "title": {
+    "en": "Module 7 · Exercise",
+    "fr": "Module 7 · L’exercice"
+   },
+   "desc": {
+    "en": "Why exercise is non-negotiable, how hard to work, and your full movement library.",
+    "fr": "Pourquoi l’exercice est incontournable, à quelle intensité travailler, et votre bibliothèque de mouvements."
+   },
+   "icon": "dumbbell",
+   "lessons": [
+    {
+     "id": "pw-get-fit-dont-quit",
+     "slug": "get-fit-dont-quit",
+     "url": "modules/get-fit-dont-quit.html",
+     "title": {
+      "en": "Get Fit, Don’t Quit: Why Exercise Matters",
+      "fr": "Bougez, ne lâchez pas : pourquoi l’exercice compte"
+     },
+     "summary": {
+      "en": "Why exercise is non-negotiable — and why intensity is key.",
+      "fr": "Pourquoi l’exercice est incontournable — et pourquoi l’intensité est la clé."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "heart-pulse",
+     "kind": "watch",
+     "minutes": 12,
+     "wixStepId": "e43601f5-3c24-4bd4-8ef8-daf640e6f920"
+    },
+    {
+     "id": "pw-vigor",
+     "slug": "vigor",
+     "url": "modules/vigor.html",
+     "title": {
+      "en": "Action: VIGOR — Your Exercise Framework",
+      "fr": "Action : VIGOR — votre cadre d’exercice"
+     },
+     "summary": {
+      "en": "Five letters to plan exercise that works for Parkinson’s.",
+      "fr": "Cinq lettres pour planifier un exercice efficace contre la maladie de Parkinson."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "clipboard-list",
+     "kind": "do",
+     "minutes": 15,
+     "wixStepId": "1b456286-dd3c-444b-8d6f-1c45b6d7fbdd"
+    },
+    {
+     "id": "pw-grand-movements",
+     "slug": "grand-movements",
+     "url": "modules/grand-movements.html",
+     "title": {
+      "en": "Action: GRAND Movements",
+      "fr": "Action : les mouvements GRAND"
+     },
+     "summary": {
+      "en": "Big, bold movements to fight smaller, slower ones.",
+      "fr": "Des mouvements amples et affirmés contre les mouvements qui rapetissent."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "move",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "e6e6e36f-1e7c-4d48-a420-9bde050cfad3"
+    },
+    {
+     "id": "pw-rotation-exercises",
+     "slug": "rotation-exercises",
+     "url": "modules/rotation-exercises.html",
+     "title": {
+      "en": "Action: Rotation Exercises",
+      "fr": "Action : exercices de rotation"
+     },
+     "summary": {
+      "en": "Keep your trunk turning — seated, standing, and lying down.",
+      "fr": "Gardez votre tronc mobile — assis, debout et couché."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "rotate-cw",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "6e614cdf-7e07-4da1-a82c-5406146a6dc4"
+    },
+    {
+     "id": "pw-hamstring-release",
+     "slug": "hamstring-release",
+     "url": "modules/hamstring-release.html",
+     "title": {
+      "en": "Action: Hamstring Release",
+      "fr": "Action : relâchement des ischio-jambiers"
+     },
+     "summary": {
+      "en": "Release tight hamstrings with a firm ball.",
+      "fr": "Relâchez des ischio-jambiers tendus avec une balle ferme."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "activity",
+     "kind": "watch",
+     "minutes": 8,
+     "wixStepId": "ab5d33a7-11a0-4ca5-b516-32f4a31694fd"
+    },
+    {
+     "id": "pw-exercise-classes",
+     "slug": "exercise-classes",
+     "url": "modules/exercise-classes.html",
+     "title": {
+      "en": "60-Minute Exercise Classes",
+      "fr": "Cours d’exercice de 60 minutes"
+     },
+     "summary": {
+      "en": "Full-length follow-along classes, standing and seated.",
+      "fr": "Des cours complets à suivre, debout et assis."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "play",
+     "kind": "watch",
+     "minutes": 60,
+     "wixStepId": "b12e6ab9-5036-44d5-b714-ece845fac3b4"
+    }
+   ]
+  },
+  {
+   "slug": "module-8-nutrition",
+   "num": 8,
+   "title": {
+    "en": "Module 8 · Nutrition & Gut Health",
+    "fr": "Module 8 · Nutrition et santé intestinale"
+   },
+   "desc": {
+    "en": "Feed your brain, support your gut, and feel the difference.",
+    "fr": "Nourrissez votre cerveau, soutenez votre intestin et sentez la différence."
+   },
+   "icon": "salad",
+   "lessons": [
+    {
+     "id": "pw-feed-the-need",
+     "slug": "feed-the-need",
+     "url": "modules/feed-the-need.html",
+     "title": {
+      "en": "Feed the Need: Nutrition Overview",
+      "fr": "Nourrir le besoin : aperçu de la nutrition"
+     },
+     "summary": {
+      "en": "The basics of eating well with Parkinson’s.",
+      "fr": "Les bases d’une bonne alimentation avec la maladie de Parkinson."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "salad",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "bad3ff84-7375-410f-b2e5-efd75c26adcb"
+    },
+    {
+     "id": "pw-your-gut-and-parkinsons",
+     "slug": "your-gut-and-parkinsons",
+     "url": "modules/your-gut-and-parkinsons.html",
+     "title": {
+      "en": "Your Gut & Parkinson’s",
+      "fr": "Votre intestin et la maladie de Parkinson"
+     },
+     "summary": {
+      "en": "The gut–brain connection, explained.",
+      "fr": "Le lien intestin-cerveau, expliqué."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "activity",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "b954680f-1e14-4fa1-b166-7902afd5d41a"
+    },
+    {
+     "id": "pw-clean-15-dirty-dozen",
+     "slug": "clean-15-dirty-dozen",
+     "url": "modules/clean-15-dirty-dozen.html",
+     "title": {
+      "en": "Action: Clean 15 & Dirty Dozen",
+      "fr": "Action : les 15 propres et les 12 sales"
+     },
+     "summary": {
+      "en": "Which produce to buy organic, and which you don’t need to.",
+      "fr": "Quels fruits et légumes acheter biologiques, et lesquels non."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "list-checks",
+     "kind": "do",
+     "minutes": 5,
+     "wixStepId": "aec8a74c-140a-456d-a2d5-b83fe02d4ddc"
+    },
+    {
+     "id": "pw-smoothies",
+     "slug": "smoothies",
+     "url": "modules/smoothies.html",
+     "title": {
+      "en": "Action: Smoothie Recipes",
+      "fr": "Action : recettes de smoothies"
+     },
+     "summary": {
+      "en": "Quick, brain-friendly smoothie recipes.",
+      "fr": "Des recettes de smoothies rapides et bonnes pour le cerveau."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "cup-soda",
+     "kind": "do",
+     "minutes": 8,
+     "wixStepId": "6a121c0a-ace4-4d05-81c0-8c1708aa056a"
+    },
+    {
+     "id": "pw-gut-microbiome-webinar",
+     "slug": "gut-microbiome-webinar",
+     "url": "modules/gut-microbiome-webinar.html",
+     "title": {
+      "en": "Webinar: Your Gut & the Microbiome",
+      "fr": "Webinaire : votre intestin et le microbiome"
+     },
+     "summary": {
+      "en": "Dr. Colleen McQuarrie on the gut and the microbiome.",
+      "fr": "La Dre Colleen McQuarrie sur l’intestin et le microbiome."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "circle-play",
+     "kind": "watch",
+     "minutes": 45,
+     "wixStepId": "bdd37677-a3c9-4241-bf2f-02fd64a4c9bf"
+    },
+    {
+     "id": "pw-gut-research",
+     "slug": "gut-research",
+     "url": "modules/gut-research.html",
+     "title": {
+      "en": "Research: Your Gut & Parkinson’s",
+      "fr": "Recherche : votre intestin et la maladie de Parkinson"
+     },
+     "summary": {
+      "en": "What the research says about the gut and Parkinson’s, in plain language.",
+      "fr": "Ce que dit la recherche sur l’intestin et la maladie de Parkinson, en langage simple."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "file-text",
+     "kind": "read",
+     "minutes": 8,
+     "wixStepId": "840d0e00-bbdd-4942-b953-0b014c23eeb9"
+    },
+    {
+     "id": "pw-constipation-diet",
+     "slug": "constipation-diet",
+     "url": "modules/constipation-diet.html",
+     "title": {
+      "en": "Constipation: Results of a Specific Diet",
+      "fr": "La constipation : les résultats d’une alimentation précise"
+     },
+     "summary": {
+      "en": "How a Mediterranean diet eased constipation in Parkinson’s.",
+      "fr": "Comment l’alimentation méditerranéenne a soulagé la constipation."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "clipboard-check",
+     "kind": "read",
+     "minutes": 10,
+     "wixStepId": "2c630277-6f6c-41ba-82ff-1559b609b066"
+    },
+    {
+     "id": "pw-dairy-and-parkinsons",
+     "slug": "dairy-and-parkinsons",
+     "url": "modules/dairy-and-parkinsons.html",
+     "title": {
+      "en": "The Best Research to Date: Dairy & Parkinson’s",
+      "fr": "La meilleure recherche à ce jour : produits laitiers et Parkinson"
+     },
+     "summary": {
+      "en": "What the research shows about dairy and Parkinson’s.",
+      "fr": "Ce que montre la recherche sur les produits laitiers et la maladie de Parkinson."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "file-text",
+     "kind": "read",
+     "minutes": 10,
+     "wixStepId": "80741a67-690d-4207-90c3-8b86233e3c13"
+    },
+    {
+     "id": "pw-favourite-recipes",
+     "slug": "favourite-recipes",
+     "url": "modules/favourite-recipes.html",
+     "title": {
+      "en": "My Favourite Healthy Recipes",
+      "fr": "Mes recettes santé préférées"
+     },
+     "summary": {
+      "en": "Some of Christine’s favourite healthy recipes, just for you.",
+      "fr": "Quelques-unes des recettes santé préférées de Christine, juste pour vous."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "chef-hat",
+     "kind": "read",
+     "minutes": 10,
+     "wixStepId": "6ae956c2-99c4-4055-a6bd-621d715d15df"
+    },
+    {
+     "id": "pw-mediterranean-diet",
+     "slug": "mediterranean-diet",
+     "url": "modules/mediterranean-diet.html",
+     "title": {
+      "en": "The Mediterranean Diet & Sample Meal Plans",
+      "fr": "L’alimentation méditerranéenne et des exemples de menus"
+     },
+     "summary": {
+      "en": "Why the Mediterranean diet is the best choice for Parkinson’s — and how to start.",
+      "fr": "Pourquoi l’alimentation méditerranéenne est le meilleur choix — et comment commencer."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "utensils",
+     "kind": "read",
+     "minutes": 12,
+     "wixStepId": "88af9234-3329-4114-ba05-5dcb362fed42"
+    },
+    {
+     "id": "pw-mediterranean-mind-check",
+     "slug": "mediterranean-mind-check",
+     "url": "modules/mediterranean-mind-check.html",
+     "title": {
+      "en": "Action: Mediterranean & MIND Diet Check-In",
+      "fr": "Action : bilan méditerranéen et MIND"
+     },
+     "summary": {
+      "en": "A 12-question check-in on how close your eating is to a Mediterranean/MIND pattern.",
+      "fr": "Un bilan de 12 questions sur votre alimentation par rapport au modèle méditerranéen/MIND."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "clipboard-check",
+     "kind": "do",
+     "minutes": 8,
+     "wixStepId": "4a8e7236-0453-4e4c-ada5-0088c2b1e9c2"
+    },
+    {
+     "id": "pw-gut-health-fiber",
+     "slug": "gut-health-fiber",
+     "url": "modules/gut-health-fiber.html",
+     "title": {
+      "en": "Gut Health: Fibre",
+      "fr": "Santé intestinale : les fibres"
+     },
+     "summary": {
+      "en": "Why fibre matters for your gut, and how to get more.",
+      "fr": "Pourquoi les fibres comptent pour votre intestin, et comment en manger plus."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "wheat",
+     "kind": "read",
+     "minutes": 6,
+     "wixStepId": "06a0da7c-a5fc-4c2c-aacc-c5bc9fd6498a"
+    }
+   ]
+  },
+  {
+   "slug": "module-9-voice",
+   "num": 9,
+   "title": {
+    "en": "Module 9 · Voice, Facial Expression & Communication",
+    "fr": "Module 9 · Voix, expressions du visage et communication"
+   },
+   "desc": {
+    "en": "If you don’t use it, you lose it — keep your voice strong and your expressions vibrant.",
+    "fr": "Si on ne s’en sert pas, on le perd — gardez une voix forte et des expressions vivantes."
+   },
+   "icon": "mic",
+   "lessons": [
+    {
+     "id": "pw-whats-the-deal-with-my-voice",
+     "slug": "whats-the-deal-with-my-voice",
+     "url": "modules/whats-the-deal-with-my-voice.html",
+     "title": {
+      "en": "What’s the Deal with My Voice?",
+      "fr": "Qu’arrive-t-il à ma voix ?"
+     },
+     "summary": {
+      "en": "Why Parkinson’s changes your voice.",
+      "fr": "Pourquoi la maladie de Parkinson change votre voix."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "mic",
+     "kind": "watch",
+     "minutes": 8,
+     "wixStepId": "310d15b9-eee7-4921-9f82-d2c4f745e447"
+    },
+    {
+     "id": "pw-lets-practice-voice",
+     "slug": "lets-practice-voice",
+     "url": "modules/lets-practice-voice.html",
+     "title": {
+      "en": "Action: Let’s Practise — Alignment & Voice",
+      "fr": "Action : pratiquons — posture et voix"
+     },
+     "summary": {
+      "en": "Follow-along voice exercises with good posture.",
+      "fr": "Des exercices de voix à suivre, avec une bonne posture."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "megaphone",
+     "kind": "watch",
+     "minutes": 15,
+     "wixStepId": "c8270185-ecc0-4ad6-a8f0-fb83864e87f0"
+    },
+    {
+     "id": "pw-voice-work",
+     "slug": "voice-work",
+     "url": "modules/voice-work.html",
+     "title": {
+      "en": "Voice Work & Facial Expressions",
+      "fr": "Travail de la voix et expressions du visage"
+     },
+     "summary": {
+      "en": "How facial expression and voice work together.",
+      "fr": "Comment les expressions du visage et la voix travaillent ensemble."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "smile",
+     "kind": "watch",
+     "minutes": 10,
+     "wixStepId": "0adfb723-3043-4ad3-9e62-ebcef8bad79a"
+    },
+    {
+     "id": "pw-facial-expressions",
+     "slug": "facial-expressions",
+     "url": "modules/facial-expressions.html",
+     "title": {
+      "en": "Action: Facial Expression Exercises",
+      "fr": "Action : exercices d’expressions faciales"
+     },
+     "summary": {
+      "en": "Facial gymnastics to keep your expressions strong.",
+      "fr": "De la gymnastique faciale pour garder des expressions fortes."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "smile",
+     "kind": "do",
+     "minutes": 10,
+     "wixStepId": "78f67929-b481-4114-84ff-cdc3a0be9b9c"
+    },
+    {
+     "id": "pw-blow-bubbles",
+     "slug": "blow-bubbles",
+     "url": "modules/blow-bubbles.html",
+     "title": {
+      "en": "Action: Let’s Blow Bubbles",
+      "fr": "Action : faisons des bulles"
+     },
+     "summary": {
+      "en": "A playful breath-and-voice exercise.",
+      "fr": "Un exercice ludique de respiration et de voix."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "wind",
+     "kind": "watch",
+     "minutes": 8,
+     "wixStepId": "14331324-bfda-42dd-b99e-7fc64d8b5274"
+    },
+    {
+     "id": "pw-voice-lesson",
+     "slug": "voice-lesson",
+     "url": "modules/voice-lesson.html",
+     "title": {
+      "en": "Action: Voice Lesson",
+      "fr": "Action : leçon de voix"
+     },
+     "summary": {
+      "en": "A full voice lesson to keep your voice strong.",
+      "fr": "Une leçon de voix complète pour garder une voix forte."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "music",
+     "kind": "watch",
+     "minutes": 15,
+     "wixStepId": "df370805-f7fa-4542-8167-1d94dc57cac5"
+    }
+   ]
+  },
+  {
+   "slug": "module-10-cognitive",
+   "num": 10,
+   "title": {
+    "en": "Module 10 · Cognitive Fitness",
+    "fr": "Module 10 · Forme cognitive"
+   },
+   "desc": {
+    "en": "Keep your mind sharp with cognitive challenges and dual-tasking.",
+    "fr": "Gardez l’esprit vif grâce à des défis cognitifs et à la double tâche."
+   },
+   "icon": "puzzle",
+   "lessons": [
+    {
+     "id": "pw-why-cognitive-exercise",
+     "slug": "why-cognitive-exercise",
+     "url": "modules/why-cognitive-exercise.html",
+     "title": {
+      "en": "Why Cognitive Exercise Matters",
+      "fr": "Pourquoi l’exercice cognitif est essentiel"
+     },
+     "summary": {
+      "en": "How challenging your brain helps you live well with Parkinson’s.",
+      "fr": "Comment stimuler votre cerveau vous aide à bien vivre avec la maladie de Parkinson."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "brain",
+     "kind": "read",
+     "minutes": 12,
+     "wixStepId": "3ff97440-a24d-44f4-94ab-2611e6844f9b"
+    },
+    {
+     "id": "pw-wake-up-your-mind",
+     "slug": "wake-up-your-mind",
+     "url": "modules/wake-up-your-mind.html",
+     "title": {
+      "en": "Wake Up Your Mind",
+      "fr": "Réveillez votre esprit"
+     },
+     "summary": {
+      "en": "Simple ways to keep your brain active every day.",
+      "fr": "Des façons simples de garder votre cerveau actif chaque jour."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "lightbulb",
+     "kind": "read",
+     "minutes": 10,
+     "wixStepId": "48b718f0-baed-4853-a411-2a9fe2aacdb2"
+    },
+    {
+     "id": "pw-cognitive-challenge",
+     "slug": "cognitive-challenge",
+     "url": "modules/cognitive-challenge.html",
+     "title": {
+      "en": "Action: Cognitive Challenge",
+      "fr": "Action : défi cognitif"
+     },
+     "summary": {
+      "en": "Follow-along brain games and challenges.",
+      "fr": "Des jeux et défis cognitifs à suivre."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "puzzle",
+     "kind": "watch",
+     "minutes": 15,
+     "wixStepId": "d58bdce7-da58-482d-8bab-e82b52c83743"
+    },
+    {
+     "id": "pw-boxing-dual-tasking",
+     "slug": "boxing-dual-tasking",
+     "url": "modules/boxing-dual-tasking.html",
+     "title": {
+      "en": "Action: Boxing Basics & Dual-Tasking",
+      "fr": "Action : bases de la boxe et double tâche"
+     },
+     "summary": {
+      "en": "Learn boxing basics, then add a thinking task.",
+      "fr": "Apprenez les bases de la boxe, puis ajoutez une tâche mentale."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "dumbbell",
+     "kind": "watch",
+     "minutes": 15,
+     "wixStepId": "d8087e75-3711-4204-abb0-a7674ab02dab"
+    },
+    {
+     "id": "pw-train-your-brain",
+     "slug": "train-your-brain",
+     "url": "modules/train-your-brain.html",
+     "title": {
+      "en": "Train Your Brain While You Move",
+      "fr": "Entraînez votre cerveau en bougeant"
+     },
+     "summary": {
+      "en": "The benefits of combining movement and thinking.",
+      "fr": "Les bienfaits de combiner mouvement et réflexion."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "brain",
+     "kind": "read",
+     "minutes": 10,
+     "wixStepId": "e29acd6e-186b-4300-8268-756d4251703c"
+    }
+   ]
+  },
+  {
+   "slug": "module-11-supplements",
+   "num": 11,
+   "title": {
+    "en": "Module 11 · Supplements & Immune Support",
+    "fr": "Module 11 · Suppléments et immunité"
+   },
+   "desc": {
+    "en": "What supplements may help, and how to build a strong immune system.",
+    "fr": "Les suppléments qui pourraient aider, et comment bâtir un système immunitaire solide."
+   },
+   "icon": "pill",
+   "lessons": [
+    {
+     "id": "pw-supplements-immune",
+     "slug": "supplements-immune",
+     "url": "modules/supplements-immune.html",
+     "title": {
+      "en": "Supplements & Your Immune System",
+      "fr": "Les suppléments et votre système immunitaire"
+     },
+     "summary": {
+      "en": "Which supplements are worth knowing about — and why to check with your care team.",
+      "fr": "Les suppléments à connaître — et pourquoi en parler à votre équipe de soins."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "pill",
+     "kind": "read",
+     "minutes": 8,
+     "wixStepId": "aebbe1d9-d311-4521-b249-8df38e38782f"
+    },
+    {
+     "id": "pw-strong-immune-system",
+     "slug": "strong-immune-system",
+     "url": "modules/strong-immune-system.html",
+     "title": {
+      "en": "Building a Strong Immune System",
+      "fr": "Bâtir un système immunitaire solide"
+     },
+     "summary": {
+      "en": "Everyday ways to build your immune armour.",
+      "fr": "Des façons simples, au quotidien, de renforcer vos défenses."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "shield-check",
+     "kind": "read",
+     "minutes": 10,
+     "wixStepId": "d23539d2-ef2a-4c24-84ee-bc7495e83b23"
+    },
+    {
+     "id": "pw-plan-of-attack-recipes",
+     "slug": "plan-of-attack-recipes",
+     "url": "modules/plan-of-attack-recipes.html",
+     "title": {
+      "en": "Action: Plan of Attack Recipes",
+      "fr": "Action : recettes Plan d’attaque"
+     },
+     "summary": {
+      "en": "Immune-friendly recipes to try this week.",
+      "fr": "Des recettes bonnes pour l’immunité à essayer cette semaine."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "chef-hat",
+     "kind": "do",
+     "minutes": 10,
+     "wixStepId": "443b87bf-7c09-412e-bbb5-aec849e864b1"
+    },
+    {
+     "id": "pw-nicotinamide-riboside",
+     "slug": "nicotinamide-riboside",
+     "url": "modules/nicotinamide-riboside.html",
+     "title": {
+      "en": "A New Supplement: Nicotinamide Riboside (NR)",
+      "fr": "Un nouveau supplément : le nicotinamide riboside (NR)"
+     },
+     "summary": {
+      "en": "What early research says about NR.",
+      "fr": "Ce que disent les premières recherches sur le NR."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "flask-conical",
+     "kind": "read",
+     "minutes": 8,
+     "wixStepId": "f008b898-3d96-42fb-8363-0b09d18aeea0"
+    },
+    {
+     "id": "pw-magnesium",
+     "slug": "magnesium",
+     "url": "modules/magnesium.html",
+     "title": {
+      "en": "Magnesium: One of My Go-To’s",
+      "fr": "Le magnésium : un de mes incontournables"
+     },
+     "summary": {
+      "en": "Why magnesium matters for Parkinson’s — and for women’s hormonal health.",
+      "fr": "Pourquoi le magnésium compte pour la maladie de Parkinson — et pour la santé hormonale des femmes."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "star",
+     "kind": "read",
+     "minutes": 10,
+     "wixStepId": "5da4fedf-8205-4510-a6a6-12424c767da9"
+    }
+   ]
+  },
+  {
+   "slug": "module-12-you-did-it",
+   "num": 12,
+   "title": {
+    "en": "Module 12 · You Did It!",
+    "fr": "Module 12 · Vous avez réussi !"
+   },
+   "desc": {
+    "en": "Celebrate how far you’ve come and re-test to see your progress.",
+    "fr": "Célébrez le chemin parcouru et refaites vos tests pour voir vos progrès."
+   },
+   "icon": "award",
+   "lessons": [
+    {
+     "id": "pw-you-did-it",
+     "slug": "you-did-it",
+     "url": "modules/you-did-it.html",
+     "title": {
+      "en": "What Doesn’t Challenge You Can’t Change You",
+      "fr": "Ce qui ne vous met pas au défi ne peut pas vous changer"
+     },
+     "summary": {
+      "en": "A message to celebrate finishing the program.",
+      "fr": "Un message pour célébrer la fin du programme."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "trophy",
+     "kind": "watch",
+     "minutes": 5,
+     "wixStepId": "d2fb5168-d580-4abd-8490-a273de3488d9"
+    },
+    {
+     "id": "pw-re-test",
+     "slug": "re-test",
+     "url": "modules/re-test.html",
+     "title": {
+      "en": "Action: Re-Test & See Your Progress",
+      "fr": "Action : refaites vos tests et voyez vos progrès"
+     },
+     "summary": {
+      "en": "Repeat your baseline tests and see how far you’ve come.",
+      "fr": "Refaites vos tests de départ et voyez le chemin parcouru."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "timer",
+     "kind": "do",
+     "minutes": 20,
+     "wixStepId": "14162230-9d9f-4499-9bf3-196633a20b5b"
+    }
+   ]
+  },
+  {
+   "slug": "bonus-menopause",
+   "num": 13,
+   "title": {
+    "en": "Bonus · Women’s Health: Menopause & Parkinson’s",
+    "fr": "Bonus · Santé des femmes : ménopause et Parkinson"
+   },
+   "desc": {
+    "en": "Bonus for women: how menopause and hormones interact with Parkinson’s.",
+    "fr": "Bonus pour les femmes : l’interaction entre la ménopause, les hormones et la maladie de Parkinson."
+   },
+   "icon": "venus",
+   "lessons": [
+    {
+     "id": "pw-estrogen",
+     "slug": "estrogen",
+     "url": "modules/estrogen.html",
+     "title": {
+      "en": "Estrogen Has Left the Building!",
+      "fr": "L’œstrogène a quitté l’édifice !"
+     },
+     "summary": {
+      "en": "Why estrogen matters for brain health, dopamine and Parkinson’s.",
+      "fr": "Pourquoi l’œstrogène compte pour le cerveau, la dopamine et la maladie de Parkinson."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "venus",
+     "kind": "watch",
+     "minutes": 20,
+     "wixStepId": "1ae4cc5d-cf9d-4c43-99ae-1e72d22fae7b"
+    },
+    {
+     "id": "pw-menopause-meals",
+     "slug": "menopause-meals",
+     "url": "modules/menopause-meals.html",
+     "title": {
+      "en": "Protein for the Win: Meals & Snacks",
+      "fr": "Misez sur les protéines : repas et collations"
+     },
+     "summary": {
+      "en": "Meal and snack ideas to boost protein and fibre during menopause.",
+      "fr": "Des idées de repas et de collations pour plus de protéines et de fibres à la ménopause."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "utensils",
+     "kind": "read",
+     "minutes": 8,
+     "wixStepId": "f4133bf2-e72c-48e0-b525-b450647e66f3"
+    },
+    {
+     "id": "pw-menopause-research",
+     "slug": "menopause-research",
+     "url": "modules/menopause-research.html",
+     "title": {
+      "en": "Research & Articles to Share with Your Doctor",
+      "fr": "Recherche et articles à partager avec votre médecin"
+     },
+     "summary": {
+      "en": "Research summaries you can print and bring to your appointments.",
+      "fr": "Des résumés de recherche à imprimer et à apporter à vos rendez-vous."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "file-text",
+     "kind": "read",
+     "minutes": 8,
+     "wixStepId": "93d365e0-785e-4e31-93b2-9dcb775212f4"
+    }
+   ],
+   "optional": true
+  },
+  {
+   "slug": "bonus-freezing-joints",
+   "num": 14,
+   "title": {
+    "en": "Bonus · Extras: Freezing & Joint Health",
+    "fr": "Bonus · Extras : blocage de la marche et santé articulaire"
+   },
+   "desc": {
+    "en": "Bonus: what freezing is and what to do about it, plus nutrition for healthy joints.",
+    "fr": "Bonus : comprendre le blocage de la marche et quoi faire, plus la nutrition pour des articulations en santé."
+   },
+   "icon": "snowflake",
+   "lessons": [
+    {
+     "id": "pw-freezing-what-why",
+     "slug": "freezing-what-why",
+     "url": "modules/freezing-what-why.html",
+     "title": {
+      "en": "Freezing: What, Why, When & How",
+      "fr": "Le blocage : quoi, pourquoi, quand et comment"
+     },
+     "summary": {
+      "en": "A presentation on freezing of gait.",
+      "fr": "Une présentation sur le blocage de la marche."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "snowflake",
+     "kind": "watch",
+     "minutes": 15,
+     "wixStepId": "2c1f49bc-2461-415f-abc4-4e203faf2d2c"
+    },
+    {
+     "id": "pw-freezing-overview",
+     "slug": "freezing-overview",
+     "url": "modules/freezing-overview.html",
+     "title": {
+      "en": "Why Do We Freeze — and What Can We Do?",
+      "fr": "Pourquoi bloque-t-on — et que faire ?"
+     },
+     "summary": {
+      "en": "An overview of freezing and tips for when it happens.",
+      "fr": "Un aperçu du blocage et des conseils pour quand il survient."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "footprints",
+     "kind": "read",
+     "minutes": 15,
+     "wixStepId": "1c6c6804-70a5-48e5-9120-61fc5c8ee57a"
+    },
+    {
+     "id": "pw-how-to-get-moving",
+     "slug": "how-to-get-moving",
+     "url": "modules/how-to-get-moving.html",
+     "title": {
+      "en": "How to Get Moving: Freezing Tips",
+      "fr": "Se remettre en mouvement : conseils contre le blocage"
+     },
+     "summary": {
+      "en": "Practical tricks to get unstuck.",
+      "fr": "Des trucs pratiques pour se débloquer."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "move-right",
+     "kind": "watch",
+     "minutes": 5,
+     "wixStepId": "ebe3912e-7867-4ec1-b5b2-480d6c3122d4"
+    },
+    {
+     "id": "pw-osteoarthritis-nutrition",
+     "slug": "osteoarthritis-nutrition",
+     "url": "modules/osteoarthritis-nutrition.html",
+     "title": {
+      "en": "Osteoarthritis & Nutrition",
+      "fr": "Arthrose et nutrition"
+     },
+     "summary": {
+      "en": "How nutrition supports healthy joints and bones.",
+      "fr": "Comment la nutrition soutient des articulations et des os en santé."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "bone",
+     "kind": "read",
+     "minutes": 12,
+     "wixStepId": "0562806a-3928-4638-bf2b-309aa47f033f"
+    }
+   ],
+   "optional": true
+  },
+  {
+   "slug": "bonus-webinars",
+   "num": 15,
+   "title": {
+    "en": "Bonus · Webinars & Guest Experts",
+    "fr": "Bonus · Webinaires et experts invités"
+   },
+   "desc": {
+    "en": "Bonus: recorded webinars with guest experts.",
+    "fr": "Bonus : des webinaires enregistrés avec des experts invités."
+   },
+   "icon": "presentation",
+   "lessons": [
+    {
+     "id": "pw-webinars",
+     "slug": "webinars",
+     "url": "modules/webinars.html",
+     "title": {
+      "en": "Webinars: Gut Health & Speech Pathology",
+      "fr": "Webinaires : santé intestinale et orthophonie"
+     },
+     "summary": {
+      "en": "Two recorded webinars with guest experts.",
+      "fr": "Deux webinaires enregistrés avec des experts invités."
+     },
+     "keywords": {
+      "en": "",
+      "fr": ""
+     },
+     "type": "lesson",
+     "icon": "presentation",
+     "kind": "watch",
+     "minutes": 90,
+     "wixStepId": "9f5f7bd7-8ff1-47c3-bd18-5310cd28fa74"
+    }
+   ],
+   "optional": true
+  }
+ ],
+ "resources": []
+}

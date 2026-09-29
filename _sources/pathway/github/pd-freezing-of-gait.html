@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freezing of Gait — PPE Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:  #2D4A2D;
+  --moss:    #4A6741;
+  --sage:    #7A9B6E;
+  --lime:    #B8D4A8;
+  --cream:   #F7F3EC;
+  --warm:    #EDE6D8;
+  --gold:    #C4913A;
+  --amber:   #E8B86D;
+  --rust:    #B85C38;
+  --navy:    #1E3A5F;
+  --navy-lt: #E8EFF7;
+  --teal:    #2E6B6B;
+  --teal-lt: #E4F0F0;
+  --ink:     #1C2B1C;
+  --muted:   #6B7B62;
+  --white:   #FFFFFF;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--ink); line-height:1.75; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  background-image:
+    radial-gradient(ellipse at 5% 80%, rgba(45,74,45,0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 95% 10%, rgba(196,145,58,0.2) 0%, transparent 50%);
+  color: white;
+  padding: 72px 44px 120px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '🚶';
+  font-size: 320px;
+  position: absolute; right: -30px; top: -30px;
+  opacity: 0.04; line-height: 1; pointer-events: none;
+}
+.hero .badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(45,74,45,0.35); border: 1px solid rgba(45,74,45,0.6);
+  color: var(--lime); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 20px; margin-bottom: 26px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.9rem);
+  line-height: 1.07; max-width: 680px; margin-bottom: 20px;
+}
+.hero h1 em { color: var(--amber); font-style: italic; }
+.hero .sub {
+  font-size: 1.05rem; opacity: 0.78; max-width: 560px;
+  font-weight: 300; line-height: 1.7; margin-bottom: 32px;
+}
+.hero-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-pill {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px; padding: 7px 14px; font-size: 0.78rem; color: rgba(255,255,255,0.72);
+}
+.hero-pill strong { color: var(--lime); display: block; font-size: 0.68rem; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 1px; }
+
+/* ── STAT CARDS ── */
+.stat-row {
+  max-width: 900px; margin: -54px auto 0; padding: 0 28px;
+  position: relative; z-index: 10;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 14px;
+  animation: rise 0.5s ease both;
+}
+@keyframes rise { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+.stat-card {
+  background: white; border-radius: 20px; padding: 24px 20px;
+  text-align: center; box-shadow: 0 12px 44px rgba(29,43,28,0.14);
+}
+.stat-card:nth-child(1) { border-bottom: 4px solid var(--navy); }
+.stat-card:nth-child(2) { border-bottom: 4px solid var(--rust); }
+.stat-card:nth-child(3) { border-bottom: 4px solid var(--forest); }
+.stat-emoji { font-size: 2rem; margin-bottom: 8px; }
+.stat-value { font-family:'Playfair Display',serif; font-size:1.9rem; font-weight:700; color:var(--forest); line-height:1; margin-bottom:4px; }
+.stat-label { font-size:0.78rem; color:var(--muted); line-height:1.3; }
+
+/* ── CONTAINER ── */
+.container { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+.sec-tag { font-size:10px; letter-spacing:3.5px; text-transform:uppercase; color:var(--navy); font-weight:700; display:block; margin-bottom:10px; }
+h2 { font-family:'Playfair Display',serif; font-size:clamp(1.7rem,3vw,2.3rem); color:var(--forest); line-height:1.2; margin-bottom:18px; }
+h3 { font-family:'Playfair Display',serif; font-size:1.25rem; color:var(--forest); margin-bottom:12px; }
+p { font-size:1rem; color:#3A4A36; margin-bottom:16px; line-height:1.78; }
+section { padding:52px 0 20px; }
+
+/* ── INFO BOXES ── */
+.info-box {
+  border-radius: 20px; padding: 28px 34px; margin: 28px 0;
+  position: relative; overflow: hidden;
+}
+.info-box.navy { background: linear-gradient(135deg, var(--navy) 0%, #2A4A7A 100%); color: white; }
+.info-box.navy p { color: rgba(255,255,255,0.88); margin: 0; }
+.info-box.navy p strong { color: var(--amber); }
+.info-box.navy::after { content:'🧠'; font-size:120px; position:absolute; right:-10px; bottom:-24px; opacity:0.06; }
+
+.info-box.rust { background: linear-gradient(135deg, var(--rust) 0%, #8A3A20 100%); color: white; }
+.info-box.rust p { color: rgba(255,255,255,0.9); margin:0; }
+.info-box.rust p strong { color: var(--amber); }
+.info-box.rust::after { content:'⚠️'; font-size:120px; position:absolute; right:-10px; bottom:-24px; opacity:0.07; }
+
+.info-box.green { background: linear-gradient(135deg, var(--forest) 0%, var(--moss) 100%); color: white; }
+.info-box.green p { color: rgba(255,255,255,0.88); margin:0; }
+.info-box.green p strong { color: var(--amber); }
+.info-box.green::after { content:'💬'; font-size:120px; position:absolute; right:-10px; bottom:-24px; opacity:0.07; }
+.info-box .ib-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; font-weight:700; display:block; margin-bottom:10px; color:rgba(255,255,255,0.55); }
+
+/* ── WHAT/WHY GRID ── */
+.what-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 16px; margin: 24px 0;
+}
+.what-card {
+  background: white; border-radius: 18px; padding: 26px 22px;
+  border: 1px solid #DDE8D4; box-shadow: 0 3px 16px rgba(45,74,45,0.07);
+  position: relative; overflow: hidden;
+}
+.what-card::before { content:''; position:absolute; top:0; left:0; width:100%; height:4px; }
+.what-card.navy-top::before { background: var(--navy); }
+.what-card.rust-top::before { background: var(--rust); }
+.what-card.gold-top::before { background: var(--gold); }
+.what-card.green-top::before { background: var(--forest); }
+.what-card .wc-emoji { font-size:2rem; margin-bottom:10px; }
+.what-card h4 { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--forest); margin-bottom:8px; }
+.what-card p { font-size:0.89rem; color:var(--muted); margin:0; line-height:1.6; }
+
+/* ── TRIGGER CHIPS ── */
+.trigger-section { margin: 28px 0; }
+.trigger-cats { display:flex; flex-wrap:wrap; gap:24px; }
+.trigger-cat h4 { font-size:0.82rem; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:12px; }
+.trigger-cat.env h4 { color:var(--navy); }
+.trigger-cat.phys h4 { color:var(--rust); }
+.trigger-cat.cog h4 { color:var(--gold); }
+.trigger-chips { display:flex; flex-wrap:wrap; gap:8px; }
+.chip {
+  border-radius: 20px; padding: 7px 14px; font-size:0.8rem; font-weight:600;
+  display: inline-flex; align-items:center; gap:6px;
+}
+.chip.navy { background: var(--navy-lt); color: var(--navy); border: 1px solid rgba(30,58,95,0.2); }
+.chip.rust { background: #FBE8E2; color: var(--rust); border: 1px solid rgba(184,92,56,0.2); }
+.chip.gold { background: var(--warm); color: #7A5A1A; border: 1px solid rgba(196,145,58,0.3); }
+
+/* ── CUE CARDS ── */
+.cue-tabs { margin: 28px 0; }
+.cue-tab-nav { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:0; }
+.cue-tab-btn {
+  background: white; border: 2px solid #DDE8D4; border-bottom:none;
+  border-radius: 14px 14px 0 0; padding: 12px 22px;
+  font-size: 0.86rem; font-weight:600; font-family:'Jost',sans-serif;
+  color: var(--muted); cursor:pointer; transition:all 0.2s;
+}
+.cue-tab-btn:hover { background:#F0F6EC; color:var(--forest); }
+.cue-tab-btn.active { background:var(--navy); color:white; border-color:var(--navy); }
+.cue-tab-wrap {
+  background: white; border: 2px solid #DDE8D4;
+  border-radius: 0 16px 16px 16px; padding: 36px 40px;
+  box-shadow: 0 4px 24px rgba(45,74,45,0.07);
+}
+.cue-panel { display:none; }
+.cue-panel.active { display:block; }
+.cue-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:20px; }
+.cue-card {
+  border-radius: 16px; padding: 22px 20px;
+  border-left: 4px solid;
+}
+.cue-card.auditory { background:#EBF4E5; border-color:var(--forest); }
+.cue-card.visual   { background:var(--navy-lt); border-color:var(--navy); }
+.cue-card.tactile  { background:var(--warm); border-color:var(--gold); }
+.cue-card.internal { background:#FBE8E2; border-color:var(--rust); }
+.cue-card .cc-emoji { font-size:1.8rem; margin-bottom:8px; }
+.cue-card h4 { font-family:'Playfair Display',serif; font-size:1rem; color:var(--forest); margin-bottom:6px; }
+.cue-card p { font-size:0.88rem; color:#3A4A36; margin:0; line-height:1.6; }
+
+/* ── STRATEGY ACCORDION ── */
+.strategy-list { margin: 24px 0; }
+.strategy-item {
+  background: white; border-radius: 16px; margin-bottom: 10px;
+  border: 1px solid #DDE8D4; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(45,74,45,0.05);
+}
+.strategy-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px 22px; cursor: pointer;
+  user-select: none; transition: background 0.2s;
+}
+.strategy-header:hover { background: #F7FBF5; }
+.strategy-header.open { background: var(--navy); color: white; }
+.strategy-header.open .sh-title { color: white; }
+.strategy-header.open .sh-emoji { filter: none; }
+.sh-emoji { font-size: 1.6rem; flex-shrink:0; }
+.sh-title { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--forest); flex:1; }
+.sh-arrow {
+  font-size:1.1rem; color:var(--muted); transition:transform 0.25s;
+  flex-shrink:0;
+}
+.strategy-header.open .sh-arrow { transform:rotate(180deg); color:rgba(255,255,255,0.7); }
+.strategy-body {
+  display: none; padding: 0 22px 22px; animation: slideDown 0.25s ease;
+}
+.strategy-body.open { display: block; }
+@keyframes slideDown { from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
+.strategy-body p { font-size:0.92rem; color:#3A4A36; margin:14px 0 0; line-height:1.7; }
+.strategy-body .steps { margin-top:14px; list-style:none; padding:0; }
+.strategy-body .steps li {
+  padding: 8px 0 8px 28px; position:relative;
+  font-size:0.9rem; color:#3A4A36; line-height:1.6;
+  border-bottom: 1px solid #EEF4E8;
+}
+.strategy-body .steps li:last-child { border-bottom:none; }
+.strategy-body .steps li::before { content:'→'; position:absolute; left:0; color:var(--navy); font-weight:700; }
+
+/* ── EXERCISE CARDS ── */
+.exercise-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 16px; margin: 24px 0;
+}
+.exercise-card {
+  background: white; border-radius: 20px; padding: 26px 22px;
+  border: 1px solid #DDE8D4; box-shadow: 0 3px 16px rgba(45,74,45,0.07);
+  position: relative;
+}
+.exercise-card .ec-num {
+  font-family:'Playfair Display',serif; font-size:3rem;
+  color: rgba(30,58,95,0.08); line-height:1; margin-bottom:2px;
+}
+.exercise-card h4 { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--navy); margin-bottom:8px; }
+.exercise-card .ec-badge {
+  display: inline-block; margin-bottom: 10px;
+  background: var(--navy-lt); color: var(--navy);
+  font-size: 0.68rem; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; padding: 3px 10px; border-radius:20px;
+}
+.exercise-card p { font-size:0.88rem; color:var(--muted); margin:0; line-height:1.6; }
+
+/* ── SAFETY GRID ── */
+.safety-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+  gap: 14px; margin: 24px 0;
+}
+.safety-card {
+  border-radius: 16px; padding: 20px;
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.safety-card.do-card   { background: #EBF4E5; border: 1px solid #C4DCBA; }
+.safety-card.dont-card { background: #FBE8E2; border: 1px solid #E8B8A8; }
+.safety-card .sc-icon { font-size:1.6rem; flex-shrink:0; }
+.safety-card h4 { font-family:'Playfair Display',serif; font-size:0.98rem; color:var(--forest); margin-bottom:4px; }
+.safety-card p { font-size:0.85rem; color:#3A4A36; margin:0; line-height:1.55; }
+
+/* ── TAKEAWAY ── */
+.takeaway {
+  background: linear-gradient(135deg, var(--navy) 0%, #2A4570 100%);
+  color:white; border-radius:22px; padding:40px 44px; margin:36px 0;
+  position:relative; overflow:hidden;
+}
+.takeaway::after { content:'💪'; font-size:160px; position:absolute; right:-10px; bottom:-30px; opacity:0.06; }
+.takeaway h3 { font-size:1.45rem; color:var(--lime); margin-bottom:18px; }
+.takeaway ul { list-style:none; padding:0; }
+.takeaway ul li {
+  padding: 10px 0 10px 30px; position:relative;
+  font-size:0.97rem; color:rgba(255,255,255,0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.08); line-height:1.65;
+}
+.takeaway ul li:last-child { border-bottom:none; }
+.takeaway ul li::before { content:'✦'; position:absolute; left:0; font-size:0.8rem; color:var(--amber); }
+
+/* ── DISCLAIMER / REFS ── */
+.disclaimer {
+  background:var(--warm); border-radius:14px; padding:20px 24px;
+  margin:28px 0; font-size:0.85rem; color:#5A4A2A;
+  display:flex; gap:12px; align-items:flex-start;
+  border:1px solid #DDD4BE;
+}
+.disclaimer strong { color:var(--forest); }
+.references { background:var(--warm); border-radius:18px; padding:30px 36px; margin:20px 0 60px; }
+.references h3 { font-size:1.1rem; color:var(--forest); margin-bottom:16px; }
+.ref-item { font-size:0.82rem; color:var(--muted); line-height:1.6; padding:8px 0; border-bottom:1px solid #DDD4BE; display:flex; gap:10px; }
+.ref-item:last-child { border-bottom:none; }
+.ref-num { color:var(--navy); font-weight:700; flex-shrink:0; }
+
+footer { text-align:center; padding:36px 28px; font-size:0.8rem; color:#aaa; border-top:1px solid #DDE8D4; }
+
+@media (max-width:640px) {
+  .hero { padding:48px 24px 90px; }
+  .stat-row { grid-template-columns:1fr; }
+  .cue-tab-wrap { padding:24px 20px; }
+  .takeaway { padding:28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">🚶 PPE Educational Program — Movement Lesson</div>
+    <h1>Freezing of Gait — <em>Understanding & Overcoming</em> the Freeze</h1>
+    <p class="sub">One of the most challenging and least understood symptoms of Parkinson's disease. FOG affects independence, confidence, and safety — but with the right strategies, it can be managed. This lesson covers everything you need to know.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><strong>Affects</strong>Up to 80% of PD patients</div>
+      <div class="hero-pill"><strong>Type</strong>Motor Symptom / Gait</div>
+      <div class="hero-pill"><strong>Approach</strong>Cueing · Exercise · Strategy</div>
+      <div class="hero-pill"><strong>Risk</strong>Major cause of falls in PD</div>
+    </div>
+  </div>
+</div>
+
+<!-- STAT CARDS -->
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-emoji">👣</div>
+    <div class="stat-value">80%</div>
+    <div class="stat-label">of people with PD experience FOG at some stage</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-emoji">🏥</div>
+    <div class="stat-value">#1</div>
+    <div class="stat-label">cause of falls and fall-related injury in Parkinson's disease</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-emoji">🎯</div>
+    <div class="stat-value">Cues</div>
+    <div class="stat-label">work by bypassing faulty basal ganglia circuits in the brain</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <!-- WHAT IS FOG -->
+  <section>
+    <span class="sec-tag">Understanding FOG</span>
+    <h2>What Is Freezing of Gait — and Why Does It Happen?</h2>
+    <p>Freezing of gait (FOG) is a sudden, transient inability to initiate or continue walking, despite the intention to move. It feels like your feet are suddenly glued to the floor — often for just a few seconds, sometimes longer. The person remains fully conscious and aware, which can make it feel even more frightening and frustrating.</p>
+    <p>FOG is not simply "weakness" — it is a breakdown in the brain's ability to generate the automatic movement sequences needed for walking. In Parkinson's disease, the loss of dopamine in the basal ganglia disrupts the brain's internal "rhythm generator." Walking, which we normally do on autopilot, suddenly requires enormous conscious effort — and sometimes the system stalls entirely.</p>
+
+    <div class="what-grid">
+      <div class="what-card navy-top">
+        <div class="wc-emoji">🧠</div>
+        <h4>The Brain Mechanism</h4>
+        <p>The basal ganglia normally regulate automatic movement. In PD, dopamine loss disrupts this circuitry, making walking initiation and continuation unreliable — especially in complex or dual-task situations.</p>
+      </div>
+      <div class="what-card rust-top">
+        <div class="wc-emoji">⏱️</div>
+        <h4>What It Looks Like</h4>
+        <p>Short, shuffling steps; feet appearing glued to the floor; trembling of the legs without forward movement; a sudden stop mid-stride. Episodes typically last 1–30 seconds but feel much longer.</p>
+      </div>
+      <div class="what-card gold-top">
+        <div class="wc-emoji">📍</div>
+        <h4>When It Happens Most</h4>
+        <p>Starting to walk, turning, going through doorways, approaching a destination, navigating crowded spaces, or during dual-tasking (walking and talking simultaneously).</p>
+      </div>
+      <div class="what-card green-top">
+        <div class="wc-emoji">💊</div>
+        <h4>Medication & FOG</h4>
+        <p>FOG is often worse during "off" periods when medication is wearing off — but it can also occur during "on" times. This unpredictability is one of the most challenging aspects of FOG management.</p>
+      </div>
+    </div>
+
+    <div class="info-box navy">
+      <span class="ib-label">💡 Why Cueing Works</span>
+      <p>When the brain's internal rhythm generator stalls, <strong>external cues bypass the faulty basal ganglia circuits</strong> and recruit alternative motor pathways — essentially allowing the brain to use a different route to generate movement. This is why a simple beat, a line on the floor, or even just counting can instantly unlock a freeze that feels completely immovable.</p>
+    </div>
+  </section>
+
+  <!-- TRIGGERS -->
+  <section>
+    <span class="sec-tag">Triggers & Warning Signs</span>
+    <h2>What Triggers FOG — and How to Recognise It Coming</h2>
+    <p>FOG is not random. Understanding your personal triggers is one of the most powerful tools for managing it. Most triggers fall into three categories: environmental, physical, and cognitive.</p>
+
+    <div class="trigger-section">
+      <div class="trigger-cats">
+        <div class="trigger-cat env" style="flex:1; min-width:220px;">
+          <h4>🏠 Environmental Triggers</h4>
+          <div class="trigger-chips">
+            <span class="chip navy">🚪 Doorways</span>
+            <span class="chip navy">↩️ Turning</span>
+            <span class="chip navy">🏁 Destination approaching</span>
+            <span class="chip navy">👥 Crowded spaces</span>
+            <span class="chip navy">📏 Narrow corridors</span>
+            <span class="chip navy">🚶 Starting to walk</span>
+            <span class="chip navy">🪑 Rising from a chair</span>
+            <span class="chip navy">🧗 Obstacles in path</span>
+          </div>
+        </div>
+        <div class="trigger-cat phys" style="flex:1; min-width:220px;">
+          <h4>⚡ Physical Triggers</h4>
+          <div class="trigger-chips">
+            <span class="chip rust">💊 Medication "off" periods</span>
+            <span class="chip rust">😴 Fatigue</span>
+            <span class="chip rust">😰 Anxiety or stress</span>
+            <span class="chip rust">🏃 Moving quickly</span>
+            <span class="chip rust">🔄 Changing direction</span>
+          </div>
+        </div>
+        <div class="trigger-cat cog" style="flex:1; min-width:220px;">
+          <h4>🧩 Cognitive Triggers</h4>
+          <div class="trigger-chips">
+            <span class="chip gold">🗣️ Walking & talking</span>
+            <span class="chip gold">📱 Carrying objects</span>
+            <span class="chip gold">🤔 Divided attention</span>
+            <span class="chip gold">⏰ Time pressure</span>
+            <span class="chip gold">😨 Fear of falling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box rust">
+      <span class="ib-label">⚠️ Warning Signs to Watch For</span>
+      <p>FOG often has early warning signs: <strong>festination</strong> (steps becoming progressively smaller and faster), a sense of the feet "sticking," increased difficulty initiating turns, or a subtle hesitation before doorways. Recognising these signs early gives you time to apply a cueing strategy <em>before</em> a full freeze occurs — which is always easier than recovering from one mid-episode.</p>
+    </div>
+  </section>
+
+  <!-- CUEING STRATEGIES -->
+  <section>
+    <span class="sec-tag">Getting Unstuck</span>
+    <h2>Cueing Strategies — Your Toolkit for Breaking a Freeze</h2>
+    <p>Cueing is the most evidence-backed approach to managing FOG. A 2024 review of cueing research confirmed that external cues consistently improve gait parameters and can significantly reduce FOG severity. The key is finding which cue types work best <em>for you</em> — and practising them when you're NOT frozen, so they become automatic.</p>
+
+    <div class="cue-tabs">
+      <div class="cue-tab-nav">
+        <button class="cue-tab-btn active" onclick="showCue('auditory', this)">🎵 Auditory</button>
+        <button class="cue-tab-btn" onclick="showCue('visual', this)">👁️ Visual</button>
+        <button class="cue-tab-btn" onclick="showCue('tactile', this)">✋ Tactile</button>
+        <button class="cue-tab-btn" onclick="showCue('internal', this)">🧠 Internal</button>
+      </div>
+
+      <div class="cue-tab-wrap">
+        <!-- AUDITORY -->
+        <div class="cue-panel active" id="cue-auditory">
+          <p>Auditory cues work by providing a rhythmic beat that the brain can lock onto, bypassing the stalled basal ganglia and activating alternative motor pathways. Research consistently shows auditory cueing improves step length and walking speed in people with PD.</p>
+          <div class="cue-grid">
+            <div class="cue-card auditory">
+              <div class="cc-emoji">🎵</div>
+              <h4>Metronome</h4>
+              <p>A metronome app (set to your normal walking rhythm) provides a steady beat to walk to. Set it slightly faster than your current pace to encourage full steps. Many phones have free metronome apps.</p>
+            </div>
+            <div class="cue-card auditory">
+              <div class="cc-emoji">🎶</div>
+              <h4>Music with a Beat</h4>
+              <p>Choose music with a clear, steady tempo that matches your natural walking rhythm. Create a dedicated "walking playlist." The rhythm provides an external pacing signal your brain can follow.</p>
+            </div>
+            <div class="cue-card auditory">
+              <div class="cc-emoji">🗣️</div>
+              <h4>Counting or Commands</h4>
+              <p>Count "1-2-3-GO" or say "left, right, left, right" aloud or in your head. This recruits the cognitive motor system as a workaround when the automatic system stalls. Simple verbal rhythm works remarkably well.</p>
+            </div>
+            <div class="cue-card auditory">
+              <div class="cc-emoji">👏</div>
+              <h4>Clapping Rhythm</h4>
+              <p>Clap your hands twice, then step forward. The clap creates a rhythmic "launch pad" that can break a freeze. Your care partner can also clap a marching rhythm to help you get moving.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VISUAL -->
+        <div class="cue-panel" id="cue-visual">
+          <p>Visual cues provide spatial targets or lines that guide foot placement, bypassing the automatic system by making walking a conscious, goal-directed action. Evidence shows visual cues — particularly laser lines on the floor — can immediately break a freeze.</p>
+          <div class="cue-grid">
+            <div class="cue-card visual">
+              <div class="cc-emoji">〰️</div>
+              <h4>Floor Lines / Tape</h4>
+              <p>Place coloured tape strips on the floor at high-risk locations (kitchen, hallway, bedroom threshold). Step over the lines deliberately. This turns walking into a conscious stepping task rather than an automatic one.</p>
+            </div>
+            <div class="cue-card visual">
+              <div class="cc-emoji">🔦</div>
+              <h4>Laser Cane / Light</h4>
+              <p>Specially designed walking aids project a laser line onto the floor in front of you to step over. Research has shown laser-assisted canes significantly reduce freezing duration and frequency. Some standard walking sticks also have laser attachments.</p>
+            </div>
+            <div class="cue-card visual">
+              <div class="cc-emoji">🎯</div>
+              <h4>Target Stepping</h4>
+              <p>Focus your gaze on a specific target 1–2 metres ahead (a floor tile, a mark, your care partner's foot) and aim your next step toward it. This shifts gait from "automatic" to "directed" — a pathway that remains more intact in PD.</p>
+            </div>
+            <div class="cue-card visual">
+              <div class="cc-emoji">↔️</div>
+              <h4>Side-to-Side Weight Shift</h4>
+              <p>Rock your weight from left foot to right foot while visualising each foot lifting. This physical + visual strategy is one of the most reliable ways to break a freeze — the weight shift gets the movement system re-engaged.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TACTILE -->
+        <div class="cue-panel" id="cue-tactile">
+          <p>Tactile (touch-based) cues use physical sensation to trigger movement. Research in 2023 confirmed that somatosensory cues — particularly vibration — can reduce FOG frequency and severity, especially during turning.</p>
+          <div class="cue-grid">
+            <div class="cue-card tactile">
+              <div class="cc-emoji">✋</div>
+              <h4>Touch on the Shoulder</h4>
+              <p>A gentle touch or tap on the shoulder from a care partner can break a freeze. The sensory input interrupts the "loop" the brain is stuck in and provides a reset signal. Light, rhythmic tapping works especially well.</p>
+            </div>
+            <div class="cue-card tactile">
+              <div class="cc-emoji">🦵</div>
+              <h4>Knee Lift / Marching</h4>
+              <p>Consciously lift one knee high (exaggerating the movement), then the other, as if marching on the spot. This deliberate proprioceptive input can re-engage the motor system and restart automatic walking.</p>
+            </div>
+            <div class="cue-card tactile">
+              <div class="cc-emoji">📳</div>
+              <h4>Vibration Devices</h4>
+              <p>Wearable vibration devices (applied to the wrists or ankles) provide a rhythmic tactile signal that can act as a pacing cue. Research published in 2023 showed vibrotactile cues significantly reduced FOG during turning in people with PD.</p>
+            </div>
+            <div class="cue-card tactile">
+              <div class="cc-emoji">🦶</div>
+              <h4>Heel Strike Focus</h4>
+              <p>Consciously focus on striking the ground heel-first, rather than shuffling on the ball of the foot. This proprioceptive feedback from the heel makes each step a deliberate sensory event that re-engages motor rhythm.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERNAL -->
+        <div class="cue-panel" id="cue-internal">
+          <p>Internal (cognitive) cueing strategies involve mentally generating your own movement signals. These require practice but are always available — no devices needed. They're particularly useful when environmental cues aren't accessible.</p>
+          <div class="cue-grid">
+            <div class="cue-card internal">
+              <div class="cc-emoji">🧘</div>
+              <h4>STOP — Breathe — Reset</h4>
+              <p>When you feel a freeze coming: STOP trying to force movement. Take one slow breath. Shift your weight slightly backward. Then initiate a deliberate first step. Forcing movement increases anxiety, which worsens FOG.</p>
+            </div>
+            <div class="cue-card internal">
+              <div class="cc-emoji">🏃</div>
+              <h4>Mental Imagery</h4>
+              <p>Visualise yourself walking normally — picture your heel striking, your arms swinging, your body moving through space. Then initiate the movement. Mental rehearsal activates some of the same neural pathways as actual movement.</p>
+            </div>
+            <div class="cue-card internal">
+              <div class="cc-emoji">🔢</div>
+              <h4>Countdown Strategy</h4>
+              <p>Count down from 3: "3 — 2 — 1 — STEP." This provides internal timing and reduces the cognitive pressure of initiating movement. The countdown creates a predictable launch moment the brain can prepare for.</p>
+            </div>
+            <div class="cue-card internal">
+              <div class="cc-emoji">💃</div>
+              <h4>Shift to a New Task</h4>
+              <p>Sometimes mentally reframing the task breaks the freeze: instead of "walk to the door," think "march to the door" or "dance to the door." Changing the mental label of the movement can recruit different motor circuits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO DO WHEN FROZEN -->
+  <section>
+    <span class="sec-tag">Step-by-Step Strategies</span>
+    <h2>What to Do When a Freeze Happens</h2>
+    <p>Having a rehearsed protocol matters. When you are mid-freeze, it's hard to think clearly — so having a practiced sequence that comes automatically is key. Here are the most effective step-by-step strategies, in order of how to try them.</p>
+
+    <div class="strategy-list" id="strategyList">
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">🛑</span>
+          <span class="sh-title">Step 1 — Stop and Don't Panic</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>The single most important first step. Panic and force make FOG worse by increasing anxiety and muscular tension. When you feel a freeze:</p>
+          <ul class="steps">
+            <li>Stop trying to move forward immediately</li>
+            <li>Stand still, feet shoulder-width apart for stability</li>
+            <li>Take one slow, deliberate breath in through the nose</li>
+            <li>Exhale slowly — this activates the parasympathetic nervous system and reduces the anxiety that amplifies FOG</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">⚖️</span>
+          <span class="sh-title">Step 2 — Weight Shift Left to Right</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>This is one of the most reliably effective strategies. The physical act of shifting weight re-engages the motor system.</p>
+          <ul class="steps">
+            <li>Rock your weight slowly onto your left foot</li>
+            <li>Then shift it onto your right foot</li>
+            <li>Repeat 2–3 times, making the movement larger each time</li>
+            <li>On the next shift, allow the unweighted foot to lift — and walk</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">🦵</span>
+          <span class="sh-title">Step 3 — March on the Spot</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>If the weight shift alone doesn't break the freeze, add exaggerated knee lifts:</p>
+          <ul class="steps">
+            <li>Lift your right knee as high as is safe and comfortable</li>
+            <li>Place foot down firmly — feel the heel strike</li>
+            <li>Lift left knee up equally high</li>
+            <li>Continue marching 4–6 times, then transition to forward walking</li>
+            <li>Keep arms swinging to reinforce the rhythm</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">🎵</span>
+          <span class="sh-title">Step 4 — Add a Rhythm or Cue</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>While marching or weight-shifting, add an auditory cue to reinforce the rhythm:</p>
+          <ul class="steps">
+            <li>Count aloud: "1-2, 1-2" or "left-right-left-right"</li>
+            <li>Hum or sing a song with a clear marching beat</li>
+            <li>If wearing earbuds, turn on your metronome or walking playlist</li>
+            <li>Your care partner can clap a steady rhythm for you to match</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">👀</span>
+          <span class="sh-title">Step 5 — Use a Visual Target</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>Redirect your attention from "I am frozen" to "I am stepping toward that target":</p>
+          <ul class="steps">
+            <li>Pick a specific point on the floor 1–2 metres ahead</li>
+            <li>Think only about stepping TO that point — not about walking generally</li>
+            <li>Step over an imaginary line if no visual cue is available</li>
+            <li>Once you reach the target, pick a new one immediately</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="sh-emoji">🔄</span>
+          <span class="sh-title">Step 6 — Change Direction First</span>
+          <span class="sh-arrow">▼</span>
+        </div>
+        <div class="strategy-body">
+          <p>If forward movement is impossible, try moving in a different direction first:</p>
+          <ul class="steps">
+            <li>Take one step backward (backward walking often bypasses FOG)</li>
+            <li>Or take a step sideways — then re-initiate forward movement</li>
+            <li>The brain often finds lateral or backward movement easier to initiate when forward walking is blocked</li>
+            <li>Only do this when safe — ensure nothing is behind or to the side of you</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXERCISES -->
+  <section>
+    <span class="sec-tag">Exercise & Training</span>
+    <h2>Exercises That Reduce FOG Over Time</h2>
+    <p>Research shows that dedicated exercise training — particularly activities that combine rhythmic movement, dual-tasking, and large, intentional steps — can reduce FOG frequency and severity over time. A 2021 meta-analysis of 41 studies found a significant moderate effect of training on subjective FOG severity. These aren't just general fitness exercises — they specifically target the mechanisms underlying FOG.</p>
+
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <div class="ec-num">01</div>
+        <span class="ec-badge">Rhythm & Gait</span>
+        <h4>🥁 Tango / Rhythmic Dance</h4>
+        <p>Tango in particular has been studied extensively in PD. The music provides rhythmic cueing, the steps involve turning (a major FOG trigger), and the social element reduces anxiety. Even a simplified tango-step practice at home is beneficial.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">02</div>
+        <span class="ec-badge">Dual Task Training</span>
+        <h4>🗣️ Walk & Talk Practice</h4>
+        <p>Deliberately practise walking while talking, counting backward, or carrying a lightweight object. This trains the brain to manage divided attention — the exact scenario that most commonly triggers FOG.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">03</div>
+        <span class="ec-badge">Cueing Training</span>
+        <h4>〰️ Obstacle Course Practice</h4>
+        <p>Set up a simple home obstacle course with coloured tape lines to step over, turns to navigate, and a doorway to pass through — while playing music. Practising FOG-triggering situations safely at home builds resilience and reduces their impact.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">04</div>
+        <span class="ec-badge">Lower Body Strength</span>
+        <h4>🦵 Exaggerated Stepping</h4>
+        <p>Practice high-knee marching, large deliberate steps, and heel-strike focus during daily exercise. Big intentional steps activate different motor pathways than shuffling and help retrain the brain's gait patterns.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">05</div>
+        <span class="ec-badge">Balance & Turns</span>
+        <h4>🔄 Turning Practice</h4>
+        <p>Practice turning safely — using the "clock turn" method (turn in small steps, clockwise or counter-clockwise, rather than pivoting on one foot). Turns are one of the highest-risk moments for FOG and falls.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="ec-num">06</div>
+        <span class="ec-badge">Mindful Movement</span>
+        <h4>🧘 Tai Chi</h4>
+        <p>Tai Chi improves balance, slows movement speed to a safe pace, and incorporates deliberate weight shifting — directly addressing several FOG mechanisms. Research consistently shows improvements in balance and gait in people with PD.</p>
+      </div>
+    </div>
+
+    <div class="info-box green">
+      <span class="ib-label">💬 Christine's Clinical Note</span>
+      <p>At Boxing 4 Health, Christine specifically incorporates <strong>rhythm-based training, turning drills, and dual-task walking</strong> into sessions for clients who experience FOG. The key is to practise the difficult situations — doorways, turns, starting from a standstill — in a <strong>safe, supported environment</strong> so your brain builds the compensatory pathways before you need them in daily life. Consistency matters more than intensity here.</p>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section>
+    <span class="sec-tag">Safety & Fall Prevention</span>
+    <h2>Staying Safe — Before, During and After a Freeze</h2>
+    <p>FOG is the leading cause of falls in Parkinson's disease. Most falls during FOG happen when people try to force movement against the freeze. Preparation, home modifications, and a practiced safety plan dramatically reduce fall risk.</p>
+
+    <div class="safety-grid">
+      <div class="safety-card do-card">
+        <div class="sc-icon">✅</div>
+        <div>
+          <h4>DO — Home Modifications</h4>
+          <p>Place coloured tape strips at known freeze points (doorways, hallway entrances). Remove loose rugs and clutter. Ensure good lighting throughout. Install grab rails at key locations.</p>
+        </div>
+      </div>
+      <div class="safety-card do-card">
+        <div class="sc-icon">✅</div>
+        <div>
+          <h4>DO — Plan Your Routes</h4>
+          <p>Identify the highest-risk locations in your home and outside. Plan alternate routes around narrow spaces. Allow extra time — time pressure is a major FOG trigger.</p>
+        </div>
+      </div>
+      <div class="safety-card do-card">
+        <div class="sc-icon">✅</div>
+        <div>
+          <h4>DO — Carry a Cueing Tool</h4>
+          <p>Always carry your cueing tool of choice — a phone with a metronome app, earbuds with your walking playlist, or a laser-equipped walking stick. Have your toolkit ready before you need it.</p>
+        </div>
+      </div>
+      <div class="safety-card do-card">
+        <div class="sc-icon">✅</div>
+        <div>
+          <h4>DO — Brief Your Care Partner</h4>
+          <p>Ensure your care partner knows your freeze protocol. They should offer steady support — not pulling or pushing — and can use a rhythmic clap or count to help you restart. Practice together regularly.</p>
+        </div>
+      </div>
+      <div class="safety-card dont-card">
+        <div class="sc-icon">❌</div>
+        <div>
+          <h4>DON'T — Force Through a Freeze</h4>
+          <p>Trying to walk through a freeze by force is the most common cause of falls. The harder you try to force it, the more the system locks. Stop, breathe, and use a strategy instead.</p>
+        </div>
+      </div>
+      <div class="safety-card dont-card">
+        <div class="sc-icon">❌</div>
+        <div>
+          <h4>DON'T — Rush or Accept Time Pressure</h4>
+          <p>Time pressure is a powerful FOG trigger. Build extra time into every outing. If you feel rushed, that feeling alone can trigger a freeze — so communicate your needs to others clearly.</p>
+        </div>
+      </div>
+      <div class="safety-card dont-card">
+        <div class="sc-icon">❌</div>
+        <div>
+          <h4>DON'T — Walk Without a Plan in High-Risk Places</h4>
+          <p>If you're heading somewhere with known FOG triggers (crowded malls, busy restaurants), have your cueing strategy ready before you enter. Don't wait until you're already freezing to think about what to do.</p>
+        </div>
+      </div>
+      <div class="safety-card dont-card">
+        <div class="sc-icon">❌</div>
+        <div>
+          <h4>DON'T — Avoid Walking</h4>
+          <p>Fear of freezing leads many people to stop walking — which rapidly worsens FOG and overall PD symptoms. The goal is confident management, not avoidance. Regular movement practice is protective.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAKEAWAY -->
+  <div class="takeaway">
+    <h3>✦ Key Takeaways — Freezing of Gait</h3>
+    <ul>
+      <li>FOG affects up to 80% of people with PD and is the leading cause of falls. It is a brain circuit problem, not a strength or motivation problem.</li>
+      <li>External cues — auditory, visual, tactile — work by bypassing faulty basal ganglia circuits and recruiting alternative motor pathways. They are the most effective immediate intervention for FOG.</li>
+      <li>When frozen: STOP, breathe, do not panic. Weight shift, march on the spot, add rhythm, pick a visual target — in that order.</li>
+      <li>Find your personal triggers and practise your cueing strategies at those exact locations and situations before FOG happens, not just during it.</li>
+      <li>Regular exercise — especially rhythmic, dual-task, and turning-based training — reduces FOG frequency over time. Tango, Tai Chi, and obstacle course practice are among the best studied.</li>
+      <li>Home modifications (tape strips at doorways, clear routes, grab rails) and a prepared care partner are essential parts of a FOG safety plan.</li>
+      <li>Never try to force through a freeze. The harder you push, the worse it gets. Stop, breathe, reset, then use your toolkit.</li>
+    </ul>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    ⚠️ <div><strong>Important:</strong> This guide is for educational purposes only and does not replace medical advice. Freezing of gait is a complex symptom — work with your neurologist, physiotherapist, and Parkinson's care team to develop a personalised management plan. If FOG is severely impacting your safety, speak to your healthcare provider about medication adjustments or specialist referral.</div>
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="references">
+    <h3>📚 Research Sources</h3>
+    <div class="ref-item"><span class="ref-num">[1]</span><span>Zoetewei D, Herman T, Ginis P, et al. (2024). On-Demand Cueing for Freezing of Gait in Parkinson's Disease: A Randomized Controlled Trial. <em>Movement Disorders</em>, 39(5), 876–886. doi: 10.1002/mds.29762</span></div>
+    <div class="ref-item"><span class="ref-num">[2]</span><span>Nieuwboer A, et al. (2021). A systematic review on exercise and training-based interventions for freezing of gait in Parkinson's disease. <em>npj Parkinson's Disease</em>, 7, 81. doi: 10.1038/s41531-021-00224-4</span></div>
+    <div class="ref-item"><span class="ref-num">[3]</span><span>Cosentino C, et al. (2023). One cue does not fit all: a systematic review with meta-analysis of the effectiveness of cueing on freezing of gait in Parkinson's disease. <em>Neuroscience & Biobehavioral Reviews</em>, 150, 105189.</span></div>
+    <div class="ref-item"><span class="ref-num">[4]</span><span>Klaver EC, et al. (2023). Good vibrations: tactile cueing for freezing of gait in Parkinson's disease. <em>Journal of Neurology</em>, 270, 3424–3432.</span></div>
+    <div class="ref-item"><span class="ref-num">[5]</span><span>Nutt JG, Bloem BR, Giladi N, et al. (2011). Freezing of gait: moving forward on a mysterious clinical phenomenon. <em>The Lancet Neurology</em>, 10(8), 734–744.</span></div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  PPE Educational Program — For educational purposes only. Not a substitute for medical advice.<br>
+  Content developed by Christine for people living with Parkinson's disease and their care partners.
+</footer>
+
+<script>
+// ── CUE TABS ─────────────────────────────────────────────────────────────────
+function showCue(id, btn) {
+  document.querySelectorAll('.cue-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.cue-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('cue-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── STRATEGY ACCORDION ───────────────────────────────────────────────────────
+function toggleStrategy(header) {
+  const body = header.nextElementSibling;
+  const isOpen = header.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.strategy-header').forEach(h => h.classList.remove('open'));
+  document.querySelectorAll('.strategy-body').forEach(b => b.classList.remove('open'));
+
+  // Open clicked if it wasn't already open
+  if (!isOpen) {
+    header.classList.add('open');
+    body.classList.add('open');
+  }
+}
+</script>
+</body>
+</html>

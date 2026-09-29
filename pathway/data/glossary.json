@@ -1,0 +1,242 @@
+{
+ "terms": [
+  {
+   "en": "Dopamine",
+   "fr": "dopamine",
+   "cat": "parkinsons",
+   "def_en": "A chemical messenger in the brain that helps control movement, motivation and mood. Parkinson’s develops when the brain cells that make dopamine slowly stop working.",
+   "def_fr": "Messager chimique du cerveau qui aide à contrôler le mouvement, la motivation et l’humeur. La maladie de Parkinson survient quand les cellules du cerveau qui fabriquent la dopamine cessent peu à peu de fonctionner."
+  },
+  {
+   "en": "Motor symptoms",
+   "fr": "symptômes moteurs",
+   "cat": "parkinsons",
+   "def_en": "Symptoms that affect movement — such as tremor, stiffness, slowness and balance changes.",
+   "def_fr": "Symptômes qui touchent le mouvement — comme les tremblements, la raideur, la lenteur et les changements d’équilibre."
+  },
+  {
+   "en": "Non-motor symptoms",
+   "fr": "symptômes non moteurs",
+   "cat": "parkinsons",
+   "def_en": "Symptoms that don’t affect movement directly — such as sleep problems, constipation, anxiety, low mood, fatigue and changes in smell or thinking.",
+   "def_fr": "Symptômes qui ne touchent pas directement le mouvement — comme les troubles du sommeil, la constipation, l’anxiété, la baisse d’humeur, la fatigue, et les changements de l’odorat ou de la pensée."
+  },
+  {
+   "en": "Tremor",
+   "fr": "tremblement",
+   "cat": "parkinsons",
+   "def_en": "Shaking you can’t control, often in a hand when it’s resting.",
+   "def_fr": "Mouvement de va-et-vient involontaire, souvent dans une main au repos."
+  },
+  {
+   "en": "Bradykinesia",
+   "fr": "bradykinésie",
+   "cat": "parkinsons",
+   "def_en": "Slowness of movement. Everyday actions like walking, buttoning a shirt or getting up can take longer.",
+   "def_fr": "Lenteur des mouvements. Les gestes du quotidien, comme marcher, boutonner une chemise ou se lever, peuvent prendre plus de temps."
+  },
+  {
+   "en": "Rigidity",
+   "fr": "rigidité",
+   "cat": "parkinsons",
+   "def_en": "Stiffness in the muscles that can make moving feel tight or harder than it should.",
+   "def_fr": "Raideur des muscles qui peut rendre les mouvements serrés ou plus difficiles."
+  },
+  {
+   "en": "Freezing of gait (FOG)",
+   "fr": "blocage de la marche",
+   "cat": "parkinsons",
+   "def_en": "A sudden, short feeling that your feet are stuck to the floor when you try to walk, turn or go through a doorway.",
+   "def_fr": "Sensation soudaine et brève d’avoir les pieds collés au sol quand on essaie de marcher, de tourner ou de franchir une porte."
+  },
+  {
+   "en": "Levodopa / L-DOPA",
+   "fr": "lévodopa / L-DOPA",
+   "cat": "parkinsons",
+   "def_en": "The most common Parkinson’s medication. The body turns it into dopamine to help ease movement symptoms.",
+   "def_fr": "Le médicament le plus courant contre la maladie de Parkinson. Le corps le transforme en dopamine pour atténuer les symptômes moteurs."
+  },
+  {
+   "en": "Neurologist",
+   "fr": "neurologue",
+   "cat": "parkinsons",
+   "def_en": "A doctor who specializes in the brain and nervous system. A movement-disorder neurologist focuses on conditions like Parkinson’s.",
+   "def_fr": "Médecin spécialiste du cerveau et du système nerveux. Le neurologue spécialisé en troubles du mouvement se concentre sur des maladies comme la maladie de Parkinson."
+  },
+  {
+   "en": "Care team",
+   "fr": "équipe de soins",
+   "cat": "program",
+   "def_en": "The people who support your health — for example your family doctor, neurologist, pharmacist, physiotherapist, speech therapist, and the people close to you.",
+   "def_fr": "Les personnes qui soutiennent votre santé — par exemple votre médecin de famille, votre neurologue, votre pharmacien, votre physiothérapeute, votre orthophoniste et vos proches."
+  },
+  {
+   "en": "Care partner",
+   "fr": "proche aidant",
+   "cat": "program",
+   "def_en": "A spouse, family member or friend who helps and supports a person living with Parkinson’s.",
+   "def_fr": "Conjoint, membre de la famille ou ami qui aide et soutient une personne atteinte de la maladie de Parkinson."
+  },
+  {
+   "en": "Neuroplasticity",
+   "fr": "neuroplasticité",
+   "cat": "wellness",
+   "def_en": "The brain’s ability to change and build new connections. Exercise and practice help your brain keep learning, at any age.",
+   "def_fr": "Capacité du cerveau à changer et à créer de nouvelles connexions. L’exercice et la pratique aident le cerveau à continuer d’apprendre, à tout âge."
+  },
+  {
+   "en": "Dual-tasking",
+   "fr": "double tâche",
+   "cat": "wellness",
+   "def_en": "Doing two things at once — like moving while counting or naming words. It trains your body and brain to work together.",
+   "def_fr": "Faire deux choses à la fois — par exemple bouger en comptant ou en nommant des mots. Cela entraîne le corps et le cerveau à travailler ensemble."
+  },
+  {
+   "en": "Amplitude / big movements",
+   "fr": "amplitude / grands mouvements",
+   "cat": "wellness",
+   "def_en": "Making your movements bigger on purpose. Parkinson’s tends to make movements smaller, so practising big movements helps keep them strong.",
+   "def_fr": "Faire volontairement des mouvements plus grands. La maladie de Parkinson tend à rendre les mouvements plus petits; pratiquer de grands mouvements aide à les garder forts."
+  },
+  {
+   "en": "PWR! Moves",
+   "fr": "mouvements PWR!",
+   "cat": "wellness",
+   "def_en": "A set of Parkinson’s-specific exercises that practise big, powerful movements — seated, standing or on the floor.",
+   "def_fr": "Série d’exercices conçus pour la maladie de Parkinson qui font pratiquer des mouvements amples et puissants — assis, debout ou au sol."
+  },
+  {
+   "en": "VIGOR",
+   "fr": "VIGOR",
+   "cat": "program",
+   "def_en": "The Boxing 4 Health exercise framework in this program — five letters to help you plan exercise that works for Parkinson’s.",
+   "def_fr": "Le cadre d’exercice Boxing 4 Health de ce programme — cinq lettres pour vous aider à planifier un exercice efficace contre la maladie de Parkinson."
+  },
+  {
+   "en": "Baseline tests",
+   "fr": "tests de départ",
+   "cat": "program",
+   "def_en": "The five simple tests you do at the start of the program and again at the end, so you can see your progress.",
+   "def_fr": "Les cinq tests simples que vous faites au début du programme et de nouveau à la fin, pour voir vos progrès."
+  },
+  {
+   "en": "Timed Up and Go (TUG)",
+   "fr": "test « Timed Up and Go »",
+   "cat": "program",
+   "def_en": "A test of how long it takes to stand up from a chair, walk a short distance, turn around, walk back and sit down.",
+   "def_fr": "Test qui mesure le temps nécessaire pour se lever d’une chaise, marcher une courte distance, faire demi-tour, revenir et s’asseoir."
+  },
+  {
+   "en": "Mindfulness",
+   "fr": "pleine conscience",
+   "cat": "wellness",
+   "def_en": "Paying gentle, full attention to the present moment — your breath, your body, what you notice — without judging it.",
+   "def_fr": "Porter une attention douce et complète au moment présent — votre respiration, votre corps, ce que vous remarquez — sans jugement."
+  },
+  {
+   "en": "Microbiome",
+   "fr": "microbiome",
+   "cat": "wellness",
+   "def_en": "The trillions of tiny living things (mostly bacteria) that live in your gut and help with digestion, immunity and even brain health.",
+   "def_fr": "Les milliards de micro-organismes (surtout des bactéries) qui vivent dans l’intestin et aident à la digestion, à l’immunité et même à la santé du cerveau."
+  },
+  {
+   "en": "Gut–brain connection",
+   "fr": "lien intestin-cerveau",
+   "cat": "wellness",
+   "def_en": "The two-way communication between your digestive system and your brain. Researchers think it plays an important role in Parkinson’s.",
+   "def_fr": "La communication dans les deux sens entre le système digestif et le cerveau. Les chercheurs pensent qu’elle joue un rôle important dans la maladie de Parkinson."
+  },
+  {
+   "en": "Fibre",
+   "fr": "fibres",
+   "cat": "wellness",
+   "def_en": "The part of plant foods your body can’t digest. It feeds good gut bacteria and helps prevent constipation.",
+   "def_fr": "La partie des aliments végétaux que le corps ne digère pas. Elle nourrit les bonnes bactéries de l’intestin et aide à prévenir la constipation."
+  },
+  {
+   "en": "Mediterranean diet",
+   "fr": "alimentation méditerranéenne",
+   "cat": "wellness",
+   "def_en": "An eating pattern built on vegetables, fruit, whole grains, beans, nuts, olive oil and fish, with little processed food or red meat.",
+   "def_fr": "Façon de manger basée sur les légumes, les fruits, les grains entiers, les légumineuses, les noix, l’huile d’olive et le poisson, avec peu d’aliments transformés et de viande rouge."
+  },
+  {
+   "en": "MIND diet",
+   "fr": "régime MIND",
+   "cat": "wellness",
+   "def_en": "A blend of the Mediterranean and DASH diets that focuses on foods linked to brain health, like leafy greens and berries.",
+   "def_fr": "Combinaison des régimes méditerranéen et DASH axée sur les aliments liés à la santé du cerveau, comme les légumes-feuilles et les petits fruits."
+  },
+  {
+   "en": "Inflammation",
+   "fr": "inflammation",
+   "cat": "wellness",
+   "def_en": "The body’s response to injury or irritation. Short-term it helps healing; long-lasting inflammation can harm cells, including brain cells.",
+   "def_fr": "Réaction du corps à une blessure ou à une irritation. À court terme, elle aide à guérir; lorsqu’elle dure, elle peut endommager les cellules, y compris celles du cerveau."
+  },
+  {
+   "en": "Oxidative stress",
+   "fr": "stress oxydatif",
+   "cat": "wellness",
+   "def_en": "Wear and tear on cells caused by unstable molecules called free radicals. Antioxidants in food help protect against it.",
+   "def_fr": "Usure des cellules causée par des molécules instables appelées radicaux libres. Les antioxydants des aliments aident à s’en protéger."
+  },
+  {
+   "en": "Antioxidants",
+   "fr": "antioxydants",
+   "cat": "wellness",
+   "def_en": "Natural substances in foods like berries, vegetables and nuts that help protect your cells from damage.",
+   "def_fr": "Substances naturelles présentes dans des aliments comme les petits fruits, les légumes et les noix, qui aident à protéger les cellules contre les dommages."
+  },
+  {
+   "en": "Photobiomodulation (PBM)",
+   "fr": "photobiomodulation",
+   "cat": "wellness",
+   "def_en": "Light therapy: gentle, non-heating light used at specific wavelengths for a therapeutic effect, such as easing pain or inflammation.",
+   "def_fr": "Luminothérapie : lumière douce, sans chaleur, utilisée à des longueurs d’onde précises pour un effet thérapeutique, comme soulager la douleur ou l’inflammation."
+  },
+  {
+   "en": "Nicotinamide riboside (NR)",
+   "fr": "nicotinamide riboside (NR)",
+   "cat": "wellness",
+   "def_en": "A form of vitamin B3 that the body uses to make NAD+, a molecule that helps cells produce energy. It is being studied in Parkinson’s.",
+   "def_fr": "Forme de vitamine B3 que le corps utilise pour fabriquer le NAD+, une molécule qui aide les cellules à produire de l’énergie. Elle fait l’objet d’études dans la maladie de Parkinson."
+  },
+  {
+   "en": "Magnesium",
+   "fr": "magnésium",
+   "cat": "wellness",
+   "def_en": "A mineral your body needs for energy, muscles and nerves. It comes from foods like nuts, seeds, leafy greens and whole grains, or from supplements.",
+   "def_fr": "Minéral dont le corps a besoin pour l’énergie, les muscles et les nerfs. On le trouve dans les noix, les graines, les légumes-feuilles et les grains entiers, ou en supplément."
+  },
+  {
+   "en": "Estrogen",
+   "fr": "œstrogène",
+   "cat": "wellness",
+   "def_en": "A hormone that drops during menopause. It plays a protective role in brain health and dopamine.",
+   "def_fr": "Hormone qui diminue à la ménopause. Elle joue un rôle protecteur pour la santé du cerveau et la dopamine."
+  },
+  {
+   "en": "Menopause / perimenopause",
+   "fr": "ménopause / périménopause",
+   "cat": "wellness",
+   "def_en": "Menopause is when periods stop for good; perimenopause is the years of hormone changes leading up to it.",
+   "def_fr": "La ménopause est l’arrêt définitif des règles; la périménopause désigne les années de changements hormonaux qui la précèdent."
+  },
+  {
+   "en": "Osteoarthritis",
+   "fr": "arthrose",
+   "cat": "wellness",
+   "def_en": "Wear of the cartilage that cushions your joints, which can cause pain and stiffness.",
+   "def_fr": "Usure du cartilage qui protège les articulations, pouvant causer de la douleur et de la raideur."
+  },
+  {
+   "en": "Cortisol",
+   "fr": "cortisol",
+   "cat": "wellness",
+   "def_en": "The body’s main stress hormone. Short bursts help you respond to challenges; staying high for long periods can affect sleep, mood and health.",
+   "def_fr": "Principale hormone du stress. De courtes poussées aident à relever les défis; un taux élevé pendant longtemps peut nuire au sommeil, à l’humeur et à la santé."
+  }
+ ]
+}
