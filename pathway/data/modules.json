@@ -1201,6 +1201,28 @@
      "wixStepId": "88af9234-3329-4114-ba05-5dcb362fed42"
     },
     {
+     "id": "pw-mediterranean-10-day-plan",
+     "slug": "mediterranean-10-day-plan",
+     "url": "modules/mediterranean-10-day-plan.html",
+     "title": {
+      "en": "Action: Plan of Attack — 10-Day Mediterranean Meal Plan",
+      "fr": "Action : Plan d’attaque — 10 jours de menus méditerranéens"
+     },
+     "summary": {
+      "en": "Ten days of simple, dairy-free Mediterranean meals with recipes, a food-sorting game and a grocery-list builder.",
+      "fr": "Dix jours de repas méditerranéens simples et sans produits laitiers, avec recettes, un jeu de classement des aliments et une liste d’épicerie."
+     },
+     "keywords": {
+      "en": "meal plan recipes mediterranean grocery list",
+      "fr": "menus recettes méditerranéen épicerie"
+     },
+     "type": "lesson",
+     "icon": "chef-hat",
+     "kind": "do",
+     "minutes": 20,
+     "wixStepId": ""
+    },
+    {
      "id": "pw-mediterranean-mind-check",
      "slug": "mediterranean-mind-check",
      "url": "modules/mediterranean-mind-check.html",

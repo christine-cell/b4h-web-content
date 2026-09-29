@@ -165,7 +165,12 @@ def check_style_lint():
             fail("style", f"{rel}: inline style with a hardcoded colour — use component classes/tokens")
         if EMOJI.search(s):
             fail("style", f"{rel}: emoji in content — use Lucide icons (data-icon=...) instead")
-    note("style: authored content scanned for raw hex / inline colours / emoji")
+    # data files that render into pages (meal plan, glossary, …) follow the same no-emoji rule
+    for s_ in PROGS:
+        for p in glob.glob(os.path.join(site_dir(s_), "data", "*.json")):
+            if EMOJI.search(read(p)):
+                fail("style", f"{os.path.relpath(p, ROOT)}: emoji in data — use Lucide icon names instead")
+    note("style: authored content + data scanned for raw hex / inline colours / emoji")
 
 # ---------------------------------------------------------------- 8b. asset version
 def check_asset_version():

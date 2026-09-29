@@ -37,3 +37,11 @@ Every invitation to book a call/consultation (diet check-in lowest band, workboo
 - The Mediterranean & MIND diet check-in is scored on the page (answers stay on the device).
 - The interactive brain games / magnesium symptom checker from your GitHub pages are rebuilt as do-it-yourself instructions.
 - Glossary (34 terms), Resources page, and the certificate.
+
+## New: Plan of Attack — 10-Day Mediterranean Meal Plan (Module 8)
+Edit the plan in `pathway/data/meal-plan.json`.
+- **Days 1–4 are your plan**, made dairy-free: parfait → dairy-free protein yogurt; parmesan → nutritional yeast or dairy-free cheese; Greek yogurt parfait → dairy-free. Fixed "12 tsp nut butter" → 1–2 tsp and added sweet potato to the chili. Small additions: a teaspoon of olive oil where a step needs it, optional collagen in the overnight oats, 400 °F for the asparagus.
+- **Days 5–10 are new** in your style (lemon herb chicken, Thai peanut salad, trout, plant-powered day, sardine salad, salmon patties, souvlaki…) — please read them.
+- Collagen is tagged "animal protein" (levodopa timing) — confirm.
+- Some of your original meals may fall under 20–30 g protein as written (Day 1 oats, Day 3 shrimp); tips suggest boosts rather than changing amounts.
+- The food-sorting game (24 foods) is new — check the "why" lines, especially dairy ("avoid", per your Dairy lesson) and alcohol ("check with your care team").

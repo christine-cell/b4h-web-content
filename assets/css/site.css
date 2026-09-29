@@ -792,3 +792,107 @@ a.nav-link { position: relative; transition: color var(--transition), background
 .ds-thumbs button[aria-current="true"] { border-color: var(--primary); }
 .ds-thumbs button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .ds-download { margin-top: 1rem; }
+
+/* ---------- 10-day meal plan (interactive) ---------- */
+.mp-rules { list-style: none; margin: 1rem 0 2rem; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .7rem; }
+.mp-rules li { display: flex; gap: .7rem; align-items: center; margin: 0; padding: .8rem 1rem; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); font-weight: 600; }
+.mp-rules li::before { content: none; }
+/* food-sorting game */
+.food-sort { margin: 1rem 0 2.2rem; padding: clamp(1rem, 3vw, 1.6rem); border: 1px solid var(--blue-200); border-radius: var(--r-lg); background: linear-gradient(180deg, var(--blue-50), var(--surface)); }
+:root[data-theme="dark"] .food-sort { background: linear-gradient(180deg, rgba(74,163,219,.10), var(--surface)); border-color: var(--border-strong); }
+.fs-score { font-family: var(--font-sans); font-weight: 800; color: var(--heading); margin-bottom: 1rem; }
+.fs-score [data-fs-right] { color: var(--primary); font-size: 1.3em; }
+.fs-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.fs-item { margin: 0; padding: .9rem 1rem; border: 1.5px solid var(--border); border-radius: var(--r-md); background: var(--surface); transition: border-color var(--transition); }
+.fs-item::before { content: none; }
+.fs-item[data-result="right"] { border-color: var(--success); }
+.fs-item[data-result="wrong"] { border-color: var(--safety); }
+.lesson-body .fs-food { display: flex; align-items: center; gap: .6rem; margin: 0 0 .6rem; font-family: var(--font-sans); font-weight: 800; color: var(--heading); }
+.fs-choices { display: none; }
+.meal-plan.is-ready .fs-choices { display: flex; flex-wrap: wrap; gap: .45rem; }
+.fs-choices button { display: inline-flex; align-items: center; gap: .35rem; padding: .5rem .8rem; border: 1.5px solid var(--border-strong); border-radius: var(--r-pill); background: var(--surface); color: var(--text); font: 600 var(--fs-sm)/1.2 var(--font-body); cursor: pointer; }
+.fs-choices button svg { width: 16px; height: 16px; }
+.fs-choices button:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.fs-choices button:disabled { cursor: default; opacity: .55; }
+.fs-choices button[data-correct] { opacity: 1; border-color: var(--success); background: var(--success-bg); color: var(--success); }
+.fs-choices button[data-picked]:not([data-correct]) { opacity: 1; border-color: var(--safety); background: var(--safety-bg); color: var(--safety); }
+.lesson-body .fs-why { margin: .6rem 0 0; }
+.fs-item[data-result="right"] .fs-answer { color: var(--success); }
+.fs-item[data-result="wrong"] .fs-answer { color: var(--safety); }
+.fs-again { display: none; margin-top: 1rem; }
+.meal-plan.is-ready .fs-again { display: inline-flex; }
+/* day tabs */
+.mp-daynav { display: none; }
+.meal-plan.is-ready .mp-daynav { display: flex; flex-wrap: wrap; gap: .45rem; margin: .8rem 0 .4rem; }
+.mp-daynav button { position: relative; display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--border-strong); background: var(--surface); color: var(--heading); font: 800 1.1rem/1 var(--font-sans); cursor: pointer; }
+.mp-daynav button:hover { border-color: var(--primary); }
+.mp-daynav button[aria-selected="true"] { background: var(--primary); border-color: var(--primary); color: var(--primary-contrast); }
+.mp-daynav button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.mp-dcheck { display: none; position: absolute; right: -4px; top: -4px; width: 20px; height: 20px; border-radius: 50%; background: var(--success); color: #fff; }
+.mp-dcheck svg { width: 14px; height: 14px; margin: 3px; }
+.mp-daynav button[data-done] .mp-dcheck { display: block; }
+.lesson-body .mp-progress { display: none; }
+.meal-plan.is-ready .mp-progress { display: block; margin: 0 0 1rem; color: var(--text-muted); font-size: var(--fs-sm); }
+.mp-day { margin: 0 0 2rem; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); box-shadow: var(--shadow-1); }
+.lesson-body .mp-day-title { margin: 0 0 1rem; }
+.mp-day-num { display: inline-block; margin-right: .4rem; padding: .15rem .6rem; border-radius: var(--r-pill); background: var(--warm-bg); color: var(--warm-ink); font-size: .8em; }
+.mp-meal-head { display: grid; gap: .15rem; text-align: left; }
+.mp-type { font-size: var(--fs-xs); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); }
+.mp-name { font-weight: 700; color: var(--heading); }
+.mp-meta { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; margin-top: .2rem; font-weight: 500; }
+.mp-time { display: inline-flex; align-items: center; gap: .25rem; font-size: var(--fs-xs); color: var(--text-muted); }
+.mp-time svg { width: 14px; height: 14px; }
+.mp-tag { font-size: .72rem; }
+.mp-tag[data-tag="animal-protein"] { background: var(--safety-bg); color: var(--safety); }
+.mp-tag[data-tag="plant-protein"], .mp-tag[data-tag="high-fibre"] { background: var(--success-bg); color: var(--success); }
+.mp-ings { list-style: none; padding: 0; margin: .4rem 0 1rem; display: grid; gap: .3rem; }
+.mp-ings li { margin: 0; padding: .35rem 0; border-bottom: 1px dashed var(--border); }
+.mp-ings li::before { content: none; }
+.mp-qty { font-weight: 700; color: var(--heading); }
+.mp-qty::after { content: " "; }
+.mp-steps { margin: .4rem 0 1rem 1.2rem; }
+.lesson-body .mp-levodopa, .lesson-body .mp-tip, .lesson-body .mp-note { display: flex; gap: .5rem; align-items: flex-start; margin: .5rem 0 0; padding: .6rem .8rem; border-radius: var(--r-sm); font-size: var(--fs-sm); }
+.mp-levodopa svg, .mp-tip svg, .mp-note svg { width: 18px; height: 18px; flex: none; margin-top: .15em; }
+.lesson-body .mp-levodopa { background: var(--safety-bg); color: var(--safety); font-weight: 600; }
+.lesson-body .mp-tip { background: var(--warm-bg); color: var(--warm-ink); }
+.lesson-body .mp-note { background: var(--info-bg); color: var(--info); }
+.mp-done { margin-top: 1rem; }
+.mp-done[aria-pressed="true"] { background: var(--success); border-color: var(--success); color: #fff; }
+/* grocery list */
+.mp-grocery { margin: 1rem 0 2rem; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); box-shadow: var(--shadow-1); }
+.mp-gdays { display: none; }
+.meal-plan.is-ready .mp-gdays { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1rem; }
+.mp-gday { display: inline-flex; align-items: center; gap: .4rem; padding: .45rem .8rem; border: 1.5px solid var(--border-strong); border-radius: var(--r-pill); cursor: pointer; font-weight: 600; }
+.mp-gday:has(input:checked) { border-color: var(--primary); background: var(--blue-50); color: var(--primary); }
+:root[data-theme="dark"] .mp-gday:has(input:checked) { background: rgba(74,163,219,.14); }
+.mp-gday input { accent-color: var(--primary); width: 1.1em; height: 1.1em; }
+.mp-glist { display: none; }
+.meal-plan.is-ready .mp-glist { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem 1.5rem; }
+.lesson-body .mp-aisle h4 { margin: 0 0 .4rem; color: var(--primary); }
+.mp-aisle ul { list-style: none; margin: 0; padding: 0; }
+.mp-aisle li { margin: 0; padding: .25rem 0; }
+.mp-aisle li::before { content: none; }
+.mp-aisle label { display: flex; gap: .5rem; align-items: baseline; cursor: pointer; }
+.mp-aisle input { accent-color: var(--success); width: 1.1em; height: 1.1em; flex: none; transform: translateY(2px); }
+.mp-aisle label:has(input:checked) span:first-of-type { text-decoration: line-through; color: var(--text-muted); }
+.mp-gd { margin-left: auto; font-size: var(--fs-xs); color: var(--text-muted); white-space: nowrap; }
+.mp-gempty { grid-column: 1 / -1; color: var(--text-muted); }
+.mp-gactions { display: none; }
+.meal-plan.is-ready .mp-gactions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
+@media print {
+  html.print-grocery body * { visibility: hidden !important; }
+  html.print-grocery .mp-grocery.is-printing, html.print-grocery .mp-grocery.is-printing * { visibility: visible !important; }
+  html.print-grocery .mp-grocery.is-printing { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none; border: 0; }
+  html.print-grocery .mp-gdays, html.print-grocery .mp-gactions { display: none !important; }
+}
+
+.fs-bar { height: 8px; border-radius: 99px; background: var(--surface-3); overflow: hidden; margin: 0 0 .5rem; }
+.fs-bar span { display: block; height: 100%; width: 0; background: var(--primary); border-radius: inherit; transition: width .3s ease; }
+.lesson-body .fs-progress { margin: 0 0 .8rem; font-size: var(--fs-sm); color: var(--text-muted); font-weight: 600; }
+.meal-plan.is-ready .fs-item { padding: 1.2rem; }
+.meal-plan.is-ready .lesson-body .fs-food, .meal-plan.is-ready .fs-food { font-size: 1.25em; }
+.fs-next { margin-top: 1rem; }
+.fs-summary { margin: .5rem 0 0; outline: none; }
+.lesson-body .fs-result { font-family: var(--font-sans); font-weight: 800; font-size: var(--fs-xl); color: var(--heading); margin: 0; }
+
+.meal-plan [hidden] { display: none !important; }

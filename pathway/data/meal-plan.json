@@ -1,0 +1,3494 @@
+{
+  "_comment": "Source for the 10-day meal plan lesson. Days 1–4 are Christine’s plan (dairy-free); Days 5–10 were drafted in her style for review.",
+  "intro_en": "Just some ideas to get you started! These 10 days of simple, dairy-free Mediterranean meals give you protein at every meal and plenty of fibre, and each recipe is made for 1 person — simply double it for 2.",
+  "intro_fr": "Voici quelques idées pour vous lancer! Ces 10 jours de repas méditerranéens simples et sans produits laitiers vous offrent des protéines à chaque repas et beaucoup de fibres, et chaque recette est pour 1 personne — doublez-la simplement pour 2.",
+  "rules": [
+    {
+      "icon": "leaf",
+      "en": "Go dairy-free: choose plant-based beverages, yogurt and cheese.",
+      "fr": "Passez au sans produits laitiers : boissons, yogourts et fromages végétaux."
+    },
+    {
+      "icon": "utensils",
+      "en": "Aim for 20–30 g of protein at every meal.",
+      "fr": "Visez de 20 à 30 g de protéines à chaque repas."
+    },
+    {
+      "icon": "clock",
+      "en": "Time animal protein 1–2 hours after your levodopa.",
+      "fr": "Prenez vos protéines animales 1 à 2 heures après votre lévodopa."
+    },
+    {
+      "icon": "glass-water",
+      "en": "Add fibre at every meal, and drink plenty of water and herbal tea.",
+      "fr": "Ajoutez des fibres à chaque repas et buvez beaucoup d’eau et de tisane."
+    },
+    {
+      "icon": "droplets",
+      "en": "Cook with olive oil and fill your plate with colourful plants.",
+      "fr": "Cuisinez à l’huile d’olive et remplissez votre assiette de végétaux colorés."
+    },
+    {
+      "icon": "chef-hat",
+      "en": "Cook once, eat twice: batch-cook and freeze portions for busy days.",
+      "fr": "Cuisinez une fois, mangez deux fois : préparez en grande quantité et congelez des portions."
+    }
+  ],
+  "sort": {
+    "bins": [
+      {
+        "id": "daily",
+        "icon": "sprout",
+        "en": "Eat every day",
+        "fr": "Chaque jour"
+      },
+      {
+        "id": "weekly",
+        "icon": "calendar",
+        "en": "A few times a week",
+        "fr": "Quelques fois par semaine"
+      },
+      {
+        "id": "limit",
+        "icon": "triangle-alert",
+        "en": "Limit or avoid",
+        "fr": "À limiter ou à éviter"
+      }
+    ],
+    "foods": [
+      {
+        "id": "leafy-greens",
+        "icon": "salad",
+        "bin": "daily",
+        "en": "Leafy greens",
+        "fr": "Légumes feuillus",
+        "why_en": "Spinach, kale and bok choy give you fibre, folate and calcium, and they blend easily into smoothies.",
+        "why_fr": "Les épinards, le chou frisé et le bok choy vous apportent des fibres, des folates et du calcium, et se glissent facilement dans un smoothie."
+      },
+      {
+        "id": "berries",
+        "icon": "apple",
+        "bin": "daily",
+        "en": "Berries",
+        "fr": "Petits fruits",
+        "why_en": "Berries are rich in antioxidants that help fight oxidative stress, plus fibre for your gut.",
+        "why_fr": "Les petits fruits sont riches en antioxydants qui aident à combattre le stress oxydatif, et en fibres pour votre intestin."
+      },
+      {
+        "id": "olive-oil",
+        "icon": "droplets",
+        "bin": "daily",
+        "en": "Extra virgin olive oil",
+        "fr": "Huile d’olive extra vierge",
+        "why_en": "Make it your main fat: use it in place of butter or margarine.",
+        "why_fr": "Faites-en votre principal gras : utilisez-la à la place du beurre ou de la margarine."
+      },
+      {
+        "id": "legumes",
+        "icon": "sprout",
+        "bin": "daily",
+        "en": "Lentils, beans & chickpeas",
+        "fr": "Lentilles, haricots et pois chiches",
+        "why_en": "Legumes give you plant protein and fibre that feed the good bacteria in your gut.",
+        "why_fr": "Les légumineuses vous apportent des protéines végétales et des fibres qui nourrissent les bonnes bactéries de votre intestin."
+      },
+      {
+        "id": "whole-grains",
+        "icon": "wheat",
+        "bin": "daily",
+        "en": "Whole grains",
+        "fr": "Grains entiers",
+        "why_en": "Oats, brown rice and quinoa give you fibre and steady energy.",
+        "why_fr": "Les flocons d’avoine, le riz brun et le quinoa vous apportent des fibres et une énergie stable."
+      },
+      {
+        "id": "nuts-seeds",
+        "icon": "heart",
+        "bin": "daily",
+        "en": "Nuts & seeds",
+        "fr": "Noix et graines",
+        "why_en": "Walnuts, chia, flax and hemp seeds add protein, fibre and healthy omega-3 fats.",
+        "why_fr": "Les noix de Grenoble et les graines de chia, de lin et de chanvre ajoutent des protéines, des fibres et de bons gras oméga-3."
+      },
+      {
+        "id": "herbs-spices",
+        "icon": "leaf",
+        "bin": "daily",
+        "en": "Herbs & spices",
+        "fr": "Fines herbes et épices",
+        "why_en": "Turmeric, garlic, ginger and oregano add flavour without extra salt. Pair turmeric with black pepper.",
+        "why_fr": "Le curcuma, l’ail, le gingembre et l’origan donnent de la saveur sans ajouter de sel. Associez le curcuma au poivre noir."
+      },
+      {
+        "id": "colourful-veg",
+        "icon": "carrot",
+        "bin": "daily",
+        "en": "Colourful vegetables",
+        "fr": "Légumes colorés",
+        "why_en": "Eat a rainbow: aim for 20–30 different plant foods a week to feed a healthy gut.",
+        "why_fr": "Mangez toutes les couleurs : visez de 20 à 30 aliments végétaux différents par semaine pour un intestin en santé."
+      },
+      {
+        "id": "water",
+        "icon": "glass-water",
+        "bin": "daily",
+        "en": "Water & herbal tea",
+        "fr": "Eau et tisane",
+        "why_en": "Fibre works best with plenty of fluids, so sip water and herbal tea through the day.",
+        "why_fr": "Les fibres agissent mieux avec beaucoup de liquides : buvez de l’eau et des tisanes tout au long de la journée."
+      },
+      {
+        "id": "kiwi-prunes",
+        "icon": "apple",
+        "bin": "daily",
+        "en": "Kiwi & prunes",
+        "fr": "Kiwis et pruneaux",
+        "why_en": "Both are easy fibre helpers for regularity, and 1–2 kiwis before bed can also help your sleep.",
+        "why_fr": "Les deux sont riches en fibres et aident à la régularité, et 1 ou 2 kiwis avant le coucher peuvent aussi aider votre sommeil."
+      },
+      {
+        "id": "oily-fish",
+        "icon": "fish",
+        "bin": "weekly",
+        "en": "Oily fish",
+        "fr": "Poissons gras",
+        "why_en": "Salmon, sardines and trout are rich in omega-3s for your brain. Aim for at least two servings a week.",
+        "why_fr": "Le saumon, les sardines et la truite sont riches en oméga-3 pour votre cerveau. Visez au moins deux portions par semaine."
+      },
+      {
+        "id": "poultry",
+        "icon": "utensils",
+        "bin": "weekly",
+        "en": "Chicken & turkey",
+        "fr": "Poulet et dinde",
+        "why_en": "A lean protein for your muscles. Time animal protein 1–2 hours after your levodopa.",
+        "why_fr": "Une protéine maigre pour vos muscles. Prenez vos protéines animales 1 à 2 heures après votre lévodopa."
+      },
+      {
+        "id": "eggs",
+        "icon": "chef-hat",
+        "bin": "weekly",
+        "en": "Eggs",
+        "fr": "Œufs",
+        "why_en": "A quick, complete protein that makes it easy to reach 20–30 g at a meal.",
+        "why_fr": "Une protéine complète et rapide qui aide à atteindre 20 à 30 g à un repas."
+      },
+      {
+        "id": "seafood",
+        "icon": "fish",
+        "bin": "weekly",
+        "en": "Shrimp & seafood",
+        "fr": "Crevettes et fruits de mer",
+        "why_en": "A lean protein that cooks in just a few minutes.",
+        "why_fr": "Une protéine maigre qui cuit en quelques minutes seulement."
+      },
+      {
+        "id": "tofu",
+        "icon": "sprout",
+        "bin": "weekly",
+        "en": "Tofu & edamame",
+        "fr": "Tofu et edamames",
+        "why_en": "Soy foods are complete plant proteins, and plant proteins are a great choice any time of day.",
+        "why_fr": "Le soya est une protéine végétale complète, et les protéines végétales sont un excellent choix à tout moment de la journée."
+      },
+      {
+        "id": "dark-chocolate",
+        "icon": "star",
+        "bin": "weekly",
+        "en": "Dark chocolate (70%+)",
+        "fr": "Chocolat noir (70 % et plus)",
+        "why_en": "A square or two makes a treat that fits the plan. Check the label to make sure it’s dairy-free.",
+        "why_fr": "Un ou deux carrés, c’est une gâterie qui a sa place dans le plan. Vérifiez l’étiquette pour vous assurer qu’il est sans produits laitiers."
+      },
+      {
+        "id": "processed-meats",
+        "icon": "triangle-alert",
+        "bin": "limit",
+        "en": "Processed meats",
+        "fr": "Viandes transformées",
+        "why_en": "Deli meats, bacon and sausages are highly processed and often very salty.",
+        "why_fr": "Les charcuteries, le bacon et les saucisses sont très transformés et souvent très salés."
+      },
+      {
+        "id": "red-meat",
+        "icon": "flame",
+        "bin": "limit",
+        "en": "Red meat",
+        "fr": "Viande rouge",
+        "why_en": "The Mediterranean diet keeps red meat to a minimum. This plan uses it once, with turkey as an option.",
+        "why_fr": "Le régime méditerranéen limite la viande rouge au minimum. Ce plan l’utilise une seule fois, avec la dinde en option."
+      },
+      {
+        "id": "sugary-drinks",
+        "icon": "cup-soda",
+        "bin": "limit",
+        "en": "Sugary drinks",
+        "fr": "Boissons sucrées",
+        "why_en": "Pop and sweetened drinks add sugar without nutrition. Choose water or herbal tea instead.",
+        "why_fr": "Les boissons gazeuses et sucrées ajoutent du sucre sans valeur nutritive. Choisissez plutôt l’eau ou la tisane."
+      },
+      {
+        "id": "sweets",
+        "icon": "triangle-alert",
+        "bin": "limit",
+        "en": "Sweets & pastries",
+        "fr": "Sucreries et pâtisseries",
+        "why_en": "Swap refined sweets for fruit, which gives you sweetness plus fibre.",
+        "why_fr": "Remplacez les sucreries raffinées par des fruits, qui offrent le goût sucré et des fibres en prime."
+      },
+      {
+        "id": "ultra-processed",
+        "icon": "triangle-alert",
+        "bin": "limit",
+        "en": "Ultra-processed snacks",
+        "fr": "Grignotines ultra-transformées",
+        "why_en": "Chips, crackers and packaged snacks are easy to overeat. Cutting back on ultra-processed foods lowers inflammation.",
+        "why_fr": "Les croustilles, les craquelins et les collations emballées sont faciles à trop manger. Réduire les aliments ultra-transformés diminue l’inflammation."
+      },
+      {
+        "id": "fried-foods",
+        "icon": "flame",
+        "bin": "limit",
+        "en": "Fried foods",
+        "fr": "Aliments frits",
+        "why_en": "Bake, roast or pan-cook with a little olive oil instead of deep-frying.",
+        "why_fr": "Faites cuire au four, rôtir ou poêler avec un peu d’huile d’olive plutôt que de faire frire."
+      },
+      {
+        "id": "dairy",
+        "icon": "triangle-alert",
+        "bin": "limit",
+        "en": "Dairy",
+        "fr": "Produits laitiers",
+        "why_en": "The program suggests removing dairy. See the lesson “The Best Research to Date: Dairy & Parkinson’s” to learn why.",
+        "why_fr": "Le programme suggère d’éliminer les produits laitiers. Consultez la leçon « La meilleure recherche à ce jour : produits laitiers et Parkinson » pour savoir pourquoi."
+      },
+      {
+        "id": "alcohol",
+        "icon": "triangle-alert",
+        "bin": "limit",
+        "en": "Alcohol",
+        "fr": "Alcool",
+        "why_en": "Check with your care team about whether alcohol is right for you and your medication.",
+        "why_fr": "Parlez à votre équipe de soins pour savoir si l’alcool vous convient, compte tenu de vos médicaments."
+      }
+    ]
+  },
+  "aisles": [
+    {
+      "id": "produce",
+      "en": "Fruit & vegetables",
+      "fr": "Fruits et légumes"
+    },
+    {
+      "id": "protein",
+      "en": "Protein (fish, poultry, eggs, tofu)",
+      "fr": "Protéines (poisson, volaille, œufs, tofu)"
+    },
+    {
+      "id": "legumes-grains",
+      "en": "Legumes & grains",
+      "fr": "Légumineuses et céréales"
+    },
+    {
+      "id": "nuts-seeds",
+      "en": "Nuts & seeds",
+      "fr": "Noix et graines"
+    },
+    {
+      "id": "dairy-free",
+      "en": "Dairy-free alternatives",
+      "fr": "Substituts sans produits laitiers"
+    },
+    {
+      "id": "pantry",
+      "en": "Pantry, oils & spices",
+      "fr": "Garde-manger, huiles et épices"
+    },
+    {
+      "id": "frozen",
+      "en": "Frozen",
+      "fr": "Surgelés"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "source": "christine",
+      "theme_en": "Golden Start",
+      "theme_fr": "Un départ doré",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Berry & Chia Overnight Oats",
+          "name_fr": "Gruau de nuit aux petits fruits et au chia",
+          "time_min": 5,
+          "tags": [
+            "make-ahead",
+            "plant-protein",
+            "high-fibre"
+          ],
+          "ingredients": [
+            {
+              "item_en": "rolled oats",
+              "item_fr": "flocons d’avoine",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "chia seeds",
+              "item_fr": "graines de chia",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "unsweetened almond beverage",
+              "item_fr": "boisson d’amande non sucrée",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "mixed berries",
+              "item_fr": "petits fruits mélangés",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "walnuts",
+              "item_fr": "noix de Grenoble",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "honey",
+              "item_fr": "miel",
+              "qty_en": "drizzle (optional)",
+              "qty_fr": "un filet (facultatif)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "nut butter",
+              "item_fr": "beurre de noix",
+              "qty_en": "1 tsp (optional)",
+              "qty_fr": "5 ml (1 c. à thé) (facultatif)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "collagen protein powder",
+              "item_fr": "poudre de protéines de collagène",
+              "qty_en": "1 scoop (optional)",
+              "qty_fr": "1 mesure (facultatif)",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Stir the oats, chia seeds, almond beverage and collagen (if using) together in a jar.",
+            "Top with the berries and walnuts, and add a drizzle of honey if you like.",
+            "Cover and refrigerate overnight. It keeps 3–4 days in the fridge.",
+            "In the morning, add the nut butter if you like."
+          ],
+          "steps_fr": [
+            "Dans un pot, mélangez les flocons d’avoine, les graines de chia, la boisson d’amande et le collagène (si désiré).",
+            "Garnissez de petits fruits et de noix de Grenoble, et ajoutez un filet de miel si vous le souhaitez.",
+            "Couvrez et réfrigérez toute la nuit. Se conserve 3 à 4 jours au réfrigérateur.",
+            "Le matin, ajoutez le beurre de noix si désiré."
+          ],
+          "tip_en": "Prefer a parfait? Layer ¾ cup dairy-free protein yogurt, ½ cup berries, 1 tsp chia, ½ cup granola and 1 scoop collagen.",
+          "tip_fr": "Envie d’un parfait? Superposez 175 ml (¾ tasse) de yogourt protéiné sans produits laitiers, 125 ml (½ tasse) de petits fruits, 5 ml (1 c. à thé) de chia, 125 ml (½ tasse) de granola et 1 mesure de collagène.",
+          "note_en": "Christine’s parfait option now uses dairy-free protein yogurt in place of regular yogurt.",
+          "note_fr": "L’option parfait de Christine utilise maintenant du yogourt protéiné sans produits laitiers au lieu du yogourt ordinaire."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Lentil & Spinach Soup",
+          "name_fr": "Soupe aux lentilles et aux épinards",
+          "time_min": 40,
+          "tags": [
+            "make-ahead",
+            "freezer",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "red lentils",
+              "item_fr": "lentilles rouges",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "vegetable broth",
+              "item_fr": "bouillon de légumes",
+              "qty_en": "4 cups",
+              "qty_fr": "1 L (4 tasses)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "canned diced tomatoes",
+              "item_fr": "tomates en dés en conserve",
+              "qty_en": "1 can",
+              "qty_fr": "1 boîte",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "carrots",
+              "item_fr": "carottes",
+              "qty_en": "1, chopped",
+              "qty_fr": "1, hachée",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "celery",
+              "item_fr": "céleri",
+              "qty_en": "1 stalk, chopped",
+              "qty_fr": "1 branche, hachée",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "ground turmeric",
+              "item_fr": "curcuma moulu",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "garlic",
+              "item_fr": "ail",
+              "qty_en": "1 tsp, minced",
+              "qty_fr": "5 ml (1 c. à thé), haché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "ground ginger",
+              "item_fr": "gingembre moulu",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "to taste",
+              "qty_fr": "au goût",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "ground turkey",
+              "item_fr": "dinde hachée",
+              "qty_en": "½ lb (optional)",
+              "qty_fr": "225 g (½ lb) (facultatif)",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tsp (if using turkey)",
+              "qty_fr": "5 ml (1 c. à thé) (si vous ajoutez la dinde)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "baby spinach",
+              "item_fr": "bébés épinards",
+              "qty_en": "2 cups",
+              "qty_fr": "500 ml (2 tasses)",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "If using turkey, brown it in a large pot with the olive oil.",
+            "Add the lentils, broth, tomatoes, carrot, celery, turmeric, garlic, ginger and pepper.",
+            "Bring to a boil, then simmer for 30 minutes, until the lentils are soft.",
+            "Stir in the spinach at the end. Blend if you like.",
+            "Make a big batch and freeze portions."
+          ],
+          "steps_fr": [
+            "Si vous ajoutez de la dinde, faites-la dorer dans une grande casserole avec l’huile d’olive.",
+            "Ajoutez les lentilles, le bouillon, les tomates, la carotte, le céleri, le curcuma, l’ail, le gingembre et le poivre.",
+            "Portez à ébullition, puis laissez mijoter 30 minutes, jusqu’à ce que les lentilles soient tendres.",
+            "Ajoutez les épinards à la fin. Passez au mélangeur si désiré.",
+            "Préparez-en une grosse quantité et congelez des portions."
+          ],
+          "tip_en": "Makes about 4 servings. Adding turkey? Enjoy it 1–2 hours after your levodopa.",
+          "tip_fr": "Donne environ 4 portions. Vous ajoutez de la dinde? Mangez-la 1 à 2 heures après votre lévodopa."
+        },
+        {
+          "type": "dinner",
+          "name_en": "Baked Salmon with Roasted Vegetables",
+          "name_fr": "Saumon au four et légumes rôtis",
+          "time_min": 25,
+          "tags": [
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "salmon fillet",
+              "item_fr": "filet de saumon",
+              "qty_en": "1 (about 150 g / 5 oz)",
+              "qty_fr": "1 (environ 150 g / 5 oz)",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "broccoli",
+              "item_fr": "brocoli",
+              "qty_en": "1 cup, in florets",
+              "qty_fr": "250 ml (1 tasse), en bouquets",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "sweet potato",
+              "item_fr": "patate douce",
+              "qty_en": "½ cup, diced",
+              "qty_fr": "125 ml (½ tasse), en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "ground turmeric",
+              "item_fr": "curcuma moulu",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "garlic powder",
+              "item_fr": "ail en poudre",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Heat the oven to 375°F (190°C) and line a sheet pan.",
+            "Toss the broccoli and sweet potato with most of the olive oil, the turmeric and the garlic powder.",
+            "Add the salmon to the pan, brush it with the rest of the oil and season with pepper.",
+            "Bake for 20 minutes, until the salmon flakes easily."
+          ],
+          "steps_fr": [
+            "Préchauffez le four à 190 °C (375 °F) et tapissez une plaque.",
+            "Mélangez le brocoli et la patate douce avec la majeure partie de l’huile d’olive, le curcuma et l’ail en poudre.",
+            "Déposez le saumon sur la plaque, badigeonnez-le du reste de l’huile et poivrez.",
+            "Faites cuire 20 minutes, jusqu’à ce que le saumon se défasse facilement."
+          ],
+          "tip_en": "An easy sheet-pan meal. A pinch of black pepper helps your body use the turmeric.",
+          "tip_fr": "Un repas facile sur une plaque. Une pincée de poivre noir aide votre corps à profiter du curcuma."
+        },
+        {
+          "type": "snack",
+          "name_en": "Turmeric Golden Smoothie",
+          "name_fr": "Smoothie doré au curcuma",
+          "time_min": 5,
+          "tags": [
+            "quick",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "banana",
+              "item_fr": "banane",
+              "qty_en": "½",
+              "qty_fr": "½",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "unsweetened almond beverage",
+              "item_fr": "boisson d’amande non sucrée",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "ground turmeric",
+              "item_fr": "curcuma moulu",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "ground cinnamon",
+              "item_fr": "cannelle moulue",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "ground flaxseed",
+              "item_fr": "graines de lin moulues",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "mango or pineapple chunks",
+              "item_fr": "morceaux de mangue ou d’ananas",
+              "qty_en": "1 handful",
+              "qty_fr": "1 poignée",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "Add everything to a blender.",
+            "Blend until smooth, adding a little more almond beverage if it’s too thick."
+          ],
+          "steps_fr": [
+            "Mettez tous les ingrédients dans le mélangeur.",
+            "Mélangez jusqu’à consistance lisse, en ajoutant un peu de boisson d’amande si c’est trop épais."
+          ],
+          "tip_en": "Blend in a scoop of collagen or plant protein powder for a protein boost.",
+          "tip_fr": "Ajoutez une mesure de collagène ou de protéines végétales pour un coup de pouce en protéines."
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "source": "christine",
+      "theme_en": "Meatball Night",
+      "theme_fr": "Soirée boulettes",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Avocado Toast with Hemp Seeds",
+          "name_fr": "Rôtie à l’avocat et aux graines de chanvre",
+          "time_min": 10,
+          "tags": [
+            "quick",
+            "animal-protein"
+          ],
+          "ingredients": [
+            {
+              "item_en": "whole-grain bread",
+              "item_fr": "pain à grains entiers",
+              "qty_en": "1 slice",
+              "qty_fr": "1 tranche",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "eggs",
+              "item_fr": "œufs",
+              "qty_en": "3",
+              "qty_fr": "3",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "avocado",
+              "item_fr": "avocat",
+              "qty_en": "½",
+              "qty_fr": "½",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "hemp seeds",
+              "item_fr": "graines de chanvre",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "a squeeze",
+              "qty_fr": "un filet de jus",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "Toast the bread.",
+            "Scramble the eggs in the olive oil over medium-low heat.",
+            "Mash the avocado with a squeeze of lemon and spread it on the toast.",
+            "Top with the eggs and sprinkle with hemp seeds."
+          ],
+          "steps_fr": [
+            "Faites griller le pain.",
+            "Faites brouiller les œufs dans l’huile d’olive à feu moyen-doux.",
+            "Écrasez l’avocat avec un filet de jus de citron et tartinez-le sur la rôtie.",
+            "Garnissez des œufs et saupoudrez de graines de chanvre."
+          ],
+          "tip_en": "For a plant-protein tofu scramble, crumble in 150 g (⅔ cup) firm tofu with a pinch of turmeric instead of the eggs.",
+          "tip_fr": "Pour un tofu brouillé riche en protéines végétales, émiettez 150 g (⅔ tasse) de tofu ferme avec une pincée de curcuma au lieu des œufs."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Quinoa & Chickpea Salad",
+          "name_fr": "Salade de quinoa et de pois chiches",
+          "time_min": 20,
+          "tags": [
+            "make-ahead",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "quinoa",
+              "item_fr": "quinoa",
+              "qty_en": "1 cup cooked (⅓ cup dry)",
+              "qty_fr": "250 ml (1 tasse) cuit (80 ml / ⅓ tasse sec)",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "canned chickpeas",
+              "item_fr": "pois chiches en conserve",
+              "qty_en": "½ cup, rinsed",
+              "qty_fr": "125 ml (½ tasse), rincés",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "cucumber",
+              "item_fr": "concombre",
+              "qty_en": "½, diced",
+              "qty_fr": "½, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "bell pepper",
+              "item_fr": "poivron",
+              "qty_en": "½, diced",
+              "qty_fr": "½, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "½, juiced",
+              "qty_fr": "½, pressé",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "Cook the quinoa and let it cool.",
+            "Dice the cucumber and bell pepper.",
+            "Toss everything with the olive oil and lemon juice.",
+            "Keeps 3–4 days in the fridge."
+          ],
+          "steps_fr": [
+            "Faites cuire le quinoa et laissez-le refroidir.",
+            "Coupez le concombre et le poivron en dés.",
+            "Mélangez le tout avec l’huile d’olive et le jus de citron.",
+            "Se conserve 3 à 4 jours au réfrigérateur."
+          ],
+          "tip_en": "Try Christine’s new favourite: Thai peanut dressing (peanut butter, coconut aminos, lime, ginger and garlic, thinned with warm water). YUM!",
+          "tip_fr": "Essayez la nouvelle préférée de Christine : la vinaigrette thaïe aux arachides (beurre d’arachide, aminos de coco, lime, gingembre et ail, allongée d’eau tiède). Miam!"
+        },
+        {
+          "type": "dinner",
+          "name_en": "Turkey & Spinach Meatballs with Zucchini Noodles",
+          "name_fr": "Boulettes de dinde et d’épinards avec nouilles de courgette",
+          "time_min": 30,
+          "tags": [
+            "make-ahead",
+            "freezer",
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "ground turkey",
+              "item_fr": "dinde hachée",
+              "qty_en": "1 lb",
+              "qty_fr": "450 g (1 lb)",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "bell pepper",
+              "item_fr": "poivron",
+              "qty_en": "⅓ cup, finely chopped",
+              "qty_fr": "80 ml (⅓ tasse), haché finement",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "onion",
+              "item_fr": "oignon",
+              "qty_en": "⅓ cup, finely chopped",
+              "qty_fr": "80 ml (⅓ tasse), haché finement",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "mushrooms",
+              "item_fr": "champignons",
+              "qty_en": "⅓ cup, finely chopped",
+              "qty_fr": "80 ml (⅓ tasse), hachés finement",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "baby spinach",
+              "item_fr": "bébés épinards",
+              "qty_en": "1 cup, chopped",
+              "qty_fr": "250 ml (1 tasse), hachés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "almond flour",
+              "item_fr": "farine d’amande",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "dried oregano",
+              "item_fr": "origan séché",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "garlic powder",
+              "item_fr": "ail en poudre",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "zucchini",
+              "item_fr": "courgette",
+              "qty_en": "1 medium",
+              "qty_fr": "1 moyenne",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "marinara sauce",
+              "item_fr": "sauce marinara",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "nutritional yeast",
+              "item_fr": "levure alimentaire",
+              "qty_en": "2 tbsp",
+              "qty_fr": "30 ml (2 c. à soupe)",
+              "aisle": "dairy-free"
+            }
+          ],
+          "steps_en": [
+            "Heat the oven to 375°F (190°C) and line a baking sheet.",
+            "Mix the turkey, chopped vegetables, spinach, almond flour, oregano and garlic powder, then roll into meatballs.",
+            "Bake for 20 minutes, until cooked through.",
+            "Spiralize the zucchini and warm it with the marinara sauce for 2–3 minutes.",
+            "Serve 4–5 meatballs over the noodles and sprinkle with nutritional yeast."
+          ],
+          "steps_fr": [
+            "Préchauffez le four à 190 °C (375 °F) et tapissez une plaque.",
+            "Mélangez la dinde, les légumes hachés, les épinards, la farine d’amande, l’origan et l’ail en poudre, puis façonnez des boulettes.",
+            "Faites cuire 20 minutes, jusqu’à ce qu’elles soient bien cuites.",
+            "Taillez la courgette en spirales et réchauffez-la 2 à 3 minutes avec la sauce marinara.",
+            "Servez 4 ou 5 boulettes sur les nouilles et saupoudrez de levure alimentaire."
+          ],
+          "tip_en": "Makes about 4 servings, and the meatballs freeze well. Swap the zucchini noodles for lentil noodles or noodles of your choice.",
+          "tip_fr": "Donne environ 4 portions, et les boulettes se congèlent bien. Remplacez les nouilles de courgette par des nouilles de lentilles ou les nouilles de votre choix.",
+          "note_en": "Parmesan swapped for nutritional yeast. A dairy-free cheese, like Christine’s dairy-free Boursin, works too.",
+          "note_fr": "Le parmesan est remplacé par de la levure alimentaire. Un fromage sans produits laitiers, comme le Boursin sans produits laitiers de Christine, convient aussi."
+        },
+        {
+          "type": "snack",
+          "name_en": "Walnuts & Dark Chocolate (or Dates with Nuts)",
+          "name_fr": "Noix de Grenoble et chocolat noir (ou dattes aux noix)",
+          "time_min": 2,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "walnuts",
+              "item_fr": "noix de Grenoble",
+              "qty_en": "¼ cup",
+              "qty_fr": "60 ml (¼ tasse)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "dark chocolate (70% cacao)",
+              "item_fr": "chocolat noir (70 % de cacao)",
+              "qty_en": "1–2 squares",
+              "qty_fr": "1 ou 2 carrés",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "Medjool dates",
+              "item_fr": "dattes Medjool",
+              "qty_en": "2, pitted (optional)",
+              "qty_fr": "2, dénoyautées (facultatif)",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Enjoy the walnuts with a square or two of dark chocolate.",
+            "Or stuff pitted dates with a few walnut halves."
+          ],
+          "steps_fr": [
+            "Savourez les noix de Grenoble avec un ou deux carrés de chocolat noir.",
+            "Ou farcissez des dattes dénoyautées de quelques demi-noix."
+          ],
+          "tip_en": "Check the label: choose a dark chocolate with no milk ingredients.",
+          "tip_fr": "Vérifiez l’étiquette : choisissez un chocolat noir sans ingrédients laitiers."
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "source": "christine",
+      "theme_en": "Soup & Shrimp",
+      "theme_fr": "Soupe et crevettes",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Dairy-Free Yogurt & Walnut Parfait",
+          "name_fr": "Parfait au yogourt sans produits laitiers et aux noix de Grenoble",
+          "time_min": 5,
+          "tags": [
+            "quick",
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "dairy-free protein yogurt",
+              "item_fr": "yogourt protéiné sans produits laitiers",
+              "qty_en": "¾ cup",
+              "qty_fr": "175 ml (¾ tasse)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "mixed berries",
+              "item_fr": "petits fruits mélangés",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "walnuts",
+              "item_fr": "noix de Grenoble",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "nut butter",
+              "item_fr": "beurre de noix",
+              "qty_en": "1–2 tsp (instead of walnuts)",
+              "qty_fr": "5 à 10 ml (1 à 2 c. à thé) (au lieu des noix)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "collagen protein powder",
+              "item_fr": "poudre de protéines de collagène",
+              "qty_en": "1 scoop",
+              "qty_fr": "1 mesure",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "honey",
+              "item_fr": "miel",
+              "qty_en": "a small drizzle",
+              "qty_fr": "un petit filet",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Stir the collagen into the yogurt.",
+            "Layer with the berries.",
+            "Top with walnuts or nut butter and a small drizzle of honey."
+          ],
+          "steps_fr": [
+            "Incorporez le collagène au yogourt.",
+            "Superposez avec les petits fruits.",
+            "Garnissez de noix de Grenoble ou de beurre de noix, et d’un petit filet de miel."
+          ],
+          "tip_en": "Use plant protein powder instead of collagen for a fully plant-based breakfast.",
+          "tip_fr": "Utilisez de la poudre de protéines végétales au lieu du collagène pour un déjeuner entièrement végétal.",
+          "note_en": "Greek yogurt swapped for dairy-free protein yogurt, Christine’s preferred choice. Typo fixed: “12 tsp” of nut butter is 1–2 tsp.",
+          "note_fr": "Le yogourt grec est remplacé par du yogourt protéiné sans produits laitiers, le choix préféré de Christine. Coquille corrigée : « 12 c. à thé » de beurre de noix, c’est 1 à 2 c. à thé."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Carrot Ginger Soup with Tofu",
+          "name_fr": "Soupe carottes et gingembre avec tofu",
+          "time_min": 30,
+          "tags": [
+            "make-ahead",
+            "freezer",
+            "plant-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "carrots",
+              "item_fr": "carottes",
+              "qty_en": "4 large, chopped",
+              "qty_fr": "4 grosses, hachées",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "fresh ginger",
+              "item_fr": "gingembre frais",
+              "qty_en": "1-inch piece, grated",
+              "qty_fr": "1 morceau de 2,5 cm (1 po), râpé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "vegetable broth",
+              "item_fr": "bouillon de légumes",
+              "qty_en": "3 cups",
+              "qty_fr": "750 ml (3 tasses)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "onion",
+              "item_fr": "oignon",
+              "qty_en": "1 small, diced",
+              "qty_fr": "1 petit, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "2 tsp",
+              "qty_fr": "10 ml (2 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "firm tofu",
+              "item_fr": "tofu ferme",
+              "qty_en": "150 g (5 oz)",
+              "qty_fr": "150 g (5 oz)",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Soften the onion in 1 tsp olive oil in a large pot, about 5 minutes.",
+            "Add the carrots, ginger and broth. Simmer for 20 minutes, until the carrots are soft.",
+            "Blend until smooth.",
+            "Meanwhile, slice the tofu and pan-sear it in 1 tsp olive oil until golden. Season with pepper and serve on the side."
+          ],
+          "steps_fr": [
+            "Dans une grande casserole, faites revenir l’oignon dans 5 ml (1 c. à thé) d’huile d’olive environ 5 minutes.",
+            "Ajoutez les carottes, le gingembre et le bouillon. Laissez mijoter 20 minutes, jusqu’à ce que les carottes soient tendres.",
+            "Passez au mélangeur jusqu’à consistance lisse.",
+            "Pendant ce temps, tranchez le tofu et faites-le dorer dans 5 ml (1 c. à thé) d’huile d’olive. Poivrez et servez à côté."
+          ],
+          "tip_en": "Makes about 3 servings, so freeze the extra soup. Prefer baked salmon on the side? Time it 1–2 hours after your levodopa.",
+          "tip_fr": "Donne environ 3 portions : congelez le reste de la soupe. Vous préférez du saumon au four à côté? Prenez-le 1 à 2 heures après votre lévodopa."
+        },
+        {
+          "type": "dinner",
+          "name_en": "Garlic Shrimp with Brown Rice & Asparagus",
+          "name_fr": "Crevettes à l’ail, riz brun et asperges",
+          "time_min": 25,
+          "tags": [
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "brown rice",
+              "item_fr": "riz brun",
+              "qty_en": "1 cup cooked (⅓ cup dry)",
+              "qty_fr": "250 ml (1 tasse) cuit (80 ml / ⅓ tasse sec)",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "shrimp",
+              "item_fr": "crevettes",
+              "qty_en": "½ cup, peeled",
+              "qty_fr": "125 ml (½ tasse), décortiquées",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "2 tsp",
+              "qty_fr": "10 ml (2 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "garlic",
+              "item_fr": "ail",
+              "qty_en": "2 cloves, minced",
+              "qty_fr": "2 gousses, hachées",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "asparagus",
+              "item_fr": "asperges",
+              "qty_en": "1 cup (6–8 spears)",
+              "qty_fr": "250 ml (1 tasse) (6 à 8 tiges)",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "Cook the rice.",
+            "Heat the oven to 400°F (200°C). Toss the asparagus with 1 tsp olive oil and roast for 10–12 minutes.",
+            "Sauté the shrimp and garlic in 1 tsp olive oil for 2–3 minutes per side, until pink.",
+            "Serve the shrimp over the rice with the asparagus."
+          ],
+          "steps_fr": [
+            "Faites cuire le riz.",
+            "Préchauffez le four à 200 °C (400 °F). Mélangez les asperges avec 5 ml (1 c. à thé) d’huile d’olive et faites-les rôtir 10 à 12 minutes.",
+            "Faites sauter les crevettes et l’ail dans 5 ml (1 c. à thé) d’huile d’olive 2 à 3 minutes de chaque côté, jusqu’à ce qu’elles soient roses.",
+            "Servez les crevettes sur le riz, avec les asperges."
+          ],
+          "tip_en": "A simple stovetop meal. Cook extra brown rice and freeze it in portions for Day 6.",
+          "tip_fr": "Un repas simple sur la cuisinière. Faites cuire plus de riz brun et congelez-le en portions pour le jour 6."
+        },
+        {
+          "type": "snack",
+          "name_en": "Hummus & Veggies",
+          "name_fr": "Houmous et crudités",
+          "time_min": 5,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "hummus",
+              "item_fr": "houmous",
+              "qty_en": "¼ cup",
+              "qty_fr": "60 ml (¼ tasse)",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "carrots",
+              "item_fr": "carottes",
+              "qty_en": "1, cut into sticks",
+              "qty_fr": "1, en bâtonnets",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "cucumber",
+              "item_fr": "concombre",
+              "qty_en": "¼, cut into sticks",
+              "qty_fr": "¼, en bâtonnets",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "Cut the vegetables into sticks and dip them into the hummus."
+          ],
+          "steps_fr": [
+            "Coupez les légumes en bâtonnets et trempez-les dans le houmous."
+          ],
+          "tip_en": "Pair your snack with a glass of water or a cup of herbal tea.",
+          "tip_fr": "Accompagnez votre collation d’un verre d’eau ou d’une tisane."
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "source": "christine",
+      "theme_en": "Chili Comfort",
+      "theme_fr": "Réconfort chili",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Oatmeal with Almond Butter & Blueberries",
+          "name_fr": "Gruau au beurre d’amande et aux bleuets",
+          "time_min": 10,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "high-fibre"
+          ],
+          "ingredients": [
+            {
+              "item_en": "rolled oats",
+              "item_fr": "flocons d’avoine",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "unsweetened almond beverage",
+              "item_fr": "boisson d’amande non sucrée",
+              "qty_en": "1 cup (or water)",
+              "qty_fr": "250 ml (1 tasse) (ou de l’eau)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "almond butter",
+              "item_fr": "beurre d’amande",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "blueberries",
+              "item_fr": "bleuets",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "ground flaxseed",
+              "item_fr": "graines de lin moulues",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            }
+          ],
+          "steps_en": [
+            "Simmer the oats in the almond beverage (or water) for about 5 minutes, stirring.",
+            "Stir in the ground flaxseed.",
+            "Top with the almond butter and blueberries."
+          ],
+          "steps_fr": [
+            "Faites mijoter les flocons d’avoine dans la boisson d’amande (ou l’eau) environ 5 minutes, en remuant.",
+            "Incorporez les graines de lin moulues.",
+            "Garnissez de beurre d’amande et de bleuets."
+          ],
+          "tip_en": "Quick and filling. Stir in 2 tbsp hemp seeds for an extra protein boost.",
+          "tip_fr": "Rapide et nourrissant. Ajoutez 30 ml (2 c. à soupe) de graines de chanvre pour plus de protéines."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Tuna & Avocado Wrap",
+          "name_fr": "Wrap au thon et à l’avocat",
+          "time_min": 5,
+          "tags": [
+            "quick",
+            "animal-protein"
+          ],
+          "ingredients": [
+            {
+              "item_en": "whole-grain tortilla",
+              "item_fr": "tortilla à grains entiers",
+              "qty_en": "1",
+              "qty_fr": "1",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "avocado",
+              "item_fr": "avocat",
+              "qty_en": "½, mashed",
+              "qty_fr": "½, écrasé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "canned tuna",
+              "item_fr": "thon en conserve",
+              "qty_en": "½ cup, drained",
+              "qty_fr": "125 ml (½ tasse), égoutté",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "baby spinach",
+              "item_fr": "bébés épinards",
+              "qty_en": "1 handful",
+              "qty_fr": "1 poignée",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "Spread the mashed avocado over the wrap.",
+            "Add the tuna and spinach.",
+            "Roll up tightly and slice in half."
+          ],
+          "steps_fr": [
+            "Tartinez l’avocat écrasé sur la tortilla.",
+            "Ajoutez le thon et les épinards.",
+            "Roulez bien serré et coupez en deux."
+          ],
+          "tip_en": "Easy to pack and take with you. Choose tuna packed in water, and add a squeeze of lemon for flavour.",
+          "tip_fr": "Facile à emporter. Choisissez du thon dans l’eau et ajoutez un filet de jus de citron pour la saveur."
+        },
+        {
+          "type": "dinner",
+          "name_en": "Slow Cooker Chocolate Chili with Sweet Potato",
+          "name_fr": "Chili au chocolat à la mijoteuse avec patate douce",
+          "time_min": 20,
+          "tags": [
+            "make-ahead",
+            "freezer",
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "grass-fed ground beef or ground turkey",
+              "item_fr": "bœuf haché nourri à l’herbe ou dinde hachée",
+              "qty_en": "1 lb",
+              "qty_fr": "450 g (1 lb)",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tbsp (or avocado oil)",
+              "qty_fr": "15 ml (1 c. à soupe) (ou huile d’avocat)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "garlic",
+              "item_fr": "ail",
+              "qty_en": "3 cloves, minced",
+              "qty_fr": "3 gousses, hachées",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "bell pepper",
+              "item_fr": "poivron",
+              "qty_en": "1, in small cubes",
+              "qty_fr": "1, en petits cubes",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "onion",
+              "item_fr": "oignon",
+              "qty_en": "1 small, in small cubes",
+              "qty_fr": "1 petit, en petits cubes",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "mushrooms",
+              "item_fr": "champignons",
+              "qty_en": "1 cup, in small cubes (or zucchini)",
+              "qty_fr": "250 ml (1 tasse), en petits cubes (ou de la courgette)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "sweet potato",
+              "item_fr": "patate douce",
+              "qty_en": "½–1 cup, diced",
+              "qty_fr": "125 à 250 ml (½ à 1 tasse), en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "canned diced tomatoes",
+              "item_fr": "tomates en dés en conserve",
+              "qty_en": "1 can",
+              "qty_fr": "1 boîte",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "tomato paste",
+              "item_fr": "pâte de tomates",
+              "qty_en": "2 tbsp",
+              "qty_fr": "30 ml (2 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "chili powder",
+              "item_fr": "assaisonnement au chili",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "cacao powder",
+              "item_fr": "poudre de cacao cru",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "salt",
+              "item_fr": "sel",
+              "qty_en": "to taste",
+              "qty_fr": "au goût",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "to taste",
+              "qty_fr": "au goût",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Pan-fry the meat in the oil for a few minutes to lock in some flavour.",
+            "Add it to the slow cooker with the garlic, vegetables, sweet potato, tomatoes, tomato paste, chili powder and cacao.",
+            "Season with salt and pepper and stir.",
+            "Cook on high for 3–4 hours or on low for 6 hours."
+          ],
+          "steps_fr": [
+            "Faites revenir la viande dans l’huile quelques minutes pour lui donner plus de saveur.",
+            "Mettez-la dans la mijoteuse avec l’ail, les légumes, la patate douce, les tomates, la pâte de tomates, l’assaisonnement au chili et le cacao.",
+            "Salez, poivrez et mélangez.",
+            "Faites cuire à intensité élevée de 3 à 4 heures, ou à faible intensité pendant 6 heures."
+          ],
+          "tip_en": "Makes about 4 servings and freezes well. Add a can of rinsed black beans for extra fibre.",
+          "tip_fr": "Donne environ 4 portions et se congèle bien. Ajoutez une boîte de haricots noirs rincés pour plus de fibres.",
+          "note_en": "Added ½–1 cup diced sweet potato, since the recipe’s name includes it.",
+          "note_fr": "Ajout de 125 à 250 ml (½ à 1 tasse) de patate douce en dés, puisque le nom de la recette la mentionne."
+        },
+        {
+          "type": "snack",
+          "name_en": "Pumpkin Seeds & Green Tea",
+          "name_fr": "Graines de citrouille et thé vert",
+          "time_min": 5,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "pumpkin seeds",
+              "item_fr": "graines de citrouille",
+              "qty_en": "¼ cup",
+              "qty_fr": "60 ml (¼ tasse)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "green tea",
+              "item_fr": "thé vert",
+              "qty_en": "1 cup, brewed",
+              "qty_fr": "250 ml (1 tasse), infusé",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Brew a cup of green tea and enjoy it with a small handful of pumpkin seeds."
+          ],
+          "steps_fr": [
+            "Préparez une tasse de thé vert et savourez-la avec une petite poignée de graines de citrouille."
+          ],
+          "tip_en": "Green tea counts toward your fluids for the day. Keep sipping water too.",
+          "tip_fr": "Le thé vert compte dans vos liquides de la journée. Continuez aussi à boire de l’eau."
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "source": "new",
+      "theme_en": "Lemon & Herbs",
+      "theme_fr": "Citron et fines herbes",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Peanut Butter Banana Smoothie",
+          "name_fr": "Smoothie banane et beurre d’arachide",
+          "time_min": 5,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "banana",
+              "item_fr": "banane",
+              "qty_en": "1, frozen",
+              "qty_fr": "1, congelée",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "unsweetened soy beverage",
+              "item_fr": "boisson de soya non sucrée",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "natural peanut butter",
+              "item_fr": "beurre d’arachide naturel",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "chia seeds",
+              "item_fr": "graines de chia",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "plant protein powder",
+              "item_fr": "poudre de protéines végétales",
+              "qty_en": "1 scoop",
+              "qty_fr": "1 mesure",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "baby spinach",
+              "item_fr": "bébés épinards",
+              "qty_en": "1 handful",
+              "qty_fr": "1 poignée",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "Add everything to a blender.",
+            "Blend until smooth, adding a little water if it’s too thick."
+          ],
+          "steps_fr": [
+            "Mettez tous les ingrédients dans le mélangeur.",
+            "Mélangez jusqu’à consistance lisse, en ajoutant un peu d’eau si c’est trop épais."
+          ],
+          "tip_en": "Peel ripe bananas and freeze them in halves, so a creamy smoothie is always ready.",
+          "tip_fr": "Pelez des bananes mûres et congelez-les en moitiés : un smoothie crémeux sera toujours à portée de main."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Mediterranean Quinoa Bowl",
+          "name_fr": "Bol méditerranéen au quinoa",
+          "time_min": 20,
+          "tags": [
+            "make-ahead",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "quinoa",
+              "item_fr": "quinoa",
+              "qty_en": "1 cup cooked (⅓ cup dry)",
+              "qty_fr": "250 ml (1 tasse) cuit (80 ml / ⅓ tasse sec)",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "canned chickpeas",
+              "item_fr": "pois chiches en conserve",
+              "qty_en": "½ cup, rinsed",
+              "qty_fr": "125 ml (½ tasse), rincés",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "cherry tomatoes",
+              "item_fr": "tomates cerises",
+              "qty_en": "½ cup, halved",
+              "qty_fr": "125 ml (½ tasse), coupées en deux",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "Kalamata olives",
+              "item_fr": "olives Kalamata",
+              "qty_en": "6",
+              "qty_fr": "6",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "arugula",
+              "item_fr": "roquette",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "fresh parsley",
+              "item_fr": "persil frais",
+              "qty_en": "2 tbsp, chopped",
+              "qty_fr": "30 ml (2 c. à soupe), haché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "hemp seeds",
+              "item_fr": "graines de chanvre",
+              "qty_en": "2 tbsp",
+              "qty_fr": "30 ml (2 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "nutritional yeast",
+              "item_fr": "levure alimentaire",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "½, juiced",
+              "qty_fr": "½, pressé",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "Cook the quinoa and let it cool a little.",
+            "Place the arugula and quinoa in a bowl.",
+            "Top with the chickpeas, tomatoes, olives and parsley.",
+            "Drizzle with olive oil and lemon juice, then sprinkle with hemp seeds and nutritional yeast."
+          ],
+          "steps_fr": [
+            "Faites cuire le quinoa et laissez-le tiédir.",
+            "Déposez la roquette et le quinoa dans un bol.",
+            "Garnissez de pois chiches, de tomates, d’olives et de persil.",
+            "Arrosez d’huile d’olive et de jus de citron, puis saupoudrez de graines de chanvre et de levure alimentaire."
+          ],
+          "tip_en": "Hemp seeds and nutritional yeast take the place of feta and add extra protein.",
+          "tip_fr": "Les graines de chanvre et la levure alimentaire remplacent la feta et ajoutent des protéines."
+        },
+        {
+          "type": "dinner",
+          "name_en": "Lemon Herb Chicken with Mashed Sweet Potato & Green Beans",
+          "name_fr": "Poulet citron et fines herbes, purée de patate douce et haricots verts",
+          "time_min": 30,
+          "tags": [
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "chicken breast",
+              "item_fr": "poitrine de poulet",
+              "qty_en": "1 (about 150 g / 5 oz)",
+              "qty_fr": "1 (environ 150 g / 5 oz)",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tbsp + 1 tsp",
+              "qty_fr": "15 ml (1 c. à soupe) + 5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "½, juiced",
+              "qty_fr": "½, pressé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "garlic",
+              "item_fr": "ail",
+              "qty_en": "1 clove, minced",
+              "qty_fr": "1 gousse, hachée",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "dried oregano",
+              "item_fr": "origan séché",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "dried thyme",
+              "item_fr": "thym séché",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "sweet potato",
+              "item_fr": "patate douce",
+              "qty_en": "1 medium",
+              "qty_fr": "1 moyenne",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "green beans",
+              "item_fr": "haricots verts",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Mix 1 tbsp olive oil with the lemon juice, garlic, oregano and thyme, and coat the chicken.",
+            "Peel and cube the sweet potato, then boil for 12–15 minutes, until soft.",
+            "Cook the chicken in a hot pan for 5–6 minutes per side, until cooked through.",
+            "Steam the green beans for about 5 minutes.",
+            "Mash the sweet potato with 1 tsp olive oil and a pinch of pepper, and serve."
+          ],
+          "steps_fr": [
+            "Mélangez 15 ml (1 c. à soupe) d’huile d’olive avec le jus de citron, l’ail, l’origan et le thym, puis enrobez-en le poulet.",
+            "Pelez la patate douce, coupez-la en cubes et faites-la bouillir 12 à 15 minutes, jusqu’à ce qu’elle soit tendre.",
+            "Faites cuire le poulet dans une poêle chaude 5 à 6 minutes de chaque côté, jusqu’à ce qu’il soit bien cuit.",
+            "Faites cuire les haricots verts à la vapeur environ 5 minutes.",
+            "Écrasez la patate douce avec 5 ml (1 c. à thé) d’huile d’olive et une pincée de poivre, puis servez."
+          ],
+          "tip_en": "Cook a second chicken breast now and keep it in the fridge for tomorrow’s Thai peanut salad.",
+          "tip_fr": "Faites cuire une deuxième poitrine de poulet maintenant et gardez-la au réfrigérateur pour la salade thaïe de demain."
+        },
+        {
+          "type": "snack",
+          "name_en": "Kiwi & Almonds",
+          "name_fr": "Kiwis et amandes",
+          "time_min": 3,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "kiwi",
+              "item_fr": "kiwi",
+              "qty_en": "2",
+              "qty_fr": "2",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "almonds",
+              "item_fr": "amandes",
+              "qty_en": "¼ cup",
+              "qty_fr": "60 ml (¼ tasse)",
+              "aisle": "nuts-seeds"
+            }
+          ],
+          "steps_en": [
+            "Halve the kiwis and scoop them out with a spoon, or slice them.",
+            "Enjoy with the almonds."
+          ],
+          "steps_fr": [
+            "Coupez les kiwis en deux et mangez-les à la cuillère, ou tranchez-les.",
+            "Savourez-les avec les amandes."
+          ],
+          "tip_en": "Try your kiwis 30–60 minutes before bed. It’s an easy win for your gut and your sleep.",
+          "tip_fr": "Mangez vos kiwis de 30 à 60 minutes avant le coucher. Un geste simple pour votre intestin et votre sommeil."
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "source": "new",
+      "theme_en": "Thai Twist",
+      "theme_fr": "Touche thaïe",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Veggie Tofu Scramble",
+          "name_fr": "Tofu brouillé aux légumes",
+          "time_min": 15,
+          "tags": [
+            "quick",
+            "plant-protein"
+          ],
+          "ingredients": [
+            {
+              "item_en": "firm tofu",
+              "item_fr": "tofu ferme",
+              "qty_en": "150 g (5 oz)",
+              "qty_fr": "150 g (5 oz)",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "bell pepper",
+              "item_fr": "poivron",
+              "qty_en": "¼, diced",
+              "qty_fr": "¼, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "ground turmeric",
+              "item_fr": "curcuma moulu",
+              "qty_en": "¼ tsp",
+              "qty_fr": "1 ml (¼ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "baby spinach",
+              "item_fr": "bébés épinards",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "cherry tomatoes",
+              "item_fr": "tomates cerises",
+              "qty_en": "½ cup, halved",
+              "qty_fr": "125 ml (½ tasse), coupées en deux",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "nutritional yeast",
+              "item_fr": "levure alimentaire",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "whole-grain bread",
+              "item_fr": "pain à grains entiers",
+              "qty_en": "1 slice",
+              "qty_fr": "1 tranche",
+              "aisle": "legumes-grains"
+            }
+          ],
+          "steps_en": [
+            "Warm the olive oil in a pan and soften the bell pepper for 2 minutes.",
+            "Crumble in the tofu with the turmeric and pepper, and cook for 5 minutes.",
+            "Add the spinach and tomatoes, and stir until the spinach wilts.",
+            "Sprinkle with nutritional yeast and serve with toast."
+          ],
+          "steps_fr": [
+            "Faites chauffer l’huile d’olive dans une poêle et faites revenir le poivron 2 minutes.",
+            "Émiettez le tofu dans la poêle avec le curcuma et le poivre, et faites cuire 5 minutes.",
+            "Ajoutez les épinards et les tomates, et remuez jusqu’à ce que les épinards tombent.",
+            "Saupoudrez de levure alimentaire et servez avec une rôtie."
+          ],
+          "tip_en": "A plant-protein start to your day, and the black pepper helps your body use the turmeric.",
+          "tip_fr": "Un début de journée riche en protéines végétales, et le poivre noir aide votre corps à profiter du curcuma."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Thai Peanut Chicken Salad",
+          "name_fr": "Salade de poulet thaïe aux arachides",
+          "time_min": 10,
+          "tags": [
+            "quick",
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "chicken breast",
+              "item_fr": "poitrine de poulet",
+              "qty_en": "1 small, cooked (about 120 g / 4 oz)",
+              "qty_fr": "1 petite, cuite (environ 120 g / 4 oz)",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "mixed greens",
+              "item_fr": "mesclun",
+              "qty_en": "2 cups",
+              "qty_fr": "500 ml (2 tasses)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "carrots",
+              "item_fr": "carottes",
+              "qty_en": "½ cup, shredded",
+              "qty_fr": "125 ml (½ tasse), râpées",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "cucumber",
+              "item_fr": "concombre",
+              "qty_en": "½ cup, sliced",
+              "qty_fr": "125 ml (½ tasse), tranché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "unsalted peanuts",
+              "item_fr": "arachides non salées",
+              "qty_en": "1 tbsp, chopped",
+              "qty_fr": "15 ml (1 c. à soupe), hachées",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "natural peanut butter",
+              "item_fr": "beurre d’arachide naturel",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "coconut aminos",
+              "item_fr": "aminos de coco",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "lime",
+              "item_fr": "lime",
+              "qty_en": "½, juiced",
+              "qty_fr": "½, pressée",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "fresh ginger",
+              "item_fr": "gingembre frais",
+              "qty_en": "½ tsp, grated",
+              "qty_fr": "2 ml (½ c. à thé), râpé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "garlic",
+              "item_fr": "ail",
+              "qty_en": "1 small clove, minced",
+              "qty_fr": "1 petite gousse, hachée",
+              "aisle": "produce"
+            }
+          ],
+          "steps_en": [
+            "Whisk the peanut butter, coconut aminos, lime juice, ginger and garlic with 1–2 tbsp warm water.",
+            "Toss the greens, carrots and cucumber in a bowl.",
+            "Top with the sliced chicken and peanuts, and drizzle with the dressing."
+          ],
+          "steps_fr": [
+            "Fouettez le beurre d’arachide, les aminos de coco, le jus de lime, le gingembre et l’ail avec 15 à 30 ml (1 à 2 c. à soupe) d’eau tiède.",
+            "Dans un bol, mélangez le mesclun, les carottes et le concombre.",
+            "Garnissez du poulet tranché et des arachides, et arrosez de vinaigrette."
+          ],
+          "tip_en": "Use the extra chicken you cooked on Day 5. Christine’s full Thai peanut sauce keeps 2 weeks in a sealed jar.",
+          "tip_fr": "Utilisez le poulet cuit en extra au jour 5. La sauce thaïe aux arachides de Christine se conserve 2 semaines dans un pot hermétique."
+        },
+        {
+          "type": "dinner",
+          "name_en": "Baked Trout with Lemon, Dill & Garlicky Kale",
+          "name_fr": "Truite au four, citron, aneth et chou frisé à l’ail",
+          "time_min": 20,
+          "tags": [
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "rainbow trout fillet",
+              "item_fr": "filet de truite arc-en-ciel",
+              "qty_en": "1 (about 150 g / 5 oz)",
+              "qty_fr": "1 (environ 150 g / 5 oz)",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "½, sliced",
+              "qty_fr": "½, tranché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "fresh dill",
+              "item_fr": "aneth frais",
+              "qty_en": "1 tbsp, chopped",
+              "qty_fr": "15 ml (1 c. à soupe), haché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "2 tsp",
+              "qty_fr": "10 ml (2 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "garlic",
+              "item_fr": "ail",
+              "qty_en": "1 clove, minced",
+              "qty_fr": "1 gousse, hachée",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "kale",
+              "item_fr": "chou frisé (kale)",
+              "qty_en": "2 cups, chopped",
+              "qty_fr": "500 ml (2 tasses), haché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "brown rice",
+              "item_fr": "riz brun",
+              "qty_en": "½ cup cooked",
+              "qty_fr": "125 ml (½ tasse) cuit",
+              "aisle": "legumes-grains"
+            }
+          ],
+          "steps_en": [
+            "Heat the oven to 400°F (200°C). Place the trout on a lined pan, drizzle with 1 tsp olive oil and top with lemon slices and dill.",
+            "Bake for 12–15 minutes, until it flakes easily.",
+            "Meanwhile, sauté the garlic in 1 tsp olive oil, add the kale and a splash of water, and cook until tender.",
+            "Serve with the brown rice."
+          ],
+          "steps_fr": [
+            "Préchauffez le four à 200 °C (400 °F). Déposez la truite sur une plaque tapissée, arrosez-la de 5 ml (1 c. à thé) d’huile d’olive et garnissez de tranches de citron et d’aneth.",
+            "Faites cuire 12 à 15 minutes, jusqu’à ce qu’elle se défasse facilement.",
+            "Pendant ce temps, faites revenir l’ail dans 5 ml (1 c. à thé) d’huile d’olive, ajoutez le chou frisé et un peu d’eau, et faites cuire jusqu’à ce qu’il soit tendre.",
+            "Servez avec le riz brun."
+          ],
+          "tip_en": "Use the brown rice you cooked and froze on Day 3. Reheat it with a splash of water.",
+          "tip_fr": "Utilisez le riz brun cuit et congelé au jour 3. Réchauffez-le avec un peu d’eau."
+        },
+        {
+          "type": "snack",
+          "name_en": "Apple & Almond Butter",
+          "name_fr": "Pomme et beurre d’amande",
+          "time_min": 3,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "apple",
+              "item_fr": "pomme",
+              "qty_en": "1",
+              "qty_fr": "1",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "almond butter",
+              "item_fr": "beurre d’amande",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "ground cinnamon",
+              "item_fr": "cannelle moulue",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "hemp seeds",
+              "item_fr": "graines de chanvre",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "nuts-seeds"
+            }
+          ],
+          "steps_en": [
+            "Slice the apple and dip it in the almond butter.",
+            "Sprinkle with cinnamon and hemp seeds."
+          ],
+          "steps_fr": [
+            "Tranchez la pomme et trempez-la dans le beurre d’amande.",
+            "Saupoudrez de cannelle et de graines de chanvre."
+          ],
+          "tip_en": "Enjoy it with a cup of herbal tea to help you reach your fluids for the day.",
+          "tip_fr": "Savourez-la avec une tisane pour vous aider à boire assez de liquides dans la journée."
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "source": "new",
+      "theme_en": "Plant-Powered Day",
+      "theme_fr": "Journée végétale",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Berry Chia Pudding",
+          "name_fr": "Pouding au chia et aux petits fruits",
+          "time_min": 5,
+          "tags": [
+            "make-ahead",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "chia seeds",
+              "item_fr": "graines de chia",
+              "qty_en": "3 tbsp",
+              "qty_fr": "45 ml (3 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "unsweetened soy beverage",
+              "item_fr": "boisson de soya non sucrée",
+              "qty_en": "¾ cup",
+              "qty_fr": "175 ml (¾ tasse)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "vanilla extract",
+              "item_fr": "extrait de vanille",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "maple syrup",
+              "item_fr": "sirop d’érable",
+              "qty_en": "1 tsp (optional)",
+              "qty_fr": "5 ml (1 c. à thé) (facultatif)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "mixed berries",
+              "item_fr": "petits fruits mélangés",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "almond butter",
+              "item_fr": "beurre d’amande",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "hemp seeds",
+              "item_fr": "graines de chanvre",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            }
+          ],
+          "steps_en": [
+            "Stir the chia seeds, soy beverage, vanilla and maple syrup together in a jar.",
+            "Stir again after 5 minutes, then cover and refrigerate overnight.",
+            "In the morning, top with the berries, almond butter and hemp seeds."
+          ],
+          "steps_fr": [
+            "Dans un pot, mélangez les graines de chia, la boisson de soya, la vanille et le sirop d’érable.",
+            "Remuez de nouveau après 5 minutes, puis couvrez et réfrigérez toute la nuit.",
+            "Le matin, garnissez de petits fruits, de beurre d’amande et de graines de chanvre."
+          ],
+          "tip_en": "Stir in a scoop of plant protein powder to reach 20 g of protein or more.",
+          "tip_fr": "Ajoutez une mesure de protéines végétales pour atteindre 20 g de protéines ou plus."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Chickpea & Kale Wrap with Tahini",
+          "name_fr": "Wrap aux pois chiches et au chou frisé, sauce tahini",
+          "time_min": 10,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "high-fibre"
+          ],
+          "ingredients": [
+            {
+              "item_en": "whole-grain tortilla",
+              "item_fr": "tortilla à grains entiers",
+              "qty_en": "1",
+              "qty_fr": "1",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "canned chickpeas",
+              "item_fr": "pois chiches en conserve",
+              "qty_en": "¾ cup, rinsed",
+              "qty_fr": "175 ml (¾ tasse), rincés",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "tahini",
+              "item_fr": "tahini",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "½, juiced",
+              "qty_fr": "½, pressé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "kale",
+              "item_fr": "chou frisé (kale)",
+              "qty_en": "1 cup, chopped",
+              "qty_fr": "250 ml (1 tasse), haché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "carrots",
+              "item_fr": "carottes",
+              "qty_en": "¼ cup, shredded",
+              "qty_fr": "60 ml (¼ tasse), râpées",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "hemp seeds",
+              "item_fr": "graines de chanvre",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            }
+          ],
+          "steps_en": [
+            "Mash the chickpeas with the tahini, most of the lemon juice and the pepper.",
+            "Rub the kale with the rest of the lemon juice to soften it.",
+            "Spread the chickpeas over the tortilla, add the kale, carrots and hemp seeds, then roll up and slice in half."
+          ],
+          "steps_fr": [
+            "Écrasez les pois chiches avec le tahini, la majeure partie du jus de citron et le poivre.",
+            "Massez le chou frisé avec le reste du jus de citron pour l’attendrir.",
+            "Tartinez les pois chiches sur la tortilla, ajoutez le chou frisé, les carottes et les graines de chanvre, puis roulez et coupez en deux."
+          ],
+          "tip_en": "Prefer animal protein? Swap the chickpeas for chicken or tuna.",
+          "tip_fr": "Vous préférez des protéines animales? Remplacez les pois chiches par du poulet ou du thon."
+        },
+        {
+          "type": "dinner",
+          "name_en": "Tofu & Veggie Stir-Fry with Cauliflower Rice",
+          "name_fr": "Sauté de tofu et de légumes, riz de chou-fleur",
+          "time_min": 25,
+          "tags": [
+            "plant-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "firm tofu",
+              "item_fr": "tofu ferme",
+              "qty_en": "150 g (5 oz), cubed",
+              "qty_fr": "150 g (5 oz), en cubes",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "2 tsp",
+              "qty_fr": "10 ml (2 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "onion",
+              "item_fr": "oignon",
+              "qty_en": "¼, sliced",
+              "qty_fr": "¼, tranché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "bell pepper",
+              "item_fr": "poivron",
+              "qty_en": "1 cup, sliced",
+              "qty_fr": "250 ml (1 tasse), tranché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "snap peas",
+              "item_fr": "pois mange-tout",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "garlic",
+              "item_fr": "ail",
+              "qty_en": "1 clove, minced",
+              "qty_fr": "1 gousse, hachée",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "fresh ginger",
+              "item_fr": "gingembre frais",
+              "qty_en": "1 tsp, grated",
+              "qty_fr": "5 ml (1 c. à thé), râpé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "coconut aminos",
+              "item_fr": "aminos de coco",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "frozen cauliflower rice",
+              "item_fr": "riz de chou-fleur surgelé",
+              "qty_en": "1½ cups",
+              "qty_fr": "375 ml (1½ tasse)",
+              "aisle": "frozen"
+            },
+            {
+              "item_en": "toasted sesame oil",
+              "item_fr": "huile de sésame grillé",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "sesame seeds",
+              "item_fr": "graines de sésame",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "nuts-seeds"
+            }
+          ],
+          "steps_en": [
+            "Pat the tofu dry and brown it in 1 tsp olive oil, about 8 minutes. Set aside.",
+            "Add 1 tsp olive oil and stir-fry the onion, bell pepper and snap peas for 3–4 minutes.",
+            "Add the garlic, ginger, coconut aminos and tofu, and toss for 1 minute.",
+            "Cook the cauliflower rice in a separate pan for about 5 minutes.",
+            "Serve the stir-fry over the cauliflower rice with a drizzle of sesame oil and a sprinkle of sesame seeds."
+          ],
+          "steps_fr": [
+            "Épongez le tofu et faites-le dorer dans 5 ml (1 c. à thé) d’huile d’olive environ 8 minutes. Réservez.",
+            "Ajoutez 5 ml (1 c. à thé) d’huile d’olive et faites sauter l’oignon, le poivron et les pois mange-tout 3 à 4 minutes.",
+            "Ajoutez l’ail, le gingembre, les aminos de coco et le tofu, et mélangez 1 minute.",
+            "Faites cuire le riz de chou-fleur dans une autre poêle environ 5 minutes.",
+            "Servez le sauté sur le riz de chou-fleur, avec un filet d’huile de sésame et des graines de sésame."
+          ],
+          "tip_en": "Inspired by Christine’s gluten-free plan. Prefer animal protein? Chicken or shrimp work well too.",
+          "tip_fr": "Inspiré du plan sans gluten de Christine. Vous préférez des protéines animales? Le poulet ou les crevettes conviennent aussi."
+        },
+        {
+          "type": "snack",
+          "name_en": "Warm Edamame",
+          "name_fr": "Edamames chauds",
+          "time_min": 5,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "frozen shelled edamame",
+              "item_fr": "edamames écossés surgelés",
+              "qty_en": "¾ cup",
+              "qty_fr": "175 ml (¾ tasse)",
+              "aisle": "frozen"
+            },
+            {
+              "item_en": "salt",
+              "item_fr": "sel",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Cook the edamame in boiling water for 3–4 minutes, or microwave with a splash of water.",
+            "Drain and sprinkle with a pinch of salt."
+          ],
+          "steps_fr": [
+            "Faites cuire les edamames 3 à 4 minutes dans l’eau bouillante, ou au micro-ondes avec un peu d’eau.",
+            "Égouttez et saupoudrez d’une pincée de sel."
+          ],
+          "tip_en": "Edamame gives you plant protein and fibre. Drink a glass of water with it.",
+          "tip_fr": "Les edamames vous apportent des protéines végétales et des fibres. Buvez un verre d’eau en même temps."
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "source": "new",
+      "theme_en": "Fish & Fibre",
+      "theme_fr": "Poisson et fibres",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Spinach & Mushroom Egg Muffins",
+          "name_fr": "Muffins aux œufs, épinards et champignons",
+          "time_min": 25,
+          "tags": [
+            "make-ahead",
+            "freezer",
+            "animal-protein"
+          ],
+          "ingredients": [
+            {
+              "item_en": "eggs",
+              "item_fr": "œufs",
+              "qty_en": "3",
+              "qty_fr": "3",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "baby spinach",
+              "item_fr": "bébés épinards",
+              "qty_en": "½ cup, chopped",
+              "qty_fr": "125 ml (½ tasse), hachés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "mushrooms",
+              "item_fr": "champignons",
+              "qty_en": "¼ cup, chopped",
+              "qty_fr": "60 ml (¼ tasse), hachés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "bell pepper",
+              "item_fr": "poivron",
+              "qty_en": "¼, diced",
+              "qty_fr": "¼, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "nutritional yeast",
+              "item_fr": "levure alimentaire",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "ground turmeric",
+              "item_fr": "curcuma moulu",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "whole-grain bread",
+              "item_fr": "pain à grains entiers",
+              "qty_en": "1 slice",
+              "qty_fr": "1 tranche",
+              "aisle": "legumes-grains"
+            }
+          ],
+          "steps_en": [
+            "Heat the oven to 375°F (190°C) and brush 3 muffin cups with the olive oil.",
+            "Whisk the eggs with the nutritional yeast, turmeric and pepper.",
+            "Divide the vegetables among the cups and pour in the eggs.",
+            "Bake for 18–20 minutes, until set. Serve with toast."
+          ],
+          "steps_fr": [
+            "Préchauffez le four à 190 °C (375 °F) et badigeonnez 3 moules à muffins d’huile d’olive.",
+            "Fouettez les œufs avec la levure alimentaire, le curcuma et le poivre.",
+            "Répartissez les légumes dans les moules et versez-y les œufs.",
+            "Faites cuire 18 à 20 minutes, jusqu’à ce qu’ils soient pris. Servez avec une rôtie."
+          ],
+          "tip_en": "A dairy-free take on the omelette in Christine’s gluten-free plan. Make a double batch: they keep 4 days in the fridge and freeze well.",
+          "tip_fr": "Une version sans produits laitiers de l’omelette du plan sans gluten de Christine. Doublez la recette : ils se conservent 4 jours au réfrigérateur et se congèlent bien."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Sardine & White Bean Salad",
+          "name_fr": "Salade de sardines et de haricots blancs",
+          "time_min": 10,
+          "tags": [
+            "quick",
+            "animal-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "sardines in olive oil",
+              "item_fr": "sardines à l’huile d’olive",
+              "qty_en": "1 can (about 120 g), drained",
+              "qty_fr": "1 boîte (environ 120 g), égouttée",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "canned white kidney beans",
+              "item_fr": "haricots blancs en conserve",
+              "qty_en": "½ cup, rinsed",
+              "qty_fr": "125 ml (½ tasse), rincés",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "arugula",
+              "item_fr": "roquette",
+              "qty_en": "1½ cups",
+              "qty_fr": "375 ml (1½ tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "cherry tomatoes",
+              "item_fr": "tomates cerises",
+              "qty_en": "½ cup, halved",
+              "qty_fr": "125 ml (½ tasse), coupées en deux",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "red onion",
+              "item_fr": "oignon rouge",
+              "qty_en": "2 tbsp, finely chopped",
+              "qty_fr": "30 ml (2 c. à soupe), haché finement",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "fresh parsley",
+              "item_fr": "persil frais",
+              "qty_en": "1 tbsp, chopped",
+              "qty_fr": "15 ml (1 c. à soupe), haché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "½, juiced",
+              "qty_fr": "½, pressé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Toss the beans, tomatoes, red onion and parsley with the lemon juice and olive oil.",
+            "Spoon over the arugula.",
+            "Top with the sardines, broken into chunks, and a grind of pepper."
+          ],
+          "steps_fr": [
+            "Mélangez les haricots, les tomates, l’oignon rouge et le persil avec le jus de citron et l’huile d’olive.",
+            "Déposez le tout sur la roquette.",
+            "Garnissez des sardines en morceaux et d’un tour de moulin à poivre."
+          ],
+          "tip_en": "Sardines are a small oily fish, rich in omega-3s. New to them? Try them on whole-grain toast first.",
+          "tip_fr": "Les sardines sont un petit poisson gras riche en oméga-3. Vous n’en avez jamais mangé? Essayez-les d’abord sur une rôtie de grains entiers."
+        },
+        {
+          "type": "dinner",
+          "name_en": "Black Bean Stuffed Peppers",
+          "name_fr": "Poivrons farcis aux haricots noirs",
+          "time_min": 35,
+          "tags": [
+            "freezer",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "bell pepper",
+              "item_fr": "poivron",
+              "qty_en": "1 large",
+              "qty_fr": "1 gros",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "canned black beans",
+              "item_fr": "haricots noirs en conserve",
+              "qty_en": "¾ cup, rinsed",
+              "qty_fr": "175 ml (¾ tasse), rincés",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "quinoa",
+              "item_fr": "quinoa",
+              "qty_en": "½ cup cooked",
+              "qty_fr": "125 ml (½ tasse) cuit",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "canned diced tomatoes",
+              "item_fr": "tomates en dés en conserve",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "ground cumin",
+              "item_fr": "cumin moulu",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "chili powder",
+              "item_fr": "assaisonnement au chili",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "garlic powder",
+              "item_fr": "ail en poudre",
+              "qty_en": "¼ tsp",
+              "qty_fr": "1 ml (¼ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "nutritional yeast",
+              "item_fr": "levure alimentaire",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "pumpkin seeds",
+              "item_fr": "graines de citrouille",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            }
+          ],
+          "steps_en": [
+            "Heat the oven to 375°F (190°C). Halve the pepper and remove the seeds.",
+            "Mix the beans, quinoa, tomatoes and spices.",
+            "Fill the pepper halves, drizzle with olive oil and bake for 25 minutes.",
+            "Sprinkle with nutritional yeast and pumpkin seeds."
+          ],
+          "steps_fr": [
+            "Préchauffez le four à 190 °C (375 °F). Coupez le poivron en deux et retirez les graines.",
+            "Mélangez les haricots, le quinoa, les tomates et les épices.",
+            "Farcissez les demi-poivrons, arrosez d’huile d’olive et faites cuire 25 minutes.",
+            "Saupoudrez de levure alimentaire et de graines de citrouille."
+          ],
+          "tip_en": "Cook extra quinoa for tomorrow’s lentil salad. Christine’s gluten-free version uses ground turkey, if you prefer.",
+          "tip_fr": "Faites cuire plus de quinoa pour la salade de lentilles de demain. La version sans gluten de Christine utilise de la dinde hachée, si vous préférez."
+        },
+        {
+          "type": "snack",
+          "name_en": "Dairy-Free Yogurt with Prunes & Flax",
+          "name_fr": "Yogourt sans produits laitiers, pruneaux et lin",
+          "time_min": 3,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "dairy-free protein yogurt",
+              "item_fr": "yogourt protéiné sans produits laitiers",
+              "qty_en": "¾ cup",
+              "qty_fr": "175 ml (¾ tasse)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "prunes",
+              "item_fr": "pruneaux",
+              "qty_en": "3, chopped",
+              "qty_fr": "3, hachés",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "ground flaxseed",
+              "item_fr": "graines de lin moulues",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "ground cinnamon",
+              "item_fr": "cannelle moulue",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Top the yogurt with the chopped prunes, ground flaxseed and cinnamon."
+          ],
+          "steps_fr": [
+            "Garnissez le yogourt de pruneaux hachés, de graines de lin moulues et de cannelle."
+          ],
+          "tip_en": "Prunes and flax are fibre helpers that keep things moving. Pair them with a big glass of water.",
+          "tip_fr": "Les pruneaux et le lin sont riches en fibres et aident à la régularité. Accompagnez-les d’un grand verre d’eau."
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "source": "new",
+      "theme_en": "Go Green",
+      "theme_fr": "Plein de vert",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Strawberry, Kiwi & Bok Choy Smoothie",
+          "name_fr": "Smoothie fraises, kiwi et bok choy",
+          "time_min": 5,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "bok choy",
+              "item_fr": "bok choy",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "kiwi",
+              "item_fr": "kiwi",
+              "qty_en": "1, peeled",
+              "qty_fr": "1, pelé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "frozen strawberries",
+              "item_fr": "fraises surgelées",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "frozen"
+            },
+            {
+              "item_en": "unsweetened soy beverage",
+              "item_fr": "boisson de soya non sucrée",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "plant protein powder",
+              "item_fr": "poudre de protéines végétales",
+              "qty_en": "1 scoop",
+              "qty_fr": "1 mesure",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "hemp seeds",
+              "item_fr": "graines de chanvre",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "nutritional yeast",
+              "item_fr": "levure alimentaire",
+              "qty_en": "1 tbsp (optional)",
+              "qty_fr": "15 ml (1 c. à soupe) (facultatif)",
+              "aisle": "dairy-free"
+            }
+          ],
+          "steps_en": [
+            "Add everything to a blender.",
+            "Blend until smooth, adding water until it’s the thickness you like."
+          ],
+          "steps_fr": [
+            "Mettez tous les ingrédients dans le mélangeur.",
+            "Mélangez jusqu’à consistance lisse, en ajoutant de l’eau jusqu’à l’épaisseur désirée."
+          ],
+          "tip_en": "Christine’s go-to green smoothie with a protein boost. Leafy greens like bok choy add calcium.",
+          "tip_fr": "Le smoothie vert préféré de Christine, avec un coup de pouce en protéines. Les légumes feuillus comme le bok choy ajoutent du calcium."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Lemony Lentil & Quinoa Salad",
+          "name_fr": "Salade citronnée de lentilles et de quinoa",
+          "time_min": 10,
+          "tags": [
+            "quick",
+            "make-ahead",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "canned lentils",
+              "item_fr": "lentilles en conserve",
+              "qty_en": "¾ cup, rinsed",
+              "qty_fr": "175 ml (¾ tasse), rincées",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "quinoa",
+              "item_fr": "quinoa",
+              "qty_en": "½ cup cooked",
+              "qty_fr": "125 ml (½ tasse) cuit",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "cherry tomatoes",
+              "item_fr": "tomates cerises",
+              "qty_en": "½ cup, halved",
+              "qty_fr": "125 ml (½ tasse), coupées en deux",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "cucumber",
+              "item_fr": "concombre",
+              "qty_en": "¼, diced",
+              "qty_fr": "¼, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "red onion",
+              "item_fr": "oignon rouge",
+              "qty_en": "1 tbsp, finely chopped",
+              "qty_fr": "15 ml (1 c. à soupe), haché finement",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "fresh parsley",
+              "item_fr": "persil frais",
+              "qty_en": "1 tbsp, chopped",
+              "qty_fr": "15 ml (1 c. à soupe), haché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "½, juiced",
+              "qty_fr": "½, pressé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "arugula",
+              "item_fr": "roquette",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "pumpkin seeds",
+              "item_fr": "graines de citrouille",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            }
+          ],
+          "steps_en": [
+            "Toss the lentils, quinoa, tomatoes, cucumber, red onion and parsley.",
+            "Dress with the olive oil and lemon juice.",
+            "Serve over the arugula and top with pumpkin seeds."
+          ],
+          "steps_fr": [
+            "Mélangez les lentilles, le quinoa, les tomates, le concombre, l’oignon rouge et le persil.",
+            "Arrosez d’huile d’olive et de jus de citron.",
+            "Servez sur la roquette et garnissez de graines de citrouille."
+          ],
+          "tip_en": "Use the leftover quinoa from Day 8. The salad keeps 3 days in the fridge; add the arugula just before eating.",
+          "tip_fr": "Utilisez le quinoa qui reste du jour 8. La salade se conserve 3 jours au réfrigérateur; ajoutez la roquette au moment de manger."
+        },
+        {
+          "type": "dinner",
+          "name_en": "Salmon Patties with a Big Green Salad",
+          "name_fr": "Galettes de saumon et grande salade verte",
+          "time_min": 20,
+          "tags": [
+            "freezer",
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "canned salmon",
+              "item_fr": "saumon en conserve",
+              "qty_en": "1 can (213 g), drained",
+              "qty_fr": "1 boîte (213 g), égouttée",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "eggs",
+              "item_fr": "œufs",
+              "qty_en": "1",
+              "qty_fr": "1",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "almond flour",
+              "item_fr": "farine d’amande",
+              "qty_en": "2 tbsp",
+              "qty_fr": "30 ml (2 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "fresh dill",
+              "item_fr": "aneth frais",
+              "qty_en": "1 tbsp, chopped",
+              "qty_fr": "15 ml (1 c. à soupe), haché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "Dijon mustard",
+              "item_fr": "moutarde de Dijon",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "½ (zest and juice)",
+              "qty_fr": "½ (zeste et jus)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tbsp + 2 tsp",
+              "qty_fr": "15 ml (1 c. à soupe) + 10 ml (2 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "mixed greens",
+              "item_fr": "mesclun",
+              "qty_en": "2 cups",
+              "qty_fr": "500 ml (2 tasses)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "cucumber",
+              "item_fr": "concombre",
+              "qty_en": "¼, sliced",
+              "qty_fr": "¼, tranché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Mash the salmon with the egg, almond flour, dill, mustard and lemon zest. Shape into 2–3 patties.",
+            "Cook in 2 tsp olive oil over medium heat for 3–4 minutes per side, until golden.",
+            "Toss the greens and cucumber with 1 tbsp olive oil, the lemon juice and pepper.",
+            "Serve the patties with the salad."
+          ],
+          "steps_fr": [
+            "Écrasez le saumon avec l’œuf, la farine d’amande, l’aneth, la moutarde et le zeste de citron. Façonnez 2 ou 3 galettes.",
+            "Faites-les cuire dans 10 ml (2 c. à thé) d’huile d’olive à feu moyen, 3 à 4 minutes de chaque côté, jusqu’à ce qu’elles soient dorées.",
+            "Mélangez le mesclun et le concombre avec 15 ml (1 c. à soupe) d’huile d’olive, le jus de citron et le poivre.",
+            "Servez les galettes avec la salade."
+          ],
+          "tip_en": "Canned salmon with its soft bones adds calcium. The patties freeze well, so make a double batch.",
+          "tip_fr": "Le saumon en conserve, avec ses arêtes tendres, ajoute du calcium. Les galettes se congèlent bien : doublez la recette."
+        },
+        {
+          "type": "snack",
+          "name_en": "Peanut Butter Energy Bites (2 bites)",
+          "name_fr": "Bouchées énergie au beurre d’arachide (2 bouchées)",
+          "time_min": 10,
+          "tags": [
+            "make-ahead",
+            "freezer",
+            "plant-protein",
+            "high-fibre"
+          ],
+          "ingredients": [
+            {
+              "item_en": "rolled oats",
+              "item_fr": "flocons d’avoine",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "natural peanut butter",
+              "item_fr": "beurre d’arachide naturel",
+              "qty_en": "¼ cup",
+              "qty_fr": "60 ml (¼ tasse)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "ground flaxseed",
+              "item_fr": "graines de lin moulues",
+              "qty_en": "2 tbsp",
+              "qty_fr": "30 ml (2 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "chia seeds",
+              "item_fr": "graines de chia",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "hemp seeds",
+              "item_fr": "graines de chanvre",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "honey",
+              "item_fr": "miel",
+              "qty_en": "1–2 tsp (optional)",
+              "qty_fr": "5 à 10 ml (1 à 2 c. à thé) (facultatif)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "ground cinnamon",
+              "item_fr": "cannelle moulue",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Stir everything together in a bowl.",
+            "Roll into 8 small balls.",
+            "Chill for 20 minutes. Keep in the fridge for up to a week, or freeze."
+          ],
+          "steps_fr": [
+            "Mélangez tous les ingrédients dans un bol.",
+            "Façonnez 8 petites boules.",
+            "Réfrigérez 20 minutes. Se conservent jusqu’à une semaine au réfrigérateur, ou se congèlent."
+          ],
+          "tip_en": "Enjoy 2 bites with a cup of herbal tea, and save the rest for later snacks.",
+          "tip_fr": "Savourez 2 bouchées avec une tisane et gardez les autres pour vos prochaines collations."
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "source": "new",
+      "theme_en": "You Did It!",
+      "theme_fr": "Vous l’avez fait!",
+      "meals": [
+        {
+          "type": "breakfast",
+          "name_en": "Sweet Potato Breakfast Hash with Eggs",
+          "name_fr": "Poêlée déjeuner de patate douce et œufs",
+          "time_min": 25,
+          "tags": [
+            "animal-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "sweet potato",
+              "item_fr": "patate douce",
+              "qty_en": "1 small, diced",
+              "qty_fr": "1 petite, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "onion",
+              "item_fr": "oignon",
+              "qty_en": "¼, diced",
+              "qty_fr": "¼, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "bell pepper",
+              "item_fr": "poivron",
+              "qty_en": "½, diced",
+              "qty_fr": "½, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "smoked paprika",
+              "item_fr": "paprika fumé",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "canned black beans",
+              "item_fr": "haricots noirs en conserve",
+              "qty_en": "½ cup, rinsed",
+              "qty_fr": "125 ml (½ tasse), rincés",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "baby spinach",
+              "item_fr": "bébés épinards",
+              "qty_en": "1 cup",
+              "qty_fr": "250 ml (1 tasse)",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "eggs",
+              "item_fr": "œufs",
+              "qty_en": "2",
+              "qty_fr": "2",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Cook the sweet potato in the olive oil, covered, over medium heat for 8–10 minutes, stirring now and then.",
+            "Add the onion, bell pepper and paprika, and cook for 3–4 minutes.",
+            "Stir in the black beans and spinach until the spinach wilts.",
+            "Make 2 wells, crack in the eggs, then cover and cook for 4–5 minutes, until set. Season with pepper."
+          ],
+          "steps_fr": [
+            "Faites cuire la patate douce dans l’huile d’olive, à couvert, à feu moyen 8 à 10 minutes, en remuant de temps en temps.",
+            "Ajoutez l’oignon, le poivron et le paprika, et faites cuire 3 à 4 minutes.",
+            "Incorporez les haricots noirs et les épinards jusqu’à ce que les épinards tombent.",
+            "Formez 2 puits, cassez-y les œufs, puis couvrez et faites cuire 4 à 5 minutes, jusqu’à ce qu’ils soient pris. Poivrez."
+          ],
+          "tip_en": "Use leftover black beans from Day 8. For a plant-protein version, crumble in firm tofu instead of the eggs.",
+          "tip_fr": "Utilisez les haricots noirs qui restent du jour 8. Pour une version aux protéines végétales, émiettez du tofu ferme au lieu des œufs."
+        },
+        {
+          "type": "lunch",
+          "name_en": "Tuscan White Bean & Kale Soup",
+          "name_fr": "Soupe toscane aux haricots blancs et au chou frisé",
+          "time_min": 25,
+          "tags": [
+            "make-ahead",
+            "freezer",
+            "plant-protein",
+            "high-fibre",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "onion",
+              "item_fr": "oignon",
+              "qty_en": "¼, diced",
+              "qty_fr": "¼, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "carrots",
+              "item_fr": "carottes",
+              "qty_en": "1 small, diced",
+              "qty_fr": "1 petite, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "celery",
+              "item_fr": "céleri",
+              "qty_en": "½ stalk, diced",
+              "qty_fr": "½ branche, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "garlic",
+              "item_fr": "ail",
+              "qty_en": "1 clove, minced",
+              "qty_fr": "1 gousse, hachée",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "canned diced tomatoes",
+              "item_fr": "tomates en dés en conserve",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "vegetable broth",
+              "item_fr": "bouillon de légumes",
+              "qty_en": "1½ cups",
+              "qty_fr": "375 ml (1½ tasse)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "canned white kidney beans",
+              "item_fr": "haricots blancs en conserve",
+              "qty_en": "1 cup, rinsed",
+              "qty_fr": "250 ml (1 tasse), rincés",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "dried oregano",
+              "item_fr": "origan séché",
+              "qty_en": "½ tsp",
+              "qty_fr": "2 ml (½ c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "kale",
+              "item_fr": "chou frisé (kale)",
+              "qty_en": "1 cup, chopped",
+              "qty_fr": "250 ml (1 tasse), haché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "nutritional yeast",
+              "item_fr": "levure alimentaire",
+              "qty_en": "2 tbsp",
+              "qty_fr": "30 ml (2 c. à soupe)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "black pepper",
+              "item_fr": "poivre noir",
+              "qty_en": "pinch",
+              "qty_fr": "1 pincée",
+              "aisle": "pantry"
+            }
+          ],
+          "steps_en": [
+            "Soften the onion, carrot, celery and garlic in the olive oil, about 5 minutes.",
+            "Add the tomatoes, broth, beans and oregano, and simmer for 15 minutes.",
+            "Stir in the kale and cook 3 minutes more.",
+            "Top with nutritional yeast and a pinch of pepper."
+          ],
+          "steps_fr": [
+            "Faites revenir l’oignon, la carotte, le céleri et l’ail dans l’huile d’olive environ 5 minutes.",
+            "Ajoutez les tomates, le bouillon, les haricots et l’origan, et laissez mijoter 15 minutes.",
+            "Ajoutez le chou frisé et poursuivez la cuisson 3 minutes.",
+            "Garnissez de levure alimentaire et d’une pincée de poivre."
+          ],
+          "tip_en": "Easy to triple and freeze in single portions for busy days.",
+          "tip_fr": "Facile à tripler et à congeler en portions individuelles pour les journées chargées."
+        },
+        {
+          "type": "dinner",
+          "name_en": "Chicken Souvlaki Plate with Greek Salad",
+          "name_fr": "Assiette de souvlaki au poulet et salade grecque",
+          "time_min": 30,
+          "tags": [
+            "animal-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "chicken breast",
+              "item_fr": "poitrine de poulet",
+              "qty_en": "1 (about 150 g / 5 oz), cubed",
+              "qty_fr": "1 (environ 150 g / 5 oz), en cubes",
+              "aisle": "protein"
+            },
+            {
+              "item_en": "extra virgin olive oil",
+              "item_fr": "huile d’olive extra vierge",
+              "qty_en": "1 tbsp + 2 tsp",
+              "qty_fr": "15 ml (1 c. à soupe) + 10 ml (2 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "lemon",
+              "item_fr": "citron",
+              "qty_en": "½, juiced",
+              "qty_fr": "½, pressé",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "garlic",
+              "item_fr": "ail",
+              "qty_en": "1 clove, minced",
+              "qty_fr": "1 gousse, hachée",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "dried oregano",
+              "item_fr": "origan séché",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "cherry tomatoes",
+              "item_fr": "tomates cerises",
+              "qty_en": "½ cup, halved",
+              "qty_fr": "125 ml (½ tasse), coupées en deux",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "cucumber",
+              "item_fr": "concombre",
+              "qty_en": "½, diced",
+              "qty_fr": "½, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "bell pepper",
+              "item_fr": "poivron",
+              "qty_en": "¼, diced",
+              "qty_fr": "¼, en dés",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "red onion",
+              "item_fr": "oignon rouge",
+              "qty_en": "2 tbsp, sliced",
+              "qty_fr": "30 ml (2 c. à soupe), tranché",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "Kalamata olives",
+              "item_fr": "olives Kalamata",
+              "qty_en": "5",
+              "qty_fr": "5",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "red wine vinegar",
+              "item_fr": "vinaigre de vin rouge",
+              "qty_en": "1 tsp",
+              "qty_fr": "5 ml (1 c. à thé)",
+              "aisle": "pantry"
+            },
+            {
+              "item_en": "hummus",
+              "item_fr": "houmous",
+              "qty_en": "2 tbsp",
+              "qty_fr": "30 ml (2 c. à soupe)",
+              "aisle": "legumes-grains"
+            },
+            {
+              "item_en": "whole-wheat pita",
+              "item_fr": "pita de blé entier",
+              "qty_en": "½",
+              "qty_fr": "½",
+              "aisle": "legumes-grains"
+            }
+          ],
+          "steps_en": [
+            "Toss the chicken with 1 tbsp olive oil, the lemon juice, garlic and oregano. Let it sit for 10 minutes.",
+            "Thread onto skewers and cook in a grill pan for 10–12 minutes, turning, until cooked through.",
+            "Toss the tomatoes, cucumber, bell pepper, red onion and olives with 2 tsp olive oil and the vinegar.",
+            "Serve the chicken with the salad, hummus and warm pita."
+          ],
+          "steps_fr": [
+            "Mélangez le poulet avec 15 ml (1 c. à soupe) d’huile d’olive, le jus de citron, l’ail et l’origan. Laissez reposer 10 minutes.",
+            "Enfilez-le sur des brochettes et faites-le cuire dans une poêle à griller 10 à 12 minutes, en le retournant, jusqu’à ce qu’il soit bien cuit.",
+            "Mélangez les tomates, le concombre, le poivron, l’oignon rouge et les olives avec 10 ml (2 c. à thé) d’huile d’olive et le vinaigre.",
+            "Servez le poulet avec la salade, le houmous et le pita chaud."
+          ],
+          "tip_en": "This Greek salad skips the feta; the olives, oregano and lemon bring plenty of flavour. Skip the pita for gluten-free.",
+          "tip_fr": "Cette salade grecque se passe de feta : les olives, l’origan et le citron donnent beaucoup de saveur. Omettez le pita pour une version sans gluten."
+        },
+        {
+          "type": "snack",
+          "name_en": "Berry Banana Nice Cream",
+          "name_fr": "« Crème glacée » banane et petits fruits",
+          "time_min": 5,
+          "tags": [
+            "quick",
+            "plant-protein",
+            "gluten-free-option"
+          ],
+          "ingredients": [
+            {
+              "item_en": "banana",
+              "item_fr": "banane",
+              "qty_en": "1, frozen in chunks",
+              "qty_fr": "1, congelée en morceaux",
+              "aisle": "produce"
+            },
+            {
+              "item_en": "frozen mixed berries",
+              "item_fr": "petits fruits mélangés surgelés",
+              "qty_en": "½ cup",
+              "qty_fr": "125 ml (½ tasse)",
+              "aisle": "frozen"
+            },
+            {
+              "item_en": "almond butter",
+              "item_fr": "beurre d’amande",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            },
+            {
+              "item_en": "unsweetened soy beverage",
+              "item_fr": "boisson de soya non sucrée",
+              "qty_en": "2–3 tbsp",
+              "qty_fr": "30 à 45 ml (2 à 3 c. à soupe)",
+              "aisle": "dairy-free"
+            },
+            {
+              "item_en": "hemp seeds",
+              "item_fr": "graines de chanvre",
+              "qty_en": "1 tbsp",
+              "qty_fr": "15 ml (1 c. à soupe)",
+              "aisle": "nuts-seeds"
+            }
+          ],
+          "steps_en": [
+            "Blend the frozen banana, berries, almond butter and soy beverage until thick and creamy.",
+            "Scoop into a bowl and top with hemp seeds."
+          ],
+          "steps_fr": [
+            "Mélangez la banane congelée, les petits fruits, le beurre d’amande et la boisson de soya jusqu’à consistance épaisse et crémeuse.",
+            "Versez dans un bol et garnissez de graines de chanvre."
+          ],
+          "tip_en": "A dairy-free treat to celebrate 10 days of great choices. You did it!",
+          "tip_fr": "Une gâterie sans produits laitiers pour célébrer 10 jours de beaux choix. Vous l’avez fait!"
+        }
+      ]
+    }
+  ]
+}

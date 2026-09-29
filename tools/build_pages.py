@@ -13,7 +13,7 @@ import json, re, os, sys, html as htmllib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from programs import ROOT, active, site_dir, authored_dir
 
-V = "35"  # asset cache-bust version (keep in sync with build_hub.py)
+V = "37"  # asset cache-bust version (keep in sync with build_hub.py)
 
 # Set per program by use()
 PROGRAM = SITE = AUTH = None
@@ -139,10 +139,21 @@ def wrap_tables(html):
     scroll inside their box instead of overflowing the page on mobile."""
     return re.sub(r"(<table\b.*?</table>)", r'<div class="table-wrap">\1</div>', html, flags=re.S)
 
+# Build-time includes: an authored lesson may contain <!-- include:NAME --> and gets
+# the HTML rendered from data in its place (the data file is the source to edit).
+def _includes(html, lang):
+    def sub(m):
+        name = m.group(1)
+        if name == "meal-plan":
+            from render_meal_plan import render
+            return render(ROOT, lang)
+        raise SystemExit(f"unknown include: {name}")
+    return re.sub(r"<!--\s*include:([\w-]+)\s*-->", sub, html)
+
 def read_authored(slug):
-    inner = wrap_tables(open(os.path.join(AUTH, slug+".html"), encoding="utf-8").read())
+    inner = _includes(wrap_tables(open(os.path.join(AUTH, slug+".html"), encoding="utf-8").read()), "en")
     fr_path = os.path.join(AUTH, slug+".fr.html")
-    fr_inner = wrap_tables(open(fr_path, encoding="utf-8").read()) if os.path.exists(fr_path) else None
+    fr_inner = _includes(wrap_tables(open(fr_path, encoding="utf-8").read()), "fr") if os.path.exists(fr_path) else None
     return inner, fr_inner
 
 def lang_body(inner, fr_inner):
@@ -157,7 +168,8 @@ def build_authored_page(mod, lesson, prev, nxt):
     feature = (["quiz"] if hasquiz else []) + (["selfcheck"] if "data-selfcheck" in inner else []) \
               + (["audio-slides"] if "data-audio-slides" in inner else []) \
               + (["finale"] if "data-finale" in inner else []) \
-              + (["doc-slides"] if "data-doc-slides" in inner else [])
+              + (["doc-slides"] if "data-doc-slides" in inner else []) \
+              + (["meal-plan"] if "data-meal-plan" in inner else [])
     h = head(lesson["title"]["en"], lesson["summary"]["en"] or mod["desc"]["en"])
     h = h.replace("{BODYATTRS}", body_attrs(lesson, hasquiz))
     parts = [h, lesson_header(mod, lesson)]
