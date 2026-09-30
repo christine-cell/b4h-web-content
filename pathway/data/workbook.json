@@ -228,6 +228,57 @@
      ]
     },
     {
+     "type": "todo",
+     "title_en": "My dopamine checklist",
+     "title_fr": "Ma liste de vérification de la dopamine",
+     "hint_en": "Christine’s top 7 ways to boost dopamine — tick each one you’ve worked into your week.",
+     "hint_fr": "Les 7 meilleurs conseils de Christine pour stimuler la dopamine — cochez ceux que vous avez intégrés à votre semaine.",
+     "items": [
+      {
+       "id": "w2.dop1",
+       "en": "Eat foods rich in tyrosine",
+       "fr": "Manger des aliments riches en tyrosine",
+       "link": "dopamine-checklist.html"
+      },
+      {
+       "id": "w2.dop2",
+       "en": "Exercise regularly",
+       "fr": "Faire de l’exercice régulièrement",
+       "link": "dopamine-checklist.html"
+      },
+      {
+       "id": "w2.dop3",
+       "en": "Meditate or try mindfulness",
+       "fr": "Méditer ou essayer la pleine conscience",
+       "link": "dopamine-checklist.html"
+      },
+      {
+       "id": "w2.dop4",
+       "en": "Get a massage",
+       "fr": "Recevoir un massage",
+       "link": "dopamine-checklist.html"
+      },
+      {
+       "id": "w2.dop5",
+       "en": "Sleep — routine, routine, routine",
+       "fr": "Sommeil — routine, routine, routine",
+       "link": "dopamine-checklist.html"
+      },
+      {
+       "id": "w2.dop6",
+       "en": "Listen to music (or dance!)",
+       "fr": "Écouter de la musique (ou danser !)",
+       "link": "dopamine-checklist.html"
+      },
+      {
+       "id": "w2.dop7",
+       "en": "Ask my care team about supplements",
+       "fr": "Parler de suppléments à mon équipe de soins",
+       "link": "dopamine-checklist.html"
+      }
+     ]
+    },
+    {
      "type": "fields",
      "title_en": "Sleep schedule",
      "title_fr": "Horaire de sommeil",

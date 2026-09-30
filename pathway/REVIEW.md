@@ -8,14 +8,14 @@ changed is listed here. Search the sources for `REVIEW:` to see each note in pla
 ## Needs you
 - **Videos to upload** — see `VIDEOS-TO-UPLOAD.md` (16). Each shows "Video coming soon" until then.
 - **Wix "PD Motor & Non-Motor Symptoms"** had the wrong text (a Licensee checklist). Lesson built from your PDF + Google Doc instead.
-- **French Action Plan workbook** — the Wix step is empty; French participants get the English workbook for now.
-- **Dopamine Checklist** — Wix says it's in the workbook, but the workbook has no page by that name. Is the Top 7 Dopamine Tips PDF the checklist?
+- **French Action Plan workbook** — ✔ the on-screen workbook is bilingual; French participants who want a French printable are invited to email Christine (she’ll send it separately).
+- **Dopamine Checklist** — ✔ the Top 7 tips are now a tick-list in workbook Week 2.
 - **Meal plan** — titled "10-day" but the Doc and PDF only have Days 1–4 (+ a 5-day gluten-free plan). Renamed "Sample Meal Plans"; send Days 5–10 if they exist.
 - **VIGOR** mentions "three favourite releases" in Module 7; only the Hamstring Release video exists.
 - **Voice Work** — its Google Doc only contains the Facial Gymnastics worksheet; the lesson overlaps with Facial Expressions.
 - **NR supplement** — "NOPARK is now recruiting" / "new to Christine this year" may be dated.
 - **Menopause research** — the musculoskeletal-syndrome summary was written from the article itself (your Doc said "PDF pending"); "the UCC hormonal fluctuation study" has no details.
-- **Speech-pathologist webinar** — no speaker name or description anywhere.
+- **Speech-pathologist webinar** — ✔ Leah Crawford (recorded webinar, 26 min).
 - **Care Team** — one-line notes per provider were written by the build team (your checklist lists titles only).
 
 ## Not hosted on the site (licensing) — linked or omitted instead
@@ -42,7 +42,7 @@ Every invitation to book a call/consultation (diet check-in lowest band, workboo
 Edit the plan in `pathway/data/meal-plan.json`.
 - **Days 1–4 are your plan**, made dairy-free: parfait → dairy-free protein yogurt; parmesan → nutritional yeast or dairy-free cheese; Greek yogurt parfait → dairy-free. Fixed "12 tsp nut butter" → 1–2 tsp and added sweet potato to the chili. Small additions: a teaspoon of olive oil where a step needs it, optional collagen in the overnight oats, 400 °F for the asparagus.
 - **Days 5–10 are new** in your style (lemon herb chicken, Thai peanut salad, trout, plant-powered day, sardine salad, salmon patties, souvlaki…) — please read them.
-- Collagen is tagged "animal protein" (levodopa timing) — confirm.
+- Collagen: per Christine, not counted for levodopa timing (Day 3 breakfast untagged; tip says protein powders with animal protein, like whey, still need timing). ✔
 - Some of your original meals may fall under 20–30 g protein as written (Day 1 oats, Day 3 shrimp); tips suggest boosts rather than changing amounts.
 - The food-sorting game (24 foods) is new — check the "why" lines, especially dairy ("avoid", per your Dairy lesson) and alcohol ("check with your care team").
 
