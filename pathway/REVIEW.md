@@ -19,7 +19,7 @@ changed is listed here. Search the sources for `REVIEW:` to see each note in pla
 - **Care Team** — one-line notes per provider were written by the build team (your checklist lists titles only).
 
 ## Not hosted on the site (licensing) — linked or omitted instead
-- **PDQ-39 questionnaire** (licensed by Oxford University Innovation) — mentioned, not attached.
+- **PDQ-39 questionnaire** — now attached at your request (see workbook notes).
 - **Seritan 2022 mindfulness article** (exclusive licence to Springer) — linked by DOI, summarized.
 - **Musculoskeletal syndrome of menopause** (CC BY-NC-ND) — linked by DOI.
 
@@ -49,4 +49,4 @@ Edit the plan in `pathway/data/meal-plan.json`.
 ## New: interactive Action Plan Workbook (Module 1)
 Edit in `pathway/data/workbook.json`. Mirrors your 11-week printable workbook; Small Steps worksheet folded into Week 1 (the Word files were removed); baseline tests in Week 1 and re-test in Week 11 with an automatic comparison. Your original PDF is still offered on the lesson page.
 - Week 11 "Book an appointment with a health professional" reads "Talk with a health professional about supplements & diet" (no-booking rule).
-- Week 1 still lists the PDQ-39 as a to-do (not hosted) — tell me if it should go.
+- PDQ-39 added (Sept 30) at your request — on Baseline Tests, workbook Week 1 and Resources. It has no copyright line; if you don’t already hold a licence from Oxford University Innovation, check whether you need one.

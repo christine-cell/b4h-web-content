@@ -134,7 +134,7 @@
        "id": "w1.pdq39",
        "en": "PDQ-39 questionnaire",
        "fr": "Questionnaire PDQ-39",
-       "link": "baseline-tests.html"
+       "link": "baseline-tests.html#pdq-39"
       },
       {
        "id": "w1.sitstand",
@@ -837,6 +837,12 @@
        "en": "Try one of the recipes",
        "fr": "Essayer une des recettes",
        "link": "plan-of-attack-recipes.html"
+      },
+      {
+       "id": "w11.pdq39",
+       "en": "Fill in the PDQ-39 questionnaire again",
+       "fr": "Remplir de nouveau le questionnaire PDQ-39",
+       "link": "baseline-tests.html#pdq-39"
       }
      ]
     },
