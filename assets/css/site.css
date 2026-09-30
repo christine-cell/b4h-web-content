@@ -983,3 +983,7 @@ textarea.wb-input { resize: vertical; min-height: 4.5em; }
 .wb-more-menu { display: grid; gap: .4rem; margin-top: .5rem; padding: .6rem; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); box-shadow: var(--shadow-2); }
 @media (min-width: 700px) { .wb-more-menu { position: absolute; z-index: 20; min-width: 290px; } }
 .wb-more-menu .btn { justify-content: flex-start; }
+
+/* a download card inside a callout must fit the narrower callout body on phones */
+.callout .files-grid { grid-template-columns: minmax(0, 1fr); }
+.callout .file-card { min-width: 0; }
