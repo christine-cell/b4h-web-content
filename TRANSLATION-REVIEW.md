@@ -38,6 +38,8 @@ Each of these is a small JSON file, so edits are quick — change the text and r
 
 # Pathway to Empowerment (`/pathway/`) — French review
 
+> **Status (Oct 1, 2026):** approved by Christine to run as is; the review badge is off for Pathway. The list below stays as a reference for future polishing.
+
 All 77 Pathway lessons have EN + fr-CA versions. Where Christine's GitHub pages had French versions (constipation, dairy, cognitive exercise, immune system, supplements, NR, magnesium, recipes, freezing, osteoarthritis), the French is based on **her own French**; everything else is AI-translated and carries the same « traduction en cours de révision » flag.
 
 ## House-style choices to confirm

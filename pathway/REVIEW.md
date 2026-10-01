@@ -38,7 +38,7 @@ Every invitation to book a call/consultation (diet check-in lowest band, workboo
 - The interactive brain games / magnesium symptom checker from your GitHub pages are rebuilt as do-it-yourself instructions.
 - Glossary (34 terms), Resources page, and the certificate.
 
-## New: Plan of Attack — 10-Day Mediterranean Meal Plan (Module 8)
+## New: Plan of Attack — 10-Day Mediterranean Meal Plan (Module 8) — ✔ approved by Christine (Oct 1)
 Edit the plan in `pathway/data/meal-plan.json`.
 - **Days 1–4 are your plan**, made dairy-free: parfait → dairy-free protein yogurt; parmesan → nutritional yeast or dairy-free cheese; Greek yogurt parfait → dairy-free. Fixed "12 tsp nut butter" → 1–2 tsp and added sweet potato to the chili. Small additions: a teaspoon of olive oil where a step needs it, optional collagen in the overnight oats, 400 °F for the asparagus.
 - **Days 5–10 are new** in your style (lemon herb chicken, Thai peanut salad, trout, plant-powered day, sardine salad, salmon patties, souvlaki…) — please read them.
@@ -50,3 +50,8 @@ Edit the plan in `pathway/data/meal-plan.json`.
 Edit in `pathway/data/workbook.json`. Mirrors your 11-week printable workbook; Small Steps worksheet folded into Week 1 (the Word files were removed); baseline tests in Week 1 and re-test in Week 11 with an automatic comparison. Your original PDF is still offered on the lesson page.
 - Week 11 "Book an appointment with a health professional" reads "Talk with a health professional about supplements & diet" (no-booking rule).
 - PDQ-39 added (Sept 30) at your request — on Baseline Tests, workbook Week 1 and Resources. It has no copyright line; if you don’t already hold a licence from Oxford University Innovation, check whether you need one.
+
+## Decisions (Oct 1)
+- New content (recipes, meal plan, quizzes, glossary): approved.
+- French: approved as is — "translation under review" badge removed from Pathway.
+- Gut Research PDF keeps info@ — fine as is.
